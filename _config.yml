@@ -12,9 +12,9 @@ minima:
     youtube_channel: UCY6PxZTBNb_5zeLicxDCjxw
     youtube_channel_name: SceneView
 
-theme: minima
-
+remote_theme: jekyll/minima
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
