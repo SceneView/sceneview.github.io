@@ -1,0 +1,20 @@
+title: SceneView
+description: 3D/AR View with ARCore/ARKit and Google Filament
+
+show_excerpts: false
+
+minima:
+  skin: dark
+  social_links:
+    twitter: thomas_gorisse
+    github: sceneview
+    linkedin: thomas-gorisse
+    youtube_channel: UCY6PxZTBNb_5zeLicxDCjxw
+    youtube_channel_name: SceneView
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
