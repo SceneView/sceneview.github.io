@@ -29,4 +29,4 @@ If your business or content channel relies on SceneView as part of your source o
 
 ## Support individual SceneView developer on [GitHub Sponsor](https://github.com/sponsors/ThomasGorisse?o=esc)
 
-<iframe src="https://github.com/sponsors/ThomasGorisse/card" title="Sponsor ThomasGorisse" height="225" width="600" style="border: 0;" />
+![Sponsor](https://github.githubassets.com/images/modules/site/social-cards/sponsors.jpg)
