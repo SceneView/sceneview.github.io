@@ -7,7 +7,7 @@
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open%20Sans&display=swap');
 body {
     font-family: 'Montserrat', sans-serif;
     color: #383838;
