@@ -16,7 +16,7 @@ It's important to us that SceneView is available free without advertisements and
 
 If you're a developer looking to get involved with the project directly please view our contributing guidelines on GitHub or visit our [Community Discord](https://discord.gg/UbNDDBTNqb).
 
-## Sponsor the SceneView Projects on [Open Collective](https://opencollective.com/sceneview/contribute)
+### Sponsor the SceneView Projects on [Open Collective](https://opencollective.com/sceneview/contribute)
 
 [![Open Collective](https://obsproject.com/media/pages/contribute/60c430675b-1618091058/oc_contribute_button.png)](https://opencollective.com/sceneview/contribute)
 
@@ -27,6 +27,6 @@ Companies that sponsor the SceneView Project on Open Collective will be featured
 If your business or content channel relies on SceneView as part of your source of income, we recommend sponsoring the SceneView Projects on Open Collective.
 
 
-## Support individual SceneView developer on [GitHub Sponsor](https://github.com/sponsors/ThomasGorisse?o=esc)
+### Support individual SceneView developer on [GitHub Sponsors](https://github.com/sponsors/ThomasGorisse?o=esc)
 
-![Sponsor](https://github.githubassets.com/images/modules/site/social-cards/sponsors.jpg)
+[![Sponsor](https://github.githubassets.com/images/modules/site/social-cards/sponsors.jpg)](https://github.com/sponsors/ThomasGorisse?o=esc)
