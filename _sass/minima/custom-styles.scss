@@ -7,19 +7,6 @@ body {
     height: 60px;
 }
 table { 
-    border-collapse: separate;
+    border: 0px;
     empty-cells: hide;
-}
-table.empty{
-    width: 350px;
-    border-collapse: collapse;
-    empty-cells: hide;
-}
-td.normal{
-    border-style: solid;
-    border-width: 1px;
-    border-color: blue;
-}   
-td.empty{      
-    style: 'display=none'
 }
