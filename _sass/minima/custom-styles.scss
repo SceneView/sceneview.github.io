@@ -6,3 +6,7 @@ body {
 .site-title img {
     height: 60px;
 }
+table { 
+    border-collapse: separate;
+    empty-cells: hide;
+}
