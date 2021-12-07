@@ -9,7 +9,7 @@ permalink: /demos/
 | ![ar_environment_lights](https://user-images.githubusercontent.com/6597529/144909911-c34b86ec-83a5-45a0-bed8-0eb1a4b6f268.png) AR Environment Lights | ![netpipe](https://user-images.githubusercontent.com/6597529/144909937-783a94ae-6267-4347-a24a-c42ae548564f.png) Netpipe |
 | - | - |
 | <img src="/assets/img/screenshots/01.png" height="500px"/> | <img src="/assets/img/screenshots/02.png" height="500px"/> |
-| [![Get it on Google Play](https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/320px-Google_Play_Store_badge_EN.svg.png)](https://play.google.com/store/apps/details?id=com.gorisse.thomas.ar.environmentlights) | [![Get it on Google Play](https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/320px-Google_Play_Store_badge_EN.svg.png)](https://play.google.com/store/apps/details?id=com.gorisse.thomas.ar.environmentlights) |
+| [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/320px-Google_Play_Store_badge_EN.svg.png" alt="Get it on Google Play" height="50px"/>](https://play.google.com/store/apps/details?id=com.gorisse.thomas.ar.environmentlights) | [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/320px-Google_Play_Store_badge_EN.svg.png" alt="Get it on Google Play" height="50px"/>](https://play.google.com/store/apps/details?id=com.gorisse.thomas.ar.environmentlights) |
 
 ## Youtube
 
@@ -17,5 +17,13 @@ permalink: /demos/
 | - | - |
 
 ## Screenshots
-| ![screenrecord_gltf](https://user-images.githubusercontent.com/6597529/144910304-b74ba62d-cccd-431b-8228-52af39ccbb3f.gif) | ![Depth Occlusion 02](https://user-images.githubusercontent.com/6597529/140717611-e3216b28-a43a-4fd7-93fd-b39d8bd3e954.png) | ![screenrecord_video_texture_chromakey](https://user-images.githubusercontent.com/6597529/144910397-0efe2ce4-ee96-4b6e-bb8a-0cc0f45b05f3.gif) | ![Environment Lights 01](https://user-images.githubusercontent.com/6597529/135054559-1c5282d6-2476-4e71-92c6-cfc234cb5f3b.gif) |
+| <img src="/assets/img/screenshots/04.gif" height="800px"/> | <img src="/assets/img/screenshots/05.png" height="800px"/> | <img src="/assets/img/screenshots/06.gif" height="800px"/> |
+| <img src="/assets/img/screenshots/07.gif" height="800px"/> | <img src="/assets/img/screenshots/08.gif" height="800px"/> | <img src="/assets/img/screenshots/09.gif" height="800px"/> |
 | - | - | - | - |
+
+<video src="https://user-images.githubusercontent.com/83349532/144654379-a4476baf-8a22-45aa-8088-4f5e3fc7384b.mp4" data-canonical-src="https://user-images.githubusercontent.com/83349532/144654379-a4476baf-8a22-45aa-8088-4f5e3fc7384b.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:640px;">
+
+  </video>
+  
+<video controls="controls" src="https://user-images.githubusercontent.com/83349532/144654379-a4476baf-8a22-45aa-8088-4f5e3fc7384b.mp4"
+ preload="auto" width="640" height="480"/>
