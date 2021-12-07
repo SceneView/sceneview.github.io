@@ -1,6 +1,11 @@
 title: SceneView
 description: 3D and AR View for Android, iOS and React Native (Android and iOS) working with ARCore/ARKit and Google Filament
 
+header_pages:
+  - features.md
+  - sponsoring.md
+  - demos.md
+
 show_excerpts: false
 
 minima:
