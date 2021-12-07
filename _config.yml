@@ -9,7 +9,7 @@ header_pages:
 show_excerpts: false
 
 minima:
-  skin: solarized-dark
+  skin: classic
   social_links:
     twitter: thomas_gorisse
     github: sceneview
