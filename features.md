@@ -6,7 +6,9 @@ permalink: /features/
 
 ## 3D Model Viewer
 
-[![](https://yt-embed.herokuapp.com/embed?v=ttdPqly4OF8)](https://www.youtube.com/watch?v=ttdPqly4OF8)
+<a class="youtube" href="http://youtube.com/watch?v=ttdPqly4OF8">
+    <img src="https://img.youtube.com/vi/ttdPqly4OF8/hqdefault.jpg" alt="" />
+</a>
 
 ## Augmented Image
 
@@ -14,24 +16,27 @@ permalink: /features/
     <img src="https://img.youtube.com/vi/lJMD25qowRA/hqdefault.jpg" alt="" />
 </a>
 
-<div class="video">
-    <img src="https://img.youtube.com/vi/lJMD25qowRA/hqdefault.jpg" />
-    <a href="https://www.youtube.com/watch?v=">link to video</a>
-</div>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lJMD25qowRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## Augmented Face
 
-
+<a class="youtube" href="http://youtube.com/watch?v=8ih7eHwPoxM">
+    <img src="https://img.youtube.com/vi/8ih7eHwPoxM/hqdefault.jpg" alt="" />
+</a>
 
 ## Cloud Anchors
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b4mgaIuCozk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a class="youtube" href="http://youtube.com/watch?v=b4mgaIuCozk">
+    <img src="https://img.youtube.com/vi/b4mgaIuCozk/hqdefault.jpg" alt="" />
+</a>
+
+## Depth
+
+<a class="youtube" href="http://youtube.com/watch?v=VOVhCTb-1io">
+    <img src="https://img.youtube.com/vi/VOVhCTb-1io/hqdefault.jpg" alt="" />
+</a>
 
 ## Environment Lights
 
-
-
-## Depth
+<a class="youtube" href="http://youtube.com/watch?v=9QP43nOSItU">
+    <img src="https://img.youtube.com/vi/9QP43nOSItU/hqdefault.jpg" alt="" />
+</a>
 
