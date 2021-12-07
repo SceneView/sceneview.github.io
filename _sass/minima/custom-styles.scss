@@ -12,3 +12,10 @@ table {
     empty-cells: hide;
     text-align: center;
 }
+.video { position: relative; }
+
+.video a {
+   position: absolute;
+   display: block;
+   background: url(/assets/icons/ic_play.png);
+}
