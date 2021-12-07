@@ -13,18 +13,13 @@ permalink: /demos/
 
 ## Youtube
 
-| [![Youtube Video 01](https://yt-embed.herokuapp.com/embed?v=9QP43nOSItU)](https://www.youtube.com/watch?v=9QP43nOSItU) | [![Youtube Video 02](https://yt-embed.herokuapp.com/embed?v=jpmWjigA3Ms)](https://www.youtube.com/watch?v=jpmWjigA3Ms) |
+|   |   |
 | - | - |
+| [![Youtube Video 01](https://yt-embed.herokuapp.com/embed?v=9QP43nOSItU)](https://www.youtube.com/watch?v=9QP43nOSItU) | [![Youtube Video 02](https://yt-embed.herokuapp.com/embed?v=jpmWjigA3Ms)](https://www.youtube.com/watch?v=jpmWjigA3Ms) |
 
 ## Screenshots
-| <img src="/assets/img/screenshots/04.gif" height="800px"/> | <img src="/assets/img/screenshots/05.png" height="800px"/> | <img src="/assets/img/screenshots/06.gif" height="800px"/> |
-| <img src="/assets/img/screenshots/07.gif" height="800px"/> | <img src="/assets/img/screenshots/08.gif" height="800px"/> | <img src="/assets/img/screenshots/09.gif" height="800px"/> |
-| <video controls="controls" src="https://user-images.githubusercontent.com/83349532/144654379-a4476baf-8a22-45aa-8088-4f5e3fc7384b.mp4"
- preload="auto" height="800px"/> | | |
+|   |   |   |
 | - | - | - |
-
-<video src="https://user-images.githubusercontent.com/83349532/144654379-a4476baf-8a22-45aa-8088-4f5e3fc7384b.mp4" data-canonical-src="https://user-images.githubusercontent.com/83349532/144654379-a4476baf-8a22-45aa-8088-4f5e3fc7384b.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:640px;">
-
-  </video>
-  
-
+| <img src="/assets/img/screenshots/04.gif" height="500px"/> | <img src="/assets/img/screenshots/05.png" height="500px"/> | <img src="/assets/img/screenshots/06.gif" height="500px"/> |
+| <img src="/assets/img/screenshots/07.gif" height="500px"/> | <img src="/assets/img/screenshots/08.gif" height="500px"/> | <img src="/assets/img/screenshots/09.gif" height="500px"/> |
+| <video controls="controls" src="/assets/img/screenshots/13.mp4" preload="auto" height="500px"/> | <video controls="controls" src="/assets/img/screenshots/14.mp4" preload="auto" height="500px"/> | <video controls="controls" src="/assets/img/screenshots/15.mp4" preload="auto" height="500px"/> |
