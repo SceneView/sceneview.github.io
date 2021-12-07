@@ -12,10 +12,16 @@ table {
     empty-cells: hide;
     text-align: center;
 }
-.video { position: relative; }
 
-.video a {
-   position: absolute;
-   display: block;
-   background: url(/assets/icons/ic_play.png);
+.youtube {
+    position: relative;
+    display: inline-block;
+}
+.youtube:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: transparent url(/assets/img/icons/ic_play.png) center center no-repeat;
 }
