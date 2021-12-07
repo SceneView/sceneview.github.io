@@ -10,9 +10,9 @@ permalink: /apps/
 | - | - | - | - |
 | [ShareAR](https://play.google.com/store/apps/details?id=com.digitalmate.sharear) | [AR Environment Lights](https://play.google.com/store/apps/details?id=com.gorisse.thomas.ar.environmentlights) | [Netpipe](https://play.google.com/store/apps/details?id=com.netpipe.measure) | [JUL Officiel](https://play.google.com/store/apps/details?id=com.touticom.emoji.jul) | 
 
-| [![](/assets/img/icons/apps/05.png)](https://play.google.com/store/apps/details?id=com.digitalmate.imalab) | [![](/assets/img/icons/apps/06.png)](https://play.google.com/store/apps/details?id=com.digitalmate.togethher) |
-| - | - |
-| [LabIMA](https://play.google.com/store/apps/details?id=com.digitalmate.imalab) | [Togeth'Her](https://play.google.com/store/apps/details?id=com.digitalmate.togethher) |
+| [![](/assets/img/icons/apps/05.png)](https://play.google.com/store/apps/details?id=com.digitalmate.imalab) | [![](/assets/img/icons/apps/06.png)](https://play.google.com/store/apps/details?id=com.digitalmate.togethher) |  |  |
+| - | - | - | - |
+| [LabIMA](https://play.google.com/store/apps/details?id=com.digitalmate.imalab) | [Togeth'Her](https://play.google.com/store/apps/details?id=com.digitalmate.togethher) |  |  |
 
 ## Youtube
 
