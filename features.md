@@ -10,6 +10,10 @@ permalink: /features/
 
 ## Augmented Image
 
+<a class="youtube" href="http://youtube.com/watch?v=lJMD25qowRA">
+    <img src="http://i3.ytimg.com/vi/lJMD25qowRA/default.jpg" alt="" />
+</a>
+
 <div class="video">
     <img src="https://img.youtube.com/vi/lJMD25qowRA/hqdefault.jpg" />
     <a href="https://www.youtube.com/watch?v=">link to video</a>
