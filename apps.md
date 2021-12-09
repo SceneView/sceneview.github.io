@@ -26,4 +26,9 @@ permalink: /apps/
 | - | - | - |
 | <img src="/assets/img/screenshots/04.gif" height="500px"/> | <img src="/assets/img/screenshots/05.png" height="500px"/> | <img src="/assets/img/screenshots/06.gif" height="500px"/> |
 | <img src="/assets/img/screenshots/07.gif" height="500px"/> | <img src="/assets/img/screenshots/16.gif" height="500px"/> | <img src="/assets/img/screenshots/09.gif" height="500px"/> |
-| <video controls="controls" src="/assets/img/screenshots/13.mp4" preload="auto" height="500px"/> | <video controls="controls" src="/assets/img/screenshots/14.mp4" preload="auto" height="500px"/> | <video controls="controls" src="/assets/img/screenshots/15.mp4" preload="auto" height="500px"/> |
+
+## Screenrecords
+
+|   |   |   |
+| - | - | - |
+| <video controls="controls" src="/assets/img/screenshots/13.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/assets/img/screenshots/14.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/assets/img/screenshots/15.mp4" preload="auto" width="200px"/> |
