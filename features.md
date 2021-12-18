@@ -36,7 +36,7 @@ permalink: /features/
 
 ### Environment Lights
 
-<a class="youtube" href="http://youtube.com/watch?v=9QP43nOSItU">
-    <img src="https://img.youtube.com/vi/9QP43nOSItU/sddefault.jpg" alt="" />
+<a class="youtube" href="http://youtube.com/watch?v=jpmWjigA3Ms">
+    <img src="https://img.youtube.com/vi/jpmWjigA3Ms/sddefault.jpg" alt="" />
 </a>
 
