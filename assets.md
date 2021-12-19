@@ -6,18 +6,18 @@ permalink: /assets/
 
 ## Models
 
-- [/assets/models/MaterialSuite.glb]
-- [/assets/models/ClearCoat.glb]
-- [/assets/models/FiatPunto.glb]
-- [/assets/models/Spoons.glb]
-- [/assets/models/MetalRoughSpheres.glb]
-- [/assets/models/Hair.glb]
-- [/assets/models/Gumball.glb]
-- [/assets/models/GameBoy.glb]
-- [/assets/models/DamagedHelmet.glb]
+- [MaterialSuite.glb](/assets/models/MaterialSuite.glb)
+- [ClearCoat.glb](/assets/models/ClearCoat.glb)
+- [FiatPunto.glb](/assets/models/FiatPunto.glb)
+- [Spoons.glb](/assets/models/Spoons.glb)
+- [MetalRoughSpheres.glb](/assets/models/MetalRoughSpheres.glb)
+- [Hair.glb](/assets/models/Hair.glb)
+- [Gumball.glb](/assets/models/Gumball.glb)
+- [GameBoy.glb](/assets/models/GameBoy.glb)
+- [DamagedHelmet.glb](/assets/models/DamagedHelmet.glb)
 
 ## Environments
 
-- [/assets/environments/evening_meadow_2k.hdr]
-- [/assets/environments/flower_road_2k.hdr]
-- [/assets/environments/small_empty_house_2k_ibl.ktx]
+- [evening_meadow_2k.hdr](/assets/environments/evening_meadow_2k.hdr)
+- [flower_road_2k.hdr](/assets/environments/flower_road_2k.hdr)
+- [small_empty_house_2k_ibl.ktx](/assets/environments/small_empty_house_2k_ibl.ktx)
