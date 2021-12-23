@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Sponsoring
-permalink: /sponsoring/
+title: Contribute
+permalink: /contribute/
 ---
 
 ## Contributing to the SceneView Projects
