@@ -36,7 +36,7 @@ permalink: /apps/
 | - | - | - |
 | <img src="/assets/img/screenshots/04.gif" width="200px"/> | <img src="/assets/img/screenshots/05.png" width="200px"/> | <img src="/assets/img/screenshots/06.gif" width="200px"/> |
 | <img src="/assets/img/screenshots/07.gif" width="200px"/> | <img src="/assets/img/screenshots/09.gif" width="200px"/> | <img src="/assets/img/screenshots/10.gif" width="200px"/> |
-| <img src="/assets/img/screenshots/13.gif" width="200px"/> | <img src="/assets/img/screenshots/15.gif" width="200px"/> | <img src="/assets/img/screenshots/20.png" width="200px"/> |
+| <img src="/assets/img/screenshots/13.png" width="200px"/> | <img src="/assets/img/screenshots/14.gif" width="200px"/> | <img src="/assets/img/screenshots/15.gif" width="200px"/> |
 
 
 ## Screenrecords
