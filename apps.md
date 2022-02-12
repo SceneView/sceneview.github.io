@@ -22,7 +22,8 @@ permalink: /apps/
 | [![](https://yt-embed.herokuapp.com/embed?v=HQI48By3VBA)](https://www.youtube.com/watch?v=HQI48By3VBA) | [![](https://yt-embed.herokuapp.com/embed?v=jpmWjigA3Ms)](https://www.youtube.com/watch?v=jpmWjigA3Ms) |
 | [![](https://yt-embed.herokuapp.com/embed?v=9QP43nOSItU)](https://www.youtube.com/watch?v=9QP43nOSItU) | [![](https://yt-embed.herokuapp.com/embed?v=WD907MWDbzs)](https://www.youtube.com/watch?v=WD907MWDbzs) |
 | [![](https://yt-embed.herokuapp.com/embed?v=HXHyoAEF5bY)](https://www.youtube.com/watch?v=HXHyoAEF5bY) | [![Youtube Video 05](https://yt-embed.herokuapp.com/embed?v=LG8AWbsJxvY)](https://www.youtube.com/watch?v=LG8AWbsJxvY) |
-| [![](https://yt-embed.herokuapp.com/embed?v=LEmAX_DPsyU)](https://www.youtube.com/watch?v=LEmAX_DPsyU) | |
+| [![](https://yt-embed.herokuapp.com/embed?v=LEmAX_DPsyU)](https://www.youtube.com/watch?v=LEmAX_DPsyU) |
+| [![](https://yt-embed.herokuapp.com/embed?v=8FiN__o4dB8)](https://www.youtube.com/watch?v=8FiN__o4dB8) | |
 
 ## Screenshots
 
@@ -30,7 +31,7 @@ permalink: /apps/
 | - | - | - |
 | <img src="/assets/img/screenshots/04.gif" width="200px"/> | <img src="/assets/img/screenshots/05.png" width="200px"/> | <img src="/assets/img/screenshots/06.gif" width="200px"/> |
 | <img src="/assets/img/screenshots/07.gif" width="200px"/> | <img src="/assets/img/screenshots/09.gif" width="200px"/> | <img src="/assets/img/screenshots/10.gif" width="200px"/> |
-| <img src="/assets/img/screenshots/13.png" width="200px"/> | <img src="/assets/img/screenshots/14.gif" width="200px"/> | <img src="/assets/img/screenshots/15.gif" width="200px"/> |
+| <img src="/assets/img/screenshots/13.png" width="200px"/> | <img src="/assets/img/screenshots/14.gif" width="200px"/> | <img src="/assets/img/screenshots/15.gif" width="200px"/> | <img src="/assets/img/screenshots/20.gif" width="200px"/> |
 
 
 ## Screenrecords
