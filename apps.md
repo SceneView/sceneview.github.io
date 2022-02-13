@@ -24,6 +24,12 @@ permalink: /apps/
 | [![](https://yt-embed.herokuapp.com/embed?v=HXHyoAEF5bY)](https://www.youtube.com/watch?v=HXHyoAEF5bY) | [![Youtube Video 05](https://yt-embed.herokuapp.com/embed?v=LG8AWbsJxvY)](https://www.youtube.com/watch?v=LG8AWbsJxvY) |
 | [![](https://yt-embed.herokuapp.com/embed?v=LEmAX_DPsyU)](https://www.youtube.com/watch?v=LEmAX_DPsyU) | [![](https://yt-embed.herokuapp.com/embed?v=8FiN__o4dB8)](https://www.youtube.com/watch?v=8FiN__o4dB8) | |
 
+## Articles
+
+|   |   |
+| - | - |
+| [![](/assets/img/apps/23.png)](https://medium.com/make-an-android-ar-augmented-reality-app-for/make-an-ar-augmented-reality-app-for-android-in-2022-48a1711562bb) | [![](/assets/img/apps/22.png)](https://medium.com/@sarim.mehdi.550/sceneform-tutorial-how-to-detect-different-gestures-on-nodes-5dafb5709354)
+
 ## Screenshots
 
 |   |   |   |
