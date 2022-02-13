@@ -28,7 +28,8 @@ permalink: /apps/
 
 |   |   |
 | - | - |
-| [![](/assets/img/screenshots/22.png)](https://medium.com/make-an-android-ar-augmented-reality-app-for/make-an-ar-augmented-reality-app-for-android-in-2022-48a1711562bb) | [![](/assets/img/screenshots/21.png)](https://medium.com/@sarim.mehdi.550/sceneform-tutorial-how-to-detect-different-gestures-on-nodes-5dafb5709354) | |
+| [![](/assets/img/screenshots/22.png)](https://medium.com/make-an-android-ar-augmented-reality-app-for/make-an-ar-augmented-reality-app-for-android-in-2022-48a1711562bb) | [![](/assets/img/screenshots/21.png)](https://medium.com/@sarim.mehdi.550/sceneform-tutorial-how-to-detect-different-gestures-on-nodes-5dafb5709354) | 
+| [Create an Android AR application](https://medium.com/make-an-android-ar-augmented-reality-app-for/make-an-ar-augmented-reality-app-for-android-in-2022-48a1711562bb) | [Sceneform Tutorial: How to detect different gestures on Nodes](https://medium.com/@sarim.mehdi.550/sceneform-tutorial-how-to-detect-different-gestures-on-nodes-5dafb5709354) | |
 
 ## Screenshots
 
