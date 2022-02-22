@@ -15,6 +15,7 @@ permalink: /assets/
 - [Gumball.glb](/assets/models/Gumball.glb)
 - [GameBoy.glb](/assets/models/GameBoy.glb)
 - [DamagedHelmet.glb](/assets/models/DamagedHelmet.glb)
+- [Halloween.glb](/assets/models/Halloween.glb)
 
 ## Environments
 

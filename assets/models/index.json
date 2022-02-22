@@ -49,4 +49,9 @@
     "url": "DamagedHelmet.glb",
     "scale": 0.5
   }
+  {
+    "name": "Halloween",
+    "url": "Halloween.glb",
+    "scale": 1
+  }
 ]
