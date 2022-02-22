@@ -21,4 +21,4 @@ layout: home
 | - | - | - |
 | [![Logo Sber](/assets/img/sponsors/sber.png)](https://sbercode.tech/arvr-lab/) |  [![Logo Megaverse](/assets/img/sponsors/megaverse.png)](https://www.megaverse.co/) | |
 
-[Become a Sponsor / Contributor](/contribute)
+[Become a Sponsor / Contribute](/contribute)
