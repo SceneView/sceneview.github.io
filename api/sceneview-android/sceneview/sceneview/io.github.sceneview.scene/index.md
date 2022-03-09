@@ -1,0 +1,21 @@
+//[sceneview](../../index.md)/[io.github.sceneview.scene](index.md)
+
+# Package io.github.sceneview.scene
+
+## Functions
+
+| Name | Summary |
+|---|---|
+| [destroy](destroy.md) | [androidJvm]<br>fun Camera.[destroy](destroy.md)()<br>Destroys the Camera component associated with the camera entity. |
+| [illuminance](illuminance.md) | [androidJvm]<br>fun Camera.[illuminance](illuminance.md)(ev100: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [luminance](luminance.md) | [androidJvm]<br>fun Camera.[luminance](luminance.md)(ev100: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [setEnvironment](set-environment.md) | [androidJvm]<br>fun Scene.[setEnvironment](set-environment.md)(environment: [Environment](../io.github.sceneview.environment/-environment/index.md)?)<br>Environments are usually captured as high-resolution HDR equirectangular images and processed by the cmgen tool to generate the data needed by IndirectLight. |
+
+## Properties
+
+| Name | Summary |
+|---|---|
+| [ev100](ev100.md) | [androidJvm]<br>val Camera.[ev100](ev100.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>Exposure value (EV) is a number that represents a combination of a camera's shutter speed and f-number, such that all combinations that yield the same exposure have the same EV (for any fixed scene luminance) |
+| [exposureFactor](exposure-factor.md) | [androidJvm]<br>val Camera.[exposureFactor](exposure-factor.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>Calculate a unit-less intensity scale from the actual Filament camera settings |
+| [illuminance](illuminance.md) | [androidJvm]<br>val Camera.[illuminance](illuminance.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [luminance](luminance.md) | [androidJvm]<br>val Camera.[luminance](luminance.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |

@@ -1,0 +1,10 @@
+//[arsceneview](../../../../index.md)/[com.google.ar.sceneform.ux](../../index.md)/[VideoNode](../index.md)/[Vertical](index.md)/[Vertical](-vertical.md)
+
+# Vertical
+
+[androidJvm]\
+open fun [Vertical](-vertical.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), player: [MediaPlayer](https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)listener: [VideoNode.Listener](../-listener/index.md))
+
+open fun [Vertical](-vertical.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), player: [MediaPlayer](https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)chromaKeyColor: [Color](../../../../../arsceneview/com.google.ar.sceneform.rendering/-color/index.md), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)listener: [VideoNode.Listener](../-listener/index.md))
+
+open fun [Vertical](-vertical.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), player: [MediaPlayer](https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)chromaKeyColor: [Color](../../../../../arsceneview/com.google.ar.sceneform.rendering/-color/index.md), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)texture: [ExternalTexture](../../../../../arsceneview/com.google.ar.sceneform.rendering/-external-texture/index.md), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)listener: [VideoNode.Listener](../-listener/index.md))
