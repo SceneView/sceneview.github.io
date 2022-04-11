@@ -3,7 +3,7 @@
 # worldPosition
 
 [androidJvm]\
-open val [worldPosition](world-position.md): [Position](../../io.github.sceneview.math/index.md#945960193%2FClasslikes%2F-1571379623)
+open var [worldPosition](world-position.md): [Position](../../io.github.sceneview.math/index.md#945960193%2FClasslikes%2F-1571379623)
 
 ###  The node world-space position
 

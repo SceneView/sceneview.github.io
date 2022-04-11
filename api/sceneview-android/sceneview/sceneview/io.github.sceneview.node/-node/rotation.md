@@ -13,6 +13,8 @@ The three-component rotation vector specifies the direction of the rotation axis
 
 The default rotation is the zero vector, specifying no rotation. Rotation is applied relative to the node's origin property.
 
+Note that modifying the individual components of the returned rotation doesn't have any effect.
+
 ------- +y ----- -z
 
 ---------|----/----

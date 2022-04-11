@@ -3,11 +3,11 @@
 # PlaneRendererMode
 
 [androidJvm]\
-enum [PlaneRendererMode](index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[PlaneRenderer.PlaneRendererMode](index.md)&gt; <pre>
+enum [PlaneRendererMode](index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[PlaneRenderer.PlaneRendererMode](index.md)&gt; 
+
 Use this enum to configure the Plane Rendering.
 
-For performance reasons use `RENDER_TOP_MOST`.
-</pre> *
+For performance reasons use RENDER_TOP_MOST.
 
 ## Entries
 

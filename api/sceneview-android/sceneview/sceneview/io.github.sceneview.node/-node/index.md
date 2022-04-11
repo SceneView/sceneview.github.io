@@ -104,9 +104,10 @@ Each node can have an arbitrary number of child nodes and one parent. The parent
 | [smoothSpeed](smooth-speed.md) | [androidJvm]<br>var [smoothSpeed](smooth-speed.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 5.0f<br>Expressed in units per seconds. On an AR context, 1 unit = 1 meter. So, for position, this value defines the meters per seconds for a node move. This value is used by [smooth](smooth.md) |
 | [transform](transform.md) | [androidJvm]<br>open var [transform](transform.md): [Transform](../../io.github.sceneview.math/index.md#1875660684%2FClasslikes%2F-1571379623) |
 | [transformationMatrixInverted](transformation-matrix-inverted.md) | [androidJvm]<br>open val [transformationMatrixInverted](transformation-matrix-inverted.md): [Matrix](../../com.google.ar.sceneform.math/-matrix/index.md) |
-| [worldPosition](world-position.md) | [androidJvm]<br>open val [worldPosition](world-position.md): [Position](../../io.github.sceneview.math/index.md#945960193%2FClasslikes%2F-1571379623)<br>The world position of this node (i.e. relative to the [SceneView](../../io.github.sceneview/-scene-view/index.md)). This is the composition of this component's local position with its parent's world position. |
-| [worldRotation](world-rotation.md) | [androidJvm]<br>open val [worldRotation](world-rotation.md): [Rotation](../../io.github.sceneview.math/index.md#1133844556%2FClasslikes%2F-1571379623)<br>The world rotation of this node (i.e. relative to the [SceneView](../../io.github.sceneview/-scene-view/index.md)). This is the composition of this component's local rotation with its parent's world rotation. |
-| [worldScale](world-scale.md) | [androidJvm]<br>open val [worldScale](world-scale.md): [Scale](../../io.github.sceneview.math/index.md#2055938798%2FClasslikes%2F-1571379623)<br>The world scale of this node (i.e. relative to the [SceneView](../../io.github.sceneview/-scene-view/index.md)). This is the composition of this component's local scale with its parent's world scale. |
+| [worldPosition](world-position.md) | [androidJvm]<br>open var [worldPosition](world-position.md): [Position](../../io.github.sceneview.math/index.md#945960193%2FClasslikes%2F-1571379623)<br>The world position of this node (i.e. relative to the [SceneView](../../io.github.sceneview/-scene-view/index.md)). This is the composition of this component's local position with its parent's world position. |
+| [worldQuaternion](world-quaternion.md) | [androidJvm]<br>open var [worldQuaternion](world-quaternion.md): [Quaternion](../../dev.romainguy.kotlin.math/-quaternion/index.md)<br>The world quaternion of this node (i.e. relative to the [SceneView](../../io.github.sceneview/-scene-view/index.md)). This is the composition of this component's local quaternion with its parent's world quaternion. |
+| [worldRotation](world-rotation.md) | [androidJvm]<br>open var [worldRotation](world-rotation.md): [Rotation](../../io.github.sceneview.math/index.md#1133844556%2FClasslikes%2F-1571379623)<br>The world rotation of this node (i.e. relative to the [SceneView](../../io.github.sceneview/-scene-view/index.md)). This is the composition of this component's local rotation with its parent's world rotation. |
+| [worldScale](world-scale.md) | [androidJvm]<br>open var [worldScale](world-scale.md): [Scale](../../io.github.sceneview.math/index.md#2055938798%2FClasslikes%2F-1571379623)<br>The world scale of this node (i.e. relative to the [SceneView](../../io.github.sceneview/-scene-view/index.md)). This is the composition of this component's local scale with its parent's world scale. |
 | [worldTransform](world-transform.md) | [androidJvm]<br>open val [worldTransform](world-transform.md): [Mat4](../../dev.romainguy.kotlin.math/-mat4/index.md) |
 
 ## Inheritors
@@ -114,7 +115,6 @@ Each node can have an arbitrary number of child nodes and one parent. The parent
 | Name |
 |---|
 | [Camera](../../com.google.ar.sceneform/-camera/index.md) |
-| [BaseTransformableNode](../../com.google.ar.sceneform.ux/-base-transformable-node/index.md) |
 | [LightNode](../-light-node/index.md) |
 | [ModelNode](../-model-node/index.md) |
 | [ViewNode](../-view-node/index.md) |

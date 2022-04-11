@@ -6,7 +6,7 @@
 
 @[JvmOverloads](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html)
 
-suspend fun HDRLoader.[loadEnvironment](load-environment.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), hdrFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), specularFilter: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = defaultSpecularFilter): [HDREnvironment](-h-d-r-environment/index.md)?
+suspend fun HDRLoader.[loadEnvironment](load-environment.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), hdrFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), specularFilter: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = defaultSpecularFilter, createSkybox: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = defaultCreateSkybox): [HDREnvironment](-h-d-r-environment/index.md)?
 
 ###  Utility for decoding and producing environment resources from an HDR file
 

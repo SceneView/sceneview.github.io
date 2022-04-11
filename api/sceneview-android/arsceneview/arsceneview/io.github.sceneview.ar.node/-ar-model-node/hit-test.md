@@ -3,7 +3,7 @@
 # hitTest
 
 [androidJvm]\
-fun [hitTest](hit-test.md)(frame: [ArFrame](../../io.github.sceneview.ar.arcore/-ar-frame/index.md)? = session?.currentFrame, xPx: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = (session?.displayWidth ?: 0) / 2.0f * (1.0f + placementPosition.x), yPx: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = (session?.displayHeight ?: 0) / 2.0f * (1.0f - placementPosition.y), approximateDistanceMeters: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = kotlin.math.abs(placementPosition.z), plane: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = placementMode.planeEnabled, depth: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = placementMode.depthEnabled, instantPlacement: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = placementMode.instantPlacementEnabled): HitResult?
+fun [hitTest](hit-test.md)(frame: [ArFrame](../../io.github.sceneview.ar.arcore/-ar-frame/index.md)? = arSession?.currentFrame, approximateDistanceMeters: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = abs(placementPosition.z), plane: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = placementMode.planeEnabled, depth: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = placementMode.depthEnabled, instantPlacement: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = placementMode.instantPlacementEnabled): HitResult?
 
 ###  Performs a ray cast to retrieve the ARCore info at this camera point
 

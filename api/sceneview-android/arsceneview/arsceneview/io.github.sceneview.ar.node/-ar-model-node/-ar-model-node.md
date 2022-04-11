@@ -13,7 +13,7 @@ androidJvm
 
 | | |
 |---|---|
-| placementMode | See [ArModelNode.placementMode](placement-mode.md) |
+| placementMode | See [ArModelNode.placementMode](../../../../arsceneview/io.github.sceneview.ar.node/-ar-model-node/placement-mode.md) |
 | autoAnchor | See [ArModelNode.autoAnchor](auto-anchor.md) |
 | placementPosition | See [ArModelNode.placementPosition](placement-position.md) |
 

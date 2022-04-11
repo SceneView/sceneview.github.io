@@ -5,4 +5,4 @@
 [androidJvm]\
 var [materialInstance](material-instance.md): MaterialInstance? = null
 
-Returns default material instance used to render the planes.
+Default material instance used to render the planes.

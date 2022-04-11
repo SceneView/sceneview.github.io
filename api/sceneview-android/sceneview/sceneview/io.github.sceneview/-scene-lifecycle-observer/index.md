@@ -22,4 +22,5 @@ interface [SceneLifecycleObserver](index.md) : [DefaultLifecycleObserver](https:
 
 | Name |
 |---|
+| [SelectedNodeVisualizer](../../io.github.sceneview.interaction/-selected-node-visualizer/index.md) |
 | [Node](../../io.github.sceneview.node/-node/index.md) |

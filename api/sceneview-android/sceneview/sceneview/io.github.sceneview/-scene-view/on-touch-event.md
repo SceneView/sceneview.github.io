@@ -6,23 +6,7 @@
 open override fun [onTouchEvent](on-touch-event.md)(motionEvent: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
 [androidJvm]\
-open fun [onTouchEvent](on-touch-event.md)(pickHitResult: [PickHitResult](../../com.google.ar.sceneform/-pick-hit-result/index.md), motionEvent: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html))
-
-###  Invoked when the scene is touched.
-
-Called even if the touch is not over a node, in which case [PickHitResult.getNode](../../../../arsceneview/com.google.ar.sceneform/-pick-hit-result/get-node.md) will be null.
-
-## Parameters
-
-androidJvm
-
-| | |
-|---|---|
-| pickHitResult | represents the node that was touched |
-| motionEvent | the motion event |
-
-[androidJvm]\
-var [onTouchEvent](on-touch-event.md): (pickHitResult: [PickHitResult](../../com.google.ar.sceneform/-pick-hit-result/index.md), motionEvent: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)) -&gt; [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)? = null
+var [onTouchEvent](on-touch-event.md): (selectedNode: [Node](../../io.github.sceneview.node/-node/index.md)?, motionEvent: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)) -&gt; [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)? = null
 
 ###  Register a callback to be invoked when the scene is touched.
 

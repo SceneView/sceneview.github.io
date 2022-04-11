@@ -8,4 +8,4 @@ fun [checkCameraPermission](check-camera-permission.md)(context: [Context](https
 [androidJvm]\
 var [checkCameraPermission](check-camera-permission.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true
 
-//TODO: Doc
+###  Enable/Disable the auto camera permission check

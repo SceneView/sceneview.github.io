@@ -3,7 +3,7 @@
 # loadEnvironmentAsync
 
 [androidJvm]\
-fun HDRLoader.[loadEnvironmentAsync](load-environment-async.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), hdrFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), specularFilter: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = defaultSpecularFilter, coroutineScope: [LifecycleCoroutineScope](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleCoroutineScope.html), result: ([HDREnvironment](-h-d-r-environment/index.md)?) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)): Job
+fun HDRLoader.[loadEnvironmentAsync](load-environment-async.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), hdrFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), specularFilter: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = defaultSpecularFilter, createSkybox: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = defaultCreateSkybox, coroutineScope: [LifecycleCoroutineScope](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleCoroutineScope.html), result: ([HDREnvironment](-h-d-r-environment/index.md)?) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)): Job
 
 ###  Utility for decoding and producing environment resources from an HDR file
 

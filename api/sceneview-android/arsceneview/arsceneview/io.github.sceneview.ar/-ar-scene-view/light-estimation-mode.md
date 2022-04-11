@@ -15,19 +15,14 @@ Reflective surfaces also pick up colors from the ambient environment. The colori
 
 The main directional light API calculates the direction and intensity of the scene's main light source. This information allows virtual objects in your scene to show reasonably positioned specular highlights, and to cast shadows in a direction consistent with other visible real objects.
 
-LightEstimationConfig.SPECTACULAR vs LightEstimationConfig.REALISTIC mostly differs on the reflections parts and you will mainly only see differences if your model has more metallic than roughness material values.
-
-Adjust the based reference/factored lighting intensities and other values with:
-
-- 
-   [io.github.sceneview.ar.ArSceneView.mainLight](../../../../arsceneview/io.github.sceneview.ar/-ar-scene-view/main-light.md)
-- 
-   [io.github.sceneview.ar.ArSceneView.environment](../../../../sceneview/sceneview/io.github.sceneview.environment/-environment/indirect-light.md)
-
 ## See also
 
 androidJvm
 
 | | |
 |---|---|
-| [io.github.sceneview.ar.arcore.LightEstimationMode.Companion](../../io.github.sceneview.ar.arcore/-light-estimation-mode/-companion/-d-i-s-a-b-l-e-d.md) |  |
+| [io.github.sceneview.ar.arcore.LightEstimationMode.ENVIRONMENTAL_HDR](../../io.github.sceneview.ar.arcore/-light-estimation-mode/-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r/index.md) |  |
+| [io.github.sceneview.ar.arcore.LightEstimationMode.ENVIRONMENTAL_HDR_NO_REFLECTIONS](../../io.github.sceneview.ar.arcore/-light-estimation-mode/-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r_-n-o_-r-e-f-l-e-c-t-i-o-n-s/index.md) |  |
+| [io.github.sceneview.ar.arcore.LightEstimationMode.ENVIRONMENTAL_HDR_FAKE_REFLECTIONS](../../io.github.sceneview.ar.arcore/-light-estimation-mode/-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r_-f-a-k-e_-r-e-f-l-e-c-t-i-o-n-s/index.md) |  |
+| [io.github.sceneview.ar.arcore.LightEstimationMode.AMBIENT_INTENSITY](../../io.github.sceneview.ar.arcore/-light-estimation-mode/-a-m-b-i-e-n-t_-i-n-t-e-n-s-i-t-y/index.md) |  |
+| [io.github.sceneview.ar.arcore.LightEstimationMode.DISABLED](../../io.github.sceneview.ar.arcore/-light-estimation-mode/-d-i-s-a-b-l-e-d/index.md) |  |

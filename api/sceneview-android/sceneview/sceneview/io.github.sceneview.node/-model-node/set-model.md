@@ -18,4 +18,4 @@ androidJvm
 |---|---|
 | autoAnimate | Plays the animations automatically if the model has one |
 | autoScale | Scale the model to fit a unit cube |
-| centerOrigin | Center the model origin to this unit cube position<br>-     null = Keep the original model center point -     (0, -1, 0) = Center the model horizontally and vertically -     (0, -1, 0) = center horizontal | bottom aligned -     (-1, 1, 0) = left | top aligned -     ... |
+| centerOrigin | Center the model origin to this unit cube position<br>-     null = Keep the original model center point -     Position(x = 0.0f, y = 0.0f, z = 0.0f) = Center the model horizontally and vertically -     Position(x = 0.0f, y = -1.0f, z = 0.0f) = center horizontal | bottom aligned -     Position(x = -1.0f, y = 1.0f, z = 0.0f) = left | top aligned -     ... |

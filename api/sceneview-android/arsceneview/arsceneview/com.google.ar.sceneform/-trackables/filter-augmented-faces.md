@@ -3,7 +3,7 @@
 # filterAugmentedFaces
 
 [androidJvm]\
-open fun &lt;[T](filter-augmented-faces.md) : Trackable?&gt; [filterAugmentedFaces](filter-augmented-faces.md)(trackables: [Stream](https://developer.android.com/reference/kotlin/java/util/stream/Stream.html)&lt;[T](https://developer.android.com/reference/kotlin/java/lang/Enum.html#valueof)&gt;, @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)trackingState: TrackingState): [Stream](https://developer.android.com/reference/kotlin/java/util/stream/Stream.html)&lt;AugmentedFace&gt;
+open fun &lt;[T](filter-augmented-faces.md) : Trackable?&gt; [filterAugmentedFaces](filter-augmented-faces.md)(trackables: [Stream](https://developer.android.com/reference/kotlin/java/util/stream/Stream.html)&lt;[T](../../../../arsceneview/com.google.ar.sceneform.ux/-augmented-face-node/check-not-null.md)&gt;, @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)trackingState: TrackingState): [Stream](https://developer.android.com/reference/kotlin/java/util/stream/Stream.html)&lt;AugmentedFace&gt;
 
 Retrieve a filtered stream containing the Augmented Faces with the specified TrackingState and TrackingMethod
 

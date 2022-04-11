@@ -17,5 +17,4 @@
 | Name | Summary |
 |---|---|
 | [defaultIbl](default-ibl.md) | [androidJvm]<br>const val [defaultIbl](default-ibl.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [defaultNodeSelector](default-node-selector.md) | [androidJvm]<br>const val [defaultNodeSelector](default-node-selector.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [defaultSkybox](default-skybox.md) | [androidJvm]<br>const val [defaultSkybox](default-skybox.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |

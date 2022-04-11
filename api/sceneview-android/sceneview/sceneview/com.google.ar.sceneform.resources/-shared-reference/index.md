@@ -18,5 +18,5 @@ Used for managing memory of shared object using reference counting.
 
 | Name |
 |---|
-| [MaterialInternalData](../../com.google.ar.sceneform.rendering/-material-internal-data/index.md) |
 | [TextureInternalData](../../com.google.ar.sceneform.rendering/-texture-internal-data/index.md) |
+| [MaterialInternalData](../../com.google.ar.sceneform.rendering/-material-internal-data/index.md) |

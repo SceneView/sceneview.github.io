@@ -3,7 +3,7 @@
 # worldRotation
 
 [androidJvm]\
-open val [worldRotation](world-rotation.md): [Rotation](../../io.github.sceneview.math/index.md#1133844556%2FClasslikes%2F-1571379623)
+open var [worldRotation](world-rotation.md): [Rotation](../../io.github.sceneview.math/index.md#1133844556%2FClasslikes%2F-1571379623)
 
 ###  The node world-space rotation
 
