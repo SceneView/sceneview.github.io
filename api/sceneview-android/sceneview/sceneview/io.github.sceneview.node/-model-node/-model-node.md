@@ -21,6 +21,6 @@ androidJvm
 | scale | See [Node.scale](../-node/scale.md) |
 
 [androidJvm]\
-fun [ModelNode](-model-node.md)(renderableInstance: [RenderableInstance](../../com.google.ar.sceneform.rendering/-renderable-instance/index.md))
+fun [ModelNode](-model-node.md)(modelInstance: [RenderableInstance](../../com.google.ar.sceneform.rendering/-renderable-instance/index.md))
 
 TODO : Doc

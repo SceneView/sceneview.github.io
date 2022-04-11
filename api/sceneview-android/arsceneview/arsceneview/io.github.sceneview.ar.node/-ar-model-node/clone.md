@@ -3,4 +3,6 @@
 # clone
 
 [androidJvm]\
-open override fun [clone](clone.md)(): [ModelNode](../../../../sceneview/sceneview/io.github.sceneview.node/-model-node/index.md)
+open override fun [clone](clone.md)(): [ArModelNode](index.md)
+
+###  Gets the world-space down direction vector (-y) of this node

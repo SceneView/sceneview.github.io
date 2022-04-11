@@ -26,7 +26,7 @@ androidJvm
 
 | Name | Summary |
 |---|---|
-| [fps](fps.md) | [androidJvm]<br>fun [fps](fps.md)(lastNanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)?): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html) |
+| [fps](fps.md) | [androidJvm]<br>fun [fps](fps.md)(frameTime: [FrameTime](index.md)?): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html)<br>fun [fps](fps.md)(lastNanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)?): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html) |
 | [interval](interval.md) | [androidJvm]<br>fun [interval](interval.md)(lastNanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)?): [Duration](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-duration/index.html) |
 | [intervalSeconds](interval-seconds.md) | [androidJvm]<br>fun [intervalSeconds](interval-seconds.md)(lastNanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)?): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html) |
 

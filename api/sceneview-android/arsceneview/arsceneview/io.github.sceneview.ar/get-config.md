@@ -5,4 +5,4 @@
 [androidJvm]\
 ~~fun~~ Session~~.~~[~~getConfig~~](get-config.md)~~(~~~~)~~~~:~~ Config
 
-##  Deprecated: Use [ArSceneView.sessionConfig](../../../arsceneview/io.github.sceneview.ar/-ar-scene-view/session-config.md)
+##  Deprecated: Use [ArSceneView.arSessionConfig](../../../arsceneview/io.github.sceneview.ar/-ar-scene-view/ar-session-config.md)

@@ -3,13 +3,7 @@
 # ArSession
 
 [androidJvm]\
-class [ArSession](index.md)(cameraTextureId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), features: [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt;, config: (Config) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)) : Session, [ArSceneLifecycleObserver](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)
-
-## Types
-
-| Name | Summary |
-|---|---|
-| [Companion](-companion/index.md) | [androidJvm]<br>object [Companion](-companion/index.md) |
+class [ArSession](index.md)(cameraTextureId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), features: [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt;) : Session, [ArSceneLifecycleObserver](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)
 
 ## Functions
 
@@ -79,6 +73,7 @@ class [ArSession](index.md)(cameraTextureId: [Int](https://kotlinlang.org/api/la
 | [allTrackables](all-trackables.md) | [androidJvm]<br>var [allTrackables](all-trackables.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;Trackable&gt; |
 | [approximateDistanceMeters](approximate-distance-meters.md) | [androidJvm]<br>val [approximateDistanceMeters](approximate-distance-meters.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>This is only used while the tracking method for the returned point is InstantPlacementPoint.TrackingMethod#SCREENSPACE_WITH_APPROXIMATE_DISTANCE. |
 | [cameraTextureId](camera-texture-id.md) | [androidJvm]<br>val [cameraTextureId](camera-texture-id.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [cloudAnchorEnabled](cloud-anchor-enabled.md) | [androidJvm]<br>var [cloudAnchorEnabled](cloud-anchor-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [currentFrame](current-frame.md) | [androidJvm]<br>var [currentFrame](current-frame.md): [ArFrame](../-ar-frame/index.md)? = null<br>The frame is updated at the beginning of each drawing frame. Callers of this method should not retain a reference to the return value, since it will be invalid to use the ARCore frame starting with the next frame. |
 | [depthEnabled](depth-enabled.md) | [androidJvm]<br>var [depthEnabled](depth-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [display](display.md) | [androidJvm]<br>val [display](display.md): [Display](https://developer.android.com/reference/kotlin/android/view/Display.html) |
@@ -97,7 +92,7 @@ class [ArSession](index.md)(cameraTextureId: [Int](https://kotlinlang.org/api/la
 | [isTrackingAugmentedImage](is-tracking-augmented-image.md) | [androidJvm]<br>val [isTrackingAugmentedImage](is-tracking-augmented-image.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [isTrackingPlane](is-tracking-plane.md) | [androidJvm]<br>val [isTrackingPlane](is-tracking-plane.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [lifecycle](lifecycle.md) | [androidJvm]<br>val [lifecycle](lifecycle.md): [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md) |
-| [lightEstimationMode](light-estimation-mode.md) | [androidJvm]<br>var [lightEstimationMode](light-estimation-mode.md): [LightEstimationMode](../-light-estimation-mode/index.md)<br>ARCore estimate lighting to provide directional light, ambient spherical harmonics, and reflection cubemap estimation |
+| [lightEstimationMode](light-estimation-mode.md) | [androidJvm]<br>var [lightEstimationMode](light-estimation-mode.md): Config.LightEstimationMode<br>These modes consist of separate APIs that allow for granular and realistic lighting estimation for directional lighting, shadows, specular highlights, and reflections. |
 | [nativeSymbolTableHandle](index.md#1089935786%2FProperties%2F-58641720) | [androidJvm]<br>val [nativeSymbolTableHandle](index.md#1089935786%2FProperties%2F-58641720): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) |
 | [nativeWrapperHandle](index.md#-1217415155%2FProperties%2F-58641720) | [androidJvm]<br>val [nativeWrapperHandle](index.md#-1217415155%2FProperties%2F-58641720): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) |
 | [planeFindingEnabled](plane-finding-enabled.md) | [androidJvm]<br>var [planeFindingEnabled](plane-finding-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |

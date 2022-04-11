@@ -3,7 +3,7 @@
 # worldScale
 
 [androidJvm]\
-open val [worldScale](world-scale.md): [Scale](../../io.github.sceneview.math/index.md#2055938798%2FClasslikes%2F-1571379623)
+open var [worldScale](world-scale.md): [Scale](../../io.github.sceneview.math/index.md#2055938798%2FClasslikes%2F-1571379623)
 
 ###  The node world-space scale
 

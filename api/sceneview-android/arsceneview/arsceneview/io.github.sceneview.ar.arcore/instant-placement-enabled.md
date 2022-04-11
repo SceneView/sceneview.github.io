@@ -4,5 +4,3 @@
 
 [androidJvm]\
 var Config.[instantPlacementEnabled](instant-placement-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
-
-TODO : Doc

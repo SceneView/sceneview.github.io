@@ -3,7 +3,7 @@
 # LightEstimationMode
 
 [androidJvm]\
-data class [LightEstimationMode](index.md)@[JvmOverloads](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html)constructor(sessionConfigMode: Config.LightEstimationMode, environmentalHdrReflections: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), environmentalHdrSphericalHarmonics: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), environmentalHdrSpecularFilter: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), environmentalHdrMainLightDirection: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), environmentalHdrMainLightIntensity: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
+enum [LightEstimationMode](index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[LightEstimationMode](index.md)&gt; 
 
 ###  ARCore light estimation configuration
 
@@ -15,38 +15,20 @@ Reflective surfaces also pick up colors from the ambient environment. The colori
 
 The main directional light API calculates the direction and intensity of the scene's main light source. This information allows virtual objects in your scene to show reasonably positioned specular highlights, and to cast shadows in a direction consistent with other visible real objects.
 
-## Parameters
-
-androidJvm
+## Entries
 
 | | |
 |---|---|
-| sessionConfigMode |  The behavior of the lighting estimation subsystem.<br>These modes consist of separate APIs that allow for granular and realistic lighting estimation for directional lighting, shadows, specular highlights, and reflections. |
-| environmentalHdrReflections |  Enable reflection cubemap<br>-     true if the AR Core reflection cubemap should be used -     false for using the default/static/fake environment reflections<br>Use the HDR cubemap to render realistic reflections on virtual objects with medium to high glossiness, such as shiny metallic surfaces. The cubemap also affects the shading and appearance of objects. For example, the material of a specular object surrounded by a blue environment will reflect blue hues. Calculating the HDR cubemap requires a small amount of additional CPU computation. |
-| environmentalHdrSphericalHarmonics |  Ambient spherical harmonics<br>In addition to the light energy in the main directional light, ARCore provides spherical harmonics, representing the overall ambient light coming in from all directions in the scene. Add subtle cues that bring out the definition of virtual objects. |
-| environmentalHdrSpecularFilter |  SpecularFilter applies a filter based on the BRDF<br>used for lighting<br>Specular highlights are the shiny bits of surfaces that reflect a light source directly. Highlights on an object change relative to the position of a viewer in a scene.<br>true = Reduce the amount of reflectivity a surface has. It is a key component in determining the brightness of specular highlights, along with shininess to determine the size of the highlights. |
-| environmentalHdrMainLightDirection |  Move the directional light<br>When the main light source or a lit object is in motion, the specular highlight on the object adjusts its position in real time relative to the light source.<br>Directional shadows also adjust their length and direction relative to the position of the main light source, just as they do in the real world. |
-| environmentalHdrMainLightIntensity |  Modulate the main directional light (sun) intensity |
-
-## Constructors
-
-| | |
-|---|---|
-| [LightEstimationMode](-light-estimation-mode.md) | [androidJvm]<br>@[JvmOverloads](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html)<br>fun [LightEstimationMode](-light-estimation-mode.md)(sessionConfigMode: Config.LightEstimationMode = Config.LightEstimationMode.ENVIRONMENTAL_HDR, environmentalHdrReflections: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true, environmentalHdrSphericalHarmonics: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true, environmentalHdrSpecularFilter: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true, environmentalHdrMainLightDirection: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true, environmentalHdrMainLightIntensity: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true) |
-
-## Types
-
-| Name | Summary |
-|---|---|
-| [Companion](-companion/index.md) | [androidJvm]<br>object [Companion](-companion/index.md) |
+| [DISABLED](-d-i-s-a-b-l-e-d/index.md) | [androidJvm]<br>[DISABLED](-d-i-s-a-b-l-e-d/index.md)()<br>The reflected environment will the default one or the one defined by [SceneView.environment](../../io.github.sceneview.ar/-ar-scene-view/index.md#-769674583%2FProperties%2F-58641720) |
+| [AMBIENT_INTENSITY](-a-m-b-i-e-n-t_-i-n-t-e-n-s-i-t-y/index.md) | [androidJvm]<br>[AMBIENT_INTENSITY](-a-m-b-i-e-n-t_-i-n-t-e-n-s-i-t-y/index.md)()<br>Use this mode if you only want to apply ARCore lights colors and intensity |
+| [ENVIRONMENTAL_HDR_NO_REFLECTIONS](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r_-n-o_-r-e-f-l-e-c-t-i-o-n-s/index.md) | [androidJvm]<br>[ENVIRONMENTAL_HDR_NO_REFLECTIONS](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r_-n-o_-r-e-f-l-e-c-t-i-o-n-s/index.md)()<br>The environmentalHdrReflections will be false and the SceneView default static environment will also not be used (defaultEnvironmentReflections is false) |
+| [ENVIRONMENTAL_HDR_FAKE_REFLECTIONS](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r_-f-a-k-e_-r-e-f-l-e-c-t-i-o-n-s/index.md) | [androidJvm]<br>[ENVIRONMENTAL_HDR_FAKE_REFLECTIONS](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r_-f-a-k-e_-r-e-f-l-e-c-t-i-o-n-s/index.md)()<br>The environmentalHdrReflections will be false and the SceneView default static environment will be rendered on reflective objects |
+| [ENVIRONMENTAL_HDR](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r/index.md) | [androidJvm]<br>[ENVIRONMENTAL_HDR](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r/index.md)(0.3f)<br>Use this mode if you want your objects to be more like if they where real. |
 
 ## Properties
 
 | Name | Summary |
 |---|---|
-| [environmentalHdrMainLightDirection](environmental-hdr-main-light-direction.md) | [androidJvm]<br>val [environmentalHdrMainLightDirection](environmental-hdr-main-light-direction.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
-| [environmentalHdrMainLightIntensity](environmental-hdr-main-light-intensity.md) | [androidJvm]<br>val [environmentalHdrMainLightIntensity](environmental-hdr-main-light-intensity.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
-| [environmentalHdrReflections](environmental-hdr-reflections.md) | [androidJvm]<br>val [environmentalHdrReflections](environmental-hdr-reflections.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
-| [environmentalHdrSpecularFilter](environmental-hdr-specular-filter.md) | [androidJvm]<br>val [environmentalHdrSpecularFilter](environmental-hdr-specular-filter.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
-| [environmentalHdrSphericalHarmonics](environmental-hdr-spherical-harmonics.md) | [androidJvm]<br>val [environmentalHdrSphericalHarmonics](environmental-hdr-spherical-harmonics.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
-| [sessionConfigMode](session-config-mode.md) | [androidJvm]<br>val [sessionConfigMode](session-config-mode.md): Config.LightEstimationMode |
+| [name](../../io.github.sceneview.ar.scene/-plane-renderer/-plane-renderer-mode/-r-e-n-d-e-r_-a-l-l/index.md#-372974862%2FProperties%2F-58641720) | [androidJvm]<br>val [name](../../io.github.sceneview.ar.scene/-plane-renderer/-plane-renderer-mode/-r-e-n-d-e-r_-a-l-l/index.md#-372974862%2FProperties%2F-58641720): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [ordinal](../../io.github.sceneview.ar.scene/-plane-renderer/-plane-renderer-mode/-r-e-n-d-e-r_-a-l-l/index.md#-739389684%2FProperties%2F-58641720) | [androidJvm]<br>val [ordinal](../../io.github.sceneview.ar.scene/-plane-renderer/-plane-renderer-mode/-r-e-n-d-e-r_-a-l-l/index.md#-739389684%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [precision](precision.md) | [androidJvm]<br>val [precision](precision.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 1.0f |

@@ -3,7 +3,7 @@
 # depthEnabled
 
 [androidJvm]\
-var [depthEnabled](depth-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+var [depthEnabled](depth-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true
 
 ###  Enable or disable the Config.DepthMode.AUTOMATIC
 

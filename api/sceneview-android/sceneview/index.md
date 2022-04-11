@@ -15,7 +15,6 @@
 | [com.google.ar.sceneform.rendering](sceneview/com.google.ar.sceneform.rendering/index.md) |
 | [com.google.ar.sceneform.resources](sceneview/com.google.ar.sceneform.resources/index.md) |
 | [com.google.ar.sceneform.utilities](sceneview/com.google.ar.sceneform.utilities/index.md) |
-| [com.google.ar.sceneform.ux](sceneview/com.google.ar.sceneform.ux/index.md) |
 | [com.google.flatbuffers](sceneview/com.google.flatbuffers/index.md) |
 | [dev.romainguy.kotlin.math](sceneview/dev.romainguy.kotlin.math/index.md) |
 | [io.github.sceneview](sceneview/io.github.sceneview/index.md) |

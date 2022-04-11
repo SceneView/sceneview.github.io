@@ -19,9 +19,9 @@ interface [ArSceneLifecycleOwner](index.md) : [SceneLifecycleOwner](../../../../
 |---|---|
 | [activity](index.md#1787297363%2FProperties%2F-58641720) | [androidJvm]<br>abstract val [activity](index.md#1787297363%2FProperties%2F-58641720): [ComponentActivity](https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html) |
 | [arCore](ar-core.md) | [androidJvm]<br>abstract val [arCore](ar-core.md): [ARCore](../-a-r-core/index.md) |
+| [arSession](ar-session.md) | [androidJvm]<br>open val [arSession](ar-session.md): [ArSession](../../io.github.sceneview.ar.arcore/-ar-session/index.md)? |
+| [arSessionConfig](ar-session-config.md) | [androidJvm]<br>open val [arSessionConfig](ar-session-config.md): Config? |
 | [renderer](index.md#-1514028257%2FProperties%2F-58641720) | [androidJvm]<br>abstract val [renderer](index.md#-1514028257%2FProperties%2F-58641720): [Renderer](../../../../arsceneview/com.google.ar.sceneform.rendering/-renderer/index.md) |
-| [session](session.md) | [androidJvm]<br>open val [session](session.md): [ArSession](../../io.github.sceneview.ar.arcore/-ar-session/index.md)? |
-| [sessionConfig](session-config.md) | [androidJvm]<br>open val [sessionConfig](session-config.md): Config? |
 
 ## Inheritors
 

@@ -3,7 +3,7 @@
 # build
 
 [androidJvm]\
-open fun [build](build.md)(): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[T](../../../com.google.ar.sceneform.collision/-collision-system/raycast-all.md)&gt;
+open fun [build](build.md)(): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[T](../../-load-renderable-from-filament-gltf-task/index.md)&gt;
 
 Constructs a [Renderable](../index.md) with the parameters of the builder.
 

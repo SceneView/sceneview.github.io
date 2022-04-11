@@ -5,4 +5,4 @@
 [androidJvm]\
 var [checkAvailability](check-availability.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true
 
-// TODO: Doc
+###  Enable/Disable Google Play Services for AR availability check, auto install and update

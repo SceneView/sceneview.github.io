@@ -9,6 +9,6 @@ open fun [createAnchoredNode](create-anchored-node.md)(): [ArNode](index.md)?
 
 The returned node position and rotation will be fixed within camera movements.
 
-See hitTest and [ArFrame.hitTests](../../io.github.sceneview.ar.arcore/-ar-frame/hit-tests.md) for details.
+See [ArFrame.hitTest](../../io.github.sceneview.ar.arcore/-ar-frame/hit-test.md) and [ArFrame.hitTests](../../io.github.sceneview.ar.arcore/-ar-frame/hit-tests.md) for details.
 
 Anchors incur ongoing processing overhead within ARCore. To release unneeded anchors use [destroy](destroy.md).
