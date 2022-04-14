@@ -3,7 +3,7 @@
 # DefaultSceneGestureListener
 
 [androidJvm]\
-open inner class [DefaultSceneGestureListener](index.md) : [SceneGestureDetector.OnSceneGestureListener](../../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/index.md)
+open class [DefaultSceneGestureListener](index.md)(sceneView: [SceneView](../index.md)) : [SceneGestureDetector.OnSceneGestureListener](../../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/index.md)
 
 ## Functions
 
@@ -28,3 +28,9 @@ open inner class [DefaultSceneGestureListener](index.md) : [SceneGestureDetector
 | [onShowPress](../../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/on-show-press.md) | [androidJvm]<br>open override fun [onShowPress](../../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/on-show-press.md)(e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)) |
 | [onSingleTapConfirmed](on-single-tap-confirmed.md) | [androidJvm]<br>open override fun [onSingleTapConfirmed](on-single-tap-confirmed.md)(e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [onSingleTapUp](../../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/on-single-tap-up.md) | [androidJvm]<br>open override fun [onSingleTapUp](../../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/on-single-tap-up.md)(e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+
+## Properties
+
+| Name | Summary |
+|---|---|
+| [sceneView](scene-view.md) | [androidJvm]<br>val [sceneView](scene-view.md): [SceneView](../index.md) |

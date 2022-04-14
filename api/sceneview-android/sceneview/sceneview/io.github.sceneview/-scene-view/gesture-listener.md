@@ -3,7 +3,7 @@
 # gestureListener
 
 [androidJvm]\
-open val [gestureListener](gesture-listener.md): [SceneGestureDetector.OnSceneGestureListener](../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/index.md)
+open var [gestureListener](gesture-listener.md): [SceneGestureDetector.OnSceneGestureListener](../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/index.md)
 
 ###  The transformation system
 

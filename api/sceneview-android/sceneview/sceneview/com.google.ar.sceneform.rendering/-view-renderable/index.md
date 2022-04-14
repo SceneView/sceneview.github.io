@@ -7,7 +7,7 @@
 
 open class [ViewRenderable](index.md) : [Renderable](../-renderable/index.md)
 
-Renders a 2D Android view in 3D space by attaching it to a [Node](../../io.github.sceneview.node/-node/index.md) with [setModel](../../../../sceneview/io.github.sceneview.node/-model-node/set-model.md). By default, the size of the view is 1 meter in the [SceneView](../../io.github.sceneview/-scene-view/index.md) per 250dp in the layout. Use a [ViewSizer](../-view-sizer/index.md) to control how the size of the view in the  is calculated. 
+Renders a 2D Android view in 3D space by attaching it to a [Node](../../io.github.sceneview.node/-node/index.md) with setModel. By default, the size of the view is 1 meter in the [SceneView](../../io.github.sceneview/-scene-view/index.md) per 250dp in the layout. Use a [ViewSizer](../-view-sizer/index.md) to control how the size of the view in the  is calculated. 
 
 future = ViewRenderable.builder().setView(context, R.layout.view).build();
 viewRenderable = future.thenAccept(...);

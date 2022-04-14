@@ -19,7 +19,7 @@ Maintains the scene graph, a hierarchical organization of a scene's content. A s
 
 | Name | Summary |
 |---|---|
-| [DefaultSceneGestureListener](-default-scene-gesture-listener/index.md) | [androidJvm]<br>open inner class [DefaultSceneGestureListener](-default-scene-gesture-listener/index.md) : [SceneGestureDetector.OnSceneGestureListener](../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/index.md) |
+| [DefaultSceneGestureListener](-default-scene-gesture-listener/index.md) | [androidJvm]<br>open class [DefaultSceneGestureListener](-default-scene-gesture-listener/index.md)(sceneView: [SceneView](index.md)) : [SceneGestureDetector.OnSceneGestureListener](../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/index.md) |
 
 ## Functions
 
@@ -680,7 +680,7 @@ Maintains the scene graph, a hierarchical organization of a scene's content. A s
 | [currentFrameTime](current-frame-time.md) | [androidJvm]<br>var [currentFrameTime](current-frame-time.md): [FrameTime](../../io.github.sceneview.utils/-frame-time/index.md) |
 | [environment](environment.md) | [androidJvm]<br>var [environment](environment.md): [Environment](../../io.github.sceneview.environment/-environment/index.md)? = null<br>Environments are usually captured as high-resolution HDR equirectangular images and processed by the cmgen tool to generate the data needed by IndirectLight. |
 | [gestureDetector](gesture-detector.md) | [androidJvm]<br>open val [gestureDetector](gesture-detector.md): [SceneGestureDetector](../../io.github.sceneview.interaction/-scene-gesture-detector/index.md) |
-| [gestureListener](gesture-listener.md) | [androidJvm]<br>open val [gestureListener](gesture-listener.md): [SceneGestureDetector.OnSceneGestureListener](../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/index.md)<br>Used by TransformableNode for detecting gestures and coordinating which node is selected. Can be overridden to create a custom transformation system. |
+| [gestureListener](gesture-listener.md) | [androidJvm]<br>open var [gestureListener](gesture-listener.md): [SceneGestureDetector.OnSceneGestureListener](../../io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/index.md)<br>Used by TransformableNode for detecting gestures and coordinating which node is selected. Can be overridden to create a custom transformation system. |
 | [hierarchy](../../io.github.sceneview.node/-node-parent/hierarchy.md) | [androidJvm]<br>open val [hierarchy](../../io.github.sceneview.node/-node-parent/hierarchy.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../../io.github.sceneview.node/-node/index.md)&gt;<br>Traversal is depth first. If this NodeParent is a Node, traversal starts with this NodeParent, otherwise traversal starts with its children. |
 | [isTransparent](is-transparent.md) | [androidJvm]<br>var [isTransparent](is-transparent.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false |
 | [lastNanoseconds](last-nanoseconds.md) | [androidJvm]<br>var [lastNanoseconds](last-nanoseconds.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) = 0 |

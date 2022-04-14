@@ -12,7 +12,7 @@ Maintains a [ReferenceQueue](https://developer.android.com/reference/kotlin/java
 | | |
 |---|---|
 | [CleanupRegistry](-cleanup-registry.md) | [androidJvm]<br>open fun [CleanupRegistry](-cleanup-registry.md)() |
-| [CleanupRegistry](-cleanup-registry.md) | [androidJvm]<br>open fun [CleanupRegistry](-cleanup-registry.md)(cleanupItemHashSet: [HashSet](https://developer.android.com/reference/kotlin/java/util/HashSet.html)&lt;[CleanupItem](../-cleanup-item/index.md)&lt;[T](../-load-renderable-from-filament-gltf-task/index.md)&gt;&gt;, referenceQueue: [ReferenceQueue](https://developer.android.com/reference/kotlin/java/lang/ref/ReferenceQueue.html)&lt;[T](../-load-renderable-from-filament-gltf-task/index.md)&gt;) |
+| [CleanupRegistry](-cleanup-registry.md) | [androidJvm]<br>open fun [CleanupRegistry](-cleanup-registry.md)(cleanupItemHashSet: [HashSet](https://developer.android.com/reference/kotlin/java/util/HashSet.html)&lt;[CleanupItem](../-cleanup-item/index.md)&lt;[T](../../com.google.ar.sceneform.resources/-resource-registry/index.md)&gt;&gt;, referenceQueue: [ReferenceQueue](https://developer.android.com/reference/kotlin/java/lang/ref/ReferenceQueue.html)&lt;[T](../../com.google.ar.sceneform.resources/-resource-registry/index.md)&gt;) |
 
 ## Functions
 
@@ -20,4 +20,4 @@ Maintains a [ReferenceQueue](https://developer.android.com/reference/kotlin/java
 |---|---|
 | [destroyAllResources](destroy-all-resources.md) | [androidJvm]<br>open fun [destroyAllResources](destroy-all-resources.md)()<br>Ignores reference count and releases any associated resources |
 | [reclaimReleasedResources](reclaim-released-resources.md) | [androidJvm]<br>open fun [reclaimReleasedResources](reclaim-released-resources.md)(): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)<br>Polls the [ReferenceQueue](https://developer.android.com/reference/kotlin/java/lang/ref/ReferenceQueue.html) for garbage collected objects and runs the associated |
-| [register](register.md) | [androidJvm]<br>open fun [register](register.md)(trackedObject: [T](../-load-renderable-from-filament-gltf-task/index.md), cleanupCallback: [Runnable](https://developer.android.com/reference/kotlin/java/lang/Runnable.html))<br>Adds trackedOBject to the [ReferenceQueue](https://developer.android.com/reference/kotlin/java/lang/ref/ReferenceQueue.html). |
+| [register](register.md) | [androidJvm]<br>open fun [register](register.md)(trackedObject: [T](../../com.google.ar.sceneform.resources/-resource-registry/index.md), cleanupCallback: [Runnable](https://developer.android.com/reference/kotlin/java/lang/Runnable.html))<br>Adds trackedOBject to the [ReferenceQueue](https://developer.android.com/reference/kotlin/java/lang/ref/ReferenceQueue.html). |

@@ -3,4 +3,4 @@
 # DefaultSceneGestureListener
 
 [androidJvm]\
-fun [DefaultSceneGestureListener](-default-scene-gesture-listener.md)()
+fun [DefaultSceneGestureListener](-default-scene-gesture-listener.md)(sceneView: [SceneView](../index.md))

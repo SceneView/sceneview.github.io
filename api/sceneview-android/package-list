@@ -2567,6 +2567,7 @@ $dokka.location:io.github.sceneview.ar.arcore/ArFrame/hitTests/#kotlin.Float#kot
 $dokka.location:io.github.sceneview.ar.arcore/ArFrame/isTrackingAugmentedFace/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-ar-frame/is-tracking-augmented-face.md
 $dokka.location:io.github.sceneview.ar.arcore/ArFrame/isTrackingAugmentedImage/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-ar-frame/is-tracking-augmented-image.md
 $dokka.location:io.github.sceneview.ar.arcore/ArFrame/isTrackingPlane/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-ar-frame/is-tracking-plane.md
+$dokka.location:io.github.sceneview.ar.arcore/ArFrame/precision/#io.github.sceneview.ar.arcore.ArFrame?/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-ar-frame/precision.md
 $dokka.location:io.github.sceneview.ar.arcore/ArFrame/session/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-ar-frame/session.md
 $dokka.location:io.github.sceneview.ar.arcore/ArFrame/time/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-ar-frame/time.md
 $dokka.location:io.github.sceneview.ar.arcore/ArFrame/updatedAugmentedFaces/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-ar-frame/updated-augmented-faces.md
@@ -2616,6 +2617,8 @@ $dokka.location:io.github.sceneview.ar.arcore/LightEstimation.Companion///Pointi
 $dokka.location:io.github.sceneview.ar.arcore/LightEstimation///PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-light-estimation/index.md
 $dokka.location:io.github.sceneview.ar.arcore/LightEstimation/LightEstimation/#io.github.sceneview.ar.ArSceneView#io.github.sceneview.ar.ArSceneLifecycle/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-light-estimation/-light-estimation.md
 $dokka.location:io.github.sceneview.ar.arcore/LightEstimation/cameraExposureFactor/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-light-estimation/camera-exposure-factor.md
+$dokka.location:io.github.sceneview.ar.arcore/LightEstimation/cubeMapBuffer/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-light-estimation/cube-map-buffer.md
+$dokka.location:io.github.sceneview.ar.arcore/LightEstimation/cubeMapTexture/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-light-estimation/cube-map-texture.md
 $dokka.location:io.github.sceneview.ar.arcore/LightEstimation/defaultEnvironmentReflections/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-light-estimation/default-environment-reflections.md
 $dokka.location:io.github.sceneview.ar.arcore/LightEstimation/environment/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-light-estimation/environment.md
 $dokka.location:io.github.sceneview.ar.arcore/LightEstimation/environmentalHdrMainLightDirection/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.arcore/-light-estimation/environmental-hdr-main-light-direction.md
@@ -2695,19 +2698,20 @@ $dokka.location:io.github.sceneview.ar.node/ArModelNode/createAnchor/#com.google
 $dokka.location:io.github.sceneview.ar.node/ArModelNode/editableTransforms/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/editable-transforms.md
 $dokka.location:io.github.sceneview.ar.node/ArModelNode/hitTest/#io.github.sceneview.ar.arcore.ArFrame?#kotlin.Float#kotlin.Boolean#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/hit-test.md
 $dokka.location:io.github.sceneview.ar.node/ArModelNode/lastArFrame/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/last-ar-frame.md
-$dokka.location:io.github.sceneview.ar.node/ArModelNode/lastHitFrame/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/last-hit-frame.md
 $dokka.location:io.github.sceneview.ar.node/ArModelNode/lastHitResult/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/last-hit-result.md
-$dokka.location:io.github.sceneview.ar.node/ArModelNode/maxHitsPerSecond/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/max-hits-per-second.md
+$dokka.location:io.github.sceneview.ar.node/ArModelNode/lastPoseUpdateFrame/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/last-pose-update-frame.md
 $dokka.location:io.github.sceneview.ar.node/ArModelNode/onArFrame/#io.github.sceneview.ar.arcore.ArFrame/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/on-ar-frame.md
 $dokka.location:io.github.sceneview.ar.node/ArModelNode/onArFrameHitResult/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/on-ar-frame-hit-result.md
 $dokka.location:io.github.sceneview.ar.node/ArModelNode/onArFrameHitResult/#com.google.ar.core.HitResult?/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/on-ar-frame-hit-result.md
 $dokka.location:io.github.sceneview.ar.node/ArModelNode/placementPosition/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/placement-position.md
+$dokka.location:io.github.sceneview.ar.node/ArModelNode/poseUpdatePrecision/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-model-node/pose-update-precision.md
 $dokka.location:io.github.sceneview.ar.node/ArNode.Companion///PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/-companion/index.md
 $dokka.location:io.github.sceneview.ar.node/ArNode.Companion/DEFAULT_PLACEMENT_MODE/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/-companion/-d-e-f-a-u-l-t_-p-l-a-c-e-m-e-n-t_-m-o-d-e.md
 $dokka.location:io.github.sceneview.ar.node/ArNode///PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/index.md
 $dokka.location:io.github.sceneview.ar.node/ArNode/ArNode/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/-ar-node.md
 $dokka.location:io.github.sceneview.ar.node/ArNode/ArNode/#com.google.ar.core.Anchor/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/-ar-node.md
 $dokka.location:io.github.sceneview.ar.node/ArNode/anchor/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/anchor.md
+$dokka.location:io.github.sceneview.ar.node/ArNode/anchorUpdatePrecision/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/anchor-update-precision.md
 $dokka.location:io.github.sceneview.ar.node/ArNode/cancelCloudAnchorResolveTask/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/cancel-cloud-anchor-resolve-task.md
 $dokka.location:io.github.sceneview.ar.node/ArNode/clone/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/clone.md
 $dokka.location:io.github.sceneview.ar.node/ArNode/cloudAnchorState/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/cloud-anchor-state.md
@@ -2724,6 +2728,7 @@ $dokka.location:io.github.sceneview.ar.node/ArNode/hostCloudAnchor/#kotlin.Int#k
 $dokka.location:io.github.sceneview.ar.node/ArNode/isAnchored/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/is-anchored.md
 $dokka.location:io.github.sceneview.ar.node/ArNode/isEditable/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/is-editable.md
 $dokka.location:io.github.sceneview.ar.node/ArNode/isTracking/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/is-tracking.md
+$dokka.location:io.github.sceneview.ar.node/ArNode/lastAnchorUpdateFrame/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/last-anchor-update-frame.md
 $dokka.location:io.github.sceneview.ar.node/ArNode/localToWorldPosition/#com.google.ar.sceneform.math.Vector3/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/local-to-world-position.md
 $dokka.location:io.github.sceneview.ar.node/ArNode/onAnchorChanged/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/on-anchor-changed.md
 $dokka.location:io.github.sceneview.ar.node/ArNode/onAnchorChanged/#com.google.ar.core.Anchor?/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar.node/-ar-node/on-anchor-changed.md
@@ -2848,7 +2853,7 @@ $dokka.location:io.github.sceneview.ar/ArSceneLifecycleOwner/arCore/#/PointingTo
 $dokka.location:io.github.sceneview.ar/ArSceneLifecycleOwner/arSession/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar/-ar-scene-lifecycle-owner/ar-session.md
 $dokka.location:io.github.sceneview.ar/ArSceneLifecycleOwner/arSessionConfig/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar/-ar-scene-lifecycle-owner/ar-session-config.md
 $dokka.location:io.github.sceneview.ar/ArSceneView.DefaultArSceneGestureListener///PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar/-ar-scene-view/-default-ar-scene-gesture-listener/index.md
-$dokka.location:io.github.sceneview.ar/ArSceneView.DefaultArSceneGestureListener/DefaultArSceneGestureListener/#/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar/-ar-scene-view/-default-ar-scene-gesture-listener/-default-ar-scene-gesture-listener.md
+$dokka.location:io.github.sceneview.ar/ArSceneView.DefaultArSceneGestureListener/DefaultArSceneGestureListener/#io.github.sceneview.SceneView/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar/-ar-scene-view/-default-ar-scene-gesture-listener/-default-ar-scene-gesture-listener.md
 $dokka.location:io.github.sceneview.ar/ArSceneView.DefaultArSceneGestureListener/onSingleTapUp/#android.view.MotionEvent/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar/-ar-scene-view/-default-ar-scene-gesture-listener/on-single-tap-up.md
 $dokka.location:io.github.sceneview.ar/ArSceneView///PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar/-ar-scene-view/index.md
 $dokka.location:io.github.sceneview.ar/ArSceneView/ArSceneView/#android.content.Context#android.util.AttributeSet?#kotlin.Int#kotlin.Int/PointingToDeclaration/arsceneview/arsceneview/io.github.sceneview.ar/-ar-scene-view/-ar-scene-view.md
@@ -2946,7 +2951,7 @@ $dokka.location:io.github.sceneview.environment/Environment/indirectLight/#/Poin
 $dokka.location:io.github.sceneview.environment/Environment/skybox/#/PointingToDeclaration/sceneview/sceneview/io.github.sceneview.environment/-environment/skybox.md
 $dokka.location:io.github.sceneview.environment/Environment/sphericalHarmonics/#/PointingToDeclaration/sceneview/sceneview/io.github.sceneview.environment/-environment/spherical-harmonics.md
 $dokka.location:io.github.sceneview.environment/HDREnvironment///PointingToDeclaration/sceneview/sceneview/io.github.sceneview.environment/-h-d-r-environment/index.md
-$dokka.location:io.github.sceneview.environment/HDREnvironment/HDREnvironment/#com.google.android.filament.Texture?#kotlin.FloatArray?#kotlin.Float?#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/sceneview/sceneview/io.github.sceneview.environment/-h-d-r-environment/-h-d-r-environment.md
+$dokka.location:io.github.sceneview.environment/HDREnvironment/HDREnvironment/#com.google.android.filament.Texture?#kotlin.FloatArray?#kotlin.Float?#kotlin.Boolean#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/sceneview/sceneview/io.github.sceneview.environment/-h-d-r-environment/-h-d-r-environment.md
 $dokka.location:io.github.sceneview.environment/HDREnvironment/cubemap/#/PointingToDeclaration/sceneview/sceneview/io.github.sceneview.environment/-h-d-r-environment/cubemap.md
 $dokka.location:io.github.sceneview.environment/HDREnvironment/destroy/#/PointingToDeclaration/sceneview/sceneview/io.github.sceneview.environment/-h-d-r-environment/destroy.md
 $dokka.location:io.github.sceneview.environment/HDREnvironment/indirectLightIntensity/#/PointingToDeclaration/sceneview/sceneview/io.github.sceneview.environment/-h-d-r-environment/indirect-light-intensity.md
@@ -3348,8 +3353,9 @@ $dokka.location:io.github.sceneview/SceneLifecycleOwner///PointingToDeclaration/
 $dokka.location:io.github.sceneview/SceneLifecycleOwner/activity/#/PointingToDeclaration/sceneview/sceneview/io.github.sceneview/-scene-lifecycle-owner/activity.md
 $dokka.location:io.github.sceneview/SceneLifecycleOwner/renderer/#/PointingToDeclaration/sceneview/sceneview/io.github.sceneview/-scene-lifecycle-owner/renderer.md
 $dokka.location:io.github.sceneview/SceneView.DefaultSceneGestureListener///PointingToDeclaration/sceneview/sceneview/io.github.sceneview/-scene-view/-default-scene-gesture-listener/index.md
-$dokka.location:io.github.sceneview/SceneView.DefaultSceneGestureListener/DefaultSceneGestureListener/#/PointingToDeclaration/sceneview/sceneview/io.github.sceneview/-scene-view/-default-scene-gesture-listener/-default-scene-gesture-listener.md
+$dokka.location:io.github.sceneview/SceneView.DefaultSceneGestureListener/DefaultSceneGestureListener/#io.github.sceneview.SceneView/PointingToDeclaration/sceneview/sceneview/io.github.sceneview/-scene-view/-default-scene-gesture-listener/-default-scene-gesture-listener.md
 $dokka.location:io.github.sceneview/SceneView.DefaultSceneGestureListener/onSingleTapConfirmed/#android.view.MotionEvent/PointingToDeclaration/sceneview/sceneview/io.github.sceneview/-scene-view/-default-scene-gesture-listener/on-single-tap-confirmed.md
+$dokka.location:io.github.sceneview/SceneView.DefaultSceneGestureListener/sceneView/#/PointingToDeclaration/sceneview/sceneview/io.github.sceneview/-scene-view/-default-scene-gesture-listener/scene-view.md
 $dokka.location:io.github.sceneview/SceneView///PointingToDeclaration/sceneview/sceneview/io.github.sceneview/-scene-view/index.md
 $dokka.location:io.github.sceneview/SceneView/SceneView/#android.content.Context#android.util.AttributeSet?#kotlin.Int#kotlin.Int/PointingToDeclaration/sceneview/sceneview/io.github.sceneview/-scene-view/-scene-view.md
 $dokka.location:io.github.sceneview/SceneView/_children/#/PointingToDeclaration/sceneview/sceneview/io.github.sceneview/-scene-view/_children.md

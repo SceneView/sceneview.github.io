@@ -23,7 +23,7 @@ The main directional light API calculates the direction and intensity of the sce
 | [AMBIENT_INTENSITY](-a-m-b-i-e-n-t_-i-n-t-e-n-s-i-t-y/index.md) | [androidJvm]<br>[AMBIENT_INTENSITY](-a-m-b-i-e-n-t_-i-n-t-e-n-s-i-t-y/index.md)()<br>Use this mode if you only want to apply ARCore lights colors and intensity |
 | [ENVIRONMENTAL_HDR_NO_REFLECTIONS](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r_-n-o_-r-e-f-l-e-c-t-i-o-n-s/index.md) | [androidJvm]<br>[ENVIRONMENTAL_HDR_NO_REFLECTIONS](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r_-n-o_-r-e-f-l-e-c-t-i-o-n-s/index.md)()<br>The environmentalHdrReflections will be false and the SceneView default static environment will also not be used (defaultEnvironmentReflections is false) |
 | [ENVIRONMENTAL_HDR_FAKE_REFLECTIONS](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r_-f-a-k-e_-r-e-f-l-e-c-t-i-o-n-s/index.md) | [androidJvm]<br>[ENVIRONMENTAL_HDR_FAKE_REFLECTIONS](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r_-f-a-k-e_-r-e-f-l-e-c-t-i-o-n-s/index.md)()<br>The environmentalHdrReflections will be false and the SceneView default static environment will be rendered on reflective objects |
-| [ENVIRONMENTAL_HDR](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r/index.md) | [androidJvm]<br>[ENVIRONMENTAL_HDR](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r/index.md)(0.3f)<br>Use this mode if you want your objects to be more like if they where real. |
+| [ENVIRONMENTAL_HDR](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r/index.md) | [androidJvm]<br>[ENVIRONMENTAL_HDR](-e-n-v-i-r-o-n-m-e-n-t-a-l_-h-d-r/index.md)(0.5f)<br>Use this mode if you want your objects to be more like if they where real. |
 
 ## Properties
 

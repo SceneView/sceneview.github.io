@@ -3,4 +3,4 @@
 # sharedCubemap
 
 [androidJvm]\
-var [sharedCubemap](shared-cubemap.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false
+val [sharedCubemap](shared-cubemap.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false

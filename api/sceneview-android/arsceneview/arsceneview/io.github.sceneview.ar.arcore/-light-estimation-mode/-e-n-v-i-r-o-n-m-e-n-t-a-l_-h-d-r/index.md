@@ -3,7 +3,7 @@
 # ENVIRONMENTAL_HDR
 
 [androidJvm]\
-[ENVIRONMENTAL_HDR](index.md)(0.3f)
+[ENVIRONMENTAL_HDR](index.md)(0.5f)
 
 ###  Environmental HDR mode estimated environment
 
