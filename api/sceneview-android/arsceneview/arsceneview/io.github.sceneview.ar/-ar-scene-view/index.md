@@ -17,7 +17,7 @@ A SurfaceView that integrates with ARCore and renders a scene.
 
 | Name | Summary |
 |---|---|
-| [DefaultArSceneGestureListener](-default-ar-scene-gesture-listener/index.md) | [androidJvm]<br>open inner class [DefaultArSceneGestureListener](-default-ar-scene-gesture-listener/index.md) : [SceneView.DefaultSceneGestureListener](../../../../sceneview/sceneview/io.github.sceneview/-scene-view/-default-scene-gesture-listener/index.md) |
+| [DefaultArSceneGestureListener](-default-ar-scene-gesture-listener/index.md) | [androidJvm]<br>open class [DefaultArSceneGestureListener](-default-ar-scene-gesture-listener/index.md)(sceneView: [SceneView](../../../../sceneview/sceneview/io.github.sceneview/-scene-view/index.md)) : [SceneView.DefaultSceneGestureListener](../../../../sceneview/sceneview/io.github.sceneview/-scene-view/-default-scene-gesture-listener/index.md) |
 
 ## Functions
 
@@ -696,7 +696,7 @@ A SurfaceView that integrates with ARCore and renders a scene.
 | [environment](index.md#-769674583%2FProperties%2F-58641720) | [androidJvm]<br>var [environment](index.md#-769674583%2FProperties%2F-58641720): [Environment](../../../../sceneview/sceneview/io.github.sceneview.environment/-environment/index.md)? |
 | [focusMode](focus-mode.md) | [androidJvm]<br>var [focusMode](focus-mode.md): Config.FocusMode<br>See Config.FocusMode for available options. |
 | [gestureDetector](gesture-detector.md) | [androidJvm]<br>open override val [gestureDetector](gesture-detector.md): [ArSceneGestureDetector](../../io.github.sceneview.ar.interaction/-ar-scene-gesture-detector/index.md) |
-| [gestureListener](gesture-listener.md) | [androidJvm]<br>open override val [gestureListener](gesture-listener.md): [ArSceneView.DefaultArSceneGestureListener](-default-ar-scene-gesture-listener/index.md) |
+| [gestureListener](gesture-listener.md) | [androidJvm]<br>open override var [gestureListener](gesture-listener.md): [SceneGestureDetector.OnSceneGestureListener](../../../../sceneview/sceneview/io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/index.md) |
 | [hierarchy](../../io.github.sceneview.ar.node.infos/-tap-ar-plane-info-node/index.md#-501560674%2FProperties%2F-58641720) | [androidJvm]<br>open val [hierarchy](../../io.github.sceneview.ar.node.infos/-tap-ar-plane-info-node/index.md#-501560674%2FProperties%2F-58641720): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../../../../sceneview/sceneview/io.github.sceneview.node/-node/index.md)&gt; |
 | [instantPlacementEnabled](instant-placement-enabled.md) | [androidJvm]<br>var [instantPlacementEnabled](instant-placement-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
 | [instructions](instructions.md) | [androidJvm]<br>val [instructions](instructions.md): [Instructions](../-instructions/index.md) |

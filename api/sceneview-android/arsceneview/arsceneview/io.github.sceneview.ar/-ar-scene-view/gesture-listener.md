@@ -3,4 +3,4 @@
 # gestureListener
 
 [androidJvm]\
-open override val [gestureListener](gesture-listener.md): [ArSceneView.DefaultArSceneGestureListener](-default-ar-scene-gesture-listener/index.md)
+open override var [gestureListener](gesture-listener.md): [SceneGestureDetector.OnSceneGestureListener](../../../../sceneview/sceneview/io.github.sceneview.interaction/-scene-gesture-detector/-on-scene-gesture-listener/index.md)

@@ -3,4 +3,4 @@
 # DefaultArSceneGestureListener
 
 [androidJvm]\
-fun [DefaultArSceneGestureListener](-default-ar-scene-gesture-listener.md)()
+fun [DefaultArSceneGestureListener](-default-ar-scene-gesture-listener.md)(sceneView: [SceneView](../../../../../sceneview/sceneview/io.github.sceneview/-scene-view/index.md))
