@@ -3,7 +3,7 @@
 # await
 
 [androidJvm]\
-suspend fun &lt;[T](await.md) : [Renderable](../com.google.ar.sceneform.rendering/-renderable/index.md), [B](await.md) : [Renderable.Builder](../com.google.ar.sceneform.rendering/-renderable/-builder/index.md)&lt;[T](await.md), [B](await.md)&gt;&gt; [Renderable.Builder](../com.google.ar.sceneform.rendering/-renderable/-builder/index.md)&lt;[T](await.md), [B](await.md)&gt;.[await](await.md)(): [T](await.md)
+suspend fun &lt;[T](await.md) : [Renderable](../com.google.ar.sceneform.rendering/-renderable/index.md), [B](await.md) : [Renderable.Builder](../com.google.ar.sceneform.rendering/-renderable/-builder/index.md)&lt;[T](await.md), [B](await.md)&gt;&gt; [Renderable.Builder](../com.google.ar.sceneform.rendering/-renderable/-builder/index.md)&lt;[T](await.md), [B](await.md)&gt;.[await](await.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [T](await.md)
 
 ###  Awaits for loading a Renderable with the parameters of the builder without blocking a thread
 

@@ -11,7 +11,7 @@ Displays the Camera stream using Filament.
 
 | | |
 |---|---|
-| [CameraStream](-camera-stream.md) | [androidJvm]<br>open fun [CameraStream](-camera-stream.md)(cameraTextureId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), renderer: [Renderer](../../../../arsceneview/com.google.ar.sceneform.rendering/-renderer/index.md)) |
+| [CameraStream](-camera-stream.md) | [androidJvm]<br>open fun [CameraStream](-camera-stream.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), cameraTextureId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), renderer: [Renderer](../../../../arsceneview/com.google.ar.sceneform.rendering/-renderer/index.md)) |
 
 ## Types
 
@@ -25,6 +25,7 @@ Displays the Camera stream using Filament.
 | Name | Summary |
 |---|---|
 | [checkIfDepthIsEnabled](check-if-depth-is-enabled.md) | [androidJvm]<br>open fun [checkIfDepthIsEnabled](check-if-depth-is-enabled.md)(session: Session, config: Config)<br>The Session holds the information if the DepthMode is configured or not. |
+| [destroy](destroy.md) | [androidJvm]<br>open fun [destroy](destroy.md)() |
 | [getRenderPriority](get-render-priority.md) | [androidJvm]<br>open fun [getRenderPriority](get-render-priority.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [initializeTexture](initialize-texture.md) | [androidJvm]<br>open fun [initializeTexture](initialize-texture.md)(arCamera: Camera) |
 | [isDepthOcclusionModeSupported](is-depth-occlusion-mode-supported.md) | [androidJvm]<br>open fun [isDepthOcclusionModeSupported](is-depth-occlusion-mode-supported.md)(depthOcclusionMode: [CameraStream.DepthOcclusionMode](-depth-occlusion-mode/index.md)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Checks whether the provided DepthOcclusionMode is supported on this device with the selected camera configuration and AR config. |

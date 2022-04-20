@@ -3,7 +3,7 @@
 # makePlane
 
 [androidJvm]\
-open fun [makePlane](make-plane.md)(size: [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md), center: [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md), material: [Material](../-material/index.md)): [ModelRenderable](../-model-renderable/index.md)
+open fun [makePlane](make-plane.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), size: [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md), center: [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md), material: [Material](../-material/index.md)): [ModelRenderable](../-model-renderable/index.md)
 
 Creates a [ModelRenderable](../-model-renderable/index.md) in the shape of a plane with the given specifications.
 

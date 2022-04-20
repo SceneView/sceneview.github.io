@@ -3,7 +3,7 @@
 # build
 
 [androidJvm]\
-suspend fun &lt;[T](build.md) : [Renderable](../com.google.ar.sceneform.rendering/-renderable/index.md), [B](build.md) : [Renderable.Builder](../com.google.ar.sceneform.rendering/-renderable/-builder/index.md)&lt;[T](build.md), [B](build.md)&gt;&gt; [Renderable.Builder](../com.google.ar.sceneform.rendering/-renderable/-builder/index.md)&lt;[T](build.md), [B](build.md)&gt;.[build](build.md)(coroutineScope: [LifecycleCoroutineScope](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleCoroutineScope.html))
+suspend fun &lt;[T](build.md) : [Renderable](../com.google.ar.sceneform.rendering/-renderable/index.md), [B](build.md) : [Renderable.Builder](../com.google.ar.sceneform.rendering/-renderable/-builder/index.md)&lt;[T](build.md), [B](build.md)&gt;&gt; [Renderable.Builder](../com.google.ar.sceneform.rendering/-renderable/-builder/index.md)&lt;[T](build.md), [B](build.md)&gt;.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html))
 
 ###  Load a Renderable in a coroutine scope without blocking a thread
 

@@ -3,7 +3,7 @@
 # makeOpaqueWithColor
 
 [androidJvm]\
-open fun [makeOpaqueWithColor](make-opaque-with-color.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), color: [Color](../-color/index.md)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[Material](../-material/index.md)&gt;
+open fun [makeOpaqueWithColor](make-opaque-with-color.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), color: [Color](../-color/index.md)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[Material](../-material/index.md)&gt;
 
 Creates an opaque [Material](../-material/index.md) with the [Color](../-color/index.md) passed in. The [Color](../-color/index.md) can be modified by calling [setFloat3](../-material/set-float3.md) with [MATERIAL_COLOR](-m-a-t-e-r-i-a-l_-c-o-l-o-r.md). The metallicness, roughness, and reflectance can be modified using [setFloat](../-material/set-float.md).
 

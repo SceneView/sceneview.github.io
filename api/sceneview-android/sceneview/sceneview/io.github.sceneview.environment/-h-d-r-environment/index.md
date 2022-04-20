@@ -3,7 +3,7 @@
 # HDREnvironment
 
 [androidJvm]\
-open class [HDREnvironment](index.md)(cubemap: Texture?, indirectLightIrradiance: [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)?, indirectLightIntensity: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)?, indirectLightSpecularFilter: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), createSkybox: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), sharedCubemap: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) : [Environment](../-environment/index.md)
+open class [HDREnvironment](index.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), cubemap: Texture?, indirectLightIrradiance: [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)?, indirectLightIntensity: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)?, indirectLightSpecularFilter: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), createSkybox: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), sharedCubemap: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) : [Environment](../-environment/index.md)
 
 ## Functions
 

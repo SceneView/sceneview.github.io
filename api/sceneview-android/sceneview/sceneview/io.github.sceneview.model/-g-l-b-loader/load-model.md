@@ -3,7 +3,7 @@
 # loadModel
 
 [androidJvm]\
-suspend fun [loadModel](load-model.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), glbFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [ModelRenderable](../../com.google.ar.sceneform.rendering/-model-renderable/index.md)?
+suspend fun [loadModel](load-model.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), glbFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [ModelRenderable](../../com.google.ar.sceneform.rendering/-model-renderable/index.md)?
 
 ###  Utility for loading a glTF 3D model
 

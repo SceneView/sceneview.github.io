@@ -3,7 +3,7 @@
 # TextureInternalData
 
 [androidJvm]\
-open class [TextureInternalData](index.md) : [SharedReference](../../com.google.ar.sceneform.resources/-shared-reference/index.md)
+open class [TextureInternalData](index.md)
 
 Represents shared data used by [Texture](../-texture/index.md)s for rendering. The data will be released when all [Texture](../-texture/index.md)s using this data are finalized.
 
@@ -17,5 +17,4 @@ Represents shared data used by [Texture](../-texture/index.md)s for rendering. T
 
 | Name | Summary |
 |---|---|
-| [release](../../com.google.ar.sceneform.resources/-shared-reference/release.md) | [androidJvm]<br>open fun [release](../../com.google.ar.sceneform.resources/-shared-reference/release.md)() |
-| [retain](../../com.google.ar.sceneform.resources/-shared-reference/retain.md) | [androidJvm]<br>open fun [retain](../../com.google.ar.sceneform.resources/-shared-reference/retain.md)() |
+| [destroy](destroy.md) | [androidJvm]<br>open fun [destroy](destroy.md)() |

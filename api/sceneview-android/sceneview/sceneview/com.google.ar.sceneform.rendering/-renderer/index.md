@@ -27,8 +27,7 @@ Contains everything that will be drawn on a surface.
 |---|---|
 | [addEntity](add-entity.md) | [androidJvm]<br>open fun [addEntity](add-entity.md)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [addLight](add-light.md) | [androidJvm]<br>open fun [addLight](add-light.md)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
-| [destroyAllResources](destroy-all-resources.md) | [androidJvm]<br>open fun [destroyAllResources](destroy-all-resources.md)()<br>Immediately releases all rendering resources, even if in use. |
-| [dispose](dispose.md) | [androidJvm]<br>open fun [dispose](dispose.md)() |
+| [destroy](destroy.md) | [androidJvm]<br>open fun [destroy](destroy.md)() |
 | [enablePerformanceMode](enable-performance-mode.md) | [androidJvm]<br>open fun [enablePerformanceMode](enable-performance-mode.md)()<br>Sets a high performance configuration for the filament view. |
 | [getContext](get-context.md) | [androidJvm]<br>open fun [getContext](get-context.md)(): [Context](https://developer.android.com/reference/kotlin/android/content/Context.html) |
 | [getDesiredHeight](get-desired-height.md) | [androidJvm]<br>open fun [getDesiredHeight](get-desired-height.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
@@ -42,7 +41,6 @@ Contains everything that will be drawn on a surface.
 | [onPause](on-pause.md) | [androidJvm]<br>open fun [onPause](on-pause.md)() |
 | [onResized](on-resized.md) | [androidJvm]<br>open fun [onResized](on-resized.md)(width: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), height: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [onResume](on-resume.md) | [androidJvm]<br>open fun [onResume](on-resume.md)() |
-| [reclaimReleasedResources](reclaim-released-resources.md) | [androidJvm]<br>open fun [reclaimReleasedResources](reclaim-released-resources.md)(): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)<br>Releases rendering resources ready for garbage collection |
 | [removeEntity](remove-entity.md) | [androidJvm]<br>open fun [removeEntity](remove-entity.md)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [removeLight](remove-light.md) | [androidJvm]<br>open fun [removeLight](remove-light.md)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [render](render.md) | [androidJvm]<br>open fun [render](render.md)(frameTimeNanos: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |

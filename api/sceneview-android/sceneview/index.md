@@ -24,6 +24,7 @@
 | [io.github.sceneview.light](sceneview/io.github.sceneview.light/index.md) |
 | [io.github.sceneview.material](sceneview/io.github.sceneview.material/index.md) |
 | [io.github.sceneview.math](sceneview/io.github.sceneview.math/index.md) |
+| [io.github.sceneview.mesh](sceneview/io.github.sceneview.mesh/index.md) |
 | [io.github.sceneview.model](sceneview/io.github.sceneview.model/index.md) |
 | [io.github.sceneview.node](sceneview/io.github.sceneview.node/index.md) |
 | [io.github.sceneview.scene](sceneview/io.github.sceneview.scene/index.md) |

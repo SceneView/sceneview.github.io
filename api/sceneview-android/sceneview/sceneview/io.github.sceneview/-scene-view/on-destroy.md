@@ -3,4 +3,4 @@
 # onDestroy
 
 [androidJvm]\
-open override fun [onDestroy](on-destroy.md)(owner: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html))
+open fun [onDestroy](on-destroy.md)()

@@ -18,5 +18,4 @@ Pool or cachce for resources
 
 | Name |
 |---|
-| [CleanupRegistry](../../com.google.ar.sceneform.rendering/-cleanup-registry/index.md) |
 | [ResourceRegistry](../-resource-registry/index.md) |

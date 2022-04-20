@@ -27,6 +27,7 @@ androidJvm
 
 | Name | Summary |
 |---|---|
+| [destroy](destroy.md) | [androidJvm]<br>fun [destroy](destroy.md)() |
 | [equirectangularToCubemap](equirectangular-to-cubemap.md) | [androidJvm]<br>fun [equirectangularToCubemap](equirectangular-to-cubemap.md)(equirect: Texture): Texture |
 | [specularFilter](specular-filter.md) | [androidJvm]<br>fun [specularFilter](specular-filter.md)(skybox: Texture): Texture<br>SpecularFilter is a GPU based implementation of the specular probe pre-integration filter. |
 

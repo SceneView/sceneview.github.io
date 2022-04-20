@@ -3,4 +3,4 @@
 # PlaneVisualizer
 
 [androidJvm]\
-open fun [PlaneVisualizer](-plane-visualizer.md)(plane: Plane, renderer: [Renderer](../../../../arsceneview/com.google.ar.sceneform.rendering/-renderer/index.md))
+open fun [PlaneVisualizer](-plane-visualizer.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), plane: Plane, renderer: [Renderer](../../../../arsceneview/com.google.ar.sceneform.rendering/-renderer/index.md))

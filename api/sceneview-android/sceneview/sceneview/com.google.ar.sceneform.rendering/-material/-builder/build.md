@@ -3,6 +3,6 @@
 # build
 
 [androidJvm]\
-open fun [build](build.md)(): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[Material](../index.md)&gt;
+open fun [build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[Material](../index.md)&gt;
 
 Creates a new [Material](../index.md) based on the parameters set previously. A source must be specified.

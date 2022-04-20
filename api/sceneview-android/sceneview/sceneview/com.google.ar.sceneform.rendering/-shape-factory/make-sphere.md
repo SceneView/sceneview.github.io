@@ -3,7 +3,7 @@
 # makeSphere
 
 [androidJvm]\
-open fun [makeSphere](make-sphere.md)(radius: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), center: [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md), material: [Material](../-material/index.md)): [ModelRenderable](../-model-renderable/index.md)
+open fun [makeSphere](make-sphere.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), radius: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), center: [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md), material: [Material](../-material/index.md)): [ModelRenderable](../-model-renderable/index.md)
 
 Creates a [ModelRenderable](../-model-renderable/index.md) in the shape of a sphere with the give specifications.
 

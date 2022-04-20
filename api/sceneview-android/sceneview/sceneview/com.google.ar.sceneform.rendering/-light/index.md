@@ -21,7 +21,7 @@ Light property store.
 | Name | Summary |
 |---|---|
 | [builder](builder.md) | [androidJvm]<br>open fun [builder](builder.md)(type: [Light.Type](-type/index.md)): [Light.Builder](-builder/index.md)<br>Constructs a default light, if nothing else is set |
-| [createInstance](create-instance.md) | [androidJvm]<br>open fun [createInstance](create-instance.md)(transformProvider: [TransformProvider](../../com.google.ar.sceneform.common/-transform-provider/index.md)): [LightInstance](../-light-instance/index.md) |
+| [createInstance](create-instance.md) | [androidJvm]<br>open fun [createInstance](create-instance.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), transformProvider: [TransformProvider](../../com.google.ar.sceneform.common/-transform-provider/index.md)): [LightInstance](../-light-instance/index.md) |
 | [getInnerConeAngle](get-inner-cone-angle.md) | [androidJvm]<br>open fun [getInnerConeAngle](get-inner-cone-angle.md)(): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>Get the inner cone angle for spotlights. |
 | [getLocalDirection](get-local-direction.md) | [androidJvm]<br>open fun [getLocalDirection](get-local-direction.md)(): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
 | [getLocalPosition](get-local-position.md) | [androidJvm]<br>open fun [getLocalPosition](get-local-position.md)(): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |

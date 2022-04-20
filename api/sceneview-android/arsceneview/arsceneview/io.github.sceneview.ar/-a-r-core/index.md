@@ -3,7 +3,7 @@
 # ARCore
 
 [androidJvm]\
-class [ARCore](index.md)(cameraTextureId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md), features: () -&gt; [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt;) : [ArSceneLifecycleObserver](../-ar-scene-lifecycle-observer/index.md)
+class [ARCore](index.md)(lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md), features: () -&gt; [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt;) : [ArSceneLifecycleObserver](../-ar-scene-lifecycle-observer/index.md)
 
 Manages an ARCore Session using the Android Lifecycle API. Before starting a Session, this class requests installation of Google Play Services for AR if it's not installed or not up to date and asks the user for required permissions if necessary.
 
@@ -11,7 +11,7 @@ Manages an ARCore Session using the Android Lifecycle API. Before starting a Ses
 
 | | |
 |---|---|
-| [ARCore](-a-r-core.md) | [androidJvm]<br>fun [ARCore](-a-r-core.md)(cameraTextureId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md), features: () -&gt; [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt; = { setOf() }) |
+| [ARCore](-a-r-core.md) | [androidJvm]<br>fun [ARCore](-a-r-core.md)(lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md), features: () -&gt; [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt; = { setOf() }) |
 
 ## Functions
 

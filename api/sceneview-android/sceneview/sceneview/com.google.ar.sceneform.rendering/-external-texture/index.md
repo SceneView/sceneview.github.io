@@ -15,8 +15,14 @@ Call [setExternalTexture](../-material/set-external-texture.md) to use an Extern
 
 | | |
 |---|---|
-| [ExternalTexture](-external-texture.md) | [androidJvm]<br>open fun [ExternalTexture](-external-texture.md)()<br>Creates an ExternalTexture with a new Android [SurfaceTexture](https://developer.android.com/reference/kotlin/android/graphics/SurfaceTexture.html) and [Surface](https://developer.android.com/reference/kotlin/android/view/Surface.html). |
-| [ExternalTexture](-external-texture.md) | [androidJvm]<br>open fun [ExternalTexture](-external-texture.md)(textureId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), width: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), height: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))<br>Creates an ExternalTexture from an OpenGL ES textureId without a SurfaceTexture. |
+| [ExternalTexture](-external-texture.md) | [androidJvm]<br>open fun [ExternalTexture](-external-texture.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html))<br>Creates an ExternalTexture with a new Android [SurfaceTexture](https://developer.android.com/reference/kotlin/android/graphics/SurfaceTexture.html) and [Surface](https://developer.android.com/reference/kotlin/android/view/Surface.html). |
+| [ExternalTexture](-external-texture.md) | [androidJvm]<br>open fun [ExternalTexture](-external-texture.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), textureId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), width: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), height: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))<br>Creates an ExternalTexture from an OpenGL ES textureId without a SurfaceTexture. |
+
+## Functions
+
+| Name | Summary |
+|---|---|
+| [destroy](destroy.md) | [androidJvm]<br>open fun [destroy](destroy.md)() |
 
 ## Properties
 
