@@ -5,7 +5,7 @@
 [androidJvm]\
 abstract class [Renderable](index.md)
 
-Base class for rendering in 3D space by attaching to a com.google.ar.sceneform.Node with setRenderable.
+Base class for rendering in 3D space by attaching to a [io.github.sceneview.node.Node](../../io.github.sceneview.node/-node/index.md) with setModel.
 
 ## Types
 

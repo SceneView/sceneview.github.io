@@ -3,12 +3,6 @@
 # build
 
 [androidJvm]\
-fun Texture.Builder.[build](build.md)(): Texture
+fun Stream.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): Stream
 
-## See also
-
-androidJvm
-
-| | |
-|---|---|
-| com.google.android.filament.Skybox.Builder |  |
+fun Texture.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): Texture

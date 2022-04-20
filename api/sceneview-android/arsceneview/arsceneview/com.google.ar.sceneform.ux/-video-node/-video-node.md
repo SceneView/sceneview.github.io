@@ -3,7 +3,7 @@
 # VideoNode
 
 [androidJvm]\
-open fun [VideoNode](-video-node.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), player: [MediaPlayer](https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)listener: [VideoNode.Listener](-listener/index.md))
+open fun [VideoNode](-video-node.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), player: [MediaPlayer](https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)listener: [VideoNode.Listener](-listener/index.md))
 
 Create a new VideoNode for showing a video from a MediaPlayer instance inside a node on an adjusted plane renderable
 
@@ -18,7 +18,7 @@ androidJvm
 | listener | Loading listener |
 
 [androidJvm]\
-open fun [VideoNode](-video-node.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), player: [MediaPlayer](https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)chromaKeyColor: [Color](../../../../arsceneview/com.google.ar.sceneform.rendering/-color/index.md), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)listener: [VideoNode.Listener](-listener/index.md))
+open fun [VideoNode](-video-node.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), player: [MediaPlayer](https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)chromaKeyColor: [Color](../../../../arsceneview/com.google.ar.sceneform.rendering/-color/index.md), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)listener: [VideoNode.Listener](-listener/index.md))
 
 Create a new VideoNode for showing a video from a MediaPlayer instance inside a node on an adjusted plane renderable with video transparency color set to chromaKeyColor.
 
@@ -34,7 +34,7 @@ androidJvm
 | listener | Loading listener |
 
 [androidJvm]\
-open fun [VideoNode](-video-node.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), player: [MediaPlayer](https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)chromaKeyColor: [Color](../../../../arsceneview/com.google.ar.sceneform.rendering/-color/index.md), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)texture: [ExternalTexture](../../../../arsceneview/com.google.ar.sceneform.rendering/-external-texture/index.md), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)listener: [VideoNode.Listener](-listener/index.md))
+open fun [VideoNode](-video-node.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), player: [MediaPlayer](https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)chromaKeyColor: [Color](../../../../arsceneview/com.google.ar.sceneform.rendering/-color/index.md), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)texture: [ExternalTexture](../../../../arsceneview/com.google.ar.sceneform.rendering/-external-texture/index.md), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)listener: [VideoNode.Listener](-listener/index.md))
 
 Create a new VideoNode for showing a video from a MediaPlayer instance inside a node on your own material renderable and material with video transparency color set to chromaKeyColor
 

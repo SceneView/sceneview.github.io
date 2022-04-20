@@ -6,4 +6,4 @@
 
 @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private val [filamentTexture](filament-texture.md): Texture
+private open val [filamentTexture](filament-texture.md): Texture

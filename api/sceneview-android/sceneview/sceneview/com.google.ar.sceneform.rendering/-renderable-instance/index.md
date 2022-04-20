@@ -11,7 +11,7 @@ Controls how a [Renderable](../-renderable/index.md) is displayed. There can be 
 
 | | |
 |---|---|
-| [RenderableInstance](-renderable-instance.md) | [androidJvm]<br>open fun [RenderableInstance](-renderable-instance.md)(transformProvider: [TransformProvider](../../com.google.ar.sceneform.common/-transform-provider/index.md), renderable: [Renderable](../-renderable/index.md)) |
+| [RenderableInstance](-renderable-instance.md) | [androidJvm]<br>open fun [RenderableInstance](-renderable-instance.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), transformProvider: [TransformProvider](../../com.google.ar.sceneform.common/-transform-provider/index.md), renderable: [Renderable](../-renderable/index.md)) |
 
 ## Types
 

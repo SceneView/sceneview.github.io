@@ -11,14 +11,14 @@ Renders a single ARCore Plane.
 
 | | |
 |---|---|
-| [PlaneVisualizer](-plane-visualizer.md) | [androidJvm]<br>open fun [PlaneVisualizer](-plane-visualizer.md)(plane: Plane, renderer: [Renderer](../../../../arsceneview/com.google.ar.sceneform.rendering/-renderer/index.md)) |
+| [PlaneVisualizer](-plane-visualizer.md) | [androidJvm]<br>open fun [PlaneVisualizer](-plane-visualizer.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), plane: Plane, renderer: [Renderer](../../../../arsceneview/com.google.ar.sceneform.rendering/-renderer/index.md)) |
 
 ## Functions
 
 | Name | Summary |
 |---|---|
+| [destroy](destroy.md) | [androidJvm]<br>open fun [destroy](destroy.md)() |
 | [getTransformationMatrix](get-transformation-matrix.md) | [androidJvm]<br>open fun [getTransformationMatrix](get-transformation-matrix.md)(): [Matrix](../../../../sceneview/sceneview/com.google.ar.sceneform.math/-matrix/index.md) |
-| [release](release.md) | [androidJvm]<br>open fun [release](release.md)() |
 | [setEnabled](set-enabled.md) | [androidJvm]<br>open fun [setEnabled](set-enabled.md)(enabled: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
 | [setPlaneMaterial](set-plane-material.md) | [androidJvm]<br>open fun [setPlaneMaterial](set-plane-material.md)(material: [Material](../../../../arsceneview/com.google.ar.sceneform.rendering/-material/index.md)) |
 | [setShadowMaterial](set-shadow-material.md) | [androidJvm]<br>open fun [setShadowMaterial](set-shadow-material.md)(material: [Material](../../../../arsceneview/com.google.ar.sceneform.rendering/-material/index.md)) |

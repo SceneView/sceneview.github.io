@@ -39,7 +39,7 @@ androidJvm
 | Name | Summary |
 |---|---|
 | [close](close.md) | [androidJvm]<br>open override fun [close](close.md)() |
-| [destroy](destroy.md) | [androidJvm]<br>open fun [destroy](destroy.md)() |
+| [destroy](destroy.md) | [androidJvm]<br>open fun [destroy](destroy.md)()<br>You shouldn't have to call it if you used lifecycle, since each entity is destroyed at the onDestroy() |
 
 ## Properties
 

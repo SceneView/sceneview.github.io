@@ -3,7 +3,7 @@
 # loadView
 
 [androidJvm]\
-fun [loadView](load-view.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), layoutResId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), coroutineScope: [LifecycleCoroutineScope](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleCoroutineScope.html)? = null, onError: ([Exception](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? = null, onLoaded: (instance: [RenderableInstance](../../com.google.ar.sceneform.rendering/-renderable-instance/index.md), view: [View](https://developer.android.com/reference/kotlin/android/view/View.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? = null)
+fun [loadView](load-view.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null, layoutResId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), onError: ([Exception](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? = null, onLoaded: (instance: [RenderableInstance](../../com.google.ar.sceneform.rendering/-renderable-instance/index.md), view: [View](https://developer.android.com/reference/kotlin/android/view/View.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? = null)
 
 TODO : Doc
 

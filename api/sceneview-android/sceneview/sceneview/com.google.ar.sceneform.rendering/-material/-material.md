@@ -3,4 +3,4 @@
 # Material
 
 [androidJvm]\
-open fun [Material](-material.md)(materialData: [MaterialInternalData](../-material-internal-data/index.md), cleanupResource: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
+open fun [Material](-material.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), materialData: [MaterialInternalData](../-material-internal-data/index.md))

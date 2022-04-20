@@ -10,7 +10,7 @@ class [KTXEnvironment](index.md)(indirectLight: IndirectLight?, skybox: Skybox?,
 | Name | Summary |
 |---|---|
 | [close](../-environment/close.md) | [androidJvm]<br>open override fun [close](../-environment/close.md)() |
-| [destroy](../-environment/destroy.md) | [androidJvm]<br>open fun [destroy](../-environment/destroy.md)() |
+| [destroy](../-environment/destroy.md) | [androidJvm]<br>open fun [destroy](../-environment/destroy.md)()<br>You shouldn't have to call it if you used lifecycle, since each entity is destroyed at the onDestroy() |
 
 ## Properties
 

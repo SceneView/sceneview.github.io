@@ -6,7 +6,7 @@
 
 @[JvmOverloads](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html)
 
-fun HDRLoader.[createEnvironment](create-environment.md)(hdrBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html), specularFilter: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = defaultSpecularFilter, createSkybox: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = defaultCreateSkybox): [HDREnvironment](-h-d-r-environment/index.md)?
+fun HDRLoader.[createEnvironment](create-environment.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), hdrBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html), specularFilter: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = defaultSpecularFilter, createSkybox: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = defaultCreateSkybox): [HDREnvironment](-h-d-r-environment/index.md)?
 
 ###  Utility for decoding and producing environment resources from an HDR file
 
@@ -37,7 +37,7 @@ androidJvm
 
 @[JvmOverloads](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html)
 
-fun KTXLoader.[createEnvironment](create-environment.md)(iblKtxBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)?, skyboxKtxBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)? = null): [KTXEnvironment](-k-t-x-environment/index.md)
+fun KTXLoader.[createEnvironment](create-environment.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), iblKtxBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)?, skyboxKtxBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)? = null): [KTXEnvironment](-k-t-x-environment/index.md)
 
 ###  Utility for producing environment resources from precompiled cmgen generated KTX files
 

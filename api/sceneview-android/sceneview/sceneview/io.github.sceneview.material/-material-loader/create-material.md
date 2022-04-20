@@ -3,7 +3,7 @@
 # createMaterial
 
 [androidJvm]\
-fun [createMaterial](create-material.md)(filamatBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)): MaterialInstance
+fun [createMaterial](create-material.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), filamatBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)): MaterialInstance
 
 ###  Creates and returns the Material object
 

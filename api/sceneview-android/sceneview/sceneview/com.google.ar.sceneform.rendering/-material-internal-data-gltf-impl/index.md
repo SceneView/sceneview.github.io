@@ -11,13 +11,6 @@ open class [MaterialInternalDataGltfImpl](index.md) : [MaterialInternalData](../
 |---|---|
 | [MaterialInternalDataGltfImpl](-material-internal-data-gltf-impl.md) | [androidJvm]<br>open fun [MaterialInternalDataGltfImpl](-material-internal-data-gltf-impl.md)(filamentMaterial: Material) |
 
-## Functions
-
-| Name | Summary |
-|---|---|
-| [release](../../com.google.ar.sceneform.resources/-shared-reference/release.md) | [androidJvm]<br>open fun [release](../../com.google.ar.sceneform.resources/-shared-reference/release.md)() |
-| [retain](../../com.google.ar.sceneform.resources/-shared-reference/retain.md) | [androidJvm]<br>open fun [retain](../../com.google.ar.sceneform.resources/-shared-reference/retain.md)() |
-
 ## Properties
 
 | Name | Summary |

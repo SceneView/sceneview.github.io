@@ -3,11 +3,11 @@
 # AugmentedFaceNode
 
 [androidJvm]\
-open fun [AugmentedFaceNode](-augmented-face-node.md)()
+open fun [AugmentedFaceNode](-augmented-face-node.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html))
 
 Create an AugmentedFaceNode with no AugmentedFace.
 
 [androidJvm]\
-open fun [AugmentedFaceNode](-augmented-face-node.md)(augmentedFace: AugmentedFace)
+open fun [AugmentedFaceNode](-augmented-face-node.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), augmentedFace: AugmentedFace)
 
 Create an AugmentedFaceNode with the given AugmentedFace.

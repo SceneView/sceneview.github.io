@@ -13,7 +13,7 @@ Represents a reference to a material.
 
 | | |
 |---|---|
-| [Material](-material.md) | [androidJvm]<br>open fun [Material](-material.md)(materialData: [MaterialInternalData](../-material-internal-data/index.md), cleanupResource: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
+| [Material](-material.md) | [androidJvm]<br>open fun [Material](-material.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), materialData: [MaterialInternalData](../-material-internal-data/index.md)) |
 
 ## Types
 
@@ -26,7 +26,6 @@ Represents a reference to a material.
 | Name | Summary |
 |---|---|
 | [builder](builder.md) | [androidJvm]<br>open fun [builder](builder.md)(): [Material.Builder](-builder/index.md)<br>Constructs a [Material](index.md) |
-| [destroy](destroy.md) | [androidJvm]<br>open fun [destroy](destroy.md)() |
 | [getExternalTexture](get-external-texture.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>open fun [getExternalTexture](get-external-texture.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html)): [ExternalTexture](../-external-texture/index.md) |
 | [getFilamentMaterialInstance](get-filament-material-instance.md) | [androidJvm]<br>open fun [getFilamentMaterialInstance](get-filament-material-instance.md)(): MaterialInstance |
 | [makeCopy](make-copy.md) | [androidJvm]<br>open fun [makeCopy](make-copy.md)(): [Material](index.md)<br>Creates a new instance of this Material. |
@@ -35,7 +34,7 @@ Represents a reference to a material.
 | [setBoolean2](set-boolean2.md) | [androidJvm]<br>open fun [setBoolean2](set-boolean2.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), x: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), y: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
 | [setBoolean3](set-boolean3.md) | [androidJvm]<br>open fun [setBoolean3](set-boolean3.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), x: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), y: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), z: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
 | [setBoolean4](set-boolean4.md) | [androidJvm]<br>open fun [setBoolean4](set-boolean4.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), x: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), y: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), z: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), w: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
-| [setDepthTexture](set-depth-texture.md) | [androidJvm]<br>open fun [setDepthTexture](set-depth-texture.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), depthTexture: Texture)<br>    Sets a DepthTexture to a parameter of the type 'sampler2d' on this material. |
+| [setDepthTexture](set-depth-texture.md) | [androidJvm]<br>open fun [setDepthTexture](set-depth-texture.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), depthTexture: Texture)<br>    Sets a [Texture](../-texture/index.md) to a parameter of the type 'sampler2d' on this material. |
 | [setExternalTexture](set-external-texture.md) | [androidJvm]<br>open fun [setExternalTexture](set-external-texture.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), externalTexture: [ExternalTexture](../-external-texture/index.md))<br>Sets an [ExternalTexture](../-external-texture/index.md) to a parameter of type 'samplerExternal' on this material. |
 | [setFloat](set-float.md) | [androidJvm]<br>open fun [setFloat](set-float.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), x: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |
 | [setFloat2](set-float2.md) | [androidJvm]<br>open fun [setFloat2](set-float2.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), x: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), y: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |

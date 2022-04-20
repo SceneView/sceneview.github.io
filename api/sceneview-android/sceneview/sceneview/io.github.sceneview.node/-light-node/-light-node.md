@@ -18,7 +18,7 @@ androidJvm
 | scale | See [Node.scale](../-node/scale.md) |
 
 [androidJvm]\
-fun [LightNode](-light-node.md)(light: [Light](../../com.google.ar.sceneform.rendering/-light/index.md))
+fun [LightNode](-light-node.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), light: [Light](../../com.google.ar.sceneform.rendering/-light/index.md))
 
 fun [LightNode](-light-node.md)(lightInstance: [LightInstance](../../com.google.ar.sceneform.rendering/-light-instance/index.md))
 

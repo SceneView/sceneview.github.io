@@ -3,4 +3,4 @@
 # ARCore
 
 [androidJvm]\
-fun [ARCore](-a-r-core.md)(cameraTextureId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md), features: () -&gt; [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt; = { setOf() })
+fun [ARCore](-a-r-core.md)(lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md), features: () -&gt; [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt; = { setOf() })

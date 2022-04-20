@@ -3,7 +3,7 @@
 # makeTransparentWithTexture
 
 [androidJvm]\
-open fun [makeTransparentWithTexture](make-transparent-with-texture.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), texture: [Texture](../-texture/index.md)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[Material](../-material/index.md)&gt;
+open fun [makeTransparentWithTexture](make-transparent-with-texture.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), texture: [Texture](../-texture/index.md)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[Material](../-material/index.md)&gt;
 
 Creates a transparent [Material](../-material/index.md) with the [Texture](../-texture/index.md) passed in. The [Texture](../-texture/index.md) can be modified by calling [setTexture](../-material/set-texture.md) with [MATERIAL_TEXTURE](-m-a-t-e-r-i-a-l_-t-e-x-t-u-r-e.md). The metallicness, roughness, and reflectance can be modified using [setFloat](../-material/set-float.md).
 

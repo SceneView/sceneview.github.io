@@ -21,8 +21,7 @@ Contains everything that will be drawn on a surface.
 |---|---|
 | [addEntity](index.md#-670665020%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [addEntity](index.md#-670665020%2FFunctions%2F-58641720)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [addLight](index.md#2109119873%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [addLight](index.md#2109119873%2FFunctions%2F-58641720)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
-| [destroyAllResources](destroy-all-resources.md) | [androidJvm]<br>open fun [destroyAllResources](destroy-all-resources.md)()<br>Immediately releases all rendering resources, even if in use. |
-| [dispose](index.md#1821972340%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [dispose](index.md#1821972340%2FFunctions%2F-58641720)() |
+| [destroy](index.md#-799090183%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [destroy](index.md#-799090183%2FFunctions%2F-58641720)() |
 | [enablePerformanceMode](index.md#-1633815997%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [enablePerformanceMode](index.md#-1633815997%2FFunctions%2F-58641720)() |
 | [getCamera](index.md#-1787714184%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getCamera](index.md#-1787714184%2FFunctions%2F-58641720)(): Camera |
 | [getContext](index.md#-189225042%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getContext](index.md#-189225042%2FFunctions%2F-58641720)(): [Context](https://developer.android.com/reference/kotlin/android/content/Context.html) |
@@ -40,7 +39,6 @@ Contains everything that will be drawn on a surface.
 | [onPause](index.md#-791408324%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [onPause](index.md#-791408324%2FFunctions%2F-58641720)() |
 | [onResized](index.md#2117441093%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [onResized](index.md#2117441093%2FFunctions%2F-58641720)(width: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), height: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [onResume](index.md#322288667%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [onResume](index.md#322288667%2FFunctions%2F-58641720)() |
-| [reclaimReleasedResources](reclaim-released-resources.md) | [androidJvm]<br>open fun [reclaimReleasedResources](reclaim-released-resources.md)(): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)<br>Releases rendering resources ready for garbage collection |
 | [removeEntity](index.md#1213550611%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [removeEntity](index.md#1213550611%2FFunctions%2F-58641720)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [removeLight](index.md#1754259026%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [removeLight](index.md#1754259026%2FFunctions%2F-58641720)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [render](index.md#-1281190603%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [render](index.md#-1281190603%2FFunctions%2F-58641720)(frameTimeNanos: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |

@@ -3,12 +3,6 @@
 # build
 
 [androidJvm]\
-fun LightManager.Builder.[build](build.md)(): [Light](index.md#1927638868%2FClasslikes%2F-1571379623)
+fun IndirectLight.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): IndirectLight
 
-## See also
-
-androidJvm
-
-| | |
-|---|---|
-| com.google.android.filament.LightManager.Builder |  |
+fun LightManager.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [Light](index.md#1927638868%2FClasslikes%2F-1571379623)

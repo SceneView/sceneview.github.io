@@ -12,8 +12,9 @@
 
 | Name | Summary |
 |---|---|
+| [build](build.md) | [androidJvm]<br>fun Material.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): Material |
+| [createInstance](create-instance.md) | [androidJvm]<br>fun Material.[createInstance](create-instance.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): MaterialInstance |
 | [destroy](destroy.md) | [androidJvm]<br>fun Material.[destroy](destroy.md)()<br>fun MaterialInstance.[destroy](destroy.md)() |
-| [newInstance](new-instance.md) | [androidJvm]<br>fun MaterialInstance.[newInstance](new-instance.md)(): MaterialInstance |
 | [setAoIndex](set-ao-index.md) | [androidJvm]<br>fun MaterialInstance.[setAoIndex](set-ao-index.md)(value: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [setAoStrength](set-ao-strength.md) | [androidJvm]<br>fun MaterialInstance.[setAoStrength](set-ao-strength.md)(value: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |
 | [setBaseColor](set-base-color.md) | [androidJvm]<br>fun MaterialInstance.[setBaseColor](set-base-color.md)(value: [Color](../io.github.sceneview.utils/index.md#289679020%2FClasslikes%2F-1571379623)) |

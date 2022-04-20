@@ -12,6 +12,13 @@
 | [SceneLifecycleOwner](-scene-lifecycle-owner/index.md) | [androidJvm]<br>interface [SceneLifecycleOwner](-scene-lifecycle-owner/index.md) : [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html)<br>A SurfaceView that integrates with ARCore and renders a scene. |
 | [SceneView](-scene-view/index.md) | [androidJvm]<br>open class [SceneView](-scene-view/index.md)@[JvmOverloads](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html)constructor(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), attrs: [AttributeSet](https://developer.android.com/reference/kotlin/android/util/AttributeSet.html)?, defStyleAttr: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), defStyleRes: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) : [SurfaceView](https://developer.android.com/reference/kotlin/android/view/SurfaceView.html), [SceneLifecycleOwner](-scene-lifecycle-owner/index.md), [DefaultLifecycleObserver](https://developer.android.com/reference/kotlin/androidx/lifecycle/DefaultLifecycleObserver.html), [Choreographer.FrameCallback](https://developer.android.com/reference/kotlin/android/view/Choreographer.FrameCallback.html), [NodeParent](../io.github.sceneview.node/-node-parent/index.md)<br>Maintains the scene graph, a hierarchical organization of a scene's content. A scene can have zero or more child nodes and each node can have zero or more child nodes. The Scene also provides hit testing, a way to detect which node is touched by a MotionEvent or Ray. |
 
+## Functions
+
+| Name | Summary |
+|---|---|
+| [build](build.md) | [androidJvm]<br>fun RenderableManager.Builder.[build](build.md)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+| [createCamera](create-camera.md) | [androidJvm]<br>fun Engine.[createCamera](create-camera.md)(): Camera |
+
 ## Properties
 
 | Name | Summary |

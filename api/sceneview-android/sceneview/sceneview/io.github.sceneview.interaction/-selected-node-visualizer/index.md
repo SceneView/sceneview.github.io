@@ -3,7 +3,7 @@
 # SelectedNodeVisualizer
 
 [androidJvm]\
-class [SelectedNodeVisualizer](index.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [SceneLifecycle](../../io.github.sceneview/-scene-lifecycle/index.md), nodeSelectorModel: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [SceneLifecycleObserver](../../io.github.sceneview/-scene-lifecycle-observer/index.md)
+class [SelectedNodeVisualizer](index.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), nodeSelectorModel: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [SceneLifecycleObserver](../../io.github.sceneview/-scene-lifecycle-observer/index.md)
 
 ###  Visualizes that a [Node](../../io.github.sceneview.node/-node/index.md) is selected by rendering a footprint for the selected node
 
@@ -11,7 +11,7 @@ class [SelectedNodeVisualizer](index.md)(context: [Context](https://developer.an
 
 | | |
 |---|---|
-| [SelectedNodeVisualizer](-selected-node-visualizer.md) | [androidJvm]<br>fun [SelectedNodeVisualizer](-selected-node-visualizer.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [SceneLifecycle](../../io.github.sceneview/-scene-lifecycle/index.md), nodeSelectorModel: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = defaultNodeSelector) |
+| [SelectedNodeVisualizer](-selected-node-visualizer.md) | [androidJvm]<br>fun [SelectedNodeVisualizer](-selected-node-visualizer.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), nodeSelectorModel: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = defaultNodeSelector) |
 
 ## Functions
 
@@ -31,4 +31,4 @@ class [SelectedNodeVisualizer](index.md)(context: [Context](https://developer.an
 
 | Name | Summary |
 |---|---|
-| [lifecycle](lifecycle.md) | [androidJvm]<br>val [lifecycle](lifecycle.md): [SceneLifecycle](../../io.github.sceneview/-scene-lifecycle/index.md) |
+| [lifecycle](lifecycle.md) | [androidJvm]<br>val [lifecycle](lifecycle.md): [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html) |

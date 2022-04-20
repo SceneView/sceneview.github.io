@@ -12,7 +12,6 @@ Represents the data used by a [Renderable](../-renderable/index.md) for renderin
 | Name | Summary |
 |---|---|
 | [buildInstanceData](build-instance-data.md) | [androidJvm]<br>open fun [buildInstanceData](build-instance-data.md)(instance: [RenderableInstance](../-renderable-instance/index.md), renderedEntity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
-| [dispose](dispose.md) | [androidJvm]<br>open fun [dispose](dispose.md)()<br>Removes any memory used by the object. |
 | [getAnimationNames](get-animation-names.md) | [androidJvm]<br>@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)<br>open fun [getAnimationNames](get-animation-names.md)(): [List](https://developer.android.com/reference/kotlin/java/util/List.html)&lt;[String](https://developer.android.com/reference/kotlin/java/lang/String.html)&gt; |
 | [getCenterAabb](get-center-aabb.md) | [androidJvm]<br>open fun [getCenterAabb](get-center-aabb.md)(): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
 | [getExtentsAabb](get-extents-aabb.md) | [androidJvm]<br>open fun [getExtentsAabb](get-extents-aabb.md)(): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |

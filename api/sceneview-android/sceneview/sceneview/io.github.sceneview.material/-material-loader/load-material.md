@@ -3,7 +3,7 @@
 # loadMaterial
 
 [androidJvm]\
-suspend fun [loadMaterial](load-material.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), filamatFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): MaterialInstance?
+suspend fun [loadMaterial](load-material.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), filamatFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): MaterialInstance?
 
 ###  Load a Material object from an filamat file
 

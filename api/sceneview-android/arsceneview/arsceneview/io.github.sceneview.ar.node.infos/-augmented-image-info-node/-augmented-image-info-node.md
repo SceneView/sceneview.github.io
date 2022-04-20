@@ -3,4 +3,4 @@
 # AugmentedImageInfoNode
 
 [androidJvm]\
-fun [AugmentedImageInfoNode](-augmented-image-info-node.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), coroutineScope: [LifecycleCoroutineScope](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleCoroutineScope.html))
+fun [AugmentedImageInfoNode](-augmented-image-info-node.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html))

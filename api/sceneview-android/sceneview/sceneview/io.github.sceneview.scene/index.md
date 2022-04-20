@@ -6,7 +6,8 @@
 
 | Name | Summary |
 |---|---|
-| [destroy](destroy.md) | [androidJvm]<br>fun Camera.[destroy](destroy.md)()<br>Destroys the Camera component associated with the camera entity. |
+| [build](build.md) | [androidJvm]<br>fun ColorGrading.Builder.[build](build.md)(): ColorGrading<br>fun Skybox.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): Skybox |
+| [destroy](destroy.md) | [androidJvm]<br>fun Camera.[destroy](destroy.md)()<br>Destroys the Camera component associated with the camera entity.<br>[androidJvm]<br>fun Renderer.[destroy](destroy.md)()<br>fun Scene.[destroy](destroy.md)()<br>fun View.[destroy](destroy.md)()<br>[androidJvm]<br>fun Skybox.[destroy](destroy.md)()<br>Destroys a Skybox and frees all its associated resources. |
 | [illuminance](illuminance.md) | [androidJvm]<br>fun Camera.[illuminance](illuminance.md)(ev100: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
 | [luminance](luminance.md) | [androidJvm]<br>fun Camera.[luminance](luminance.md)(ev100: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
 | [setEnvironment](set-environment.md) | [androidJvm]<br>fun Scene.[setEnvironment](set-environment.md)(environment: [Environment](../io.github.sceneview.environment/-environment/index.md)?)<br>Environments are usually captured as high-resolution HDR equirectangular images and processed by the cmgen tool to generate the data needed by IndirectLight. |
