@@ -3,4 +3,4 @@
 # LightEstimation
 
 [androidJvm]\
-fun [LightEstimation](-light-estimation.md)(sceneView: [ArSceneView](../../io.github.sceneview.ar/-ar-scene-view/index.md), lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md))
+fun [LightEstimation](-light-estimation.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md))

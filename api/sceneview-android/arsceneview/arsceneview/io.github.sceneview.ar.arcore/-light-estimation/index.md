@@ -3,7 +3,7 @@
 # LightEstimation
 
 [androidJvm]\
-class [LightEstimation](index.md)(sceneView: [ArSceneView](../../io.github.sceneview.ar/-ar-scene-view/index.md), lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md)) : [ArSceneLifecycleObserver](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)
+class [LightEstimation](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md)) : [ArSceneLifecycleObserver](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)
 
 ###  Per frame AR light estimation
 
@@ -15,7 +15,7 @@ A key part for creating realistic AR experiences is getting the lighting right. 
 
 | | |
 |---|---|
-| [LightEstimation](-light-estimation.md) | [androidJvm]<br>fun [LightEstimation](-light-estimation.md)(sceneView: [ArSceneView](../../io.github.sceneview.ar/-ar-scene-view/index.md), lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md)) |
+| [LightEstimation](-light-estimation.md) | [androidJvm]<br>fun [LightEstimation](-light-estimation.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md)) |
 
 ## Types
 
@@ -45,7 +45,7 @@ A key part for creating realistic AR experiences is getting the lighting right. 
 
 | Name | Summary |
 |---|---|
-| [cameraExposureFactor](camera-exposure-factor.md) | [androidJvm]<br>var [cameraExposureFactor](camera-exposure-factor.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>ARCore's light estimation uses unit-less (relative) values while Filament uses a physically based camera model with lux or lumen values. In order to keep the "standard" Filament behavior we scale AR Core values. Infos: https://github.com/ThomasGorisse/SceneformMaintained/pull/156#issuecomment-911873565 |
+| [cameraExposureFactor](camera-exposure-factor.md) | [androidJvm]<br>val [cameraExposureFactor](camera-exposure-factor.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>ARCore's light estimation uses unit-less (relative) values while Filament uses a physically based camera model with lux or lumen values. In order to keep the "standard" Filament behavior we scale AR Core values. Infos: https://github.com/ThomasGorisse/SceneformMaintained/pull/156#issuecomment-911873565 |
 | [cubeMapBuffer](cube-map-buffer.md) | [androidJvm]<br>var [cubeMapBuffer](cube-map-buffer.md): [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)? = null |
 | [cubeMapTexture](cube-map-texture.md) | [androidJvm]<br>var [cubeMapTexture](cube-map-texture.md): Texture? = null |
 | [defaultEnvironmentReflections](default-environment-reflections.md) | [androidJvm]<br>var [defaultEnvironmentReflections](default-environment-reflections.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true<br>If [environmentalHdrReflections](environmental-hdr-reflections.md) is false, use or not the [SceneView.environment](../../io.github.sceneview.ar/-ar-scene-view/index.md#-769674583%2FProperties%2F-58641720) default reflections. In case of false, and [environmentalHdrReflections](environmental-hdr-reflections.md) no reflections will come on your reflective objects. |
@@ -56,10 +56,7 @@ A key part for creating realistic AR experiences is getting the lighting right. 
 | [environmentalHdrSpecularFilter](environmental-hdr-specular-filter.md) | [androidJvm]<br>var [environmentalHdrSpecularFilter](environmental-hdr-specular-filter.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false<br>Specular highlights are the shiny bits of surfaces that reflect a light source directly. Highlights on an object change relative to the position of a viewer in a scene. |
 | [environmentalHdrSphericalHarmonics](environmental-hdr-spherical-harmonics.md) | [androidJvm]<br>var [environmentalHdrSphericalHarmonics](environmental-hdr-spherical-harmonics.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true<br>In addition to the light energy in the main directional light, ARCore provides spherical harmonics, representing the overall ambient light coming in from all directions in the scene. Add subtle cues that bring out the definition of virtual objects. |
 | [lastArFrame](last-ar-frame.md) | [androidJvm]<br>var [lastArFrame](last-ar-frame.md): [ArFrame](../-ar-frame/index.md)? = null |
-| [lifecycle](lifecycle.md) | [androidJvm]<br>val [lifecycle](lifecycle.md): [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md) |
 | [mainLight](main-light.md) | [androidJvm]<br>var [mainLight](main-light.md): [Light](../../../../sceneview/io.github.sceneview.light/-light/index.md)? = null<br>The main directional light API calculates the direction and intensity of the scene's main light source. This information allows virtual objects in your scene to show reasonably positioned specular highlights, and to cast shadows in a direction consistent with other visible real objects. |
 | [mode](mode.md) | [androidJvm]<br>var [mode](mode.md): [LightEstimationMode](../-light-estimation-mode/index.md)<br>ARCore estimate lighting to provide directional light, ambient spherical harmonics, and reflection cubemap estimation |
 | [precision](precision.md) | [androidJvm]<br>var [precision](precision.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
-| [renderer](renderer.md) | [androidJvm]<br>val [renderer](renderer.md): [Renderer](../../../../arsceneview/com.google.ar.sceneform.rendering/-renderer/index.md) |
-| [sceneView](scene-view.md) | [androidJvm]<br>val [sceneView](scene-view.md): [ArSceneView](../../io.github.sceneview.ar/-ar-scene-view/index.md) |
 | [timestamp](timestamp.md) | [androidJvm]<br>var [timestamp](timestamp.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)? = null |

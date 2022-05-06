@@ -3,4 +3,4 @@
 # ArSceneLifecycle
 
 [androidJvm]\
-fun [ArSceneLifecycle](-ar-scene-lifecycle.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), owner: [ArSceneLifecycleOwner](../-ar-scene-lifecycle-owner/index.md))
+fun [ArSceneLifecycle](-ar-scene-lifecycle.md)(sceneView: [ArSceneView](../-ar-scene-view/index.md))

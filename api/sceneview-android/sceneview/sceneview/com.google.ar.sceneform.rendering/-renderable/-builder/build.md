@@ -3,7 +3,7 @@
 # build
 
 [androidJvm]\
-open fun [build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[T](../../../com.google.ar.sceneform.resources/-resource-registry/index.md)&gt;
+open fun [build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[T](../../-load-renderable-from-filament-gltf-task/index.md)&gt;
 
 Constructs a [Renderable](../index.md) with the parameters of the builder.
 

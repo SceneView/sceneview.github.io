@@ -18,5 +18,5 @@ Interface for controlling the size of a [ViewRenderable](../-view-renderable/ind
 | Name |
 |---|
 | [FixedHeightViewSizer](../-fixed-height-view-sizer/index.md) |
-| [FixedWidthViewSizer](../-fixed-width-view-sizer/index.md) |
 | [DpToMetersViewSizer](../-dp-to-meters-view-sizer/index.md) |
+| [FixedWidthViewSizer](../-fixed-width-view-sizer/index.md) |

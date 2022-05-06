@@ -18,7 +18,6 @@ A SurfaceView that integrates with ARCore and renders a scene.
 | Name | Summary |
 |---|---|
 | [activity](activity.md) | [androidJvm]<br>abstract val [activity](activity.md): [ComponentActivity](https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html) |
-| [renderer](renderer.md) | [androidJvm]<br>abstract val [renderer](renderer.md): [Renderer](../../com.google.ar.sceneform.rendering/-renderer/index.md) |
 
 ## Inheritors
 

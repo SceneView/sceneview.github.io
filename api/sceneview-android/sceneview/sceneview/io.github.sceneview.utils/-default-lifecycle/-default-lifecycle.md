@@ -3,4 +3,4 @@
 # DefaultLifecycle
 
 [androidJvm]\
-fun [DefaultLifecycle](-default-lifecycle.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), owner: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html))
+fun [DefaultLifecycle](-default-lifecycle.md)(owner: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html))
