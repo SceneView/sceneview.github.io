@@ -11,7 +11,7 @@ Base class for rendering in 3D space by attaching to a [io.github.sceneview.node
 
 | Name | Summary |
 |---|---|
-| [Builder](-builder/index.md) | [androidJvm]<br>abstract class [Builder](-builder/index.md)&lt;[T](-builder/index.md) : [Renderable](index.md)?, [B](-builder/index.md) : [Renderable.Builder](-builder/index.md)&lt;[T](../../com.google.ar.sceneform.resources/-resource-registry/index.md), [B](-builder/index.md)&gt;?&gt;<br>Used to programmatically construct a [Renderable](index.md). |
+| [Builder](-builder/index.md) | [androidJvm]<br>abstract class [Builder](-builder/index.md)&lt;[T](-builder/index.md) : [Renderable](index.md)?, [B](-builder/index.md) : [Renderable.Builder](-builder/index.md)&lt;[T](../-load-renderable-from-filament-gltf-task/index.md), [B](-builder/index.md)&gt;?&gt;<br>Used to programmatically construct a [Renderable](index.md). |
 
 ## Functions
 

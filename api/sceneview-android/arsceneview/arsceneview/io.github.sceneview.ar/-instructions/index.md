@@ -3,7 +3,7 @@
 # Instructions
 
 [androidJvm]\
-class [Instructions](index.md)(sceneView: [SceneView](../../../../sceneview/sceneview/io.github.sceneview/-scene-view/index.md), lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md)) : [ArSceneLifecycleObserver](../-ar-scene-lifecycle-observer/index.md)
+class [Instructions](index.md)(lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md)) : [ArSceneLifecycleObserver](../-ar-scene-lifecycle-observer/index.md)
 
 ## Functions
 
@@ -15,7 +15,7 @@ class [Instructions](index.md)(sceneView: [SceneView](../../../../sceneview/scen
 | [onArSessionFailed](../-ar-scene-lifecycle-observer/on-ar-session-failed.md) | [androidJvm]<br>open fun [onArSessionFailed](../-ar-scene-lifecycle-observer/on-ar-session-failed.md)(exception: [Exception](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html)) |
 | [onArSessionResumed](../-ar-scene-lifecycle-observer/on-ar-session-resumed.md) | [androidJvm]<br>open fun [onArSessionResumed](../-ar-scene-lifecycle-observer/on-ar-session-resumed.md)(session: [ArSession](../../io.github.sceneview.ar.arcore/-ar-session/index.md)) |
 | [onCreate](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#139941652%2FFunctions%2F-58641720) | [androidJvm]<br>open override fun [onCreate](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#139941652%2FFunctions%2F-58641720)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html)) |
-| [onDestroy](index.md#1057561704%2FFunctions%2F-58641720) | [androidJvm]<br>open override fun [onDestroy](index.md#1057561704%2FFunctions%2F-58641720)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html)) |
+| [onDestroy](../../io.github.sceneview.ar.camera/-ar-camera-stream/index.md#1057561704%2FFunctions%2F-58641720) | [androidJvm]<br>open override fun [onDestroy](../../io.github.sceneview.ar.camera/-ar-camera-stream/index.md#1057561704%2FFunctions%2F-58641720)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html)) |
 | [onFrame](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#1950992732%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [onFrame](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#1950992732%2FFunctions%2F-58641720)(frameTime: [FrameTime](../../../../sceneview/sceneview/io.github.sceneview.utils/-frame-time/index.md)) |
 | [onPause](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#187777572%2FFunctions%2F-58641720) | [androidJvm]<br>open override fun [onPause](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#187777572%2FFunctions%2F-58641720)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html)) |
 | [onResume](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#-1807945979%2FFunctions%2F-58641720) | [androidJvm]<br>open override fun [onResume](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#-1807945979%2FFunctions%2F-58641720)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html)) |
@@ -31,8 +31,6 @@ class [Instructions](index.md)(sceneView: [SceneView](../../../../sceneview/scen
 | [augmentedImageInfoNode](augmented-image-info-node.md) | [androidJvm]<br>val [augmentedImageInfoNode](augmented-image-info-node.md): [AugmentedImageInfoNode](../../io.github.sceneview.ar.node.infos/-augmented-image-info-node/index.md) |
 | [enabled](enabled.md) | [androidJvm]<br>var [enabled](enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
 | [infoNode](info-node.md) | [androidJvm]<br>var [infoNode](info-node.md): [Node](../../../../sceneview/sceneview/io.github.sceneview.node/-node/index.md)? = null |
-| [lifecycle](lifecycle.md) | [androidJvm]<br>val [lifecycle](lifecycle.md): [ArSceneLifecycle](../-ar-scene-lifecycle/index.md) |
-| [sceneView](scene-view.md) | [androidJvm]<br>val [sceneView](scene-view.md): [SceneView](../../../../sceneview/sceneview/io.github.sceneview/-scene-view/index.md) |
 | [searchPlaneInfoEnabled](search-plane-info-enabled.md) | [androidJvm]<br>var [searchPlaneInfoEnabled](search-plane-info-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
 | [searchPlaneInfoNode](search-plane-info-node.md) | [androidJvm]<br>val [searchPlaneInfoNode](search-plane-info-node.md): [SearchPlaneInfoNode](../../io.github.sceneview.ar.node.infos/-search-plane-info-node/index.md) |
 | [tapArPlaneInfoEnabled](tap-ar-plane-info-enabled.md) | [androidJvm]<br>var [tapArPlaneInfoEnabled](tap-ar-plane-info-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |

@@ -3,4 +3,4 @@
 # Instructions
 
 [androidJvm]\
-fun [Instructions](-instructions.md)(sceneView: [SceneView](../../../../sceneview/sceneview/io.github.sceneview/-scene-view/index.md), lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md))
+fun [Instructions](-instructions.md)(lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md))

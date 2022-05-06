@@ -28,7 +28,6 @@ Contains everything that will be drawn on a surface.
 | [addEntity](add-entity.md) | [androidJvm]<br>open fun [addEntity](add-entity.md)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [addLight](add-light.md) | [androidJvm]<br>open fun [addLight](add-light.md)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [destroy](destroy.md) | [androidJvm]<br>open fun [destroy](destroy.md)() |
-| [enablePerformanceMode](enable-performance-mode.md) | [androidJvm]<br>open fun [enablePerformanceMode](enable-performance-mode.md)()<br>Sets a high performance configuration for the filament view. |
 | [getContext](get-context.md) | [androidJvm]<br>open fun [getContext](get-context.md)(): [Context](https://developer.android.com/reference/kotlin/android/content/Context.html) |
 | [getDesiredHeight](get-desired-height.md) | [androidJvm]<br>open fun [getDesiredHeight](get-desired-height.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [getDesiredWidth](get-desired-width.md) | [androidJvm]<br>open fun [getDesiredWidth](get-desired-width.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
@@ -64,6 +63,7 @@ Contains everything that will be drawn on a surface.
 | Name | Summary |
 |---|---|
 | [camera](camera.md) | [androidJvm]<br>private open val [camera](camera.md): Camera |
+| [cameraProvider](camera-provider.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>@get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open var [cameraProvider](camera-provider.md): [CameraProvider](../-camera-provider/index.md) |
 | [environment](environment.md) | [androidJvm]<br>open var [environment](environment.md): [Environment](../../io.github.sceneview.environment/-environment/index.md) |
 | [mainLight](main-light.md) | [androidJvm]<br>open var [mainLight](main-light.md): [Integer](https://developer.android.com/reference/kotlin/java/lang/Integer.html) |
 | [preRenderCallback](pre-render-callback.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open var [preRenderCallback](pre-render-callback.md): [Renderer.PreRenderCallback](-pre-render-callback/index.md) |

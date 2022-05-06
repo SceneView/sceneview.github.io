@@ -3,7 +3,7 @@
 # SceneLifecycle
 
 [androidJvm]\
-open class [SceneLifecycle](index.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), owner: [SceneLifecycleOwner](../-scene-lifecycle-owner/index.md)) : [DefaultLifecycle](../../io.github.sceneview.utils/-default-lifecycle/index.md)
+open class [SceneLifecycle](index.md)(sceneView: [SceneView](../-scene-view/index.md)) : [DefaultLifecycle](../../io.github.sceneview.utils/-default-lifecycle/index.md)
 
 ## Functions
 
@@ -23,8 +23,6 @@ open class [SceneLifecycle](index.md)(context: [Context](https://developer.andro
 | Name | Summary |
 |---|---|
 | [activity](activity.md) | [androidJvm]<br>val [activity](activity.md): [ComponentActivity](https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html) |
-| [context](../../io.github.sceneview.utils/-default-lifecycle/context.md) | [androidJvm]<br>val [context](../../io.github.sceneview.utils/-default-lifecycle/context.md): [Context](https://developer.android.com/reference/kotlin/android/content/Context.html) |
 | [mInternalScopeRef](../../io.github.sceneview.utils/-default-lifecycle/index.md#-374396445%2FProperties%2F-1571379623) | [androidJvm]<br>@[RestrictTo](https://developer.android.com/reference/kotlin/androidx/annotation/RestrictTo.html)(value = [[RestrictTo.Scope.LIBRARY_GROUP](https://developer.android.com/reference/kotlin/androidx/annotation/RestrictTo.Scope.LIBRARY_GROUP.html)])<br>@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)<br>val [mInternalScopeRef](../../io.github.sceneview.utils/-default-lifecycle/index.md#-374396445%2FProperties%2F-1571379623): [AtomicReference](https://developer.android.com/reference/kotlin/java/util/concurrent/atomic/AtomicReference.html)&lt;[Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)&gt; |
 | [observers](../../io.github.sceneview.utils/-default-lifecycle/observers.md) | [androidJvm]<br>val [observers](../../io.github.sceneview.utils/-default-lifecycle/observers.md): [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;[LifecycleObserver](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleObserver.html)&gt; |
-| [owner](owner.md) | [androidJvm]<br>open val [owner](owner.md): [SceneLifecycleOwner](../-scene-lifecycle-owner/index.md) |
-| [renderer](renderer.md) | [androidJvm]<br>val [renderer](renderer.md): [Renderer](../../com.google.ar.sceneform.rendering/-renderer/index.md) |
+| [sceneView](scene-view.md) | [androidJvm]<br>open val [sceneView](scene-view.md): [SceneView](../-scene-view/index.md) |

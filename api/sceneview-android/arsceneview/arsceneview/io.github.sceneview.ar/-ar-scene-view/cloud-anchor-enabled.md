@@ -3,6 +3,6 @@
 # cloudAnchorEnabled
 
 [androidJvm]\
-var [cloudAnchorEnabled](cloud-anchor-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false
+var [cloudAnchorEnabled](cloud-anchor-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
 ###  Cloud anchor mode

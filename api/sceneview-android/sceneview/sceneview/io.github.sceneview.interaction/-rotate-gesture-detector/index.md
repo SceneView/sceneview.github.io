@@ -66,5 +66,4 @@ androidJvm
 | [previousPressure](previous-pressure.md) | [androidJvm]<br>var [previousPressure](previous-pressure.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)? = null |
 | [previousSpan](previous-span.md) | [androidJvm]<br>var [previousSpan](previous-span.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)? = null |
 | [rotation](rotation.md) | [androidJvm]<br>var [rotation](rotation.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)? = null<br>This value is defined as ([currentAngle](current-angle.md) / [previousAngle](previous-angle.md)). |
-| [tentativeFirstRotateEvent](tentative-first-rotate-event.md) | [androidJvm]<br>var [tentativeFirstRotateEvent](tentative-first-rotate-event.md): [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)? = null |
 | [timeDelta](time-delta.md) | [androidJvm]<br>var [timeDelta](time-delta.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)? = null<br>and the current GestureDetector event |

@@ -7,8 +7,8 @@
 | Name | Summary |
 |---|---|
 | [ArFrame](-ar-frame/index.md) | [androidJvm]<br>data class [ArFrame](-ar-frame/index.md)(session: [ArSession](-ar-session/index.md), time: [FrameTime](../../../sceneview/sceneview/io.github.sceneview.utils/-frame-time/index.md), frame: Frame) |
-| [ArSession](-ar-session/index.md) | [androidJvm]<br>class [ArSession](-ar-session/index.md)(cameraTextureId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), lifecycle: [ArSceneLifecycle](../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), features: [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt;) : Session, [ArSceneLifecycleObserver](../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md) |
-| [LightEstimation](-light-estimation/index.md) | [androidJvm]<br>class [LightEstimation](-light-estimation/index.md)(sceneView: [ArSceneView](../io.github.sceneview.ar/-ar-scene-view/index.md), lifecycle: [ArSceneLifecycle](../io.github.sceneview.ar/-ar-scene-lifecycle/index.md)) : [ArSceneLifecycleObserver](../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)<br>ARCore will estimate lighting to provide directional light, ambient spherical harmonics, and reflection cubemap estimation |
+| [ArSession](-ar-session/index.md) | [androidJvm]<br>class [ArSession](-ar-session/index.md)(lifecycle: [ArSceneLifecycle](../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), features: [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt;) : Session, [ArSceneLifecycleObserver](../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md) |
+| [LightEstimation](-light-estimation/index.md) | [androidJvm]<br>class [LightEstimation](-light-estimation/index.md)(lifecycle: [ArSceneLifecycle](../io.github.sceneview.ar/-ar-scene-lifecycle/index.md)) : [ArSceneLifecycleObserver](../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)<br>ARCore will estimate lighting to provide directional light, ambient spherical harmonics, and reflection cubemap estimation |
 | [LightEstimationMode](-light-estimation-mode/index.md) | [androidJvm]<br>enum [LightEstimationMode](-light-estimation-mode/index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[LightEstimationMode](-light-estimation-mode/index.md)&gt; <br>ARCore estimate lighting to provide directional light, ambient spherical harmonics, and reflection cubemap estimation |
 
 ## Functions
@@ -24,7 +24,6 @@
 | Name | Summary |
 |---|---|
 | [cloudAnchorEnabled](cloud-anchor-enabled.md) | [androidJvm]<br>var Config.[cloudAnchorEnabled](cloud-anchor-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
-| [depthEnabled](depth-enabled.md) | [androidJvm]<br>var Config.[depthEnabled](depth-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Not all devices support all modes. Use [Session.isDepthModeSupported](-ar-session/index.md#-514553705%2FFunctions%2F-58641720) to determine whether the current device and the selected camera support a particular depth mode. |
 | [instantPlacementEnabled](instant-placement-enabled.md) | [androidJvm]<br>var Config.[instantPlacementEnabled](instant-placement-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [isTracking](is-tracking.md) | [androidJvm]<br>val Camera.[isTracking](is-tracking.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Keep the screen unlocked while tracking, but allow it to lock when tracking stops. |
 | [isTracking](is-tracking.md) | [androidJvm]<br>val Trackable.[isTracking](is-tracking.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
@@ -32,7 +31,6 @@
 | [planeFindingEnabled](plane-finding-enabled.md) | [androidJvm]<br>var Config.[planeFindingEnabled](plane-finding-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [position](position.md) | [androidJvm]<br>val Pose.[position](position.md): [Position](../../../sceneview/io.github.sceneview.math/-position/index.md) |
 | [quaternion](quaternion.md) | [androidJvm]<br>val Pose.[quaternion](quaternion.md): [Quaternion](../../../sceneview/sceneview/dev.romainguy.kotlin.math/-quaternion/index.md) |
-| [rawDepthEnabled](raw-depth-enabled.md) | [androidJvm]<br>var Config.[rawDepthEnabled](raw-depth-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [rotation](rotation.md) | [androidJvm]<br>val Pose.[rotation](rotation.md): [Rotation](../../../sceneview/io.github.sceneview.math/-rotation/index.md) |
 | [xDirection](x-direction.md) | [androidJvm]<br>val Pose.[xDirection](x-direction.md): [Direction](../../../sceneview/io.github.sceneview.math/-direction/index.md) |
 | [yDirection](y-direction.md) | [androidJvm]<br>val Pose.[yDirection](y-direction.md): [Direction](../../../sceneview/io.github.sceneview.math/-direction/index.md) |

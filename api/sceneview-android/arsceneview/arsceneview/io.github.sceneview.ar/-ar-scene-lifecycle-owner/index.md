@@ -21,7 +21,6 @@ interface [ArSceneLifecycleOwner](index.md) : [SceneLifecycleOwner](../../../../
 | [arCore](ar-core.md) | [androidJvm]<br>abstract val [arCore](ar-core.md): [ARCore](../-a-r-core/index.md) |
 | [arSession](ar-session.md) | [androidJvm]<br>open val [arSession](ar-session.md): [ArSession](../../io.github.sceneview.ar.arcore/-ar-session/index.md)? |
 | [arSessionConfig](ar-session-config.md) | [androidJvm]<br>open val [arSessionConfig](ar-session-config.md): Config? |
-| [renderer](index.md#-1514028257%2FProperties%2F-58641720) | [androidJvm]<br>abstract val [renderer](index.md#-1514028257%2FProperties%2F-58641720): [Renderer](../../../../arsceneview/com.google.ar.sceneform.rendering/-renderer/index.md) |
 
 ## Inheritors
 

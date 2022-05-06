@@ -17,5 +17,5 @@ Base class for all types of shapes that collision checks can be performed agains
 
 | Name |
 |---|
-| [Box](../-box/index.md) |
 | [Sphere](../-sphere/index.md) |
+| [Box](../-box/index.md) |

@@ -3,7 +3,7 @@
 # cameraExposureFactor
 
 [androidJvm]\
-var [cameraExposureFactor](camera-exposure-factor.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)
+val [cameraExposureFactor](camera-exposure-factor.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)
 
 ###  Exposure normalization factor from the camera's EV100
 

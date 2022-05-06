@@ -3,7 +3,7 @@
 # ArSceneLifecycle
 
 [androidJvm]\
-class [ArSceneLifecycle](index.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), owner: [ArSceneLifecycleOwner](../-ar-scene-lifecycle-owner/index.md)) : [SceneLifecycle](../../../../sceneview/sceneview/io.github.sceneview/-scene-lifecycle/index.md)
+class [ArSceneLifecycle](index.md)(sceneView: [ArSceneView](../-ar-scene-view/index.md)) : [SceneLifecycle](../../../../sceneview/sceneview/io.github.sceneview/-scene-lifecycle/index.md)
 
 ## Functions
 
@@ -26,9 +26,7 @@ class [ArSceneLifecycle](index.md)(context: [Context](https://developer.android.
 | [activity](index.md#1824275806%2FProperties%2F-58641720) | [androidJvm]<br>val [activity](index.md#1824275806%2FProperties%2F-58641720): [ComponentActivity](https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html) |
 | [arCore](ar-core.md) | [androidJvm]<br>val [arCore](ar-core.md): [ARCore](../-a-r-core/index.md) |
 | [arSession](ar-session.md) | [androidJvm]<br>val [arSession](ar-session.md): [ArSession](../../io.github.sceneview.ar.arcore/-ar-session/index.md)? |
-| [arSessionConfig](ar-session-config.md) | [androidJvm]<br>val [arSessionConfig](ar-session-config.md): Config? |
-| [context](index.md#227781846%2FProperties%2F-58641720) | [androidJvm]<br>val [context](index.md#227781846%2FProperties%2F-58641720): [Context](https://developer.android.com/reference/kotlin/android/content/Context.html) |
+| [context](context.md) | [androidJvm]<br>val [context](context.md): [Context](https://developer.android.com/reference/kotlin/android/content/Context.html) |
 | [mInternalScopeRef](index.md#-374396445%2FProperties%2F-58641720) | [androidJvm]<br>@[RestrictTo](https://developer.android.com/reference/kotlin/androidx/annotation/RestrictTo.html)(value = [[RestrictTo.Scope.LIBRARY_GROUP](https://developer.android.com/reference/kotlin/androidx/annotation/RestrictTo.Scope.LIBRARY_GROUP.html)])<br>@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)<br>val [mInternalScopeRef](index.md#-374396445%2FProperties%2F-58641720): [AtomicReference](https://developer.android.com/reference/kotlin/java/util/concurrent/atomic/AtomicReference.html)&lt;[Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)&gt; |
 | [observers](index.md#-332709912%2FProperties%2F-58641720) | [androidJvm]<br>val [observers](index.md#-332709912%2FProperties%2F-58641720): [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;[LifecycleObserver](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleObserver.html)&gt; |
-| [owner](owner.md) | [androidJvm]<br>open override val [owner](owner.md): [ArSceneLifecycleOwner](../-ar-scene-lifecycle-owner/index.md) |
-| [renderer](index.md#-1477049814%2FProperties%2F-58641720) | [androidJvm]<br>val [renderer](index.md#-1477049814%2FProperties%2F-58641720): [Renderer](../../../../arsceneview/com.google.ar.sceneform.rendering/-renderer/index.md) |
+| [sceneView](scene-view.md) | [androidJvm]<br>open override val [sceneView](scene-view.md): [ArSceneView](../-ar-scene-view/index.md) |
