@@ -4,3 +4,7 @@
 
 [androidJvm]\
 open val [gestureDetector](gesture-detector.md): [SceneGestureDetector](../../io.github.sceneview.interaction/-scene-gesture-detector/index.md)
+
+###  The gesture detector
+
+Provides a unified place for processing touch events and recognizing gestures.

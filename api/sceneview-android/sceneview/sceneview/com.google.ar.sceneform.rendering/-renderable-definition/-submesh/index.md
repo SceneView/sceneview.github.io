@@ -23,6 +23,6 @@ Represents a Submesh for a RenderableDefinition. Each RenderableDefinition may h
 
 | Name | Summary |
 |---|---|
-| [material](material.md) | [androidJvm]<br>private open var [material](material.md): [Material](../../-material/index.md) |
+| [material](material.md) | [androidJvm]<br>private open var [material](material.md): MaterialInstance |
 | [name](name.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>@get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open var [name](name.md): [String](https://developer.android.com/reference/kotlin/java/lang/String.html) |
 | [triangleIndices](triangle-indices.md) | [androidJvm]<br>private open var [triangleIndices](triangle-indices.md): [List](https://developer.android.com/reference/kotlin/java/util/List.html)&lt;[Integer](https://developer.android.com/reference/kotlin/java/lang/Integer.html)&gt; |

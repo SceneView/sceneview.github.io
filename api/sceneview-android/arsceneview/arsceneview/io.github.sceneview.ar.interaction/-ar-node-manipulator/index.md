@@ -11,12 +11,11 @@ open class [ArNodeManipulator](index.md)(sceneView: [ArSceneView](../../io.githu
 |---|---|
 | [beginRotate](begin-rotate.md) | [androidJvm]<br>open fun [beginRotate](begin-rotate.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [beginScale](begin-scale.md) | [androidJvm]<br>open fun [beginScale](begin-scale.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
-| [beginTransform](begin-transform.md) | [androidJvm]<br>open fun [beginTransform](begin-transform.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
-| [continueTransform](continue-transform.md) | [androidJvm]<br>open fun [continueTransform](continue-transform.md)(x: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), y: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+| [beginTranslate](begin-translate.md) | [androidJvm]<br>open fun [beginTranslate](begin-translate.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+| [continueTranslate](continue-translate.md) | [androidJvm]<br>open fun [continueTranslate](continue-translate.md)(x: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), y: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [endRotate](end-rotate.md) | [androidJvm]<br>open fun [endRotate](end-rotate.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [endScale](end-scale.md) | [androidJvm]<br>open fun [endScale](end-scale.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
-| [endTransform](end-transform.md) | [androidJvm]<br>open fun [endTransform](end-transform.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
-| [onNodeTouch](on-node-touch.md) | [androidJvm]<br>open fun [onNodeTouch](on-node-touch.md)(node: [Node](../../../../sceneview/sceneview/io.github.sceneview.node/-node/index.md)) |
+| [endTranslate](end-translate.md) | [androidJvm]<br>open fun [endTranslate](end-translate.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [rotate](rotate.md) | [androidJvm]<br>open fun [rotate](rotate.md)(deltaRadians: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [scale](scale.md) | [androidJvm]<br>open fun [scale](scale.md)(factor: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 

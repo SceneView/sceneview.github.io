@@ -10,7 +10,6 @@ class [ArSceneGestureDetector](index.md)(sceneView: [ArSceneView](../../io.githu
 | Name | Summary |
 |---|---|
 | [onTouchEvent](index.md#-1998157542%2FFunctions%2F-58641720) | [androidJvm]<br>fun [onTouchEvent](index.md#-1998157542%2FFunctions%2F-58641720)(event: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)) |
-| [onTouchNode](on-touch-node.md) | [androidJvm]<br>open override fun [onTouchNode](on-touch-node.md)(selectedNode: [Node](../../../../sceneview/sceneview/io.github.sceneview.node/-node/index.md)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 
 ## Properties
 
@@ -26,3 +25,4 @@ class [ArSceneGestureDetector](index.md)(sceneView: [ArSceneView](../../io.githu
 | [rotateGestureDetector](rotate-gesture-detector.md) | [androidJvm]<br>open override var [rotateGestureDetector](rotate-gesture-detector.md): [RotateGestureDetector](../../../../sceneview/sceneview/io.github.sceneview.interaction/-rotate-gesture-detector/index.md)? |
 | [scaleGestureDetector](scale-gesture-detector.md) | [androidJvm]<br>open override var [scaleGestureDetector](scale-gesture-detector.md): [ScaleGestureDetector](https://developer.android.com/reference/kotlin/android/view/ScaleGestureDetector.html)? |
 | [sceneView](index.md#-1295819589%2FProperties%2F-58641720) | [androidJvm]<br>val [sceneView](index.md#-1295819589%2FProperties%2F-58641720): [SceneView](../../../../sceneview/sceneview/io.github.sceneview/-scene-view/index.md) |
+| [selectedNode](selected-node.md) | [androidJvm]<br>var [selectedNode](selected-node.md): [ArNode](../../io.github.sceneview.ar.node/-ar-node/index.md)? |

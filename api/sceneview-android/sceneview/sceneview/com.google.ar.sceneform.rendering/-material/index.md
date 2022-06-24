@@ -13,7 +13,9 @@ Represents a reference to a material.
 
 | | |
 |---|---|
-| [Material](-material.md) | [androidJvm]<br>open fun [Material](-material.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), materialData: [MaterialInternalData](../-material-internal-data/index.md)) |
+| [Material](-material.md) | [androidJvm]<br>open fun [Material](-material.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), filamentMaterial: Material) |
+| [Material](-material.md) | [androidJvm]<br>open fun [Material](-material.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), filamentMaterial: Material, useDefaultInstance: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
+| [Material](-material.md) | [androidJvm]<br>open fun [Material](-material.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), materialInstance: MaterialInstance) |
 
 ## Types
 
@@ -27,7 +29,6 @@ Represents a reference to a material.
 |---|---|
 | [builder](builder.md) | [androidJvm]<br>open fun [builder](builder.md)(): [Material.Builder](-builder/index.md)<br>Constructs a [Material](index.md) |
 | [getExternalTexture](get-external-texture.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>open fun [getExternalTexture](get-external-texture.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html)): [ExternalTexture](../-external-texture/index.md) |
-| [getFilamentMaterialInstance](get-filament-material-instance.md) | [androidJvm]<br>open fun [getFilamentMaterialInstance](get-filament-material-instance.md)(): MaterialInstance |
 | [makeCopy](make-copy.md) | [androidJvm]<br>open fun [makeCopy](make-copy.md)(): [Material](index.md)<br>Creates a new instance of this Material. |
 | [setBaseColorTexture](set-base-color-texture.md) | [androidJvm]<br>open fun [setBaseColorTexture](set-base-color-texture.md)(texture: [Texture](../-texture/index.md)) |
 | [setBoolean](set-boolean.md) | [androidJvm]<br>open fun [setBoolean](set-boolean.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), x: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
@@ -50,4 +51,5 @@ Represents a reference to a material.
 
 | Name | Summary |
 |---|---|
-| [internalMaterialInstance](internal-material-instance.md) | [androidJvm]<br>val [internalMaterialInstance](internal-material-instance.md): [Material.IMaterialInstance](../../../../arsceneview/com.google.ar.sceneform.rendering/-material/-i-material-instance/index.md) |
+| [filamentMaterial](filament-material.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private val [filamentMaterial](filament-material.md): Material |
+| [filamentMaterialInstance](filament-material-instance.md) | [androidJvm]<br>val [filamentMaterialInstance](filament-material-instance.md): MaterialInstance |

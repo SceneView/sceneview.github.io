@@ -3,6 +3,8 @@
 # ArNode
 
 [androidJvm]\
+fun [ArNode](-ar-node.md)(placementMode: [PlacementMode](../-placement-mode/index.md))
+
 fun [ArNode](-ar-node.md)(anchor: Anchor)
 
 TODO : Doc

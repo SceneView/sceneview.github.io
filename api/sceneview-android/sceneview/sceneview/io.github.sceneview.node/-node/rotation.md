@@ -5,13 +5,11 @@
 [androidJvm]\
 var [rotation](rotation.md): [Rotation](../../io.github.sceneview.math/index.md#1133844556%2FClasslikes%2F-1571379623)
 
-###  The node orientation in Euler Angles Degrees per axis.
+###  The node orientation in Euler Angles Degrees per axis from 0.0f to 360.0f
 
-[0..360]
+The three-component rotation vector specifies the direction of the rotation axis in degrees. Rotation is applied relative to the node's origin property.
 
-The three-component rotation vector specifies the direction of the rotation axis in degrees.
-
-The default rotation is the zero vector, specifying no rotation. Rotation is applied relative to the node's origin property.
+Default is Rotation(x = 0.0f, y = 0.0f, z = 0.0f), specifying no rotation.
 
 Note that modifying the individual components of the returned rotation doesn't have any effect.
 

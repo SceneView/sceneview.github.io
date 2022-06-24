@@ -19,9 +19,4 @@ var [scale](scale.md): [Scale](../../io.github.sceneview.math/index.md#205593879
 
 ###  The node scale on each axis.
 
-- 
-   reduce size: scale < 1.0f
-- 
-   same size: scale = 1.0f
-- 
-   increase size: scale 1.0f
+Reduce (scale &lt; 1.0f) / Increase (scale &gt; 1.0f)

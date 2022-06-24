@@ -5,9 +5,9 @@
 [androidJvm]\
 var [position](position.md): [Position](../../io.github.sceneview.math/index.md#945960193%2FClasslikes%2F-1571379623)
 
-###  The node position
+###  The node position to locate it within the coordinate system of its parent
 
-The node's position locates it within the coordinate system of its parent. The default position is the zero vector, indicating that the node is placed at the origin of the parent node's coordinate system.
+Default is Position(x = 0.0f, y = 0.0f, z = 0.0f), indicating that the node is placed at the origin of the parent node's coordinate system.
 
 **Horizontal (X):**
 

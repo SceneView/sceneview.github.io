@@ -28,10 +28,12 @@
 | [isTracking](is-tracking.md) | [androidJvm]<br>val Camera.[isTracking](is-tracking.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Keep the screen unlocked while tracking, but allow it to lock when tracking stops. |
 | [isTracking](is-tracking.md) | [androidJvm]<br>val Trackable.[isTracking](is-tracking.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [isTracking](is-tracking.md) | [androidJvm]<br>val HitResult.[isTracking](is-tracking.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+| [isTracking](is-tracking.md) | [androidJvm]<br>val AugmentedImage.[isTracking](is-tracking.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [planeFindingEnabled](plane-finding-enabled.md) | [androidJvm]<br>var Config.[planeFindingEnabled](plane-finding-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [position](position.md) | [androidJvm]<br>val Pose.[position](position.md): [Position](../../../sceneview/io.github.sceneview.math/-position/index.md) |
 | [quaternion](quaternion.md) | [androidJvm]<br>val Pose.[quaternion](quaternion.md): [Quaternion](../../../sceneview/sceneview/dev.romainguy.kotlin.math/-quaternion/index.md) |
 | [rotation](rotation.md) | [androidJvm]<br>val Pose.[rotation](rotation.md): [Rotation](../../../sceneview/io.github.sceneview.math/-rotation/index.md) |
+| [transform](transform.md) | [androidJvm]<br>val Pose.[transform](transform.md): [Transform](../../../sceneview/io.github.sceneview.math/-transform/index.md) |
 | [xDirection](x-direction.md) | [androidJvm]<br>val Pose.[xDirection](x-direction.md): [Direction](../../../sceneview/io.github.sceneview.math/-direction/index.md) |
 | [yDirection](y-direction.md) | [androidJvm]<br>val Pose.[yDirection](y-direction.md): [Direction](../../../sceneview/io.github.sceneview.math/-direction/index.md) |
 | [zDirection](z-direction.md) | [androidJvm]<br>val Pose.[zDirection](z-direction.md): [Direction](../../../sceneview/io.github.sceneview.math/-direction/index.md) |

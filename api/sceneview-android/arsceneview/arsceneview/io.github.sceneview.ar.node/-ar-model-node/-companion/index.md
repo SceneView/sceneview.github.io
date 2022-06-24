@@ -9,4 +9,4 @@ object [Companion](index.md)
 
 | Name | Summary |
 |---|---|
-| [DEFAULT_PLACEMENT_POSITION](-d-e-f-a-u-l-t_-p-l-a-c-e-m-e-n-t_-p-o-s-i-t-i-o-n.md) | [androidJvm]<br>val [DEFAULT_PLACEMENT_POSITION](-d-e-f-a-u-l-t_-p-l-a-c-e-m-e-n-t_-p-o-s-i-t-i-o-n.md): [Float3](../../../../../sceneview/sceneview/dev.romainguy.kotlin.math/-float3/index.md) |
+| [DEFAULT_HIT_POSITION](-d-e-f-a-u-l-t_-h-i-t_-p-o-s-i-t-i-o-n.md) | [androidJvm]<br>val [DEFAULT_HIT_POSITION](-d-e-f-a-u-l-t_-h-i-t_-p-o-s-i-t-i-o-n.md): [Float3](../../../../../sceneview/sceneview/dev.romainguy.kotlin.math/-float3/index.md) |

@@ -13,6 +13,7 @@ androidJvm
 
 | | |
 |---|---|
+| instantPlacementDistance | Distance in meters at which to create an InstantPlacementPoint. This is only used while the tracking method for the returned point is InstantPlacementPoint. |
 | instantPlacementFallback | Fallback to instantly place nodes at a fixed orientation and an approximate distance when the base placement type is not available yet or at all. |
 
 ## Entries
@@ -32,7 +33,7 @@ androidJvm
 | Name | Summary |
 |---|---|
 | [depthEnabled](depth-enabled.md) | [androidJvm]<br>val [depthEnabled](depth-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
-| [instantPlacementDistance](instant-placement-distance.md) | [androidJvm]<br>var [instantPlacementDistance](instant-placement-distance.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 4.0f |
+| [instantPlacementDistance](instant-placement-distance.md) | [androidJvm]<br>var [instantPlacementDistance](instant-placement-distance.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
 | [instantPlacementEnabled](instant-placement-enabled.md) | [androidJvm]<br>val [instantPlacementEnabled](instant-placement-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [instantPlacementFallback](instant-placement-fallback.md) | [androidJvm]<br>var [instantPlacementFallback](instant-placement-fallback.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false |
 | [name](../../io.github.sceneview.ar.scene/-plane-renderer/-plane-renderer-mode/-r-e-n-d-e-r_-a-l-l/index.md#-372974862%2FProperties%2F-58641720) | [androidJvm]<br>val [name](../../io.github.sceneview.ar.scene/-plane-renderer/-plane-renderer-mode/-r-e-n-d-e-r_-a-l-l/index.md#-372974862%2FProperties%2F-58641720): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |

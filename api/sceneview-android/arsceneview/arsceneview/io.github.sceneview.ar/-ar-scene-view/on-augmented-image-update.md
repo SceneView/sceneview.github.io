@@ -3,7 +3,7 @@
 # onAugmentedImageUpdate
 
 [androidJvm]\
-var [onAugmentedImageUpdate](on-augmented-image-update.md): (augmentedImage: AugmentedImage) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? = null
+var [onAugmentedImageUpdate](on-augmented-image-update.md): [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;(augmentedImage: AugmentedImage) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;
 
 ###  Invoked when an ARCore AugmentedImage TrackingState/TrackingMethod is updated
 

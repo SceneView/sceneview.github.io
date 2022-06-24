@@ -3,4 +3,4 @@
 # build
 
 [androidJvm]\
-open fun [build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [RenderableDefinition](../index.md)
+open fun [build](build.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [RenderableDefinition](../index.md)
