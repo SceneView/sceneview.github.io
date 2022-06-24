@@ -11,3 +11,5 @@ Keep the screen unlocked while tracking, but allow it to lock when tracking stop
 val Trackable.[isTracking](is-tracking.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
 val HitResult.[isTracking](is-tracking.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
+val AugmentedImage.[isTracking](is-tracking.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)

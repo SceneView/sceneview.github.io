@@ -3,4 +3,4 @@
 # material
 
 [androidJvm]\
-private open var [material](material.md): [Material](../../-material/index.md)
+private open var [material](material.md): MaterialInstance

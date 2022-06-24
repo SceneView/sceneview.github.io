@@ -3,4 +3,4 @@
 # instantPlacementDistance
 
 [androidJvm]\
-var [instantPlacementDistance](instant-placement-distance.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 4.0f
+var [instantPlacementDistance](instant-placement-distance.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)

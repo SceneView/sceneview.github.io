@@ -26,7 +26,6 @@ Camera supports one-touch orbit, two-touch pan, and pinch-to-zoom.
 | Name | Summary |
 |---|---|
 | [onTouchEvent](on-touch-event.md) | [androidJvm]<br>fun [onTouchEvent](on-touch-event.md)(event: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)) |
-| [onTouchNode](on-touch-node.md) | [androidJvm]<br>open fun [onTouchNode](on-touch-node.md)(selectedNode: [Node](../../io.github.sceneview.node/-node/index.md)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 
 ## Properties
 

@@ -3,7 +3,20 @@
 # createMaterial
 
 [androidJvm]\
-fun [createMaterial](create-material.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), filamatBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)): MaterialInstance
+fun [createMaterial](create-material.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null, filamatFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): MaterialInstance
+
+###  Load a Material object outside of a coroutine scope from a local filamat file.
+
+## See also
+
+androidJvm
+
+| | |
+|---|---|
+| [io.github.sceneview.material.MaterialLoader](load-material.md) |  |
+
+[androidJvm]\
+fun [createMaterial](create-material.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null, filamatBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)): MaterialInstance
 
 ###  Creates and returns the Material object
 

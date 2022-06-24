@@ -3,4 +3,4 @@
 # createInstance
 
 [androidJvm]\
-fun Material.[createInstance](create-instance.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): MaterialInstance
+fun Material.[createInstance](create-instance.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): MaterialInstance

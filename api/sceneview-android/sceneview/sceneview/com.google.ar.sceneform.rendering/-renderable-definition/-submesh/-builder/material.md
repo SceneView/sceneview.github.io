@@ -6,4 +6,4 @@
 
 @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private open var [material](material.md): [Material](../../../-material/index.md)
+private open var [material](material.md): MaterialInstance
