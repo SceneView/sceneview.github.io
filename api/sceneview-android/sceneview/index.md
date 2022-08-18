@@ -18,9 +18,10 @@
 | [com.google.flatbuffers](sceneview/com.google.flatbuffers/index.md) |
 | [dev.romainguy.kotlin.math](sceneview/dev.romainguy.kotlin.math/index.md) |
 | [io.github.sceneview](sceneview/io.github.sceneview/index.md) |
+| [io.github.sceneview.animation](sceneview/io.github.sceneview.animation/index.md) |
 | [io.github.sceneview.collision](sceneview/io.github.sceneview.collision/index.md) |
 | [io.github.sceneview.environment](sceneview/io.github.sceneview.environment/index.md) |
-| [io.github.sceneview.interaction](sceneview/io.github.sceneview.interaction/index.md) |
+| [io.github.sceneview.gesture](sceneview/io.github.sceneview.gesture/index.md) |
 | [io.github.sceneview.light](sceneview/io.github.sceneview.light/index.md) |
 | [io.github.sceneview.material](sceneview/io.github.sceneview.material/index.md) |
 | [io.github.sceneview.math](sceneview/io.github.sceneview.math/index.md) |

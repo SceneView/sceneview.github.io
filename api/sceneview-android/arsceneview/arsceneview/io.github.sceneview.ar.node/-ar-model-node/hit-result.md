@@ -3,4 +3,4 @@
 # hitResult
 
 [androidJvm]\
-var [hitResult](hit-result.md): HitResult? = null
+open var [hitResult](hit-result.md): HitResult? = null

@@ -3,7 +3,7 @@
 # filterAugmentedImages
 
 [androidJvm]\
-open fun &lt;[T](filter-augmented-images.md) : Trackable?&gt; [filterAugmentedImages](filter-augmented-images.md)(trackables: [Stream](https://developer.android.com/reference/kotlin/java/util/stream/Stream.html)&lt;[T](../../../../arsceneview/com.google.ar.sceneform.ux/-augmented-face-node/check-not-null.md)&gt;, @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)trackingState: TrackingState, @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)trackingMethod: AugmentedImage.TrackingMethod): [Stream](https://developer.android.com/reference/kotlin/java/util/stream/Stream.html)&lt;AugmentedImage&gt;
+open fun &lt;[T](filter-augmented-images.md) : Trackable?&gt; [filterAugmentedImages](filter-augmented-images.md)(trackables: [Stream](https://developer.android.com/reference/kotlin/java/util/stream/Stream.html)&lt;[T](filter-trackables.md)&gt;, @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)trackingState: TrackingState, @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)trackingMethod: AugmentedImage.TrackingMethod): [Stream](https://developer.android.com/reference/kotlin/java/util/stream/Stream.html)&lt;AugmentedImage&gt;
 
 Retrieve a filtered stream containing the Augmented Images with the specified TrackingState and TrackingMethod
 

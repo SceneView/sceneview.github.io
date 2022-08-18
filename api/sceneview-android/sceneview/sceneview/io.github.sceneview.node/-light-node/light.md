@@ -3,4 +3,4 @@
 # light
 
 [androidJvm]\
-val [light](light.md): [Light](../../com.google.ar.sceneform.rendering/-light/index.md)?
+var [light](light.md): [Light](../../io.github.sceneview.light/index.md#1927638868%2FClasslikes%2F-1571379623)? = null

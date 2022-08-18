@@ -3,7 +3,7 @@
 # createIndirectLight
 
 [androidJvm]\
-fun KTXLoader.[createIndirectLight](create-indirect-light.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), buffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html), options: KTXLoader.Options = KTXLoader.Options()): IndirectLight
+fun KTX1Loader.[createIndirectLight](create-indirect-light.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), buffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html), options: KTX1Loader.Options = KTXLoader.Options()): IndirectLight
 
 ###  Consumes the content of a KTX file and produces an IndirectLight object.
 

@@ -34,7 +34,7 @@ androidJvm
 
 | | |
 |---|---|
-| [com.google.ar.sceneform.Camera](../../../arsceneview/com.google.ar.sceneform/-camera/screen-point-to-ray.md) |  |
+| [com.google.ar.sceneform.CameraNode](../../../arsceneview/com.google.ar.sceneform/-camera-node/screen-point-to-ray.md) |  |
 
 ## Parameters
 

@@ -3,7 +3,7 @@
 # createSkybox
 
 [androidJvm]\
-fun KTXLoader.[createSkybox](create-skybox.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), buffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html), options: KTXLoader.Options = KTXLoader.Options()): Skybox
+fun KTX1Loader.[createSkybox](create-skybox.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), buffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html), options: KTX1Loader.Options = KTXLoader.Options()): Skybox
 
 ###  Consumes the content of a KTX file and produces a Skybox object.
 

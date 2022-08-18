@@ -3,6 +3,4 @@
 # renderer
 
 [androidJvm]\
-open val [renderer](renderer.md): [Renderer](../../com.google.ar.sceneform.rendering/-renderer/index.md)
-
-###  The renderer used for this view
+val [renderer](renderer.md): Renderer

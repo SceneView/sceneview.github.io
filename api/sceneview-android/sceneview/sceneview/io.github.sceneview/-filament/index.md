@@ -22,7 +22,7 @@ object [Filament](index.md)
 | [entityManager](entity-manager.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [entityManager](entity-manager.md): EntityManager |
 | [iblPrefilter](ibl-prefilter.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [iblPrefilter](ibl-prefilter.md): [IBLPrefilter](../../io.github.sceneview.environment/-i-b-l-prefilter/index.md) |
 | [lightManager](light-manager.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [lightManager](light-manager.md): LightManager |
-| [materialProvider](material-provider.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [materialProvider](material-provider.md): UbershaderLoader |
+| [materialProvider](material-provider.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [materialProvider](material-provider.md): UbershaderProvider |
 | [renderableManager](renderable-manager.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [renderableManager](renderable-manager.md): RenderableManager |
 | [resourceLoader](resource-loader.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [resourceLoader](resource-loader.md): ResourceLoader |
 | [retainers](retainers.md) | [androidJvm]<br>var [retainers](retainers.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) = 0 |

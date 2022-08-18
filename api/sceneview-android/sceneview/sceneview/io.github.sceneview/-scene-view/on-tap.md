@@ -3,7 +3,7 @@
 # onTap
 
 [androidJvm]\
-open fun [onTap](on-tap.md)(node: [Node](../../io.github.sceneview.node/-node/index.md)?, renderable: [Renderable](../../io.github.sceneview.renderable/index.md#286838466%2FClasslikes%2F-1571379623), motionEvent: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html))
+open fun [onTap](on-tap.md)(motionEvent: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html), node: [Node](../../io.github.sceneview.node/-node/index.md)?, renderable: [Renderable](../../io.github.sceneview.renderable/index.md#286838466%2FClasslikes%2F-1571379623)?)
 
 ###  Invoked when the SceneView is tapped
 
@@ -20,7 +20,7 @@ androidJvm
 | motionEvent | The motion event that caused the tap. |
 
 [androidJvm]\
-var [onTap](on-tap.md): (node: [Node](../../io.github.sceneview.node/-node/index.md)?, [Renderable](../../io.github.sceneview.renderable/index.md#286838466%2FClasslikes%2F-1571379623), motionEvent: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? = null
+var [onTap](on-tap.md): (motionEvent: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html), node: [Node](../../io.github.sceneview.node/-node/index.md)?, [Renderable](../../io.github.sceneview.renderable/index.md#286838466%2FClasslikes%2F-1571379623)?) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? = null
 
 ###  Invoked when the SceneView is tapped
 

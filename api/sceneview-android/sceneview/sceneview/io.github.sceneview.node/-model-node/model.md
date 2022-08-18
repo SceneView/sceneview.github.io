@@ -3,4 +3,8 @@
 # model
 
 [androidJvm]\
-val [model](model.md): [Renderable](../../com.google.ar.sceneform.rendering/-renderable/index.md)?
+open var [model](model.md): [Model](../../io.github.sceneview.model/index.md#1227607086%2FClasslikes%2F-1571379623)? = null
+
+###  The [Model](../../io.github.sceneview.model/index.md#1227607086%2FClasslikes%2F-1571379623) to display.
+
+The renderable is usually a 3D model. If null, this node's current renderable will be removed.

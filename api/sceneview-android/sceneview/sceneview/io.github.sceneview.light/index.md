@@ -13,7 +13,7 @@
 
 | Name | Summary |
 |---|---|
-| [build](build.md) | [androidJvm]<br>fun IndirectLight.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): IndirectLight<br>fun LightManager.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [Light](index.md#1927638868%2FClasslikes%2F-1571379623) |
+| [build](build.md) | [androidJvm]<br>fun IndirectLight.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): IndirectLight<br>fun LightManager.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): [Light](index.md#1927638868%2FClasslikes%2F-1571379623) |
 | [clone](clone.md) | [androidJvm]<br>fun [Light](index.md#1927638868%2FClasslikes%2F-1571379623).[clone](clone.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [destroy](destroy.md) | [androidJvm]<br>fun IndirectLight.[destroy](destroy.md)()<br>Destroys an IndirectLight and frees all its associated resources.<br>[androidJvm]<br>fun [Light](index.md#1927638868%2FClasslikes%2F-1571379623).[destroy](destroy.md)()<br>Destroys a Light and frees all its associated resources. |
 

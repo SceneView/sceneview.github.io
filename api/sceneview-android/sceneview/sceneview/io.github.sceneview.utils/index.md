@@ -10,6 +10,7 @@
 | [DefaultLifecycle](-default-lifecycle/index.md) | [androidJvm]<br>open class [DefaultLifecycle](-default-lifecycle/index.md)(owner: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html)) : [LifecycleRegistry](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleRegistry.html) |
 | [FrameTime](-frame-time/index.md) | [androidJvm]<br>data class [FrameTime](-frame-time/index.md)(nanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), lastNanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)?) |
 | [ResourceLoader](-resource-loader/index.md) | [androidJvm]<br>object [ResourceLoader](-resource-loader/index.md) |
+| [SurfaceCopier](-surface-copier/index.md) | [androidJvm]<br>class [SurfaceCopier](-surface-copier/index.md)(lifecycle: [SceneLifecycle](../io.github.sceneview/-scene-lifecycle/index.md)) : [SceneLifecycleObserver](../io.github.sceneview/-scene-lifecycle-observer/index.md) |
 
 ## Functions
 

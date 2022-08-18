@@ -45,9 +45,9 @@ androidJvm
 
 | Name | Summary |
 |---|---|
-| [indirectLight](indirect-light.md) | [androidJvm]<br>var [indirectLight](indirect-light.md): IndirectLight?<br>Environment lighting has a two components: |
-| [skybox](skybox.md) | [androidJvm]<br>var [skybox](skybox.md): Skybox?<br>The Skybox to use to fill untouched pixels, or null to unset the Skybox. |
-| [sphericalHarmonics](spherical-harmonics.md) | [androidJvm]<br>var [sphericalHarmonics](spherical-harmonics.md): [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)? |
+| [indirectLight](indirect-light.md) | [androidJvm]<br>val [indirectLight](indirect-light.md): IndirectLight? = null<br>Environment lighting has a two components: |
+| [skybox](skybox.md) | [androidJvm]<br>val [skybox](skybox.md): Skybox? = null<br>The Skybox to use to fill untouched pixels, or null to unset the Skybox. |
+| [sphericalHarmonics](spherical-harmonics.md) | [androidJvm]<br>val [sphericalHarmonics](spherical-harmonics.md): [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)? = null |
 
 ## Inheritors
 

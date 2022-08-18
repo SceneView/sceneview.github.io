@@ -31,7 +31,7 @@ interface [ArSceneLifecycleObserver](index.md) : [SceneLifecycleObserver](../../
 | [ArSceneView](../-ar-scene-view/index.md) |
 | [Instructions](../-instructions/index.md) |
 | [ArSession](../../io.github.sceneview.ar.arcore/-ar-session/index.md) |
-| [LightEstimation](../../io.github.sceneview.ar.arcore/-light-estimation/index.md) |
+| [LightEstimator](../../io.github.sceneview.ar.arcore/-light-estimator/index.md) |
 | [ArCameraStream](../../io.github.sceneview.ar.camera/-ar-camera-stream/index.md) |
 | [ArNode](../../io.github.sceneview.ar.node/-ar-node/index.md) |
 | [SearchPlaneInfoNode](../../io.github.sceneview.ar.node.infos/-search-plane-info-node/index.md) |

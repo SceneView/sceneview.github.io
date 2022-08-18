@@ -37,7 +37,7 @@ androidJvm
 
 @[JvmOverloads](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html)
 
-fun KTXLoader.[createEnvironment](create-environment.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), iblKtxBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)?, skyboxKtxBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)? = null): [KTXEnvironment](-k-t-x-environment/index.md)
+fun KTX1Loader.[createEnvironment](create-environment.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), iblKtxBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)?, skyboxKtxBuffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)? = null): [KTXEnvironment](-k-t-x-environment/index.md)
 
 ###  Utility for producing environment resources from precompiled cmgen generated KTX files
 
@@ -59,7 +59,7 @@ androidJvm
 
 | | |
 |---|---|
-| com.google.android.filament.utils.KTXLoader |  |
+| com.google.android.filament.utils.KTX1Loader |  |
 
 ## Parameters
 

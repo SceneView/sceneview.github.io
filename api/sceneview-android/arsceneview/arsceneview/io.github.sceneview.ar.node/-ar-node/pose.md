@@ -14,7 +14,7 @@ The position is the location in space where the ray intersected the geometry. Th
 - 
    Point: Attempt to estimate the normal of the surface centered around the hit test. Surface normal estimation is most likely to succeed on textured surfaces and with camera motion. If Point.getOrientationMode returns Point.OrientationMode.ESTIMATED_SURFACE_NORMAL, then X+ is perpendicular to the cast ray and parallel to the physical surface centered around the hit test, Y+ points along the estimated surface normal, and Z+ points roughly toward the user's device. If Point.getOrientationMode returns Point.OrientationMode.INITIALIZED_TO_IDENTITY, then X+ is perpendicular to the cast ray and points right from the perspective of the user's device, Y+ points up, and Z+ points roughly toward the user's device.
 - 
-   If you wish to retain the location of this pose beyond the duration of a single frame, create an Anchor using [createAnchor](create-anchor.md) to save the pose in a physically consistent way.
+   If you wish to retain the location of this pose beyond the duration of a single frame, create an Anchor using [createAnchor](../../io.github.sceneview.ar.arcore/create-anchor.md) to save the pose in a physically consistent way.
 
 ## See also
 
@@ -22,4 +22,4 @@ androidJvm
 
 | | |
 |---|---|
-| [io.github.sceneview.ar.node.ArNode](create-anchor.md) |  |
+| [createAnchor](../../io.github.sceneview.ar.arcore/create-anchor.md) |  |

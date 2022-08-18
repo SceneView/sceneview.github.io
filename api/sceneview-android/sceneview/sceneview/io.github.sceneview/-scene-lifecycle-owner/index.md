@@ -13,12 +13,6 @@ A SurfaceView that integrates with ARCore and renders a scene.
 |---|---|
 | [getLifecycle](index.md#1810192813%2FFunctions%2F-1571379623) | [androidJvm]<br>@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)<br>abstract fun [getLifecycle](index.md#1810192813%2FFunctions%2F-1571379623)(): [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html) |
 
-## Properties
-
-| Name | Summary |
-|---|---|
-| [activity](activity.md) | [androidJvm]<br>abstract val [activity](activity.md): [ComponentActivity](https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html) |
-
 ## Inheritors
 
 | Name |

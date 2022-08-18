@@ -1,0 +1,14 @@
+//[sceneview](../../index.md)/[io.github.sceneview.renderable](index.md)/[setCastShadows](set-cast-shadows.md)
+
+# setCastShadows
+
+[androidJvm]\
+fun [Renderable](index.md#286838466%2FClasslikes%2F-1571379623).[setCastShadows](set-cast-shadows.md)(enabled: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
+
+## See also
+
+androidJvm
+
+| | |
+|---|---|
+| com.google.android.filament.RenderableManager |  |

@@ -23,7 +23,6 @@ class [ArSceneLifecycle](index.md)(sceneView: [ArSceneView](../-ar-scene-view/in
 
 | Name | Summary |
 |---|---|
-| [activity](index.md#1824275806%2FProperties%2F-58641720) | [androidJvm]<br>val [activity](index.md#1824275806%2FProperties%2F-58641720): [ComponentActivity](https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html) |
 | [arCore](ar-core.md) | [androidJvm]<br>val [arCore](ar-core.md): [ARCore](../-a-r-core/index.md) |
 | [arSession](ar-session.md) | [androidJvm]<br>val [arSession](ar-session.md): [ArSession](../../io.github.sceneview.ar.arcore/-ar-session/index.md)? |
 | [context](context.md) | [androidJvm]<br>val [context](context.md): [Context](https://developer.android.com/reference/kotlin/android/content/Context.html) |

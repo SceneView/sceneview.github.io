@@ -6,9 +6,22 @@
 
 @[JvmOverloads](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html)
 
-fun [Node](-node.md)(position: [Position](../../io.github.sceneview.math/index.md#945960193%2FClasslikes%2F-1571379623) = DEFAULT_POSITION, rotation: [Rotation](../../io.github.sceneview.math/index.md#1133844556%2FClasslikes%2F-1571379623) = DEFAULT_ROTATION, scale: [Scale](../../io.github.sceneview.math/index.md#2055938798%2FClasslikes%2F-1571379623) = DEFAULT_SCALE)
+fun [Node](-node.md)(position: [Position](../../io.github.sceneview.math/index.md#945960193%2FClasslikes%2F-1571379623) = DEFAULT_POSITION, rotation: [Rotation](../../io.github.sceneview.math/index.md#1133844556%2FClasslikes%2F-1571379623), scale: [Scale](../../io.github.sceneview.math/index.md#2055938798%2FClasslikes%2F-1571379623) = DEFAULT_SCALE)
 
 ###  Construct a [Node](index.md) with it Position, Rotation and Scale
+
+## Parameters
+
+androidJvm
+
+| | |
+|---|---|
+| position | See [Node.position](position.md) |
+| rotation | See [Node.rotation](rotation.md) |
+| scale | See [Node.scale](scale.md) |
+
+[androidJvm]\
+fun [Node](-node.md)(position: [Position](../../io.github.sceneview.math/index.md#945960193%2FClasslikes%2F-1571379623) = DEFAULT_POSITION, quaternion: [Quaternion](../../dev.romainguy.kotlin.math/-quaternion/index.md) = DEFAULT_QUATERNION, scale: [Scale](../../io.github.sceneview.math/index.md#2055938798%2FClasslikes%2F-1571379623) = DEFAULT_SCALE)
 
 ## Parameters
 

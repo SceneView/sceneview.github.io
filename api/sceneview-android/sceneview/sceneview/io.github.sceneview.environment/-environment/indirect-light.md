@@ -3,4 +3,4 @@
 # indirectLight
 
 [androidJvm]\
-var [indirectLight](indirect-light.md): IndirectLight?
+val [indirectLight](indirect-light.md): IndirectLight? = null

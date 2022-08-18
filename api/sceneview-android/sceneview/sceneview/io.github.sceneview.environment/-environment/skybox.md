@@ -3,4 +3,4 @@
 # skybox
 
 [androidJvm]\
-var [skybox](skybox.md): Skybox?
+val [skybox](skybox.md): Skybox? = null

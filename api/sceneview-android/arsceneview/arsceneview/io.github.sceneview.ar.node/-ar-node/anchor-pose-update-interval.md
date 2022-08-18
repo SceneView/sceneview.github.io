@@ -3,7 +3,7 @@
 # anchorPoseUpdateInterval
 
 [androidJvm]\
-var [anchorPoseUpdateInterval](anchor-pose-update-interval.md): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html)? = null
+var [anchorPoseUpdateInterval](anchor-pose-update-interval.md): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html)? = 0.1
 
 ###  Adjust the anchor pose update interval in seconds
 

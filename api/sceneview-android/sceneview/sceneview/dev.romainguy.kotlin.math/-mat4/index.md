@@ -58,4 +58,5 @@ data class [Mat4](index.md)(x: [Float4](../-float4/index.md), y: [Float4](../-fl
 
 | Name | Summary |
 |---|---|
+| [quaternion](../../io.github.sceneview.math/quaternion.md) | [androidJvm]<br>val [Mat4](index.md).[quaternion](../../io.github.sceneview.math/quaternion.md): [Quaternion](../-quaternion/index.md) |
 | [toColumnsFloatArray](../../io.github.sceneview.math/to-columns-float-array.md) | [androidJvm]<br>fun [Mat4](index.md).[toColumnsFloatArray](../../io.github.sceneview.math/to-columns-float-array.md)(): [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html) |
