@@ -3,4 +3,4 @@
 # sphericalHarmonics
 
 [androidJvm]\
-var [sphericalHarmonics](spherical-harmonics.md): [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)?
+val [sphericalHarmonics](spherical-harmonics.md): [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)? = null

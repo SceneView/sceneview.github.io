@@ -11,7 +11,7 @@ Base class for rendering in 3D space by attaching to a [io.github.sceneview.node
 
 | Name | Summary |
 |---|---|
-| [Builder](-builder/index.md) | [androidJvm]<br>abstract class [Builder](-builder/index.md)&lt;[T](-builder/index.md) : [Renderable](index.md)?, [B](-builder/index.md) : [Renderable.Builder](-builder/index.md)&lt;[T](../../com.google.ar.sceneform.collision/-collision-system/raycast-all.md), [B](-builder/index.md)&gt;?&gt;<br>Used to programmatically construct a [Renderable](index.md). |
+| [Builder](-builder/index.md) | [androidJvm]<br>abstract class [Builder](-builder/index.md)&lt;[T](-builder/index.md) : [Renderable](index.md)?, [B](-builder/index.md) : [Renderable.Builder](-builder/index.md)&lt;[T](../-load-renderable-from-filament-gltf-task/index.md), [B](-builder/index.md)&gt;?&gt;<br>Used to programmatically construct a [Renderable](index.md). |
 
 ## Functions
 
@@ -24,6 +24,7 @@ Base class for rendering in 3D space by attaching to a [io.github.sceneview.node
 | [getSubmeshCount](get-submesh-count.md) | [androidJvm]<br>open fun [getSubmeshCount](get-submesh-count.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)<br>Returns the number of submeshes that this renderable has. |
 | [getSubmeshName](get-submesh-name.md) | [androidJvm]<br>open fun [getSubmeshName](get-submesh-name.md)(submeshIndex: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)<br>Returns the name associated with the specified submesh. |
 | [makeCopy](make-copy.md) | [androidJvm]<br>abstract fun [makeCopy](make-copy.md)(): [Renderable](index.md)<br>Creates a new instance of this Renderable. |
+| [prepareForDraw](prepare-for-draw.md) | [androidJvm]<br>open fun [prepareForDraw](prepare-for-draw.md)(sceneView: [SceneView](../../io.github.sceneview/-scene-view/index.md))<br>Optionally override in subclasses for work that must be done each frame for specific types of Renderables. |
 | [setMaterial](set-material.md) | [androidJvm]<br>open fun [setMaterial](set-material.md)(material: MaterialInstance)<br>Sets the material bound to the first submesh.<br>[androidJvm]<br>open fun [setMaterial](set-material.md)(submeshIndex: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), material: MaterialInstance)<br>Sets the material bound to the specified submesh. |
 | [setShadowCaster](set-shadow-caster.md) | [androidJvm]<br>open fun [setShadowCaster](set-shadow-caster.md)(isShadowCaster: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))<br>Sets whether the renderable casts shadow on other renderables in the scene. |
 | [setShadowReceiver](set-shadow-receiver.md) | [androidJvm]<br>open fun [setShadowReceiver](set-shadow-receiver.md)(isShadowReceiver: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))<br>Sets whether the renderable receives shadows cast by other renderables in the scene. |
@@ -47,5 +48,5 @@ Base class for rendering in 3D space by attaching to a [io.github.sceneview.node
 
 | Name |
 |---|
-| [ViewRenderable](../-view-renderable/index.md) |
 | [ModelRenderable](../-model-renderable/index.md) |
+| [ViewRenderable](../-view-renderable/index.md) |

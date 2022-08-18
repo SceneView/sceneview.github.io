@@ -21,7 +21,7 @@ androidJvm
 | focusableOnly | Filter the PickHitResult on only selectable nodes |
 
 [androidJvm]\
-fun [SceneView](../io.github.sceneview/-scene-view/index.md).[pickHitTest](pick-hit-test.md)(ray: [Ray](../com.google.ar.sceneform.collision/-ray/index.md), focusableOnly: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)): [PickHitResult](../com.google.ar.sceneform/-pick-hit-result/index.md)
+fun [SceneView](../io.github.sceneview/-scene-view/index.md).[pickHitTest](pick-hit-test.md)(ray: [Ray](../com.google.ar.sceneform.collision/-ray/index.md), selectableOnly: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)): [PickHitResult](../com.google.ar.sceneform/-pick-hit-result/index.md)
 
 Tests to see if a ray is hitting any nodes within the scene and outputs a PickHitResult containing the node closest to the ray origin that intersects with the ray.
 
@@ -35,7 +35,7 @@ androidJvm
 
 | | |
 |---|---|
-| [com.google.ar.sceneform.Camera](../../../arsceneview/com.google.ar.sceneform/-camera/screen-point-to-ray.md) |  |
+| [com.google.ar.sceneform.CameraNode](../../../arsceneview/com.google.ar.sceneform/-camera-node/screen-point-to-ray.md) |  |
 
 ## Parameters
 
@@ -44,4 +44,4 @@ androidJvm
 | | |
 |---|---|
 | ray | the ray to use for the test |
-| focusableOnly | Filter the PickHitResult on only selectable nodes |
+| selectableOnly | Filter the PickHitResult on only selectable nodes |

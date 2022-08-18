@@ -3,4 +3,4 @@
 # prepareForDraw
 
 [androidJvm]\
-open fun [prepareForDraw](prepare-for-draw.md)()
+open fun [prepareForDraw](prepare-for-draw.md)(sceneView: [SceneView](../../io.github.sceneview/-scene-view/index.md))

@@ -3,9 +3,4 @@
 # onHitResult
 
 [androidJvm]\
-open fun [onHitResult](on-hit-result.md)(hitResult: HitResult?)
-
-TODO : Doc
-
-[androidJvm]\
-var [onHitResult](on-hit-result.md): (node: [ArNode](../-ar-node/index.md), hitResult: HitResult?) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? = null
+var [onHitResult](on-hit-result.md): (node: [ArModelNode](index.md), hitResult: HitResult) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? = null

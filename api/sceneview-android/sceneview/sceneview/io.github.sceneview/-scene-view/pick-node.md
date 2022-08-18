@@ -18,3 +18,6 @@ androidJvm
 | x | The x coordinate within the SceneView. |
 | y | The y coordinate within the SceneView. |
 | onPickingCompleted | Called when picking completes. |
+
+[androidJvm]\
+fun [pickNode](pick-node.md)(e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html), onPickingCompleted: (e: [NodeMotionEvent](../../io.github.sceneview.gesture/-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html))

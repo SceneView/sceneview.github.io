@@ -13,7 +13,7 @@ The classes [Node](../-node/index.md) and Scene are both NodeParents. To make a 
 
 | Name | Summary |
 |---|---|
-| [addChild](add-child.md) | [androidJvm]<br>@[UiThread](https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html)<br>open fun [addChild](add-child.md)(child: [Node](../-node/index.md)): [Node](../-node/index.md)<br>Adds a node as a child of this NodeParent. If the node already has a parent, it is removed from its old parent. If the node is already a direct child of this NodeParent, no change is made. |
+| [addChild](add-child.md) | [androidJvm]<br>open fun [addChild](add-child.md)(child: [Node](../-node/index.md)): [Node](../-node/index.md)<br>Adds a node as a child of this NodeParent. If the node already has a parent, it is removed from its old parent. If the node is already a direct child of this NodeParent, no change is made. |
 | [callOnHierarchy](call-on-hierarchy.md) | [androidJvm]<br>open fun [callOnHierarchy](call-on-hierarchy.md)(action: ([Node](../-node/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html))<br>Traversal is depth first. If this NodeParent is a Node, traversal starts with this NodeParent, otherwise traversal starts with its children. |
 | [onChildAdded](on-child-added.md) | [androidJvm]<br>open fun [onChildAdded](on-child-added.md)(child: [Node](../-node/index.md)) |
 | [onChildRemoved](on-child-removed.md) | [androidJvm]<br>open fun [onChildRemoved](on-child-removed.md)(child: [Node](../-node/index.md)) |

@@ -6,4 +6,4 @@
 
 @[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)
 
-val [materialProvider](material-provider.md): UbershaderLoader
+val [materialProvider](material-provider.md): UbershaderProvider

@@ -11,7 +11,7 @@ Renders a single ARCore Plane.
 
 | | |
 |---|---|
-| [PlaneVisualizer](-plane-visualizer.md) | [androidJvm]<br>open fun [PlaneVisualizer](-plane-visualizer.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), plane: Plane, renderer: [Renderer](../../../../arsceneview/com.google.ar.sceneform.rendering/-renderer/index.md)) |
+| [PlaneVisualizer](-plane-visualizer.md) | [androidJvm]<br>open fun [PlaneVisualizer](-plane-visualizer.md)(sceneView: [SceneView](../../../../sceneview/sceneview/io.github.sceneview/-scene-view/index.md), plane: Plane) |
 
 ## Functions
 

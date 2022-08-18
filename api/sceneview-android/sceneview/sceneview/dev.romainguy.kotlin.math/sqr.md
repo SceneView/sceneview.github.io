@@ -4,3 +4,5 @@
 
 [androidJvm]\
 inline fun [sqr](sqr.md)(v: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)
+
+inline fun [sqr](sqr.md)(v: [Half](-half/index.md)): [Half](-half/index.md)

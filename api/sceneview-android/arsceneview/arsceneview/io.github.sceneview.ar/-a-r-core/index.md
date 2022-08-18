@@ -3,7 +3,7 @@
 # ARCore
 
 [androidJvm]\
-class [ARCore](index.md)(lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md), features: () -&gt; [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt;) : [ArSceneLifecycleObserver](../-ar-scene-lifecycle-observer/index.md)
+class [ARCore](index.md)(activity: [ComponentActivity](https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html), lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md), features: [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt;) : [ArSceneLifecycleObserver](../-ar-scene-lifecycle-observer/index.md)
 
 Manages an ARCore Session using the Android Lifecycle API. Before starting a Session, this class requests installation of Google Play Services for AR if it's not installed or not up to date and asks the user for required permissions if necessary.
 
@@ -11,7 +11,7 @@ Manages an ARCore Session using the Android Lifecycle API. Before starting a Ses
 
 | | |
 |---|---|
-| [ARCore](-a-r-core.md) | [androidJvm]<br>fun [ARCore](-a-r-core.md)(lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md), features: () -&gt; [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt; = { setOf() }) |
+| [ARCore](-a-r-core.md) | [androidJvm]<br>fun [ARCore](-a-r-core.md)(activity: [ComponentActivity](https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html), lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md), features: [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt; = setOf()) |
 
 ## Functions
 
@@ -43,11 +43,12 @@ Manages an ARCore Session using the Android Lifecycle API. Before starting a Ses
 
 | Name | Summary |
 |---|---|
+| [activity](activity.md) | [androidJvm]<br>val [activity](activity.md): [ComponentActivity](https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html) |
 | [appSettingsLauncher](app-settings-launcher.md) | [androidJvm]<br>lateinit var [appSettingsLauncher](app-settings-launcher.md): [ActivityResultLauncher](https://developer.android.com/reference/kotlin/androidx/activity/result/ActivityResultLauncher.html)&lt;[Intent](https://developer.android.com/reference/kotlin/android/content/Intent.html)&gt; |
 | [cameraPermissionLauncher](camera-permission-launcher.md) | [androidJvm]<br>lateinit var [cameraPermissionLauncher](camera-permission-launcher.md): [ActivityResultLauncher](https://developer.android.com/reference/kotlin/androidx/activity/result/ActivityResultLauncher.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt; |
 | [checkAvailability](check-availability.md) | [androidJvm]<br>var [checkAvailability](check-availability.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
 | [checkCameraPermission](check-camera-permission.md) | [androidJvm]<br>var [checkCameraPermission](check-camera-permission.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
-| [features](features.md) | [androidJvm]<br>val [features](features.md): () -&gt; [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt; |
+| [features](features.md) | [androidJvm]<br>val [features](features.md): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;Session.Feature&gt; |
 | [lifecycle](lifecycle.md) | [androidJvm]<br>val [lifecycle](lifecycle.md): [ArSceneLifecycle](../-ar-scene-lifecycle/index.md) |
 | [onAppSettingsResult](on-app-settings-result.md) | [androidJvm]<br>var [onAppSettingsResult](on-app-settings-result.md): (result: [ActivityResult](https://developer.android.com/reference/kotlin/androidx/activity/result/ActivityResult.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
 | [onCameraPermissionResult](on-camera-permission-result.md) | [androidJvm]<br>var [onCameraPermissionResult](on-camera-permission-result.md): (isGranted: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |

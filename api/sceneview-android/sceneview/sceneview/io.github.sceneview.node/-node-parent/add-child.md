@@ -3,9 +3,6 @@
 # addChild
 
 [androidJvm]\
-
-@[UiThread](https://developer.android.com/reference/kotlin/androidx/annotation/UiThread.html)
-
 open fun [addChild](add-child.md)(child: [Node](../-node/index.md)): [Node](../-node/index.md)
 
 Adds a node as a child of this NodeParent. If the node already has a parent, it is removed from its old parent. If the node is already a direct child of this NodeParent, no change is made.

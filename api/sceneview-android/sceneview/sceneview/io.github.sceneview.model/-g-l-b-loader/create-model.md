@@ -3,4 +3,4 @@
 # createModel
 
 [androidJvm]\
-fun [createModel](create-model.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), glbFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[ModelRenderable](../../com.google.ar.sceneform.rendering/-model-renderable/index.md)&gt;
+fun [createModel](create-model.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null, buffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)): [Model](../index.md#1227607086%2FClasslikes%2F-1571379623)?

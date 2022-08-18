@@ -17,7 +17,6 @@ interface [ArSceneLifecycleOwner](index.md) : [SceneLifecycleOwner](../../../../
 
 | Name | Summary |
 |---|---|
-| [activity](index.md#1787297363%2FProperties%2F-58641720) | [androidJvm]<br>abstract val [activity](index.md#1787297363%2FProperties%2F-58641720): [ComponentActivity](https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html) |
 | [arCore](ar-core.md) | [androidJvm]<br>abstract val [arCore](ar-core.md): [ARCore](../-a-r-core/index.md) |
 | [arSession](ar-session.md) | [androidJvm]<br>open val [arSession](ar-session.md): [ArSession](../../io.github.sceneview.ar.arcore/-ar-session/index.md)? |
 | [arSessionConfig](ar-session-config.md) | [androidJvm]<br>open val [arSessionConfig](ar-session-config.md): Config? |

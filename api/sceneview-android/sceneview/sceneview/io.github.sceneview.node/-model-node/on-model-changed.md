@@ -3,11 +3,6 @@
 # onModelChanged
 
 [androidJvm]\
-open fun [onModelChanged](on-model-changed.md)(modelInstance: [RenderableInstance](../../com.google.ar.sceneform.rendering/-renderable-instance/index.md)?)
+open fun [onModelChanged](on-model-changed.md)(mode: [Model](../../io.github.sceneview.model/index.md#1227607086%2FClasslikes%2F-1571379623)?)
 
-###  The transformation of the [Node](../-node/index.md) has changed
-
-If node A's position is changed, then that will trigger [onTransformChanged](../../../../sceneview/io.github.sceneview.node/-model-node/on-transform-changed.md) to be called for all of it's descendants.
-
-[androidJvm]\
-var [onModelChanged](on-model-changed.md): [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;(modelInstance: [RenderableInstance](../../com.google.ar.sceneform.rendering/-renderable-instance/index.md)?) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;
+var [onModelChanged](on-model-changed.md): [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;([Model](../../io.github.sceneview.model/index.md#1227607086%2FClasslikes%2F-1571379623)?) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;
