@@ -15,10 +15,10 @@ layout: home
 
 |   |   |   |
 | - | - | - |
-| ![Logo Yembo](/assets/img/sponsors/yembo.png)](https://www.yembo.ai) | [![Logo DigitalMate](/assets/img/sponsors/digitalmate.png)](https://www.digitalmate.fr/) | [![Logo Netpipe](/assets/img/sponsors/netpipe.png)](https://www.netpipe.io/) |
+| [![Logo Yembo](/assets/img/sponsors/yembo.png)](https://www.yembo.ai) | [![Logo DigitalMate](/assets/img/sponsors/digitalmate.png)](https://www.digitalmate.fr/) | [![Logo Netpipe](/assets/img/sponsors/netpipe.png)](https://www.netpipe.io/) |
 
 |   |   |   |
 | - | - | - |
-| [![Logo DCode](/assets/img/sponsors/dcode.png)](https://www.dcode.eu/) | [![Logo Sber](/assets/img/sponsors/sber.png)](https://sbercode.tech/arvr-lab/) |  [![Logo Megaverse](/assets/img/sponsors/megaverse.png)](https://www.megaverse.co/) |
+| [![Logo DCode](/assets/img/sponsors/dcode.png)](https://www.dcode.eu/) | [![Logo Sber](/assets/img/sponsors/sber.png)](https://sbercode.tech/arvr-lab/) | [![Logo Megaverse](/assets/img/sponsors/megaverse.png)](https://www.megaverse.co/) |
 
 [Become a Sponsor / Contribute](/contribute)
