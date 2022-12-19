@@ -3,4 +3,4 @@
 # getTransformationMatrix
 
 [androidJvm]\
-open fun [getTransformationMatrix](get-transformation-matrix.md)(): [Matrix](../../../../sceneview/sceneview/com.google.ar.sceneform.math/-matrix/index.md)
+open fun [getTransformationMatrix](get-transformation-matrix.md)(): Matrix

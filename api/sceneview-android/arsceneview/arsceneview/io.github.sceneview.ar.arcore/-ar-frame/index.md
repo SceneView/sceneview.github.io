@@ -3,7 +3,7 @@
 # ArFrame
 
 [androidJvm]\
-data class [ArFrame](index.md)(session: [ArSession](../-ar-session/index.md), time: [FrameTime](../../../../sceneview/sceneview/io.github.sceneview.utils/-frame-time/index.md), frame: Frame)
+data class [ArFrame](index.md)(val session: [ArSession](../-ar-session/index.md), val time: [FrameTime](../../../../sceneview/sceneview/io.github.sceneview.utils/-frame-time/index.md), val frame: Frame)
 
 ###  Captures the state and changes to the AR system from a call to [Session.update](../-ar-session/index.md#-765428480%2FFunctions%2F-58641720)
 

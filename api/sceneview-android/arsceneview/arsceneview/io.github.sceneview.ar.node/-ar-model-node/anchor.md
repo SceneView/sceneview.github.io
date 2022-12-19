@@ -11,4 +11,4 @@ Creates an anchor at the given pose in the world coordinate space that is attach
 
 #### Return
 
-the created anchor or nullif the node could not be anchored
+the created anchor or `null`if the node could not be anchored

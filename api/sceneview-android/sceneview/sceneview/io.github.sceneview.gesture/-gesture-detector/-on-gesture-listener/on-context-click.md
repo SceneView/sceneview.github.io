@@ -3,4 +3,4 @@
 # onContextClick
 
 [androidJvm]\
-abstract fun [onContextClick](on-context-click.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md))
+open override fun [onContextClick](on-context-click.md)(e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)

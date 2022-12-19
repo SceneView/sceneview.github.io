@@ -3,9 +3,9 @@
 # onScaleBegin
 
 [androidJvm]\
-abstract fun [onScaleBegin](on-scale-begin.md)(detector: [ScaleGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html))
+abstract fun [onScaleBegin](on-scale-begin.md)(detector: [ScaleGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
-###  Responds to the beginning of a scaling gesture. Reported by new pointers going down.
+Responds to the beginning of a scaling gesture. Reported by new pointers going down
 
 ## Parameters
 

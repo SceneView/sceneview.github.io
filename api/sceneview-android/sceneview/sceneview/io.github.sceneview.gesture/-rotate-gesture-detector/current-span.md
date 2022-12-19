@@ -5,4 +5,4 @@
 [androidJvm]\
 var [currentSpan](current-span.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f
 
-###  The current distance in pixels between the two pointers forming the gesture in progress
+The current distance in pixels between the two pointers forming the gesture in progress

@@ -3,4 +3,4 @@
 # GestureDetector
 
 [androidJvm]\
-fun [GestureDetector](-gesture-detector.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), pickNode: ([MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html), ([NodeMotionEvent](../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html), listener: [GestureDetector.OnGestureListener](-on-gesture-listener/index.md))
+fun [GestureDetector](-gesture-detector.md)(view: [SceneView](../../io.github.sceneview/-scene-view/index.md), cameraManipulator: [CameraManipulator](../../io.github.sceneview/index.md#-413489367%2FClasslikes%2F-1571379623)?, nodesManipulator: [NodesManipulator](../-nodes-manipulator/index.md))

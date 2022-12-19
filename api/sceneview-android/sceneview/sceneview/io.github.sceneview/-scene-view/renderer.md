@@ -3,4 +3,6 @@
 # renderer
 
 [androidJvm]\
-val [renderer](renderer.md): Renderer
+lateinit var [renderer](renderer.md): Renderer
+
+A Renderer instance represents an operating system's window.

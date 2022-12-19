@@ -7,9 +7,9 @@ var [hitPosition](hit-position.md): [Position](../../../../sceneview/io.github.s
 
 ###  The node camera/screen/view position where the hit will be made to find an AR position
 
-Until it is anchored, the Node will try to find the real world position/orientation of the screen coordinate and constantly place/orientate himself accordingly if [followHitPosition](follow-hit-position.md) is true
+Until it is anchored, the Node will try to find the real world position/orientation of the screen coordinate and constantly place/orientate himself accordingly if [followHitPosition](follow-hit-position.md) is `true`
 
-The Z value is only used when no surface is actually detected or when [followHitPosition](follow-hit-position.md) and [instantAnchor](instant-anchor.md) is set to false or when instant placement is enabled:
+The Z value is only used when no surface is actually detected or when [followHitPosition](follow-hit-position.md) and [instantAnchor](instant-anchor.md) is set to `false` or when instant placement is enabled:
 
 - 
    In case of instant placement disabled, the z position (distance from the camera) will be estimated by the AR surface distance at the (x,y) so this value is not used.

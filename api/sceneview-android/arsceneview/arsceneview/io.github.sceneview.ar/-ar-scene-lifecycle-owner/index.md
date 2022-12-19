@@ -3,7 +3,7 @@
 # ArSceneLifecycleOwner
 
 [androidJvm]\
-interface [ArSceneLifecycleOwner](index.md) : [SceneLifecycleOwner](../../../../sceneview/sceneview/io.github.sceneview/-scene-lifecycle-owner/index.md)
+interface [ArSceneLifecycleOwner](index.md) : [SceneLifecycleOwner](../../../../sceneview/io.github.sceneview/-scene-lifecycle-owner/index.md)
 
 ###  A SurfaceView that integrates with ARCore and renders a scene.
 

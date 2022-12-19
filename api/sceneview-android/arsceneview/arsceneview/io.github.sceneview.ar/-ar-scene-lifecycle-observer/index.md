@@ -3,7 +3,7 @@
 # ArSceneLifecycleObserver
 
 [androidJvm]\
-interface [ArSceneLifecycleObserver](index.md) : [SceneLifecycleObserver](../../../../sceneview/sceneview/io.github.sceneview/-scene-lifecycle-observer/index.md)
+interface [ArSceneLifecycleObserver](index.md) : [SceneLifecycleObserver](../../../../sceneview/io.github.sceneview/-scene-lifecycle-observer/index.md)
 
 ## Functions
 

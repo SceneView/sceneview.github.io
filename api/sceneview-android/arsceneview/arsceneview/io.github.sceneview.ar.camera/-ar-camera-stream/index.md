@@ -3,7 +3,7 @@
 # ArCameraStream
 
 [androidJvm]\
-class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), standardMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [ArSceneLifecycleObserver](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)
+class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), val standardMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_standard.filamat&quot;, val depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_depth.filamat&quot;) : [ArSceneLifecycleObserver](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)
 
 ###  Displays the Camera stream using Filament.
 
@@ -11,7 +11,7 @@ class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.s
 
 | | |
 |---|---|
-| [ArCameraStream](-ar-camera-stream.md) | [androidJvm]<br>fun [ArCameraStream](-ar-camera-stream.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), standardMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = "sceneview/materials/camera_stream_standard.filamat", depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = "sceneview/materials/camera_stream_depth.filamat") |
+| [ArCameraStream](-ar-camera-stream.md) | [androidJvm]<br>fun [ArCameraStream](-ar-camera-stream.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), standardMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_standard.filamat&quot;, depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_depth.filamat&quot;) |
 
 ## Types
 
@@ -51,6 +51,6 @@ class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.s
 | [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md) | [androidJvm]<br>var [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false<br>This will process the incoming DepthImage to occlude virtual objects behind real world objects. |
 | [material](material.md) | [androidJvm]<br>var [material](material.md): MaterialInstance<br>Depending on [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md) and device Depth compatibility |
 | [priority](priority.md) | [androidJvm]<br>var [priority](priority.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
-| [renderable](renderable.md) | [androidJvm]<br>val [renderable](renderable.md): [Renderable](../../../../sceneview/io.github.sceneview.renderable/-renderable/index.md) |
+| [renderable](renderable.md) | [androidJvm]<br>val [renderable](renderable.md): Renderable |
 | [standardMaterial](standard-material.md) | [androidJvm]<br>var [standardMaterial](standard-material.md): MaterialInstance |
 | [standardMaterialLocation](standard-material-location.md) | [androidJvm]<br>val [standardMaterialLocation](standard-material-location.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |

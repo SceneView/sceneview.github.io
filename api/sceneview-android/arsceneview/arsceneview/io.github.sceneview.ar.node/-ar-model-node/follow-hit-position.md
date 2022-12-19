@@ -26,9 +26,9 @@ Disable it if you manage the positioning by yourself or other AR methods (Augmen
 
 - 
 - - 
-      true An unanchored node is moved as the camera moves (cursor placement)
+      `true` An unanchored node is moved as the camera moves (cursor placement)
 - 
-   false The pose of an unanchored node is not updated. This is used e.g. while moving a node using gestures.
+   `false` The pose of an unanchored node is not updated. This is used e.g. while moving a node using gestures.
 
 ## See also
 

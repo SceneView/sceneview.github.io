@@ -3,4 +3,6 @@
 # toQuaternion
 
 [androidJvm]\
-fun [Rotation](index.md#1133844556%2FClasslikes%2F-1571379623).[toQuaternion](to-quaternion.md)(order: [RotationsOrder](../dev.romainguy.kotlin.math/-rotations-order/index.md) = RotationsOrder.ZYX): [Quaternion](../dev.romainguy.kotlin.math/-quaternion/index.md)
+fun [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html).[toQuaternion](to-quaternion.md)(): Quaternion
+
+fun [Rotation](index.md#1133844556%2FClasslikes%2F-1571379623).[toQuaternion](to-quaternion.md)(order: RotationsOrder = RotationsOrder.ZYX): Quaternion

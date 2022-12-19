@@ -3,4 +3,6 @@
 # build
 
 [androidJvm]\
-fun Material.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): Material
+fun Material.Builder.[build](build.md)(sceneView: [SceneView](../io.github.sceneview/-scene-view/index.md)): Material
+
+fun Deferred&lt;Material.Builder&gt;.[build](build.md)(sceneView: [SceneView](../io.github.sceneview/-scene-view/index.md), onResult: (Material) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)): Job

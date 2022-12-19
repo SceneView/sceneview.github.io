@@ -5,6 +5,7 @@
 [androidJvm]\
 open fun [updateDepthTexture](update-depth-texture.md)(depthImage: [Image](https://developer.android.com/reference/kotlin/android/media/Image.html))
 
+```kotlin
     This is the most important function of this class.
     The Filament Texture is updated based on the newest
     DepthImage. To solve a problem with a to early
@@ -12,6 +13,8 @@ open fun [updateDepthTexture](update-depth-texture.md)(depthImage: [Image](https
     necessary data is cloned. The cloned ByteBuffer is unaffected
     of a released DepthImage and therefore produces not
     a flickering result.
+
+```
 
 ## Parameters
 

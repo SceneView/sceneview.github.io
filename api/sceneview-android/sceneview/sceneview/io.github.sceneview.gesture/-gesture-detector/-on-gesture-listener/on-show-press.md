@@ -3,4 +3,4 @@
 # onShowPress
 
 [androidJvm]\
-abstract fun [onShowPress](on-show-press.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md))
+open override fun [onShowPress](on-show-press.md)(e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html))

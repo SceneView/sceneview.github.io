@@ -5,6 +5,12 @@
 [androidJvm]\
 class [Instructions](index.md)(lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md)) : [ArSceneLifecycleObserver](../-ar-scene-lifecycle-observer/index.md)
 
+## Constructors
+
+| | |
+|---|---|
+| [Instructions](-instructions.md) | [androidJvm]<br>fun [Instructions](-instructions.md)(lifecycle: [ArSceneLifecycle](../-ar-scene-lifecycle/index.md)) |
+
 ## Functions
 
 | Name | Summary |
@@ -30,7 +36,7 @@ class [Instructions](index.md)(lifecycle: [ArSceneLifecycle](../-ar-scene-lifecy
 | [augmentedImageInfoEnabled](augmented-image-info-enabled.md) | [androidJvm]<br>var [augmentedImageInfoEnabled](augmented-image-info-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
 | [augmentedImageInfoNode](augmented-image-info-node.md) | [androidJvm]<br>val [augmentedImageInfoNode](augmented-image-info-node.md): [AugmentedImageInfoNode](../../io.github.sceneview.ar.node.infos/-augmented-image-info-node/index.md) |
 | [enabled](enabled.md) | [androidJvm]<br>var [enabled](enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
-| [infoNode](info-node.md) | [androidJvm]<br>var [infoNode](info-node.md): [Node](../../../../sceneview/sceneview/io.github.sceneview.node/-node/index.md)? = null |
+| [infoNode](info-node.md) | [androidJvm]<br>var [infoNode](info-node.md): Node? = null |
 | [searchPlaneInfoEnabled](search-plane-info-enabled.md) | [androidJvm]<br>var [searchPlaneInfoEnabled](search-plane-info-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |
 | [searchPlaneInfoNode](search-plane-info-node.md) | [androidJvm]<br>val [searchPlaneInfoNode](search-plane-info-node.md): [SearchPlaneInfoNode](../../io.github.sceneview.ar.node.infos/-search-plane-info-node/index.md) |
 | [tapArPlaneInfoEnabled](tap-ar-plane-info-enabled.md) | [androidJvm]<br>var [tapArPlaneInfoEnabled](tap-ar-plane-info-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true |

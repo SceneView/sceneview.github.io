@@ -3,4 +3,4 @@
 # onLongPress
 
 [androidJvm]\
-abstract fun [onLongPress](on-long-press.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md))
+open override fun [onLongPress](on-long-press.md)(e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html))

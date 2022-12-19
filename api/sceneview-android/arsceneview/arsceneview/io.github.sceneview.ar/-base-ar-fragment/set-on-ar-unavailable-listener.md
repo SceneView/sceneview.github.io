@@ -3,6 +3,6 @@
 # setOnArUnavailableListener
 
 [androidJvm]\
-~~fun~~ [~~setOnArUnavailableListener~~](set-on-ar-unavailable-listener.md)~~(~~~~any~~~~:~~ [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?~~)~~~~:~~ [Nothing](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html)?
+~~fun~~ [~~setOnArUnavailableListener~~](set-on-ar-unavailable-listener.md)~~(~~any: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?~~)~~~~:~~ [Nothing](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html)?
 
 ##  Deprecated: Use ArSceneView.onARCoreException

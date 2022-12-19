@@ -3,7 +3,7 @@
 # localToWorldPosition
 
 [androidJvm]\
-fun [localToWorldPosition](local-to-world-position.md)(point: [Vector3](../../../../sceneview/sceneview/com.google.ar.sceneform.math/-vector3/index.md)): [Vector3](../../../../sceneview/sceneview/com.google.ar.sceneform.math/-vector3/index.md)
+fun [localToWorldPosition](local-to-world-position.md)(point: Vector3): Vector3
 
 ###  Converts a point in the local-space of this node to world-space.
 

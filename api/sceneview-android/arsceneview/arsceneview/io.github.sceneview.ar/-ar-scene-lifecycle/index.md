@@ -3,7 +3,13 @@
 # ArSceneLifecycle
 
 [androidJvm]\
-class [ArSceneLifecycle](index.md)(sceneView: [ArSceneView](../-ar-scene-view/index.md)) : [SceneLifecycle](../../../../sceneview/sceneview/io.github.sceneview/-scene-lifecycle/index.md)
+class [ArSceneLifecycle](index.md)(sceneView: [ArSceneView](../-ar-scene-view/index.md)) : [SceneLifecycle](../../../../sceneview/io.github.sceneview/-scene-lifecycle/index.md)
+
+## Constructors
+
+| | |
+|---|---|
+| [ArSceneLifecycle](-ar-scene-lifecycle.md) | [androidJvm]<br>fun [ArSceneLifecycle](-ar-scene-lifecycle.md)(sceneView: [ArSceneView](../-ar-scene-view/index.md)) |
 
 ## Functions
 
@@ -15,7 +21,7 @@ class [ArSceneLifecycle](index.md)(sceneView: [ArSceneView](../-ar-scene-view/in
 | [getCurrentState](index.md#-7428479%2FFunctions%2F-58641720) | [androidJvm]<br>@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)<br>open override fun [getCurrentState](index.md#-7428479%2FFunctions%2F-58641720)(): [Lifecycle.State](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.State.html) |
 | [getObserverCount](index.md#1406557992%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getObserverCount](index.md#1406557992%2FFunctions%2F-58641720)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [handleLifecycleEvent](index.md#1414538918%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [handleLifecycleEvent](index.md#1414538918%2FFunctions%2F-58641720)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [Lifecycle.Event](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.Event.html)) |
-| [markState](index.md#-1226332025%2FFunctions%2F-58641720) | [androidJvm]<br>@[MainThread](https://developer.android.com/reference/kotlin/androidx/annotation/MainThread.html)<br>~~open~~ ~~fun~~ [~~markState~~](index.md#-1226332025%2FFunctions%2F-58641720)~~(~~@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)~~p0~~~~:~~ [Lifecycle.State](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.State.html)~~)~~ |
+| [markState](index.md#-1226332025%2FFunctions%2F-58641720) | [androidJvm]<br>@[MainThread](https://developer.android.com/reference/kotlin/androidx/annotation/MainThread.html)<br>~~open~~ ~~fun~~ [~~markState~~](index.md#-1226332025%2FFunctions%2F-58641720)~~(~~@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [Lifecycle.State](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.State.html)~~)~~ |
 | [removeObserver](index.md#-1354092668%2FFunctions%2F-58641720) | [androidJvm]<br>open override fun [removeObserver](index.md#-1354092668%2FFunctions%2F-58641720)(observer: [LifecycleObserver](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleObserver.html)) |
 | [setCurrentState](index.md#1517748977%2FFunctions%2F-58641720) | [androidJvm]<br>@[MainThread](https://developer.android.com/reference/kotlin/androidx/annotation/MainThread.html)<br>open fun [setCurrentState](index.md#1517748977%2FFunctions%2F-58641720)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [Lifecycle.State](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.State.html)) |
 
@@ -26,6 +32,5 @@ class [ArSceneLifecycle](index.md)(sceneView: [ArSceneView](../-ar-scene-view/in
 | [arCore](ar-core.md) | [androidJvm]<br>val [arCore](ar-core.md): [ARCore](../-a-r-core/index.md) |
 | [arSession](ar-session.md) | [androidJvm]<br>val [arSession](ar-session.md): [ArSession](../../io.github.sceneview.ar.arcore/-ar-session/index.md)? |
 | [context](context.md) | [androidJvm]<br>val [context](context.md): [Context](https://developer.android.com/reference/kotlin/android/content/Context.html) |
-| [mInternalScopeRef](index.md#-374396445%2FProperties%2F-58641720) | [androidJvm]<br>@[RestrictTo](https://developer.android.com/reference/kotlin/androidx/annotation/RestrictTo.html)(value = [[RestrictTo.Scope.LIBRARY_GROUP](https://developer.android.com/reference/kotlin/androidx/annotation/RestrictTo.Scope.LIBRARY_GROUP.html)])<br>@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)<br>val [mInternalScopeRef](index.md#-374396445%2FProperties%2F-58641720): [AtomicReference](https://developer.android.com/reference/kotlin/java/util/concurrent/atomic/AtomicReference.html)&lt;[Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)&gt; |
 | [observers](index.md#-332709912%2FProperties%2F-58641720) | [androidJvm]<br>val [observers](index.md#-332709912%2FProperties%2F-58641720): [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;[LifecycleObserver](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleObserver.html)&gt; |
 | [sceneView](scene-view.md) | [androidJvm]<br>open override val [sceneView](scene-view.md): [ArSceneView](../-ar-scene-view/index.md) |

@@ -3,7 +3,7 @@
 # mainLight
 
 [androidJvm]\
-var [mainLight](main-light.md): [Light](../../../../sceneview/io.github.sceneview.light/-light/index.md)? = null
+var [mainLight](main-light.md): Light? = null
 
 ###  Main directional light (Usually the sun)
 

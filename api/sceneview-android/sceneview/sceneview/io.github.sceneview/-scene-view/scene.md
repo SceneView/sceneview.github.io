@@ -3,4 +3,6 @@
 # scene
 
 [androidJvm]\
-val [scene](scene.md): Scene
+lateinit var [scene](scene.md): Scene
+
+A Scene is a flat container of RenderableManager and LightManager components

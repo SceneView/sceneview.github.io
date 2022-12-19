@@ -7,4 +7,4 @@ fun [interval](interval.md)(lastNanoseconds: [Long](https://kotlinlang.org/api/l
 
 val [interval](interval.md): [Duration](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-duration/index.html)
 
-###  The duration between this frame and the last frame
+The duration between this frame and the last frame
