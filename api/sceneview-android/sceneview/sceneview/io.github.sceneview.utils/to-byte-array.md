@@ -3,4 +3,4 @@
 # toByteArray
 
 [androidJvm]\
-fun [InputStream](https://developer.android.com/reference/kotlin/java/io/InputStream.html).[toByteArray](to-byte-array.md)(): [ByteArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html)
+fun [InputStream](https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html).[toByteArray](to-byte-array.md)(): [ByteArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html)

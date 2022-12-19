@@ -1,0 +1,6 @@
+//[sceneview](../../../index.md)/[io.github.sceneview.animation](../index.md)/[TransformAnimator](index.md)/[ofQuaternion](of-quaternion.md)
+
+# ofQuaternion
+
+[androidJvm]\
+fun [ofQuaternion](of-quaternion.md)(transformable: [TransformComponent](../../io.github.sceneview.components/-transform-component/index.md), vararg quaternions: Quaternion): [ObjectAnimator](https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html)

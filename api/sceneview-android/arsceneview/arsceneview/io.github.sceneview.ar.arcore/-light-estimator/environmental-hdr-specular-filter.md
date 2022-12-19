@@ -9,4 +9,4 @@ var [environmentalHdrSpecularFilter](environmental-hdr-specular-filter.md): [Boo
 
 Specular highlights are the shiny bits of surfaces that reflect a light source directly. Highlights on an object change relative to the position of a viewer in a scene.
 
-true = Reduce the amount of reflectivity a surface has. It is a key component in determining the brightness of specular highlights, along with shininess to determine the size of the highlights.
+`true` = Reduce the amount of reflectivity a surface has. It is a key component in determining the brightness of specular highlights, along with shininess to determine the size of the highlights.

@@ -5,7 +5,7 @@
 [androidJvm]\
 abstract fun [onRotateBegin](on-rotate-begin.md)(detector: [RotateGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
-###  Responds to the beginning of a scaling gesture
+Responds to the beginning of a scaling gesture
 
 Reported by new pointers going down.
 

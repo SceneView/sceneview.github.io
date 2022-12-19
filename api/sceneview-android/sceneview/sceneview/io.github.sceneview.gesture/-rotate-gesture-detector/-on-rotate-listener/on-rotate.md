@@ -5,7 +5,7 @@
 [androidJvm]\
 abstract fun [onRotate](on-rotate.md)(detector: [RotateGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
-###  Responds to rotating events for a gesture in progress
+Responds to rotating events for a gesture in progress
 
 Reported by pointer motion.
 

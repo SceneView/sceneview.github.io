@@ -3,4 +3,8 @@
 # setTexture
 
 [androidJvm]\
-fun MaterialInstance.[setTexture](set-texture.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), texture: Texture, textureSampler: TextureSampler = TextureSampler2D())
+fun MaterialInstance.[setTexture](set-texture.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), texture: Texture, textureSampler: TextureSampler = TextureSampler(
+        TextureSampler.MinFilter.LINEAR_MIPMAP_LINEAR,
+        TextureSampler.MagFilter.LINEAR,
+        TextureSampler.WrapMode.REPEAT
+    ))

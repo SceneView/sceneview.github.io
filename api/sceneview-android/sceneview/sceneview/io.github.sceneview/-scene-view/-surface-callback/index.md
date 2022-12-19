@@ -5,6 +5,12 @@
 [androidJvm]\
 inner class [SurfaceCallback](index.md) : UiHelper.RendererCallback
 
+## Constructors
+
+| | |
+|---|---|
+| [SurfaceCallback](-surface-callback.md) | [androidJvm]<br>fun [SurfaceCallback](-surface-callback.md)() |
+
 ## Functions
 
 | Name | Summary |

@@ -19,6 +19,7 @@ This drives the AR hand motion animation.
 |---|---|
 | [cancel](index.md#-1930822429%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [cancel](index.md#-1930822429%2FFunctions%2F-58641720)() |
 | [computeDurationHint](index.md#319829387%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [computeDurationHint](index.md#319829387%2FFunctions%2F-58641720)(): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) |
+| [getBackdropColor](index.md#-993513210%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getBackdropColor](index.md#-993513210%2FFunctions%2F-58641720)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [getBackgroundColor](index.md#-2092427682%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getBackgroundColor](index.md#-2092427682%2FFunctions%2F-58641720)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [getDetachWallpaper](index.md#-1691915580%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getDetachWallpaper](index.md#-1691915580%2FFunctions%2F-58641720)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [getDuration](index.md#1971915155%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getDuration](index.md#1971915155%2FFunctions%2F-58641720)(): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) |
@@ -27,6 +28,7 @@ This drives the AR hand motion animation.
 | [getInterpolator](index.md#-167348032%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getInterpolator](index.md#-167348032%2FFunctions%2F-58641720)(): [Interpolator](https://developer.android.com/reference/kotlin/android/view/animation/Interpolator.html) |
 | [getRepeatCount](index.md#-624991009%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getRepeatCount](index.md#-624991009%2FFunctions%2F-58641720)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [getRepeatMode](index.md#1316501001%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getRepeatMode](index.md#1316501001%2FFunctions%2F-58641720)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [getShowBackdrop](index.md#1389846676%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getShowBackdrop](index.md#1389846676%2FFunctions%2F-58641720)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [getStartOffset](index.md#-116753250%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getStartOffset](index.md#-116753250%2FFunctions%2F-58641720)(): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) |
 | [getStartTime](index.md#-1399744348%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getStartTime](index.md#-1399744348%2FFunctions%2F-58641720)(): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) |
 | [getTransformation](index.md#114001736%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [getTransformation](index.md#114001736%2FFunctions%2F-58641720)(currentTime: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), outTransformation: [Transformation](https://developer.android.com/reference/kotlin/android/view/animation/Transformation.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
@@ -40,6 +42,7 @@ This drives the AR hand motion animation.
 | [restrictDuration](index.md#-330480719%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [restrictDuration](index.md#-330480719%2FFunctions%2F-58641720)(durationMillis: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)) |
 | [scaleCurrentDuration](index.md#986019820%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [scaleCurrentDuration](index.md#986019820%2FFunctions%2F-58641720)(scale: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |
 | [setAnimationListener](index.md#-1718413587%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setAnimationListener](index.md#-1718413587%2FFunctions%2F-58641720)(listener: [Animation.AnimationListener](https://developer.android.com/reference/kotlin/android/view/animation/Animation.AnimationListener.html)) |
+| [setBackdropColor](index.md#1328544417%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setBackdropColor](index.md#1328544417%2FFunctions%2F-58641720)(backdropColor: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [setBackgroundColor](index.md#-2095601335%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setBackgroundColor](index.md#-2095601335%2FFunctions%2F-58641720)(bg: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [setDetachWallpaper](index.md#411686474%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setDetachWallpaper](index.md#411686474%2FFunctions%2F-58641720)(detachWallpaper: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
 | [setDuration](index.md#-612929269%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setDuration](index.md#-612929269%2FFunctions%2F-58641720)(durationMillis: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)) |
@@ -49,6 +52,7 @@ This drives the AR hand motion animation.
 | [setInterpolator](index.md#1146403879%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setInterpolator](index.md#1146403879%2FFunctions%2F-58641720)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), resID: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [setRepeatCount](index.md#-1357637336%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setRepeatCount](index.md#-1357637336%2FFunctions%2F-58641720)(repeatCount: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [setRepeatMode](index.md#-1640741290%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setRepeatMode](index.md#-1640741290%2FFunctions%2F-58641720)(repeatMode: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+| [setShowBackdrop](index.md#1118222354%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setShowBackdrop](index.md#1118222354%2FFunctions%2F-58641720)(showBackdrop: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
 | [setStartOffset](index.md#-1253290706%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setStartOffset](index.md#-1253290706%2FFunctions%2F-58641720)(startOffset: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)) |
 | [setStartTime](index.md#-1330984652%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setStartTime](index.md#-1330984652%2FFunctions%2F-58641720)(startTimeMillis: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)) |
 | [setZAdjustment](index.md#604580859%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [setZAdjustment](index.md#604580859%2FFunctions%2F-58641720)(zAdjustment: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
@@ -56,3 +60,18 @@ This drives the AR hand motion animation.
 | [startNow](index.md#-294643319%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [startNow](index.md#-294643319%2FFunctions%2F-58641720)() |
 | [willChangeBounds](index.md#-139391354%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [willChangeBounds](index.md#-139391354%2FFunctions%2F-58641720)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [willChangeTransformationMatrix](index.md#1241848369%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [willChangeTransformationMatrix](index.md#1241848369%2FFunctions%2F-58641720)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+
+## Properties
+
+| Name | Summary |
+|---|---|
+| [ABSOLUTE](index.md#1036450950%2FProperties%2F-58641720) | [androidJvm]<br>val [ABSOLUTE](index.md#1036450950%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [INFINITE](index.md#-2084758903%2FProperties%2F-58641720) | [androidJvm]<br>val [INFINITE](index.md#-2084758903%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [RELATIVE_TO_PARENT](index.md#-102633150%2FProperties%2F-58641720) | [androidJvm]<br>val [RELATIVE_TO_PARENT](index.md#-102633150%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [RELATIVE_TO_SELF](index.md#983429280%2FProperties%2F-58641720) | [androidJvm]<br>val [RELATIVE_TO_SELF](index.md#983429280%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [RESTART](index.md#-1305455026%2FProperties%2F-58641720) | [androidJvm]<br>val [RESTART](index.md#-1305455026%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [REVERSE](index.md#1677632731%2FProperties%2F-58641720) | [androidJvm]<br>val [REVERSE](index.md#1677632731%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [START_ON_FIRST_FRAME](index.md#2105639010%2FProperties%2F-58641720) | [androidJvm]<br>val [START_ON_FIRST_FRAME](index.md#2105639010%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [ZORDER_BOTTOM](index.md#1110462567%2FProperties%2F-58641720) | [androidJvm]<br>val [ZORDER_BOTTOM](index.md#1110462567%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [ZORDER_NORMAL](index.md#813332779%2FProperties%2F-58641720) | [androidJvm]<br>val [ZORDER_NORMAL](index.md#813332779%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [ZORDER_TOP](index.md#1600785363%2FProperties%2F-58641720) | [androidJvm]<br>val [ZORDER_TOP](index.md#1600785363%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |

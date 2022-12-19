@@ -1,0 +1,16 @@
+//[sceneview](../../../../index.md)/[io.github.sceneview.geometries](../../index.md)/[Plane](../index.md)/[Builder](index.md)/[Builder](-builder.md)
+
+# Builder
+
+[androidJvm]\
+fun [Builder](-builder.md)(center: [Position](../../../io.github.sceneview.math/index.md#945960193%2FClasslikes%2F-1571379623) = Position(0.0f), size: [Size](../../../io.github.sceneview.math/index.md#1872733609%2FClasslikes%2F-1571379623) = Size(x = 2.0f, y = 2.0f), normal: [Direction](../../../io.github.sceneview.math/index.md#1758682841%2FClasslikes%2F-1571379623) = Direction(y = 1.0f))
+
+## Parameters
+
+androidJvm
+
+| | |
+|---|---|
+| center | Center of the constructed plane |
+| size | Size of the constructed plane |
+| normal | Looking at direction |

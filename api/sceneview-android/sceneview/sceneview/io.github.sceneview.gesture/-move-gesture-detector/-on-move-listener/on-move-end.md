@@ -5,7 +5,7 @@
 [androidJvm]\
 abstract fun [onMoveEnd](on-move-end.md)(detector: [MoveGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html))
 
-###  Responds to the end of a move gesture
+Responds to the end of a move gesture
 
 Reported by existing pointers going up.
 

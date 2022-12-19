@@ -6,4 +6,4 @@
 
 | Name | Summary |
 |---|---|
-| [NodeAnimator](-node-animator/index.md) | [androidJvm]<br>object [NodeAnimator](-node-animator/index.md) |
+| [TransformAnimator](-transform-animator/index.md) | [androidJvm]<br>object [TransformAnimator](-transform-animator/index.md) |

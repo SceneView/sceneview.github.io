@@ -3,6 +3,6 @@
 # extractRotationFromPose
 
 [androidJvm]\
-open fun [extractRotationFromPose](extract-rotation-from-pose.md)(pose: Pose): [Quaternion](../../../../sceneview/sceneview/com.google.ar.sceneform.math/-quaternion/index.md)
+open fun [extractRotationFromPose](extract-rotation-from-pose.md)(pose: Pose): Quaternion
 
-Returns a Sceneform [Quaternion](../../../../sceneview/sceneview/com.google.ar.sceneform.math/-quaternion/index.md) representing the rotation from an ARCore Pose.
+Returns a Sceneform Quaternion representing the rotation from an ARCore Pose.

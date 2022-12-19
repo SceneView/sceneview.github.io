@@ -7,7 +7,7 @@ open fun [onTapAr](on-tap-ar.md)(hitResult: HitResult, motionEvent: [MotionEvent
 
 ###  Invoked when an ARCore trackable is tapped
 
-Calls the onTapAr listener if it is available.
+Calls the `onTapAr` listener if it is available.
 
 ## Parameters
 
@@ -35,6 +35,6 @@ Depending on the session configuration the HitResult.getTrackable can be:
 The listener is only invoked if no node is tapped.
 
 - 
-   hitResult - The ARCore hit result for the trackable that was tapped.
+   `hitResult` - The ARCore hit result for the trackable that was tapped.
 - 
-   motionEvent - The motion event that caused the tap.
+   `motionEvent` - The motion event that caused the tap.

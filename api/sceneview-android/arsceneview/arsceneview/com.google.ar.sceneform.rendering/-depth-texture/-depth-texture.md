@@ -5,8 +5,11 @@
 [androidJvm]\
 open fun [DepthTexture](-depth-texture.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), width: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), height: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))
 
+```kotlin
      A call to this constructor creates a new Filament Texture which is
      later used to feed in data from a DepthImage.
+
+```
 
 ## Parameters
 
