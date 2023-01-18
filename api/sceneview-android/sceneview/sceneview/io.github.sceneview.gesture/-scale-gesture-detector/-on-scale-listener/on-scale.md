@@ -3,9 +3,9 @@
 # onScale
 
 [androidJvm]\
-abstract fun [onScale](on-scale.md)(detector: [ScaleGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+abstract fun [onScale](on-scale.md)(detector: [ScaleGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html))
 
-Responds to scaling events for a gesture in progress. Reported by pointer motion
+###  Responds to scaling events for a gesture in progress. Reported by pointer motion.
 
 ## Parameters
 

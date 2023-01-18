@@ -3,6 +3,6 @@
 # clone
 
 [androidJvm]\
-fun [ByteBuffer](https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html).[clone](clone.md)(): [ByteBuffer](https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html)
+fun [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html).[clone](clone.md)(): [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)
 
-fun [FloatBuffer](https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html).[clone](clone.md)(): [FloatBuffer](https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html)
+fun [FloatBuffer](https://developer.android.com/reference/kotlin/java/nio/FloatBuffer.html).[clone](clone.md)(): [FloatBuffer](https://developer.android.com/reference/kotlin/java/nio/FloatBuffer.html)

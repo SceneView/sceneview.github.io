@@ -3,9 +3,9 @@
 # onMoveBegin
 
 [androidJvm]\
-open override fun [onMoveBegin](on-move-begin.md)(detector: [MoveGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html))
+open override fun [onMoveBegin](on-move-begin.md)(detector: [MoveGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
-Responds to the beginning of a moving gesture
+###  Responds to the beginning of a moving gesture
 
 Reported by new pointers going down.
 

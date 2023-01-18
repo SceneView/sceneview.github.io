@@ -3,4 +3,4 @@
 # onDoubleTap
 
 [androidJvm]\
-open override fun [onDoubleTap](on-double-tap.md)(e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+abstract fun [onDoubleTap](on-double-tap.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md))

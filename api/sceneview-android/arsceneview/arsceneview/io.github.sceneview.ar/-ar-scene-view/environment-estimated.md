@@ -3,4 +3,4 @@
 # environmentEstimated
 
 [androidJvm]\
-var [environmentEstimated](environment-estimated.md): Environment? = null
+var [environmentEstimated](environment-estimated.md): [Environment](../../../../sceneview/sceneview/io.github.sceneview.environment/-environment/index.md)? = null

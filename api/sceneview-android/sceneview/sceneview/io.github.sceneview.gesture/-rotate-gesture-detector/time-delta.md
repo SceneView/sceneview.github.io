@@ -5,4 +5,6 @@
 [androidJvm]\
 var [timeDelta](time-delta.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) = 0
 
-The time difference in milliseconds between the previous accepted GestureDetector event and the current GestureDetector event
+###  The time difference in milliseconds between the previous accepted GestureDetector event
+
+and the current GestureDetector event

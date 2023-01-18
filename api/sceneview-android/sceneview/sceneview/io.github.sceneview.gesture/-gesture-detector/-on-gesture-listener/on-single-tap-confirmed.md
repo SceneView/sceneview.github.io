@@ -3,4 +3,4 @@
 # onSingleTapConfirmed
 
 [androidJvm]\
-open override fun [onSingleTapConfirmed](on-single-tap-confirmed.md)(e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+abstract fun [onSingleTapConfirmed](on-single-tap-confirmed.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md))

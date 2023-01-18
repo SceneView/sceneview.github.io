@@ -3,4 +3,4 @@
 # mainLightEstimated
 
 [androidJvm]\
-var [mainLightEstimated](main-light-estimated.md): Light? = null
+var [mainLightEstimated](main-light-estimated.md): [Light](../../../../sceneview/io.github.sceneview.light/-light/index.md)? = null

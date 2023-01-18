@@ -1,0 +1,36 @@
+//[sceneview](../../../index.md)/[com.google.ar.sceneform.lullmodel](../index.md)/[MaterialDef](index.md)
+
+# MaterialDef
+
+[androidJvm]\
+class [MaterialDef](index.md) : [Table](../../com.google.flatbuffers/-table/index.md)
+
+## Functions
+
+| Name | Summary |
+|---|---|
+| [__assign](__assign.md) | [androidJvm]<br>open fun [__assign](__assign.md)(_i: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), _bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)): [MaterialDef](index.md) |
+| [__init](__init.md) | [androidJvm]<br>open fun [__init](__init.md)(_i: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), _bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)) |
+| [__reset](../../com.google.flatbuffers/-table/__reset.md) | [androidJvm]<br>open fun [__reset](../../com.google.flatbuffers/-table/__reset.md)()<br>Resets the internal state with a null `ByteBuffer` and a zero position. |
+| [addName](add-name.md) | [androidJvm]<br>open fun [addName](add-name.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), nameOffset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+| [addProperties](add-properties.md) | [androidJvm]<br>open fun [addProperties](add-properties.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), propertiesOffset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+| [addTextures](add-textures.md) | [androidJvm]<br>open fun [addTextures](add-textures.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), texturesOffset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+| [createMaterialDef](create-material-def.md) | [androidJvm]<br>open fun [createMaterialDef](create-material-def.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), nameOffset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), propertiesOffset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), texturesOffset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [createTexturesVector](create-textures-vector.md) | [androidJvm]<br>open fun [createTexturesVector](create-textures-vector.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), data: [Array](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)&lt;[Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)&gt;): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [endMaterialDef](end-material-def.md) | [androidJvm]<br>open fun [endMaterialDef](end-material-def.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [getByteBuffer](../../com.google.flatbuffers/-table/get-byte-buffer.md) | [androidJvm]<br>open fun [getByteBuffer](../../com.google.flatbuffers/-table/get-byte-buffer.md)(): [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)<br>Get the underlying ByteBuffer. |
+| [getRootAsMaterialDef](get-root-as-material-def.md) | [androidJvm]<br>open fun [getRootAsMaterialDef](get-root-as-material-def.md)(_bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)): [MaterialDef](index.md)<br>open fun [getRootAsMaterialDef](get-root-as-material-def.md)(_bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html), obj: [MaterialDef](index.md)): [MaterialDef](index.md) |
+| [name](name.md) | [androidJvm]<br>open fun [name](name.md)(): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)<br>The name of the material. |
+| [nameAsByteBuffer](name-as-byte-buffer.md) | [androidJvm]<br>open fun [nameAsByteBuffer](name-as-byte-buffer.md)(): [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html) |
+| [nameInByteBuffer](name-in-byte-buffer.md) | [androidJvm]<br>open fun [nameInByteBuffer](name-in-byte-buffer.md)(_bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)): [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html) |
+| [properties](properties.md) | [androidJvm]<br>open fun [properties](properties.md)(): [VariantMapDef](../-variant-map-def/index.md)<br>A dictionary of all material properties extracted from the source file.<br>[androidJvm]<br>open fun [properties](properties.md)(obj: [VariantMapDef](../-variant-map-def/index.md)): [VariantMapDef](../-variant-map-def/index.md) |
+| [startMaterialDef](start-material-def.md) | [androidJvm]<br>open fun [startMaterialDef](start-material-def.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md)) |
+| [startTexturesVector](start-textures-vector.md) | [androidJvm]<br>open fun [startTexturesVector](start-textures-vector.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), numElems: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+| [textures](textures.md) | [androidJvm]<br>open fun [textures](textures.md)(j: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)): [MaterialTextureDef](../-material-texture-def/index.md)<br>The list of textures associated with the Material.<br>[androidJvm]<br>open fun [textures](textures.md)(obj: [MaterialTextureDef](../-material-texture-def/index.md), j: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)): [MaterialTextureDef](../-material-texture-def/index.md) |
+| [texturesLength](textures-length.md) | [androidJvm]<br>open fun [texturesLength](textures-length.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+
+## Properties
+
+| Name | Summary |
+|---|---|
+| [UTF8_CHARSET](../../com.google.flatbuffers/-table/-u-t-f8_-c-h-a-r-s-e-t.md) | [androidJvm]<br>val [UTF8_CHARSET](../../com.google.flatbuffers/-table/-u-t-f8_-c-h-a-r-s-e-t.md): [ThreadLocal](https://developer.android.com/reference/kotlin/java/lang/ThreadLocal.html)&lt;[Charset](https://developer.android.com/reference/kotlin/java/nio/charset/Charset.html)&gt; |

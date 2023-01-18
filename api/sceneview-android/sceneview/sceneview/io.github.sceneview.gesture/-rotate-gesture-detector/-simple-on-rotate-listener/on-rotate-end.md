@@ -5,7 +5,7 @@
 [androidJvm]\
 open override fun [onRotateEnd](on-rotate-end.md)(detector: [RotateGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html))
 
-Responds to the end of a scale gesture
+###  Responds to the end of a scale gesture
 
 Reported by existing pointers going up.
 

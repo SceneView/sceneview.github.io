@@ -3,4 +3,4 @@
 # infoNode
 
 [androidJvm]\
-var [infoNode](info-node.md): Node? = null
+var [infoNode](info-node.md): [Node](../../../../sceneview/sceneview/io.github.sceneview.node/-node/index.md)? = null

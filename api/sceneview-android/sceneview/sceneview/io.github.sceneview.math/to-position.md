@@ -3,4 +3,4 @@
 # toPosition
 
 [androidJvm]\
-fun [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html).[toPosition](to-position.md)(): Float3
+fun [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html).[toPosition](to-position.md)(): [Float3](../dev.romainguy.kotlin.math/-float3/index.md)

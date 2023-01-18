@@ -3,7 +3,7 @@
 # ArSceneLifecycle
 
 [androidJvm]\
-class [ArSceneLifecycle](index.md)(sceneView: [ArSceneView](../-ar-scene-view/index.md)) : [SceneLifecycle](../../../../sceneview/io.github.sceneview/-scene-lifecycle/index.md)
+class [ArSceneLifecycle](index.md)(sceneView: [ArSceneView](../-ar-scene-view/index.md)) : [SceneLifecycle](../../../../sceneview/sceneview/io.github.sceneview/-scene-lifecycle/index.md)
 
 ## Constructors
 
