@@ -3,6 +3,6 @@
 # build
 
 [androidJvm]\
-fun IndirectLight.Builder.[build](build.md)(sceneView: [SceneView](../io.github.sceneview/-scene-view/index.md)): IndirectLight
+fun Skybox.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): Skybox
 
-fun Skybox.Builder.[build](build.md)(sceneView: [SceneView](../io.github.sceneview/-scene-view/index.md)): Skybox
+fun ColorGrading.Builder.[build](build.md)(): ColorGrading

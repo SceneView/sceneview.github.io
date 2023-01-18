@@ -2,16 +2,19 @@
 
 # Package io.github.sceneview.material
 
+## Types
+
+| Name | Summary |
+|---|---|
+| [MaterialLoader](-material-loader/index.md) | [androidJvm]<br>object [MaterialLoader](-material-loader/index.md) |
+
 ## Functions
 
 | Name | Summary |
 |---|---|
-| [build](build.md) | [androidJvm]<br>fun Material.Builder.[build](build.md)(sceneView: [SceneView](../io.github.sceneview/-scene-view/index.md)): Material<br>fun Deferred&lt;Material.Builder&gt;.[build](build.md)(sceneView: [SceneView](../io.github.sceneview/-scene-view/index.md), onResult: (Material) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)): Job |
-| [createInstance](create-instance.md) | [androidJvm]<br>fun Material.[createInstance](create-instance.md)(sceneView: [SceneView](../io.github.sceneview/-scene-view/index.md), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null): MaterialInstance<br>Creates a new instance of this material |
-| [destroyMaterial](destroy-material.md) | [androidJvm]<br>fun [SceneView](../io.github.sceneview/-scene-view/index.md).[destroyMaterial](destroy-material.md)(material: Material) |
-| [destroyMaterialInstance](destroy-material-instance.md) | [androidJvm]<br>fun [SceneView](../io.github.sceneview/-scene-view/index.md).[destroyMaterialInstance](destroy-material-instance.md)(materialInstance: MaterialInstance) |
-| [filamat](filamat.md) | [androidJvm]<br>suspend fun Material.Builder.[filamat](filamat.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), fileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): Material.Builder<br>Specifies the material .filamat file location<br>[androidJvm]<br>fun Material.Builder.[filamat](filamat.md)(assets: [AssetManager](https://developer.android.com/reference/kotlin/android/content/res/AssetManager.html), assetFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): Material.Builder<br>Specifies the material .filamat asset file location |
-| [filamatAsync](filamat-async.md) | [androidJvm]<br>fun Material.Builder.[filamatAsync](filamat-async.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), fileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): Deferred&lt;Material.Builder&gt;<br>Specifies the material .filamat file location |
+| [build](build.md) | [androidJvm]<br>fun Material.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): Material |
+| [createInstance](create-instance.md) | [androidJvm]<br>fun Material.[createInstance](create-instance.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): MaterialInstance |
+| [destroy](destroy.md) | [androidJvm]<br>fun Material.[destroy](destroy.md)()<br>fun MaterialInstance.[destroy](destroy.md)() |
 | [setAoIndex](set-ao-index.md) | [androidJvm]<br>fun MaterialInstance.[setAoIndex](set-ao-index.md)(value: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [setAoStrength](set-ao-strength.md) | [androidJvm]<br>fun MaterialInstance.[setAoStrength](set-ao-strength.md)(value: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |
 | [setBaseColor](set-base-color.md) | [androidJvm]<br>fun MaterialInstance.[setBaseColor](set-base-color.md)(value: [Color](../io.github.sceneview.utils/index.md#289679020%2FClasslikes%2F-1571379623)) |
@@ -22,7 +25,6 @@
 | [setEmissiveIndex](set-emissive-index.md) | [androidJvm]<br>fun MaterialInstance.[setEmissiveIndex](set-emissive-index.md)(value: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [setEmissiveMap](set-emissive-map.md) | [androidJvm]<br>fun MaterialInstance.[setEmissiveMap](set-emissive-map.md)(texture: Texture, textureSampler: TextureSampler = TextureSampler2D()) |
 | [setExternalTexture](set-external-texture.md) | [androidJvm]<br>fun MaterialInstance.[setExternalTexture](set-external-texture.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), texture: Texture) |
-| [setInvertFrontFaceWinding](set-invert-front-face-winding.md) | [androidJvm]<br>fun MaterialInstance.[setInvertFrontFaceWinding](set-invert-front-face-winding.md)(invert: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), uvOffsetParamName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;uvOffset&quot;) |
 | [setMetallicFactor](set-metallic-factor.md) | [androidJvm]<br>fun MaterialInstance.[setMetallicFactor](set-metallic-factor.md)(value: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |
 | [setMetallicRoughnessIndex](set-metallic-roughness-index.md) | [androidJvm]<br>fun MaterialInstance.[setMetallicRoughnessIndex](set-metallic-roughness-index.md)(value: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [setMetallicRoughnessMap](set-metallic-roughness-map.md) | [androidJvm]<br>fun MaterialInstance.[setMetallicRoughnessMap](set-metallic-roughness-map.md)(texture: Texture, textureSampler: TextureSampler = TextureSampler2D()) |
@@ -30,7 +32,6 @@
 | [setNormalMap](set-normal-map.md) | [androidJvm]<br>fun MaterialInstance.[setNormalMap](set-normal-map.md)(texture: Texture, textureSampler: TextureSampler = TextureSampler2D()) |
 | [setNormalScale](set-normal-scale.md) | [androidJvm]<br>fun MaterialInstance.[setNormalScale](set-normal-scale.md)(value: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |
 | [setOcclusionMap](set-occlusion-map.md) | [androidJvm]<br>fun MaterialInstance.[setOcclusionMap](set-occlusion-map.md)(texture: Texture, textureSampler: TextureSampler = TextureSampler2D()) |
-| [setParameter](set-parameter.md) | [androidJvm]<br>fun MaterialInstance.[setParameter](set-parameter.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: Float2)<br>fun MaterialInstance.[setParameter](set-parameter.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: Float3)<br>fun MaterialInstance.[setParameter](set-parameter.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: Float4)<br>fun MaterialInstance.[setParameter](set-parameter.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: Mat4) |
+| [setParameter](set-parameter.md) | [androidJvm]<br>fun MaterialInstance.[setParameter](set-parameter.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: [Float2](../dev.romainguy.kotlin.math/-float2/index.md))<br>fun MaterialInstance.[setParameter](set-parameter.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: [Float3](../dev.romainguy.kotlin.math/-float3/index.md))<br>fun MaterialInstance.[setParameter](set-parameter.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: [Float4](../dev.romainguy.kotlin.math/-float4/index.md))<br>fun MaterialInstance.[setParameter](set-parameter.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: [Mat4](../dev.romainguy.kotlin.math/-mat4/index.md)) |
 | [setRoughnessFactor](set-roughness-factor.md) | [androidJvm]<br>fun MaterialInstance.[setRoughnessFactor](set-roughness-factor.md)(value: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |
-| [setTexture](set-texture.md) | [androidJvm]<br>fun MaterialInstance.[setTexture](set-texture.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), texture: Texture, textureSampler: TextureSampler = TextureSampler(         TextureSampler.MinFilter.LINEAR_MIPMAP_LINEAR,         TextureSampler.MagFilter.LINEAR,         TextureSampler.WrapMode.REPEAT     )) |
-| [setViewTexture](set-view-texture.md) | [androidJvm]<br>fun MaterialInstance.[setViewTexture](set-view-texture.md)(viewTexture: Texture, textureParamName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;viewTexture&quot;) |
+| [setTexture](set-texture.md) | [androidJvm]<br>fun MaterialInstance.[setTexture](set-texture.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), texture: Texture, textureSampler: TextureSampler = TextureSampler2D()) |

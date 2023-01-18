@@ -1,0 +1,60 @@
+//[sceneview](../../../../index.md)/[io.github.sceneview.gesture](../../index.md)/[GestureDetector](../index.md)/[SimpleOnGestureListener](index.md)
+
+# SimpleOnGestureListener
+
+[androidJvm]\
+class [SimpleOnGestureListener](index.md) : [GestureDetector.OnGestureListener](../-on-gesture-listener/index.md)
+
+## Constructors
+
+| | |
+|---|---|
+| [SimpleOnGestureListener](-simple-on-gesture-listener.md) | [androidJvm]<br>fun [SimpleOnGestureListener](-simple-on-gesture-listener.md)() |
+
+## Functions
+
+| Name | Summary |
+|---|---|
+| [onContextClick](on-context-click.md) | [androidJvm]<br>open override fun [onContextClick](on-context-click.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onDoubleTap](on-double-tap.md) | [androidJvm]<br>open override fun [onDoubleTap](on-double-tap.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onDoubleTapEvent](on-double-tap-event.md) | [androidJvm]<br>open override fun [onDoubleTapEvent](on-double-tap-event.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onDown](on-down.md) | [androidJvm]<br>open override fun [onDown](on-down.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onFling](on-fling.md) | [androidJvm]<br>open override fun [onFling](on-fling.md)(e1: [NodeMotionEvent](../../-node-motion-event/index.md), e2: [NodeMotionEvent](../../-node-motion-event/index.md), velocityX: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), velocityY: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |
+| [onLongPress](on-long-press.md) | [androidJvm]<br>open override fun [onLongPress](on-long-press.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onMove](on-move.md) | [androidJvm]<br>open override fun [onMove](on-move.md)(detector: [MoveGestureDetector](../../-move-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onMoveBegin](on-move-begin.md) | [androidJvm]<br>open override fun [onMoveBegin](on-move-begin.md)(detector: [MoveGestureDetector](../../-move-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onMoveEnd](on-move-end.md) | [androidJvm]<br>open override fun [onMoveEnd](on-move-end.md)(detector: [MoveGestureDetector](../../-move-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onRotate](on-rotate.md) | [androidJvm]<br>open override fun [onRotate](on-rotate.md)(detector: [RotateGestureDetector](../../-rotate-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onRotateBegin](on-rotate-begin.md) | [androidJvm]<br>open override fun [onRotateBegin](on-rotate-begin.md)(detector: [RotateGestureDetector](../../-rotate-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onRotateEnd](on-rotate-end.md) | [androidJvm]<br>open override fun [onRotateEnd](on-rotate-end.md)(detector: [RotateGestureDetector](../../-rotate-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onScale](on-scale.md) | [androidJvm]<br>open override fun [onScale](on-scale.md)(detector: [ScaleGestureDetector](../../-scale-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onScaleBegin](on-scale-begin.md) | [androidJvm]<br>open override fun [onScaleBegin](on-scale-begin.md)(detector: [ScaleGestureDetector](../../-scale-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onScaleEnd](on-scale-end.md) | [androidJvm]<br>open override fun [onScaleEnd](on-scale-end.md)(detector: [ScaleGestureDetector](../../-scale-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onScroll](on-scroll.md) | [androidJvm]<br>open override fun [onScroll](on-scroll.md)(e1: [NodeMotionEvent](../../-node-motion-event/index.md), e2: [NodeMotionEvent](../../-node-motion-event/index.md), distanceX: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), distanceY: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |
+| [onShowPress](on-show-press.md) | [androidJvm]<br>open override fun [onShowPress](on-show-press.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onSingleTapConfirmed](on-single-tap-confirmed.md) | [androidJvm]<br>open override fun [onSingleTapConfirmed](on-single-tap-confirmed.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+| [onSingleTapUp](on-single-tap-up.md) | [androidJvm]<br>open override fun [onSingleTapUp](on-single-tap-up.md)(e: [NodeMotionEvent](../../-node-motion-event/index.md)) |
+
+## Properties
+
+| Name | Summary |
+|---|---|
+| [onContextClick](on-context-click.md) | [androidJvm]<br>var [onContextClick](on-context-click.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onDoubleTap](on-double-tap.md) | [androidJvm]<br>var [onDoubleTap](on-double-tap.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onDoubleTapEvent](on-double-tap-event.md) | [androidJvm]<br>var [onDoubleTapEvent](on-double-tap-event.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onDown](on-down.md) | [androidJvm]<br>var [onDown](on-down.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onFling](on-fling.md) | [androidJvm]<br>var [onFling](on-fling.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(e1: [NodeMotionEvent](../../-node-motion-event/index.md), e2: [NodeMotionEvent](../../-node-motion-event/index.md), velocityX: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), velocityY: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onLongPress](on-long-press.md) | [androidJvm]<br>var [onLongPress](on-long-press.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onMove](on-move.md) | [androidJvm]<br>var [onMove](on-move.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(detector: [MoveGestureDetector](../../-move-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onMoveBegin](on-move-begin.md) | [androidJvm]<br>var [onMoveBegin](on-move-begin.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(detector: [MoveGestureDetector](../../-move-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onMoveEnd](on-move-end.md) | [androidJvm]<br>var [onMoveEnd](on-move-end.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(detector: [MoveGestureDetector](../../-move-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onRotate](on-rotate.md) | [androidJvm]<br>var [onRotate](on-rotate.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(detector: [RotateGestureDetector](../../-rotate-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onRotateBegin](on-rotate-begin.md) | [androidJvm]<br>var [onRotateBegin](on-rotate-begin.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(detector: [RotateGestureDetector](../../-rotate-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onRotateEnd](on-rotate-end.md) | [androidJvm]<br>var [onRotateEnd](on-rotate-end.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(detector: [RotateGestureDetector](../../-rotate-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onScale](on-scale.md) | [androidJvm]<br>var [onScale](on-scale.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(detector: [ScaleGestureDetector](../../-scale-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onScaleBegin](on-scale-begin.md) | [androidJvm]<br>var [onScaleBegin](on-scale-begin.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(detector: [ScaleGestureDetector](../../-scale-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onScaleEnd](on-scale-end.md) | [androidJvm]<br>var [onScaleEnd](on-scale-end.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(detector: [ScaleGestureDetector](../../-scale-gesture-detector/index.md), e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onScroll](on-scroll.md) | [androidJvm]<br>var [onScroll](on-scroll.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(e1: [NodeMotionEvent](../../-node-motion-event/index.md), e2: [NodeMotionEvent](../../-node-motion-event/index.md), distanceX: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), distanceY: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onShowPress](on-show-press.md) | [androidJvm]<br>var [onShowPress](on-show-press.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onSingleTapConfirmed](on-single-tap-confirmed.md) | [androidJvm]<br>var [onSingleTapConfirmed](on-single-tap-confirmed.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |
+| [onSingleTapUp](on-single-tap-up.md) | [androidJvm]<br>var [onSingleTapUp](on-single-tap-up.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;(e: [NodeMotionEvent](../../-node-motion-event/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt; |

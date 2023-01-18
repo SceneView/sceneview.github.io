@@ -5,7 +5,7 @@
 [androidJvm]\
 val Camera.[exposureFactor](exposure-factor.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)
 
-Computes the exposure normalization factor from the camera's EV100
+###  Computes the exposure normalization factor from the camera's EV100
 
 Calculate a unit-less intensity scale from the actual Filament camera settings
 

@@ -51,6 +51,6 @@ class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.s
 | [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md) | [androidJvm]<br>var [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false<br>This will process the incoming DepthImage to occlude virtual objects behind real world objects. |
 | [material](material.md) | [androidJvm]<br>var [material](material.md): MaterialInstance<br>Depending on [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md) and device Depth compatibility |
 | [priority](priority.md) | [androidJvm]<br>var [priority](priority.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
-| [renderable](renderable.md) | [androidJvm]<br>val [renderable](renderable.md): Renderable |
+| [renderable](renderable.md) | [androidJvm]<br>val [renderable](renderable.md): [Renderable](../../../../sceneview/io.github.sceneview.renderable/-renderable/index.md) |
 | [standardMaterial](standard-material.md) | [androidJvm]<br>var [standardMaterial](standard-material.md): MaterialInstance |
 | [standardMaterialLocation](standard-material-location.md) | [androidJvm]<br>val [standardMaterialLocation](standard-material-location.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |

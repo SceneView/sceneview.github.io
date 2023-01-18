@@ -3,7 +3,7 @@
 # environment
 
 [androidJvm]\
-var [environment](environment.md): Environment? = null
+var [environment](environment.md): [Environment](../../../../sceneview/sceneview/io.github.sceneview.environment/-environment/index.md)? = null
 
 ###  The retrieved environment
 

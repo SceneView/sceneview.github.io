@@ -5,7 +5,7 @@
 [androidJvm]\
 open class [ScaleGestureDetector](index.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), listener: [ScaleGestureDetector.OnScaleListener](-on-scale-listener/index.md)) : [ScaleGestureDetector](https://developer.android.com/reference/kotlin/android/view/ScaleGestureDetector.html)
 
-Detects scaling transformation gestures using the supplied [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)s
+###  Detects scaling transformation gestures using the supplied [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)s
 
 The [android.view.ScaleGestureDetector.OnScaleGestureListener](https://developer.android.com/reference/kotlin/android/view/ScaleGestureDetector.OnScaleGestureListener.html) callback will notify users when a particular gesture event has occurred.
 
@@ -16,7 +16,7 @@ To use this class:
 - 
    Create an instance of the {@code ScaleGestureDetector} for your [android.view.View](https://developer.android.com/reference/kotlin/android/view/View.html)
 - 
-   In the [android.view.View.onTouchEvent](../../io.github.sceneview.texture/-view-stream/index.md#255030538%2FFunctions%2F-1571379623) method ensure you call [onTouchEvent](on-touch-event.md). The methods defined in your callback will be executed when the events occur.
+   In the [android.view.View.onTouchEvent](https://developer.android.com/reference/kotlin/android/view/View.html#ontouchevent) method ensure you call [onTouchEvent](on-touch-event.md). The methods defined in your callback will be executed when the events occur.
 
 ## Constructors
 
@@ -28,8 +28,7 @@ To use this class:
 
 | Name | Summary |
 |---|---|
-| [OnScaleListener](-on-scale-listener/index.md) | [androidJvm]<br>interface [OnScaleListener](-on-scale-listener/index.md)<br>The listener for receiving notifications when gestures occur |
-| [SimpleOnScaleListener](-simple-on-scale-listener/index.md) | [androidJvm]<br>interface [SimpleOnScaleListener](-simple-on-scale-listener/index.md) : [ScaleGestureDetector.OnScaleListener](-on-scale-listener/index.md)<br>A convenience class to extend when you only want to listen for a subset of  scale-related events |
+| [OnScaleListener](-on-scale-listener/index.md) | [androidJvm]<br>interface [OnScaleListener](-on-scale-listener/index.md)<br>If you want to listen for all the different gestures then implement this interface. |
 
 ## Functions
 

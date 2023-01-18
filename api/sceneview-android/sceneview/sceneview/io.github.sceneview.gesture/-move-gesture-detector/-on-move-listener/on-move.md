@@ -3,9 +3,9 @@
 # onMove
 
 [androidJvm]\
-abstract fun [onMove](on-move.md)(detector: [MoveGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html))
+abstract fun [onMove](on-move.md)(detector: [MoveGestureDetector](../index.md), e: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
-Responds to moving events for a gesture in progress
+###  Responds to moving events for a gesture in progress
 
 Reported by pointer motion.
 

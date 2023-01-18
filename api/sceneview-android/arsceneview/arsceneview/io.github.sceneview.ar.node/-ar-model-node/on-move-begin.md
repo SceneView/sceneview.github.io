@@ -3,4 +3,4 @@
 # onMoveBegin
 
 [androidJvm]\
-open override fun [onMoveBegin](on-move-begin.md)(detector: [MoveGestureDetector](../../../../sceneview/sceneview/io.github.sceneview.gesture/-move-gesture-detector/index.md), e: [NodeMotionEvent](../../../../sceneview/io.github.sceneview.gesture/-node-motion-event/index.md))
+open override fun [onMoveBegin](on-move-begin.md)(detector: [MoveGestureDetector](../../../../sceneview/sceneview/io.github.sceneview.gesture/-move-gesture-detector/index.md), e: [NodeMotionEvent](../../../../sceneview/sceneview/io.github.sceneview.gesture/-node-motion-event/index.md))

@@ -3,4 +3,4 @@
 # toColumnsFloatArray
 
 [androidJvm]\
-fun Mat4.[toColumnsFloatArray](to-columns-float-array.md)(): [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)
+fun [Mat4](../dev.romainguy.kotlin.math/-mat4/index.md).[toColumnsFloatArray](to-columns-float-array.md)(): [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)

@@ -3,8 +3,4 @@
 # createInstance
 
 [androidJvm]\
-fun Material.[createInstance](create-instance.md)(sceneView: [SceneView](../io.github.sceneview/-scene-view/index.md), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null): MaterialInstance
-
-Creates a new instance of this material
-
-Material instances will be destroyed when the [SceneView](../io.github.sceneview/-scene-view/index.md) is
+fun Material.[createInstance](create-instance.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): MaterialInstance

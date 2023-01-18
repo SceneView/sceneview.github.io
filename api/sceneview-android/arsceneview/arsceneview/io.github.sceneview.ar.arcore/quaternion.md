@@ -3,4 +3,4 @@
 # quaternion
 
 [androidJvm]\
-val Pose.[quaternion](quaternion.md): Quaternion
+val Pose.[quaternion](quaternion.md): [Quaternion](../../../sceneview/sceneview/dev.romainguy.kotlin.math/-quaternion/index.md)

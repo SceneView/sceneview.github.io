@@ -5,7 +5,9 @@
 [androidJvm]\
 fun [onTouchEvent](on-touch-event.md)(event: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
-Accepts MotionEvents and dispatches events to a [OnRotateListener](-on-rotate-listener/index.md) when appropriate
+###  Accepts MotionEvents and dispatches events to a [OnRotateListener](-on-rotate-listener/index.md) when
+
+appropriate
 
 Applications should pass a complete and consistent event stream to this method. A complete and consistent event stream involves all MotionEvents from the initial ACTION_DOWN to the final ACTION_UP or ACTION_CANCEL.
 

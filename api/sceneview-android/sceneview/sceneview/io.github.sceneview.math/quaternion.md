@@ -3,4 +3,4 @@
 # quaternion
 
 [androidJvm]\
-val Mat4.[quaternion](quaternion.md): Quaternion
+val [Mat4](../dev.romainguy.kotlin.math/-mat4/index.md).[quaternion](quaternion.md): [Quaternion](../dev.romainguy.kotlin.math/-quaternion/index.md)
