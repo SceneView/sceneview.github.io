@@ -155,6 +155,7 @@ The visual effects will be disabled when the AugmentedFace isn't tracking or the
 
 | Name | Summary |
 |---|---|
+| [$stable](index.md#-545553905%2FProperties%2F-58641720) | [androidJvm]<br>val [$stable](index.md#-545553905%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [anchor](../../io.github.sceneview.ar.node/-ar-node/anchor.md) | [androidJvm]<br>open var [anchor](../../io.github.sceneview.ar.node/-ar-node/anchor.md): Anchor<br>TODO : Doc |
 | [anchorPoseUpdateInterval](../../io.github.sceneview.ar.node/-ar-node/anchor-pose-update-interval.md) | [androidJvm]<br>open var [anchorPoseUpdateInterval](../../io.github.sceneview.ar.node/-ar-node/anchor-pose-update-interval.md): [Double](https://developer.android.com/reference/kotlin/java/lang/Double.html)<br> Adjust the anchor pose update interval in seconds<br>ARCore may update the [anchor](../../io.github.sceneview.ar.node/-ar-node/anchor.md) pose because of environment detection evolving during time. |
 | [anchorUpdatedFrame](../../io.github.sceneview.ar.node/-ar-node/anchor-updated-frame.md) | [androidJvm]<br>open val [anchorUpdatedFrame](../../io.github.sceneview.ar.node/-ar-node/anchor-updated-frame.md): [ArFrame](../../io.github.sceneview.ar.arcore/-ar-frame/index.md) |

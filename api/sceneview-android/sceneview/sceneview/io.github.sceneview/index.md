@@ -18,6 +18,7 @@
 |---|---|
 | [build](build.md) | [androidJvm]<br>fun RenderableManager.Builder.[build](build.md)(entity: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [createCamera](create-camera.md) | [androidJvm]<br>fun Engine.[createCamera](create-camera.md)(): Camera |
+| [Scene](-scene.md) | [androidJvm]<br>@[Composable](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html)<br>fun [Scene](-scene.md)(modifier: [Modifier](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier.html) = Modifier, nodes: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../io.github.sceneview.node/-node/index.md)&gt; = listOf(), onCreate: ([SceneView](-scene-view/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? = null) |
 | [setTransform](set-transform.md) | [androidJvm]<br>fun TransformManager.[setTransform](set-transform.md)(i: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), worldTransform: [Transform](../io.github.sceneview.math/index.md#1875660684%2FClasslikes%2F-1571379623)) |
 
 ## Properties
