@@ -130,6 +130,7 @@ If the camera is part of an [ArSceneView](../../io.github.sceneview.ar/-ar-scene
 
 | Name | Summary |
 |---|---|
+| [$stable](index.md#-651507330%2FProperties%2F-58641720) | [androidJvm]<br>val [$stable](index.md#-651507330%2FProperties%2F-58641720): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [camera](index.md#-1497490396%2FProperties%2F-58641720) | [androidJvm]<br>open var [camera](index.md#-1497490396%2FProperties%2F-58641720): Camera |
 | [collider](../../io.github.sceneview.ar.node.infos/-tap-ar-plane-info-node/index.md#2043846921%2FProperties%2F-58641720) | [androidJvm]<br>open val [collider](../../io.github.sceneview.ar.node.infos/-tap-ar-plane-info-node/index.md#2043846921%2FProperties%2F-58641720): [Collider](../../../../sceneview/sceneview/com.google.ar.sceneform.collision/-collider/index.md) |
 | [collisionShape](../../io.github.sceneview.ar.node.infos/-tap-ar-plane-info-node/index.md#1355060686%2FProperties%2F-58641720) | [androidJvm]<br>open var [collisionShape](../../io.github.sceneview.ar.node.infos/-tap-ar-plane-info-node/index.md#1355060686%2FProperties%2F-58641720): [CollisionShape](../../../../sceneview/sceneview/com.google.ar.sceneform.collision/-collision-shape/index.md) |

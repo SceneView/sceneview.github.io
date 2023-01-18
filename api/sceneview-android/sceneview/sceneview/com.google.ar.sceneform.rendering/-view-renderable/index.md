@@ -54,7 +54,7 @@ viewRenderable = future.thenAccept(...);
 |---|---|
 | [animationFrameRate](../-renderable/animation-frame-rate.md) | [androidJvm]<br>open val [animationFrameRate](../-renderable/animation-frame-rate.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [DEFAULT_ANIMATION_FRAME_RATE](../-renderable/-d-e-f-a-u-l-t_-a-n-i-m-a-t-i-o-n_-f-r-a-m-e_-r-a-t-e.md) | [androidJvm]<br>val [DEFAULT_ANIMATION_FRAME_RATE](../-renderable/-d-e-f-a-u-l-t_-a-n-i-m-a-t-i-o-n_-f-r-a-m-e_-r-a-t-e.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
-| [horizontalAlignment](horizontal-alignment.md) | [androidJvm]<br>open var [horizontalAlignment](horizontal-alignment.md): [ViewRenderable.HorizontalAlignment](-horizontal-alignment/index.md) |
+| [horizontalAlignment](horizontal-alignment.md) | [androidJvm]<br>open var [horizontalAlignment](horizontal-alignment.md): [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html) |
 | [isShadowCaster](../-renderable/is-shadow-caster.md) | [androidJvm]<br>open var [isShadowCaster](../-renderable/is-shadow-caster.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [isShadowReceiver](../-renderable/is-shadow-receiver.md) | [androidJvm]<br>open var [isShadowReceiver](../-renderable/is-shadow-receiver.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [RENDER_PRIORITY_DEFAULT](../-renderable/-r-e-n-d-e-r_-p-r-i-o-r-i-t-y_-d-e-f-a-u-l-t.md) | [androidJvm]<br>val [RENDER_PRIORITY_DEFAULT](../-renderable/-r-e-n-d-e-r_-p-r-i-o-r-i-t-y_-d-e-f-a-u-l-t.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
