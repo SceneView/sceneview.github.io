@@ -3,7 +3,7 @@
 # Builder
 
 [androidJvm]\
-abstract class [Builder](index.md)&lt;[T](index.md) : [Renderable](../index.md)?, [B](index.md) : [Renderable.Builder](index.md)&lt;[T](../../../../../arsceneview/com.google.ar.sceneform.rendering/-future-helper/log-on-exception.md), [B](index.md)&gt;?&gt;
+abstract class [Builder](index.md)&lt;[T](index.md) : [Renderable](../index.md)?, [B](index.md) : [Renderable.Builder](index.md)&lt;[T](../../../com.google.ar.sceneform.resources/-resource-registry/index.md), [B](index.md)&gt;?&gt;
 
 Used to programmatically construct a [Renderable](../index.md). Builder data is stored, not copied. Be careful when modifying the data before or between build calls.
 
@@ -11,7 +11,7 @@ Used to programmatically construct a [Renderable](../index.md). Builder data is 
 
 | Name | Summary |
 |---|---|
-| [build](build.md) | [androidJvm]<br>open fun [build](build.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[T](../../../../../arsceneview/com.google.ar.sceneform.rendering/-future-helper/log-on-exception.md)&gt;<br>Constructs a [Renderable](../index.md) with the parameters of the builder. |
+| [build](build.md) | [androidJvm]<br>open fun [build](build.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[T](../../../com.google.ar.sceneform.resources/-resource-registry/index.md)&gt;<br>Constructs a [Renderable](../index.md) with the parameters of the builder. |
 | [hasSource](has-source.md) | [androidJvm]<br>open fun [hasSource](has-source.md)(): [Boolean](https://developer.android.com/reference/kotlin/java/lang/Boolean.html)<br>True if a source function will be called during build |
 | [setAnimationFrameRate](set-animation-frame-rate.md) | [androidJvm]<br>open fun [setAnimationFrameRate](set-animation-frame-rate.md)(frameRate: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)): [B](index.md)<br>Sets the number of frames per seconds defined in the asset. |
 | [setAsyncLoadEnabled](set-async-load-enabled.md) | [androidJvm]<br>open fun [setAsyncLoadEnabled](set-async-load-enabled.md)(asyncLoadEnabled: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)): [B](index.md)<br>Enable textures async loading after first rendering. |

@@ -474,7 +474,7 @@ Maintains the scene graph, a hierarchical organization of a scene's content. A s
 | [setAutofillId](index.md#154835381%2FFunctions%2F-1571379623) | [androidJvm]<br>open fun [setAutofillId](index.md#154835381%2FFunctions%2F-1571379623)(p0: [AutofillId](https://developer.android.com/reference/kotlin/android/view/autofill/AutofillId.html)?) |
 | [setBackground](index.md#841332226%2FFunctions%2F-1571379623) | [androidJvm]<br>open fun [setBackground](index.md#841332226%2FFunctions%2F-1571379623)(p0: [Drawable](https://developer.android.com/reference/kotlin/android/graphics/drawable/Drawable.html)) |
 | [setBackgroundColor](index.md#-1996321655%2FFunctions%2F-1571379623) | [androidJvm]<br>open fun [setBackgroundColor](index.md#-1996321655%2FFunctions%2F-1571379623)(p0: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
-| [setBackgroundDrawable](set-background-drawable.md) | [androidJvm]<br>open override fun [setBackgroundDrawable](set-background-drawable.md)(background: [Drawable](https://developer.android.com/reference/kotlin/android/graphics/drawable/Drawable.html)?) |
+| [setBackgroundDrawable](set-background-drawable.md) | [androidJvm]<br>~~open~~ ~~override~~ ~~fun~~ [~~setBackgroundDrawable~~](set-background-drawable.md)~~(~~background: [Drawable](https://developer.android.com/reference/kotlin/android/graphics/drawable/Drawable.html)?~~)~~ |
 | [setBackgroundResource](index.md#9634556%2FFunctions%2F-1571379623) | [androidJvm]<br>open fun [setBackgroundResource](index.md#9634556%2FFunctions%2F-1571379623)(p0: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [setBackgroundTintBlendMode](index.md#1634646846%2FFunctions%2F-1571379623) | [androidJvm]<br>open fun [setBackgroundTintBlendMode](index.md#1634646846%2FFunctions%2F-1571379623)(p0: [BlendMode](https://developer.android.com/reference/kotlin/android/graphics/BlendMode.html)?) |
 | [setBackgroundTintList](index.md#-2022232322%2FFunctions%2F-1571379623) | [androidJvm]<br>open fun [setBackgroundTintList](index.md#-2022232322%2FFunctions%2F-1571379623)(p0: [ColorStateList](https://developer.android.com/reference/kotlin/android/content/res/ColorStateList.html)?) |
@@ -639,7 +639,6 @@ Maintains the scene graph, a hierarchical organization of a scene's content. A s
 
 | Name | Summary |
 |---|---|
-| [_children](_children.md) | [androidJvm]<br>open override var [_children](_children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../../io.github.sceneview.node/-node/index.md)&gt; |
 | [allChildren](../../io.github.sceneview.node/-node-parent/all-children.md) | [androidJvm]<br>open val [allChildren](../../io.github.sceneview.node/-node-parent/all-children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../../io.github.sceneview.node/-node/index.md)&gt;<br>Traversal is depth first. If this NodeParent is a Node, traversal starts with this NodeParent, otherwise traversal starts with its children. |
 | [ambientOcclusionOptions](ambient-occlusion-options.md) | [androidJvm]<br>var [ambientOcclusionOptions](ambient-occlusion-options.md): View.AmbientOcclusionOptions |
 | [antiAliasing](anti-aliasing.md) | [androidJvm]<br>var [antiAliasing](anti-aliasing.md): View.AntiAliasing |
@@ -647,7 +646,7 @@ Maintains the scene graph, a hierarchical organization of a scene's content. A s
 | [bloomOptions](bloom-options.md) | [androidJvm]<br>var [bloomOptions](bloom-options.md): View.BloomOptions |
 | [cameraManipulatorTarget](camera-manipulator-target.md) | [androidJvm]<br>val [cameraManipulatorTarget](camera-manipulator-target.md): [Node](../../io.github.sceneview.node/-node/index.md)? = null |
 | [cameraNode](camera-node.md) | [androidJvm]<br>open val [cameraNode](camera-node.md): [CameraNode](../../com.google.ar.sceneform/-camera-node/index.md) |
-| [children](../../io.github.sceneview.node/-node-parent/children.md) | [androidJvm]<br>open var [children](../../io.github.sceneview.node/-node-parent/children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../../io.github.sceneview.node/-node/index.md)&gt; |
+| [children](children.md) | [androidJvm]<br>open override var [children](children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../../io.github.sceneview.node/-node/index.md)&gt; |
 | [collisionSystem](collision-system.md) | [androidJvm]<br>val [collisionSystem](collision-system.md): [CollisionSystem](../../com.google.ar.sceneform.collision/-collision-system/index.md) |
 | [dithering](dithering.md) | [androidJvm]<br>var [dithering](dithering.md): View.Dithering |
 | [dynamicResolution](dynamic-resolution.md) | [androidJvm]<br>var [dynamicResolution](dynamic-resolution.md): View.DynamicResolutionOptions |

@@ -3,7 +3,7 @@
 # model
 
 [androidJvm]\
-open var [model](model.md): [Model](../../io.github.sceneview.model/index.md#1227607086%2FClasslikes%2F-1571379623)? = null
+open val [model](model.md): [Model](../../io.github.sceneview.model/index.md#1227607086%2FClasslikes%2F-1571379623)?
 
 ###  The [Model](../../io.github.sceneview.model/index.md#1227607086%2FClasslikes%2F-1571379623) to display.
 
