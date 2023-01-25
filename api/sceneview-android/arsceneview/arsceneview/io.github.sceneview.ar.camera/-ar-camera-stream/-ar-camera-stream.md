@@ -3,4 +3,4 @@
 # ArCameraStream
 
 [androidJvm]\
-fun [ArCameraStream](-ar-camera-stream.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), standardMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_standard.filamat&quot;, depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_depth.filamat&quot;)
+fun [ArCameraStream](-ar-camera-stream.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), flatMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_flat.filamat&quot;, depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_depth.filamat&quot;)

@@ -113,10 +113,9 @@ androidJvm
 
 | Name | Summary |
 |---|---|
-| [_children](_children.md) | [androidJvm]<br>open override var [_children](_children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](index.md)&gt; |
 | [allChildren](../-node-parent/all-children.md) | [androidJvm]<br>open val [allChildren](../-node-parent/all-children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](index.md)&gt;<br>Traversal is depth first. If this NodeParent is a Node, traversal starts with this NodeParent, otherwise traversal starts with its children. |
 | [allParents](all-parents.md) | [androidJvm]<br>val [allParents](all-parents.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[NodeParent](../-node-parent/index.md)&gt; |
-| [children](../-node-parent/children.md) | [androidJvm]<br>open var [children](../-node-parent/children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](index.md)&gt; |
+| [children](children.md) | [androidJvm]<br>open override var [children](children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](index.md)&gt; |
 | [collider](collider.md) | [androidJvm]<br>var [collider](collider.md): [Collider](../../com.google.ar.sceneform.collision/-collider/index.md)? = null |
 | [collisionShape](collision-shape.md) | [androidJvm]<br>var [collisionShape](collision-shape.md): [CollisionShape](../../com.google.ar.sceneform.collision/-collision-shape/index.md)? = null<br>If the shape is not set and renderable is set, then Renderable.getCollisionShape is used to detect collisions for this [Node](index.md). |
 | [currentEditingTransform](current-editing-transform.md) | [androidJvm]<br>var [currentEditingTransform](current-editing-transform.md): [KProperty](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html)&lt;*&gt;? = null |

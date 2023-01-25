@@ -90,10 +90,9 @@ Each node can have an arbitrary number of child nodes and one parent. The parent
 
 | Name | Summary |
 |---|---|
-| [_children](../-node/_children.md) | [androidJvm]<br>open override var [_children](../-node/_children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../-node/index.md)&gt; |
 | [allChildren](../-node-parent/all-children.md) | [androidJvm]<br>open val [allChildren](../-node-parent/all-children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../-node/index.md)&gt;<br>Traversal is depth first. If this NodeParent is a Node, traversal starts with this NodeParent, otherwise traversal starts with its children. |
 | [allParents](../-node/all-parents.md) | [androidJvm]<br>val [allParents](../-node/all-parents.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[NodeParent](../-node-parent/index.md)&gt; |
-| [children](../-node-parent/children.md) | [androidJvm]<br>open var [children](../-node-parent/children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../-node/index.md)&gt; |
+| [children](../-node/children.md) | [androidJvm]<br>open override var [children](../-node/children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../-node/index.md)&gt; |
 | [collider](../-node/collider.md) | [androidJvm]<br>var [collider](../-node/collider.md): [Collider](../../com.google.ar.sceneform.collision/-collider/index.md)? = null |
 | [collisionShape](../-node/collision-shape.md) | [androidJvm]<br>var [collisionShape](../-node/collision-shape.md): [CollisionShape](../../com.google.ar.sceneform.collision/-collision-shape/index.md)? = null<br>If the shape is not set and renderable is set, then Renderable.getCollisionShape is used to detect collisions for this [Node](../-node/index.md). |
 | [currentEditingTransform](../-node/current-editing-transform.md) | [androidJvm]<br>var [currentEditingTransform](../-node/current-editing-transform.md): [KProperty](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html)&lt;*&gt;? = null |

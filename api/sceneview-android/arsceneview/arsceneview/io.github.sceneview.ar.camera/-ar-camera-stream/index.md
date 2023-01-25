@@ -3,7 +3,7 @@
 # ArCameraStream
 
 [androidJvm]\
-class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), val standardMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_standard.filamat&quot;, val depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_depth.filamat&quot;) : [ArSceneLifecycleObserver](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)
+class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), val flatMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_flat.filamat&quot;, val depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_depth.filamat&quot;) : [ArSceneLifecycleObserver](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)
 
 ###  Displays the Camera stream using Filament.
 
@@ -11,7 +11,7 @@ class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.s
 
 | | |
 |---|---|
-| [ArCameraStream](-ar-camera-stream.md) | [androidJvm]<br>fun [ArCameraStream](-ar-camera-stream.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), standardMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_standard.filamat&quot;, depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_depth.filamat&quot;) |
+| [ArCameraStream](-ar-camera-stream.md) | [androidJvm]<br>fun [ArCameraStream](-ar-camera-stream.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), flatMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_flat.filamat&quot;, depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_depth.filamat&quot;) |
 
 ## Types
 
@@ -42,15 +42,14 @@ class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.s
 
 | Name | Summary |
 |---|---|
-| [cameraTexture](camera-texture.md) | [androidJvm]<br>var [cameraTexture](camera-texture.md): Texture? = null<br>We apply the multithreaded actual rendering texture |
 | [cameraTextureIds](camera-texture-ids.md) | [androidJvm]<br>val [cameraTextureIds](camera-texture-ids.md): [IntArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html)<br>Passing multiple textures allows for a multithreaded rendering pipeline |
-| [cameraTextures](camera-textures.md) | [androidJvm]<br>var [cameraTextures](camera-textures.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;Texture&gt;? = null<br>The init is done when we have the session frame size |
 | [depthOcclusionMaterial](depth-occlusion-material.md) | [androidJvm]<br>var [depthOcclusionMaterial](depth-occlusion-material.md): MaterialInstance |
 | [depthOcclusionMaterialLocation](depth-occlusion-material-location.md) | [androidJvm]<br>val [depthOcclusionMaterialLocation](depth-occlusion-material-location.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [depthTexture](depth-texture.md) | [androidJvm]<br>var [depthTexture](depth-texture.md): Texture? = null |
+| [flatMaterial](flat-material.md) | [androidJvm]<br>var [flatMaterial](flat-material.md): MaterialInstance |
+| [flatMaterialLocation](flat-material-location.md) | [androidJvm]<br>val [flatMaterialLocation](flat-material-location.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [flatTextures](flat-textures.md) | [androidJvm]<br>val [flatTextures](flat-textures.md): [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), Texture&gt; |
 | [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md) | [androidJvm]<br>var [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false<br>This will process the incoming DepthImage to occlude virtual objects behind real world objects. |
-| [material](material.md) | [androidJvm]<br>var [material](material.md): MaterialInstance<br>Depending on [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md) and device Depth compatibility |
+| [materialInstance](material-instance.md) | [androidJvm]<br>var [materialInstance](material-instance.md): MaterialInstance<br>Depending on [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md) and device Depth compatibility |
 | [priority](priority.md) | [androidJvm]<br>var [priority](priority.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [renderable](renderable.md) | [androidJvm]<br>val [renderable](renderable.md): [Renderable](../../../../sceneview/io.github.sceneview.renderable/-renderable/index.md) |
-| [standardMaterial](standard-material.md) | [androidJvm]<br>var [standardMaterial](standard-material.md): MaterialInstance |
-| [standardMaterialLocation](standard-material-location.md) | [androidJvm]<br>val [standardMaterialLocation](standard-material-location.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |

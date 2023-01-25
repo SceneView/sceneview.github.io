@@ -3,7 +3,7 @@
 # createSortedVectorOfTables
 
 [androidJvm]\
-open fun &lt;[T](create-sorted-vector-of-tables.md) : [Table](../-table/index.md)?&gt; [createSortedVectorOfTables](create-sorted-vector-of-tables.md)(obj: [T](../../../../arsceneview/com.google.ar.sceneform.rendering/-future-helper/log-on-exception.md), offsets: [Array](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)&lt;[Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)&gt;): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+open fun &lt;[T](create-sorted-vector-of-tables.md) : [Table](../-table/index.md)?&gt; [createSortedVectorOfTables](create-sorted-vector-of-tables.md)(obj: [T](../../com.google.ar.sceneform.resources/-resource-registry/index.md), offsets: [Array](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)&lt;[Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)&gt;): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
 
 Create a vector of sorted by the key tables.
 
