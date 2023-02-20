@@ -59,5 +59,6 @@ data class [Mat4](index.md)(var x: [Float4](../-float4/index.md) = Float4(x = 1.
 
 | Name | Summary |
 |---|---|
+| [equalsWithDelta](../../io.github.sceneview.math/equals-with-delta.md) | [androidJvm]<br>fun [Mat4](index.md).[equalsWithDelta](../../io.github.sceneview.math/equals-with-delta.md)(m: [Mat4](index.md), delta: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = DEFAULT_EPSILON): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [quaternion](../../io.github.sceneview.math/quaternion.md) | [androidJvm]<br>val [Mat4](index.md).[quaternion](../../io.github.sceneview.math/quaternion.md): [Quaternion](../-quaternion/index.md) |
 | [toColumnsFloatArray](../../io.github.sceneview.math/to-columns-float-array.md) | [androidJvm]<br>fun [Mat4](index.md).[toColumnsFloatArray](../../io.github.sceneview.math/to-columns-float-array.md)(): [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html) |

@@ -3,7 +3,7 @@
 # createModel
 
 [androidJvm]\
-suspend fun [createModel](create-model.md)(buffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html), resourceBufferResolver: suspend ([String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) -&gt; [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): [Model](../index.md#1227607086%2FClasslikes%2F-1571379623)?
+suspend fun [createModel](create-model.md)(buffer: [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html), resourceBufferResolver: suspend ([String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) -&gt; [Buffer](https://developer.android.com/reference/kotlin/java/nio/Buffer.html)): [Model](../index.md#1227607086%2FClasslikes%2F-1571379623)?
 
 ## Parameters
 

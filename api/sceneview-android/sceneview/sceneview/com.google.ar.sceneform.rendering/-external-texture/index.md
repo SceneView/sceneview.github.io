@@ -7,7 +7,7 @@ open class [ExternalTexture](index.md)
 
 Creates an Android [SurfaceTexture](https://developer.android.com/reference/kotlin/android/graphics/SurfaceTexture.html) and [Surface](https://developer.android.com/reference/kotlin/android/view/Surface.html) that can be displayed by Sceneform. Useful for displaying video, or anything else that can be drawn to a [SurfaceTexture](https://developer.android.com/reference/kotlin/android/graphics/SurfaceTexture.html). 
 
-The getFilamentEngine OpenGL ES texture is automatically created by Sceneform. Also, [updateTexImage](https://developer.android.com/reference/kotlin/android/graphics/SurfaceTexture.html#updateteximage) is automatically called and should not be called manually. 
+The getFilamentEngine OpenGL ES texture is automatically created by Sceneform. Also, [updateTexImage](https://developer.android.com/reference/kotlin/android/graphics/SurfaceTexture.html#updateTexImage--) is automatically called and should not be called manually. 
 
 Call [setExternalTexture](../-material/set-external-texture.md) to use an ExternalTexture. The material parameter MUST be of type 'samplerExternal'.
 

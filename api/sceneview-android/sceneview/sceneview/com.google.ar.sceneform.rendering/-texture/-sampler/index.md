@@ -26,7 +26,7 @@ Controls what settings are used to sample Textures when rendering.
 
 | Name | Summary |
 |---|---|
-| [magFilter](mag-filter.md) | [androidJvm]<br>val [magFilter](mag-filter.md): [Texture.Sampler.MagFilter](-mag-filter/index.md) |
+| [magFilter](mag-filter.md) | [androidJvm]<br>val [magFilter](mag-filter.md): [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html) |
 | [minFilter](min-filter.md) | [androidJvm]<br>val [minFilter](min-filter.md): [Texture.Sampler.MinFilter](-min-filter/index.md) |
 | [wrapModeR](wrap-mode-r.md) | [androidJvm]<br>val [wrapModeR](wrap-mode-r.md): [Texture.Sampler.WrapMode](-wrap-mode/index.md) |
 | [wrapModeS](wrap-mode-s.md) | [androidJvm]<br>val [wrapModeS](wrap-mode-s.md): [Texture.Sampler.WrapMode](-wrap-mode/index.md) |

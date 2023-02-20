@@ -3,7 +3,7 @@
 # loadModel
 
 [androidJvm]\
-suspend fun [loadModel](load-model.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), glbFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): [Model](../index.md#1227607086%2FClasslikes%2F-1571379623)?
+suspend fun [loadModel](load-model.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), glbFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Model](../index.md#1227607086%2FClasslikes%2F-1571379623)?
 
 ###  Utility for loading a glTF 3D model from a binary .glb file
 
@@ -14,4 +14,3 @@ androidJvm
 | | |
 |---|---|
 | glbFileLocation | the glb file location:<br>-     A relative asset file location *models/mymodel.glb* -     An android resource from the res folder *context.getResourceUri(R.raw.mymodel)* -     A File path *Uri.fromFile(myModelFile).path* -     An http or https url *https://mydomain.com/mymodel.glb* |
-| lifecycle | Provide your lifecycle in order to destroy it (and its resources) when the lifecycle goes to destroy state. You are responsible of manually destroy the [Model](../index.md#1227607086%2FClasslikes%2F-1571379623) if you don't provide lifecycle. |

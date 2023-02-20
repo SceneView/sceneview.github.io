@@ -14,7 +14,7 @@
 
 | Name | Summary |
 |---|---|
-| [build](build.md) | [androidJvm]<br>fun Stream.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): Stream<br>fun Texture.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): Texture |
+| [build](build.md) | [androidJvm]<br>fun Texture.Builder.[build](build.md)(): Texture<br>fun Stream.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): Stream |
 | [destroy](destroy.md) | [androidJvm]<br>fun Stream.[destroy](destroy.md)()<br>[androidJvm]<br>fun Texture.[destroy](destroy.md)()<br>Destroys a Texture and frees all its associated resources. |
 | [setExternalStream](set-external-stream.md) | [androidJvm]<br>fun Texture.[setExternalStream](set-external-stream.md)(stream: Stream) |
 | [setImage](set-image.md) | [androidJvm]<br>fun Texture.[setImage](set-image.md)(level: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), buffer: Texture.PixelBufferDescriptor)<br>fun Texture.[setImage](set-image.md)(@[IntRange](https://developer.android.com/reference/kotlin/androidx/annotation/IntRange.html)(from = 0)level: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), buffer: Texture.PixelBufferDescriptor, @[Size](https://developer.android.com/reference/kotlin/androidx/annotation/Size.html)(min = 6)faceOffsetsInBytes: [IntArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html)) |

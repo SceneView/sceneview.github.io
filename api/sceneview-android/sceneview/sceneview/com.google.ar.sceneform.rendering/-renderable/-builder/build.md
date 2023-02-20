@@ -3,7 +3,7 @@
 # build
 
 [androidJvm]\
-open fun [build](build.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[T](../../../com.google.ar.sceneform.resources/-resource-registry/index.md)&gt;
+open fun [build](build.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [CompletableFuture](https://developer.android.com/reference/kotlin/java/util/concurrent/CompletableFuture.html)&lt;[T](../../../../../arsceneview/com.google.ar.sceneform.rendering/-future-helper/log-on-exception.md)&gt;
 
 Constructs a [Renderable](../index.md) with the parameters of the builder.
 

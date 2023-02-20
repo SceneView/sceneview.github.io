@@ -5,4 +5,4 @@
 [androidJvm]\
 fun Stream.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): Stream
 
-fun Texture.Builder.[build](build.md)(lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)? = null): Texture
+fun Texture.Builder.[build](build.md)(): Texture
