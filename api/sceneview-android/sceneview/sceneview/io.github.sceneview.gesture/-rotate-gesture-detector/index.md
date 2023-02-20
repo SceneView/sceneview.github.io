@@ -16,7 +16,7 @@ To use this class:
 - 
    Create an instance of the [RotateGestureDetector](index.md) for your [android.view.View](https://developer.android.com/reference/kotlin/android/view/View.html).
 - 
-   In the [android.view.View.onTouchEvent](https://developer.android.com/reference/kotlin/android/view/View.html#ontouchevent) method ensure you call [onTouchEvent](on-touch-event.md). The methods defined in your callback will be executed when the events occur.
+   In the [android.view.View.onTouchEvent](https://developer.android.com/reference/kotlin/android/view/View.html#onTouchEvent-android.view.MotionEvent-) method ensure you call [onTouchEvent](on-touch-event.md). The methods defined in your callback will be executed when the events occur.
 
 ## Parameters
 

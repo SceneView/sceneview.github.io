@@ -3,4 +3,4 @@
 # destroyEglContext
 
 [androidJvm]\
-fun [destroyEglContext](destroy-egl-context.md)(context: [EGLContext](https://developer.android.com/reference/kotlin/android/opengl/EGLContext.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+fun [destroyEglContext](destroy-egl-context.md)(context: [EGLContext](https://developer.android.com/reference/kotlin/android/opengl/EGLContext.html)?)

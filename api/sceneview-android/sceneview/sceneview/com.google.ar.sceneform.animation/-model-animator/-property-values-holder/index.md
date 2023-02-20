@@ -13,9 +13,9 @@ PropertyValuesHolder objects can be used to create animations with ObjectAnimato
 
 Using this PropertyValuesHolder is very useful for targeting multiple time or frame properties of multiple animations inside a same ObjectAnimator model
 
-**and** insure a less consuming [android.view.Choreographer.FrameCallback](https://developer.android.com/reference/kotlin/android/view/Choreographer.FrameCallback.html) than using [playTogether](https://developer.android.com/reference/kotlin/android/animation/AnimatorSet.html#playtogether)
+**and** insure a less consuming [android.view.Choreographer.FrameCallback](https://developer.android.com/reference/kotlin/android/view/Choreographer.FrameCallback.html) than using [playTogether](https://developer.android.com/reference/kotlin/android/animation/AnimatorSet.html#playTogether-android.animation.Animator...-)
 
-**but** If you want to use the [setAutoCancel](https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html#setautocancel) functionality, you have to take care of this :
+**but** If you want to use the [setAutoCancel](https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html#setAutoCancel-boolean-) functionality, you have to take care of this :
 
 ```kotlin
 ObjectAnimator.hasSameTargetAndProperties(Animator anim) {
