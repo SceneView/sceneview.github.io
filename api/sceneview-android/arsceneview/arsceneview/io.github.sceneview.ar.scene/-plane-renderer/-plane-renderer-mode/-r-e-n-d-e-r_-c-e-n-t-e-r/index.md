@@ -1,9 +1,9 @@
-//[arsceneview](../../../../../index.md)/[io.github.sceneview.ar.scene](../../../index.md)/[PlaneRenderer](../../index.md)/[PlaneRendererMode](../index.md)/[RENDER_TOP_MOST](index.md)
+//[arsceneview](../../../../../index.md)/[io.github.sceneview.ar.scene](../../../index.md)/[PlaneRenderer](../../index.md)/[PlaneRendererMode](../index.md)/[RENDER_CENTER](index.md)
 
-# RENDER_TOP_MOST
+# RENDER_CENTER
 
 [androidJvm]\
-[RENDER_TOP_MOST](index.md)
+[RENDER_CENTER](index.md)
 
 Render only the top most Plane which is visible to the camera.
 

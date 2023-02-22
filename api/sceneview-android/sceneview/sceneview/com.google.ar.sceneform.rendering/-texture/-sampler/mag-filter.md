@@ -3,4 +3,4 @@
 # magFilter
 
 [androidJvm]\
-val [magFilter](mag-filter.md): [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)
+val [magFilter](mag-filter.md): [Texture.Sampler.MagFilter](-mag-filter/index.md)

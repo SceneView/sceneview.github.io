@@ -41,7 +41,7 @@ androidJvm
 [androidJvm]\
 open fun [createByteVector](create-byte-vector.md)(byteBuffer: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
 
-Create a byte array in the buffer. The source [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html) position is advanced by [remaining](https://developer.android.com/reference/kotlin/java/nio/Buffer.html#remaining--) places after this call.
+Create a byte array in the buffer. The source [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html) position is advanced by [remaining](https://developer.android.com/reference/kotlin/java/nio/Buffer.html#remaining) places after this call.
 
 #### Return
 

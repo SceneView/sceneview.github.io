@@ -63,9 +63,9 @@ Allows a [Texture](../index.md) to be constructed from a [Bitmap](https://develo
 The Bitmap must meet the following conditions to be used by Sceneform: 
 
 - 
-   [getConfig](https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html#getConfig--) must be [ARGB_8888](https://developer.android.com/reference/kotlin/android/graphics/Bitmap.Config.html#ARGB_8888).
+   [getConfig](https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html#getconfig) must be [ARGB_8888](https://developer.android.com/reference/kotlin/android/graphics/Bitmap.Config.html#ARGB_8888).
 - 
-   [isPremultiplied](https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html#isPremultiplied--) must be true.
+   [isPremultiplied](https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html#ispremultiplied) must be true.
 - The width and height must be smaller than 4096 pixels.
 
 ## Parameters
