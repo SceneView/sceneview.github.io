@@ -33,7 +33,7 @@ androidJvm
 | | |
 |---|---|
 | reference | an object reference |
-| errorMessage | the exception message to use if the check fails; will be converted to a string using [valueOf](https://developer.android.com/reference/kotlin/java/lang/String.html#valueOf-java.lang.Object-) |
+| errorMessage | the exception message to use if the check fails; will be converted to a string using [valueOf](https://developer.android.com/reference/kotlin/java/lang/String.html#valueof) |
 
 ## Throws
 

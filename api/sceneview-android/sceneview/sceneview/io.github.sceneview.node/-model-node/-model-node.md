@@ -36,3 +36,19 @@ androidJvm
 | autoAnimate | Plays the animations automatically if the model has one |
 | scaleUnits | Scale the model to fit a unit cube. Default `null` to keep model original size |
 | centerOrigin | Center point origin position within the model: Float cube position values between -1.0 and 1.0 corresponding to percents from model sizes.<br>-     `null` = Keep the origin point where it was at the model export time -     `Position(x = 0.0f, y = 0.0f, z = 0.0f)` = Center the model horizontally and vertically -     `Position(x = 0.0f, y = -1.0f, z = 0.0f)` = center horizontal | bottom -     `Position(x = -1.0f, y = 1.0f, z = 0.0f)` = left | top -     ...<br>```kotlin @param onError An exception has been thrown during model loading @param onLoaded Called when the model loading finished so you can change its properties (material, texture,...)<br>@see loadModel ``` |
+
+[androidJvm]\
+fun [ModelNode](-model-node.md)(modelInstance: [ModelInstance](../../io.github.sceneview.model/index.md#1724271641%2FClasslikes%2F-1571379623), autoAnimate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true, scaleToUnits: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)? = null, centerOrigin: [Position](../../io.github.sceneview.math/index.md#945960193%2FClasslikes%2F-1571379623)? = null)
+
+###  Create the Node and load a monolithic binary glTF and add it to the Node
+
+## Parameters
+
+androidJvm
+
+| | |
+|---|---|
+| modelInstance | the model instance |
+| autoAnimate | Plays the animations automatically if the model has one |
+| scaleToUnits | Scale the model to fit a unit cube. Default `null` to keep model original size |
+| centerOrigin | Center the model origin to this unit cube position<br>-     `null` = Keep the original model center point -     `Position(x = 0.0f, y = 0.0f, z = 0.0f)` = Center the model horizontally and vertically -     `Position(x = 0.0f, y = -1.0f, z = 0.0f)` = center horizontal | bottom aligned -     `Position(x = -1.0f, y = 1.0f, z = 0.0f)` = left | top aligned -     ... |
