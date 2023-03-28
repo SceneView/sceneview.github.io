@@ -6,4 +6,4 @@
 
 @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private open val [filamentStream](filament-stream.md): Stream
+open val [filamentStream](filament-stream.md): Stream

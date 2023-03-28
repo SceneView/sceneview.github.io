@@ -3,7 +3,7 @@
 # Vector3Evaluator
 
 [androidJvm]\
-open class [Vector3Evaluator](index.md) : [TypeEvaluator](https://developer.android.com/reference/kotlin/android/animation/TypeEvaluator.html)&lt;[Vector3](../-vector3/index.md)&gt; 
+open class [Vector3Evaluator](index.md) : [TypeEvaluator](https://developer.android.com/reference/kotlin/android/animation/TypeEvaluator.html)&lt;[T](https://developer.android.com/reference/kotlin/android/animation/TypeEvaluator.html)&gt; 
 
 TypeEvaluator for Vector3. Used to animate positions and other vectors.
 

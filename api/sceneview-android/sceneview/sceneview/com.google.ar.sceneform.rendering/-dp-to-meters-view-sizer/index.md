@@ -32,4 +32,4 @@ androidJvm
 
 | Name | Summary |
 |---|---|
-| [dpPerMeters](dp-per-meters.md) | [androidJvm]<br>private val [dpPerMeters](dp-per-meters.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [dpPerMeters](dp-per-meters.md) | [androidJvm]<br>val [dpPerMeters](dp-per-meters.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |

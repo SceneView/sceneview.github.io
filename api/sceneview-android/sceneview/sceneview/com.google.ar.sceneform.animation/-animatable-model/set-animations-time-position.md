@@ -7,7 +7,7 @@ open fun [setAnimationsTimePosition](set-animations-time-position.md)(timePositi
 
 Sets the current position of (seeks) the animation to the specified time position in seconds. This time should be 
 
- This method will apply rotation, translation, and scale to the Renderable that have been targeted. Uses TransformManager
+ This method will apply rotation, translation, and scale to the Renderable that have been targeted. Uses `TransformManager`
 
 ## See also
 

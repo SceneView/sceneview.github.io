@@ -6,4 +6,4 @@
 
 @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private val [surface](surface.md): [Surface](https://developer.android.com/reference/kotlin/android/view/Surface.html)
+val [surface](surface.md): [Surface](https://developer.android.com/reference/kotlin/android/view/Surface.html)

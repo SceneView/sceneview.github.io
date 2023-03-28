@@ -10,4 +10,4 @@ fun [doOnAttachedToScene](do-on-attached-to-scene.md)(action: (scene: [SceneView
 If the node is already attached the action will be performed immediately. Else this action will be invoked the first time the scene is attached.
 
 - 
-   scene - the attached scene
+   `scene` - the attached scene

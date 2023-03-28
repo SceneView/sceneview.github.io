@@ -11,7 +11,7 @@ class [ModelPipelineImportDef](index.md) : [Table](../../com.google.flatbuffers/
 |---|---|
 | [__assign](__assign.md) | [androidJvm]<br>open fun [__assign](__assign.md)(_i: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), _bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)): [ModelPipelineImportDef](index.md) |
 | [__init](__init.md) | [androidJvm]<br>open fun [__init](__init.md)(_i: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), _bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)) |
-| [__reset](../../com.google.flatbuffers/-table/__reset.md) | [androidJvm]<br>open fun [__reset](../../com.google.flatbuffers/-table/__reset.md)()<br>Resets the internal state with a null ByteBuffer and a zero position. |
+| [__reset](../../com.google.flatbuffers/-table/__reset.md) | [androidJvm]<br>open fun [__reset](../../com.google.flatbuffers/-table/__reset.md)()<br>Resets the internal state with a null `ByteBuffer` and a zero position. |
 | [addAxisSystem](add-axis-system.md) | [androidJvm]<br>open fun [addAxisSystem](add-axis-system.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), axisSystem: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [addCmPerUnit](add-cm-per-unit.md) | [androidJvm]<br>open fun [addCmPerUnit](add-cm-per-unit.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), cmPerUnit: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |
 | [addEnsureVertexOrientationWNotZero](add-ensure-vertex-orientation-w-not-zero.md) | [androidJvm]<br>open fun [addEnsureVertexOrientationWNotZero](add-ensure-vertex-orientation-w-not-zero.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), ensureVertexOrientationWNotZero: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
@@ -56,3 +56,9 @@ class [ModelPipelineImportDef](index.md) : [Table](../../com.google.flatbuffers/
 | [targetMeshes](target-meshes.md) | [androidJvm]<br>open fun [targetMeshes](target-meshes.md)(j: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)<br>The names of the nodes that contain the target meshes to import from the asset. |
 | [targetMeshesLength](target-meshes-length.md) | [androidJvm]<br>open fun [targetMeshesLength](target-meshes-length.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [useSpecularGlossinessTexturesIfPresent](use-specular-glossiness-textures-if-present.md) | [androidJvm]<br>open fun [useSpecularGlossinessTexturesIfPresent](use-specular-glossiness-textures-if-present.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>If a model contains both metallic-roughness textures and specular-glossiness textures, this flag causes the import to only use the specular-glossiness textures. |
+
+## Properties
+
+| Name | Summary |
+|---|---|
+| [UTF8_CHARSET](../../com.google.flatbuffers/-table/-u-t-f8_-c-h-a-r-s-e-t.md) | [androidJvm]<br>val [UTF8_CHARSET](../../com.google.flatbuffers/-table/-u-t-f8_-c-h-a-r-s-e-t.md): [ThreadLocal](https://developer.android.com/reference/kotlin/java/lang/ThreadLocal.html)&lt;[Charset](https://developer.android.com/reference/kotlin/java/nio/charset/Charset.html)&gt; |

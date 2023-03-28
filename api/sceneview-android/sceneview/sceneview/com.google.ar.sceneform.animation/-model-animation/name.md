@@ -3,4 +3,4 @@
 # name
 
 [androidJvm]\
-private open val [name](name.md): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)
+open val [name](name.md): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)

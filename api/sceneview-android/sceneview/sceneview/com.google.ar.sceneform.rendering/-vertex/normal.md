@@ -8,4 +8,4 @@
 
 @get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private open var [normal](normal.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)
+open var [normal](normal.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)

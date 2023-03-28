@@ -12,10 +12,5 @@ Factory class for [RenderableDefinition](../index.md).
 | Name | Summary |
 |---|---|
 | [build](build.md) | [androidJvm]<br>open fun [build](build.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html)): [RenderableDefinition](../index.md) |
-
-## Properties
-
-| Name | Summary |
-|---|---|
-| [submeshes](submeshes.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open var [submeshes](submeshes.md): [List](https://developer.android.com/reference/kotlin/java/util/List.html)&lt;[RenderableDefinition.Submesh](../-submesh/index.md)&gt; |
-| [vertices](vertices.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open var [vertices](vertices.md): [List](https://developer.android.com/reference/kotlin/java/util/List.html)&lt;[Vertex](../../-vertex/index.md)&gt; |
+| [setSubmeshes](set-submeshes.md) | [androidJvm]<br>open fun [setSubmeshes](set-submeshes.md)(submeshes: [List](https://developer.android.com/reference/kotlin/java/util/List.html)&lt;[RenderableDefinition.Submesh](../-submesh/index.md)&gt;): [RenderableDefinition.Builder](index.md) |
+| [setVertices](set-vertices.md) | [androidJvm]<br>open fun [setVertices](set-vertices.md)(vertices: [List](https://developer.android.com/reference/kotlin/java/util/List.html)&lt;[Vertex](../../-vertex/index.md)&gt;): [RenderableDefinition.Builder](index.md) |

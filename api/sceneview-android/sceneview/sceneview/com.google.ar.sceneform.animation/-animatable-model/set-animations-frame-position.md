@@ -7,7 +7,7 @@ open fun [setAnimationsFramePosition](set-animations-frame-position.md)(framePos
 
 Sets the current position of (seeks) all the animations to the specified frame number according to the [getFrameRate](../../../../sceneview/com.google.ar.sceneform.animation/-model-animation/get-frame-rate.md)
 
- This method will apply rotation, translation, and scale to the Renderable that have been targeted. Uses TransformManager
+ This method will apply rotation, translation, and scale to the Renderable that have been targeted. Uses `TransformManager`
 
 ## See also
 

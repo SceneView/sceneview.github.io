@@ -5,4 +5,4 @@
 [androidJvm]\
 var [isGestureInProgress](is-gesture-in-progress.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false
 
-### true if a rotate gesture is in progress.
+### `true` if a rotate gesture is in progress.

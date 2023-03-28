@@ -11,4 +11,4 @@ Get the name of the [ModelAnimation](../-model-animation/index.md) at the Zero-b
 
 #### Return
 
-The string name of the [ModelAnimation](../-model-animation/index.md), String.valueOf(animation.getIndex())> if none was specified.
+The string name of the [ModelAnimation](../-model-animation/index.md), `String.valueOf(animation.getIndex())`> if none was specified.

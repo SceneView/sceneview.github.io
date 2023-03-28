@@ -3,7 +3,7 @@
 # QuaternionEvaluator
 
 [androidJvm]\
-open class [QuaternionEvaluator](index.md) : [TypeEvaluator](https://developer.android.com/reference/kotlin/android/animation/TypeEvaluator.html)&lt;[Quaternion](../-quaternion/index.md)&gt; 
+open class [QuaternionEvaluator](index.md) : [TypeEvaluator](https://developer.android.com/reference/kotlin/android/animation/TypeEvaluator.html)&lt;[T](https://developer.android.com/reference/kotlin/android/animation/TypeEvaluator.html)&gt; 
 
 TypeEvaluator for Quaternions. Used to animate rotations.
 

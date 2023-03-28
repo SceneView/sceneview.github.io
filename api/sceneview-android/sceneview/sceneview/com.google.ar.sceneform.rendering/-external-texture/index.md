@@ -27,7 +27,7 @@ Call [setExternalTexture](../-material/set-external-texture.md) to use an Extern
 
 | Name | Summary |
 |---|---|
-| [filamentStream](filament-stream.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open val [filamentStream](filament-stream.md): Stream |
-| [filamentTexture](filament-texture.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open val [filamentTexture](filament-texture.md): Texture |
-| [surface](surface.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private val [surface](surface.md): [Surface](https://developer.android.com/reference/kotlin/android/view/Surface.html) |
-| [surfaceTexture](surface-texture.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private val [surfaceTexture](surface-texture.md): [SurfaceTexture](https://developer.android.com/reference/kotlin/android/graphics/SurfaceTexture.html) |
+| [filamentStream](filament-stream.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>open val [filamentStream](filament-stream.md): Stream |
+| [filamentTexture](filament-texture.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>open val [filamentTexture](filament-texture.md): Texture |
+| [surface](surface.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>val [surface](surface.md): [Surface](https://developer.android.com/reference/kotlin/android/view/Surface.html) |
+| [surfaceTexture](surface-texture.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>val [surfaceTexture](surface-texture.md): [SurfaceTexture](https://developer.android.com/reference/kotlin/android/graphics/SurfaceTexture.html) |

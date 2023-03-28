@@ -26,8 +26,8 @@ Controls what settings are used to sample Textures when rendering.
 
 | Name | Summary |
 |---|---|
-| [magFilter](mag-filter.md) | [androidJvm]<br>private val [magFilter](mag-filter.md): [Texture.Sampler.MagFilter](-mag-filter/index.md) |
-| [minFilter](min-filter.md) | [androidJvm]<br>private val [minFilter](min-filter.md): [Texture.Sampler.MinFilter](-min-filter/index.md) |
-| [wrapModeR](wrap-mode-r.md) | [androidJvm]<br>private val [wrapModeR](wrap-mode-r.md): [Texture.Sampler.WrapMode](-wrap-mode/index.md) |
-| [wrapModeS](wrap-mode-s.md) | [androidJvm]<br>private val [wrapModeS](wrap-mode-s.md): [Texture.Sampler.WrapMode](-wrap-mode/index.md) |
-| [wrapModeT](wrap-mode-t.md) | [androidJvm]<br>private val [wrapModeT](wrap-mode-t.md): [Texture.Sampler.WrapMode](-wrap-mode/index.md) |
+| [magFilter](mag-filter.md) | [androidJvm]<br>val [magFilter](mag-filter.md): [Texture.Sampler.MagFilter](-mag-filter/index.md) |
+| [minFilter](min-filter.md) | [androidJvm]<br>val [minFilter](min-filter.md): [Texture.Sampler.MinFilter](-min-filter/index.md) |
+| [wrapModeR](wrap-mode-r.md) | [androidJvm]<br>val [wrapModeR](wrap-mode-r.md): [Texture.Sampler.WrapMode](-wrap-mode/index.md) |
+| [wrapModeS](wrap-mode-s.md) | [androidJvm]<br>val [wrapModeS](wrap-mode-s.md): [Texture.Sampler.WrapMode](-wrap-mode/index.md) |
+| [wrapModeT](wrap-mode-t.md) | [androidJvm]<br>val [wrapModeT](wrap-mode-t.md): [Texture.Sampler.WrapMode](-wrap-mode/index.md) |

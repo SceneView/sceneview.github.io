@@ -9,7 +9,7 @@ interface [SimpleOnMoveListener](index.md) : [MoveGestureDetector.OnMoveListener
 
 move-related events
 
-This implements all methods in [OnMoveListener](../-on-move-listener/index.md) but does nothing. [OnMoveListener.onMove](../-on-move-listener/on-move.md) returns false so that a subclass can retrieve the accumulated moving factor in an overridden [OnMoveListener.onMoveEnd](../-on-move-listener/on-move-end.md). [OnMoveListener.onMoveBegin](../-on-move-listener/on-move-begin.md) returns true.
+This implements all methods in [OnMoveListener](../-on-move-listener/index.md) but does nothing. [OnMoveListener.onMove](../-on-move-listener/on-move.md) returns `false` so that a subclass can retrieve the accumulated moving factor in an overridden [OnMoveListener.onMoveEnd](../-on-move-listener/on-move-end.md). [OnMoveListener.onMoveBegin](../-on-move-listener/on-move-begin.md) returns `true`.
 
 ## Functions
 

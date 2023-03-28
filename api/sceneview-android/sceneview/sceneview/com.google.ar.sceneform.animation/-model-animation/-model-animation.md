@@ -14,6 +14,6 @@ androidJvm
 | | |
 |---|---|
 | name | This name should corresponds to the one defined and exported in the [AnimatableModel](../-animatable-model/index.md). Typically the action name defined in the 3D creation software. |
-| index | Zero-based index of the target animation as defined in the original [AnimatableModel](../-animatable-model/index.md) |
+| index | Zero-based index of the target `animation` as defined in the original [AnimatableModel](../-animatable-model/index.md) |
 | duration | This original [AnimatableModel](../-animatable-model/index.md) duration |
 | frameRate | The frames per second defined in the original animation asset |

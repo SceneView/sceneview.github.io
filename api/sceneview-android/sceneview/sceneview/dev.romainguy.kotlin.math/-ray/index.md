@@ -3,7 +3,13 @@
 # Ray
 
 [androidJvm]\
-data class [Ray](index.md)(origin: [Float3](../-float3/index.md), direction: [Float3](../-float3/index.md))
+data class [Ray](index.md)(var origin: [Float3](../-float3/index.md) = Float3(), var direction: [Float3](../-float3/index.md))
+
+## Constructors
+
+| | |
+|---|---|
+| [Ray](-ray.md) | [androidJvm]<br>fun [Ray](-ray.md)(origin: [Float3](../-float3/index.md) = Float3(), direction: [Float3](../-float3/index.md)) |
 
 ## Properties
 

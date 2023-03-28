@@ -18,4 +18,4 @@ Sums time samples together. Used for tracking the time elapsed of a set of code 
 
 | Name | Summary |
 |---|---|
-| [elapsedTimeMs](elapsed-time-ms.md) | [androidJvm]<br>private open val [elapsedTimeMs](elapsed-time-ms.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) |
+| [elapsedTimeMs](elapsed-time-ms.md) | [androidJvm]<br>open val [elapsedTimeMs](elapsed-time-ms.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) |

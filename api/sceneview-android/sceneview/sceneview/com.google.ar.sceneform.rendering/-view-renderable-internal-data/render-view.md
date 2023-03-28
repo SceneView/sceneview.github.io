@@ -3,4 +3,4 @@
 # renderView
 
 [androidJvm]\
-private val [renderView](render-view.md): [RenderViewToExternalTexture](../-render-view-to-external-texture/index.md)
+val [renderView](render-view.md): [RenderViewToExternalTexture](../-render-view-to-external-texture/index.md)

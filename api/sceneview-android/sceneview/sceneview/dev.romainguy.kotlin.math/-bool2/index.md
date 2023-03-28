@@ -3,13 +3,14 @@
 # Bool2
 
 [androidJvm]\
-data class [Bool2](index.md)(x: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), y: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
+data class [Bool2](index.md)(var x: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false, var y: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false)
 
 ## Constructors
 
 | | |
 |---|---|
 | [Bool2](-bool2.md) | [androidJvm]<br>fun [Bool2](-bool2.md)(v: [Bool2](index.md)) |
+| [Bool2](-bool2.md) | [androidJvm]<br>fun [Bool2](-bool2.md)(x: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false, y: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false) |
 
 ## Functions
 

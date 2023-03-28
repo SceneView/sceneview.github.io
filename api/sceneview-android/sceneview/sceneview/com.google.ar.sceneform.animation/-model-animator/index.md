@@ -7,47 +7,94 @@ open class [ModelAnimator](index.md)
 
 This class provides support for animating an [AnimatableModel](../-animatable-model/index.md)
 
-Usage
+## Usage
 
  By default the [ModelAnimator](index.md) can play the full [ModelAnimation](../-model-animation/index.md) starting from 0 to the animation duration with: 
 
-[ofAnimation](of-animation.md)
+```kotlin
+
+```
 
  If you want to specify a start and end, you should use: 
 
-[ofAnimationTime](of-animation-time.md)[ofAnimationFrame](of-animation-frame.md)[ofAnimationFraction](of-animation-fraction.md)Use casesSimple usage
+```kotlin
+
+```
+```kotlin
+
+```
+```kotlin
+
+```
+
+## Use cases
+
+### Simple usage
 
  On a very basic 3D model like a single infinite rotating sphere, you should not have to use [ModelAnimator](index.md) but probably instead just call: 
 
-[animate](../-animatable-model/animate.md)Single Model with Single Animation
+```kotlin
+
+```
+
+### Single Model with Single Animation
 
  If you want to animate a single model to a specific timeline position, use: 
 
-[ofAnimationTime](of-animation-time.md)[ofAnimationFrame](of-animation-frame.md)[ofAnimationFraction](of-animation-fraction.md)
+```kotlin
+
+```
+```kotlin
+
+```
+```kotlin
+
+```
 
 - A single time, frame, fraction value will go from the actual position to the desired one
 - Two values means form value1 to value2
 - More than two values means form value1 to value2 then to value3
 
-*Example:*ModelAnimator.ofAnimationFraction(model, "VerticalTranslation", 0f, 0.8f, 0f).start();Single Model with Multiple Animations
+*Example:*```kotlin
+ModelAnimator.ofAnimationFraction(model, "VerticalTranslation", 0f, 0.8f, 0f).start();
+
+```
+
+### Single Model with Multiple Animations
 
  If the model is a character, for example, there may be one ModelAnimation for a walkcycle, a second for a jump, a third for sidestepping and so on. 
 
-[ofAnimation](of-animation.md)[ofMultipleAnimations](of-multiple-animations.md)*Example:*
+```kotlin
 
- Here you can see that no call to animator.cancel() is required because the animator.setAutoCancel(boolean) is set to true by default. 
+```
+```kotlin
 
+```
+*Example:*
+
+ Here you can see that no call to `animator.cancel()` is required because the `animator.setAutoCancel(boolean)` is set to true by default. 
+
+```kotlin
 ObjectAnimator walkAnimator = ModelAnimator.ofAnimation(model, "walk");
-walkButton.setOnClickListener(v -&gt; walkAnimator.start());
+walkButton.setOnClickListener(v -> walkAnimator.start());
 
 ObjectAnimator runAnimator = ModelAnimator.ofAnimation(model, "run");
-runButton.setOnClickListener(v -&gt; runAnimator.start());*or sequentially:*AnimatorSet animatorSet = new AnimatorSet();
+runButton.setOnClickListener(v -> runAnimator.start());
+
+```
+*or sequentially:*```kotlin
+AnimatorSet animatorSet = new AnimatorSet();
 animatorSet.playSequentially(ModelAnimator.ofMultipleAnimations(model, "walk", "run"));
-animatorSet.start();Multiple Models with Multiple Animations
+animatorSet.start();
+
+```
+
+### Multiple Models with Multiple Animations
 
  For a synchronised animation set like animating a complete scene with multiple models time or sequentially, please consider using an [android.animation.AnimatorSet](https://developer.android.com/reference/kotlin/android/animation/AnimatorSet.html) with one [ModelAnimator](index.md) parametrized per step : 
 
-*Example:*AnimatorSet completeFly = new AnimatorSet();
+*Example:*```kotlin
+AnimatorSet completeFly = new AnimatorSet();
 
 ObjectAnimator liftOff = ModelAnimator.ofAnimationFraction(airPlaneModel, "FlyAltitude",0, 40);
 liftOff.setInterpolator(new AccelerateInterpolator());
@@ -62,18 +109,22 @@ flying.playTogether(flyAround, airportBusHome);
 ObjectAnimator land = ModelAnimator.ofAnimationFraction(airPlaneModel, "FlyAltitude", 0);
 land.setInterpolator(new DecelerateInterpolator());
 
-completeFly.playSequentially(liftOff, flying, land);Morphing animation
+completeFly.playSequentially(liftOff, flying, land);
+
+```
+
+### Morphing animation
 
  Assuming a character object has a skeleton, one keyframe track could store the data for the position changes of the lower arm bone over time, a different track the data for the rotation changes of the same bone, a third the track position, rotation or scaling of another bone, and so on. It should be clear, that an ModelAnimation can act on lots of such tracks. 
 
  Assuming the model has morph targets (for example one morph target showing a friendly face and another showing an angry face), each track holds the information as to how the influence of a certain morph target changes during the performance of the clip. 
 
- In a glTF context, this [Animator](https://developer.android.com/reference/kotlin/android/animation/Animator.html) updates matrices according to glTF animation and skin definitions. 
+ In a glTF context, this [Animator](https://developer.android.com/reference/kotlin/android/animation/Animator.html) updates matrices according to glTF `animation` and `skin` definitions. 
 
-can be used for two things
+### [ModelAnimator](index.md) can be used for two things
 
-- Updating matrices in TransformManager components according to the model animation definitions.
-- Updating bone matrices in RenderableManager components according to the model skin definitions.
+- Updating matrices in `TransformManager` components according to the model `animation` definitions.
+- Updating bone matrices in `RenderableManager` components according to the model `skin` definitions.
 
  Every PropertyValuesHolder that applies a modification on the time position of the animation must use the ModelAnimation.TIME_POSITION instead of its own Property in order to possibly cancel any ObjectAnimator operating time modifications on the same ModelAnimation. 
 

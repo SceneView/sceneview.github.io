@@ -3,4 +3,4 @@
 # origin
 
 [androidJvm]\
-private open var [origin](origin.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)
+open var [origin](origin.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)

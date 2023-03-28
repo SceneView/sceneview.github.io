@@ -12,12 +12,7 @@ Factory class for [Vertex](../index.md).
 | Name | Summary |
 |---|---|
 | [build](build.md) | [androidJvm]<br>open fun [build](build.md)(): [Vertex](../index.md) |
-
-## Properties
-
-| Name | Summary |
-|---|---|
-| [color](color.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open var [color](color.md): [Color](../../-color/index.md) |
-| [normal](normal.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open var [normal](normal.md): [Vector3](../../../com.google.ar.sceneform.math/-vector3/index.md) |
-| [position](position.md) | [androidJvm]<br>private var [position](position.md): [Vector3](../../../com.google.ar.sceneform.math/-vector3/index.md) |
-| [uvCoordinate](uv-coordinate.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open var [uvCoordinate](uv-coordinate.md): [Vertex.UvCoordinate](../-uv-coordinate/index.md) |
+| [setColor](set-color.md) | [androidJvm]<br>open fun [setColor](set-color.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)color: [Color](../../-color/index.md)): [Vertex.Builder](index.md) |
+| [setNormal](set-normal.md) | [androidJvm]<br>open fun [setNormal](set-normal.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)normal: [Vector3](../../../com.google.ar.sceneform.math/-vector3/index.md)): [Vertex.Builder](index.md) |
+| [setPosition](set-position.md) | [androidJvm]<br>open fun [setPosition](set-position.md)(position: [Vector3](../../../com.google.ar.sceneform.math/-vector3/index.md)): [Vertex.Builder](index.md) |
+| [setUvCoordinate](set-uv-coordinate.md) | [androidJvm]<br>open fun [setUvCoordinate](set-uv-coordinate.md)(@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)uvCoordinate: [Vertex.UvCoordinate](../-uv-coordinate/index.md)): [Vertex.Builder](index.md) |

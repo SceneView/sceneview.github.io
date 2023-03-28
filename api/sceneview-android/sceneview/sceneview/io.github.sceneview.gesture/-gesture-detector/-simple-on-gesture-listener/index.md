@@ -5,6 +5,12 @@
 [androidJvm]\
 class [SimpleOnGestureListener](index.md) : [GestureDetector.OnGestureListener](../-on-gesture-listener/index.md)
 
+## Constructors
+
+| | |
+|---|---|
+| [SimpleOnGestureListener](-simple-on-gesture-listener.md) | [androidJvm]<br>fun [SimpleOnGestureListener](-simple-on-gesture-listener.md)() |
+
 ## Functions
 
 | Name | Summary |

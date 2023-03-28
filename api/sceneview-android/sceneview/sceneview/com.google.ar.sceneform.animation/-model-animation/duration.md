@@ -3,4 +3,4 @@
 # duration
 
 [androidJvm]\
-private open val [duration](duration.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)
+open val [duration](duration.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)

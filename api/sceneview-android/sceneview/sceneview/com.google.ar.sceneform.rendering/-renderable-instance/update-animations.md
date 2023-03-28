@@ -5,7 +5,7 @@
 [androidJvm]\
 open fun [updateAnimations](update-animations.md)(force: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
-Apply animations changes if fore==true or the animation has dirty values.
+Apply animations changes `if fore==true` or the animation has dirty values.
 
 #### Return
 

@@ -7,7 +7,7 @@ open fun [animate](animate.md)(repeat: [Boolean](https://kotlinlang.org/api/late
 
 Constructs and returns an [ObjectAnimator](https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html) for all [ModelAnimation](../-model-animation/index.md) of this object. 
 
-Don't forget to call
+### Don't forget to call start
 
 #### Return
 

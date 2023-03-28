@@ -5,7 +5,7 @@
 [androidJvm]\
 open fun [materials](materials.md)(j: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)): [MaterialDef](../-material-def/index.md)
 
-The material describing the "look" of each submesh.
+The material describing the &quot;look&quot; of each submesh.
 
 [androidJvm]\
 open fun [materials](materials.md)(obj: [MaterialDef](../-material-def/index.md), j: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)): [MaterialDef](../-material-def/index.md)

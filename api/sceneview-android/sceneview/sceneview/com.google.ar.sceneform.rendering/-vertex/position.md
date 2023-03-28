@@ -3,4 +3,4 @@
 # position
 
 [androidJvm]\
-private var [position](position.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)
+var [position](position.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)

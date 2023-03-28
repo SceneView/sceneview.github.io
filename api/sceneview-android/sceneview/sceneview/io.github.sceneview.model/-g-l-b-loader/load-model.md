@@ -3,9 +3,9 @@
 # loadModel
 
 [androidJvm]\
-suspend fun [loadModel](load-model.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), lifecycle: [Lifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html), glbFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Model](../index.md#1227607086%2FClasslikes%2F-1571379623)?
+suspend fun [loadModel](load-model.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), glbFileLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Model](../index.md#1227607086%2FClasslikes%2F-1571379623)?
 
-###  Utility for loading a glTF 3D model
+###  Utility for loading a glTF 3D model from a binary .glb file
 
 ## Parameters
 

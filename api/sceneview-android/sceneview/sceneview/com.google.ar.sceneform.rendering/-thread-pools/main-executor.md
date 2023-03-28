@@ -3,4 +3,4 @@
 # mainExecutor
 
 [androidJvm]\
-private open var [mainExecutor](main-executor.md): [Executor](https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html)
+open var [mainExecutor](main-executor.md): [Executor](https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html)

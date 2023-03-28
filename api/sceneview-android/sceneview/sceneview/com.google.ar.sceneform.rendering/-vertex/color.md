@@ -8,4 +8,4 @@
 
 @get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private open var [color](color.md): [Color](../-color/index.md)
+open var [color](color.md): [Color](../-color/index.md)

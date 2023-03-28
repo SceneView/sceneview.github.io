@@ -3,4 +3,4 @@
 # average
 
 [androidJvm]\
-private open val [average](average.md): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html)
+open val [average](average.md): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html)

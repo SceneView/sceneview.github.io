@@ -69,7 +69,9 @@ Returns the half-precision float value represented by the specified string. The 
 
 Calling this function is equivalent to calling:
 
+```kotlin
 Half(value.toFloat())
+```
 
 ## See also
 

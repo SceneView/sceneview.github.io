@@ -5,6 +5,12 @@
 [androidJvm]\
 inner class [CameraGestureListener](index.md) : [CameraGestureDetector.OnCameraGestureListener](../../../io.github.sceneview.gesture/-camera-gesture-detector/-on-camera-gesture-listener/index.md)
 
+## Constructors
+
+| | |
+|---|---|
+| [CameraGestureListener](-camera-gesture-listener.md) | [androidJvm]<br>fun [CameraGestureListener](-camera-gesture-listener.md)() |
+
 ## Functions
 
 | Name | Summary |

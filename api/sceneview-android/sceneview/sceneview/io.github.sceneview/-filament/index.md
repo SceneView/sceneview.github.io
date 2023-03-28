@@ -17,7 +17,7 @@ object [Filament](index.md)
 
 | Name | Summary |
 |---|---|
-| [assetLoader](asset-loader.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [assetLoader](asset-loader.md): AssetLoader |
+| [assetLoader](asset-loader.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [assetLoader](asset-loader.md): AssetLoader? |
 | [engine](engine.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [engine](engine.md): Engine |
 | [entityManager](entity-manager.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [entityManager](entity-manager.md): EntityManager |
 | [iblPrefilter](ibl-prefilter.md) | [androidJvm]<br>@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)<br>val [iblPrefilter](ibl-prefilter.md): [IBLPrefilter](../../io.github.sceneview.environment/-i-b-l-prefilter/index.md) |

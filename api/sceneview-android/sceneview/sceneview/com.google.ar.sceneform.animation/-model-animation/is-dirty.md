@@ -3,4 +3,4 @@
 # isDirty
 
 [androidJvm]\
-private open val [isDirty](is-dirty.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+open var [isDirty](is-dirty.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)

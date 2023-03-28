@@ -6,4 +6,4 @@
 
 @[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)
 
-val [assetLoader](asset-loader.md): AssetLoader
+val [assetLoader](asset-loader.md): AssetLoader?

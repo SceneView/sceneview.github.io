@@ -3,4 +3,4 @@
 # isShadowReceiver
 
 [androidJvm]\
-private open val [isShadowReceiver](is-shadow-receiver.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+open var [isShadowReceiver](is-shadow-receiver.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)

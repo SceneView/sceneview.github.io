@@ -3,4 +3,4 @@
 # transformProvider
 
 [androidJvm]\
-private open val [transformProvider](transform-provider.md): [TransformProvider](../../com.google.ar.sceneform.common/-transform-provider/index.md)
+open val [transformProvider](transform-provider.md): [TransformProvider](../../com.google.ar.sceneform.common/-transform-provider/index.md)

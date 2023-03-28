@@ -3,7 +3,7 @@
 # Float3
 
 [androidJvm]\
-data class [Float3](index.md)(x: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), y: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), z: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html))
+data class [Float3](index.md)(var x: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f, var y: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f, var z: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f)
 
 ## Constructors
 
@@ -12,6 +12,7 @@ data class [Float3](index.md)(x: [Float](https://kotlinlang.org/api/latest/jvm/s
 | [Float3](-float3.md) | [androidJvm]<br>fun [Float3](-float3.md)(v: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)) |
 | [Float3](-float3.md) | [androidJvm]<br>fun [Float3](-float3.md)(v: [Float2](../-float2/index.md), z: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f) |
 | [Float3](-float3.md) | [androidJvm]<br>fun [Float3](-float3.md)(v: [Float3](index.md)) |
+| [Float3](-float3.md) | [androidJvm]<br>fun [Float3](-float3.md)(x: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f, y: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f, z: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f) |
 
 ## Functions
 

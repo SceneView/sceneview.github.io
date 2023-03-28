@@ -17,4 +17,4 @@ Represents shared data used by [ViewRenderable](../-view-renderable/index.md)s f
 
 | Name | Summary |
 |---|---|
-| [renderView](render-view.md) | [androidJvm]<br>private val [renderView](render-view.md): [RenderViewToExternalTexture](../-render-view-to-external-texture/index.md) |
+| [renderView](render-view.md) | [androidJvm]<br>val [renderView](render-view.md): [RenderViewToExternalTexture](../-render-view-to-external-texture/index.md) |

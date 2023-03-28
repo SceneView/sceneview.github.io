@@ -3,7 +3,7 @@
 # Mat4
 
 [androidJvm]\
-data class [Mat4](index.md)(x: [Float4](../-float4/index.md), y: [Float4](../-float4/index.md), z: [Float4](../-float4/index.md), w: [Float4](../-float4/index.md))
+data class [Mat4](index.md)(var x: [Float4](../-float4/index.md) = Float4(x = 1.0f), var y: [Float4](../-float4/index.md) = Float4(y = 1.0f), var z: [Float4](../-float4/index.md) = Float4(z = 1.0f), var w: [Float4](../-float4/index.md) = Float4(w = 1.0f))
 
 ## Constructors
 
@@ -11,6 +11,7 @@ data class [Mat4](index.md)(x: [Float4](../-float4/index.md), y: [Float4](../-fl
 |---|---|
 | [Mat4](-mat4.md) | [androidJvm]<br>fun [Mat4](-mat4.md)(right: [Float3](../-float3/index.md), up: [Float3](../-float3/index.md), forward: [Float3](../-float3/index.md), position: [Float3](../-float3/index.md) = Float3()) |
 | [Mat4](-mat4.md) | [androidJvm]<br>fun [Mat4](-mat4.md)(m: [Mat4](index.md)) |
+| [Mat4](-mat4.md) | [androidJvm]<br>fun [Mat4](-mat4.md)(x: [Float4](../-float4/index.md) = Float4(x = 1.0f), y: [Float4](../-float4/index.md) = Float4(y = 1.0f), z: [Float4](../-float4/index.md) = Float4(z = 1.0f), w: [Float4](../-float4/index.md) = Float4(w = 1.0f)) |
 
 ## Types
 
@@ -58,5 +59,6 @@ data class [Mat4](index.md)(x: [Float4](../-float4/index.md), y: [Float4](../-fl
 
 | Name | Summary |
 |---|---|
+| [equalsWithDelta](../../io.github.sceneview.math/equals-with-delta.md) | [androidJvm]<br>fun [Mat4](index.md).[equalsWithDelta](../../io.github.sceneview.math/equals-with-delta.md)(m: [Mat4](index.md), delta: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = DEFAULT_EPSILON): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [quaternion](../../io.github.sceneview.math/quaternion.md) | [androidJvm]<br>val [Mat4](index.md).[quaternion](../../io.github.sceneview.math/quaternion.md): [Quaternion](../-quaternion/index.md) |
 | [toColumnsFloatArray](../../io.github.sceneview.math/to-columns-float-array.md) | [androidJvm]<br>fun [Mat4](index.md).[toColumnsFloatArray](../../io.github.sceneview.math/to-columns-float-array.md)(): [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html) |

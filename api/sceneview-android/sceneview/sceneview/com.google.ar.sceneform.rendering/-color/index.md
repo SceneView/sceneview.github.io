@@ -30,7 +30,7 @@ An RGBA color. Each component is a value with a range from 0 to 1. Can be create
 
 | Name | Summary |
 |---|---|
-| [a](a.md) | [androidJvm]<br>open val [a](a.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
-| [b](b.md) | [androidJvm]<br>open val [b](b.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
-| [g](g.md) | [androidJvm]<br>open val [g](g.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
-| [r](r.md) | [androidJvm]<br>open val [r](r.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [a](a.md) | [androidJvm]<br>open var [a](a.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [b](b.md) | [androidJvm]<br>open var [b](b.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [g](g.md) | [androidJvm]<br>open var [g](g.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [r](r.md) | [androidJvm]<br>open var [r](r.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |

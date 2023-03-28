@@ -5,7 +5,7 @@
 [androidJvm]\
 fun [toFloat](to-float.md)(): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)
 
-Returns the value of this [Half](index.md) as a float after a widening primitive conversion.
+Returns the value of this [Half](index.md) as a `float` after a widening primitive conversion.
 
 The following special cases are handled:
 
@@ -20,4 +20,4 @@ The following special cases are handled:
 
 #### Return
 
-The half-precision float value represented by this object converted to type float
+The half-precision float value represented by this object converted to type `float`

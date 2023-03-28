@@ -50,9 +50,9 @@ A Vector with 3 floats.
 
 | Name | Summary |
 |---|---|
-| [x](x.md) | [androidJvm]<br>open val [x](x.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
-| [y](y.md) | [androidJvm]<br>open val [y](y.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
-| [z](z.md) | [androidJvm]<br>open val [z](z.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [x](x.md) | [androidJvm]<br>open var [x](x.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [y](y.md) | [androidJvm]<br>open var [y](y.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [z](z.md) | [androidJvm]<br>open var [z](z.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
 
 ## Extensions
 

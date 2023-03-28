@@ -11,5 +11,5 @@ Provides access to default [Executor](https://developer.android.com/reference/ko
 
 | Name | Summary |
 |---|---|
-| [mainExecutor](main-executor.md) | [androidJvm]<br>private open var [mainExecutor](main-executor.md): [Executor](https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html) |
-| [threadPoolExecutor](thread-pool-executor.md) | [androidJvm]<br>private open var [threadPoolExecutor](thread-pool-executor.md): [Executor](https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html) |
+| [mainExecutor](main-executor.md) | [androidJvm]<br>open var [mainExecutor](main-executor.md): [Executor](https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html) |
+| [threadPoolExecutor](thread-pool-executor.md) | [androidJvm]<br>open var [threadPoolExecutor](thread-pool-executor.md): [Executor](https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html) |

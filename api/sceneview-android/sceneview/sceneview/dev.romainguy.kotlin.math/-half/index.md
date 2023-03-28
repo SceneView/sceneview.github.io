@@ -20,11 +20,13 @@ The IEEE 754 standard specifies an fp16 as having the following format:
 
 The format is laid out as follows:
 
-1   11111   1111111111\
-^   --^--   -----^----\
-sign  |          |_______ significand\
-      |\
+```kotlin
+1   11111   1111111111
+^   --^--   -----^----
+sign  |          |_______ significand
+      |
       -- exponent
+```
 
 Half-precision floating points can be useful to save memory and/or bandwidth at the expense of range and precision when compared to single-precision floating points (fp32).
 
@@ -100,13 +102,13 @@ This table shows that numbers higher than 1024 lose all fractional precision.
 | [roundToLong](round-to-long.md) | [androidJvm]<br>fun [roundToLong](round-to-long.md)(): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)<br>Rounds this [Half](index.md) value to the nearest integer and converts the result to [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html). Ties are rounded towards positive infinity. |
 | [times](times.md) | [androidJvm]<br>operator fun [times](times.md)(other: [Half](index.md)): [Half](index.md) |
 | [toBits](to-bits.md) | [androidJvm]<br>fun [toBits](to-bits.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)<br>Returns a bit representation of this half-precision floating point value as [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) according to the IEEE 754 floating-point half-precision bit layout. |
-| [toByte](to-byte.md) | [androidJvm]<br>fun [toByte](to-byte.md)(): [Byte](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html)<br>Returns the value of this [Half](index.md) as a byte after a narrowing primitive conversion. |
-| [toDouble](to-double.md) | [androidJvm]<br>fun [toDouble](to-double.md)(): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html)<br>Returns the value of this [Half](index.md) as a double after a widening primitive conversion. |
-| [toFloat](to-float.md) | [androidJvm]<br>fun [toFloat](to-float.md)(): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>Returns the value of this [Half](index.md) as a float after a widening primitive conversion. |
-| [toHexString](to-hex-string.md) | [androidJvm]<br>fun [toHexString](to-hex-string.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Returns a hexadecimal string representation of the specified half-precision float value. If the value is a NaN, the result is "NaN", otherwise the result follows this format: |
-| [toInt](to-int.md) | [androidJvm]<br>fun [toInt](to-int.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)<br>Returns the value of this [Half](index.md) as a int after a narrowing primitive conversion. |
-| [toLong](to-long.md) | [androidJvm]<br>fun [toLong](to-long.md)(): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)<br>Returns the value of this [Half](index.md) as a long after a narrowing primitive conversion. |
-| [toShort](to-short.md) | [androidJvm]<br>fun [toShort](to-short.md)(): [Short](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/index.html)<br>Returns the value of this [Half](index.md) as a short after a narrowing primitive conversion. |
+| [toByte](to-byte.md) | [androidJvm]<br>fun [toByte](to-byte.md)(): [Byte](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html)<br>Returns the value of this [Half](index.md) as a `byte` after a narrowing primitive conversion. |
+| [toDouble](to-double.md) | [androidJvm]<br>fun [toDouble](to-double.md)(): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html)<br>Returns the value of this [Half](index.md) as a `double` after a widening primitive conversion. |
+| [toFloat](to-float.md) | [androidJvm]<br>fun [toFloat](to-float.md)(): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>Returns the value of this [Half](index.md) as a `float` after a widening primitive conversion. |
+| [toHexString](to-hex-string.md) | [androidJvm]<br>fun [toHexString](to-hex-string.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Returns a hexadecimal string representation of the specified half-precision float value. If the value is a NaN, the result is `"NaN"`, otherwise the result follows this format: |
+| [toInt](to-int.md) | [androidJvm]<br>fun [toInt](to-int.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)<br>Returns the value of this [Half](index.md) as a `int` after a narrowing primitive conversion. |
+| [toLong](to-long.md) | [androidJvm]<br>fun [toLong](to-long.md)(): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)<br>Returns the value of this [Half](index.md) as a `long` after a narrowing primitive conversion. |
+| [toShort](to-short.md) | [androidJvm]<br>fun [toShort](to-short.md)(): [Short](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/index.html)<br>Returns the value of this [Half](index.md) as a `short` after a narrowing primitive conversion. |
 | [toString](to-string.md) | [androidJvm]<br>open override fun [toString](to-string.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [unaryMinus](unary-minus.md) | [androidJvm]<br>operator fun [unaryMinus](unary-minus.md)(): [Half](index.md) |
 | [unaryPlus](unary-plus.md) | [androidJvm]<br>operator fun [unaryPlus](unary-plus.md)(): [Half](index.md) |

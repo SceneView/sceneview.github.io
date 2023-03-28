@@ -23,9 +23,8 @@ The classes [Node](../-node/index.md) and Scene are both NodeParents. To make a 
 
 | Name | Summary |
 |---|---|
-| [_children](_children.md) | [androidJvm]<br>abstract var [_children](_children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../-node/index.md)&gt; |
 | [allChildren](all-children.md) | [androidJvm]<br>open val [allChildren](all-children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../-node/index.md)&gt;<br>Traversal is depth first. If this NodeParent is a Node, traversal starts with this NodeParent, otherwise traversal starts with its children. |
-| [children](children.md) | [androidJvm]<br>open var [children](children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../-node/index.md)&gt; |
+| [children](children.md) | [androidJvm]<br>abstract var [children](children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../-node/index.md)&gt; |
 | [hierarchy](hierarchy.md) | [androidJvm]<br>open val [hierarchy](hierarchy.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Node](../-node/index.md)&gt;<br>Traversal is depth first. If this NodeParent is a Node, traversal starts with this NodeParent, otherwise traversal starts with its children. |
 | [onChildAdded](on-child-added.md) | [androidJvm]<br>open val [onChildAdded](on-child-added.md): ([Node](../-node/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? |
 | [onChildRemoved](on-child-removed.md) | [androidJvm]<br>open val [onChildRemoved](on-child-removed.md): ([Node](../-node/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)? |

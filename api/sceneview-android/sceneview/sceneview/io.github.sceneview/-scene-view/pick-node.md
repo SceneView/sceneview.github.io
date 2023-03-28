@@ -7,7 +7,7 @@ fun [pickNode](pick-node.md)(x: [Int](https://kotlinlang.org/api/latest/jvm/stdl
 
 ###  Picks a node at given coordinates
 
-Filament picking works with a small delay, therefore, a callback is used. If no node is picked, the callback is invoked with a null value instead of a node.
+Filament picking works with a small delay, therefore, a callback is used. If no node is picked, the callback is invoked with a `null` value instead of a node.
 
 ## Parameters
 
@@ -15,8 +15,8 @@ androidJvm
 
 | | |
 |---|---|
-| x | The x coordinate within the SceneView. |
-| y | The y coordinate within the SceneView. |
+| x | The x coordinate within the `SceneView`. |
+| y | The y coordinate within the `SceneView`. |
 | onPickingCompleted | Called when picking completes. |
 
 [androidJvm]\

@@ -3,4 +3,4 @@
 # threadPoolExecutor
 
 [androidJvm]\
-private open var [threadPoolExecutor](thread-pool-executor.md): [Executor](https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html)
+open var [threadPoolExecutor](thread-pool-executor.md): [Executor](https://developer.android.com/reference/kotlin/java/util/concurrent/Executor.html)

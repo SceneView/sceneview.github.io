@@ -3,4 +3,4 @@
 # view
 
 [androidJvm]\
-private val [view](view.md): [View](https://developer.android.com/reference/kotlin/android/view/View.html)
+val [view](view.md): [View](https://developer.android.com/reference/kotlin/android/view/View.html)

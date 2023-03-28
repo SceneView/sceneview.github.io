@@ -25,5 +25,5 @@ Mathematical representation of a sphere. Used to perform intersection and collis
 
 | Name | Summary |
 |---|---|
-| [center](center.md) | [androidJvm]<br>private var [center](center.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
-| [radius](radius.md) | [androidJvm]<br>private open var [radius](radius.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [center](center.md) | [androidJvm]<br>var [center](center.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
+| [radius](radius.md) | [androidJvm]<br>open var [radius](radius.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |

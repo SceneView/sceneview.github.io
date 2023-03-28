@@ -6,4 +6,4 @@
 
 @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private open val [instance](instance.md): [ResourceManager](index.md)
+open val [instance](instance.md): [ResourceManager](index.md)

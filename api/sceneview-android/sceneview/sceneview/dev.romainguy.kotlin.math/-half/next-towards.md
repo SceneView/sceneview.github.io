@@ -10,6 +10,6 @@ Returns the [Half](index.md) value nearest to this value in direction from this 
 Special cases:
 
 - 
-   x.nextTowards(y) is NaN if either x or y are NaN
+   `x.nextTowards(y)` is `NaN` if either `x` or `y` are `NaN`
 - 
-   x.nextTowards(x) == x
+   `x.nextTowards(x) == x`

@@ -8,4 +8,4 @@
 
 @get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private open var [node](node.md): [Node](../../io.github.sceneview.node/-node/index.md)
+open var [node](node.md): [Node](../../io.github.sceneview.node/-node/index.md)

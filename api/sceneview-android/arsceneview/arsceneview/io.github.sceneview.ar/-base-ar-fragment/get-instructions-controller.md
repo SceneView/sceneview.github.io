@@ -5,4 +5,4 @@
 [androidJvm]\
 ~~fun~~ [~~getInstructionsController~~](get-instructions-controller.md)~~(~~~~)~~~~:~~ [Nothing](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html)?
 
-##  Deprecated: Use [ArSceneView.instructions](../-ar-scene-view/instructions.md)
+##  Deprecated: Use ArSceneView.instructions

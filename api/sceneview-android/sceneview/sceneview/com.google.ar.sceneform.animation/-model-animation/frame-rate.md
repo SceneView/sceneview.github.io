@@ -3,4 +3,4 @@
 # frameRate
 
 [androidJvm]\
-private open val [frameRate](frame-rate.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+open val [frameRate](frame-rate.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)

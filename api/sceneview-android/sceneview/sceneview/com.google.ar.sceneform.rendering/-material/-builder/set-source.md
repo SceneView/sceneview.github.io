@@ -7,7 +7,7 @@ open fun [setSource](set-source.md)(materialBuffer: [ByteBuffer](https://develop
 
 Allows a [Material](../index.md) to be created with data. 
 
-Construction will be immediate. Please use [setRegistryId](../../../../../arsceneview/com.google.ar.sceneform.rendering/-material/-builder/set-registry-id.md) to register this material for reuse.
+Construction will be immediate. Please use [setRegistryId](set-registry-id.md) to register this material for reuse.
 
 #### Return
 

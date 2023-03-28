@@ -23,5 +23,5 @@ Mathematical representation of a plane with an infinite size. Used for intersect
 
 | Name | Summary |
 |---|---|
-| [center](center.md) | [androidJvm]<br>private var [center](center.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
-| [normal](normal.md) | [androidJvm]<br>private var [normal](normal.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
+| [center](center.md) | [androidJvm]<br>var [center](center.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
+| [normal](normal.md) | [androidJvm]<br>var [normal](normal.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |

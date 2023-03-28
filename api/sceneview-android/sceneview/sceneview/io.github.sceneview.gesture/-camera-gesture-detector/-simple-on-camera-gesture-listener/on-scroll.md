@@ -17,4 +17,4 @@ androidJvm
 |---|---|
 | x | X-coordinate for point of interest in viewport space, ignored in FREE_FLIGHT mode |
 | y | Y-coordinate for point of interest in viewport space, ignored in FREE_FLIGHT mode |
-| scrollDelta | In MAP and ORBIT modes, negative means "zoom in", positive means "zoom out" In FREE_FLIGHT mode, negative means "slower", positive means "faster" |
+| scrollDelta | In MAP and ORBIT modes, negative means &quot;zoom in&quot;, positive means &quot;zoom out&quot; In FREE_FLIGHT mode, negative means &quot;slower&quot;, positive means &quot;faster&quot; |
