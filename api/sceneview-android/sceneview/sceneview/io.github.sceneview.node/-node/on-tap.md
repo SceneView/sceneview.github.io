@@ -7,7 +7,7 @@ open fun [onTap](on-tap.md)(motionEvent: [MotionEvent](https://developer.android
 
 ###  Invoked when the node is tapped
 
-Calls the onTap listener if it is available and passes the tap to the parent node.
+Calls the `onTap` listener if it is available and passes the tap to the parent node.
 
 ## Parameters
 
@@ -26,6 +26,6 @@ var [onTap](on-tap.md): (motionEvent: [MotionEvent](https://developer.android.co
 Only nodes with renderables or their parent nodes can be tapped since Filament picking is used to find a touched node. The ID of the Filament renderable can be used to determine what part of a model is tapped.
 
 - 
-   renderable - The ID of the Filament renderable that was tapped.
+   `renderable` - The ID of the Filament renderable that was tapped.
 - 
-   motionEvent - The motion event that caused the tap.
+   `motionEvent` - The motion event that caused the tap.

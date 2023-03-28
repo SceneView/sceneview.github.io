@@ -3,4 +3,4 @@
 # dpPerMeters
 
 [androidJvm]\
-private val [dpPerMeters](dp-per-meters.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+val [dpPerMeters](dp-per-meters.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)

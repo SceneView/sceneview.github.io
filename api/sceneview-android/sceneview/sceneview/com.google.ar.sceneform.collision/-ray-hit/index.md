@@ -18,8 +18,8 @@ Stores the results of ray intersection tests against various types of CollisionS
 
 | Name | Summary |
 |---|---|
-| [distance](distance.md) | [androidJvm]<br>private open var [distance](distance.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
-| [point](point.md) | [androidJvm]<br>private var [point](point.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
+| [distance](distance.md) | [androidJvm]<br>open var [distance](distance.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
+| [point](point.md) | [androidJvm]<br>var [point](point.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
 
 ## Inheritors
 

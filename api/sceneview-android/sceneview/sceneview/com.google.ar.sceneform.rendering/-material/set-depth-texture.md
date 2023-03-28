@@ -5,7 +5,10 @@
 [androidJvm]\
 open fun [setDepthTexture](set-depth-texture.md)(name: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), depthTexture: Texture)
 
-    Sets a [Texture](../-texture/index.md) to a parameter of the type 'sampler2d' on this material.
+```kotlin
+    Sets a  to a parameter of the type 'sampler2d' on this material.
+
+```
 
 ## Parameters
 

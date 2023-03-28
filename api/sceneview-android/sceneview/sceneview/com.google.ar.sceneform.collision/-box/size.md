@@ -3,4 +3,4 @@
 # size
 
 [androidJvm]\
-private var [size](size.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)
+var [size](size.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)

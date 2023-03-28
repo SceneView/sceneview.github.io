@@ -3,13 +3,14 @@
 # Mat2
 
 [androidJvm]\
-data class [Mat2](index.md)(x: [Float2](../-float2/index.md), y: [Float2](../-float2/index.md))
+data class [Mat2](index.md)(var x: [Float2](../-float2/index.md) = Float2(x = 1.0f), var y: [Float2](../-float2/index.md) = Float2(y = 1.0f))
 
 ## Constructors
 
 | | |
 |---|---|
 | [Mat2](-mat2.md) | [androidJvm]<br>fun [Mat2](-mat2.md)(m: [Mat2](index.md)) |
+| [Mat2](-mat2.md) | [androidJvm]<br>fun [Mat2](-mat2.md)(x: [Float2](../-float2/index.md) = Float2(x = 1.0f), y: [Float2](../-float2/index.md) = Float2(y = 1.0f)) |
 
 ## Types
 

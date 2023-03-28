@@ -5,11 +5,11 @@
 [androidJvm]\
 fun [toShort](to-short.md)(): [Short](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/index.html)
 
-Returns the value of this [Half](index.md) as a short after a narrowing primitive conversion.
+Returns the value of this [Half](index.md) as a `short` after a narrowing primitive conversion.
 
 #### Return
 
-The half-precision float value represented by this object converted to type short
+The half-precision float value represented by this object converted to type `short`
 
 ## See also
 

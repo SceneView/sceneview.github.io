@@ -45,7 +45,7 @@ Consumes the content of KTX files and produces an IndirectLight, SphericalHarmon
 
 You can generate ktx ibl and skybox files using:
 
-cmgen --deploy ./output --format=ktx --size=256 --extract-blur=0.1 environment.hdr
+`cmgen --deploy ./output --format=ktx --size=256 --extract-blur=0.1 environment.hdr`
 
 Documentation: [Filament - Bake environment map](https://github.com/google/filament/blob/main/web/docs/tutorial_redball.md#bake-environment-map)
 

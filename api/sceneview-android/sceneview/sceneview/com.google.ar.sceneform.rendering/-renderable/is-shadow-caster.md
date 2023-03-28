@@ -3,4 +3,4 @@
 # isShadowCaster
 
 [androidJvm]\
-private open val [isShadowCaster](is-shadow-caster.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+open var [isShadowCaster](is-shadow-caster.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)

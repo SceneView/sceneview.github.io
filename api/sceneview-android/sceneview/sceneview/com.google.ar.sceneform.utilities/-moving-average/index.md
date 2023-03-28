@@ -24,5 +24,5 @@ Calculates an exponentially weighted moving average for a series of data.
 
 | Name | Summary |
 |---|---|
-| [average](average.md) | [androidJvm]<br>private open val [average](average.md): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html) |
+| [average](average.md) | [androidJvm]<br>open val [average](average.md): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html) |
 | [DEFAULT_WEIGHT](-d-e-f-a-u-l-t_-w-e-i-g-h-t.md) | [androidJvm]<br>val [DEFAULT_WEIGHT](-d-e-f-a-u-l-t_-w-e-i-g-h-t.md): [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html) |

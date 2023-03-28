@@ -13,4 +13,4 @@ Changing the winding order will directly affect the culling mode in materials (s
 
 Inverting the winding order of front faces is useful when rendering mirrored reflections (water, mirror surfaces, front camera in AR, etc.).
 
-true to invert front faces, false otherwise.
+`true` to invert front faces, false otherwise.

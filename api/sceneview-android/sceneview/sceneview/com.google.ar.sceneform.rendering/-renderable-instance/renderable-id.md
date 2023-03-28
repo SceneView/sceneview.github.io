@@ -3,4 +3,4 @@
 # renderableId
 
 [androidJvm]\
-open val [renderableId](renderable-id.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+open var [renderableId](renderable-id.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)

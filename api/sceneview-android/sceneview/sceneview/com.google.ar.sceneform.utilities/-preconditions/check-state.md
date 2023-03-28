@@ -19,7 +19,7 @@ androidJvm
 
 | | |
 |---|---|
-| [java.lang.IllegalStateException](https://developer.android.com/reference/kotlin/java/lang/IllegalStateException.html) | if expression is false |
+| [java.lang.IllegalStateException](https://developer.android.com/reference/kotlin/java/lang/IllegalStateException.html) | if `expression` is false |
 
 [androidJvm]\
 open fun [checkState](check-state.md)(expression: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)errorMessage: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html))
@@ -39,4 +39,4 @@ androidJvm
 
 | | |
 |---|---|
-| [java.lang.IllegalStateException](https://developer.android.com/reference/kotlin/java/lang/IllegalStateException.html) | if expression is false |
+| [java.lang.IllegalStateException](https://developer.android.com/reference/kotlin/java/lang/IllegalStateException.html) | if `expression` is false |

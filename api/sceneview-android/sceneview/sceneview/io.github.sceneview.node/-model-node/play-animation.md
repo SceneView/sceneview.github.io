@@ -7,7 +7,7 @@ fun [playAnimation](play-animation.md)(animationIndex: [Int](https://kotlinlang.
 
 ###  Applies rotation, translation, and scale to entities that have been targeted by the given
 
-animation definition. Uses TransformManager.
+animation definition. Uses `TransformManager`.
 
 ## See also
 
@@ -23,7 +23,7 @@ androidJvm
 
 | | |
 |---|---|
-| animationIndex | Zero-based index for the animation of interest. |
+| animationIndex | Zero-based index for the `animation` of interest. |
 
 [androidJvm]\
 fun [playAnimation](play-animation.md)(animationName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), loop: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true)

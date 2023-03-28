@@ -7,6 +7,12 @@
 
 value class [Rational](index.md)(r: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)) : [Comparable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html)&lt;[Rational](index.md)&gt;
 
+## Constructors
+
+| | |
+|---|---|
+| [Rational](-rational.md) | [androidJvm]<br>fun [Rational](-rational.md)(r: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)) |
+
 ## Types
 
 | Name | Summary |

@@ -3,4 +3,4 @@
 # camera
 
 [androidJvm]\
-open val [camera](camera.md): Camera
+open var [camera](camera.md): Camera

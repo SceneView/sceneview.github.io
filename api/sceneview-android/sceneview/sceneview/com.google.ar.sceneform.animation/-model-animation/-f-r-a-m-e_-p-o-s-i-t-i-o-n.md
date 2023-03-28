@@ -5,4 +5,4 @@
 [androidJvm]\
 val [FRAME_POSITION](-f-r-a-m-e_-p-o-s-i-t-i-o-n.md): [Property](https://developer.android.com/reference/kotlin/android/util/Property.html)&lt;[ModelAnimation](index.md), [Integer](https://developer.android.com/reference/kotlin/java/lang/Integer.html)&gt;
 
-A Property wrapper around the framePosition functionality handled by the [setFramePosition](set-frame-position.md) and [getFramePosition](get-frame-position.md) methods
+A Property wrapper around the `framePosition` functionality handled by the [setFramePosition](set-frame-position.md) and [getFramePosition](get-frame-position.md) methods

@@ -3,4 +3,4 @@
 # renderable
 
 [androidJvm]\
-private val [renderable](renderable.md): [Renderable](../-renderable/index.md)
+val [renderable](renderable.md): [Renderable](../-renderable/index.md)

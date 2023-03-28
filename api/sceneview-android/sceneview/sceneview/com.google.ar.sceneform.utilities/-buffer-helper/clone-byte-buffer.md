@@ -5,8 +5,11 @@
 [androidJvm]\
 open fun [cloneByteBuffer](clone-byte-buffer.md)(original: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)): [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)
 
+```kotlin
     Create a new independent ByteBuffer from a
     source ByteBuffer.
+
+```
 
 #### Return
 

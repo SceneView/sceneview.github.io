@@ -5,6 +5,12 @@
 [androidJvm]\
 class [SimpleOnCameraGestureListener](index.md) : [CameraGestureDetector.OnCameraGestureListener](../-on-camera-gesture-listener/index.md)
 
+## Constructors
+
+| | |
+|---|---|
+| [SimpleOnCameraGestureListener](-simple-on-camera-gesture-listener.md) | [androidJvm]<br>fun [SimpleOnCameraGestureListener](-simple-on-camera-gesture-listener.md)() |
+
 ## Functions
 
 | Name | Summary |

@@ -15,11 +15,13 @@ Start a new array/vector of objects. Users usually will not call this directly. 
 
  For example, to create an array of strings, do: 
 
+```kotlin
+
 // Need 10 strings
 FlatBufferBuilder builder = new FlatBufferBuilder(existingBuffer);
 int[] offsets = new int[10];
 
-for (int i = 0; i &lt; 10; i++) {
+for (int i = 0; i < 10; i++) {
   offsets[i] = fbb.createString(" " + i);
 }
 
@@ -30,12 +32,14 @@ builder.startVector(4, offsets.length, 4);
 // Add each string to the newly created vector
 // The strings are added in reverse order since the buffer
 // is filled in back to front
-for (int i = offsets.length - 1; i &gt;= 0; i--) {
+for (int i = offsets.length - 1; i >= 0; i--) {
   builder.addOffset(offsets[i]);
 }
 
 // Finish off the vector
 int offsetOfTheVector = fbb.endVector();
+
+```
 
 ## Parameters
 

@@ -3,6 +3,6 @@
 # depthTexture
 
 [androidJvm]\
-var [depthTexture](depth-texture.md): Texture? = null
+var [depthTexture](depth-texture.md): Texture?
 
 ###  Extracted texture from the session depth image

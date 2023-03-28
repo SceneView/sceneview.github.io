@@ -3,7 +3,7 @@
 # Half4
 
 [androidJvm]\
-data class [Half4](index.md)(x: [Half](../-half/index.md), y: [Half](../-half/index.md), z: [Half](../-half/index.md), w: [Half](../-half/index.md))
+data class [Half4](index.md)(var x: [Half](../-half/index.md) = Half.POSITIVE_ZERO, var y: [Half](../-half/index.md) = Half.POSITIVE_ZERO, var z: [Half](../-half/index.md) = Half.POSITIVE_ZERO, var w: [Half](../-half/index.md) = Half.POSITIVE_ZERO)
 
 ## Constructors
 
@@ -13,6 +13,7 @@ data class [Half4](index.md)(x: [Half](../-half/index.md), y: [Half](../-half/in
 | [Half4](-half4.md) | [androidJvm]<br>fun [Half4](-half4.md)(v: [Half2](../-half2/index.md), z: [Half](../-half/index.md) = Half.POSITIVE_ZERO, w: [Half](../-half/index.md) = Half.POSITIVE_ZERO) |
 | [Half4](-half4.md) | [androidJvm]<br>fun [Half4](-half4.md)(v: [Half3](../-half3/index.md), w: [Half](../-half/index.md) = Half.POSITIVE_ZERO) |
 | [Half4](-half4.md) | [androidJvm]<br>fun [Half4](-half4.md)(v: [Half4](index.md)) |
+| [Half4](-half4.md) | [androidJvm]<br>fun [Half4](-half4.md)(x: [Half](../-half/index.md) = Half.POSITIVE_ZERO, y: [Half](../-half/index.md) = Half.POSITIVE_ZERO, z: [Half](../-half/index.md) = Half.POSITIVE_ZERO, w: [Half](../-half/index.md) = Half.POSITIVE_ZERO) |
 
 ## Functions
 

@@ -3,7 +3,7 @@
 # Float4
 
 [androidJvm]\
-data class [Float4](index.md)(x: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), y: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), z: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html), w: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html))
+data class [Float4](index.md)(var x: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f, var y: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f, var z: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f, var w: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f)
 
 ## Constructors
 
@@ -13,6 +13,7 @@ data class [Float4](index.md)(x: [Float](https://kotlinlang.org/api/latest/jvm/s
 | [Float4](-float4.md) | [androidJvm]<br>fun [Float4](-float4.md)(v: [Float2](../-float2/index.md), z: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f, w: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f) |
 | [Float4](-float4.md) | [androidJvm]<br>fun [Float4](-float4.md)(v: [Float3](../-float3/index.md), w: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f) |
 | [Float4](-float4.md) | [androidJvm]<br>fun [Float4](-float4.md)(v: [Float4](index.md)) |
+| [Float4](-float4.md) | [androidJvm]<br>fun [Float4](-float4.md)(x: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f, y: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f, z: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f, w: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = 0.0f) |
 
 ## Functions
 
@@ -62,6 +63,7 @@ data class [Float4](index.md)(x: [Float](https://kotlinlang.org/api/latest/jvm/s
 | Name | Summary |
 |---|---|
 | [eq](../eq.md) | [androidJvm]<br>infix inline fun [Float4](index.md).[eq](../eq.md)(b: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Bool4](../-bool4/index.md)<br>infix inline fun [Float4](index.md).[eq](../eq.md)(b: [Float4](index.md)): [Bool4](../-bool4/index.md) |
+| [equalsWithDelta](../../io.github.sceneview.math/equals-with-delta.md) | [androidJvm]<br>fun [Float4](index.md).[equalsWithDelta](../../io.github.sceneview.math/equals-with-delta.md)(v: [Float4](index.md), delta: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) = DEFAULT_EPSILON): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [gt](../gt.md) | [androidJvm]<br>infix inline fun [Float4](index.md).[gt](../gt.md)(b: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Bool4](../-bool4/index.md)<br>infix inline fun [Float4](index.md).[gt](../gt.md)(b: [Float4](index.md)): [Bool4](../-bool4/index.md) |
 | [gte](../gte.md) | [androidJvm]<br>infix inline fun [Float4](index.md).[gte](../gte.md)(b: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Bool4](../-bool4/index.md)<br>infix inline fun [Float4](index.md).[gte](../gte.md)(b: [Float4](index.md)): [Bool4](../-bool4/index.md) |
 | [lt](../lt.md) | [androidJvm]<br>infix inline fun [Float4](index.md).[lt](../lt.md)(b: [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)): [Bool4](../-bool4/index.md)<br>infix inline fun [Float4](index.md).[lt](../lt.md)(b: [Float4](index.md)): [Bool4](../-bool4/index.md) |

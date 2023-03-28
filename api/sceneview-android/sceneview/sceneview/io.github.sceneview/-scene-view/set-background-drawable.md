@@ -3,4 +3,4 @@
 # setBackgroundDrawable
 
 [androidJvm]\
-open override fun [setBackgroundDrawable](set-background-drawable.md)(background: [Drawable](https://developer.android.com/reference/kotlin/android/graphics/drawable/Drawable.html)?)
+~~open~~ ~~override~~ ~~fun~~ [~~setBackgroundDrawable~~](set-background-drawable.md)~~(~~background: [Drawable](https://developer.android.com/reference/kotlin/android/graphics/drawable/Drawable.html)?~~)~~

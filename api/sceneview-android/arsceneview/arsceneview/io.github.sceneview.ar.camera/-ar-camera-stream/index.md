@@ -3,7 +3,7 @@
 # ArCameraStream
 
 [androidJvm]\
-class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), standardMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [ArSceneLifecycleObserver](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)
+class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), val standardMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_flat.filamat&quot;, val depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_depth.filamat&quot;) : [ArSceneLifecycleObserver](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/index.md)
 
 ###  Displays the Camera stream using Filament.
 
@@ -11,7 +11,7 @@ class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.s
 
 | | |
 |---|---|
-| [ArCameraStream](-ar-camera-stream.md) | [androidJvm]<br>fun [ArCameraStream](-ar-camera-stream.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), standardMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = "sceneview/materials/camera_stream_standard.filamat", depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = "sceneview/materials/camera_stream_depth.filamat") |
+| [ArCameraStream](-ar-camera-stream.md) | [androidJvm]<br>fun [ArCameraStream](-ar-camera-stream.md)(lifecycle: [ArSceneLifecycle](../../io.github.sceneview.ar/-ar-scene-lifecycle/index.md), standardMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_flat.filamat&quot;, depthOcclusionMaterialLocation: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;sceneview/materials/camera_stream_depth.filamat&quot;) |
 
 ## Types
 
@@ -24,7 +24,7 @@ class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.s
 | Name | Summary |
 |---|---|
 | [destroy](destroy.md) | [androidJvm]<br>fun [destroy](destroy.md)() |
-| [onArFrame](on-ar-frame.md) | [androidJvm]<br>open override fun [onArFrame](on-ar-frame.md)(arFrame: [ArFrame](../../io.github.sceneview.ar.arcore/-ar-frame/index.md)) |
+| [onArFrame](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/on-ar-frame.md) | [androidJvm]<br>open fun [onArFrame](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/on-ar-frame.md)(arFrame: [ArFrame](../../io.github.sceneview.ar.arcore/-ar-frame/index.md)) |
 | [onArSessionConfigChanged](on-ar-session-config-changed.md) | [androidJvm]<br>open override fun [onArSessionConfigChanged](on-ar-session-config-changed.md)(session: [ArSession](../../io.github.sceneview.ar.arcore/-ar-session/index.md), config: Config) |
 | [onArSessionCreated](on-ar-session-created.md) | [androidJvm]<br>open override fun [onArSessionCreated](on-ar-session-created.md)(session: [ArSession](../../io.github.sceneview.ar.arcore/-ar-session/index.md)) |
 | [onArSessionFailed](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/on-ar-session-failed.md) | [androidJvm]<br>open fun [onArSessionFailed](../../io.github.sceneview.ar/-ar-scene-lifecycle-observer/on-ar-session-failed.md)(exception: [Exception](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html)) |
@@ -37,6 +37,7 @@ class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.s
 | [onStart](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#1240777104%2FFunctions%2F-58641720) | [androidJvm]<br>open override fun [onStart](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#1240777104%2FFunctions%2F-58641720)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html)) |
 | [onStop](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#487071706%2FFunctions%2F-58641720) | [androidJvm]<br>open override fun [onStop](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#487071706%2FFunctions%2F-58641720)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html)) |
 | [onSurfaceChanged](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#279805282%2FFunctions%2F-58641720) | [androidJvm]<br>open fun [onSurfaceChanged](../../io.github.sceneview.ar.scene/-plane-renderer/index.md#279805282%2FFunctions%2F-58641720)(width: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), height: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+| [update](update.md) | [androidJvm]<br>fun [update](update.md)(arFrame: [ArFrame](../../io.github.sceneview.ar.arcore/-ar-frame/index.md)) |
 
 ## Properties
 
@@ -44,10 +45,10 @@ class [ArCameraStream](index.md)(lifecycle: [ArSceneLifecycle](../../io.github.s
 |---|---|
 | [cameraTexture](camera-texture.md) | [androidJvm]<br>var [cameraTexture](camera-texture.md): Texture? = null<br>We apply the multithreaded actual rendering texture |
 | [cameraTextureIds](camera-texture-ids.md) | [androidJvm]<br>val [cameraTextureIds](camera-texture-ids.md): [IntArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html)<br>Passing multiple textures allows for a multithreaded rendering pipeline |
-| [cameraTextures](camera-textures.md) | [androidJvm]<br>var [cameraTextures](camera-textures.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;Texture&gt;? = null<br>The init is done when we have the session frame size |
+| [cameraTextures](camera-textures.md) | [androidJvm]<br>var [cameraTextures](camera-textures.md): [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), Texture&gt;<br>The init is done when we have the session frame size |
 | [depthOcclusionMaterial](depth-occlusion-material.md) | [androidJvm]<br>var [depthOcclusionMaterial](depth-occlusion-material.md): MaterialInstance |
 | [depthOcclusionMaterialLocation](depth-occlusion-material-location.md) | [androidJvm]<br>val [depthOcclusionMaterialLocation](depth-occlusion-material-location.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [depthTexture](depth-texture.md) | [androidJvm]<br>var [depthTexture](depth-texture.md): Texture? = null |
+| [depthTexture](depth-texture.md) | [androidJvm]<br>var [depthTexture](depth-texture.md): Texture? |
 | [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md) | [androidJvm]<br>var [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false<br>This will process the incoming DepthImage to occlude virtual objects behind real world objects. |
 | [material](material.md) | [androidJvm]<br>var [material](material.md): MaterialInstance<br>Depending on [isDepthOcclusionEnabled](is-depth-occlusion-enabled.md) and device Depth compatibility |
 | [priority](priority.md) | [androidJvm]<br>var [priority](priority.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |

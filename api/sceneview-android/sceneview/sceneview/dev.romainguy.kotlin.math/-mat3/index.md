@@ -3,13 +3,14 @@
 # Mat3
 
 [androidJvm]\
-data class [Mat3](index.md)(x: [Float3](../-float3/index.md), y: [Float3](../-float3/index.md), z: [Float3](../-float3/index.md))
+data class [Mat3](index.md)(var x: [Float3](../-float3/index.md) = Float3(x = 1.0f), var y: [Float3](../-float3/index.md) = Float3(y = 1.0f), var z: [Float3](../-float3/index.md) = Float3(z = 1.0f))
 
 ## Constructors
 
 | | |
 |---|---|
 | [Mat3](-mat3.md) | [androidJvm]<br>fun [Mat3](-mat3.md)(m: [Mat3](index.md)) |
+| [Mat3](-mat3.md) | [androidJvm]<br>fun [Mat3](-mat3.md)(x: [Float3](../-float3/index.md) = Float3(x = 1.0f), y: [Float3](../-float3/index.md) = Float3(y = 1.0f), z: [Float3](../-float3/index.md) = Float3(z = 1.0f)) |
 
 ## Types
 

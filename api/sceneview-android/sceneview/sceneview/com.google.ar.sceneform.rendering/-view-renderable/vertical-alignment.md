@@ -3,4 +3,4 @@
 # verticalAlignment
 
 [androidJvm]\
-private open var [verticalAlignment](vertical-alignment.md): [ViewRenderable.VerticalAlignment](-vertical-alignment/index.md)
+open var [verticalAlignment](vertical-alignment.md): [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)

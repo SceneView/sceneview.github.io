@@ -3,4 +3,4 @@
 # isUnderTesting
 
 [androidJvm]\
-private open val [isUnderTesting](is-under-testing.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+open var [isUnderTesting](is-under-testing.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)

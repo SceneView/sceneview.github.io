@@ -8,9 +8,10 @@
 |---|---|
 | [Color](index.md#289679020%2FClasslikes%2F-1571379623) | [androidJvm]<br>typealias [Color](index.md#289679020%2FClasslikes%2F-1571379623) = [Float4](../dev.romainguy.kotlin.math/-float4/index.md) |
 | [DefaultLifecycle](-default-lifecycle/index.md) | [androidJvm]<br>open class [DefaultLifecycle](-default-lifecycle/index.md)(owner: [LifecycleOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html)) : [LifecycleRegistry](https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleRegistry.html) |
-| [FrameTime](-frame-time/index.md) | [androidJvm]<br>data class [FrameTime](-frame-time/index.md)(nanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), lastNanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)?) |
+| [FrameTime](-frame-time/index.md) | [androidJvm]<br>data class [FrameTime](-frame-time/index.md)(val nanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), val lastNanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)? = null) |
+| [OpenGL](-open-g-l/index.md) | [androidJvm]<br>object [OpenGL](-open-g-l/index.md)<br>Convenience class to perform common GL operations |
 | [ResourceLoader](-resource-loader/index.md) | [androidJvm]<br>object [ResourceLoader](-resource-loader/index.md) |
-| [SurfaceCopier](-surface-copier/index.md) | [androidJvm]<br>class [SurfaceCopier](-surface-copier/index.md)(lifecycle: [SceneLifecycle](../io.github.sceneview/-scene-lifecycle/index.md)) : [SceneLifecycleObserver](../io.github.sceneview/-scene-lifecycle-observer/index.md) |
+| [SurfaceMirrorer](-surface-mirrorer/index.md) | [androidJvm]<br>class [SurfaceMirrorer](-surface-mirrorer/index.md)(lifecycle: [SceneLifecycle](../io.github.sceneview/-scene-lifecycle/index.md)) : [SceneLifecycleObserver](../io.github.sceneview/-scene-lifecycle-observer/index.md) |
 
 ## Functions
 

@@ -12,7 +12,7 @@ Environments are usually captured as high-resolution HDR equirectangular images 
 You can also process an hdr at runtime but this is more consuming.
 
 - 
-   Currently IndirectLight is intended to be used for "distant probes", that is, to represent global illumination from a distant (i.e. at infinity) environment, such as the sky or distant mountains. Only a single IndirectLight can be used in a Scene. This limitation will be lifted in the future.
+   Currently IndirectLight is intended to be used for &quot;distant probes&quot;, that is, to represent global illumination from a distant (i.e. at infinity) environment, such as the sky or distant mountains. Only a single IndirectLight can be used in a Scene. This limitation will be lifted in the future.
 - 
    When added to a Scene, the Skybox fills all untouched pixels.
 

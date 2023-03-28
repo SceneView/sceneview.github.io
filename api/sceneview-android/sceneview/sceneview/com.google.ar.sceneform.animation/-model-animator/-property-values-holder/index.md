@@ -9,7 +9,7 @@ This class holds information about a property and the values that that property 
 
 PropertyValuesHolder objects can be used to create animations with ObjectAnimator or that operate on several different properties in parallel.
 
-Warning:
+## Warning:
 
 Using this PropertyValuesHolder is very useful for targeting multiple time or frame properties of multiple animations inside a same ObjectAnimator model
 
@@ -17,11 +17,12 @@ Using this PropertyValuesHolder is very useful for targeting multiple time or fr
 
 **but** If you want to use the [setAutoCancel](https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html#setautocancel) functionality, you have to take care of this :
 
+```kotlin
 ObjectAnimator.hasSameTargetAndProperties(Animator anim) {
      PropertyValuesHolder[] theirValues = ((ObjectAnimator) anim).getValues();
-     if (((ObjectAnimator) anim).getTarget() == getTarget() &amp;&amp;
+     if (((ObjectAnimator) anim).getTarget() == getTarget() &&
              mValues.length == theirValues.length) {
-         for (int i = 0; i &lt; mValues.length; ++i) {
+         for (int i = 0; i < mValues.length; ++i) {
              PropertyValuesHolder pvhMine = mValues[i];
              PropertyValuesHolder pvhTheirs = theirValues[i];
              if (pvhMine.getPropertyName() == null ||
@@ -32,6 +33,8 @@ ObjectAnimator.hasSameTargetAndProperties(Animator anim) {
          return true;
      }
  }
+
+```
 
 ## See also
 

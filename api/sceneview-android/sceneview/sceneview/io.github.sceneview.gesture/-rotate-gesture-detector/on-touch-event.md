@@ -13,7 +13,7 @@ Applications should pass a complete and consistent event stream to this method. 
 
 #### Return
 
-true if the event was processed and the detector wants to receive the rest of the MotionEvents in this event stream.
+`true` if the event was processed and the detector wants to receive the rest of the MotionEvents in this event stream.
 
 ## Parameters
 

@@ -5,6 +5,12 @@
 [androidJvm]\
 class [TextureSampler2D](index.md) : TextureSampler
 
+## Constructors
+
+| | |
+|---|---|
+| [TextureSampler2D](-texture-sampler2-d.md) | [androidJvm]<br>fun [TextureSampler2D](-texture-sampler2-d.md)() |
+
 ## Functions
 
 | Name | Summary |
@@ -25,9 +31,3 @@ class [TextureSampler2D](index.md) : TextureSampler
 | [setWrapModeR](../-texture-sampler-external/index.md#-1899074789%2FFunctions%2F-1571379623) | [androidJvm]<br>open fun [setWrapModeR](../-texture-sampler-external/index.md#-1899074789%2FFunctions%2F-1571379623)(p0: TextureSampler.WrapMode) |
 | [setWrapModeS](../-texture-sampler-external/index.md#-1885541988%2FFunctions%2F-1571379623) | [androidJvm]<br>open fun [setWrapModeS](../-texture-sampler-external/index.md#-1885541988%2FFunctions%2F-1571379623)(p0: TextureSampler.WrapMode) |
 | [setWrapModeT](../-texture-sampler-external/index.md#-1872009187%2FFunctions%2F-1571379623) | [androidJvm]<br>open fun [setWrapModeT](../-texture-sampler-external/index.md#-1872009187%2FFunctions%2F-1571379623)(p0: TextureSampler.WrapMode) |
-
-## Properties
-
-| Name | Summary |
-|---|---|
-| [mSampler](../-texture-sampler-external/index.md#-997090062%2FProperties%2F-1571379623) | [androidJvm]<br>val [mSampler](../-texture-sampler-external/index.md#-997090062%2FProperties%2F-1571379623): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |

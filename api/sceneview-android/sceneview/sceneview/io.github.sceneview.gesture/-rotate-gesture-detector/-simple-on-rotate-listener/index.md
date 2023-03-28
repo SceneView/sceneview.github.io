@@ -9,7 +9,7 @@ interface [SimpleOnRotateListener](index.md) : [RotateGestureDetector.OnRotateLi
 
 rotation-related events
 
-This implements all methods in [OnRotateListener](../-on-rotate-listener/index.md) but does nothing. [OnRotateListener.onRotate](../-on-rotate-listener/on-rotate.md) returns false so that a subclass can retrieve the accumulated rotation factor in an overridden [OnRotateListener.onRotateEnd](../-on-rotate-listener/on-rotate-end.md). [OnRotateListener.onRotateBegin](../-on-rotate-listener/on-rotate-begin.md) returns true.
+This implements all methods in [OnRotateListener](../-on-rotate-listener/index.md) but does nothing. [OnRotateListener.onRotate](../-on-rotate-listener/on-rotate.md) returns `false` so that a subclass can retrieve the accumulated rotation factor in an overridden [OnRotateListener.onRotateEnd](../-on-rotate-listener/on-rotate-end.md). [OnRotateListener.onRotateBegin](../-on-rotate-listener/on-rotate-begin.md) returns `true`.
 
 ## Functions
 

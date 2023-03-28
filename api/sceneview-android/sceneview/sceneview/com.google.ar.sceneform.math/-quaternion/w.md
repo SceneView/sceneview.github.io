@@ -3,4 +3,4 @@
 # w
 
 [androidJvm]\
-open val [w](w.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)
+open var [w](w.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)

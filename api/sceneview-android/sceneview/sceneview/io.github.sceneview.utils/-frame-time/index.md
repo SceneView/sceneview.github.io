@@ -3,7 +3,7 @@
 # FrameTime
 
 [androidJvm]\
-data class [FrameTime](index.md)(nanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), lastNanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)?)
+data class [FrameTime](index.md)(val nanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), val lastNanoseconds: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)? = null)
 
 ###  Provides time information for the current frame.
 

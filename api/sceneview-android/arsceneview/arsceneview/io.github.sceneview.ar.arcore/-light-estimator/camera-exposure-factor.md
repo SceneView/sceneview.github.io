@@ -7,4 +7,4 @@ val [cameraExposureFactor](camera-exposure-factor.md): [Float](https://kotlinlan
 
 ###  Exposure normalization factor from the camera's EV100
 
-ARCore's light estimation uses unit-less (relative) values while Filament uses a physically based camera model with lux or lumen values. In order to keep the "standard" Filament behavior we scale AR Core values. Infos: https://github.com/ThomasGorisse/SceneformMaintained/pull/156#issuecomment-911873565
+ARCore's light estimation uses unit-less (relative) values while Filament uses a physically based camera model with lux or lumen values. In order to keep the &quot;standard&quot; Filament behavior we scale AR Core values. Infos: https://github.com/ThomasGorisse/SceneformMaintained/pull/156#issuecomment-911873565

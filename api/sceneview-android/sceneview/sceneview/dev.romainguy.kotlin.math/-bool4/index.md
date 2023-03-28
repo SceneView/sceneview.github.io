@@ -3,7 +3,7 @@
 # Bool4
 
 [androidJvm]\
-data class [Bool4](index.md)(x: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), y: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), z: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), w: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
+data class [Bool4](index.md)(var x: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false, var y: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false, var z: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false, var w: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false)
 
 ## Constructors
 
@@ -12,6 +12,7 @@ data class [Bool4](index.md)(x: [Boolean](https://kotlinlang.org/api/latest/jvm/
 | [Bool4](-bool4.md) | [androidJvm]<br>fun [Bool4](-bool4.md)(v: [Bool2](../-bool2/index.md), z: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false, w: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false) |
 | [Bool4](-bool4.md) | [androidJvm]<br>fun [Bool4](-bool4.md)(v: [Bool3](../-bool3/index.md), w: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false) |
 | [Bool4](-bool4.md) | [androidJvm]<br>fun [Bool4](-bool4.md)(v: [Bool4](index.md)) |
+| [Bool4](-bool4.md) | [androidJvm]<br>fun [Bool4](-bool4.md)(x: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false, y: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false, z: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false, w: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false) |
 
 ## Functions
 

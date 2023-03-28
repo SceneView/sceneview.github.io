@@ -3,4 +3,4 @@
 # animationFrameRate
 
 [androidJvm]\
-private open val [animationFrameRate](animation-frame-rate.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+open val [animationFrameRate](animation-frame-rate.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)

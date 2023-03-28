@@ -38,5 +38,5 @@ open class [Matrix](index.md)
 
 | Name | Summary |
 |---|---|
-| [data](data.md) | [androidJvm]<br>open val [data](data.md): [Array](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)&lt;[Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)&gt; |
+| [data](data.md) | [androidJvm]<br>open var [data](data.md): [Array](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)&lt;[Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)&gt; |
 | [IDENTITY_DATA](-i-d-e-n-t-i-t-y_-d-a-t-a.md) | [androidJvm]<br>val [IDENTITY_DATA](-i-d-e-n-t-i-t-y_-d-a-t-a.md): [Array](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)&lt;[Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)&gt; |

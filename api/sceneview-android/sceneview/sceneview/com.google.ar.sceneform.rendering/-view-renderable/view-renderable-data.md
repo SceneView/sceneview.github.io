@@ -6,4 +6,4 @@
 
 @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-open val [viewRenderableData](view-renderable-data.md): [ViewRenderableInternalData](../-view-renderable-internal-data/index.md)
+open var [viewRenderableData](view-renderable-data.md): [ViewRenderableInternalData](../-view-renderable-internal-data/index.md)

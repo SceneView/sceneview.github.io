@@ -28,5 +28,5 @@ Mathematical representation of a box. Used to perform intersection and collision
 
 | Name | Summary |
 |---|---|
-| [center](center.md) | [androidJvm]<br>private var [center](center.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
-| [size](size.md) | [androidJvm]<br>private var [size](size.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
+| [center](center.md) | [androidJvm]<br>var [center](center.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
+| [size](size.md) | [androidJvm]<br>var [size](size.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |

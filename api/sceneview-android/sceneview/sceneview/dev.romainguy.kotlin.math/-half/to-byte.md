@@ -5,11 +5,11 @@
 [androidJvm]\
 fun [toByte](to-byte.md)(): [Byte](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html)
 
-Returns the value of this [Half](index.md) as a byte after a narrowing primitive conversion.
+Returns the value of this [Half](index.md) as a `byte` after a narrowing primitive conversion.
 
 #### Return
 
-The half-precision float value represented by this object converted to type byte
+The half-precision float value represented by this object converted to type `byte`
 
 ## See also
 

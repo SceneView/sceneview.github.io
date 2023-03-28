@@ -5,7 +5,7 @@
 [androidJvm]\
 open fun [checkElementIndex](check-element-index.md)(index: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), size: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))
 
-Ensures that index specifies a valid *element* in an array, list or string of size size. An element index may range from zero, inclusive, to size, exclusive.
+Ensures that `index` specifies a valid *element* in an array, list or string of size `size`. An element index may range from zero, inclusive, to `size`, exclusive.
 
 ## Parameters
 
@@ -20,13 +20,13 @@ androidJvm
 
 | | |
 |---|---|
-| [java.lang.IndexOutOfBoundsException](https://developer.android.com/reference/kotlin/java/lang/IndexOutOfBoundsException.html) | if index is negative or is not less than size |
-| [java.lang.IllegalArgumentException](https://developer.android.com/reference/kotlin/java/lang/IllegalArgumentException.html) | if size is negative |
+| [java.lang.IndexOutOfBoundsException](https://developer.android.com/reference/kotlin/java/lang/IndexOutOfBoundsException.html) | if `index` is negative or is not less than `size` |
+| [java.lang.IllegalArgumentException](https://developer.android.com/reference/kotlin/java/lang/IllegalArgumentException.html) | if `size` is negative |
 
 [androidJvm]\
 open fun [checkElementIndex](check-element-index.md)(index: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), size: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), desc: [String](https://developer.android.com/reference/kotlin/java/lang/String.html))
 
-Ensures that index specifies a valid *element* in an array, list or string of size size. An element index may range from zero, inclusive, to size, exclusive.
+Ensures that `index` specifies a valid *element* in an array, list or string of size `size`. An element index may range from zero, inclusive, to `size`, exclusive.
 
 ## Parameters
 
@@ -42,5 +42,5 @@ androidJvm
 
 | | |
 |---|---|
-| [java.lang.IndexOutOfBoundsException](https://developer.android.com/reference/kotlin/java/lang/IndexOutOfBoundsException.html) | if index is negative or is not less than size |
-| [java.lang.IllegalArgumentException](https://developer.android.com/reference/kotlin/java/lang/IllegalArgumentException.html) | if size is negative |
+| [java.lang.IndexOutOfBoundsException](https://developer.android.com/reference/kotlin/java/lang/IndexOutOfBoundsException.html) | if `index` is negative or is not less than `size` |
+| [java.lang.IllegalArgumentException](https://developer.android.com/reference/kotlin/java/lang/IllegalArgumentException.html) | if `size` is negative |

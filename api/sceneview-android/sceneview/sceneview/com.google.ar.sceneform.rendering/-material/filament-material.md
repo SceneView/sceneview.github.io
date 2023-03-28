@@ -6,4 +6,4 @@
 
 @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private val [filamentMaterial](filament-material.md): Material
+val [filamentMaterial](filament-material.md): Material

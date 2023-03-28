@@ -3,4 +3,4 @@
 # elapsedTimeMs
 
 [androidJvm]\
-private open val [elapsedTimeMs](elapsed-time-ms.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)
+open val [elapsedTimeMs](elapsed-time-ms.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)

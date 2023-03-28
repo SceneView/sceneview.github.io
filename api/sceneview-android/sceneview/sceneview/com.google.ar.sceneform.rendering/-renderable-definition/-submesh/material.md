@@ -3,4 +3,4 @@
 # material
 
 [androidJvm]\
-private open var [material](material.md): MaterialInstance
+open var [material](material.md): MaterialInstance

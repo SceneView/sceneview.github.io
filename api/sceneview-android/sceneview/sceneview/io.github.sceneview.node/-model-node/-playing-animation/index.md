@@ -3,7 +3,13 @@
 # PlayingAnimation
 
 [androidJvm]\
-data class [PlayingAnimation](index.md)(startTime: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), loop: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
+data class [PlayingAnimation](index.md)(val startTime: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) = System.nanoTime(), val loop: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true)
+
+## Constructors
+
+| | |
+|---|---|
+| [PlayingAnimation](-playing-animation.md) | [androidJvm]<br>fun [PlayingAnimation](-playing-animation.md)(startTime: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html) = System.nanoTime(), loop: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true) |
 
 ## Properties
 

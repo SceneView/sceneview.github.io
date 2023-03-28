@@ -5,7 +5,7 @@
 [androidJvm]\
 open fun [createString](create-string.md)(s: [CharSequence](https://developer.android.com/reference/kotlin/java/lang/CharSequence.html)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
 
-Encode the string `s` in the buffer using UTF-8. If s is already a [CharBuffer](https://developer.android.com/reference/kotlin/java/nio/CharBuffer.html), this method is allocation free.
+Encode the string `s` in the buffer using UTF-8. If `s` is already a [CharBuffer](https://developer.android.com/reference/kotlin/java/nio/CharBuffer.html), this method is allocation free.
 
 #### Return
 

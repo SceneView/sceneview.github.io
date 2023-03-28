@@ -4,3 +4,11 @@
 
 [androidJvm]\
 val [nanoseconds](nanoseconds.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)
+
+## Parameters
+
+androidJvm
+
+| | |
+|---|---|
+| nanoseconds | The time when this frame started |

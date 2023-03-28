@@ -8,4 +8,4 @@
 
 @get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private open var [uvCoordinate](uv-coordinate.md): [Vertex.UvCoordinate](-uv-coordinate/index.md)
+open var [uvCoordinate](uv-coordinate.md): [Vertex.UvCoordinate](-uv-coordinate/index.md)

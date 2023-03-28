@@ -8,4 +8,4 @@
 
 @get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private open var [name](name.md): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)
+open var [name](name.md): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)

@@ -3,7 +3,13 @@
 # NodeMotionEvent
 
 [androidJvm]\
-data class [NodeMotionEvent](index.md)(motionEvent: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html), node: [Node](../../io.github.sceneview.node/-node/index.md)?, renderable: [Renderable](../../io.github.sceneview.renderable/index.md#286838466%2FClasslikes%2F-1571379623)?)
+data class [NodeMotionEvent](index.md)(val motionEvent: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html), val node: [Node](../../io.github.sceneview.node/-node/index.md)? = null, val renderable: [Renderable](../../io.github.sceneview.renderable/index.md#286838466%2FClasslikes%2F-1571379623)? = null)
+
+## Constructors
+
+| | |
+|---|---|
+| [NodeMotionEvent](-node-motion-event.md) | [androidJvm]<br>fun [NodeMotionEvent](-node-motion-event.md)(motionEvent: [MotionEvent](https://developer.android.com/reference/kotlin/android/view/MotionEvent.html), node: [Node](../../io.github.sceneview.node/-node/index.md)? = null, renderable: [Renderable](../../io.github.sceneview.renderable/index.md#286838466%2FClasslikes%2F-1571379623)? = null) |
 
 ## Properties
 

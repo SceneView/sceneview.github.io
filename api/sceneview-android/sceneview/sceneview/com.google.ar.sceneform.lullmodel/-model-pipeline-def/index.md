@@ -11,7 +11,7 @@ class [ModelPipelineDef](index.md) : [Table](../../com.google.flatbuffers/-table
 |---|---|
 | [__assign](__assign.md) | [androidJvm]<br>open fun [__assign](__assign.md)(_i: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), _bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)): [ModelPipelineDef](index.md) |
 | [__init](__init.md) | [androidJvm]<br>open fun [__init](__init.md)(_i: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), _bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)) |
-| [__reset](../../com.google.flatbuffers/-table/__reset.md) | [androidJvm]<br>open fun [__reset](../../com.google.flatbuffers/-table/__reset.md)()<br>Resets the internal state with a null ByteBuffer and a zero position. |
+| [__reset](../../com.google.flatbuffers/-table/__reset.md) | [androidJvm]<br>open fun [__reset](../../com.google.flatbuffers/-table/__reset.md)()<br>Resets the internal state with a null `ByteBuffer` and a zero position. |
 | [addCollidable](add-collidable.md) | [androidJvm]<br>open fun [addCollidable](add-collidable.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), collidableOffset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [addRenderables](add-renderables.md) | [androidJvm]<br>open fun [addRenderables](add-renderables.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), renderablesOffset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [addSkeleton](add-skeleton.md) | [androidJvm]<br>open fun [addSkeleton](add-skeleton.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), skeletonOffset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
@@ -36,3 +36,9 @@ class [ModelPipelineDef](index.md) : [Table](../../com.google.flatbuffers/-table
 | [startTexturesVector](start-textures-vector.md) | [androidJvm]<br>open fun [startTexturesVector](start-textures-vector.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), numElems: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [textures](textures.md) | [androidJvm]<br>open fun [textures](textures.md)(j: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)): [TextureDef](../-texture-def/index.md)<br>The textures to be used by the renderables.<br>[androidJvm]<br>open fun [textures](textures.md)(obj: [TextureDef](../-texture-def/index.md), j: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)): [TextureDef](../-texture-def/index.md) |
 | [texturesLength](textures-length.md) | [androidJvm]<br>open fun [texturesLength](textures-length.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+
+## Properties
+
+| Name | Summary |
+|---|---|
+| [UTF8_CHARSET](../../com.google.flatbuffers/-table/-u-t-f8_-c-h-a-r-s-e-t.md) | [androidJvm]<br>val [UTF8_CHARSET](../../com.google.flatbuffers/-table/-u-t-f8_-c-h-a-r-s-e-t.md): [ThreadLocal](https://developer.android.com/reference/kotlin/java/lang/ThreadLocal.html)&lt;[Charset](https://developer.android.com/reference/kotlin/java/nio/charset/Charset.html)&gt; |

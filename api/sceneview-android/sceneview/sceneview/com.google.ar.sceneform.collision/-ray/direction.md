@@ -3,4 +3,4 @@
 # direction
 
 [androidJvm]\
-private open var [direction](direction.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)
+open var [direction](direction.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)

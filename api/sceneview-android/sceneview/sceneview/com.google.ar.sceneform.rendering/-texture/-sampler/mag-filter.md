@@ -3,4 +3,4 @@
 # magFilter
 
 [androidJvm]\
-private val [magFilter](mag-filter.md): [Texture.Sampler.MagFilter](-mag-filter/index.md)
+val [magFilter](mag-filter.md): [Texture.Sampler.MagFilter](-mag-filter/index.md)

@@ -5,6 +5,12 @@
 [androidJvm]\
 open class [MoveGestureDetector](index.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), listener: [MoveGestureDetector.OnMoveListener](-on-move-listener/index.md))
 
+## Constructors
+
+| | |
+|---|---|
+| [MoveGestureDetector](-move-gesture-detector.md) | [androidJvm]<br>fun [MoveGestureDetector](-move-gesture-detector.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), listener: [MoveGestureDetector.OnMoveListener](-on-move-listener/index.md)) |
+
 ## Types
 
 | Name | Summary |

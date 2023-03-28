@@ -14,4 +14,4 @@ The node can be:
 - 
    One of the parent nodes.
 - 
-   null if no node is found.
+   `null` if no node is found.

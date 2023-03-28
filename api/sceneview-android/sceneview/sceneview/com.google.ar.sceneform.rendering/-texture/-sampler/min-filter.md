@@ -3,4 +3,4 @@
 # minFilter
 
 [androidJvm]\
-private val [minFilter](min-filter.md): [Texture.Sampler.MinFilter](-min-filter/index.md)
+val [minFilter](min-filter.md): [Texture.Sampler.MinFilter](-min-filter/index.md)

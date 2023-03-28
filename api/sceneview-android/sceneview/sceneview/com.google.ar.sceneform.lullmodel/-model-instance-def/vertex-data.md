@@ -5,4 +5,4 @@
 [androidJvm]\
 open fun [vertexData](vertex-data.md)(j: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
 
-The "raw" vertex data stored as a byte array.
+The &quot;raw&quot; vertex data stored as a byte array.

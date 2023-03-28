@@ -9,4 +9,4 @@ open class [BufferHelper](index.md)
 
 | Name | Summary |
 |---|---|
-| [cloneByteBuffer](clone-byte-buffer.md) | [androidJvm]<br>open fun [cloneByteBuffer](clone-byte-buffer.md)(original: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)): [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)<br>    Create a new independent ByteBuffer from a     source ByteBuffer. |
+| [cloneByteBuffer](clone-byte-buffer.md) | [androidJvm]<br>open fun [cloneByteBuffer](clone-byte-buffer.md)(original: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)): [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)<br>```kotlin     Create a new independent ByteBuffer from a     source ByteBuffer.<br>``` |

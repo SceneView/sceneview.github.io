@@ -7,7 +7,9 @@ open fun [startObject](start-object.md)(numfields: [Int](https://kotlinlang.org/
 
 Start encoding a new object in the buffer. Users will not usually need to call this directly. The `FlatBuffers` compiler will generate helper methods that call this method internally. 
 
- For example, using the "Monster" code found on the "landing page". An object of type `Monster` can be created using the following code: 
+ For example, using the &quot;Monster&quot; code found on the &quot;landing page&quot;. An object of type `Monster` can be created using the following code: 
+
+```kotlin
 
 int testArrayOfString = Monster.createTestarrayofstringVector(fbb, new int[] {
   fbb.createString("test1"),
@@ -25,6 +27,8 @@ Monster.addTest(fbb, mon2);
 Monster.addTest4(fbb, test4);
 Monster.addTestarrayofstring(fbb, testArrayOfString);
 int mon = Monster.endMonster(fbb);
+
+```
 
  Here: 
 

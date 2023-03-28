@@ -33,7 +33,7 @@ androidJvm
 
 | Name | Summary |
 |---|---|
-| [color](color.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>@get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open var [color](color.md): [Color](../-color/index.md) |
-| [normal](normal.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>@get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open var [normal](normal.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
-| [position](position.md) | [androidJvm]<br>private var [position](position.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
-| [uvCoordinate](uv-coordinate.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>@get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open var [uvCoordinate](uv-coordinate.md): [Vertex.UvCoordinate](-uv-coordinate/index.md) |
+| [color](color.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>@get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>open var [color](color.md): [Color](../-color/index.md) |
+| [normal](normal.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>@get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>open var [normal](normal.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
+| [position](position.md) | [androidJvm]<br>var [position](position.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
+| [uvCoordinate](uv-coordinate.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>@get:[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>open var [uvCoordinate](uv-coordinate.md): [Vertex.UvCoordinate](-uv-coordinate/index.md) |

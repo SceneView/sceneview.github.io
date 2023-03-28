@@ -19,4 +19,4 @@ Minimal resource manager. Maintains mappings from ids to created resources and a
 
 | Name | Summary |
 |---|---|
-| [instance](instance.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>private open val [instance](instance.md): [ResourceManager](index.md) |
+| [instance](instance.md) | [androidJvm]<br>@[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)<br>open val [instance](instance.md): [ResourceManager](index.md) |

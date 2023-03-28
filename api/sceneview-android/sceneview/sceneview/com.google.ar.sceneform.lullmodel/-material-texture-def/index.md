@@ -11,7 +11,7 @@ class [MaterialTextureDef](index.md) : [Table](../../com.google.flatbuffers/-tab
 |---|---|
 | [__assign](__assign.md) | [androidJvm]<br>open fun [__assign](__assign.md)(_i: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), _bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)): [MaterialTextureDef](index.md) |
 | [__init](__init.md) | [androidJvm]<br>open fun [__init](__init.md)(_i: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), _bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)) |
-| [__reset](../../com.google.flatbuffers/-table/__reset.md) | [androidJvm]<br>open fun [__reset](../../com.google.flatbuffers/-table/__reset.md)()<br>Resets the internal state with a null ByteBuffer and a zero position. |
+| [__reset](../../com.google.flatbuffers/-table/__reset.md) | [androidJvm]<br>open fun [__reset](../../com.google.flatbuffers/-table/__reset.md)()<br>Resets the internal state with a null `ByteBuffer` and a zero position. |
 | [addName](add-name.md) | [androidJvm]<br>open fun [addName](add-name.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), nameOffset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [addUsage](add-usage.md) | [androidJvm]<br>open fun [addUsage](add-usage.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), usage: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 | [addUsagePerChannel](add-usage-per-channel.md) | [androidJvm]<br>open fun [addUsagePerChannel](add-usage-per-channel.md)(builder: [FlatBufferBuilder](../../com.google.flatbuffers/-flat-buffer-builder/index.md), usagePerChannelOffset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
@@ -30,3 +30,9 @@ class [MaterialTextureDef](index.md) : [Table](../../com.google.flatbuffers/-tab
 | [usagePerChannelAsByteBuffer](usage-per-channel-as-byte-buffer.md) | [androidJvm]<br>open fun [usagePerChannelAsByteBuffer](usage-per-channel-as-byte-buffer.md)(): [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html) |
 | [usagePerChannelInByteBuffer](usage-per-channel-in-byte-buffer.md) | [androidJvm]<br>open fun [usagePerChannelInByteBuffer](usage-per-channel-in-byte-buffer.md)(_bb: [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html)): [ByteBuffer](https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html) |
 | [usagePerChannelLength](usage-per-channel-length.md) | [androidJvm]<br>open fun [usagePerChannelLength](usage-per-channel-length.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+
+## Properties
+
+| Name | Summary |
+|---|---|
+| [UTF8_CHARSET](../../com.google.flatbuffers/-table/-u-t-f8_-c-h-a-r-s-e-t.md) | [androidJvm]<br>val [UTF8_CHARSET](../../com.google.flatbuffers/-table/-u-t-f8_-c-h-a-r-s-e-t.md): [ThreadLocal](https://developer.android.com/reference/kotlin/java/lang/ThreadLocal.html)&lt;[Charset](https://developer.android.com/reference/kotlin/java/nio/charset/Charset.html)&gt; |

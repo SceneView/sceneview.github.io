@@ -25,5 +25,5 @@ Mathematical representation of a ray. Used to perform intersection and collision
 
 | Name | Summary |
 |---|---|
-| [direction](direction.md) | [androidJvm]<br>private open var [direction](direction.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
-| [origin](origin.md) | [androidJvm]<br>private open var [origin](origin.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
+| [direction](direction.md) | [androidJvm]<br>open var [direction](direction.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |
+| [origin](origin.md) | [androidJvm]<br>open var [origin](origin.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md) |

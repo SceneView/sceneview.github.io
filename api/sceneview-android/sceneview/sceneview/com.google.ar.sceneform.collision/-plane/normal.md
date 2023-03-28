@@ -3,4 +3,4 @@
 # normal
 
 [androidJvm]\
-private var [normal](normal.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)
+var [normal](normal.md): [Vector3](../../com.google.ar.sceneform.math/-vector3/index.md)

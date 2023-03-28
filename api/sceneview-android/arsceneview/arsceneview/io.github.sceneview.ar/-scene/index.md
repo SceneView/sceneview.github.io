@@ -30,6 +30,6 @@
 
 | Name | Summary |
 |---|---|
-| [addOnUpdateListener](add-on-update-listener.md) | [androidJvm]<br>~~fun~~ [~~addOnUpdateListener~~](add-on-update-listener.md)~~(~~~~listener~~~~:~~ [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?~~)~~~~:~~ [Nothing](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html)? |
-| [onAddChild](on-add-child.md) | [androidJvm]<br>~~fun~~ [~~onAddChild~~](on-add-child.md)~~(~~~~child~~~~:~~ [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?~~)~~~~:~~ [Nothing](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html)? |
-| [onRemoveChild](on-remove-child.md) | [androidJvm]<br>~~fun~~ [~~onRemoveChild~~](on-remove-child.md)~~(~~~~child~~~~:~~ [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?~~)~~~~:~~ [Nothing](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html)? |
+| [addOnUpdateListener](add-on-update-listener.md) | [androidJvm]<br>~~fun~~ [~~addOnUpdateListener~~](add-on-update-listener.md)~~(~~listener: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?~~)~~~~:~~ [Nothing](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html)? |
+| [onAddChild](on-add-child.md) | [androidJvm]<br>~~fun~~ [~~onAddChild~~](on-add-child.md)~~(~~child: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?~~)~~~~:~~ [Nothing](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html)? |
+| [onRemoveChild](on-remove-child.md) | [androidJvm]<br>~~fun~~ [~~onRemoveChild~~](on-remove-child.md)~~(~~child: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?~~)~~~~:~~ [Nothing](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html)? |

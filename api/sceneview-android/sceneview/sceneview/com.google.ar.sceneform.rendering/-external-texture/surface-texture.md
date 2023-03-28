@@ -6,4 +6,4 @@
 
 @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)
 
-private val [surfaceTexture](surface-texture.md): [SurfaceTexture](https://developer.android.com/reference/kotlin/android/graphics/SurfaceTexture.html)
+val [surfaceTexture](surface-texture.md): [SurfaceTexture](https://developer.android.com/reference/kotlin/android/graphics/SurfaceTexture.html)

@@ -3,4 +3,4 @@
 # wrapModeR
 
 [androidJvm]\
-private val [wrapModeR](wrap-mode-r.md): [Texture.Sampler.WrapMode](-wrap-mode/index.md)
+val [wrapModeR](wrap-mode-r.md): [Texture.Sampler.WrapMode](-wrap-mode/index.md)

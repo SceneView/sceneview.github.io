@@ -3,7 +3,7 @@
 # Half2
 
 [androidJvm]\
-data class [Half2](index.md)(x: [Half](../-half/index.md), y: [Half](../-half/index.md))
+data class [Half2](index.md)(var x: [Half](../-half/index.md) = Half.POSITIVE_ZERO, var y: [Half](../-half/index.md) = Half.POSITIVE_ZERO)
 
 ## Constructors
 
@@ -11,6 +11,7 @@ data class [Half2](index.md)(x: [Half](../-half/index.md), y: [Half](../-half/in
 |---|---|
 | [Half2](-half2.md) | [androidJvm]<br>fun [Half2](-half2.md)(v: [Half](../-half/index.md)) |
 | [Half2](-half2.md) | [androidJvm]<br>fun [Half2](-half2.md)(v: [Half2](index.md)) |
+| [Half2](-half2.md) | [androidJvm]<br>fun [Half2](-half2.md)(x: [Half](../-half/index.md) = Half.POSITIVE_ZERO, y: [Half](../-half/index.md) = Half.POSITIVE_ZERO) |
 
 ## Functions
 

@@ -3,7 +3,13 @@
 # KTXEnvironment
 
 [androidJvm]\
-class [KTXEnvironment](index.md)(indirectLight: IndirectLight?, skybox: Skybox?, sphericalHarmonics: [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)?) : [Environment](../-environment/index.md)
+class [KTXEnvironment](index.md)(val indirectLight: IndirectLight?, val skybox: Skybox? = null, val sphericalHarmonics: [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)? = null) : [Environment](../-environment/index.md)
+
+## Constructors
+
+| | |
+|---|---|
+| [KTXEnvironment](-k-t-x-environment.md) | [androidJvm]<br>fun [KTXEnvironment](-k-t-x-environment.md)(indirectLight: IndirectLight?, skybox: Skybox? = null, sphericalHarmonics: [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)? = null) |
 
 ## Functions
 
