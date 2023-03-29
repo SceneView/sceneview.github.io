@@ -12,7 +12,7 @@ header_pages:
 show_excerpts: false
 
 minima:
-  skin: dark
+  skin: light
   social_links:
     - { platform: github,  user_url: "https://github.com/SceneView" }
     - { platform: twitter,  user_url: "https://twitter.com/thomas_gorisse" }
