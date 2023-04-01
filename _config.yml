@@ -1,6 +1,6 @@
 url: "https://sceneview.github.io"
-title: SceneView
-description: 3D and AR View for Android, iOS and React Native (Android and iOS) working with ARCore/ARKit and Google Filament
+title: Sceneview
+description: 3D and AR for Android, iOS and React Native (Android and iOS) working with ARCore and Google Filament
 
 header_pages:
   - features.md
@@ -12,7 +12,8 @@ header_pages:
 show_excerpts: false
 
 minima:
-  skin: light
+  skin: auto
+  
   social_links:
     - { platform: github,  user_url: "https://github.com/SceneView" }
     - { platform: twitter,  user_url: "https://twitter.com/thomas_gorisse" }
