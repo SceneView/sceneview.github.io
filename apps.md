@@ -45,7 +45,7 @@ permalink: /apps/
 
 ## Screenrecords
 
-| <video controls="controls" src="/assets/videos/screenrecords/01.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/assets/videos/screenrecords/02.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/assets/videos/screenrecords/03.mp4" preload="auto" width="200px"/> |
+| <video controls="controls" src="/videos/screenrecords/01.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/videos/screenrecords/02.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/videos/screenrecords/03.mp4" preload="auto" width="200px"/> |
 | - | - | - |
-| <video controls="controls" src="/assets/videos/screenrecords/04.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/assets/videos/screenrecords/05.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/assets/videos/screenrecords/06.mp4" preload="auto" width="200px"/> |
-| <video controls="controls" src="/assets/videos/screenrecords/07.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/assets/videos/screenrecords/08.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/assets/videos/screenrecords/09.mp4" preload="auto" width="200px"/> |
+| <video controls="controls" src="/videos/screenrecords/04.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/videos/screenrecords/05.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/videos/screenrecords/06.mp4" preload="auto" width="200px"/> |
+| <video controls="controls" src="/videos/screenrecords/07.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/videos/screenrecords/08.mp4" preload="auto" width="200px"/> | <video controls="controls" src="/videos/screenrecords/09.mp4" preload="auto" width="200px"/> |
