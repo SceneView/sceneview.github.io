@@ -21,12 +21,11 @@ permalink: /apps/
 
 ## Youtube
 
-| [![]([https://markdown-videos.deta.dev/youtube/mtoTqRREnmM)](https://www.youtube.com/watch?v=mtoTqRREnmM) | [![](https://markdown-videos.deta.dev/youtube/HQI48By3VBA)](https://www.youtube.com/watch?v=HQI48By3VBA) |
+| [![](https://markdown-videos.deta.dev/youtube/mtoTqRREnmM)](https://www.youtube.com/watch?v=mtoTqRREnmM) | [![](https://markdown-videos.deta.dev/youtube/HQI48By3VBA)](https://www.youtube.com/watch?v=HQI48By3VBA) |
 | - | - |
 | [![](https://markdown-videos.deta.dev/youtube/jpmWjigA3Ms)](https://www.youtube.com/watch?v=jpmWjigA3Ms) | [![](https://markdown-videos.deta.dev/youtube/9QP43nOSItU)](https://www.youtube.com/watch?v=9QP43nOSItU) |
 | [![](https://markdown-videos.deta.dev/youtube/WD907MWDbzs)](https://www.youtube.com/watch?v=WD907MWDbzs) | [![](https://markdown-videos.deta.dev/youtube/HXHyoAEF5bY)](https://www.youtube.com/watch?v=HXHyoAEF5bY) |
-|  [![Youtube Video 05](https://markdown-videos.deta.dev/youtube/LG8AWbsJxvY)](https://www.youtube.com/watch?v=LG8AWbsJxvY) | [![](https://markdown-videos.deta.dev/youtube/LEmAX_DPsyU)](https://www.youtube.com/watch?v=LEmAX_DPsyU) |
-|  [![](https://markdown-videos.deta.dev/youtube/8FiN__o4dB8)](https://www.youtube.com/watch?v=8FiN__o4dB8) | |
+| [![](https://markdown-videos.deta.dev/youtube/LEmAX_DPsyU)](https://www.youtube.com/watch?v=LEmAX_DPsyU) | [![](https://markdown-videos.deta.dev/youtube/8FiN__o4dB8)](https://www.youtube.com/watch?v=8FiN__o4dB8) |
 
 ## Articles
 
