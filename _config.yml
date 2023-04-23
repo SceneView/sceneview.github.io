@@ -12,7 +12,7 @@ header_pages:
 show_excerpts: false
 
 minima:
-  skin: classic
+  skin: solarized-light
   
   social_links:
     - { platform: github,  user_url: "https://github.com/SceneView" }
