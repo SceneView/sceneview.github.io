@@ -21,11 +21,11 @@ com.google.ar.sceneform.rendering
 com.google.ar.sceneform.resources
 com.google.ar.sceneform.utilities
 com.google.flatbuffers
-dev.romainguy.kotlin.math
 io.github.sceneview
 io.github.sceneview.animation
 io.github.sceneview.collision
 io.github.sceneview.environment
+io.github.sceneview.geometries
 io.github.sceneview.gesture
 io.github.sceneview.light
 io.github.sceneview.material
