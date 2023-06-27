@@ -2,9 +2,7 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 
 module:arsceneview
-com.google.ar.sceneform
 com.google.ar.sceneform.rendering
-com.google.ar.sceneform.ux
 io.github.sceneview.ar
 io.github.sceneview.ar.arcore
 io.github.sceneview.ar.camera
@@ -35,6 +33,7 @@ io.github.sceneview.node
 io.github.sceneview.renderable
 io.github.sceneview.scene
 io.github.sceneview.texture
+io.github.sceneview.transform
 io.github.sceneview.utils
 module:sceneview_1_0_0
 io.github.sceneview
