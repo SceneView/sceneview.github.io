@@ -41,23 +41,23 @@ if(savedDarkMode === true){
   <div class="breadcrumbs"><a href="../../index.html">sceneview</a><span class="delimiter">/</span><a href="../index.html">io.github.sceneview</a><span class="delimiter">/</span><a href="index.html">SceneView</a></div>
   <div class="cover ">
     <h1 class="cover"><span>Scene</span><wbr><span><span>View</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">SceneView</a>&nbsp;<span><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a>&nbsp;</span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;attrs<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/AttributeSet.html">AttributeSet</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyleAttr<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyleRes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;cameraNode<span class="token operator">: </span><a href="../../io.github.sceneview.node/-camera-node/index.html">CameraNode</a><span class="token operator"> = </span>CameraNode()</span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/android/view/SurfaceView.html">SurfaceView</a>, <a href="../-scene-lifecycle-owner/index.html">SceneLifecycleOwner</a>, <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/DefaultLifecycleObserver.html">DefaultLifecycleObserver</a>, <a href="https://developer.android.com/reference/kotlin/android/view/Choreographer.FrameCallback.html">Choreographer.FrameCallback</a>, <a href="../../io.github.sceneview.node/-node-parent/index.html">NodeParent</a>, <a href="../../io.github.sceneview.gesture/-gesture-detector/-on-gesture-listener/index.html">GestureDetector.OnGestureListener</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class=""> A SurfaceView that manages rendering and interactions with the 3D scene.</h3><p class="paragraph">Maintains the scene graph, a hierarchical organization of a scene's content. A scene can have zero or more child nodes and each node can have zero or more child nodes. The Scene also provides hit testing, a way to detect which node is touched by a MotionEvent or Ray.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">SceneView</a>&nbsp;<span><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a>&nbsp;</span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;attrs<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/AttributeSet.html">AttributeSet</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyleAttr<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyleRes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token operator"> = </span>Filament.retain()<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;cameraNode<span class="token operator">: </span><a href="../../io.github.sceneview.node/-camera-node/index.html">CameraNode</a><span class="token operator"> = </span>CameraNode(engine)</span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/android/view/SurfaceView.html">SurfaceView</a>, <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/DefaultLifecycleObserver.html">DefaultLifecycleObserver</a>, <a href="https://developer.android.com/reference/kotlin/android/view/Choreographer.FrameCallback.html">Choreographer.FrameCallback</a>, <a href="../../io.github.sceneview.node/-node-parent/index.html">NodeParent</a>, <a href="../../io.github.sceneview.gesture/-gesture-detector/-on-gesture-listener/index.html">GestureDetector.OnGestureListener</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class=""> A SurfaceView that manages rendering and interactions with the 3D scene.</h3><p class="paragraph">Maintains the scene graph, a hierarchical organization of a scene's content. A scene can have zero or more child nodes and each node can have zero or more child nodes. The Scene also provides hit testing, a way to detect which node is touched by a MotionEvent or Ray.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button><button class="section-tab" data-togglable="Extensions">Extensions</button></div>
     <div class="tabs-section-body">
       <h2 class="tabbedcontent">Constructors</h2>
-      <div class="table" data-togglable="Constructors"><a data-name="-921028089%2FConstructors%2F1588378196" anchor-label="SceneView" id="-921028089%2FConstructors%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+      <div class="table" data-togglable="Constructors"><a data-name="-1767942459%2FConstructors%2F1588378196" anchor-label="SceneView" id="-1767942459%2FConstructors%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
         <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
           <div class="main-subrow keyValue TabbedContent">
             <div class=""><span class="inline-flex">
                 <div><a href="-scene-view.html"><span>Scene</span><wbr><span><span>View</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-921028089%2FConstructors%2F1588378196"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1767942459%2FConstructors%2F1588378196"></span>
                   <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                 </span></span></div>
             <div>
               <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="-scene-view.html"><span class="token function">SceneView</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;attrs<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/AttributeSet.html">AttributeSet</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyleAttr<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyleRes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;cameraNode<span class="token operator">: </span><a href="../../io.github.sceneview.node/-camera-node/index.html">CameraNode</a><span class="token operator"> = </span>CameraNode()</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="-scene-view.html"><span class="token function">SceneView</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;attrs<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/AttributeSet.html">AttributeSet</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyleAttr<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyleRes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token operator"> = </span>Filament.retain()<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;cameraNode<span class="token operator">: </span><a href="../../io.github.sceneview.node/-camera-node/index.html">CameraNode</a><span class="token operator"> = </span>CameraNode(engine)</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
               </div>
             </div>
           </div>
@@ -2432,21 +2432,6 @@ if(savedDarkMode === true){
             <div>
               <div class="title">
                 <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1075457247%2FFunctions%2F1588378196"><span class="token function">getLeft</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="698325962%2FFunctions%2F1588378196" anchor-label="getLifecycle" id="698325962%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-lifecycle.html"><span>get</span><wbr><span><span>Lifecycle</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="698325962%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="get-lifecycle.html"><span class="token function">getLifecycle</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-scene-lifecycle/index.html">SceneLifecycle</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
               </div>
             </div>
           </div>
@@ -5050,13 +5035,13 @@ if(savedDarkMode === true){
         <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
           <div class="main-subrow keyValue ">
             <div class=""><span class="inline-flex">
-                <div><a href="../../io.github.sceneview.utils/-surface-mirrorer/index.html#139941652%2FFunctions%2F1588378196"><span>on</span><wbr><span><span>Create</span></span></a></div>
+                <div><a href="index.html#139941652%2FFunctions%2F1588378196"><span>on</span><wbr><span><span>Create</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="139941652%2FFunctions%2F1588378196"></span>
                   <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                 </span></span></div>
             <div>
               <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.sceneview.utils/-surface-mirrorer/index.html#139941652%2FFunctions%2F1588378196"><span class="token function">onCreate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation">NonNull</span></a>&nbsp;</span>p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html">LifecycleOwner</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="index.html#139941652%2FFunctions%2F1588378196"><span class="token function">onCreate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation">NonNull</span></a>&nbsp;</span>p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html">LifecycleOwner</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
               </div>
             </div>
           </div>
@@ -5106,17 +5091,17 @@ if(savedDarkMode === true){
             </div>
           </div>
         </div>
-<a data-name="1057561704%2FFunctions%2F1588378196" anchor-label="onDestroy" id="1057561704%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+<a data-name="1963524751%2FFunctions%2F1588378196" anchor-label="onDestroy" id="1963524751%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
         <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
           <div class="main-subrow keyValue ">
             <div class=""><span class="inline-flex">
-                <div><a href="../../io.github.sceneview.utils/-surface-mirrorer/index.html#1057561704%2FFunctions%2F1588378196"><span>on</span><wbr><span><span>Destroy</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1057561704%2FFunctions%2F1588378196"></span>
+                <div><a href="on-destroy.html"><span>on</span><wbr><span><span>Destroy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1963524751%2FFunctions%2F1588378196"></span>
                   <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                 </span></span></div>
             <div>
               <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.sceneview.utils/-surface-mirrorer/index.html#1057561704%2FFunctions%2F1588378196"><span class="token function">onDestroy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation">NonNull</span></a>&nbsp;</span>p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html">LifecycleOwner</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="on-destroy.html"><span class="token function">onDestroy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">owner<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html">LifecycleOwner</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
               </div>
             </div>
           </div>
@@ -5830,13 +5815,13 @@ if(savedDarkMode === true){
         <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
           <div class="main-subrow keyValue ">
             <div class=""><span class="inline-flex">
-                <div><a href="../../io.github.sceneview.utils/-surface-mirrorer/index.html#1240777104%2FFunctions%2F1588378196"><span>on</span><wbr><span><span>Start</span></span></a></div>
+                <div><a href="index.html#1240777104%2FFunctions%2F1588378196"><span>on</span><wbr><span><span>Start</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1240777104%2FFunctions%2F1588378196"></span>
                   <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                 </span></span></div>
             <div>
               <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.sceneview.utils/-surface-mirrorer/index.html#1240777104%2FFunctions%2F1588378196"><span class="token function">onStart</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation">NonNull</span></a>&nbsp;</span>p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html">LifecycleOwner</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="index.html#1240777104%2FFunctions%2F1588378196"><span class="token function">onStart</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation">NonNull</span></a>&nbsp;</span>p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html">LifecycleOwner</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
               </div>
             </div>
           </div>
@@ -5860,13 +5845,13 @@ if(savedDarkMode === true){
         <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
           <div class="main-subrow keyValue ">
             <div class=""><span class="inline-flex">
-                <div><a href="../../io.github.sceneview.utils/-surface-mirrorer/index.html#487071706%2FFunctions%2F1588378196"><span>on</span><wbr><span><span>Stop</span></span></a></div>
+                <div><a href="index.html#487071706%2FFunctions%2F1588378196"><span>on</span><wbr><span><span>Stop</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="487071706%2FFunctions%2F1588378196"></span>
                   <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                 </span></span></div>
             <div>
               <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.sceneview.utils/-surface-mirrorer/index.html#487071706%2FFunctions%2F1588378196"><span class="token function">onStop</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation">NonNull</span></a>&nbsp;</span>p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html">LifecycleOwner</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="index.html#487071706%2FFunctions%2F1588378196"><span class="token function">onStop</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation">NonNull</span></a>&nbsp;</span>p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html">LifecycleOwner</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
               </div>
             </div>
           </div>
@@ -9353,7 +9338,22 @@ if(savedDarkMode === true){
         </div>
       </div>
       <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="-1499828493%2FProperties%2F1588378196" anchor-label="allChildren" id="-1499828493%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+      <div class="table" data-togglable="Properties"><a data-name="2051085903%2FProperties%2F1588378196" anchor-label="activity" id="2051085903%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="activity.html"><span><span>activity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2051085903%2FProperties%2F1588378196"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><a data-name="2051085903%2FProperties%2F1588378196" anchor-label="activity" id="2051085903%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="activity.html">activity</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/activity/ComponentActivity.html">ComponentActivity</a><span class="token operator">?</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1499828493%2FProperties%2F1588378196" anchor-label="allChildren" id="-1499828493%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
         <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
           <div class="main-subrow keyValue ">
             <div class=""><span class="inline-flex">
@@ -9473,6 +9473,21 @@ if(savedDarkMode === true){
             </div>
           </div>
         </div>
+<a data-name="-822443294%2FProperties%2F1588378196" anchor-label="coroutineScope" id="-822443294%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="coroutine-scope.html"><span>coroutine</span><wbr><span><span>Scope</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-822443294%2FProperties%2F1588378196"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><a data-name="-822443294%2FProperties%2F1588378196" anchor-label="coroutineScope" id="-822443294%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="coroutine-scope.html">coroutineScope</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleCoroutineScope.html">LifecycleCoroutineScope</a><span class="token operator">?</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
 <a data-name="1131575968%2FProperties%2F1588378196" anchor-label="dithering" id="1131575968%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
         <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
           <div class="main-subrow keyValue ">
@@ -9499,6 +9514,21 @@ if(savedDarkMode === true){
             <div>
               <div class="title">
                 <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><a data-name="-1227002319%2FProperties%2F1588378196" anchor-label="dynamicResolution" id="-1227002319%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="dynamic-resolution.html">dynamicResolution</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/View.DynamicResolutionOptions///PointingToDeclaration/">View.DynamicResolutionOptions</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-30197060%2FProperties%2F1588378196" anchor-label="engine" id="-30197060%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="engine.html"><span><span>engine</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-30197060%2FProperties%2F1588378196"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><a data-name="-30197060%2FProperties%2F1588378196" anchor-label="engine" id="-30197060%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
               </div>
             </div>
           </div>
@@ -9563,21 +9593,6 @@ if(savedDarkMode === true){
             </div>
           </div>
         </div>
-<a data-name="-1296465875%2FProperties%2F1588378196" anchor-label="isDestroyed" id="-1296465875%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="is-destroyed.html"><span>is</span><wbr><span><span>Destroyed</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1296465875%2FProperties%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><a data-name="-1296465875%2FProperties%2F1588378196" anchor-label="isDestroyed" id="-1296465875%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="is-destroyed.html">isDestroyed</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
 <a data-name="90356075%2FProperties%2F1588378196" anchor-label="isFrontFaceWindingInverted" id="90356075%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
         <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
           <div class="main-subrow keyValue ">
@@ -9604,6 +9619,21 @@ if(savedDarkMode === true){
             <div>
               <div class="title">
                 <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><a data-name="-1683846995%2FProperties%2F1588378196" anchor-label="isTranslucent" id="-1683846995%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="is-translucent.html">isTranslucent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2142091506%2FProperties%2F1588378196" anchor-label="lifecycle" id="2142091506%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="lifecycle.html"><span><span>lifecycle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2142091506%2FProperties%2F1588378196"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><a data-name="2142091506%2FProperties%2F1588378196" anchor-label="lifecycle" id="2142091506%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="lifecycle.html">lifecycle</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.html">Lifecycle</a><span class="token operator">?</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
               </div>
             </div>
           </div>
@@ -10083,7 +10113,7 @@ if(savedDarkMode === true){
                 </span></span></div>
             <div>
               <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><a data-name="-1726229998%2FProperties%2F1588378196" anchor-label="selectionVisualizer" id="-1726229998%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="selection-visualizer.html">selectionVisualizer</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../../io.github.sceneview.node/-node/index.html">Node</a><span class="token operator">?</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><a data-name="-1726229998%2FProperties%2F1588378196" anchor-label="selectionVisualizer" id="-1726229998%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="selection-visualizer.html">selectionVisualizer</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../../io.github.sceneview.node/-node/index.html">Node</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
               </div>
             </div>
           </div>
