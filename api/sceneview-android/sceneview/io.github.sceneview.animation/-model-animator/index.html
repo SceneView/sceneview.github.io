@@ -1,0 +1,253 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ModelAnimator</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sceneview:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="sceneview::io.github.sceneview.animation/ModelAnimator///PointingToDeclaration//1588378196">
+  <div class="breadcrumbs"><a href="../../index.html">sceneview</a><span class="delimiter">/</span><a href="../index.html">io.github.sceneview.animation</a><span class="delimiter">/</span><span class="current">ModelAnimator</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Model</span><wbr><span><span>Animator</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">ModelAnimator</a></div><p class="paragraph">This class provides support for animating an <a href="../-animatable-model/index.html">AnimatableModel</a></p><h2 class="">Usage</h2><p class="paragraph"> By default the <a href="index.html">ModelAnimator</a> can play the full <a href="../-model-animation/index.html">ModelAnimation</a> starting from 0 to the animation duration with: </p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea"><a href="of-animation.html">ofAnimation</a></code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph"> If you want to specify a start and end, you should use: </p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea"><a href="of-animation-time.html">ofAnimationTime</a></code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea"><a href="of-animation-frame.html">ofAnimationFrame</a></code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea"><a href="of-animation-fraction.html">ofAnimationFraction</a></code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h2 class="">Use cases</h2><h3 class="">Simple usage</h3><p class="paragraph"> On a very basic 3D model like a single infinite rotating sphere, you should not have to use <a href="index.html">ModelAnimator</a> but probably instead just call: </p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea"><a href="../-animatable-model/animate.html">animate</a></code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Single Model with Single Animation</h3><p class="paragraph"> If you want to animate a single model to a specific timeline position, use: </p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea"><a href="of-animation-time.html">ofAnimationTime</a></code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea"><a href="of-animation-frame.html">ofAnimationFrame</a></code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea"><a href="of-animation-fraction.html">ofAnimationFraction</a></code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><ul><li> A single time, frame, fraction value will go from the actual position to the desired one </li><li> Two values means form value1 to value2 </li><li> More than two values means form value1 to value2 then to value3 </li></ul><i>Example:</i><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">ModelAnimator.ofAnimationFraction(model, "VerticalTranslation", 0f, 0.8f, 0f).start();
+</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Single Model with Multiple Animations</h3><p class="paragraph"> If the model is a character, for example, there may be one ModelAnimation for a walkcycle, a second for a jump, a third for sidestepping and so on. </p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea"><a href="of-animation.html">ofAnimation</a></code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea"><a href="of-multiple-animations.html">ofMultipleAnimations</a></code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><i>Example:</i><p class="paragraph"> Here you can see that no call to <code class="lang-kotlin">animator.cancel()</code> is required because the <code class="lang-kotlin">animator.setAutoCancel(boolean)</code> is set to true by default. </p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">ObjectAnimator walkAnimator = ModelAnimator.ofAnimation(model, "walk");
+walkButton.setOnClickListener(v -&gt; walkAnimator.start());
+
+ObjectAnimator runAnimator = ModelAnimator.ofAnimation(model, "run");
+runButton.setOnClickListener(v -&gt; runAnimator.start());
+</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><i>or sequentially:</i><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">AnimatorSet animatorSet = new AnimatorSet();
+animatorSet.playSequentially(ModelAnimator.ofMultipleAnimations(model, "walk", "run"));
+animatorSet.start();
+</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Multiple Models with Multiple Animations</h3><p class="paragraph"> For a synchronised animation set like animating a complete scene with multiple models time or sequentially, please consider using an <a href="https://developer.android.com/reference/kotlin/android/animation/AnimatorSet.html">android.animation.AnimatorSet</a> with one <a href="index.html">ModelAnimator</a> parametrized per step : </p><i>Example:</i><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">AnimatorSet completeFly = new AnimatorSet();
+
+ObjectAnimator liftOff = ModelAnimator.ofAnimationFraction(airPlaneModel, "FlyAltitude",0, 40);
+liftOff.setInterpolator(new AccelerateInterpolator());
+
+AnimatorSet flying = new AnimatorSet();
+ObjectAnimator flyAround = ModelAnimator.ofAnimation(airPlaneModel, "FlyAround");
+flyAround.setRepeatCount(ValueAnimator.INFINITE);
+flyAround.setDuration(10000);
+ObjectAnimator airportBusHome = ModelAnimator.ofAnimationFraction(busModel, "Move", 0);
+flying.playTogether(flyAround, airportBusHome);
+
+ObjectAnimator land = ModelAnimator.ofAnimationFraction(airPlaneModel, "FlyAltitude", 0);
+land.setInterpolator(new DecelerateInterpolator());
+
+completeFly.playSequentially(liftOff, flying, land);
+</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Morphing animation</h3><p class="paragraph"> Assuming a character object has a skeleton, one keyframe track could store the data for the position changes of the lower arm bone over time, a different track the data for the rotation changes of the same bone, a third the track position, rotation or scaling of another bone, and so on. It should be clear, that an ModelAnimation can act on lots of such tracks. </p><p class="paragraph"> Assuming the model has morph targets (for example one morph target showing a friendly face and another showing an angry face), each track holds the information as to how the influence of a certain morph target changes during the performance of the clip. </p><p class="paragraph"> In a glTF context, this <a href="https://developer.android.com/reference/kotlin/android/animation/Animator.html">Animator</a> updates matrices according to glTF <code class="lang-kotlin">animation</code> and <code class="lang-kotlin">skin</code> definitions. </p><h3 class=""><a href="index.html">ModelAnimator</a> can be used for two things</h3><ul><li> Updating matrices in <code class="lang-kotlin">TransformManager</code> components according to the model <code class="lang-kotlin">animation</code> definitions. </li><li> Updating bone matrices in <code class="lang-kotlin">RenderableManager</code> components according to the model <code class="lang-kotlin">skin</code> definitions. </li></ul><p class="paragraph"> Every PropertyValuesHolder that applies a modification on the time position of the animation must use the ModelAnimation.TIME_POSITION instead of its own Property in order to possibly cancel any ObjectAnimator operating time modifications on the same ModelAnimation. </p><p class="paragraph"> More information about Animator: <a href="https://developer.android.com/guide/topics/graphics/prop-animation"> https://developer.android.com/guide/topics/graphics/prop-animation </a></p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-1816826505%2FConstructors%2F1588378196" anchor-label="ModelAnimator" id="-1816826505%2FConstructors%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-model-animator.html"><span>Model</span><wbr><span><span>Animator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1816826505%2FConstructors%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1714875877%2FClasslikes%2F1588378196" anchor-label="PropertyValuesHolder" id="1714875877%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-property-values-holder/index.html"><span>Property</span><wbr><span>Values</span><wbr><span><span>Holder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1714875877%2FClasslikes%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-property-values-holder/index.html">PropertyValuesHolder</a></div><div class="brief ">This class holds information about a property and the values that that property should take during an animation.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-218703181%2FFunctions%2F1588378196" anchor-label="ofAllAnimations" id="-218703181%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="of-all-animations.html"><span>of</span><wbr><span>All</span><wbr><span><span>Animations</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-218703181%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-all-animations.html"><span class="token function">ofAllAnimations</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="brief ">Constructs and returns an <a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a> for all <a href="../-model-animation/index.html">ModelAnimation</a> inside an <a href="../-animatable-model/index.html">AnimatableModel</a>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-402335879%2FFunctions%2F1588378196" anchor-label="ofAnimation" id="-402335879%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="of-animation.html"><span>of</span><wbr><span><span>Animation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-402335879%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation.html"><span class="token function">ofAnimation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animationIndexes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="brief ">Constructs and returns an <a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a> for targeted <a href="../-model-animation/index.html">ModelAnimation</a> with a given index inside an <a href="../-animatable-model/index.html">AnimatableModel</a>.</div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation.html"><span class="token function">ofAnimation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animations<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="../-model-animation/index.html">ModelAnimation</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="brief ">Constructs and returns an <a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a> for a targeted <a href="../-model-animation/index.html">ModelAnimation</a> inside an <a href="../-animatable-model/index.html">AnimatableModel</a>.</div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation.html"><span class="token function">ofAnimation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animationNames<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="brief ">Constructs and returns an <a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a> for targeted <a href="../-model-animation/index.html">ModelAnimation</a> with a given name inside an <a href="../-animatable-model/index.html">AnimatableModel</a>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-897578288%2FFunctions%2F1588378196" anchor-label="ofAnimationFraction" id="-897578288%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="of-animation-fraction.html"><span>of</span><wbr><span>Animation</span><wbr><span><span>Fraction</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-897578288%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-fraction.html"><span class="token function">ofAnimationFraction</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animationIndex<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">fractions<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-fraction.html"><span class="token function">ofAnimationFraction</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animation<span class="token operator">: </span><a href="../-model-animation/index.html">ModelAnimation</a><span class="token punctuation">, </span></span><span class="parameter ">fractions<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-fraction.html"><span class="token function">ofAnimationFraction</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animationName<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">fractions<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="brief ">Constructs and returns an ObjectAnimator clipping a <a href="../-model-animation/index.html">ModelAnimation</a> to a given set of fraction values.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-289303538%2FFunctions%2F1588378196" anchor-label="ofAnimationFrame" id="-289303538%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="of-animation-frame.html"><span>of</span><wbr><span>Animation</span><wbr><span><span>Frame</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-289303538%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-frame.html"><span class="token function">ofAnimationFrame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animationIndex<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">frames<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-frame.html"><span class="token function">ofAnimationFrame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animation<span class="token operator">: </span><a href="../-model-animation/index.html">ModelAnimation</a><span class="token punctuation">, </span></span><span class="parameter ">frames<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-frame.html"><span class="token function">ofAnimationFrame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animationName<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">frames<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="brief ">Constructs and returns an ObjectAnimator clipping a <a href="../-model-animation/index.html">ModelAnimation</a> to a given set of frame values.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2014204741%2FFunctions%2F1588378196" anchor-label="ofAnimationTime" id="2014204741%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="of-animation-time.html"><span>of</span><wbr><span>Animation</span><wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2014204741%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-time.html"><span class="token function">ofAnimationTime</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animationIndex<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">times<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-time.html"><span class="token function">ofAnimationTime</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animation<span class="token operator">: </span><a href="../-model-animation/index.html">ModelAnimation</a><span class="token punctuation">, </span></span><span class="parameter ">times<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-time.html"><span class="token function">ofAnimationTime</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animationName<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">times<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="brief ">Constructs and returns an ObjectAnimator clipping a <a href="../-model-animation/index.html">ModelAnimation</a> to a given set of time values.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2147176418%2FFunctions%2F1588378196" anchor-label="ofMultipleAnimations" id="-2147176418%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="of-multiple-animations.html"><span>of</span><wbr><span>Multiple</span><wbr><span><span>Animations</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2147176418%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-multiple-animations.html"><span class="token function">ofMultipleAnimations</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">animationNames<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a><span class="token operator">&gt;</span></div><div class="brief ">Constructs and returns list of <a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a> given names inside an <a href="../-animatable-model/index.html">AnimatableModel</a>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1485799945%2FFunctions%2F1588378196" anchor-label="ofPropertyValuesHolder" id="1485799945%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="of-property-values-holder.html"><span>of</span><wbr><span>Property</span><wbr><span>Values</span><wbr><span><span>Holder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1485799945%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-property-values-holder.html"><span class="token function">ofPropertyValuesHolder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">model<span class="token operator">: </span><a href="../-animatable-model/index.html">AnimatableModel</a><span class="token punctuation">, </span></span><span class="parameter ">values<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/android/animation/PropertyValuesHolder.html">PropertyValuesHolder</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div><div class="brief ">Constructs and returns an ObjectAnimator a <a href="../-model-animation/index.html">ModelAnimation</a> applying PropertyValuesHolders.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

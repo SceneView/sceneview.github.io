@@ -1,394 +1,513 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>io.github.sceneview.material</title>
-<link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../styles/style.css" rel="Stylesheet">
-<link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../styles/main.css" rel="Stylesheet">
 <link href="../../styles/prism.css" rel="Stylesheet">
 <link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../scripts/main.js" defer></script>
-<script type="text/javascript" src="../../scripts/prism.js" async></script></head>
+<script type="text/javascript" src="../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../index.html">
-<span>SceneView</span>            </a>    </div>
-    <div>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sceneview:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="sceneview::io.github.sceneview.material////PointingToDeclaration//1588378196">
-  <div class="breadcrumbs"><a href="../index.html">sceneview</a><span class="delimiter">/</span><a href="index.html">io.github.sceneview.material</a></div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageids="sceneview::io.github.sceneview.material////PointingToDeclaration//1588378196">
+  <div class="breadcrumbs"><a href="../index.html">sceneview</a><span class="delimiter">/</span><span class="current">io.github.sceneview.material</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Package io.</span><wbr><span>github.</span><wbr><span>sceneview.</span><wbr><span>material</span></h1>
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Functions">Functions</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Types</h2>
-      <div class="table" data-togglable="Types"><a data-name="63370127%2FClasslikes%2F1588378196" anchor-label="MaterialLoader" id="63370127%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-material-loader/index.html"><span>Material</span><wbr><span><span>Loader</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="63370127%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-material-loader/index.html">MaterialLoader</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1156222359%2FClasslikes%2F1588378196" anchor-label="ImageMaterial" id="1156222359%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-image-material/index.html"><span>Image</span><wbr><span><span>Material</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1156222359%2FClasslikes%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-image-material/index.html">ImageMaterial</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-641268105%2FClasslikes%2F1588378196" anchor-label="VideoMaterial" id="-641268105%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-video-material/index.html"><span>Video</span><wbr><span><span>Material</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-641268105%2FClasslikes%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-video-material/index.html">VideoMaterial</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h2 class="">Functions</h2>
-      <div class="table" data-togglable="Functions"><a data-name="1274797275%2FFunctions%2F1588378196" anchor-label="build" id="1274797275%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="build.html"><span><span>build</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1274797275%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/Material.Builder///PointingToDeclaration/">Material.Builder</span><span class="token punctuation">.</span><a href="build.html"><span class="token function">build</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Material///PointingToDeclaration/">Material</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-584558232%2FProperties%2F1588378196" anchor-label="kMaterialDefaultMetallic" id="-584558232%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="k-material-default-metallic.html"><span>k</span><wbr><span>Material</span><wbr><span>Default</span><wbr><span><span>Metallic</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-584558232%2FProperties%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="k-material-default-metallic.html">kMaterialDefaultMetallic</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">0.0f</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1424737145%2FProperties%2F1588378196" anchor-label="kMaterialDefaultReflectance" id="-1424737145%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="k-material-default-reflectance.html"><span>k</span><wbr><span>Material</span><wbr><span>Default</span><wbr><span><span>Reflectance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1424737145%2FProperties%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="k-material-default-reflectance.html">kMaterialDefaultReflectance</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">0.5f</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1755914627%2FProperties%2F1588378196" anchor-label="kMaterialDefaultRoughness" id="1755914627%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="k-material-default-roughness.html"><span>k</span><wbr><span>Material</span><wbr><span>Default</span><wbr><span><span>Roughness</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1755914627%2FProperties%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="k-material-default-roughness.html">kMaterialDefaultRoughness</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">0.4f</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-<a data-name="2074800173%2FFunctions%2F1588378196" anchor-label="destroy" id="2074800173%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="destroy.html"><span><span>destroy</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2074800173%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/Material///PointingToDeclaration/">Material</span><span class="token punctuation">.</span><a href="destroy.html"><span class="token function">destroy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="destroy.html"><span class="token function">destroy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="1917371295%2FFunctions%2F1588378196" anchor-label="setAoIndex" id="1917371295%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-ao-index.html"><span>set</span><wbr><span>Ao</span><wbr><span><span>Index</span></span></a></div>
+      </div>
+      <div data-togglable="EXTENSION_FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1917371295%2FFunctions%2F1588378196" anchor-label="setAoIndex" id="1917371295%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-ao-index.html"><span>set</span><wbr><span>Ao</span><wbr><span><span>Index</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1917371295%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-ao-index.html"><span class="token function">setAoIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-ao-index.html"><span class="token function">setAoIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="433836113%2FFunctions%2F1588378196" anchor-label="setAoStrength" id="433836113%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-ao-strength.html"><span>set</span><wbr><span>Ao</span><wbr><span><span>Strength</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-ao-strength.html"><span>set</span><wbr><span>Ao</span><wbr><span><span>Strength</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="433836113%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-ao-strength.html"><span class="token function">setAoStrength</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-ao-strength.html"><span class="token function">setAoStrength</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1965923504%2FFunctions%2F1588378196" anchor-label="setBaseColor" id="1965923504%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-base-color.html"><span>set</span><wbr><span>Base</span><wbr><span><span>Color</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-base-color.html"><span>set</span><wbr><span>Base</span><wbr><span><span>Color</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1965923504%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-base-color.html"><span class="token function">setBaseColor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../io.github.sceneview.utils/index.html#289679020%2FClasslikes%2F1588378196">Color</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-base-color.html"><span class="token function">setBaseColor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../io.github.sceneview.utils/-color/index.html">Color</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1566515347%2FFunctions%2F1588378196" anchor-label="setBaseColorIndex" id="-1566515347%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-base-color-index.html"><span>set</span><wbr><span>Base</span><wbr><span>Color</span><wbr><span><span>Index</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-base-color-index.html"><span>set</span><wbr><span>Base</span><wbr><span>Color</span><wbr><span><span>Index</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1566515347%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-base-color-index.html"><span class="token function">setBaseColorIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-base-color-index.html"><span class="token function">setBaseColorIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1542179154%2FFunctions%2F1588378196" anchor-label="setBaseColorMap" id="-1542179154%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-base-color-map.html"><span>set</span><wbr><span>Base</span><wbr><span>Color</span><wbr><span><span>Map</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-base-color-map.html"><span>set</span><wbr><span>Base</span><wbr><span>Color</span><wbr><span><span>Map</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1542179154%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-base-color-map.html"><span class="token function">setBaseColorMap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">textureSampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-base-color-map.html"><span class="token function">setBaseColorMap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">sampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-525888028%2FFunctions%2F1588378196" anchor-label="setBaseTexture" id="-525888028%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-base-texture.html"><span>set</span><wbr><span>Base</span><wbr><span><span>Texture</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-base-texture.html"><span>set</span><wbr><span>Base</span><wbr><span><span>Texture</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-525888028%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-base-texture.html"><span class="token function">setBaseTexture</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">textureSampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-base-texture.html"><span class="token function">setBaseTexture</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">textureSampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+<a data-name="-1522626035%2FFunctions%2F1588378196" anchor-label="setColor" id="-1522626035%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-color.html"><span>set</span><wbr><span><span>Color</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1522626035%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-color.html"><span class="token function">setColor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">color<span class="token operator">: </span><a href="../io.github.sceneview.utils/-color/index.html">Color</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-color.html"><span class="token function">setColor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">color<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-1969705162%2FFunctions%2F1588378196" anchor-label="setEmissiveColor" id="-1969705162%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-emissive-color.html"><span>set</span><wbr><span>Emissive</span><wbr><span><span>Color</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-emissive-color.html"><span>set</span><wbr><span>Emissive</span><wbr><span><span>Color</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1969705162%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-emissive-color.html"><span class="token function">setEmissiveColor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../io.github.sceneview.utils/index.html#289679020%2FClasslikes%2F1588378196">Color</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-emissive-color.html"><span class="token function">setEmissiveColor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../io.github.sceneview.utils/-color/index.html">Color</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1664350456%2FFunctions%2F1588378196" anchor-label="setEmissiveIndex" id="-1664350456%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-emissive-index.html"><span>set</span><wbr><span>Emissive</span><wbr><span><span>Index</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-emissive-index.html"><span>set</span><wbr><span>Emissive</span><wbr><span><span>Index</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1664350456%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-emissive-index.html"><span class="token function">setEmissiveIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-emissive-index.html"><span class="token function">setEmissiveIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1870629769%2FFunctions%2F1588378196" anchor-label="setEmissiveMap" id="1870629769%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-emissive-map.html"><span>set</span><wbr><span>Emissive</span><wbr><span><span>Map</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-emissive-map.html"><span>set</span><wbr><span>Emissive</span><wbr><span><span>Map</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1870629769%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-emissive-map.html"><span class="token function">setEmissiveMap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">textureSampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-emissive-map.html"><span class="token function">setEmissiveMap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">textureSampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-107128856%2FFunctions%2F1588378196" anchor-label="setExternalTexture" id="-107128856%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-external-texture.html"><span>set</span><wbr><span>External</span><wbr><span><span>Texture</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-107128856%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-external-texture.html"><span class="token function">setExternalTexture</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+<a data-name="330446431%2FFunctions%2F1588378196" anchor-label="setExternalTexture" id="330446431%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-external-texture.html"><span>set</span><wbr><span>External</span><wbr><span><span>Texture</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="330446431%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-external-texture.html"><span class="token function">setExternalTexture</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-external-texture.html"><span class="token function">setExternalTexture</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+<a data-name="-1191039999%2FFunctions%2F1588378196" anchor-label="setMetallic" id="-1191039999%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-metallic.html"><span>set</span><wbr><span><span>Metallic</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1191039999%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-metallic.html"><span class="token function">setMetallic</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">factor<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">The metallic property defines whether the surface is a metallic (conductor) or a non-metallic (dielectric) surface.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-812864014%2FFunctions%2F1588378196" anchor-label="setMetallicFactor" id="-812864014%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-metallic-factor.html"><span>set</span><wbr><span>Metallic</span><wbr><span><span>Factor</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-metallic-factor.html"><span>set</span><wbr><span>Metallic</span><wbr><span><span>Factor</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-812864014%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-metallic-factor.html"><span class="token function">setMetallicFactor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-metallic-factor.html"><span class="token function">setMetallicFactor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="263568652%2FFunctions%2F1588378196" anchor-label="setMetallicRoughnessIndex" id="263568652%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-metallic-roughness-index.html"><span>set</span><wbr><span>Metallic</span><wbr><span>Roughness</span><wbr><span><span>Index</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-metallic-roughness-index.html"><span>set</span><wbr><span>Metallic</span><wbr><span>Roughness</span><wbr><span><span>Index</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="263568652%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-metallic-roughness-index.html"><span class="token function">setMetallicRoughnessIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-metallic-roughness-index.html"><span class="token function">setMetallicRoughnessIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="19509389%2FFunctions%2F1588378196" anchor-label="setMetallicRoughnessMap" id="19509389%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-metallic-roughness-map.html"><span>set</span><wbr><span>Metallic</span><wbr><span>Roughness</span><wbr><span><span>Map</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-metallic-roughness-map.html"><span>set</span><wbr><span>Metallic</span><wbr><span>Roughness</span><wbr><span><span>Map</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="19509389%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-metallic-roughness-map.html"><span class="token function">setMetallicRoughnessMap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">textureSampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-metallic-roughness-map.html"><span class="token function">setMetallicRoughnessMap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">sampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-835981224%2FFunctions%2F1588378196" anchor-label="setNormalIndex" id="-835981224%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-normal-index.html"><span>set</span><wbr><span>Normal</span><wbr><span><span>Index</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-normal-index.html"><span>set</span><wbr><span>Normal</span><wbr><span><span>Index</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-835981224%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-normal-index.html"><span class="token function">setNormalIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-normal-index.html"><span class="token function">setNormalIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="322429145%2FFunctions%2F1588378196" anchor-label="setNormalMap" id="322429145%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-normal-map.html"><span>set</span><wbr><span>Normal</span><wbr><span><span>Map</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-normal-map.html"><span>set</span><wbr><span>Normal</span><wbr><span><span>Map</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="322429145%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-normal-map.html"><span class="token function">setNormalMap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">textureSampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-normal-map.html"><span class="token function">setNormalMap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">textureSampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="651881555%2FFunctions%2F1588378196" anchor-label="setNormalScale" id="651881555%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-normal-scale.html"><span>set</span><wbr><span>Normal</span><wbr><span><span>Scale</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-normal-scale.html"><span>set</span><wbr><span>Normal</span><wbr><span><span>Scale</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="651881555%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-normal-scale.html"><span class="token function">setNormalScale</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-normal-scale.html"><span class="token function">setNormalScale</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-2019738903%2FFunctions%2F1588378196" anchor-label="setOcclusionMap" id="-2019738903%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-occlusion-map.html"><span>set</span><wbr><span>Occlusion</span><wbr><span><span>Map</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-occlusion-map.html"><span>set</span><wbr><span>Occlusion</span><wbr><span><span>Map</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2019738903%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-occlusion-map.html"><span class="token function">setOcclusionMap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">textureSampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-occlusion-map.html"><span class="token function">setOcclusionMap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">textureSampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="400537967%2FFunctions%2F1588378196" anchor-label="setParameter" id="400537967%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-parameter.html"><span>set</span><wbr><span><span>Parameter</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-parameter.html"><span>set</span><wbr><span><span>Parameter</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="400537967%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-parameter.html"><span class="token function">setParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Float2///PointingToDeclaration/">Float2</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-parameter.html"><span class="token function">setParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Float3///PointingToDeclaration/">Float3</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-parameter.html"><span class="token function">setParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Float4///PointingToDeclaration/">Float4</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-parameter.html"><span class="token function">setParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Mat4///PointingToDeclaration/">Mat4</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-parameter.html"><span class="token function">setParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Float2///PointingToDeclaration/">Float2</span></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-parameter.html"><span class="token function">setParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Float3///PointingToDeclaration/">Float3</span></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-parameter.html"><span class="token function">setParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Float4///PointingToDeclaration/">Float4</span></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-parameter.html"><span class="token function">setParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Mat4///PointingToDeclaration/">Mat4</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+<a data-name="-759929206%2FFunctions%2F1588378196" anchor-label="setReflectance" id="-759929206%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-reflectance.html"><span>set</span><wbr><span><span>Reflectance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-759929206%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-reflectance.html"><span class="token function">setReflectance</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">factor<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">The reflectance property only affects non-metallic surfaces.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-285657914%2FFunctions%2F1588378196" anchor-label="setRoughness" id="-285657914%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-roughness.html"><span>set</span><wbr><span><span>Roughness</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-285657914%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-roughness.html"><span class="token function">setRoughness</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">factor<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">The roughness property controls the perceived smoothness of the surface.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="1464422135%2FFunctions%2F1588378196" anchor-label="setRoughnessFactor" id="1464422135%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-roughness-factor.html"><span>set</span><wbr><span>Roughness</span><wbr><span><span>Factor</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-roughness-factor.html"><span>set</span><wbr><span>Roughness</span><wbr><span><span>Factor</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1464422135%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-roughness-factor.html"><span class="token function">setRoughnessFactor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-roughness-factor.html"><span class="token function">setRoughnessFactor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="1983384814%2FFunctions%2F1588378196" anchor-label="setTexture" id="1983384814%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-texture.html"><span>set</span><wbr><span><span>Texture</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1983384814%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-texture.html"><span class="token function">setTexture</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;textureSampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+<a data-name="878965228%2FFunctions%2F1588378196" anchor-label="setTexture" id="878965228%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-texture.html"><span>set</span><wbr><span><span>Texture</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="878965228%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-texture.html"><span class="token function">setTexture</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">.</span><a href="set-texture.html"><span class="token function">setTexture</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">texture<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token punctuation">, </span></span><span class="parameter ">sampler<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TextureSampler///PointingToDeclaration/">TextureSampler</span><span class="token operator"> = </span>TextureSampler2D()</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -400,8 +519,9 @@ if(savedDarkMode === true){
       <div class="footer">
         <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 
