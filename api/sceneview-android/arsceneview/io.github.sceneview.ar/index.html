@@ -1,321 +1,367 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>io.github.sceneview.ar</title>
-<link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../styles/style.css" rel="Stylesheet">
-<link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../styles/main.css" rel="Stylesheet">
 <link href="../../styles/prism.css" rel="Stylesheet">
 <link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../scripts/main.js" defer></script>
-<script type="text/javascript" src="../../scripts/prism.js" async></script></head>
+<script type="text/javascript" src="../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../index.html">
-<span>SceneView</span>            </a>    </div>
-    <div>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":arsceneview:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="arsceneview::io.github.sceneview.ar////PointingToDeclaration//1238612933">
-  <div class="breadcrumbs"><a href="../index.html">arsceneview</a><span class="delimiter">/</span><a href="index.html">io.github.sceneview.ar</a></div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageids="arsceneview::io.github.sceneview.ar////PointingToDeclaration//1238612933">
+  <div class="breadcrumbs"><a href="../index.html">arsceneview</a><span class="delimiter">/</span><span class="current">io.github.sceneview.ar</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Package io.</span><wbr><span>github.</span><wbr><span>sceneview.</span><wbr><span>ar</span></h1>
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Types</h2>
-      <div class="table" data-togglable="Types"><a data-name="1710820387%2FClasslikes%2F1238612933" anchor-label="ARCore" id="1710820387%2FClasslikes%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-a-r-core/index.html"><span><span>ARCore</span></span></a></div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1710820387%2FClasslikes%2F1238612933" anchor-label="ARCore" id="1710820387%2FClasslikes%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-r-core/index.html"><span><span>ARCore</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1710820387%2FClasslikes%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-a-r-core/index.html">ARCore</a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>onSessionCreated<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><a href="../io.github.sceneview.ar.arcore/-ar-session/index.html">ArSession</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>onSessionResumed<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><a href="../io.github.sceneview.ar.arcore/-ar-session/index.html">ArSession</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>onArSessionFailed<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html">Exception</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>onSessionConfigChanged<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><a href="../io.github.sceneview.ar.arcore/-ar-session/index.html">ArSession</a><span class="token punctuation">, </span><span class="token keyword"></span>config<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Config///PointingToDeclaration/">Config</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Manages an ARCore Session using the Android Lifecycle API. Before starting a Session, this class requests installation of Google Play Services for AR if it's not installed or not up to date and asks the user for required permissions if necessary.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-a-r-core/index.html">ARCore</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>onSessionCreated<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>onSessionResumed<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>onArSessionFailed<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html">Exception</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>onSessionConfigChanged<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">, </span><span class="token keyword"></span>config<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Config///PointingToDeclaration/">Config</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Manages an ARCore Session using the Android Lifecycle API. Before starting a Session, this class requests installation of Google Play Services for AR if it's not installed or not up to date and asks the user for required permissions if necessary.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="396908018%2FClasslikes%2F1238612933" anchor-label="ArFragment" id="396908018%2FClasslikes%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-ar-fragment/index.html"><span>Ar</span><wbr><span><span>Fragment</span></span></a></div>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-ar-fragment/index.html"><span>Ar</span><wbr><span><span>Fragment</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="396908018%2FClasslikes%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace strikethrough"><strike><span class="token keyword">class </span></strike><a href="-ar-fragment/index.html"><strike>ArFragment</strike></a><strike> : </strike><a href="-base-ar-fragment/index.html"><strike>BaseArFragment</strike></a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-ar-fragment/index.html"><strike>ArFragment</strike></a> : <a href="-base-ar-fragment/index.html">BaseArFragment</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-853509105%2FClasslikes%2F1238612933" anchor-label="ArSceneView" id="-853509105%2FClasslikes%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-ar-scene-view/index.html"><span>Ar</span><wbr><span>Scene</span><wbr><span><span>View</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-853509105%2FClasslikes%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-ar-scene-view/index.html">ArSceneView</a>&nbsp;<span><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a>&nbsp;</span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;attrs<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/AttributeSet.html">AttributeSet</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyleAttr<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;defStyleRes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token operator"> = </span>Filament.retain()<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>sessionFeatures<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="com.google.ar.core/Session.Feature///PointingToDeclaration/">Session.Feature</span><span class="token operator">&gt;</span><span class="token operator"> = </span>setOf()<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>cameraNode<span class="token operator">: </span><a href="../io.github.sceneview.ar.node/-ar-camera-node/index.html">ArCameraNode</a><span class="token operator"> = </span>ArCameraNode(engine)</span></span><span class="token punctuation">)</span> : <a href="../../sceneview/io.github.sceneview/-scene-view/index.html">SceneView</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+<a data-name="-234322961%2FClasslikes%2F1238612933" anchor-label="ARSceneView" id="-234322961%2FClasslikes%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-r-scene-view/index.html"><span>ARScene</span><wbr><span><span>View</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-234322961%2FClasslikes%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-a-r-scene-view/index.html">ARSceneView</a>&nbsp;<span><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a>&nbsp;</span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">attrs<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/AttributeSet.html">AttributeSet</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">defStyleAttr<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter ">defStyleRes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter ">sharedEngine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">sharedScene<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Scene///PointingToDeclaration/">Scene</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">sharedView<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/View///PointingToDeclaration/">View</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">sharedRenderer<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Renderer///PointingToDeclaration/">Renderer</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">sharedModelLoader<span class="token operator">: </span><a href="../../sceneview/io.github.sceneview.loaders/-model-loader/index.html">ModelLoader</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">sharedMaterialLoader<span class="token operator">: </span><a href="../../sceneview/io.github.sceneview.loaders/-material-loader/index.html">MaterialLoader</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>sessionFeatures<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="com.google.ar.core/Session.Feature///PointingToDeclaration/">Session.Feature</span><span class="token operator">&gt;</span><span class="token operator"> = </span>setOf()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>cameraConfig<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="com.google.ar.core/CameraConfig///PointingToDeclaration/">CameraConfig</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">cameraNode<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span><span class="token keyword"></span>viewSize<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/Size.html">Size</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../io.github.sceneview.ar.node/-a-r-camera-node/index.html">ARCameraNode</a><span class="token operator"> = </span>{ engine, viewSize -&gt;
+        ARCameraNode(engine, viewSize)
+    }<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>onSessionConfiguration<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="com.google.ar.core/Config///PointingToDeclaration/">Config</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>onSessionCreated<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>onSessionUpdated<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">, </span><span class="token keyword"></span>frame<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Frame///PointingToDeclaration/">Frame</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>onSessionResumed<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>onSessionFailed<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html">Exception</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>onSessionConfigChanged<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">, </span><span class="token keyword"></span>config<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Config///PointingToDeclaration/">Config</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onTap<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>motionEvent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token punctuation">, </span><span class="token keyword"></span>node<span class="token operator">: </span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token operator">?</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>onTapAR<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>motionEvent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token punctuation">, </span><span class="token keyword"></span>hitResult<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/HitResult///PointingToDeclaration/">HitResult</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="../../sceneview/io.github.sceneview/-scene-view/index.html">SceneView</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1628351585%2FClasslikes%2F1238612933" anchor-label="BaseArFragment" id="1628351585%2FClasslikes%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-base-ar-fragment/index.html"><span>Base</span><wbr><span>Ar</span><wbr><span><span>Fragment</span></span></a></div>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-base-ar-fragment/index.html"><span>Base</span><wbr><span>Ar</span><wbr><span><span>Fragment</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1628351585%2FClasslikes%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace strikethrough"><strike><span class="token keyword">open </span></strike><strike><span class="token keyword">class </span></strike><a href="-base-ar-fragment/index.html"><strike>BaseArFragment</strike></a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-base-ar-fragment/index.html"><strike>BaseArFragment</strike></a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+<a data-name="-1523903979%2FClasslikes%2F1238612933" anchor-label="PlaneVisualizer" id="-1523903979%2FClasslikes%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-plane-visualizer/index.html"><span>Plane</span><wbr><span><span>Visualizer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1523903979%2FClasslikes%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-plane-visualizer/index.html">PlaneVisualizer</a> : <a href="../../sceneview/io.github.sceneview.collision/-transform-provider/index.html">TransformProvider</a></div><div class="brief ">Renders a single ARCore Plane.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="1893771171%2FClasslikes%2F1238612933" anchor-label="Scene" id="1893771171%2FClasslikes%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-scene/index.html"><span><span>Scene</span></span></a></div>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-scene/index.html"><span><span>Scene</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1893771171%2FClasslikes%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace strikethrough"><strike><span class="token keyword">class </span></strike><a href="-scene/index.html"><strike>Scene</strike></a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph"><i>= </i><a href="../../sceneview/io.github.sceneview/-scene-view/index.html"><i>SceneView</i></a><i>/</i><a href="-ar-scene-view/index.html"><i>ArSceneView</i></a><i> is a Scene (NodeParent)</i> that can contain</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-scene/index.html"><strike>Scene</strike></a></div><div class="brief "><p class="paragraph"><i>= </i><a href="../../sceneview/io.github.sceneview/-scene-view/index.html"><i>SceneView</i></a><i>/</i><a href="-a-r-scene-view/index.html"><i>ARSceneView</i></a><i> is a Scene (NodeParent)</i> that can contain</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h2 class="">Functions</h2>
-      <div class="table" data-togglable="Functions"><a data-name="-733474713%2FFunctions%2F1238612933" anchor-label="addLifecycleListener" id="-733474713%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="add-lifecycle-listener.html"><span>add</span><wbr><span>Lifecycle</span><wbr><span><span>Listener</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-733474713%2FFunctions%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace strikethrough"><strike><span class="token keyword"></span></strike><strike><span class="token keyword">fun </span></strike><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><strike><span class="token punctuation">.</span></strike><a href="add-lifecycle-listener.html"><strike><span class="token function">addLifecycleListener</span></strike></a><strike><span class="token punctuation">(</span></strike><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><strike><span class="token punctuation">)</span></strike><strike><span class="token operator">: </span></strike><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html">Nothing</a><span class="token operator">?</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="-846754359%2FFunctions%2F1238612933" anchor-label="addTransformChangedListener" id="-846754359%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="add-transform-changed-listener.html"><span>add</span><wbr><span>Transform</span><wbr><span>Changed</span><wbr><span><span>Listener</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-846754359%2FFunctions%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace strikethrough"><strike><span class="token keyword"></span></strike><strike><span class="token keyword">fun </span></strike><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><strike><span class="token punctuation">.</span></strike><a href="add-transform-changed-listener.html"><strike><span class="token function">addTransformChangedListener</span></strike></a><strike><span class="token punctuation">(</span></strike><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><strike><span class="token punctuation">)</span></strike><strike><span class="token operator">: </span></strike><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html">Nothing</a><span class="token operator">?</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="-588867573%2FFunctions%2F1238612933" anchor-label="ARScene" id="-588867573%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-a-r-scene.html"><span><span>ARScene</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-588867573%2FFunctions%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation">Composable</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="-a-r-scene.html"><span class="token function">ARScene</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;modifier<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier.html">Modifier</a><span class="token operator"> = </span>Modifier<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;nodes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token operator">&gt;</span><span class="token operator"> = </span>listOf()<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;planeRenderer<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onCreate<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="-ar-scene-view/index.html">ArSceneView</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onSessionCreate<span class="token operator">: </span><span class="token keyword"></span><a href="-ar-scene-view/index.html">ArSceneView</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><a href="../io.github.sceneview.ar.arcore/-ar-session/index.html">ArSession</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onTrackingFailureChanged<span class="token operator">: </span><span class="token keyword"></span><a href="-ar-scene-view/index.html">ArSceneView</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token keyword"></span>trackingFailureReason<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/TrackingFailureReason///PointingToDeclaration/">TrackingFailureReason</span><span class="token operator">?</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onFrame<span class="token operator">: </span><span class="token keyword"></span><a href="-ar-scene-view/index.html">ArSceneView</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token keyword"></span>arFrame<span class="token operator">: </span><a href="../io.github.sceneview.ar.arcore/-ar-frame/index.html">ArFrame</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onTap<span class="token operator">: </span><span class="token keyword"></span><a href="-ar-scene-view/index.html">ArSceneView</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token keyword"></span>hitResult<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/HitResult///PointingToDeclaration/">HitResult</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="-319977214%2FFunctions%2F1238612933" anchor-label="configure" id="-319977214%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="configure.html"><span><span>configure</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-319977214%2FFunctions%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace strikethrough"><strike><span class="token keyword"></span></strike><strike><span class="token keyword">fun </span></strike><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><strike><span class="token punctuation">.</span></strike><a href="configure.html"><strike><span class="token function">configure</span></strike></a><strike><span class="token punctuation">(</span></strike><span class="parameters "><span class="parameter ">config<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Config///PointingToDeclaration/">Config</span></span></span><strike><span class="token punctuation">)</span></strike><strike><span class="token operator">: </span></strike><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html">Nothing</a><span class="token operator">?</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="-2070751118%2FFunctions%2F1238612933" anchor-label="getConfig" id="-2070751118%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-config.html"><span>get</span><wbr><span><span>Config</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2070751118%2FFunctions%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace strikethrough"><strike><span class="token keyword"></span></strike><strike><span class="token keyword">fun </span></strike><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><strike><span class="token punctuation">.</span></strike><a href="get-config.html"><strike><span class="token function">getConfig</span></strike></a><strike><span class="token punctuation">(</span></strike><strike><span class="token punctuation">)</span></strike><strike><span class="token operator">: </span></strike><span data-unresolved-link="com.google.ar.core/Config///PointingToDeclaration/">Config</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="1593329764%2FFunctions%2F1238612933" anchor-label="getDescription" id="1593329764%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-description.html"><span>get</span><wbr><span><span>Description</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1593329764%2FFunctions%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.ar.core/TrackingFailureReason///PointingToDeclaration/">TrackingFailureReason</span><span class="token punctuation">.</span><a href="get-description.html"><span class="token function">getDescription</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="-1145660841%2FFunctions%2F1238612933" anchor-label="getScene" id="-1145660841%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-scene.html"><span>get</span><wbr><span><span>Scene</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1145660841%2FFunctions%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace strikethrough"><strike><span class="token keyword"></span></strike><strike><span class="token keyword">fun </span></strike><a href="../../sceneview/io.github.sceneview/-scene-view/index.html">SceneView</a><strike><span class="token punctuation">.</span></strike><a href="get-scene.html"><strike><span class="token function">getScene</span></strike></a><strike><span class="token punctuation">(</span></strike><strike><span class="token punctuation">)</span></strike><strike><span class="token operator">: </span></strike><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html">Nothing</a><span class="token operator">?</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph"><i>= </i><a href="../../sceneview/io.github.sceneview/-scene-view/index.html"><i>SceneView</i></a><i>/</i><a href="-ar-scene-view/index.html"><i>ArSceneView</i></a><i> is a Scene (NodeParent)</i> that can contain</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="-1818249598%2FFunctions%2F1238612933" anchor-label="onUpdated" id="-1818249598%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="on-updated.html"><span>on</span><wbr><span><span>Updated</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1818249598%2FFunctions%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace strikethrough"><strike><span class="token keyword"></span></strike><strike><span class="token keyword">fun </span></strike><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><strike><span class="token punctuation">.</span></strike><a href="on-updated.html"><strike><span class="token function">onUpdated</span></strike></a><strike><span class="token punctuation">(</span></strike><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token punctuation">, </span></span><span class="parameter ">frameTime<span class="token operator">: </span><a href="../../sceneview/io.github.sceneview.utils/-frame-time/index.html">FrameTime</a></span></span><strike><span class="token punctuation">)</span></strike><strike><span class="token operator">: </span></strike><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html">Nothing</a><span class="token operator">?</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="-1049846044%2FProperties%2F1238612933" anchor-label="defaultApproximateDistance" id="-1049846044%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="default-approximate-distance.html"><span>default</span><wbr><span>Approximate</span><wbr><span><span>Distance</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1049846044%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="-1049846044%2FProperties%2F1238612933" anchor-label="defaultApproximateDistance" id="-1049846044%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="default-approximate-distance.html">defaultApproximateDistance</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">2.0f</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1049846044%2FProperties%2F1238612933" anchor-label="defaultApproximateDistance" id="-1049846044%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><p class="paragraph">place models</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="1463610436%2FProperties%2F1238612933" anchor-label="isFocusable" id="1463610436%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="is-focusable.html"><span>is</span><wbr><span><span>Focusable</span></span></a></div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1463610436%2FProperties%2F1238612933" anchor-label="isFocusable" id="1463610436%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-focusable.html"><span>is</span><wbr><span><span>Focusable</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1463610436%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="1463610436%2FProperties%2F1238612933" anchor-label="isFocusable" id="1463610436%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace strikethrough"><strike><span class="token keyword"></span></strike><strike><span class="token keyword">var </span></strike><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><strike><span class="token punctuation">.</span></strike><a href="is-focusable.html"><strike>isFocusable</strike></a><strike><span class="token operator">: </span></strike><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token punctuation">.</span><a href="is-focusable.html"><strike>isFocusable</strike></a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+<a data-name="-832244475%2FProperties%2F1238612933" anchor-label="kDefaultHitTestInstantDistance" id="-832244475%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="k-default-hit-test-instant-distance.html"><span>k</span><wbr><span>Default</span><wbr><span>Hit</span><wbr><span>Test</span><wbr><span>Instant</span><wbr><span><span>Distance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-832244475%2FProperties%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="k-default-hit-test-instant-distance.html">kDefaultHitTestInstantDistance</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">2.0f</span></div><div class="brief "><p class="paragraph">place models</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="1086424336%2FProperties%2F1238612933" anchor-label="localPosition" id="1086424336%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="local-position.html"><span>local</span><wbr><span><span>Position</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="local-position.html"><span>local</span><wbr><span><span>Position</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1086424336%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="1086424336%2FProperties%2F1238612933" anchor-label="localPosition" id="1086424336%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace strikethrough"><strike><span class="token keyword"></span></strike><strike><span class="token keyword">var </span></strike><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><strike><span class="token punctuation">.</span></strike><a href="local-position.html"><strike>localPosition</strike></a><strike><span class="token operator">: </span></strike><span data-unresolved-link="dev.romainguy.kotlin.math/Float3///PointingToDeclaration/">Float3</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token punctuation">.</span><a href="local-position.html"><strike>localPosition</strike></a><span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Float3///PointingToDeclaration/">Float3</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-376190555%2FProperties%2F1238612933" anchor-label="localRotation" id="-376190555%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="local-rotation.html"><span>local</span><wbr><span><span>Rotation</span></span></a></div>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="local-rotation.html"><span>local</span><wbr><span><span>Rotation</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-376190555%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="-376190555%2FProperties%2F1238612933" anchor-label="localRotation" id="-376190555%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace strikethrough"><strike><span class="token keyword"></span></strike><strike><span class="token keyword">var </span></strike><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><strike><span class="token punctuation">.</span></strike><a href="local-rotation.html"><strike>localRotation</strike></a><strike><span class="token operator">: </span></strike><span data-unresolved-link="dev.romainguy.kotlin.math/Float3///PointingToDeclaration/">Float3</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token punctuation">.</span><a href="local-rotation.html"><strike>localRotation</strike></a><span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Float3///PointingToDeclaration/">Float3</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1287260803%2FProperties%2F1238612933" anchor-label="localScale" id="-1287260803%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="local-scale.html"><span>local</span><wbr><span><span>Scale</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1287260803%2FProperties%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token punctuation">.</span><a href="local-scale.html"><strike>localScale</strike></a><span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Float3///PointingToDeclaration/">Float3</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-<a data-name="-1287260803%2FProperties%2F1238612933" anchor-label="localScale" id="-1287260803%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="local-scale.html"><span>local</span><wbr><span><span>Scale</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1287260803%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="-1287260803%2FProperties%2F1238612933" anchor-label="localScale" id="-1287260803%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace strikethrough"><strike><span class="token keyword"></span></strike><strike><span class="token keyword">var </span></strike><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><strike><span class="token punctuation">.</span></strike><a href="local-scale.html"><strike>localScale</strike></a><strike><span class="token operator">: </span></strike><span data-unresolved-link="dev.romainguy.kotlin.math/Float3///PointingToDeclaration/">Float3</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-733474713%2FFunctions%2F1238612933" anchor-label="addLifecycleListener" id="-733474713%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-lifecycle-listener.html"><span>add</span><wbr><span>Lifecycle</span><wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-733474713%2FFunctions%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token punctuation">.</span><a href="add-lifecycle-listener.html"><span class="token function"><strike>addLifecycleListener</strike></span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html">Nothing</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-846754359%2FFunctions%2F1238612933" anchor-label="addTransformChangedListener" id="-846754359%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-transform-changed-listener.html"><span>add</span><wbr><span>Transform</span><wbr><span>Changed</span><wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-846754359%2FFunctions%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token punctuation">.</span><a href="add-transform-changed-listener.html"><span class="token function"><strike>addTransformChangedListener</strike></span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html">Nothing</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-587414954%2FFunctions%2F1238612933" anchor-label="ARScene" id="-587414954%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-r-scene.html"><span><span>ARScene</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-587414954%2FFunctions%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="-a-r-scene.html"><span class="token function">ARScene</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">modifier<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier.html">Modifier</a><span class="token operator"> = </span>Modifier<span class="token punctuation">, </span></span><span class="parameter ">childNodes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token operator">&gt;</span><span class="token operator"> = </span>setOf()<span class="token punctuation">, </span></span><span class="parameter ">sharedEngine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">sharedScene<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Scene///PointingToDeclaration/">Scene</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">sharedView<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/View///PointingToDeclaration/">View</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">sharedRenderer<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Renderer///PointingToDeclaration/">Renderer</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">sharedModelLoader<span class="token operator">: </span><a href="../../sceneview/io.github.sceneview.loaders/-model-loader/index.html">ModelLoader</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">sharedMaterialLoader<span class="token operator">: </span><a href="../../sceneview/io.github.sceneview.loaders/-material-loader/index.html">MaterialLoader</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">sessionFeatures<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="com.google.ar.core/Session.Feature///PointingToDeclaration/">Session.Feature</span><span class="token operator">&gt;</span><span class="token operator"> = </span>setOf()<span class="token punctuation">, </span></span><span class="parameter ">cameraConfig<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="com.google.ar.core/CameraConfig///PointingToDeclaration/">CameraConfig</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">cameraNode<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span><span class="token keyword"></span>viewSize<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/Size.html">Size</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../io.github.sceneview.ar.node/-a-r-camera-node/index.html">ARCameraNode</a><span class="token operator"> = </span>{ engine, viewSize -&gt;
+        ARCameraNode(engine, viewSize)
+    }<span class="token punctuation">, </span></span><span class="parameter ">planeRenderer<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">onSessionConfiguration<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="com.google.ar.core/Config///PointingToDeclaration/">Config</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onSessionCreated<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onSessionUpdated<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">, </span><span class="token keyword"></span>frame<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Frame///PointingToDeclaration/">Frame</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onSessionResumed<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onSessionFailed<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html">Exception</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onSessionConfigChanged<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">, </span><span class="token keyword"></span>config<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Config///PointingToDeclaration/">Config</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onTap<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>motionEvent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token punctuation">, </span><span class="token keyword"></span>node<span class="token operator">: </span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token operator">?</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onTapAR<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>motionEvent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token punctuation">, </span><span class="token keyword"></span>hitResult<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/HitResult///PointingToDeclaration/">HitResult</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onCreate<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="-a-r-scene-view/index.html">ARSceneView</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-319977214%2FFunctions%2F1238612933" anchor-label="configure" id="-319977214%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="configure.html"><span><span>configure</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-319977214%2FFunctions%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">.</span><a href="configure.html"><span class="token function"><strike>configure</strike></span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">config<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Config///PointingToDeclaration/">Config</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html">Nothing</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2070751118%2FFunctions%2F1238612933" anchor-label="getConfig" id="-2070751118%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-config.html"><span>get</span><wbr><span><span>Config</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2070751118%2FFunctions%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">.</span><a href="get-config.html"><span class="token function"><strike>getConfig</strike></span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Config///PointingToDeclaration/">Config</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1593329764%2FFunctions%2F1238612933" anchor-label="getDescription" id="1593329764%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-description.html"><span>get</span><wbr><span><span>Description</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1593329764%2FFunctions%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.ar.core/TrackingFailureReason///PointingToDeclaration/">TrackingFailureReason</span><span class="token punctuation">.</span><a href="get-description.html"><span class="token function">getDescription</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1145660841%2FFunctions%2F1238612933" anchor-label="getScene" id="-1145660841%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-scene.html"><span>get</span><wbr><span><span>Scene</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1145660841%2FFunctions%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../sceneview/io.github.sceneview/-scene-view/index.html">SceneView</a><span class="token punctuation">.</span><a href="get-scene.html"><span class="token function"><strike>getScene</strike></span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html">Nothing</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph"><i>= </i><a href="../../sceneview/io.github.sceneview/-scene-view/index.html"><i>SceneView</i></a><i>/</i><a href="-a-r-scene-view/index.html"><i>ARSceneView</i></a><i> is a Scene (NodeParent)</i> that can contain</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-314165482%2FFunctions%2F1238612933" anchor-label="onUpdated" id="-314165482%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-updated.html"><span>on</span><wbr><span><span>Updated</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-314165482%2FFunctions%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token punctuation">.</span><a href="on-updated.html"><span class="token function"><strike>onUpdated</strike></span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../sceneview/io.github.sceneview.node/-node/index.html">Node</a><span class="token punctuation">, </span></span><span class="parameter ">frameTime<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html">Nothing</a><span class="token operator">?</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -327,8 +373,9 @@ if(savedDarkMode === true){
       <div class="footer">
         <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 

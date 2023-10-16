@@ -1,154 +1,213 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>io.github.sceneview.gesture</title>
-<link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../styles/style.css" rel="Stylesheet">
-<link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../styles/main.css" rel="Stylesheet">
 <link href="../../styles/prism.css" rel="Stylesheet">
 <link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../scripts/main.js" defer></script>
-<script type="text/javascript" src="../../scripts/prism.js" async></script></head>
+<script type="text/javascript" src="../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../index.html">
-<span>SceneView</span>            </a>    </div>
-    <div>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sceneview:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="sceneview::io.github.sceneview.gesture////PointingToDeclaration//1588378196">
-  <div class="breadcrumbs"><a href="../index.html">sceneview</a><span class="delimiter">/</span><a href="index.html">io.github.sceneview.gesture</a></div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageids="sceneview::io.github.sceneview.gesture////PointingToDeclaration//1588378196">
+  <div class="breadcrumbs"><a href="../index.html">sceneview</a><span class="delimiter">/</span><span class="current">io.github.sceneview.gesture</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Package io.</span><wbr><span>github.</span><wbr><span>sceneview.</span><wbr><span>gesture</span></h1>
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Types</h2>
-      <div class="table" data-togglable="Types"><a data-name="-1356122611%2FClasslikes%2F1588378196" anchor-label="CameraGestureDetector" id="-1356122611%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-camera-gesture-detector/index.html"><span>Camera</span><wbr><span>Gesture</span><wbr><span><span>Detector</span></span></a></div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-1356122611%2FClasslikes%2F1588378196" anchor-label="CameraGestureDetector" id="-1356122611%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-gesture-detector/index.html"><span>Camera</span><wbr><span>Gesture</span><wbr><span><span>Detector</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1356122611%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-camera-gesture-detector/index.html">CameraGestureDetector</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">sceneView<span class="token operator">: </span><a href="../io.github.sceneview/-scene-view/index.html">SceneView</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-camera-gesture-detector/-on-camera-gesture-listener/index.html">CameraGestureDetector.OnCameraGestureListener</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Responds to Android touch events and manages a camera manipulator. Supports one-touch orbit, two-touch pan, and pinch-to-zoom.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-camera-gesture-detector/index.html">CameraGestureDetector</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">sceneView<span class="token operator">: </span><a href="../io.github.sceneview/-scene-view/index.html">SceneView</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-camera-gesture-detector/-on-camera-gesture-listener/index.html">CameraGestureDetector.OnCameraGestureListener</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Responds to Android touch events and manages a camera manipulator. Supports one-touch orbit, two-touch pan, and pinch-to-zoom.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-767361976%2FClasslikes%2F1588378196" anchor-label="GestureDetector" id="-767361976%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-gesture-detector/index.html"><span>Gesture</span><wbr><span><span>Detector</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gesture-detector/index.html"><span>Gesture</span><wbr><span><span>Detector</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-767361976%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-gesture-detector/index.html">GestureDetector</a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;pickNode<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token punctuation">, </span><span class="token keyword"></span><span class="token punctuation">(</span><span class="token keyword"></span><a href="-node-motion-event/index.html">NodeMotionEvent</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;listener<span class="token operator">: </span><a href="-gesture-detector/-on-gesture-listener/index.html">GestureDetector.OnGestureListener</a></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/android/view/GestureDetector.html">GestureDetector</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Camera supports one-touch orbit, two-touch pan, and pinch-to-zoom.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-gesture-detector/index.html">GestureDetector</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">collisionSystem<span class="token operator">: </span><a href="../io.github.sceneview.collision/-collision-system/index.html">CollisionSystem</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-gesture-detector/-on-gesture-listener/index.html">GestureDetector.OnGestureListener</a></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/android/view/GestureDetector.html">GestureDetector</a></div><div class="brief "><p class="paragraph">Responds to Android touch events with listeners and/or camera manipulator</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-220720071%2FClasslikes%2F1588378196" anchor-label="MoveGestureDetector" id="-220720071%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-move-gesture-detector/index.html"><span>Move</span><wbr><span>Gesture</span><wbr><span><span>Detector</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-move-gesture-detector/index.html"><span>Move</span><wbr><span>Gesture</span><wbr><span><span>Detector</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-220720071%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-move-gesture-detector/index.html">MoveGestureDetector</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-move-gesture-detector/-on-move-listener/index.html">MoveGestureDetector.OnMoveListener</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-move-gesture-detector/index.html">MoveGestureDetector</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-move-gesture-detector/-on-move-listener/index.html">MoveGestureDetector.OnMoveListener</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Detects move transformation gestures using the supplied <a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a>s</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="402242229%2FClasslikes%2F1588378196" anchor-label="NodeMotionEvent" id="402242229%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-node-motion-event/index.html"><span>Node</span><wbr><span>Motion</span><wbr><span><span>Event</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-node-motion-event/index.html"><span>Node</span><wbr><span>Motion</span><wbr><span><span>Event</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="402242229%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-node-motion-event/index.html">NodeMotionEvent</a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>motionEvent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>node<span class="token operator">: </span><a href="../io.github.sceneview.node/-node/index.html">Node</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>renderable<span class="token operator">: </span><a href="../io.github.sceneview.renderable/index.html#286838466%2FClasslikes%2F1588378196">Renderable</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-node-motion-event/index.html">NodeMotionEvent</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>motionEvent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>node<span class="token operator">: </span><a href="../io.github.sceneview.node/-node/index.html">Node</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="45310531%2FClasslikes%2F1588378196" anchor-label="RotateGestureDetector" id="45310531%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-rotate-gesture-detector/index.html"><span>Rotate</span><wbr><span>Gesture</span><wbr><span><span>Detector</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-rotate-gesture-detector/index.html"><span>Rotate</span><wbr><span>Gesture</span><wbr><span><span>Detector</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="45310531%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-rotate-gesture-detector/index.html">RotateGestureDetector</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-rotate-gesture-detector/-on-rotate-listener/index.html">RotateGestureDetector.OnRotateListener</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">The <a href="-rotate-gesture-detector/-on-rotate-listener/index.html">OnRotateListener</a> callback will notify users when a particular gesture event has occurred.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-rotate-gesture-detector/index.html">RotateGestureDetector</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-rotate-gesture-detector/-on-rotate-listener/index.html">RotateGestureDetector.OnRotateListener</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Detects rotation transformation gestures using the supplied <a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a>s.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-573456218%2FClasslikes%2F1588378196" anchor-label="ScaleGestureDetector" id="-573456218%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-scale-gesture-detector/index.html"><span>Scale</span><wbr><span>Gesture</span><wbr><span><span>Detector</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-scale-gesture-detector/index.html"><span>Scale</span><wbr><span>Gesture</span><wbr><span><span>Detector</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-573456218%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-scale-gesture-detector/index.html">ScaleGestureDetector</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-scale-gesture-detector/-on-scale-listener/index.html">ScaleGestureDetector.OnScaleListener</a></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/android/view/ScaleGestureDetector.html">ScaleGestureDetector</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">The <a href="https://developer.android.com/reference/kotlin/android/view/ScaleGestureDetector.OnScaleGestureListener.html">android.view.ScaleGestureDetector.OnScaleGestureListener</a> callback will notify users when a particular gesture event has occurred.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-scale-gesture-detector/index.html">ScaleGestureDetector</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-scale-gesture-detector/-on-scale-listener/index.html">ScaleGestureDetector.OnScaleListener</a></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/android/view/ScaleGestureDetector.html">ScaleGestureDetector</a></div><div class="brief "><p class="paragraph">Detects scaling transformation gestures using the supplied <a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a>s.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="-1702194014%2FProperties%2F1588378196" anchor-label="transform" id="-1702194014%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="transform.html"><span><span>transform</span></span></a></div>
+      <div data-togglable="EXTENSION_PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-1702194014%2FProperties%2F1588378196" anchor-label="transform" id="-1702194014%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="transform.html"><span><span>transform</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1702194014%2FProperties%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><a data-name="-1702194014%2FProperties%2F1588378196" anchor-label="transform" id="-1702194014%2FProperties%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><span data-unresolved-link="com.google.android.filament.utils/Manipulator///PointingToDeclaration/">Manipulator</span><span class="token punctuation">.</span><a href="transform.html">transform</a><span class="token operator">: </span><a href="../io.github.sceneview.math/index.html#1875660684%2FClasslikes%2F1588378196">Transform</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><span data-unresolved-link="com.google.android.filament.utils/Manipulator///PointingToDeclaration/">Manipulator</span><span class="token punctuation">.</span><a href="transform.html">transform</a><span class="token operator">: </span><a href="../io.github.sceneview.math/-transform/index.html">Transform</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1522192589%2FFunctions%2F1588378196" anchor-label="orbitHomePosition" id="-1522192589%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="orbit-home-position.html"><span>orbit</span><wbr><span>Home</span><wbr><span><span>Position</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1522192589%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament.utils/Manipulator.Builder///PointingToDeclaration/">Manipulator.Builder</span><span class="token punctuation">.</span><a href="orbit-home-position.html"><span class="token function">orbitHomePosition</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">position<span class="token operator">: </span><a href="../io.github.sceneview.math/-position/index.html">Position</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament.utils/Manipulator.Builder///PointingToDeclaration/">Manipulator.Builder</span></div><div class="brief "><p class="paragraph">Sets initial eye position in world space for ORBIT mode. This defaults to (0,0,1).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="999781229%2FFunctions%2F1588378196" anchor-label="targetPosition" id="999781229%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="target-position.html"><span>target</span><wbr><span><span>Position</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="999781229%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.android.filament.utils/Manipulator.Builder///PointingToDeclaration/">Manipulator.Builder</span><span class="token punctuation">.</span><a href="target-position.html"><span class="token function">targetPosition</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">position<span class="token operator">: </span><a href="../io.github.sceneview.math/-position/index.html">Position</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament.utils/Manipulator.Builder///PointingToDeclaration/">Manipulator.Builder</span></div><div class="brief "><p class="paragraph">Sets world-space position of interest, which defaults to (0,0,0).</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -160,8 +219,9 @@ if(savedDarkMode === true){
       <div class="footer">
         <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 

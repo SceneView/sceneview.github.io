@@ -1,468 +1,510 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>RenderableInternalFilamentAssetData</title>
-<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../styles/style.css" rel="Stylesheet">
-<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../../styles/main.css" rel="Stylesheet">
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer></script>
-<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../../index.html">
-<span>SceneView</span>            </a>    </div>
-    <div>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sceneview:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="sceneview::com.google.ar.sceneform.rendering/RenderableInternalFilamentAssetData///PointingToDeclaration//1588378196">
-  <div class="breadcrumbs"><a href="../../index.html">sceneview</a><span class="delimiter">/</span><a href="../index.html">com.google.ar.sceneform.rendering</a><span class="delimiter">/</span><a href="index.html">RenderableInternalFilamentAssetData</a></div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="sceneview::com.google.ar.sceneform.rendering/RenderableInternalFilamentAssetData///PointingToDeclaration//1588378196">
+  <div class="breadcrumbs"><a href="../../index.html">sceneview</a><span class="delimiter">/</span><a href="../index.html">com.google.ar.sceneform.rendering</a><span class="delimiter">/</span><span class="current">RenderableInternalFilamentAssetData</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Renderable</span><wbr><span>Internal</span><wbr><span>Filament</span><wbr><span>Asset</span><wbr><span><span>Data</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">RenderableInternalFilamentAssetData</a> : <a href="../../../arsceneview/com.google.ar.sceneform.rendering/-i-renderable-internal-data/index.html">IRenderableInternalData</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Represents the data used by a <a href="../-renderable/index.html">Renderable</a> for rendering natively loaded glTF data.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">RenderableInternalFilamentAssetData</a> : <a href="../../../sceneview/com.google.ar.sceneform.rendering/-i-renderable-internal-data/index.html">IRenderableInternalData</a></div><p class="paragraph">Represents the data used by a <a href="../-renderable/index.html">Renderable</a> for rendering natively loaded glTF data.</p></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Functions">Functions</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Functions</h2>
-      <div class="table" data-togglable="Functions"><a data-name="-28547272%2FFunctions%2F1588378196" anchor-label="buildInstanceData" id="-28547272%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="build-instance-data.html"><span>build</span><wbr><span>Instance</span><wbr><span><span>Data</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-28547272%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="build-instance-data.html"><span class="token function">buildInstanceData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">instance<span class="token operator">: </span><a href="../-renderable-instance/index.html">RenderableInstance</a><span class="token punctuation">, </span></span><span class="parameter ">renderedEntity<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="1877455860%2FConstructors%2F1588378196" anchor-label="RenderableInternalFilamentAssetData" id="1877455860%2FConstructors%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-renderable-internal-filament-asset-data.html"><span>Renderable</span><wbr><span>Internal</span><wbr><span>Filament</span><wbr><span>Asset</span><wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1877455860%2FConstructors%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1732440498%2FFunctions%2F1588378196" anchor-label="buildInstanceData" id="-1732440498%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="build-instance-data.html"><span>build</span><wbr><span>Instance</span><wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1732440498%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="build-instance-data.html"><span class="token function">buildInstanceData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">instance<span class="token operator">: </span><a href="../-renderable-instance/index.html">RenderableInstance</a><span class="token punctuation">, </span></span><span class="parameter ">renderedEntity<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="228613841%2FFunctions%2F1588378196" anchor-label="getAnimationNames" id="228613841%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-animation-names.html"><span>get</span><wbr><span>Animation</span><wbr><span><span>Names</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-animation-names.html"><span>get</span><wbr><span>Animation</span><wbr><span><span>Names</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="228613841%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation">NonNull</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-animation-names.html"><span class="token function">getAnimationNames</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation builtin">NonNull</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-animation-names.html"><span class="token function">getAnimationNames</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-2133908544%2FFunctions%2F1588378196" anchor-label="getCenterAabb" id="-2133908544%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-center-aabb.html"><span>get</span><wbr><span>Center</span><wbr><span><span>Aabb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-center-aabb.html"><span>get</span><wbr><span>Center</span><wbr><span><span>Aabb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2133908544%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-center-aabb.html"><span class="token function">getCenterAabb</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.google.ar.sceneform.math/-vector3/index.html">Vector3</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-center-aabb.html"><span class="token function">getCenterAabb</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../io.github.sceneview.collision/-vector3/index.html">Vector3</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1797321628%2FFunctions%2F1588378196" anchor-label="getExtentsAabb" id="1797321628%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-extents-aabb.html"><span>get</span><wbr><span>Extents</span><wbr><span><span>Aabb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-extents-aabb.html"><span>get</span><wbr><span>Extents</span><wbr><span><span>Aabb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1797321628%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-extents-aabb.html"><span class="token function">getExtentsAabb</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.google.ar.sceneform.math/-vector3/index.html">Vector3</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-extents-aabb.html"><span class="token function">getExtentsAabb</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../io.github.sceneview.collision/-vector3/index.html">Vector3</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="429416083%2FFunctions%2F1588378196" anchor-label="getIndexBuffer" id="429416083%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-index-buffer.html"><span>get</span><wbr><span>Index</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-index-buffer.html"><span>get</span><wbr><span>Index</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="429416083%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-index-buffer.html"><span class="token function">getIndexBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/IndexBuffer///PointingToDeclaration/">IndexBuffer</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-index-buffer.html"><span class="token function">getIndexBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/IndexBuffer///PointingToDeclaration/">IndexBuffer</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1240836923%2FFunctions%2F1588378196" anchor-label="getMaterialBindingIds" id="1240836923%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-material-binding-ids.html"><span>get</span><wbr><span>Material</span><wbr><span>Binding</span><wbr><span><span>Ids</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-material-binding-ids.html"><span>get</span><wbr><span>Material</span><wbr><span>Binding</span><wbr><span><span>Ids</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1240836923%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-material-binding-ids.html"><span class="token function">getMaterialBindingIds</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-material-binding-ids.html"><span class="token function">getMaterialBindingIds</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1676219770%2FFunctions%2F1588378196" anchor-label="getMeshes" id="1676219770%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-meshes.html"><span>get</span><wbr><span><span>Meshes</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-meshes.html"><span>get</span><wbr><span><span>Meshes</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1676219770%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-meshes.html"><span class="token function">getMeshes</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a><span class="token operator">&lt;</span><a href="../../../arsceneview/com.google.ar.sceneform.rendering/-renderable-internal-data/-mesh-data/index.html">RenderableInternalData.MeshData</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-meshes.html"><span class="token function">getMeshes</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a><span class="token operator">&lt;</span><a href="../../../sceneview/com.google.ar.sceneform.rendering/-renderable-internal-data/-mesh-data/index.html">RenderableInternalData.MeshData</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1913869466%2FFunctions%2F1588378196" anchor-label="getRawColorBuffer" id="1913869466%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-raw-color-buffer.html"><span>get</span><wbr><span>Raw</span><wbr><span>Color</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-raw-color-buffer.html"><span>get</span><wbr><span>Raw</span><wbr><span>Color</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1913869466%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-raw-color-buffer.html"><span class="token function">getRawColorBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-raw-color-buffer.html"><span class="token function">getRawColorBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="577498443%2FFunctions%2F1588378196" anchor-label="getRawIndexBuffer" id="577498443%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-raw-index-buffer.html"><span>get</span><wbr><span>Raw</span><wbr><span>Index</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-raw-index-buffer.html"><span>get</span><wbr><span>Raw</span><wbr><span>Index</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="577498443%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-raw-index-buffer.html"><span class="token function">getRawIndexBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/IntBuffer.html">IntBuffer</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-raw-index-buffer.html"><span class="token function">getRawIndexBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/IntBuffer.html">IntBuffer</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1923207188%2FFunctions%2F1588378196" anchor-label="getRawPositionBuffer" id="1923207188%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-raw-position-buffer.html"><span>get</span><wbr><span>Raw</span><wbr><span>Position</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-raw-position-buffer.html"><span>get</span><wbr><span>Raw</span><wbr><span>Position</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1923207188%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-raw-position-buffer.html"><span class="token function">getRawPositionBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-raw-position-buffer.html"><span class="token function">getRawPositionBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1114574287%2FFunctions%2F1588378196" anchor-label="getRawTangentsBuffer" id="1114574287%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-raw-tangents-buffer.html"><span>get</span><wbr><span>Raw</span><wbr><span>Tangents</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-raw-tangents-buffer.html"><span>get</span><wbr><span>Raw</span><wbr><span>Tangents</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1114574287%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-raw-tangents-buffer.html"><span class="token function">getRawTangentsBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-raw-tangents-buffer.html"><span class="token function">getRawTangentsBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1840321636%2FFunctions%2F1588378196" anchor-label="getRawUvBuffer" id="-1840321636%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-raw-uv-buffer.html"><span>get</span><wbr><span>Raw</span><wbr><span>Uv</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-raw-uv-buffer.html"><span>get</span><wbr><span>Raw</span><wbr><span>Uv</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1840321636%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-raw-uv-buffer.html"><span class="token function">getRawUvBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-raw-uv-buffer.html"><span class="token function">getRawUvBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1312420460%2FFunctions%2F1588378196" anchor-label="getSizeAabb" id="-1312420460%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-size-aabb.html"><span>get</span><wbr><span>Size</span><wbr><span><span>Aabb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-size-aabb.html"><span>get</span><wbr><span>Size</span><wbr><span><span>Aabb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1312420460%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-size-aabb.html"><span class="token function">getSizeAabb</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.google.ar.sceneform.math/-vector3/index.html">Vector3</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-size-aabb.html"><span class="token function">getSizeAabb</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../io.github.sceneview.collision/-vector3/index.html">Vector3</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1766520890%2FFunctions%2F1588378196" anchor-label="getTransformOffset" id="-1766520890%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-transform-offset.html"><span>get</span><wbr><span>Transform</span><wbr><span><span>Offset</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-transform-offset.html"><span>get</span><wbr><span>Transform</span><wbr><span><span>Offset</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1766520890%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-transform-offset.html"><span class="token function">getTransformOffset</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.google.ar.sceneform.math/-vector3/index.html">Vector3</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-transform-offset.html"><span class="token function">getTransformOffset</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../io.github.sceneview.collision/-vector3/index.html">Vector3</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="851221751%2FFunctions%2F1588378196" anchor-label="getTransformScale" id="851221751%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-transform-scale.html"><span>get</span><wbr><span>Transform</span><wbr><span><span>Scale</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-transform-scale.html"><span>get</span><wbr><span>Transform</span><wbr><span><span>Scale</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="851221751%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-transform-scale.html"><span class="token function">getTransformScale</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-transform-scale.html"><span class="token function">getTransformScale</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-577445903%2FFunctions%2F1588378196" anchor-label="getVertexBuffer" id="-577445903%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="get-vertex-buffer.html"><span>get</span><wbr><span>Vertex</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-vertex-buffer.html"><span>get</span><wbr><span>Vertex</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-577445903%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-vertex-buffer.html"><span class="token function">getVertexBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/VertexBuffer///PointingToDeclaration/">VertexBuffer</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-vertex-buffer.html"><span class="token function">getVertexBuffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/VertexBuffer///PointingToDeclaration/">VertexBuffer</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-780093110%2FFunctions%2F1588378196" anchor-label="setAnimationNames" id="-780093110%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-animation-names.html"><span>set</span><wbr><span>Animation</span><wbr><span><span>Names</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-animation-names.html"><span>set</span><wbr><span>Animation</span><wbr><span><span>Names</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-780093110%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-animation-names.html"><span class="token function">setAnimationNames</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation">NonNull</span></a>&nbsp;</span>animationNames<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-animation-names.html"><span class="token function">setAnimationNames</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation builtin">NonNull</span></a>&nbsp;</span>animationNames<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-193820873%2FFunctions%2F1588378196" anchor-label="setCenterAabb" id="-193820873%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-center-aabb.html"><span>set</span><wbr><span>Center</span><wbr><span><span>Aabb</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-193820873%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-center-aabb.html"><span class="token function">setCenterAabb</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">center<span class="token operator">: </span><a href="../../com.google.ar.sceneform.math/-vector3/index.html">Vector3</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+<a data-name="-451933926%2FFunctions%2F1588378196" anchor-label="setCenterAabb" id="-451933926%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-center-aabb.html"><span>set</span><wbr><span>Center</span><wbr><span><span>Aabb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-451933926%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-center-aabb.html"><span class="token function">setCenterAabb</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">center<span class="token operator">: </span><a href="../../io.github.sceneview.collision/-vector3/index.html">Vector3</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1855918933%2FFunctions%2F1588378196" anchor-label="setExtentsAabb" id="-1855918933%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-extents-aabb.html"><span>set</span><wbr><span>Extents</span><wbr><span><span>Aabb</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1855918933%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-extents-aabb.html"><span class="token function">setExtentsAabb</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">halfExtents<span class="token operator">: </span><a href="../../com.google.ar.sceneform.math/-vector3/index.html">Vector3</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+<a data-name="-437366234%2FFunctions%2F1588378196" anchor-label="setExtentsAabb" id="-437366234%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-extents-aabb.html"><span>set</span><wbr><span>Extents</span><wbr><span><span>Aabb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-437366234%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-extents-aabb.html"><span class="token function">setExtentsAabb</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">halfExtents<span class="token operator">: </span><a href="../../io.github.sceneview.collision/-vector3/index.html">Vector3</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="2045881698%2FFunctions%2F1588378196" anchor-label="setIndexBuffer" id="2045881698%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-index-buffer.html"><span>set</span><wbr><span>Index</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-index-buffer.html"><span>set</span><wbr><span>Index</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2045881698%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-index-buffer.html"><span class="token function">setIndexBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a>&nbsp;</span>indexBuffer<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/IndexBuffer///PointingToDeclaration/">IndexBuffer</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-index-buffer.html"><span class="token function">setIndexBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a>&nbsp;</span>indexBuffer<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/IndexBuffer///PointingToDeclaration/">IndexBuffer</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-2124038184%2FFunctions%2F1588378196" anchor-label="setRawColorBuffer" id="-2124038184%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-raw-color-buffer.html"><span>set</span><wbr><span>Raw</span><wbr><span>Color</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-raw-color-buffer.html"><span>set</span><wbr><span>Raw</span><wbr><span>Color</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2124038184%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-raw-color-buffer.html"><span class="token function">setRawColorBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a>&nbsp;</span>rawColorBuffer<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-raw-color-buffer.html"><span class="token function">setRawColorBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a>&nbsp;</span>rawColorBuffer<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1287096918%2FFunctions%2F1588378196" anchor-label="setRawIndexBuffer" id="1287096918%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-raw-index-buffer.html"><span>set</span><wbr><span>Raw</span><wbr><span>Index</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-raw-index-buffer.html"><span>set</span><wbr><span>Raw</span><wbr><span>Index</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1287096918%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-raw-index-buffer.html"><span class="token function">setRawIndexBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a>&nbsp;</span>rawIndexBuffer<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/IntBuffer.html">IntBuffer</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-raw-index-buffer.html"><span class="token function">setRawIndexBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a>&nbsp;</span>rawIndexBuffer<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/IntBuffer.html">IntBuffer</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-539353366%2FFunctions%2F1588378196" anchor-label="setRawPositionBuffer" id="-539353366%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-raw-position-buffer.html"><span>set</span><wbr><span>Raw</span><wbr><span>Position</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-raw-position-buffer.html"><span>set</span><wbr><span>Raw</span><wbr><span>Position</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-539353366%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-raw-position-buffer.html"><span class="token function">setRawPositionBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a>&nbsp;</span>rawPositionBuffer<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-raw-position-buffer.html"><span class="token function">setRawPositionBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a>&nbsp;</span>rawPositionBuffer<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1835151653%2FFunctions%2F1588378196" anchor-label="setRawTangentsBuffer" id="1835151653%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-raw-tangents-buffer.html"><span>set</span><wbr><span>Raw</span><wbr><span>Tangents</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-raw-tangents-buffer.html"><span>set</span><wbr><span>Raw</span><wbr><span>Tangents</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1835151653%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-raw-tangents-buffer.html"><span class="token function">setRawTangentsBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a>&nbsp;</span>rawTangentsBuffer<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-raw-tangents-buffer.html"><span class="token function">setRawTangentsBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a>&nbsp;</span>rawTangentsBuffer<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1572478834%2FFunctions%2F1588378196" anchor-label="setRawUvBuffer" id="1572478834%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-raw-uv-buffer.html"><span>set</span><wbr><span>Raw</span><wbr><span>Uv</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-raw-uv-buffer.html"><span>set</span><wbr><span>Raw</span><wbr><span>Uv</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1572478834%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-raw-uv-buffer.html"><span class="token function">setRawUvBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a>&nbsp;</span>rawUvBuffer<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-raw-uv-buffer.html"><span class="token function">setRawUvBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a>&nbsp;</span>rawUvBuffer<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1027322411%2FFunctions%2F1588378196" anchor-label="setTransformOffset" id="-1027322411%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-transform-offset.html"><span>set</span><wbr><span>Transform</span><wbr><span><span>Offset</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1027322411%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-transform-offset.html"><span class="token function">setTransformOffset</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">offset<span class="token operator">: </span><a href="../../com.google.ar.sceneform.math/-vector3/index.html">Vector3</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+<a data-name="-520677828%2FFunctions%2F1588378196" anchor-label="setTransformOffset" id="-520677828%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-transform-offset.html"><span>set</span><wbr><span>Transform</span><wbr><span><span>Offset</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-520677828%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-transform-offset.html"><span class="token function">setTransformOffset</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">offset<span class="token operator">: </span><a href="../../io.github.sceneview.collision/-vector3/index.html">Vector3</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1927465957%2FFunctions%2F1588378196" anchor-label="setTransformScale" id="-1927465957%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-transform-scale.html"><span>set</span><wbr><span>Transform</span><wbr><span><span>Scale</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-transform-scale.html"><span>set</span><wbr><span>Transform</span><wbr><span><span>Scale</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1927465957%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-transform-scale.html"><span class="token function">setTransformScale</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">scale<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-transform-scale.html"><span class="token function">setTransformScale</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">scale<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1802865264%2FFunctions%2F1588378196" anchor-label="setVertexBuffer" id="1802865264%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="set-vertex-buffer.html"><span>set</span><wbr><span>Vertex</span><wbr><span><span>Buffer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-vertex-buffer.html"><span>set</span><wbr><span>Vertex</span><wbr><span><span>Buffer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1802865264%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-vertex-buffer.html"><span class="token function">setVertexBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation">Nullable</span></a>&nbsp;</span>vertexBuffer<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/VertexBuffer///PointingToDeclaration/">VertexBuffer</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-vertex-buffer.html"><span class="token function">setVertexBuffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html"><span class="token annotation builtin">Nullable</span></a>&nbsp;</span>vertexBuffer<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/VertexBuffer///PointingToDeclaration/">VertexBuffer</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -474,8 +516,9 @@ if(savedDarkMode === true){
       <div class="footer">
         <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 

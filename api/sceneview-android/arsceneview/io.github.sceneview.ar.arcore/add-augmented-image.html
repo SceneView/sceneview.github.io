@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>addAugmentedImage</title>
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":arsceneview:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="member" id="content" pageids="arsceneview::io.github.sceneview.ar.arcore//addAugmentedImage/com.google.ar.core.Config#com.google.ar.core.Session#kotlin.String#android.graphics.Bitmap#kotlin.Float?/PointingToDeclaration//1238612933">
+  <div class="breadcrumbs"><a href="../index.html">arsceneview</a><span class="delimiter">/</span><a href="index.html">io.github.sceneview.ar.arcore</a><span class="delimiter">/</span><span class="current">addAugmentedImage</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>add</span><wbr><span>Augmented</span><wbr><span><span>Image</span></span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="com.google.ar.core/Config///PointingToDeclaration/">Config</span><span class="token punctuation">.</span><a href="add-augmented-image.html"><span class="token function">addAugmentedImage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">, </span></span><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">bitmap<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html">Bitmap</a><span class="token punctuation">, </span></span><span class="parameter ">widthInMeters<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><p class="paragraph">Adds a single named image with known physical size to the augmented image database from an Android bitmap, with a specified physical width in meters.</p><p class="paragraph">Returns the zero-based positional index of the image within the database.</p><p class="paragraph">For images added via this method, ARCore can estimate the pose of the physical image at runtime as soon as ARCore detects the physical image, without requiring the user to move the device to view the physical image from different viewpoints. Note that ARCore will refine the estimated size and pose of the physical image as it is viewed from different viewpoints.</p><p class="paragraph">This method takes time to perform non-trivial image processing (20ms - 30ms), and should be run on a background thread to avoid blocking the UI thread.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>name</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Name metadata for this image, does not have to be unique.</p></div></div></div></div><div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>bitmap</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Bitmap containing the image in ARGB_8888 format. The alpha channel is ignored in     this bitmap, as only non-transparent images are currently supported.</p></div></div></div></div><div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>width</span><wbr><span>In</span><wbr><span><span>Meters</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Width in meters for this image, must be strictly greater than zero. <code class="lang-kotlin">null</code> indicates the physical size of the image is not known, at the expense of an increased image detection time.</p></div></div></div></div></div><h4 class="">Throws</h4><div class="table"><div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><span data-unresolved-link="com.google.ar.core.exceptions/ImageInsufficientQualityException///PointingToDeclaration/"><span>Image</span><wbr><span>Insufficient</span><wbr><span>Quality</span><wbr><span><span>Exception</span></span></span></div></span></div><div><div class="title"><p class="paragraph">if the image quality is     image is insufficient, e.g. if the image has not enough features.</p></div></div></div></div><div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="https://developer.android.com/reference/kotlin/java/lang/IllegalArgumentException.html"><span>Illegal</span><wbr><span>Argument</span><wbr><span><span>Exception</span></span></a></div></span></div><div><div class="title"><p class="paragraph">if the bitmap is not in ARGB_888 format or the width     in meters is less than or equal to zero.</p></div></div></div></div></div></div></div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

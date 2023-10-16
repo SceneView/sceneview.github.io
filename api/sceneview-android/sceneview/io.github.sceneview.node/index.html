@@ -1,218 +1,336 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>io.github.sceneview.node</title>
-<link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../styles/style.css" rel="Stylesheet">
-<link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../styles/main.css" rel="Stylesheet">
 <link href="../../styles/prism.css" rel="Stylesheet">
 <link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../scripts/main.js" defer></script>
-<script type="text/javascript" src="../../scripts/prism.js" async></script></head>
+<script type="text/javascript" src="../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../index.html">
-<span>SceneView</span>            </a>    </div>
-    <div>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sceneview:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="sceneview::io.github.sceneview.node////PointingToDeclaration//1588378196">
-  <div class="breadcrumbs"><a href="../index.html">sceneview</a><span class="delimiter">/</span><a href="index.html">io.github.sceneview.node</a></div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageids="sceneview::io.github.sceneview.node////PointingToDeclaration//1588378196">
+  <div class="breadcrumbs"><a href="../index.html">sceneview</a><span class="delimiter">/</span><span class="current">io.github.sceneview.node</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Package io.</span><wbr><span>github.</span><wbr><span>sceneview.</span><wbr><span>node</span></h1>
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Functions">Functions</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Types</h2>
-      <div class="table" data-togglable="Types"><a data-name="1729630429%2FClasslikes%2F1588378196" anchor-label="CameraNode" id="1729630429%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-camera-node/index.html"><span>Camera</span><wbr><span><span>Node</span></span></a></div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-1857325025%2FClasslikes%2F1588378196" anchor-label="BaseGeometryNode" id="-1857325025%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-base-geometry-node/index.html"><span>Base</span><wbr><span>Geometry</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1857325025%2FClasslikes%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-base-geometry-node/index.html">BaseGeometryNode</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-base-geometry-node/index.html">T</a><span class="token operator"> : </span><a href="../io.github.sceneview.geometries/-geometry/index.html">Geometry</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>geometry<span class="token operator">: </span><a href="-base-geometry-node/index.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">materialInstance<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">renderableApply<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.filament/RenderableManager.Builder///PointingToDeclaration/">RenderableManager.Builder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span> : <a href="-renderable-node/index.html">RenderableNode</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1729630429%2FClasslikes%2F1588378196" anchor-label="CameraNode" id="1729630429%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-node/index.html"><span>Camera</span><wbr><span><span>Node</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1729630429%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-camera-node/index.html">CameraNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>isFixed<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span></span></span><span class="token punctuation">)</span> : <a href="-node/index.html">Node</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Represents a virtual camera, which determines the perspective through which the scene is viewed.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-camera-node/index.html">CameraNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">viewSize<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/Size.html">Size</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>entity<span class="token operator">: </span><a href="../io.github.sceneview/-entity/index.html">Entity</a><span class="token operator"> = </span>EntityManager.get().create().apply {
+        engine.createCamera(this).apply {
+            // Set the exposure on the camera, this exposure follows the sunny f/16 rule
+            // Since we define a light that has the same intensity as the sun, it guarantees a
+            // proper exposure
+            setExposure(kAperture, kShutterSpeed, kSensitivity)
+        }
+    }</span></span><span class="token punctuation">)</span> : <a href="-node/index.html">Node</a>, <a href="../io.github.sceneview.components/-camera-component/index.html">CameraComponent</a></div><div class="brief "><p class="paragraph">Represents a virtual camera, which determines the perspective through which the scene is viewed.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-18469613%2FClasslikes%2F1588378196" anchor-label="CameraNode2" id="-18469613%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-camera-node2/index.html"><span>Camera</span><wbr><span><span>Node2</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-18469613%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-camera-node2/index.html">CameraNode2</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>isFixed<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span></span></span><span class="token punctuation">)</span> : <a href="-node/index.html">Node</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Represents a virtual camera, which determines the perspective through which the scene is viewed.</p></div></div></div>
+<a data-name="-1756089715%2FClasslikes%2F1588378196" anchor-label="CubeNode" id="-1756089715%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-cube-node/index.html"><span>Cube</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1756089715%2FClasslikes%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-cube-node/index.html">CubeNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">size<span class="token operator">: </span><a href="../io.github.sceneview.math/-size/index.html">Size</a><span class="token operator"> = </span>Cube.DEFAULT_SIZE<span class="token punctuation">, </span></span><span class="parameter ">center<span class="token operator">: </span><a href="../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>Cube.DEFAULT_CENTER<span class="token punctuation">, </span></span><span class="parameter ">materialInstance<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">renderableApply<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.filament/RenderableManager.Builder///PointingToDeclaration/">RenderableManager.Builder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span> : <a href="-base-geometry-node/index.html">BaseGeometryNode</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../io.github.sceneview.geometries/-cube/index.html">Cube</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+<a data-name="-1006732020%2FClasslikes%2F1588378196" anchor-label="CylinderNode" id="-1006732020%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-cylinder-node/index.html"><span>Cylinder</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1006732020%2FClasslikes%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-cylinder-node/index.html">CylinderNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">radius<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">height<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">center<span class="token operator">: </span><a href="../io.github.sceneview.math/-position/index.html">Position</a><span class="token punctuation">, </span></span><span class="parameter ">sideCount<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">materialInstance<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">renderableApply<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.filament/RenderableManager.Builder///PointingToDeclaration/">RenderableManager.Builder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span> : <a href="-base-geometry-node/index.html">BaseGeometryNode</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../io.github.sceneview.geometries/-cylinder/index.html">Cylinder</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="1370485232%2FClasslikes%2F1588378196" anchor-label="GeometryNode" id="1370485232%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-geometry-node/index.html"><span>Geometry</span><wbr><span><span>Node</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-geometry-node/index.html"><span>Geometry</span><wbr><span><span>Node</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1370485232%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-geometry-node/index.html">GeometryNode</a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;geometry<span class="token operator">: </span><a href="../io.github.sceneview.geometries/-geometry/index.html">Geometry</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;materials<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token operator"> = </span>listOf()<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;apply<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.filament/RenderableManager.Builder///PointingToDeclaration/">RenderableManager.Builder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span> : <a href="-renderable-node/index.html">RenderableNode</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Mesh are bundles of primitives, each of which has its own geometry and material.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-geometry-node/index.html">GeometryNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">vertices<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../io.github.sceneview.geometries/-geometry/-vertex/index.html">Geometry.Vertex</a><span class="token operator">&gt;</span><span class="token operator"> = </span>listOf()<span class="token punctuation">, </span></span><span class="parameter ">submeshes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../io.github.sceneview.geometries/-geometry/-submesh/index.html">Geometry.Submesh</a><span class="token operator">&gt;</span><span class="token operator"> = </span>listOf()<span class="token punctuation">, </span></span><span class="parameter ">materialInstance<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">renderableApply<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.filament/RenderableManager.Builder///PointingToDeclaration/">RenderableManager.Builder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span> : <a href="-base-geometry-node/index.html">BaseGeometryNode</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../io.github.sceneview.geometries/-geometry/index.html">Geometry</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Mesh are bundles of primitives, each of which has its own geometry and material.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+<a data-name="838668513%2FClasslikes%2F1588378196" anchor-label="ImageNode" id="838668513%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-image-node/index.html"><span>Image</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="838668513%2FClasslikes%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-image-node/index.html">ImageNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">imageMaterial<span class="token operator">: </span><a href="../io.github.sceneview.material/-image-material/index.html">ImageMaterial</a><span class="token punctuation">, </span></span><span class="parameter ">size<span class="token operator">: </span><a href="../io.github.sceneview.math/-size/index.html">Size</a><span class="token operator"> = </span>Plane.DEFAULT_SIZE<span class="token punctuation">, </span></span><span class="parameter ">center<span class="token operator">: </span><a href="../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>Plane.DEFAULT_CENTER<span class="token punctuation">, </span></span><span class="parameter ">normal<span class="token operator">: </span><a href="../io.github.sceneview.math/-direction/index.html">Direction</a><span class="token operator"> = </span>Plane.DEFAULT_NORMAL<span class="token punctuation">, </span></span><span class="parameter ">renderableApply<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.filament/RenderableManager.Builder///PointingToDeclaration/">RenderableManager.Builder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span> : <a href="-plane-node/index.html">PlaneNode</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="1109771014%2FClasslikes%2F1588378196" anchor-label="LightNode" id="1109771014%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-light-node/index.html"><span>Light</span><wbr><span><span>Node</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-light-node/index.html"><span>Light</span><wbr><span><span>Node</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1109771014%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-light-node/index.html">LightNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span></span></span><span class="token punctuation">)</span> : <a href="-node/index.html">Node</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">This node contains a light for the rendering engine to render.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-light-node/index.html">LightNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>entity<span class="token operator">: </span><a href="../io.github.sceneview/-entity/index.html">Entity</a><span class="token operator"> = </span>EntityManager.get().create()</span></span><span class="token punctuation">)</span> : <a href="-node/index.html">Node</a>, <a href="../io.github.sceneview.components/-light-component/index.html">LightComponent</a></div><div class="brief "><p class="paragraph">Light source <a href="-node/index.html">Node</a> in the scene such as a sun or street lights.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+<a data-name="1681447893%2FClasslikes%2F1588378196" anchor-label="MeshNode" id="1681447893%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mesh-node/index.html"><span>Mesh</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1681447893%2FClasslikes%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-mesh-node/index.html">MeshNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>vertexBuffer<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/VertexBuffer///PointingToDeclaration/">VertexBuffer</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>indexBuffer<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/IndexBuffer///PointingToDeclaration/">IndexBuffer</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>boundingBox<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Box///PointingToDeclaration/">Box</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">materialInstance<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">renderableApply<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.filament/RenderableManager.Builder///PointingToDeclaration/">RenderableManager.Builder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span> : <a href="-renderable-node/index.html">RenderableNode</a></div><div class="brief "><p class="paragraph">Mesh are bundles of primitives, each of which has its own geometry and material.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-1784448557%2FClasslikes%2F1588378196" anchor-label="ModelNode" id="-1784448557%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-model-node/index.html"><span>Model</span><wbr><span><span>Node</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-model-node/index.html"><span>Model</span><wbr><span><span>Node</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1784448557%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-model-node/index.html">ModelNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span></span></span><span class="token punctuation">)</span> : <a href="-renderable-node/index.html">RenderableNode</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">This node contains a renderable model for the rendering engine to render.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-model-node/index.html">ModelNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span></span></span><span class="token punctuation">)</span> : <a href="-node/index.html">Node</a></div><div class="brief "><p class="paragraph">Create the ModelNode from a loaded model instance.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1238589374%2FClasslikes%2F1588378196" anchor-label="Node" id="-1238589374%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-node/index.html"><span><span>Node</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-node/index.html"><span><span>Node</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1238589374%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-node/index.html">Node</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span></span></span><span class="token punctuation">)</span> : <a href="-node-parent/index.html">NodeParent</a>, <a href="../com.google.ar.sceneform.common/-transform-provider/index.html">TransformProvider</a>, <a href="../io.github.sceneview.gesture/-gesture-detector/-on-gesture-listener/index.html">GestureDetector.OnGestureListener</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">It can contain a renderable for the rendering engine to render.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-node/index.html">Node</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>entity<span class="token operator">: </span><a href="../io.github.sceneview/-entity/index.html">Entity</a><span class="token operator"> = </span>EntityManager.get().create()</span></span><span class="token punctuation">)</span> : <a href="../io.github.sceneview.collision/-transform-provider/index.html">TransformProvider</a>, <a href="../io.github.sceneview.gesture/-gesture-detector/-on-gesture-listener/index.html">GestureDetector.OnGestureListener</a></div><div class="brief "><p class="paragraph">A Node represents a transformation within the scene graph's hierarchy.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1231212040%2FClasslikes%2F1588378196" anchor-label="NodeParent" id="-1231212040%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-node-parent/index.html"><span>Node</span><wbr><span><span>Parent</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1231212040%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-node-parent/index.html">NodeParent</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">The classes <a href="-node/index.html">Node</a> and Scene are both NodeParents. To make a <a href="-node/index.html">Node</a> the child of another <a href="-node/index.html">Node</a> or a Scene, use Node.setParent.</p></div></div></div>
+<a data-name="-228512896%2FClasslikes%2F1588378196" anchor-label="PlaneNode" id="-228512896%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-plane-node/index.html"><span>Plane</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-228512896%2FClasslikes%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-plane-node/index.html">PlaneNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">size<span class="token operator">: </span><a href="../io.github.sceneview.math/-size/index.html">Size</a><span class="token operator"> = </span>Plane.DEFAULT_SIZE<span class="token punctuation">, </span></span><span class="parameter ">center<span class="token operator">: </span><a href="../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>Plane.DEFAULT_CENTER<span class="token punctuation">, </span></span><span class="parameter ">normal<span class="token operator">: </span><a href="../io.github.sceneview.math/-direction/index.html">Direction</a><span class="token operator"> = </span>Plane.DEFAULT_NORMAL<span class="token punctuation">, </span></span><span class="parameter ">materialInstance<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">renderableApply<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.filament/RenderableManager.Builder///PointingToDeclaration/">RenderableManager.Builder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span> : <a href="-base-geometry-node/index.html">BaseGeometryNode</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../io.github.sceneview.geometries/-plane/index.html">Plane</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1144442482%2FClasslikes%2F1588378196" anchor-label="RenderableNode" id="1144442482%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-renderable-node/index.html"><span>Renderable</span><wbr><span><span>Node</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-renderable-node/index.html"><span>Renderable</span><wbr><span><span>Node</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1144442482%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-renderable-node/index.html">RenderableNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>renderables<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../io.github.sceneview.renderable/index.html#286838466%2FClasslikes%2F1588378196">Renderable</a><span class="token operator">&gt;</span><span class="token operator"> = </span>listOf()</span></span><span class="token punctuation">)</span> : <a href="-node/index.html">Node</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">This node contains a renderable model for the rendering engine to render.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-renderable-node/index.html">RenderableNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>entity<span class="token operator">: </span><a href="../io.github.sceneview/-entity/index.html">Entity</a><span class="token operator"> = </span>EntityManager.get().create()</span></span><span class="token punctuation">)</span> : <a href="-node/index.html">Node</a>, <a href="../io.github.sceneview.components/-renderable-component/index.html">RenderableComponent</a></div><div class="brief "><p class="paragraph">A Node represents a transformation within the scene graph's hierarchy.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+<a data-name="-151220939%2FClasslikes%2F1588378196" anchor-label="SphereNode" id="-151220939%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-sphere-node/index.html"><span>Sphere</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-151220939%2FClasslikes%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-sphere-node/index.html">SphereNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">radius<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">center<span class="token operator">: </span><a href="../io.github.sceneview.math/-position/index.html">Position</a><span class="token punctuation">, </span></span><span class="parameter ">stacks<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">slices<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">materialInstance<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">renderableApply<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.filament/RenderableManager.Builder///PointingToDeclaration/">RenderableManager.Builder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span> : <a href="-base-geometry-node/index.html">BaseGeometryNode</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../io.github.sceneview.geometries/-sphere/index.html">Sphere</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-893847103%2FClasslikes%2F1588378196" anchor-label="VideoNode" id="-893847103%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-video-node/index.html"><span>Video</span><wbr><span><span>Node</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-video-node/index.html"><span>Video</span><wbr><span><span>Node</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-893847103%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-video-node/index.html">VideoNode</a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>player<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html">MediaPlayer</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>chromaKeyColor<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;scaleToVideoRatio<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>glbFileLocation<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">"sceneview/models/plane.glb"</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;materialFileLocation<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>if (chromaKeyColor != null) {
-        "sceneview/materials/video_stream_chroma_key.filamat"
-    } else {
-        "sceneview/materials/video_stream_plain.filamat"
-    }<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;autoAnimate<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;scaleToUnits<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>centerOrigin<span class="token operator">: </span><a href="../io.github.sceneview.math/index.html#945960193%2FClasslikes%2F1588378196">Position</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>onError<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html">Exception</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>onLoaded<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../io.github.sceneview.model/index.html#1724271641%2FClasslikes%2F1588378196">ModelInstance</a><span class="token punctuation">, </span><span class="token keyword"></span>materialInstance<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/MaterialInstance///PointingToDeclaration/">MaterialInstance</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="-model-node/index.html">ModelNode</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Node that can show a video by passing a <a href="https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html">MediaPlayer</a> instance</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-video-node/index.html">VideoNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">videoMaterial<span class="token operator">: </span><a href="../io.github.sceneview.material/-video-material/index.html">VideoMaterial</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>player<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html">MediaPlayer</a><span class="token punctuation">, </span></span><span class="parameter ">size<span class="token operator">: </span><a href="../io.github.sceneview.math/-size/index.html">Size</a><span class="token operator"> = </span>Plane.DEFAULT_SIZE<span class="token punctuation">, </span></span><span class="parameter ">center<span class="token operator">: </span><a href="../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>Plane.DEFAULT_CENTER<span class="token punctuation">, </span></span><span class="parameter ">normal<span class="token operator">: </span><a href="../io.github.sceneview.math/-direction/index.html">Direction</a><span class="token operator"> = </span>Plane.DEFAULT_NORMAL<span class="token punctuation">, </span></span><span class="parameter ">scaleToVideoRatio<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">keepAspectRatio<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">renderableApply<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="com.google.android.filament/RenderableManager.Builder///PointingToDeclaration/">RenderableManager.Builder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span> : <a href="-plane-node/index.html">PlaneNode</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-688745955%2FClasslikes%2F1588378196" anchor-label="ViewNode" id="-688745955%2FClasslikes%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-view-node/index.html"><span>View</span><wbr><span><span>Node</span></span></a></div>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-view-node/index.html"><span>View</span><wbr><span><span>Node</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-688745955%2FClasslikes%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-view-node/index.html">ViewNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span></span></span><span class="token punctuation">)</span> : <a href="-node/index.html">Node</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">This node contains a View for the rendering engine to render.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-view-node/index.html">ViewNode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>modelLoader<span class="token operator">: </span><a href="../io.github.sceneview.loaders/-model-loader/index.html">ModelLoader</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>viewAttachmentManager<span class="token operator">: </span><a href="../com.google.ar.sceneform.rendering/-view-attachment-manager/index.html">ViewAttachmentManager</a></span></span><span class="token punctuation">)</span> : <a href="-node/index.html">Node</a></div><div class="brief "><p class="paragraph">A Node represents a transformation within the scene graph's hierarchy.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h2 class="">Functions</h2>
-      <div class="table" data-togglable="Functions"><a data-name="-1421726038%2FFunctions%2F1588378196" anchor-label="doOnVideoSized" id="-1421726038%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="do-on-video-sized.html"><span>do</span><wbr><span>On</span><wbr><span>Video</span><wbr><span><span>Sized</span></span></a></div>
+      <div data-togglable="EXTENSION_FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1421726038%2FFunctions%2F1588378196" anchor-label="doOnVideoSized" id="-1421726038%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="do-on-video-sized.html"><span>do</span><wbr><span>On</span><wbr><span>Video</span><wbr><span><span>Sized</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1421726038%2FFunctions%2F1588378196"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html">MediaPlayer</a><span class="token punctuation">.</span><a href="do-on-video-sized.html"><span class="token function">doOnVideoSized</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>player<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html">MediaPlayer</a><span class="token punctuation">, </span><span class="token keyword"></span>videoWidth<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span class="token keyword"></span>videoHeight<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html">MediaPlayer</a><span class="token punctuation">.</span><a href="do-on-video-sized.html"><span class="token function">doOnVideoSized</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>player<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html">MediaPlayer</a><span class="token punctuation">, </span><span class="token keyword"></span>videoWidth<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span class="token keyword"></span>videoHeight<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1218998158%2FFunctions%2F1588378196" anchor-label="get" id="1218998158%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get.html"><span><span>get</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1218998158%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">inline operator </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="get.html">T</a><span class="token operator"> : </span><a href="-model-node/-child-node/index.html">ModelNode.ChildNode</a><span class="token operator">&gt; </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="get.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="get.html"><span class="token function">get</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="get.html">T</a><span class="token operator">?</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -224,8 +342,9 @@ if(savedDarkMode === true){
       <div class="footer">
         <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 

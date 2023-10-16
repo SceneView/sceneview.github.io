@@ -1,0 +1,382 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>RotateGestureDetector</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sceneview_2_0_0:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="sceneview_2_0_0::io.github.sceneview.gesture/RotateGestureDetector///PointingToDeclaration//-601767457">
+  <div class="breadcrumbs"><a href="../../index.html">sceneview_2_0_0</a><span class="delimiter">/</span><a href="../index.html">io.github.sceneview.gesture</a><span class="delimiter">/</span><span class="current">RotateGestureDetector</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Rotate</span><wbr><span>Gesture</span><wbr><span><span>Detector</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">RotateGestureDetector</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-on-rotate-listener/index.html">RotateGestureDetector.OnRotateListener</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">Detects rotation transformation gestures using the supplied <a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a>s</p><p class="paragraph">The <a href="-on-rotate-listener/index.html">OnRotateListener</a> callback will notify users when a particular gesture event has occurred</p><p class="paragraph">This class should only be used with <a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a>s reported via touch.</p><p class="paragraph">To use this class:</p><ul><li><p class="paragraph">Create an instance of the <a href="index.html">RotateGestureDetector</a> for your <a href="https://developer.android.com/reference/kotlin/android/view/View.html">android.view.View</a>.</p></li><li><p class="paragraph">In the <a href="../../io.github.sceneview.texture/-view-stream/index.html#255030538%2FFunctions%2F-601767457">android.view.View.onTouchEvent</a> method ensure you call <a href="on-touch-event.html">onTouchEvent</a>. The methods defined in your callback will be executed when the events occur.</p></li></ul><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>context</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the application's context</p></div></div></div></div><div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>listener</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the listener invoked for all the callbacks, this must not be null</p></div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="731990197%2FConstructors%2F-601767457" anchor-label="RotateGestureDetector" id="731990197%2FConstructors%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-rotate-gesture-detector.html"><span>Rotate</span><wbr><span>Gesture</span><wbr><span><span>Detector</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="731990197%2FConstructors%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-on-rotate-listener/index.html">RotateGestureDetector.OnRotateListener</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="639518469%2FClasslikes%2F-601767457" anchor-label="Companion" id="639518469%2FClasslikes%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="639518469%2FClasslikes%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="523649187%2FClasslikes%2F-601767457" anchor-label="OnRotateListener" id="523649187%2FClasslikes%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-on-rotate-listener/index.html"><span>On</span><wbr><span>Rotate</span><wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="523649187%2FClasslikes%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-on-rotate-listener/index.html">OnRotateListener</a></div><div class="brief "><p class="paragraph">The listener for receiving notifications when gestures occur</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-617609455%2FClasslikes%2F-601767457" anchor-label="SimpleOnRotateListener" id="-617609455%2FClasslikes%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-simple-on-rotate-listener/index.html"><span>Simple</span><wbr><span>On</span><wbr><span>Rotate</span><wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-617609455%2FClasslikes%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-simple-on-rotate-listener/index.html">SimpleOnRotateListener</a> : <a href="-on-rotate-listener/index.html">RotateGestureDetector.OnRotateListener</a></div><div class="brief "><p class="paragraph">A convenience class to extend when you only want to listen for a subset of rotation-related events</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="568672386%2FProperties%2F-601767457" anchor-label="currentAngle" id="568672386%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="current-angle.html"><span>current</span><wbr><span><span>Angle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="568672386%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="current-angle.html">currentAngle</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">The average angle in radians between each of the pointers forming the gesture in progress through the focal point</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1391385211%2FProperties%2F-601767457" anchor-label="currentSpan" id="1391385211%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="current-span.html"><span>current</span><wbr><span><span>Span</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1391385211%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="current-span.html">currentSpan</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">The current distance in pixels between the two pointers forming the gesture in progress</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-480758584%2FProperties%2F-601767457" anchor-label="deltaQuaternion" id="-480758584%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="delta-quaternion.html"><span>delta</span><wbr><span><span>Quaternion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-480758584%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="delta-quaternion.html">deltaQuaternion</a><span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Quaternion///PointingToDeclaration/">Quaternion</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-914206782%2FProperties%2F-601767457" anchor-label="deltaRadians" id="-914206782%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="delta-radians.html"><span>delta</span><wbr><span><span>Radians</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-914206782%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="delta-radians.html">deltaRadians</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1260059940%2FProperties%2F-601767457" anchor-label="focusX" id="-1260059940%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="focus-x.html"><span>focus</span><wbr><span><span>X</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1260059940%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="focus-x.html">focusX</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">The X coordinate of the current gesture's focal point in pixels</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1229040133%2FProperties%2F-601767457" anchor-label="focusY" id="-1229040133%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="focus-y.html"><span>focus</span><wbr><span><span>Y</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1229040133%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="focus-y.html">focusY</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">The Y coordinate of the current gesture's focal point in pixels</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="263397645%2FProperties%2F-601767457" anchor-label="isGestureInProgress" id="263397645%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-gesture-in-progress.html"><span>is</span><wbr><span>Gesture</span><wbr><span>In</span><wbr><span><span>Progress</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="263397645%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="is-gesture-in-progress.html">isGestureInProgress</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">true</code> if a rotate gesture is in progress</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1982100609%2FProperties%2F-601767457" anchor-label="lastAngle" id="1982100609%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="last-angle.html"><span>last</span><wbr><span><span>Angle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1982100609%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="last-angle.html">lastAngle</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1197960030%2FProperties%2F-601767457" anchor-label="previousAngle" id="-1197960030%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="previous-angle.html"><span>previous</span><wbr><span><span>Angle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1197960030%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="previous-angle.html">previousAngle</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">The previous average angle in radians between each of the pointers forming the gesture in progress through the focal point.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-328170917%2FProperties%2F-601767457" anchor-label="previousSpan" id="-328170917%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="previous-span.html"><span>previous</span><wbr><span><span>Span</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-328170917%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="previous-span.html">previousSpan</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">The previous distance in pixels between the two pointers forming the gesture in progress</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="802670558%2FProperties%2F-601767457" anchor-label="rotation" id="802670558%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="rotation.html"><span><span>rotation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="802670558%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="rotation.html">rotation</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">The rotation factor in degrees from the previous rotation event to the current event</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1604621615%2FProperties%2F-601767457" anchor-label="rotationThreshold" id="-1604621615%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="rotation-threshold.html"><span>rotation</span><wbr><span><span>Threshold</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1604621615%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="rotation-threshold.html">rotationThreshold</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">The initial rotation threshold in degrees for detecting a gesture</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-393571533%2FProperties%2F-601767457" anchor-label="timeDelta" id="-393571533%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="time-delta.html"><span>time</span><wbr><span><span>Delta</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-393571533%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="time-delta.html">timeDelta</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a></div><div class="brief "><p class="paragraph">The time difference in milliseconds between the previous accepted GestureDetector event and the current GestureDetector event</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1572614408%2FFunctions%2F-601767457" anchor-label="onTouchEvent" id="1572614408%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-touch-event.html"><span>on</span><wbr><span>Touch</span><wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1572614408%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="on-touch-event.html"><span class="token function">onTouchEvent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">event<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Accepts MotionEvents and dispatches events to a <a href="-on-rotate-listener/index.html">OnRotateListener</a> when appropriate</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1280952271%2FFunctions%2F-601767457" anchor-label="reset" id="1280952271%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="reset.html"><span><span>reset</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1280952271%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="reset.html"><span class="token function">reset</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,1334 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>LightNode</title>
+<link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../../styles/style.css" rel="Stylesheet">
+<link href="../../../../styles/main.css" rel="Stylesheet">
+<link href="../../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sceneview_2_0_0:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="sceneview_2_0_0::io.github.sceneview.nodes/ModelNode.LightNode///PointingToDeclaration//-601767457">
+  <div class="breadcrumbs"><a href="../../../index.html">sceneview_2_0_0</a><span class="delimiter">/</span><a href="../../index.html">io.github.sceneview.nodes</a><span class="delimiter">/</span><a href="../index.html">ModelNode</a><span class="delimiter">/</span><span class="current">LightNode</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Light</span><wbr><span><span>Node</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">LightNode</a> : <a href="../-child-node/index.html">ModelNode.ChildNode</a>, <a href="../../../io.github.sceneview.components/-light-component/index.html">LightComponent</a></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-71598084%2FProperties%2F-601767457" anchor-label="allChildEntities" id="-71598084%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/all-child-entities.html"><span>all</span><wbr><span>Child</span><wbr><span><span>Entities</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-71598084%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-transform-component/all-child-entities.html">allChildEntities</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../io.github.sceneview/-entity/index.html">Entity</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Gets a flat list of all children within the hierarchy for a transform component.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2134028790%2FProperties%2F-601767457" anchor-label="allChildNodes" id="2134028790%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/all-child-nodes.html"><span>all</span><wbr><span>Child</span><wbr><span><span>Nodes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2134028790%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../../-node/all-child-nodes.html">allChildNodes</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../-node/index.html">Node</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Flat list of all child nodes within the hierarchy</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1705243736%2FProperties%2F-601767457" anchor-label="allParentNodes" id="-1705243736%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/all-parent-nodes.html"><span>all</span><wbr><span>Parent</span><wbr><span><span>Nodes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1705243736%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../../-node/all-parent-nodes.html">allParentNodes</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../-node/index.html">Node</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Flat list of all parent nodes within the hierarchy</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2012344880%2FProperties%2F-601767457" anchor-label="centerPosition" id="-2012344880%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/center-position.html"><span>center</span><wbr><span><span>Position</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2012344880%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/center-position.html">centerPosition</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1693884507%2FProperties%2F-601767457" anchor-label="childCount" id="-1693884507%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/child-count.html"><span>child</span><wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1693884507%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-transform-component/child-count.html">childCount</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Returns the number of children of an <a href="../../../io.github.sceneview/-entity-instance/index.html">EntityInstance</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1224700507%2FProperties%2F-601767457" anchor-label="childEntities" id="-1224700507%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/child-entities.html"><span>child</span><wbr><span><span>Entities</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1224700507%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-transform-component/child-entities.html">childEntities</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../io.github.sceneview/-entity/index.html">Entity</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Gets a list of children for a transform component.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-774155303%2FProperties%2F-601767457" anchor-label="childNodes" id="-774155303%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/child-nodes.html"><span>child</span><wbr><span><span>Nodes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-774155303%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../../-node/child-nodes.html">childNodes</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../-node/index.html">Node</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">List of child entities that has a node component within the same <a href="../../../io.github.sceneview.managers/-node-manager/index.html">NodeManager</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-640927191%2FProperties%2F-601767457" anchor-label="color" id="-640927191%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/color.html"><span><span>color</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-640927191%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-light-component/color.html">color</a><span class="token operator">: </span><a href="../../../io.github.sceneview.utils/-color/index.html">Color</a></div><div class="brief "><p class="paragraph">Dynamically updates the light's hue as linear sRGB</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1059448404%2FProperties%2F-601767457" anchor-label="engine" id="-1059448404%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/engine.html"><span><span>engine</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1059448404%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../-node/engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1456052011%2FProperties%2F-601767457" anchor-label="entity" id="1456052011%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/entity.html"><span><span>entity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1456052011%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../-node/entity.html">entity</a><span class="token operator">: </span><a href="../../../io.github.sceneview/-entity/index.html">Entity</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1774221656%2FProperties%2F-601767457" anchor-label="extras" id="-1774221656%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-child-node/extras.html"><span><span>extras</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1774221656%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../-child-node/extras.html">extras</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Gets the glTF extras string for the asset or a specific node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1733763800%2FProperties%2F-601767457" anchor-label="falloff" id="1733763800%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/falloff.html"><span><span>falloff</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1733763800%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-light-component/falloff.html">falloff</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">The falloff distance for point lights and spot lights.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1332514635%2FProperties%2F-601767457" anchor-label="hasComponent" id="-1332514635%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/has-component.html"><span>has</span><wbr><span><span>Component</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1332514635%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-transform-component/has-component.html">hasComponent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether a particular <a href="../../../io.github.sceneview/-entity/index.html">Entity</a> is associated with a component of the <span data-unresolved-link="com.google.android.filament/TransformManager///PointingToDeclaration/">TransformManager</span>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1294595148%2FProperties%2F-601767457" anchor-label="innerConeAngle" id="-1294595148%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/inner-cone-angle.html"><span>inner</span><wbr><span>Cone</span><wbr><span><span>Angle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1294595148%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-light-component/inner-cone-angle.html">innerConeAngle</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1825240103%2FProperties%2F-601767457" anchor-label="intensity" id="-1825240103%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/intensity.html"><span><span>intensity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1825240103%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-light-component/intensity.html">intensity</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">Dynamically updates the light's intensity</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1571706857%2FProperties%2F-601767457" anchor-label="isPositionEditable" id="-1571706857%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/is-position-editable.html"><span>is</span><wbr><span>Position</span><wbr><span><span>Editable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1571706857%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/is-position-editable.html">isPositionEditable</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2046693474%2FProperties%2F-601767457" anchor-label="isRotationEditable" id="2046693474%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/is-rotation-editable.html"><span>is</span><wbr><span>Rotation</span><wbr><span><span>Editable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2046693474%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/is-rotation-editable.html">isRotationEditable</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1705270440%2FProperties%2F-601767457" anchor-label="isScaleEditable" id="1705270440%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/is-scale-editable.html"><span>is</span><wbr><span>Scale</span><wbr><span><span>Editable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1705270440%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/is-scale-editable.html">isScaleEditable</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1385957326%2FProperties%2F-601767457" anchor-label="isSelectable" id="1385957326%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/is-selectable.html"><span>is</span><wbr><span><span>Selectable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1385957326%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/is-selectable.html">isSelectable</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">The node can be selected when a touch event happened</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="164685545%2FProperties%2F-601767457" anchor-label="isSelected" id="164685545%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/is-selected.html"><span>is</span><wbr><span><span>Selected</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="164685545%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/is-selected.html">isSelected</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1735609032%2FProperties%2F-601767457" anchor-label="isShadowCaster" id="-1735609032%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/is-shadow-caster.html"><span>is</span><wbr><span>Shadow</span><wbr><span><span>Caster</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1735609032%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-light-component/is-shadow-caster.html">isShadowCaster</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Whether this Light casts shadows (disabled by default)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-515388092%2FProperties%2F-601767457" anchor-label="isVisible" id="-515388092%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/is-visible.html"><span>is</span><wbr><span><span>Visible</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-515388092%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/is-visible.html">isVisible</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-538054331%2FProperties%2F-601767457" anchor-label="lightDirection" id="-538054331%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/light-direction.html"><span>light</span><wbr><span><span>Direction</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-538054331%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-light-component/light-direction.html">lightDirection</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-direction/index.html">Direction</a></div><div class="brief "><p class="paragraph">The light's direction in world space</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-956196927%2FProperties%2F-601767457" anchor-label="lightInstance" id="-956196927%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/light-instance.html"><span>light</span><wbr><span><span>Instance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-956196927%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-light-component/light-instance.html">lightInstance</a><span class="token operator">: </span><a href="../../../io.github.sceneview/-entity-instance/index.html">EntityInstance</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-4671849%2FProperties%2F-601767457" anchor-label="lightManager" id="-4671849%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/light-manager.html"><span>light</span><wbr><span><span>Manager</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-4671849%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-light-component/light-manager.html">lightManager</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/LightManager///PointingToDeclaration/">LightManager</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-705289811%2FProperties%2F-601767457" anchor-label="lightPosition" id="-705289811%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/light-position.html"><span>light</span><wbr><span><span>Position</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-705289811%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-light-component/light-position.html">lightPosition</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a></div><div class="brief "><p class="paragraph">The light's position in world space</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1285651688%2FProperties%2F-601767457" anchor-label="lightQuaternion" id="-1285651688%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/light-quaternion.html"><span>light</span><wbr><span><span>Quaternion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1285651688%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-light-component/light-quaternion.html">lightQuaternion</a><span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Quaternion///PointingToDeclaration/">Quaternion</span></div><div class="brief "><p class="paragraph">The light's rotation in world space</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1731315962%2FProperties%2F-601767457" anchor-label="model" id="-1731315962%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-child-node/model.html"><span><span>model</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1731315962%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../-child-node/model.html">model</a><span class="token operator">: </span><a href="../../../io.github.sceneview.model/-model/index.html">Model</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-162747663%2FProperties%2F-601767457" anchor-label="modelInstance" id="-162747663%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-child-node/model-instance.html"><span>model</span><wbr><span><span>Instance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-162747663%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../-child-node/model-instance.html">modelInstance</a><span class="token operator">: </span><a href="../../../io.github.sceneview.model/-model-instance/index.html">ModelInstance</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1754092284%2FProperties%2F-601767457" anchor-label="morphTargetNames" id="1754092284%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-child-node/morph-target-names.html"><span>morph</span><wbr><span>Target</span><wbr><span><span>Names</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1754092284%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../-child-node/morph-target-names.html">morphTargetNames</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Gets the names of all morph targets in the given entity.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1592236800%2FProperties%2F-601767457" anchor-label="name" id="1592236800%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-child-node/name.html"><span><span>name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1592236800%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../-child-node/name.html">name</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2068277375%2FProperties%2F-601767457" anchor-label="nodeManager" id="-2068277375%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/node-manager.html"><span>node</span><wbr><span><span>Manager</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2068277375%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../../-node/node-manager.html">nodeManager</a><span class="token operator">: </span><a href="../../../io.github.sceneview.managers/-node-manager/index.html">NodeManager</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2137243254%2FProperties%2F-601767457" anchor-label="onFrameListener" id="-2137243254%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/on-frame-listener.html"><span>on</span><wbr><span>Frame</span><wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2137243254%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/on-frame-listener.html">onFrameListener</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>node<span class="token operator">: </span><a href="../../-node/index.html">Node</a><span class="token punctuation">, </span><span class="token keyword"></span>frameTime<span class="token operator">: </span><a href="../../../io.github.sceneview.utils/-frame-time/index.html">FrameTime</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1274310036%2FProperties%2F-601767457" anchor-label="onTapListener" id="1274310036%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/on-tap-listener.html"><span>on</span><wbr><span>Tap</span><wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1274310036%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/on-tap-listener.html">onTapListener</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>node<span class="token operator">: </span><a href="../../-node/index.html">Node</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Invoked when the node is tapped</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2012408679%2FProperties%2F-601767457" anchor-label="outerConeAngle" id="-2012408679%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/outer-cone-angle.html"><span>outer</span><wbr><span>Cone</span><wbr><span><span>Angle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2012408679%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-light-component/outer-cone-angle.html">outerConeAngle</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-651326901%2FProperties%2F-601767457" anchor-label="parentEntity" id="-651326901%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/parent-entity.html"><span>parent</span><wbr><span><span>Entity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-651326901%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-transform-component/parent-entity.html">parentEntity</a><span class="token operator">: </span><a href="../../../io.github.sceneview/-entity/index.html">Entity</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Parent entity from this transform.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1067604583%2FProperties%2F-601767457" anchor-label="parentInstance" id="-1067604583%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/parent-instance.html"><span>parent</span><wbr><span><span>Instance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1067604583%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-transform-component/parent-instance.html">parentInstance</a><span class="token operator">: </span><a href="../../../io.github.sceneview/-entity-instance/index.html">EntityInstance</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1351148318%2FProperties%2F-601767457" anchor-label="parentNode" id="-1351148318%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/parent-node.html"><span>parent</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1351148318%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/parent-node.html">parentNode</a><span class="token operator">: </span><a href="../../-node/index.html">Node</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Parent <a href="../../-node/index.html">Node</a> from this transform</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2104648881%2FProperties%2F-601767457" anchor-label="position" id="-2104648881%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/position.html"><span><span>position</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2104648881%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-transform-component/position.html">position</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a></div><div class="brief "><p class="paragraph">Position to locate within the coordinate system the parent.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1744954310%2FProperties%2F-601767457" anchor-label="quaternion" id="-1744954310%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/quaternion.html"><span><span>quaternion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1744954310%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-transform-component/quaternion.html">quaternion</a><span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Quaternion///PointingToDeclaration/">Quaternion</span></div><div class="brief "><p class="paragraph">Quaternion rotation.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1916764518%2FProperties%2F-601767457" anchor-label="rotation" id="-1916764518%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/rotation.html"><span><span>rotation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1916764518%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-transform-component/rotation.html">rotation</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-rotation/index.html">Rotation</a></div><div class="brief "><p class="paragraph">Orientation in Euler Angles Degrees per axis from <code class="lang-kotlin">0.0f</code> to <code class="lang-kotlin">360.0f</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1626660600%2FProperties%2F-601767457" anchor-label="scale" id="1626660600%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/scale.html"><span><span>scale</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1626660600%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-transform-component/scale.html">scale</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-scale/index.html">Scale</a></div><div class="brief "><p class="paragraph">Scale on each axis.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1222307039%2FProperties%2F-601767457" anchor-label="sceneEntities" id="1222307039%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/scene-entities.html"><span>scene</span><wbr><span><span>Entities</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1222307039%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../../-node/scene-entities.html">sceneEntities</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../io.github.sceneview/-entity/index.html">Entity</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1034210626%2FProperties%2F-601767457" anchor-label="selectionNode" id="-1034210626%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/selection-node.html"><span>selection</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1034210626%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/selection-node.html">selectionNode</a><span class="token operator">: </span><a href="../../-node/index.html">Node</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Node selection visualizer</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1746313485%2FProperties%2F-601767457" anchor-label="size" id="1746313485%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/size.html"><span><span>size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1746313485%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-node/size.html">size</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-size/index.html">Size</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-499641658%2FProperties%2F-601767457" anchor-label="sunAngularRadius" id="-499641658%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/sun-angular-radius.html"><span>sun</span><wbr><span>Angular</span><wbr><span><span>Radius</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-499641658%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-light-component/sun-angular-radius.html">sunAngularRadius</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">Dynamically updates the angular radius of a Type.SUN light.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1616469858%2FProperties%2F-601767457" anchor-label="sunHaloFalloff" id="1616469858%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/sun-halo-falloff.html"><span>sun</span><wbr><span>Halo</span><wbr><span><span>Falloff</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1616469858%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-light-component/sun-halo-falloff.html">sunHaloFalloff</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">Dynamically updates the halo falloff of a Type.SUN light.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1913639869%2FProperties%2F-601767457" anchor-label="sunHaloSize" id="-1913639869%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/sun-halo-size.html"><span>sun</span><wbr><span>Halo</span><wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1913639869%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-light-component/sun-halo-size.html">sunHaloSize</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="brief "><p class="paragraph">Dynamically updates the halo radius of a Type.SUN light</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-851534698%2FProperties%2F-601767457" anchor-label="transform" id="-851534698%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/transform.html"><span><span>transform</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-851534698%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-transform-component/transform.html">transform</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-transform/index.html">Transform</a></div><div class="brief "><p class="paragraph">Local transform of the transform component (i.e. relative to the parent).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="554074241%2FProperties%2F-601767457" anchor-label="transformInstance" id="554074241%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/transform-instance.html"><span>transform</span><wbr><span><span>Instance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="554074241%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-transform-component/transform-instance.html">transformInstance</a><span class="token operator">: </span><a href="../../../io.github.sceneview/-entity-instance/index.html">EntityInstance</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-787237417%2FProperties%2F-601767457" anchor-label="transformManager" id="-787237417%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/transform-manager.html"><span>transform</span><wbr><span><span>Manager</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-787237417%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-transform-component/transform-manager.html">transformManager</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/TransformManager///PointingToDeclaration/">TransformManager</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1430405260%2FProperties%2F-601767457" anchor-label="type" id="-1430405260%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/type.html"><span><span>type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1430405260%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-light-component/type.html">type</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/LightManager.Type///PointingToDeclaration/">LightManager.Type</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="12394887%2FProperties%2F-601767457" anchor-label="worldPosition" id="12394887%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/world-position.html"><span>world</span><wbr><span><span>Position</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="12394887%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-transform-component/world-position.html">worldPosition</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a></div><div class="brief "><p class="paragraph">World-space position.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1214575730%2FProperties%2F-601767457" anchor-label="worldQuaternion" id="1214575730%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/world-quaternion.html"><span>world</span><wbr><span><span>Quaternion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1214575730%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-transform-component/world-quaternion.html">worldQuaternion</a><span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Quaternion///PointingToDeclaration/">Quaternion</span></div><div class="brief "><p class="paragraph">The world-space quaternion.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="200279250%2FProperties%2F-601767457" anchor-label="worldRotation" id="200279250%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/world-rotation.html"><span>world</span><wbr><span><span>Rotation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="200279250%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-transform-component/world-rotation.html">worldRotation</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-rotation/index.html">Rotation</a></div><div class="brief "><p class="paragraph">World-space rotation.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2026226624%2FProperties%2F-601767457" anchor-label="worldScale" id="2026226624%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/world-scale.html"><span>world</span><wbr><span><span>Scale</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2026226624%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="../../../io.github.sceneview.components/-transform-component/world-scale.html">worldScale</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-scale/index.html">Scale</a></div><div class="brief "><p class="paragraph">World-space scale.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-758755541%2FProperties%2F-601767457" anchor-label="worldToParent" id="-758755541%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/world-to-parent.html"><span>world</span><wbr><span>To</span><wbr><span><span>Parent</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-758755541%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-transform-component/world-to-parent.html">worldToParent</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-transform/index.html">Transform</a></div><div class="brief "><p class="paragraph">Transform from the world coordinate system to the coordinate system of the parent.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="352312670%2FProperties%2F-601767457" anchor-label="worldTransform" id="352312670%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/world-transform.html"><span>world</span><wbr><span><span>Transform</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="352312670%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../../io.github.sceneview.components/-transform-component/world-transform.html">worldTransform</a><span class="token operator">: </span><a href="../../../io.github.sceneview.math/-transform/index.html">Transform</a></div><div class="brief "><p class="paragraph">World transform of a transform component (i.e. relative to the root).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1469872786%2FFunctions%2F-601767457" anchor-label="addChildNode" id="1469872786%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/add-child-node.html"><span>add</span><wbr><span>Child</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1469872786%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-node/add-child-node.html"><span class="token function">addChildNode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">child<span class="token operator">: </span><a href="../../-node/index.html">Node</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1441845477%2FFunctions%2F-601767457" anchor-label="addChildNodes" id="1441845477%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/add-child-nodes.html"><span>add</span><wbr><span>Child</span><wbr><span><span>Nodes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1441845477%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-node/add-child-nodes.html"><span class="token function">addChildNodes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">nodes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../-node/index.html">Node</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="30421155%2FFunctions%2F-601767457" anchor-label="animatePositions" id="30421155%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/animate-positions.html"><span>animate</span><wbr><span><span>Positions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="30421155%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/animate-positions.html"><span class="token function">animatePositions</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>positions<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1138709281%2FFunctions%2F-601767457" anchor-label="animateQuaternions" id="-1138709281%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/animate-quaternions.html"><span>animate</span><wbr><span><span>Quaternions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1138709281%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/animate-quaternions.html"><span class="token function">animateQuaternions</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>quaternions<span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Quaternion///PointingToDeclaration/">Quaternion</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-800826888%2FFunctions%2F-601767457" anchor-label="animateRotations" id="-800826888%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/animate-rotations.html"><span>animate</span><wbr><span><span>Rotations</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-800826888%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/animate-rotations.html"><span class="token function">animateRotations</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>rotations<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-rotation/index.html">Rotation</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1869147788%2FFunctions%2F-601767457" anchor-label="animateScales" id="1869147788%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/animate-scales.html"><span>animate</span><wbr><span><span>Scales</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1869147788%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/animate-scales.html"><span class="token function">animateScales</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>scales<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-scale/index.html">Scale</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1411237909%2FFunctions%2F-601767457" anchor-label="animateTransforms" id="-1411237909%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/animate-transforms.html"><span>animate</span><wbr><span><span>Transforms</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1411237909%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/animate-transforms.html"><span class="token function">animateTransforms</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>transforms<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-transform/index.html">Transform</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html">ObjectAnimator</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2091968895%2FFunctions%2F-601767457" anchor-label="createComponent" id="-2091968895%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/create-component.html"><span>create</span><wbr><span><span>Component</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2091968895%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/create-component.html"><span class="token function">createComponent</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../io.github.sceneview/-entity-instance/index.html">EntityInstance</a></div><div class="brief "><p class="paragraph">Creates a transform component and associates it with the given entity. The component is initialized with the identity transform. If this component already exists on the given entity, it is first destroyed as if .destroy was called.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1299352882%2FFunctions%2F-601767457" anchor-label="destroy" id="1299352882%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/destroy.html"><span><span>destroy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1299352882%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-node/destroy.html"><span class="token function">destroy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1970143875%2FFunctions%2F-601767457" anchor-label="getBoundingBox" id="-1970143875%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/get-bounding-box.html"><span>get</span><wbr><span>Bounding</span><wbr><span><span>Box</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1970143875%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-node/get-bounding-box.html"><span class="token function">getBoundingBox</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Box///PointingToDeclaration/">Box</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-855567449%2FFunctions%2F-601767457" anchor-label="getLightChannel" id="-855567449%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/get-light-channel.html"><span>get</span><wbr><span>Light</span><wbr><span><span>Channel</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-855567449%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-light-component/get-light-channel.html"><span class="token function">getLightChannel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/IntRange.html"><span class="token annotation builtin">IntRange</span></a><span class="token punctuation">(</span><span>from<span class="token operator"> = </span><span class="breakable-word"><span class="token constant">0</span></span><span class="token punctuation">, </span></span><wbr><span>to<span class="token operator"> = </span><span class="breakable-word"><span class="token constant">7</span></span></span><wbr><span class="token punctuation">)</span>&nbsp;</span>channel<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether a light channel is enabled on a specified renderable.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1273691429%2FFunctions%2F-601767457" anchor-label="lookAt" id="1273691429%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/look-at.html"><span>look</span><wbr><span><span>At</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1273691429%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/look-at.html"><span class="token function">lookAt</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">eye<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>worldPosition<span class="token punctuation">, </span></span><span class="parameter ">targetPosition<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a><span class="token punctuation">, </span></span><span class="parameter ">smooth<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Rotate the transform to face a point in world-space.</p></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/look-at.html"><span class="token function">lookAt</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">eye<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>worldPosition<span class="token punctuation">, </span></span><span class="parameter ">targetComponent<span class="token operator">: </span><a href="../../../io.github.sceneview.components/-transform-component/index.html">TransformComponent</a><span class="token punctuation">, </span></span><span class="parameter ">smooth<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Rotates the transform to face another <a href="../../../io.github.sceneview.components/-transform-component/index.html">TransformComponent</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-462911711%2FFunctions%2F-601767457" anchor-label="lookTowards" id="-462911711%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/look-towards.html"><span>look</span><wbr><span><span>Towards</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-462911711%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/look-towards.html"><span class="token function">lookTowards</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">lookDirection<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-direction/index.html">Direction</a><span class="token punctuation">, </span></span><span class="parameter ">smooth<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Rotates the transform to face a direction in world-space.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-270303225%2FFunctions%2F-601767457" anchor-label="onFrame" id="-270303225%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/on-frame.html"><span>on</span><wbr><span><span>Frame</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-270303225%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-node/on-frame.html"><span class="token function">onFrame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">frameTime<span class="token operator">: </span><a href="../../../io.github.sceneview.utils/-frame-time/index.html">FrameTime</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1528851876%2FFunctions%2F-601767457" anchor-label="onTouchEvent" id="-1528851876%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/on-touch-event.html"><span>on</span><wbr><span>Touch</span><wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1528851876%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-node/on-touch-event.html"><span class="token function">onTouchEvent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">motionEvent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token punctuation">, </span></span><span class="parameter ">pickingResult<span class="token operator">: </span><a href="../../../io.github.sceneview/-scene-view/-picking-result/index.html">SceneView.PickingResult</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns true if the node completely handles the touch event by itself</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1835066867%2FFunctions%2F-601767457" anchor-label="removeChildNode" id="1835066867%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/remove-child-node.html"><span>remove</span><wbr><span>Child</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1835066867%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-node/remove-child-node.html"><span class="token function">removeChildNode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">child<span class="token operator">: </span><a href="../../-node/index.html">Node</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="149093376%2FFunctions%2F-601767457" anchor-label="scaleToUnitsCube" id="149093376%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/scale-to-units-cube.html"><span>scale</span><wbr><span>To</span><wbr><span>Units</span><wbr><span><span>Cube</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="149093376%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-node/scale-to-units-cube.html"><span class="token function">scaleToUnitsCube</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">units<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sets up a root transform on the current node content to make it fit into a unit cube</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="996574987%2FFunctions%2F-601767457" anchor-label="setEditable" id="996574987%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../-node/set-editable.html"><span>set</span><wbr><span><span>Editable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="996574987%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-node/set-editable.html"><span class="token function">setEditable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">editable<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-981307742%2FFunctions%2F-601767457" anchor-label="setIntensity" id="-981307742%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/set-intensity.html"><span>set</span><wbr><span><span>Intensity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-981307742%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-light-component/set-intensity.html"><span class="token function">setIntensity</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">watts<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">efficiency<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Dynamically updates the light's intensity. The intensity can be negative.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1966829496%2FFunctions%2F-601767457" anchor-label="setIntensityCandela" id="-1966829496%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/set-intensity-candela.html"><span>set</span><wbr><span>Intensity</span><wbr><span><span>Candela</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1966829496%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-light-component/set-intensity-candela.html"><span class="token function">setIntensityCandela</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">intensity<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Dynamically updates the light's intensity in candela. The intensity can be negative.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-254509815%2FFunctions%2F-601767457" anchor-label="setLightChannel" id="-254509815%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/set-light-channel.html"><span>set</span><wbr><span>Light</span><wbr><span><span>Channel</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-254509815%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-light-component/set-light-channel.html"><span class="token function">setLightChannel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/IntRange.html"><span class="token annotation builtin">IntRange</span></a><span class="token punctuation">(</span><span>from<span class="token operator"> = </span><span class="breakable-word"><span class="token constant">0</span></span><span class="token punctuation">, </span></span><wbr><span>to<span class="token operator"> = </span><span class="breakable-word"><span class="token constant">7</span></span></span><wbr><span class="token punctuation">)</span>&nbsp;</span>channel<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">enable<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Enables or disables a light channel. Light channel 0 is enabled by default.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1346255073%2FFunctions%2F-601767457" anchor-label="setScale" id="1346255073%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/set-scale.html"><span>set</span><wbr><span><span>Scale</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1346255073%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/set-scale.html"><span class="token function">setScale</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">scale<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Apply a scale to all axis.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1980062362%2FFunctions%2F-601767457" anchor-label="setSpotLightCone" id="-1980062362%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-light-component/set-spot-light-cone.html"><span>set</span><wbr><span>Spot</span><wbr><span>Light</span><wbr><span><span>Cone</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1980062362%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-light-component/set-spot-light-cone.html"><span class="token function">setSpotLightCone</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">inner<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">outer<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Dynamically updates a spot light's cone as angles</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="581511830%2FFunctions%2F-601767457" anchor-label="smooth" id="581511830%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/smooth.html"><span><span>smooth</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="581511830%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/smooth.html"><span class="token function">smooth</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">transform<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-transform/index.html">Transform</a><span class="token punctuation">, </span></span><span class="parameter ">speed<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span>defaultSmoothSpeed</span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/smooth.html"><span class="token function">smooth</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">position<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>this.position<span class="token punctuation">, </span></span><span class="parameter ">rotation<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-rotation/index.html">Rotation</a><span class="token operator"> = </span>this.rotation<span class="token punctuation">, </span></span><span class="parameter ">scale<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-scale/index.html">Scale</a><span class="token operator"> = </span>this.scale<span class="token punctuation">, </span></span><span class="parameter ">speed<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span>defaultSmoothSpeed</span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/smooth.html"><span class="token function">smooth</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">position<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>this.position<span class="token punctuation">, </span></span><span class="parameter ">quaternion<span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Quaternion///PointingToDeclaration/">Quaternion</span><span class="token operator"> = </span>this.quaternion<span class="token punctuation">, </span></span><span class="parameter ">scale<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-scale/index.html">Scale</a><span class="token operator"> = </span>this.scale<span class="token punctuation">, </span></span><span class="parameter ">speed<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span>defaultSmoothSpeed</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Smooth move, rotate and scale at a specified speed.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="944232059%2FFunctions%2F-601767457" anchor-label="transform" id="944232059%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../../io.github.sceneview.components/-transform-component/transform.html"><span><span>transform</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="944232059%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/transform.html"><span class="token function">transform</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">position<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>this.position<span class="token punctuation">, </span></span><span class="parameter ">rotation<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-rotation/index.html">Rotation</a><span class="token operator"> = </span>this.rotation<span class="token punctuation">, </span></span><span class="parameter ">scale<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-scale/index.html">Scale</a><span class="token operator"> = </span>this.scale<span class="token punctuation">, </span></span><span class="parameter ">smooth<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">smoothSpeed<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span>defaultSmoothSpeed</span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../../io.github.sceneview.components/-transform-component/transform.html"><span class="token function">transform</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">position<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>this.position<span class="token punctuation">, </span></span><span class="parameter ">quaternion<span class="token operator">: </span><span data-unresolved-link="dev.romainguy.kotlin.math/Quaternion///PointingToDeclaration/">Quaternion</span><span class="token operator"> = </span>this.quaternion<span class="token punctuation">, </span></span><span class="parameter ">scale<span class="token operator">: </span><a href="../../../io.github.sceneview.math/-scale/index.html">Scale</a><span class="token operator"> = </span>this.scale<span class="token punctuation">, </span></span><span class="parameter ">smooth<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">smoothSpeed<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span>defaultSmoothSpeed</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Apply multiple transforms at at same time.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

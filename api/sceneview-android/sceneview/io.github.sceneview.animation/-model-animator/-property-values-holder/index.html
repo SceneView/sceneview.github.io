@@ -1,0 +1,179 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>PropertyValuesHolder</title>
+<link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../../styles/style.css" rel="Stylesheet">
+<link href="../../../../styles/main.css" rel="Stylesheet">
+<link href="../../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sceneview:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="sceneview::io.github.sceneview.animation/ModelAnimator.PropertyValuesHolder///PointingToDeclaration//1588378196">
+  <div class="breadcrumbs"><a href="../../../index.html">sceneview</a><span class="delimiter">/</span><a href="../../index.html">io.github.sceneview.animation</a><span class="delimiter">/</span><a href="../index.html">ModelAnimator</a><span class="delimiter">/</span><span class="current">PropertyValuesHolder</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Property</span><wbr><span>Values</span><wbr><span><span>Holder</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">PropertyValuesHolder</a></div><p class="paragraph">This class holds information about a property and the values that that property should take during an animation. </p><p class="paragraph">PropertyValuesHolder objects can be used to create animations with ObjectAnimator or that operate on several different properties in parallel.</p><h2 class="">Warning:</h2><p class="paragraph">Using this PropertyValuesHolder is very useful for targeting multiple time or frame properties of multiple animations inside a same ObjectAnimator model</p><p class="paragraph"><strong>and</strong> insure a less consuming <a href="https://developer.android.com/reference/kotlin/android/view/Choreographer.FrameCallback.html">android.view.Choreographer.FrameCallback</a> than using <a href="https://developer.android.com/reference/kotlin/android/animation/AnimatorSet.html#playTogether-android.animation.Animator...-">playTogether</a></p><p class="paragraph"><strong>but</strong> If you want to use the <a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html#setAutoCancel-boolean-">setAutoCancel</a> functionality, you have to take care of this :</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">ObjectAnimator.hasSameTargetAndProperties(Animator anim) {
+     PropertyValuesHolder[] theirValues = ((ObjectAnimator) anim).getValues();
+     if (((ObjectAnimator) anim).getTarget() == getTarget() &amp;&amp;
+             mValues.length == theirValues.length) {
+         for (int i = 0; i &lt; mValues.length; ++i) {
+             PropertyValuesHolder pvhMine = mValues[i];
+             PropertyValuesHolder pvhTheirs = theirValues[i];
+             if (pvhMine.getPropertyName() == null ||
+                     !pvhMine.getPropertyName().equals(pvhTheirs.getPropertyName())) {
+                 return false;
+             }
+         }
+         return true;
+     }
+ }
+</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="https://developer.android.com/reference/kotlin/android/animation/ObjectAnimator.html"><span>Object</span><wbr><span><span>Animator</span></span></a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-1613800937%2FConstructors%2F1588378196" anchor-label="PropertyValuesHolder" id="-1613800937%2FConstructors%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-property-values-holder.html"><span>Property</span><wbr><span>Values</span><wbr><span><span>Holder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1613800937%2FConstructors%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1116161202%2FFunctions%2F1588378196" anchor-label="ofAnimation" id="-1116161202%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="of-animation.html"><span>of</span><wbr><span><span>Animation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1116161202%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation.html"><span class="token function">ofAnimation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">animation<span class="token operator">: </span><a href="../../-model-animation/index.html">ModelAnimation</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/PropertyValuesHolder.html">PropertyValuesHolder</a></div><div class="brief ">Constructs and returns a PropertyValuesHolder for a targeted <a href="../../-model-animation/index.html">ModelAnimation</a>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-397774346%2FFunctions%2F1588378196" anchor-label="ofAnimationFraction" id="-397774346%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="of-animation-fraction.html"><span>of</span><wbr><span>Animation</span><wbr><span><span>Fraction</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-397774346%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-fraction.html"><span class="token function">ofAnimationFraction</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">animation<span class="token operator">: </span><a href="../../-model-animation/index.html">ModelAnimation</a><span class="token punctuation">, </span></span><span class="parameter ">fractions<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/PropertyValuesHolder.html">PropertyValuesHolder</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-fraction.html"><span class="token function">ofAnimationFraction</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">animationName<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">fractions<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/PropertyValuesHolder.html">PropertyValuesHolder</a></div><div class="brief ">Constructs and returns a PropertyValuesHolder for a targeted <a href="../../-model-animation/index.html">ModelAnimation</a> with a given set of fraction values.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1711862956%2FFunctions%2F1588378196" anchor-label="ofAnimationFrame" id="1711862956%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="of-animation-frame.html"><span>of</span><wbr><span>Animation</span><wbr><span><span>Frame</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1711862956%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-frame.html"><span class="token function">ofAnimationFrame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">animation<span class="token operator">: </span><a href="../../-model-animation/index.html">ModelAnimation</a><span class="token punctuation">, </span></span><span class="parameter ">frames<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/PropertyValuesHolder.html">PropertyValuesHolder</a></div><div class="brief ">Constructs and returns a PropertyValuesHolder for a targeted <a href="../../-model-animation/index.html">ModelAnimation</a> with a given set of frame values.</div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-frame.html"><span class="token function">ofAnimationFrame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">animationName<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">frames<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/PropertyValuesHolder.html">PropertyValuesHolder</a></div><div class="brief ">Constructs and returns a PropertyValuesHolder for a targeted <a href="../../-model-animation/index.html">ModelAnimation</a> with a given set of fame values.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1824984436%2FFunctions%2F1588378196" anchor-label="ofAnimationTime" id="-1824984436%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="of-animation-time.html"><span>of</span><wbr><span>Animation</span><wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1824984436%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-time.html"><span class="token function">ofAnimationTime</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">animation<span class="token operator">: </span><a href="../../-model-animation/index.html">ModelAnimation</a><span class="token punctuation">, </span></span><span class="parameter ">times<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/PropertyValuesHolder.html">PropertyValuesHolder</a></div><div class="brief ">Constructs and returns a PropertyValuesHolder for a targeted <a href="../../-model-animation/index.html">ModelAnimation</a> with a given set of time values.</div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="of-animation-time.html"><span class="token function">ofAnimationTime</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">animationName<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">times<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/animation/PropertyValuesHolder.html">PropertyValuesHolder</a></div><div class="brief ">Constructs and returns a PropertyValuesHolder for a targeted animation set of time values.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

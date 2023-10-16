@@ -1,324 +1,353 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>LightEstimator</title>
-<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../styles/style.css" rel="Stylesheet">
-<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../../styles/main.css" rel="Stylesheet">
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer></script>
-<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../../index.html">
-<span>SceneView</span>            </a>    </div>
-    <div>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":arsceneview:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="arsceneview::io.github.sceneview.ar.arcore/LightEstimator///PointingToDeclaration//1238612933">
-  <div class="breadcrumbs"><a href="../../index.html">arsceneview</a><span class="delimiter">/</span><a href="../index.html">io.github.sceneview.ar.arcore</a><span class="delimiter">/</span><a href="index.html">LightEstimator</a></div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="arsceneview::io.github.sceneview.ar.arcore/LightEstimator///PointingToDeclaration//1238612933">
+  <div class="breadcrumbs"><a href="../../index.html">arsceneview</a><span class="delimiter">/</span><a href="../index.html">io.github.sceneview.ar.arcore</a><span class="delimiter">/</span><span class="current">LightEstimator</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Light</span><wbr><span><span>Estimator</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">LightEstimator</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class=""> Per frame AR light estimation</h3><p class="paragraph">ARCore will estimate lighting to provide directional light, ambient spherical harmonics, and reflection cubemap estimation</p><p class="paragraph">A key part for creating realistic AR experiences is getting the lighting right. When a virtual object is missing a shadow or has a shiny material that doesn't reflect the surrounding space, users can sense that the object doesn't quite fit, even if they can't explain why. This is because humans subconsciously perceive cues regarding how objects are lit in their environment. The Lighting Estimation API analyzes given images for such cues, providing detailed information about the lighting in a scene. You can then use this information when rendering virtual objects to light them under the same conditions as the scene they're placed in, keeping users grounded and engaged.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">LightEstimator</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>iblPrefilter<span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.environment/-i-b-l-prefilter/index.html">IBLPrefilter</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">Per frame AR light estimation</p><p class="paragraph">ARCore will estimate lighting to provide directional light, ambient spherical harmonics, and reflection cubemap estimation</p><p class="paragraph">A key part for creating realistic AR experiences is getting the lighting right. When a virtual object is missing a shadow or has a shiny material that doesn't reflect the surrounding space, users can sense that the object doesn't quite fit, even if they can't explain why. This is because humans subconsciously perceive cues regarding how objects are lit in their environment. The Lighting Estimation API analyzes given images for such cues, providing detailed information about the lighting in a scene. You can then use this information when rendering virtual objects to light them under the same conditions as the scene they're placed in, keeping users grounded and engaged.</p></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <h2 class="tabbedcontent">Constructors</h2>
-      <div class="table" data-togglable="Constructors"><a data-name="175836765%2FConstructors%2F1238612933" anchor-label="LightEstimator" id="175836765%2FConstructors%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue TabbedContent">
-            <div class=""><span class="inline-flex">
-                <div><a href="-light-estimator.html"><span>Light</span><wbr><span><span>Estimator</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="175836765%2FConstructors%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-light-estimator.html"><span class="token function">LightEstimator</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-681505057%2FConstructors%2F1238612933" anchor-label="LightEstimator" id="-681505057%2FConstructors%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-light-estimator.html"><span>Light</span><wbr><span><span>Estimator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-681505057%2FConstructors%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">iblPrefilter<span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.environment/-i-b-l-prefilter/index.html">IBLPrefilter</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h2 class="">Types</h2>
-      <div class="table" data-togglable="Types"><a data-name="1225098471%2FClasslikes%2F1238612933" anchor-label="Companion" id="1225098471%2FClasslikes%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1225098471%2FClasslikes%2F1238612933" anchor-label="Companion" id="1225098471%2FClasslikes%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1225098471%2FClasslikes%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1873146748%2FClasslikes%2F1238612933" anchor-label="Estimation" id="-1873146748%2FClasslikes%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-estimation/index.html"><span><span>Estimation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1873146748%2FClasslikes%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-estimation/index.html">Estimation</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>mainLightColorFactor<span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.utils/-color/index.html">Color</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>mainLightIntensityFactor<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>mainLightDirection<span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.math/-direction/index.html">Direction</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>environment<span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.environment/-environment/index.html">Environment</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/java/io/Closeable.html">Closeable</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h2 class="">Functions</h2>
-      <div class="table" data-togglable="Functions"><a data-name="598326694%2FFunctions%2F1238612933" anchor-label="destroy" id="598326694%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="destroy.html"><span><span>destroy</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="598326694%2FFunctions%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="destroy.html"><span class="token function">destroy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-1559636770%2FProperties%2F1238612933" anchor-label="baseIndirectLightIntensity" id="-1559636770%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="base-indirect-light-intensity.html"><span>base</span><wbr><span>Indirect</span><wbr><span>Light</span><wbr><span><span>Intensity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1559636770%2FProperties%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="base-indirect-light-intensity.html">baseIndirectLightIntensity</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="566427112%2FFunctions%2F1238612933" anchor-label="update" id="566427112%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="update.html"><span><span>update</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="566427112%2FFunctions%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update.html"><span class="token function">update</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">sceneView<span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview/-scene-view/index.html">SceneView</a><span class="token punctuation">, </span></span><span class="parameter ">arFrame<span class="token operator">: </span><a href="../-ar-frame/index.html">ArFrame</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html">Pair</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../sceneview/io.github.sceneview.environment/-environment/index.html">Environment</a><span class="token operator">?</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../sceneview/io.github.sceneview.light/-light/index.html">Light</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+<a data-name="823908854%2FProperties%2F1238612933" anchor-label="baseIndirectLightTexture" id="823908854%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="base-indirect-light-texture.html"><span>base</span><wbr><span>Indirect</span><wbr><span>Light</span><wbr><span><span>Texture</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="823908854%2FProperties%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="base-indirect-light-texture.html">baseIndirectLightTexture</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token operator">?</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="-998483975%2FProperties%2F1238612933" anchor-label="cubeMapBuffer" id="-998483975%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="cube-map-buffer.html"><span>cube</span><wbr><span>Map</span><wbr><span><span>Buffer</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-998483975%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="-998483975%2FProperties%2F1238612933" anchor-label="cubeMapBuffer" id="-998483975%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="cube-map-buffer.html">cubeMapBuffer</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/nio/ByteBuffer.html">ByteBuffer</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+<a data-name="-789015744%2FProperties%2F1238612933" anchor-label="baseSphericalHarmonics" id="-789015744%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="base-spherical-harmonics.html"><span>base</span><wbr><span>Spherical</span><wbr><span><span>Harmonics</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-789015744%2FProperties%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="base-spherical-harmonics.html">baseSphericalHarmonics</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html">FloatArray</a><span class="token operator">?</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1359855098%2FProperties%2F1238612933" anchor-label="cubeMapTexture" id="-1359855098%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="cube-map-texture.html"><span>cube</span><wbr><span>Map</span><wbr><span><span>Texture</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1359855098%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="-1359855098%2FProperties%2F1238612933" anchor-label="cubeMapTexture" id="-1359855098%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="cube-map-texture.html">cubeMapTexture</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Texture///PointingToDeclaration/">Texture</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
 <a data-name="1976929194%2FProperties%2F1238612933" anchor-label="defaultEnvironmentReflections" id="1976929194%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="default-environment-reflections.html"><span>default</span><wbr><span>Environment</span><wbr><span><span>Reflections</span></span></a></div>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="default-environment-reflections.html"><span>default</span><wbr><span>Environment</span><wbr><span><span>Reflections</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1976929194%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="1976929194%2FProperties%2F1238612933" anchor-label="defaultEnvironmentReflections" id="1976929194%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="default-environment-reflections.html">defaultEnvironmentReflections</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="1976929194%2FProperties%2F1238612933" anchor-label="defaultEnvironmentReflections" id="1976929194%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><p class="paragraph">If <a href="environmental-hdr-reflections.html">environmentalHdrReflections</a> is false, use or not the <a href="../../io.github.sceneview.ar/-ar-scene-view/index.html#-769674583%2FProperties%2F1238612933">SceneView.environment</a> default reflections. In case of false, and <a href="environmental-hdr-reflections.html">environmentalHdrReflections</a> no reflections will come on your reflective objects.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="default-environment-reflections.html">defaultEnvironmentReflections</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Use the <a href="../../../sceneview/io.github.sceneview.environment/-environment/indirect-light.html">SceneView.environment</a> as fallback</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1082062152%2FProperties%2F1238612933" anchor-label="engine" id="-1082062152%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="engine.html"><span><span>engine</span></span></a></div>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="engine.html"><span><span>engine</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1082062152%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="-1082062152%2FProperties%2F1238612933" anchor-label="engine" id="-1082062152%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1038057427%2FProperties%2F1238612933" anchor-label="environment" id="-1038057427%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="environment.html"><span><span>environment</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1038057427%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="-1038057427%2FProperties%2F1238612933" anchor-label="environment" id="-1038057427%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="environment.html">environment</a><span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.environment/-environment/index.html">Environment</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1038057427%2FProperties%2F1238612933" anchor-label="environment" id="-1038057427%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><p class="paragraph">Environmental HDR mode uses machine learning to analyze the camera images in real time and synthesize environmental lighting to support realistic rendering of virtual objects.</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
 <a data-name="-223106400%2FProperties%2F1238612933" anchor-label="environmentalHdrMainLightDirection" id="-223106400%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="environmental-hdr-main-light-direction.html"><span>environmental</span><wbr><span>Hdr</span><wbr><span>Main</span><wbr><span>Light</span><wbr><span><span>Direction</span></span></a></div>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="environmental-hdr-main-light-direction.html"><span>environmental</span><wbr><span>Hdr</span><wbr><span>Main</span><wbr><span>Light</span><wbr><span><span>Direction</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-223106400%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="-223106400%2FProperties%2F1238612933" anchor-label="environmentalHdrMainLightDirection" id="-223106400%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="environmental-hdr-main-light-direction.html">environmentalHdrMainLightDirection</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-223106400%2FProperties%2F1238612933" anchor-label="environmentalHdrMainLightDirection" id="-223106400%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><p class="paragraph">When the main light source or a lit object is in motion, the specular highlight on the object adjusts its position in real time relative to the light source.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="environmental-hdr-main-light-direction.html">environmentalHdrMainLightDirection</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Move the directional light</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1158607764%2FProperties%2F1238612933" anchor-label="environmentalHdrMainLightIntensity" id="-1158607764%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="environmental-hdr-main-light-intensity.html"><span>environmental</span><wbr><span>Hdr</span><wbr><span>Main</span><wbr><span>Light</span><wbr><span><span>Intensity</span></span></a></div>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="environmental-hdr-main-light-intensity.html"><span>environmental</span><wbr><span>Hdr</span><wbr><span>Main</span><wbr><span>Light</span><wbr><span><span>Intensity</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1158607764%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="-1158607764%2FProperties%2F1238612933" anchor-label="environmentalHdrMainLightIntensity" id="-1158607764%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="environmental-hdr-main-light-intensity.html">environmentalHdrMainLightIntensity</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="environmental-hdr-main-light-intensity.html">environmentalHdrMainLightIntensity</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Modulate the main directional light (sun) intensity</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="6977776%2FProperties%2F1238612933" anchor-label="environmentalHdrReflections" id="6977776%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="environmental-hdr-reflections.html"><span>environmental</span><wbr><span>Hdr</span><wbr><span><span>Reflections</span></span></a></div>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="environmental-hdr-reflections.html"><span>environmental</span><wbr><span>Hdr</span><wbr><span><span>Reflections</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="6977776%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="6977776%2FProperties%2F1238612933" anchor-label="environmentalHdrReflections" id="6977776%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="environmental-hdr-reflections.html">environmentalHdrReflections</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="6977776%2FProperties%2F1238612933" anchor-label="environmentalHdrReflections" id="6977776%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><p class="paragraph">Use the HDR cubemap to render realistic reflections on virtual objects with medium to high glossiness, such as shiny metallic surfaces. The cubemap also affects the shading and appearance of objects. For example, the material of a specular object surrounded by a blue environment will reflect blue hues. Calculating the HDR cubemap requires a small amount of additional CPU computation.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="environmental-hdr-reflections.html">environmentalHdrReflections</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Enable reflection cubemap</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1483130937%2FProperties%2F1238612933" anchor-label="environmentalHdrSpecularFilter" id="-1483130937%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="environmental-hdr-specular-filter.html"><span>environmental</span><wbr><span>Hdr</span><wbr><span>Specular</span><wbr><span><span>Filter</span></span></a></div>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="environmental-hdr-specular-filter.html"><span>environmental</span><wbr><span>Hdr</span><wbr><span>Specular</span><wbr><span><span>Filter</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1483130937%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="-1483130937%2FProperties%2F1238612933" anchor-label="environmentalHdrSpecularFilter" id="-1483130937%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="environmental-hdr-specular-filter.html">environmentalHdrSpecularFilter</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1483130937%2FProperties%2F1238612933" anchor-label="environmentalHdrSpecularFilter" id="-1483130937%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><p class="paragraph">Specular highlights are the shiny bits of surfaces that reflect a light source directly. Highlights on an object change relative to the position of a viewer in a scene.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="environmental-hdr-specular-filter.html">environmentalHdrSpecularFilter</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">SpecularFilter applies a filter based on the BRDF used for lighting</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1580438425%2FProperties%2F1238612933" anchor-label="environmentalHdrSphericalHarmonics" id="1580438425%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="environmental-hdr-spherical-harmonics.html"><span>environmental</span><wbr><span>Hdr</span><wbr><span>Spherical</span><wbr><span><span>Harmonics</span></span></a></div>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="environmental-hdr-spherical-harmonics.html"><span>environmental</span><wbr><span>Hdr</span><wbr><span>Spherical</span><wbr><span><span>Harmonics</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1580438425%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="1580438425%2FProperties%2F1238612933" anchor-label="environmentalHdrSphericalHarmonics" id="1580438425%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="environmental-hdr-spherical-harmonics.html">environmentalHdrSphericalHarmonics</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="1580438425%2FProperties%2F1238612933" anchor-label="environmentalHdrSphericalHarmonics" id="1580438425%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><p class="paragraph">In addition to the light energy in the main directional light, ARCore provides spherical harmonics, representing the overall ambient light coming in from all directions in the scene. Add subtle cues that bring out the definition of virtual objects.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="environmental-hdr-spherical-harmonics.html">environmentalHdrSphericalHarmonics</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Ambient spherical harmonics</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="721575762%2FProperties%2F1238612933" anchor-label="iblPrefilter" id="721575762%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="ibl-prefilter.html"><span>ibl</span><wbr><span><span>Prefilter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="721575762%2FProperties%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="ibl-prefilter.html">iblPrefilter</a><span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.environment/-i-b-l-prefilter/index.html">IBLPrefilter</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="194153673%2FProperties%2F1238612933" anchor-label="isEnabled" id="194153673%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-enabled.html"><span>is</span><wbr><span><span>Enabled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="194153673%2FProperties%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="is-enabled.html">isEnabled</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-<a data-name="813747546%2FProperties%2F1238612933" anchor-label="lastArFrame" id="813747546%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="last-ar-frame.html"><span>last</span><wbr><span>Ar</span><wbr><span><span>Frame</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="813747546%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="813747546%2FProperties%2F1238612933" anchor-label="lastArFrame" id="813747546%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="last-ar-frame.html">lastArFrame</a><span class="token operator">: </span><a href="../-ar-frame/index.html">ArFrame</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="598326694%2FFunctions%2F1238612933" anchor-label="destroy" id="598326694%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="destroy.html"><span><span>destroy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="598326694%2FFunctions%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="destroy.html"><span class="token function">destroy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="1982319459%2FProperties%2F1238612933" anchor-label="mainLight" id="1982319459%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="main-light.html"><span>main</span><wbr><span><span>Light</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1982319459%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="1982319459%2FProperties%2F1238612933" anchor-label="mainLight" id="1982319459%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="main-light.html">mainLight</a><span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.light/-light/index.html">Light</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="1982319459%2FProperties%2F1238612933" anchor-label="mainLight" id="1982319459%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><p class="paragraph">The main directional light API calculates the direction and intensity of the scene's main light source. This information allows virtual objects in your scene to show reasonably positioned specular highlights, and to cast shadows in a direction consistent with other visible real objects.</p></div></div></div>
+<a data-name="-1071488803%2FFunctions%2F1238612933" anchor-label="setBaseIndirectLight" id="-1071488803%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-base-indirect-light.html"><span>set</span><wbr><span>Base</span><wbr><span>Indirect</span><wbr><span><span>Light</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1071488803%2FFunctions%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-base-indirect-light.html"><span class="token function">setBaseIndirectLight</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">indirectLight<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/IndirectLight///PointingToDeclaration/">IndirectLight</span><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="288252228%2FProperties%2F1238612933" anchor-label="onUpdated" id="288252228%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="on-updated.html"><span>on</span><wbr><span><span>Updated</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="288252228%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="288252228%2FProperties%2F1238612933" anchor-label="onUpdated" id="288252228%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="on-updated.html">onUpdated</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>environment<span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.environment/-environment/index.html">Environment</a><span class="token operator">?</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../sceneview/io.github.sceneview.light/-light/index.html">Light</a><span class="token operator">?</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="-933441718%2FProperties%2F1238612933" anchor-label="timestamp" id="-933441718%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
-        <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="timestamp.html"><span><span>timestamp</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-933441718%2FProperties%2F1238612933"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><a data-name="-933441718%2FProperties%2F1238612933" anchor-label="timestamp" id="-933441718%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="timestamp.html">timestamp</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+<a data-name="-203655214%2FFunctions%2F1238612933" anchor-label="update" id="-203655214%2FFunctions%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update.html"><span><span>update</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-203655214%2FFunctions%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update.html"><span class="token function">update</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">session<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Session///PointingToDeclaration/">Session</span><span class="token punctuation">, </span></span><span class="parameter ">frame<span class="token operator">: </span><span data-unresolved-link="com.google.ar.core/Frame///PointingToDeclaration/">Frame</span><span class="token punctuation">, </span></span><span class="parameter ">camera<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Camera///PointingToDeclaration/">Camera</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-estimation/index.html">LightEstimator.Estimation</a><span class="token operator">?</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -330,8 +359,9 @@ if(savedDarkMode === true){
       <div class="footer">
         <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 

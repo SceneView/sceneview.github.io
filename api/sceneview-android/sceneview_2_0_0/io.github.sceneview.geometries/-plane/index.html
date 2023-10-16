@@ -1,0 +1,303 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Plane</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sceneview_2_0_0:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="sceneview_2_0_0::io.github.sceneview.geometries/Plane///PointingToDeclaration//-601767457">
+  <div class="breadcrumbs"><a href="../../index.html">sceneview_2_0_0</a><span class="delimiter">/</span><a href="../index.html">io.github.sceneview.geometries</a><span class="delimiter">/</span><span class="current">Plane</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Plane</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">Plane</a> : <a href="../-geometry/index.html">Geometry</a></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="397281703%2FClasslikes%2F-601767457" anchor-label="Builder" id="397281703%2FClasslikes%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-builder/index.html"><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="397281703%2FClasslikes%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-builder/index.html">Builder</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>size<span class="token operator">: </span><a href="../../io.github.sceneview.math/-size/index.html">Size</a><span class="token operator"> = </span>Size(x = 2.0f, y = 2.0f)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>center<span class="token operator">: </span><a href="../../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>Position(0.0f)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>normal<span class="token operator">: </span><a href="../../io.github.sceneview.math/-direction/index.html">Direction</a><span class="token operator"> = </span>Direction(y = 1.0f)</span></span><span class="token punctuation">)</span> : <a href="../-base-geometry-builder/index.html">BaseGeometryBuilder</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">Plane</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Creates a <a href="../-geometry/index.html">Geometry</a> in the shape of a plane with the give specifications</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="335298326%2FClasslikes%2F-601767457" anchor-label="Companion" id="335298326%2FClasslikes%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="335298326%2FClasslikes%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-375692940%2FProperties%2F-601767457" anchor-label="boundingBox" id="-375692940%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-geometry/bounding-box.html"><span>bounding</span><wbr><span><span>Box</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-375692940%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="../-geometry/bounding-box.html">boundingBox</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Box///PointingToDeclaration/">Box</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="806072374%2FProperties%2F-601767457" anchor-label="center" id="806072374%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="center.html"><span><span>center</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="806072374%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="center.html">center</a><span class="token operator">: </span><a href="../../io.github.sceneview.math/-position/index.html">Position</a></div><div class="brief "><p class="paragraph">Center of the constructed plane</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="430260649%2FProperties%2F-601767457" anchor-label="indexBuffer" id="430260649%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-geometry/index-buffer.html"><span>index</span><wbr><span><span>Buffer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="430260649%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../-geometry/index-buffer.html">indexBuffer</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/IndexBuffer///PointingToDeclaration/">IndexBuffer</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1006053348%2FProperties%2F-601767457" anchor-label="normal" id="1006053348%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="normal.html"><span><span>normal</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1006053348%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="normal.html">normal</a><span class="token operator">: </span><a href="../../io.github.sceneview.math/-direction/index.html">Direction</a></div><div class="brief "><p class="paragraph">Looking at direction</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1400561271%2FProperties%2F-601767457" anchor-label="offsetsCounts" id="1400561271%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-geometry/offsets-counts.html"><span>offsets</span><wbr><span><span>Counts</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1400561271%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="../-geometry/offsets-counts.html">offsetsCounts</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html">Pair</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="620349834%2FProperties%2F-601767457" anchor-label="size" id="620349834%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="size.html"><span><span>size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="620349834%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="size.html">size</a><span class="token operator">: </span><a href="../../io.github.sceneview.math/-size/index.html">Size</a></div><div class="brief "><p class="paragraph">Size of the constructed plane</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-521526432%2FProperties%2F-601767457" anchor-label="submeshes" id="-521526432%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-geometry/submeshes.html"><span><span>submeshes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-521526432%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="../-geometry/submeshes.html">submeshes</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-geometry/-submesh/index.html">Geometry.Submesh</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-551264357%2FProperties%2F-601767457" anchor-label="vertexBuffer" id="-551264357%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-geometry/vertex-buffer.html"><span>vertex</span><wbr><span><span>Buffer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-551264357%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../-geometry/vertex-buffer.html">vertexBuffer</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/VertexBuffer///PointingToDeclaration/">VertexBuffer</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1688825158%2FProperties%2F-601767457" anchor-label="vertices" id="1688825158%2FProperties%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-geometry/vertices.html"><span><span>vertices</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1688825158%2FProperties%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="../-geometry/vertices.html">vertices</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-geometry/-vertex/index.html">Geometry.Vertex</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1865987251%2FFunctions%2F-601767457" anchor-label="setBufferIndices" id="1865987251%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-geometry/set-buffer-indices.html"><span>set</span><wbr><span>Buffer</span><wbr><span><span>Indices</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1865987251%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-geometry/set-buffer-indices.html"><span class="token function">setBufferIndices</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">submeshes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-geometry/-submesh/index.html">Geometry.Submesh</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-659117716%2FFunctions%2F-601767457" anchor-label="setBufferVertices" id="-659117716%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-geometry/set-buffer-vertices.html"><span>set</span><wbr><span>Buffer</span><wbr><span><span>Vertices</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-659117716%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-geometry/set-buffer-vertices.html"><span class="token function">setBufferVertices</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">vertices<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-geometry/-vertex/index.html">Geometry.Vertex</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1502838414%2FFunctions%2F-601767457" anchor-label="update" id="1502838414%2FFunctions%2F-601767457" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview_2_0_0:dokkaHtmlPartial/release" data-filterable-set=":sceneview_2_0_0:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update.html"><span><span>update</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1502838414%2FFunctions%2F-601767457"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview_2_0_0:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update.html"><span class="token function">update</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">center<span class="token operator">: </span><a href="../../io.github.sceneview.math/-position/index.html">Position</a><span class="token operator"> = </span>this.center<span class="token punctuation">, </span></span><span class="parameter ">size<span class="token operator">: </span><a href="../../io.github.sceneview.math/-size/index.html">Size</a><span class="token operator"> = </span>this.size<span class="token punctuation">, </span></span><span class="parameter ">normal<span class="token operator">: </span><a href="../../io.github.sceneview.math/-direction/index.html">Direction</a><span class="token operator"> = </span>this.normal</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
