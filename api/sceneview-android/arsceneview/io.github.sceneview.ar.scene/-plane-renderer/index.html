@@ -62,24 +62,24 @@
   <div class="breadcrumbs"><a href="../../index.html">arsceneview</a><span class="delimiter">/</span><a href="../index.html">io.github.sceneview.ar.scene</a><span class="delimiter">/</span><span class="current">PlaneRenderer</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Plane</span><wbr><span><span>Renderer</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">PlaneRenderer</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>sceneView<span class="token operator">: </span><a href="../../io.github.sceneview.ar/-a-r-scene-view/index.html">ARSceneView</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">Control rendering of ARCore planes.</p><p class="paragraph">Used to visualize detected planes and to control whether Renderables cast shadows on them.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">PlaneRenderer</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">modelLoader<span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.loaders/-model-loader/index.html">ModelLoader</a><span class="token punctuation">, </span></span><span class="parameter ">materialLoader<span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.loaders/-material-loader/index.html">MaterialLoader</a><span class="token punctuation">, </span></span><span class="parameter ">scene<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Scene///PointingToDeclaration/">Scene</span></span></span><span class="token punctuation">)</span></div><p class="paragraph">Control rendering of ARCore planes.</p><p class="paragraph">Used to visualize detected planes and to control whether Renderables cast shadows on them.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="">Constructors</h2>
-        <div class="table"><a data-name="-1958265621%2FConstructors%2F1238612933" anchor-label="PlaneRenderer" id="-1958265621%2FConstructors%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+        <div class="table"><a data-name="-81817937%2FConstructors%2F1238612933" anchor-label="PlaneRenderer" id="-81817937%2FConstructors%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-plane-renderer.html"><span>Plane</span><wbr><span><span>Renderer</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1958265621%2FConstructors%2F1238612933"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-81817937%2FConstructors%2F1238612933"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">sceneView<span class="token operator">: </span><a href="../../io.github.sceneview.ar/-a-r-scene-view/index.html">ARSceneView</a></span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span><span class="token punctuation">, </span></span><span class="parameter ">modelLoader<span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.loaders/-model-loader/index.html">ModelLoader</a><span class="token punctuation">, </span></span><span class="parameter ">materialLoader<span class="token operator">: </span><a href="../../../sceneview/io.github.sceneview.loaders/-material-loader/index.html">MaterialLoader</a><span class="token punctuation">, </span></span><span class="parameter ">scene<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Scene///PointingToDeclaration/">Scene</span></span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -122,7 +122,22 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="">Properties</h2>
-        <div class="table"><a data-name="726823446%2FProperties%2F1238612933" anchor-label="isEnabled" id="726823446%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+        <div class="table"><a data-name="-1516572533%2FProperties%2F1238612933" anchor-label="engine" id="-1516572533%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="engine.html"><span><span>engine</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1516572533%2FProperties%2F1238612933"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.filament/Engine///PointingToDeclaration/">Engine</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="726823446%2FProperties%2F1238612933" anchor-label="isEnabled" id="726823446%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -227,17 +242,17 @@
               </div>
             </div>
           </div>
-<a data-name="448685244%2FProperties%2F1238612933" anchor-label="sceneView" id="448685244%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
+<a data-name="-952905977%2FProperties%2F1238612933" anchor-label="viewSize" id="-952905977%2FProperties%2F1238612933" data-filterable-set=":arsceneview:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":arsceneview:dokkaHtmlPartial/release" data-filterable-set=":arsceneview:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="scene-view.html"><span>scene</span><wbr><span><span>View</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="448685244%2FProperties%2F1238612933"></span>
+                  <div><a href="view-size.html"><span>view</span><wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-952905977%2FProperties%2F1238612933"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="scene-view.html">sceneView</a><span class="token operator">: </span><a href="../../io.github.sceneview.ar/-a-r-scene-view/index.html">ARSceneView</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":arsceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="view-size.html">viewSize</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/util/Size.html">Size</a></div></div></div>
                 </div>
               </div>
             </div>
