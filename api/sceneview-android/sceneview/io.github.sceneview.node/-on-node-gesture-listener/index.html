@@ -1,0 +1,370 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>OnNodeGestureListener</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sceneview:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="sceneview::io.github.sceneview.node/OnNodeGestureListener///PointingToDeclaration//1588378196">
+  <div class="breadcrumbs"><a href="../../index.html">sceneview</a><span class="delimiter">/</span><a href="../index.html">io.github.sceneview.node</a><span class="delimiter">/</span><span class="current">OnNodeGestureListener</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>On</span><wbr><span>Node</span><wbr><span>Gesture</span><wbr><span><span>Listener</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">OnNodeGestureListener</a> : <a href="https://developer.android.com/reference/kotlin/android/view/GestureDetector.OnGestureListener.html">GestureDetector.OnGestureListener</a>, <a href="https://developer.android.com/reference/kotlin/android/view/GestureDetector.OnDoubleTapListener.html">GestureDetector.OnDoubleTapListener</a>, <a href="https://developer.android.com/reference/kotlin/android/view/GestureDetector.OnContextClickListener.html">GestureDetector.OnContextClickListener</a>, <a href="../../io.github.sceneview.gesture/-move-gesture-detector/-on-move-listener/index.html">MoveGestureDetector.OnMoveListener</a>, <a href="../../io.github.sceneview.gesture/-rotate-gesture-detector/-on-rotate-listener/index.html">RotateGestureDetector.OnRotateListener</a>, <a href="../../io.github.sceneview.gesture/-scale-gesture-detector/-on-scale-listener/index.html">ScaleGestureDetector.OnScaleListener</a></div><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-simple-on-node-gesture-listener/index.html">SimpleOnNodeGestureListener</a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1478562450%2FFunctions%2F1588378196" anchor-label="onContextClick" id="1478562450%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1478562450%2FFunctions%2F1588378196"><span>on</span><wbr><span>Context</span><wbr><span><span>Click</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1478562450%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1478562450%2FFunctions%2F1588378196"><span class="token function">onContextClick</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="204638722%2FFunctions%2F1588378196" anchor-label="onDoubleTap" id="204638722%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#204638722%2FFunctions%2F1588378196"><span>on</span><wbr><span>Double</span><wbr><span><span>Tap</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="204638722%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#204638722%2FFunctions%2F1588378196"><span class="token function">onDoubleTap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1027312298%2FFunctions%2F1588378196" anchor-label="onDoubleTapEvent" id="1027312298%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1027312298%2FFunctions%2F1588378196"><span>on</span><wbr><span>Double</span><wbr><span>Tap</span><wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1027312298%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1027312298%2FFunctions%2F1588378196"><span class="token function">onDoubleTapEvent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2040125607%2FFunctions%2F1588378196" anchor-label="onDown" id="2040125607%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2040125607%2FFunctions%2F1588378196"><span>on</span><wbr><span><span>Down</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2040125607%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#2040125607%2FFunctions%2F1588378196"><span class="token function">onDown</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="422534371%2FFunctions%2F1588378196" anchor-label="onFling" id="422534371%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#422534371%2FFunctions%2F1588378196"><span>on</span><wbr><span><span>Fling</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="422534371%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#422534371%2FFunctions%2F1588378196"><span class="token function">onFling</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">p1<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token punctuation">, </span></span><span class="parameter ">p2<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">p3<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-783831306%2FFunctions%2F1588378196" anchor-label="onLongPress" id="-783831306%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-783831306%2FFunctions%2F1588378196"><span>on</span><wbr><span>Long</span><wbr><span><span>Press</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-783831306%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-783831306%2FFunctions%2F1588378196"><span class="token function">onLongPress</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1572423180%2FFunctions%2F1588378196" anchor-label="onMove" id="-1572423180%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.sceneview.gesture/-move-gesture-detector/-on-move-listener/on-move.html"><span>on</span><wbr><span><span>Move</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1572423180%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../io.github.sceneview.gesture/-move-gesture-detector/-on-move-listener/on-move.html"><span class="token function">onMove</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">detector<span class="token operator">: </span><a href="../../io.github.sceneview.gesture/-move-gesture-detector/index.html">MoveGestureDetector</a><span class="token punctuation">, </span></span><span class="parameter ">e<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Responds to moving events for a gesture in progress</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-724067275%2FFunctions%2F1588378196" anchor-label="onMoveBegin" id="-724067275%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.sceneview.gesture/-move-gesture-detector/-on-move-listener/on-move-begin.html"><span>on</span><wbr><span>Move</span><wbr><span><span>Begin</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-724067275%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../io.github.sceneview.gesture/-move-gesture-detector/-on-move-listener/on-move-begin.html"><span class="token function">onMoveBegin</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">detector<span class="token operator">: </span><a href="../../io.github.sceneview.gesture/-move-gesture-detector/index.html">MoveGestureDetector</a><span class="token punctuation">, </span></span><span class="parameter ">e<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Responds to the beginning of a moving gesture</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1597374339%2FFunctions%2F1588378196" anchor-label="onMoveEnd" id="1597374339%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.sceneview.gesture/-move-gesture-detector/-on-move-listener/on-move-end.html"><span>on</span><wbr><span>Move</span><wbr><span><span>End</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1597374339%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../io.github.sceneview.gesture/-move-gesture-detector/-on-move-listener/on-move-end.html"><span class="token function">onMoveEnd</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">detector<span class="token operator">: </span><a href="../../io.github.sceneview.gesture/-move-gesture-detector/index.html">MoveGestureDetector</a><span class="token punctuation">, </span></span><span class="parameter ">e<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Responds to the end of a move gesture</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-881371596%2FFunctions%2F1588378196" anchor-label="onRotate" id="-881371596%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.sceneview.gesture/-rotate-gesture-detector/-on-rotate-listener/on-rotate.html"><span>on</span><wbr><span><span>Rotate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-881371596%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../io.github.sceneview.gesture/-rotate-gesture-detector/-on-rotate-listener/on-rotate.html"><span class="token function">onRotate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">detector<span class="token operator">: </span><a href="../../io.github.sceneview.gesture/-rotate-gesture-detector/index.html">RotateGestureDetector</a><span class="token punctuation">, </span></span><span class="parameter ">e<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Responds to rotating events for a gesture in progress.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="24212321%2FFunctions%2F1588378196" anchor-label="onRotateBegin" id="24212321%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.sceneview.gesture/-rotate-gesture-detector/-on-rotate-listener/on-rotate-begin.html"><span>on</span><wbr><span>Rotate</span><wbr><span><span>Begin</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="24212321%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../io.github.sceneview.gesture/-rotate-gesture-detector/-on-rotate-listener/on-rotate-begin.html"><span class="token function">onRotateBegin</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">detector<span class="token operator">: </span><a href="../../io.github.sceneview.gesture/-rotate-gesture-detector/index.html">RotateGestureDetector</a><span class="token punctuation">, </span></span><span class="parameter ">e<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Responds to the beginning of a scaling gesture.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="587100335%2FFunctions%2F1588378196" anchor-label="onRotateEnd" id="587100335%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.sceneview.gesture/-rotate-gesture-detector/-on-rotate-listener/on-rotate-end.html"><span>on</span><wbr><span>Rotate</span><wbr><span><span>End</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="587100335%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../io.github.sceneview.gesture/-rotate-gesture-detector/-on-rotate-listener/on-rotate-end.html"><span class="token function">onRotateEnd</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">detector<span class="token operator">: </span><a href="../../io.github.sceneview.gesture/-rotate-gesture-detector/index.html">RotateGestureDetector</a><span class="token punctuation">, </span></span><span class="parameter ">e<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Responds to the end of a scale gesture.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1425427018%2FFunctions%2F1588378196" anchor-label="onScale" id="1425427018%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.sceneview.gesture/-scale-gesture-detector/-on-scale-listener/on-scale.html"><span>on</span><wbr><span><span>Scale</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1425427018%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../io.github.sceneview.gesture/-scale-gesture-detector/-on-scale-listener/on-scale.html"><span class="token function">onScale</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">detector<span class="token operator">: </span><a href="../../io.github.sceneview.gesture/-scale-gesture-detector/index.html">ScaleGestureDetector</a><span class="token punctuation">, </span></span><span class="parameter ">e<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Responds to scaling events for a gesture in progress.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="947388323%2FFunctions%2F1588378196" anchor-label="onScaleBegin" id="947388323%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.sceneview.gesture/-scale-gesture-detector/-on-scale-listener/on-scale-begin.html"><span>on</span><wbr><span>Scale</span><wbr><span><span>Begin</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="947388323%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../io.github.sceneview.gesture/-scale-gesture-detector/-on-scale-listener/on-scale-begin.html"><span class="token function">onScaleBegin</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">detector<span class="token operator">: </span><a href="../../io.github.sceneview.gesture/-scale-gesture-detector/index.html">ScaleGestureDetector</a><span class="token punctuation">, </span></span><span class="parameter ">e<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Responds to the beginning of a scaling gesture. Reported by new pointers going down.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-935654059%2FFunctions%2F1588378196" anchor-label="onScaleEnd" id="-935654059%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.sceneview.gesture/-scale-gesture-detector/-on-scale-listener/on-scale-end.html"><span>on</span><wbr><span>Scale</span><wbr><span><span>End</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-935654059%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../io.github.sceneview.gesture/-scale-gesture-detector/-on-scale-listener/on-scale-end.html"><span class="token function">onScaleEnd</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">detector<span class="token operator">: </span><a href="../../io.github.sceneview.gesture/-scale-gesture-detector/index.html">ScaleGestureDetector</a><span class="token punctuation">, </span></span><span class="parameter ">e<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Responds to the end of a scale gesture. Reported by existing pointers going up.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-812836002%2FFunctions%2F1588378196" anchor-label="onScroll" id="-812836002%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-812836002%2FFunctions%2F1588378196"><span>on</span><wbr><span><span>Scroll</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-812836002%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-812836002%2FFunctions%2F1588378196"><span class="token function">onScroll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">p1<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a><span class="token punctuation">, </span></span><span class="parameter ">p2<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">p3<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="993179831%2FFunctions%2F1588378196" anchor-label="onShowPress" id="993179831%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#993179831%2FFunctions%2F1588378196"><span>on</span><wbr><span>Show</span><wbr><span><span>Press</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="993179831%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#993179831%2FFunctions%2F1588378196"><span class="token function">onShowPress</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1279566574%2FFunctions%2F1588378196" anchor-label="onSingleTapConfirmed" id="1279566574%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1279566574%2FFunctions%2F1588378196"><span>on</span><wbr><span>Single</span><wbr><span>Tap</span><wbr><span><span>Confirmed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1279566574%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1279566574%2FFunctions%2F1588378196"><span class="token function">onSingleTapConfirmed</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1073785159%2FFunctions%2F1588378196" anchor-label="onSingleTapUp" id="1073785159%2FFunctions%2F1588378196" data-filterable-set=":sceneview:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1073785159%2FFunctions%2F1588378196"><span>on</span><wbr><span>Single</span><wbr><span>Tap</span><wbr><span><span>Up</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1073785159%2FFunctions%2F1588378196"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1073785159%2FFunctions%2F1588378196"><span class="token function">onSingleTapUp</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/view/MotionEvent.html">MotionEvent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

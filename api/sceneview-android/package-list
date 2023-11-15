@@ -16,7 +16,6 @@ com.google.ar.sceneform.utilities
 com.google.flatbuffers
 io.github.sceneview
 io.github.sceneview.animation
-io.github.sceneview.camera
 io.github.sceneview.collision
 io.github.sceneview.components
 io.github.sceneview.environment
