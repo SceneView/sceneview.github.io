@@ -28,4 +28,5 @@ io.github.sceneview.math
 io.github.sceneview.model
 io.github.sceneview.node
 io.github.sceneview.texture
+io.github.sceneview.triangulation
 io.github.sceneview.utils
