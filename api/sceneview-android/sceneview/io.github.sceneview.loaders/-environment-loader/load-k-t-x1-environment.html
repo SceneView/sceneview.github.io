@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>loadKTX1Environment</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            SceneView
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sceneview:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="member" id="content" pageids="sceneview::io.github.sceneview.loaders/EnvironmentLoader/loadKTX1Environment/#kotlin.String?#kotlin.String?/PointingToDeclaration//1588378196">
+  <div class="breadcrumbs"><a href="../../index.html">sceneview</a><span class="delimiter">/</span><a href="../index.html">io.github.sceneview.loaders</a><span class="delimiter">/</span><a href="index.html">EnvironmentLoader</a><span class="delimiter">/</span><span class="current">loadKTX1Environment</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>load</span><wbr><span><span>KTX1Environment</span></span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="load-k-t-x1-environment.html"><span class="token function">loadKTX1Environment</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">iblUrl<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">skyboxUrl<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../io.github.sceneview.environment/-environment/index.html">Environment</a></div><p class="paragraph">Utility for producing environment resources from precompiled cmgen generated KTX files.</p><p class="paragraph">Consumes the content of KTX files and produces an <span data-unresolved-link="com.google.android.filament/IndirectLight///PointingToDeclaration/">IndirectLight</span>, SphericalHarmonics and a <span data-unresolved-link="com.google.android.filament/Skybox///PointingToDeclaration/">Skybox</span></p><p class="paragraph">You can generate ktx ibl and skybox files using:</p><p class="paragraph"><code class="lang-kotlin">cmgen --deploy ./output --format=ktx --size=256 --extract-blur=0.1 environment.hdr</code></p><p class="paragraph">Documentation: <a href="https://github.com/google/filament/blob/main/web/docs/tutorial_redball.md#bake-environment-map">Filament - Bake environment map</a></p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">the generated environment indirect light, sphericalHarmonics and skybox from the ktxs.</p></span><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>ibl</span><wbr><span><span>Url</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The ibl KTX file url.</p></div></div></div></div><div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>skybox</span><wbr><span><span>Url</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The skybox KTX file url.</p></div></div></div></div></div><hr><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="load-k-t-x1-environment.html"><span class="token function">loadKTX1Environment</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">url<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">indirectLightSpecularFilter<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">textureOptions<span class="token operator">: </span><span data-unresolved-link="com.google.android.filament.utils/HDRLoader.Options///PointingToDeclaration/">HDRLoader.Options</span><span class="token operator"> = </span>HDRLoader.Options()<span class="token punctuation">, </span></span><span class="parameter ">createSkybox<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../io.github.sceneview.environment/-environment/index.html">Environment</a><span class="token operator">?</span></div><p class="paragraph">Utility for decoding and producing environment resources from an HDR file.</p><p class="paragraph">Consumes the content of an HDR file and produces an <span data-unresolved-link="com.google.android.filament/IndirectLight///PointingToDeclaration/">IndirectLight</span> and a <span data-unresolved-link="com.google.android.filament/Skybox///PointingToDeclaration/">Skybox</span>.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">the generated environment indirect light and skybox from the hdr.</p></span><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>url</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The HDR File url.</p></div></div></div></div><div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>indirect</span><wbr><span>Light</span><wbr><span>Specular</span><wbr><span><span>Filter</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Generates a prefiltered indirect light cubemap. SpecularFilter is a GPU based implementation of the specular probe pre-integration filter. ** Launch the heaver computation. Expect 100-100ms on the GPU.**</p></div></div></div></div><div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>texture</span><wbr><span><span>Options</span></span></u></div></span></div><div><div class="title"><p class="paragraph">texture loader options</p></div></div></div></div><div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>create</span><wbr><span><span>Skybox</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Disable the skybox creation if you don't need it.</p></div></div></div></div></div><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":sceneview:dokkaHtmlPartial/release" data-filterable-set=":sceneview:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><span data-unresolved-link="com.google.android.filament.utils/HDRLoader/createTexture/#com.google.android.filament.Engine#java.nio.Buffer#com.google.android.filament.utils.HDRLoader.Options/PointingToDeclaration/"><span>HDRLoader.</span><wbr><span>create</span><wbr><span><span>Texture</span></span></span></div></span></div><div></div></div></div></div></div></div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

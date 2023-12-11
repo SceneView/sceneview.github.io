@@ -5,6 +5,7 @@ module:arsceneview
 io.github.sceneview.ar
 io.github.sceneview.ar.arcore
 io.github.sceneview.ar.camera
+io.github.sceneview.ar.light
 io.github.sceneview.ar.node
 io.github.sceneview.ar.scene
 module:sceneview
