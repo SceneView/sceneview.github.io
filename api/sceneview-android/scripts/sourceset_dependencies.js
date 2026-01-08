@@ -1,1 +1,1 @@
-sourceset_dependencies = '{":sceneview:dokkaHtmlPartial/debug":[],":sceneview:dokkaHtmlPartial/main":[],":sceneview:dokkaHtmlPartial/release":[],":arsceneview:dokkaHtmlPartial/debug":[],":arsceneview:dokkaHtmlPartial/main":[],":arsceneview:dokkaHtmlPartial/release":[]}'
+sourceset_dependencies = '{":sceneview/debug":[],":sceneview/main":[],":sceneview/release":[]}'
