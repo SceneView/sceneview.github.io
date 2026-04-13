@@ -72,8 +72,8 @@
           gtag('event', 'tab_click', { tab_name: this.dataset.tab });
         });
       });
-      // Track CTA clicks
-      document.querySelectorAll('a[href*="github.com/sceneview"]').forEach(function(link) {
+      // Track CTA clicks (GitHub, pricing, Claude install, Discord)
+      document.querySelectorAll('a[href*="github.com/sceneview"], a[href*="pricing"], a[href*="claude://"], a[href*="discord"], a[href*="npmjs"]').forEach(function(link) {
         link.addEventListener('click', function() {
           gtag('event', 'cta_click', { link_url: this.href, link_text: this.textContent.trim() });
         });
