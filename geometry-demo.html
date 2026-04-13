@@ -162,6 +162,7 @@
     <option value="cylinder">Cylinder</option>
     <option value="cone">Cone</option>
     <option value="torus">Torus</option>
+    <option value="capsule">Capsule</option>
     <option value="plane">Plane</option>
   </select>
   <input type="color" id="shapeColor" value="#4a9af5" title="Shape color">
@@ -484,6 +485,40 @@ function generateTorus(majorR, minorR, majorSeg, minorSeg) {
   return { positions: new Float32Array(pos), normals: new Float32Array(nrm), indices: new Uint16Array(idx) };
 }
 
+function generateCapsule(radius, height, capStacks, slices) {
+  const pos = [], nrm = [], idx = [];
+  const halfH = height / 2;
+  // Top hemisphere
+  for (let s = 0; s <= capStacks; s++) {
+    const phi = (Math.PI / 2) * (1 - s / capStacks);
+    const cp = Math.cos(phi), sp = Math.sin(phi);
+    for (let i = 0; i <= slices; i++) {
+      const theta = (i / slices) * Math.PI * 2;
+      const ct = Math.cos(theta), st = Math.sin(theta);
+      pos.push(radius * cp * ct, radius * sp + halfH, radius * cp * st);
+      nrm.push(cp * ct, sp, cp * st);
+    }
+  }
+  // Bottom hemisphere
+  for (let s = 1; s <= capStacks; s++) {
+    const phi = -(Math.PI / 2) * (s / capStacks);
+    const cp = Math.cos(phi), sp = Math.sin(phi);
+    for (let i = 0; i <= slices; i++) {
+      const theta = (i / slices) * Math.PI * 2;
+      const ct = Math.cos(theta), st = Math.sin(theta);
+      pos.push(radius * cp * ct, radius * sp - halfH, radius * cp * st);
+      nrm.push(cp * ct, sp, cp * st);
+    }
+  }
+  const totalStacks = capStacks * 2, stride = slices + 1;
+  for (let s = 0; s < totalStacks; s++)
+    for (let i = 0; i < slices; i++) {
+      const a = s * stride + i, b = a + stride;
+      idx.push(a, b, a + 1, b, b + 1, a + 1);
+    }
+  return { positions: new Float32Array(pos), normals: new Float32Array(nrm), indices: new Uint16Array(idx) };
+}
+
 function generateGrid(size, divisions) {
   const pos = [], nrm = [], idx = [];
   const step = size / divisions, half = size / 2;
@@ -543,6 +578,7 @@ const prototypes = {
   plane: createMesh(generatePlane(1, 1, 4, 4)),
   line: createMesh(generateCylinder(0.02, 0.02, 1, 8)),
   torus: createMesh(generateTorus(0.35, 0.15, 48, 24)),
+  capsule: createMesh(generateCapsule(0.3, 0.6, 12, 32)),
 };
 const gridMesh = createGridMesh(generateGrid(16, 32));
 
