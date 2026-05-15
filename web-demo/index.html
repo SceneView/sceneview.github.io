@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SceneView Web Demo — 3D Viewer, Sketchfab Search, Geometry &amp; Physics Showcase</title>
+    <meta name="description" content="SceneView Web Demo: 3D model viewer with Sketchfab search, geometry showcase, a Double Pendulum physics demo, HDR environments, and WebXR AR/VR — powered by Filament.js (WASM).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Filament.js WASM engine -->
+    <script src="https://cdn.jsdelivr.net/gh/sceneview/sceneview@main/website-static/js/filament/filament.js"></script>
+    <!-- SceneView.js -->
+    <script src="https://cdn.jsdelivr.net/gh/sceneview/sceneview@main/website-static/js/sceneview.js"></script>
+
+    <style>
+        :root {
+            --sv-blue: #005bc1;
+            --sv-blue-light: #a4c1ff;
+            --sv-purple: #6446cd;
+            --sv-purple-light: #d2a8ff;
+            --sv-green: #00b894;
+            --sv-green-light: #55efc4;
+            --sv-dark: #0D1117;
+            --sv-dark-surface: #161B22;
+            --sv-dark-card: #1c2333;
+            --sv-dark-overlay: rgba(13, 17, 23, 0.88);
+            --sv-text: #f3f4f6;
+            --sv-text-dim: #9ca3af;
+            --sv-text-faint: #6b7280;
+            --sv-border: rgba(255,255,255,0.08);
+            --sv-border-hover: rgba(255,255,255,0.18);
+            --sv-radius-sm: 8px;
+            --sv-radius: 12px;
+            --sv-radius-lg: 16px;
+            --sv-radius-pill: 28px;
+            --sv-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --sv-glass: rgba(22, 27, 34, 0.75);
+            --sv-glass-border: rgba(255,255,255,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            width: 100%; height: 100%; overflow: hidden;
+            background: var(--sv-dark);
+            font-family: var(--sv-font);
+            color: var(--sv-text);
+        }
+
+        /* ---- Canvas ---- */
+        #scene-canvas {
+            width: 100%; height: 100%; display: block;
+            position: absolute; top: 0; left: 0; z-index: 0;
+        }
+
+        /* ---- Top bar ---- */
+        .top-bar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 30;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 12px 20px; gap: 12px;
+            background: linear-gradient(180deg, var(--sv-dark-overlay) 60%, transparent 100%);
+            pointer-events: none;
+        }
+        .top-bar > * { pointer-events: auto; }
+
+        .logo {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none; color: var(--sv-text);
+            flex-shrink: 0;
+        }
+        .logo-icon {
+            width: 32px; height: 32px;
+            background: linear-gradient(135deg, var(--sv-blue), var(--sv-purple));
+            border-radius: var(--sv-radius-sm);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 16px; color: white;
+        }
+        .logo-text { font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
+        .logo-version {
+            font-size: 11px; font-weight: 500;
+            color: var(--sv-blue-light);
+            background: rgba(0, 91, 193, 0.15);
+            padding: 2px 8px; border-radius: 6px;
+        }
+
+        .top-right {
+            display: flex; align-items: center; gap: 8px;
+            flex-shrink: 0;
+        }
+        .icon-btn {
+            width: 36px; height: 36px;
+            border: 1px solid var(--sv-border);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.04);
+            color: var(--sv-text-dim);
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            transition: background 0.15s, border-color 0.15s, color 0.15s;
+            font-size: 16px; text-decoration: none;
+        }
+        .icon-btn:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--sv-border-hover);
+            color: var(--sv-text);
+        }
+
+        /* ---- Tab bar ---- */
+        .tab-bar {
+            position: fixed; top: 56px; left: 50%; transform: translateX(-50%);
+            z-index: 25;
+            display: flex; gap: 4px;
+            background: var(--sv-glass);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--sv-glass-border);
+            border-radius: var(--sv-radius-pill);
+            padding: 4px;
+        }
+        .tab-btn {
+            padding: 8px 18px;
+            border: none; border-radius: 24px;
+            background: transparent;
+            color: var(--sv-text-dim);
+            font-size: 13px; font-weight: 600; font-family: var(--sv-font);
+            cursor: pointer; white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover { color: var(--sv-text); background: rgba(255,255,255,0.06); }
+        .tab-btn.active {
+            background: var(--sv-blue);
+            color: white;
+        }
+
+        /* ---- Panels ---- */
+        .panel {
+            position: fixed; z-index: 20;
+            display: none;
+        }
+        .panel.active { display: flex; }
+
+        /* Search panel (Models tab) */
+        .search-panel {
+            left: 20px; top: 110px; bottom: 80px;
+            width: 340px;
+            flex-direction: column; gap: 10px;
+        }
+
+        /* Source toggle (CDN / Sketchfab) */
+        .source-toggle {
+            display: flex; gap: 0;
+            border-radius: var(--sv-radius);
+            overflow: hidden;
+            border: 1px solid var(--sv-border);
+            background: var(--sv-glass);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        }
+        .source-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            background: transparent;
+            color: var(--sv-text-dim);
+            font-size: 12px; font-weight: 600; font-family: var(--sv-font);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .source-btn.active {
+            background: rgba(0, 91, 193, 0.25);
+            color: var(--sv-blue-light);
+        }
+        .source-btn:hover:not(.active) {
+            background: rgba(255,255,255,0.04);
+            color: var(--sv-text);
+        }
+
+        .search-box {
+            display: flex; gap: 0;
+            border-radius: var(--sv-radius);
+            overflow: hidden;
+            border: 1px solid var(--sv-border);
+            background: var(--sv-glass);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        }
+        .search-input {
+            flex: 1;
+            padding: 12px 14px;
+            border: none; outline: none;
+            background: transparent;
+            color: var(--sv-text);
+            font-size: 14px; font-family: var(--sv-font);
+        }
+        .search-input::placeholder { color: var(--sv-text-faint); }
+        .search-btn {
+            padding: 12px 16px;
+            border: none;
+            background: var(--sv-blue);
+            color: white;
+            font-size: 14px; font-weight: 600; font-family: var(--sv-font);
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .search-btn:hover { background: #0050aa; }
+
+        .model-results {
+            flex: 1;
+            overflow-y: auto;
+            display: flex; flex-direction: column; gap: 8px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.1) transparent;
+        }
+        .model-results::-webkit-scrollbar { width: 4px; }
+        .model-results::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+        .result-card {
+            display: flex; gap: 10px; align-items: center;
+            padding: 10px;
+            background: var(--sv-glass);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--sv-border);
+            border-radius: var(--sv-radius);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .result-card:hover {
+            border-color: var(--sv-blue);
+            background: rgba(0, 91, 193, 0.12);
+        }
+        .result-card.active {
+            border-color: var(--sv-blue);
+            background: rgba(0, 91, 193, 0.2);
+        }
+        .result-thumb {
+            width: 56px; height: 56px;
+            border-radius: var(--sv-radius-sm);
+            object-fit: cover;
+            background: var(--sv-dark-surface);
+            flex-shrink: 0;
+        }
+        .result-info { flex: 1; min-width: 0; }
+        .result-name {
+            font-size: 13px; font-weight: 600;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .result-author {
+            font-size: 11px; color: var(--sv-text-faint);
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            margin-top: 2px;
+        }
+        .result-badge {
+            font-size: 10px; color: var(--sv-text-faint);
+            margin-top: 2px;
+        }
+
+        .search-status {
+            text-align: center;
+            padding: 20px;
+            color: var(--sv-text-faint);
+            font-size: 13px;
+        }
+        .search-status.error { color: #f87171; }
+
+        /* Geometry panel */
+        .geometry-panel {
+            left: 20px; top: 110px; bottom: 80px;
+            width: 340px;
+            flex-direction: column; gap: 10px;
+            overflow-y: auto;
+        }
+        .geo-card {
+            background: var(--sv-glass);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--sv-border);
+            border-radius: var(--sv-radius);
+            padding: 14px;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .geo-card-header {
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .geo-card-title {
+            font-size: 14px; font-weight: 600;
+        }
+        .geo-card-icon {
+            font-size: 18px; margin-right: 8px;
+        }
+        .geo-add-btn {
+            padding: 6px 14px;
+            border: none; border-radius: 20px;
+            background: var(--sv-blue);
+            color: white;
+            font-size: 12px; font-weight: 600; font-family: var(--sv-font);
+            cursor: pointer;
+            transition: background 0.15s, transform 0.1s;
+        }
+        .geo-add-btn:hover { background: #0050aa; }
+        .geo-add-btn:active { transform: scale(0.95); }
+
+        .geo-controls {
+            display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+        }
+        .geo-controls label {
+            font-size: 12px; color: var(--sv-text-dim);
+            display: flex; align-items: center; gap: 6px;
+        }
+        .color-picker {
+            width: 28px; height: 28px;
+            border: 2px solid var(--sv-border);
+            border-radius: 6px;
+            cursor: pointer;
+            background: none;
+            padding: 0;
+        }
+        .color-picker::-webkit-color-swatch-wrapper { padding: 0; }
+        .color-picker::-webkit-color-swatch { border: none; border-radius: 4px; }
+        .color-picker::-moz-color-swatch { border: none; border-radius: 4px; }
+
+        .geo-slider {
+            width: 80px; height: 4px;
+            -webkit-appearance: none; appearance: none;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            outline: none;
+        }
+        .geo-slider::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none;
+            width: 14px; height: 14px;
+            background: var(--sv-blue);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .geo-slider::-moz-range-thumb {
+            width: 14px; height: 14px;
+            background: var(--sv-blue);
+            border: none; border-radius: 50%;
+            cursor: pointer;
+        }
+        .slider-value {
+            font-size: 11px; color: var(--sv-text-faint);
+            min-width: 24px; text-align: right;
+        }
+
+        .geo-clear-btn {
+            padding: 8px 16px;
+            border: 1px solid var(--sv-border);
+            border-radius: 20px;
+            background: transparent;
+            color: var(--sv-text-dim);
+            font-size: 12px; font-weight: 500; font-family: var(--sv-font);
+            cursor: pointer;
+            transition: all 0.15s;
+            align-self: center;
+        }
+        .geo-clear-btn:hover {
+            border-color: #f87171;
+            color: #f87171;
+            background: rgba(248, 113, 113, 0.08);
+        }
+
+        /* Environment panel */
+        .env-panel {
+            right: 20px; top: 110px;
+            width: 260px;
+            flex-direction: column; gap: 10px;
+        }
+        .env-card {
+            background: var(--sv-glass);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--sv-border);
+            border-radius: var(--sv-radius);
+            padding: 14px;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .env-card-title {
+            font-size: 13px; font-weight: 600;
+        }
+        .env-select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--sv-border);
+            border-radius: var(--sv-radius-sm);
+            background: var(--sv-dark-surface);
+            color: var(--sv-text);
+            font-size: 13px; font-family: var(--sv-font);
+            cursor: pointer;
+            outline: none;
+        }
+        .env-select option { background: var(--sv-dark-surface); color: var(--sv-text); }
+        .bg-color-row {
+            display: flex; align-items: center; gap: 8px;
+        }
+        .bg-color-row label {
+            font-size: 12px; color: var(--sv-text-dim);
+        }
+        .quality-select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--sv-border);
+            border-radius: var(--sv-radius-sm);
+            background: var(--sv-dark-surface);
+            color: var(--sv-text);
+            font-size: 13px; font-family: var(--sv-font);
+            cursor: pointer;
+            outline: none;
+        }
+        .quality-select option { background: var(--sv-dark-surface); color: var(--sv-text); }
+
+        .toggle-row {
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .toggle-label {
+            font-size: 12px; color: var(--sv-text-dim);
+        }
+        .toggle-switch {
+            position: relative;
+            width: 36px; height: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .toggle-switch.active { background: var(--sv-blue); }
+        .toggle-switch::after {
+            content: '';
+            position: absolute; top: 2px; left: 2px;
+            width: 16px; height: 16px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.2s;
+        }
+        .toggle-switch.active::after { transform: translateX(16px); }
+
+        /* ---- Controls info ---- */
+        .controls-info {
+            position: fixed; bottom: 20px; left: 20px; z-index: 15;
+            display: flex; flex-direction: column; gap: 4px;
+            font-size: 12px; color: var(--sv-text-faint);
+            pointer-events: none;
+            transition: left 0.3s;
+        }
+        .controls-info .row { display: flex; align-items: center; gap: 6px; }
+        .controls-info kbd {
+            display: inline-block; padding: 1px 6px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 4px;
+            font-family: var(--sv-font); font-size: 11px;
+            background: rgba(255,255,255,0.04);
+            color: var(--sv-text-faint);
+        }
+
+        /* ---- Bottom bar ---- */
+        .bottom-bar {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 12px 20px;
+            background: linear-gradient(0deg, var(--sv-dark-overlay) 60%, transparent 100%);
+            pointer-events: none;
+        }
+        .bottom-bar > * { pointer-events: auto; }
+
+        .powered-by { font-size: 12px; color: var(--sv-text-faint); }
+        .powered-by a {
+            color: var(--sv-blue-light); text-decoration: none; font-weight: 500;
+        }
+        .powered-by a:hover { text-decoration: underline; }
+
+        .xr-buttons { display: flex; gap: 8px; }
+        .xr-btn {
+            display: none;
+            padding: 10px 20px;
+            border: none; border-radius: var(--sv-radius-pill);
+            font-family: var(--sv-font);
+            font-size: 13px; font-weight: 600;
+            cursor: pointer; letter-spacing: 0.01em;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .xr-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+        }
+        .xr-btn:active { transform: translateY(0); }
+        #enter-ar {
+            background: linear-gradient(135deg, #6446cd, #d2a8ff);
+            color: white;
+        }
+        #enter-vr {
+            background: linear-gradient(135deg, #00b894, #55efc4);
+            color: var(--sv-dark);
+        }
+
+        /* ---- Loading overlay ---- */
+        .loading-overlay {
+            position: fixed; inset: 0; z-index: 100;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            background: var(--sv-dark);
+            transition: opacity 0.5s ease;
+        }
+        .loading-overlay.hidden { opacity: 0; pointer-events: none; }
+
+        .loading-spinner {
+            width: 48px; height: 48px;
+            border: 3px solid rgba(0, 91, 193, 0.2);
+            border-top-color: var(--sv-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .loading-text {
+            margin-top: 16px; font-size: 14px; font-weight: 500;
+            color: var(--sv-text-dim);
+        }
+        .loading-model-name {
+            margin-top: 6px; font-size: 12px;
+            color: var(--sv-text-faint);
+        }
+        .loading-bar-track {
+            width: 200px; height: 3px; margin-top: 20px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 2px; overflow: hidden;
+        }
+        .loading-bar-fill {
+            width: 0%; height: 100%;
+            background: var(--sv-blue);
+            border-radius: 2px;
+            animation: loading-progress 2s ease-in-out infinite;
+        }
+        @keyframes loading-progress {
+            0% { width: 0%; } 50% { width: 60%; } 100% { width: 100%; }
+        }
+
+        /* Inline loading chip */
+        .loading-chip {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            z-index: 50; display: none;
+            padding: 10px 20px;
+            background: var(--sv-glass);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--sv-glass-border);
+            border-radius: var(--sv-radius-pill);
+            font-size: 13px; font-weight: 500;
+            color: var(--sv-text-dim);
+            gap: 10px; align-items: center;
+        }
+        .loading-chip.visible { display: flex; }
+        .loading-chip .mini-spinner {
+            width: 16px; height: 16px;
+            border: 2px solid rgba(0, 91, 193, 0.2);
+            border-top-color: var(--sv-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        /* ---- Update snackbar ---- */
+        .update-snackbar {
+            position: fixed; left: 50%; bottom: 80px; transform: translateX(-50%) translateY(140%);
+            z-index: 60;
+            display: flex; align-items: center; gap: 12px;
+            min-width: 280px; max-width: 90vw;
+            padding: 12px 16px;
+            background: var(--sv-glass);
+            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+            border: 1px solid var(--sv-glass-border);
+            border-radius: var(--sv-radius-pill);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+            color: var(--sv-text);
+            font-size: 13px; font-weight: 500;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s;
+            opacity: 0; pointer-events: none;
+        }
+        .update-snackbar.visible {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1; pointer-events: auto;
+        }
+        .update-snackbar-icon {
+            width: 20px; height: 20px;
+            color: var(--sv-blue-light);
+            flex-shrink: 0;
+        }
+        .update-snackbar-text { flex: 1; }
+        .update-snackbar-title {
+            font-weight: 600; font-size: 13px;
+        }
+        .update-snackbar-version {
+            font-size: 11px; color: var(--sv-text-faint);
+        }
+        .update-snackbar-btn {
+            padding: 6px 14px;
+            border: none; border-radius: 20px;
+            background: var(--sv-blue);
+            color: white;
+            font-size: 12px; font-weight: 600; font-family: var(--sv-font);
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .update-snackbar-btn:hover { background: #0050aa; }
+        .update-snackbar-dismiss {
+            width: 24px; height: 24px;
+            border: none; border-radius: 50%;
+            background: transparent;
+            color: var(--sv-text-faint);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px;
+        }
+        .update-snackbar-dismiss:hover { background: rgba(255,255,255,0.08); color: var(--sv-text); }
+
+        /* Auto-rotate toggle */
+        .auto-rotate-btn {
+            padding: 8px 14px;
+            border: 1px solid var(--sv-border);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.04);
+            color: var(--sv-text-dim);
+            font-size: 12px; font-weight: 500; font-family: var(--sv-font);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .auto-rotate-btn:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--sv-border-hover);
+        }
+        .auto-rotate-btn.active {
+            background: rgba(0, 91, 193, 0.2);
+            border-color: var(--sv-blue);
+            color: var(--sv-blue-light);
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 768px) {
+            .search-panel, .geometry-panel {
+                left: 10px; right: 10px; top: auto; bottom: 70px;
+                width: auto; max-height: 45vh;
+            }
+            .env-panel {
+                right: 10px; top: auto; bottom: 70px;
+                width: calc(100% - 20px); left: 10px;
+                max-height: 35vh;
+            }
+            .tab-bar { top: 52px; }
+            .top-bar { padding: 10px 14px; }
+            .logo-text { font-size: 16px; }
+            .logo-version { font-size: 10px; }
+            .bottom-bar { padding: 10px 14px; }
+            .controls-info { display: none; }
+            .xr-btn { padding: 8px 16px; font-size: 12px; }
+            .tab-btn { padding: 6px 14px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Initializing Filament engine...</div>
+        <div id="loading-model-name" class="loading-model-name"></div>
+        <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+    </div>
+
+    <!-- Loading chip for model switching -->
+    <div id="loading-chip" class="loading-chip">
+        <div class="mini-spinner"></div>
+        <span id="loading-chip-text">Loading model...</span>
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="scene-canvas"></canvas>
+
+    <!-- Top bar -->
+    <header class="top-bar">
+        <a href="https://sceneview.github.io" target="_blank" class="logo" title="SceneView — 3D and AR for Compose and SwiftUI">
+            <div class="logo-icon">S</div>
+            <span class="logo-text">SceneView Web Demo</span>
+            <span class="logo-version">v4.5.0</span>
+        </a>
+        <div class="top-right">
+            <button id="auto-rotate-toggle" class="auto-rotate-btn active" title="Toggle auto-rotation">Auto-rotate</button>
+            <a href="https://github.com/sceneview/sceneview" target="_blank" class="icon-btn" title="View on GitHub">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Tab bar -->
+    <nav class="tab-bar">
+        <button class="tab-btn active" data-tab="models">Models</button>
+        <button class="tab-btn" data-tab="geometry">Geometry</button>
+        <button class="tab-btn" data-tab="physics">Physics</button>
+        <button class="tab-btn" data-tab="settings">Settings</button>
+    </nav>
+
+    <!-- Models panel -->
+    <div id="panel-models" class="panel search-panel active">
+        <div class="source-toggle">
+            <button class="source-btn active" data-source="cdn">SceneView CDN</button>
+            <button class="source-btn" data-source="sketchfab">Sketchfab Search</button>
+        </div>
+        <div id="search-box" class="search-box" style="display:none">
+            <input id="search-input" class="search-input" type="text" placeholder="Search Sketchfab models..." autocomplete="off">
+            <button id="search-btn" class="search-btn">Search</button>
+        </div>
+        <div id="model-results" class="model-results"></div>
+    </div>
+
+    <!-- Geometry panel -->
+    <div id="panel-geometry" class="panel geometry-panel">
+        <div class="geo-card">
+            <div class="geo-card-header">
+                <span class="geo-card-title">Cube</span>
+                <button class="geo-add-btn" data-geo="cube">Add</button>
+            </div>
+            <div class="geo-controls">
+                <label>Color <input type="color" class="color-picker" data-geo-color="cube" value="#4488ff"></label>
+                <label>Size <input type="range" class="geo-slider" data-geo-size="cube" min="0.2" max="3" step="0.1" value="1"> <span class="slider-value">1.0</span></label>
+                <label><input type="checkbox" class="geo-unlit" data-geo-unlit="cube"> Unlit (KHR_materials_unlit)</label>
+            </div>
+        </div>
+        <div class="geo-card">
+            <div class="geo-card-header">
+                <span class="geo-card-title">Sphere</span>
+                <button class="geo-add-btn" data-geo="sphere">Add</button>
+            </div>
+            <div class="geo-controls">
+                <label>Color <input type="color" class="color-picker" data-geo-color="sphere" value="#ff4488"></label>
+                <label>Radius <input type="range" class="geo-slider" data-geo-size="sphere" min="0.2" max="2" step="0.1" value="0.5"> <span class="slider-value">0.5</span></label>
+                <label><input type="checkbox" class="geo-unlit" data-geo-unlit="sphere"> Unlit (KHR_materials_unlit)</label>
+            </div>
+        </div>
+        <div class="geo-card">
+            <div class="geo-card-header">
+                <span class="geo-card-title">Cylinder</span>
+                <button class="geo-add-btn" data-geo="cylinder">Add</button>
+            </div>
+            <div class="geo-controls">
+                <label>Color <input type="color" class="color-picker" data-geo-color="cylinder" value="#44ff88"></label>
+                <label>Radius <input type="range" class="geo-slider" data-geo-size="cylinder" min="0.2" max="2" step="0.1" value="0.5"> <span class="slider-value">0.5</span></label>
+                <label><input type="checkbox" class="geo-unlit" data-geo-unlit="cylinder"> Unlit (KHR_materials_unlit)</label>
+            </div>
+        </div>
+        <div class="geo-card">
+            <div class="geo-card-header">
+                <span class="geo-card-title">Plane</span>
+                <button class="geo-add-btn" data-geo="plane">Add</button>
+            </div>
+            <div class="geo-controls">
+                <label>Color <input type="color" class="color-picker" data-geo-color="plane" value="#ffaa44"></label>
+                <label>Size <input type="range" class="geo-slider" data-geo-size="plane" min="0.5" max="5" step="0.5" value="2"> <span class="slider-value">2.0</span></label>
+                <label><input type="checkbox" class="geo-unlit" data-geo-unlit="plane"> Unlit (KHR_materials_unlit)</label>
+            </div>
+        </div>
+        <button id="geo-clear" class="geo-clear-btn">Clear All Geometry</button>
+    </div>
+
+    <!-- Physics panel — Double Pendulum -->
+    <div id="panel-physics" class="panel geometry-panel">
+        <div class="geo-card">
+            <div class="geo-card-header">
+                <span class="geo-card-title">Double Pendulum</span>
+            </div>
+            <div class="geo-controls">
+                <label>Upper link
+                    <input type="range" id="dp-length1" min="0.2" max="0.6" step="0.01" value="0.45">
+                    <span class="slider-value" id="dp-length1-value">0.45 m</span>
+                </label>
+                <label>Lower link
+                    <input type="range" id="dp-length2" min="0.2" max="0.6" step="0.01" value="0.40">
+                    <span class="slider-value" id="dp-length2-value">0.40 m</span>
+                </label>
+                <label>Gravity
+                    <input type="range" id="dp-gravity" min="1.6" max="20" step="0.1" value="9.8">
+                    <span class="slider-value" id="dp-gravity-value">9.8 m/s&sup2;</span>
+                </label>
+            </div>
+            <button id="dp-reset" class="geo-clear-btn" style="margin-top:8px">Reset &amp; drop</button>
+        </div>
+        <p style="font-size:12px;color:var(--sv-text-dim);line-height:1.5;padding:0 4px">
+            A chaotic two-link pendulum. The integrator math mirrors the shared
+            <code>DoublePendulum</code> simulation in <code>sceneview-core</code> (KMP) — the
+            same physics drives the Android and iOS demos. Adapted from
+            <a href="https://github.com/radcli14/twolinks" target="_blank">&#64;radcli14's twolinks</a>.
+        </p>
+    </div>
+
+    <!-- Settings panel -->
+    <div id="panel-settings" class="panel env-panel">
+        <div class="env-card">
+            <div class="env-card-title">Rendering</div>
+            <label style="font-size:12px;color:var(--sv-text-dim)">Quality</label>
+            <select id="quality-select" class="quality-select">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+            <div class="toggle-row">
+                <span class="toggle-label">Bloom</span>
+                <div id="bloom-toggle" class="toggle-switch"></div>
+            </div>
+            <div class="toggle-row">
+                <span class="toggle-label">Auto-rotate</span>
+                <div id="rotate-toggle" class="toggle-switch active"></div>
+            </div>
+        </div>
+        <div class="env-card">
+            <div class="env-card-title">Background</div>
+            <div class="bg-color-row">
+                <label>Color</label>
+                <input type="color" id="bg-color" class="color-picker" value="#0D1117">
+            </div>
+        </div>
+    </div>
+
+    <!-- Camera controls info -->
+    <div id="controls-info" class="controls-info">
+        <div class="row"><kbd>Drag</kbd> Orbit</div>
+        <div class="row"><kbd>Scroll</kbd> Zoom</div>
+        <div class="row"><kbd>Right-drag</kbd> Pan</div>
+    </div>
+
+    <!-- Update snackbar — shown when sceneview.github.io/version.json reports
+         a newer build than the one stamped at compile time. -->
+    <div id="update-snackbar" class="update-snackbar" role="status" aria-live="polite">
+        <svg class="update-snackbar-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z" transform="rotate(180 12 12)"/></svg>
+        <div class="update-snackbar-text">
+            <div class="update-snackbar-title">New version available</div>
+            <div class="update-snackbar-version" id="update-snackbar-version">Reload to load it</div>
+        </div>
+        <button id="update-snackbar-btn" class="update-snackbar-btn">Reload</button>
+        <button id="update-snackbar-dismiss" class="update-snackbar-dismiss" aria-label="Dismiss">&times;</button>
+    </div>
+
+    <!-- Bottom bar -->
+    <footer class="bottom-bar">
+        <div class="powered-by">
+            Powered by <a href="https://sceneview.github.io" target="_blank">SceneView</a> + <a href="https://github.com/google/filament" target="_blank">Filament.js</a> (WASM)
+        </div>
+        <div class="xr-buttons">
+            <button id="enter-ar" class="xr-btn">Enter AR</button>
+            <button id="enter-vr" class="xr-btn">Enter VR</button>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+      'use strict';
+
+      // ---- Configuration ----
+      var CDN_BASE = 'https://cdn.jsdelivr.net/gh/sceneview/sceneview@main/assets/models/glb/';
+      var SKETCHFAB_API = 'https://api.sketchfab.com/v3/search?type=models&downloadable=true';
+
+      // Curated CDN model catalog — categories with model file names
+      var CDN_MODELS = [
+        { name: 'Damaged Helmet', file: 'khronos_damaged_helmet.glb', category: 'Showcase' },
+        { name: 'Sheen Chair', file: 'khronos_sheen_chair.glb', category: 'Showcase' },
+        { name: 'Iridescent Dish', file: 'khronos_iridescent_dish.glb', category: 'Showcase' },
+        { name: 'Dragon Attenuation', file: 'khronos_dragon_attenuation.glb', category: 'Showcase' },
+        { name: 'Sunglasses', file: 'khronos_sunglasses.glb', category: 'Showcase' },
+        { name: 'Material Variants Shoe', file: 'khronos_materials_variants_shoe.glb', category: 'Showcase' },
+        { name: 'Antique Camera', file: 'khronos_antique_camera.glb', category: 'Showcase' },
+        { name: 'Chronograph Watch', file: 'khronos_chronograph_watch.glb', category: 'Showcase' },
+        { name: 'Ferrari F40', file: 'ferrari_f40.glb', category: 'Vehicles' },
+        { name: 'Porsche 911', file: 'porsche_911.glb', category: 'Vehicles' },
+        { name: 'Lamborghini Countach', file: 'lamborghini_countach.glb', category: 'Vehicles' },
+        { name: 'Tesla Cybertruck', file: 'tesla_cybertruck.glb', category: 'Vehicles' },
+        { name: 'BMW M3 E30', file: 'bmw_m3_e30.glb', category: 'Vehicles' },
+        { name: 'Cyberpunk Car', file: 'cyberpunk_car.glb', category: 'Vehicles' },
+        { name: 'Shelby Cobra', file: 'shelby_cobra.glb', category: 'Vehicles' },
+        { name: 'Speeder Bike', file: 'speeder_bike.glb', category: 'Vehicles' },
+        { name: 'Animated T-Rex', file: 'animated_trex.glb', category: 'Animated' },
+        { name: 'Animated Astronaut', file: 'animated_astronaut.glb', category: 'Animated' },
+        { name: 'Animated Butterfly', file: 'animated_butterfly.glb', category: 'Animated' },
+        { name: 'Animated Dog', file: 'animated_dog.glb', category: 'Animated' },
+        { name: 'Animated Cat', file: 'animated_cat.glb', category: 'Animated' },
+        { name: 'Animated Shark', file: 'animated_shark.glb', category: 'Animated' },
+        { name: 'Phoenix Bird', file: 'phoenix_bird.glb', category: 'Animated' },
+        { name: 'Khronos Fox', file: 'khronos_fox.glb', category: 'Characters' },
+        { name: 'Shiba', file: 'shiba.glb', category: 'Characters' },
+        { name: 'Koi Fish', file: 'koi_fish.glb', category: 'Characters' },
+        { name: 'Wall-E', file: 'wall_e.glb', category: 'Characters' },
+        { name: 'Cyberpunk Character', file: 'cyberpunk_character.glb', category: 'Characters' },
+        { name: 'Robo Bun', file: 'robo_bun.glb', category: 'Characters' },
+        { name: 'Realistic Wolf', file: 'realistic_wolf.glb', category: 'Characters' },
+        { name: 'Coffee Cart', file: 'coffee_cart.glb', category: 'Objects' },
+        { name: 'Casio Keyboard', file: 'casio_keyboard.glb', category: 'Objects' },
+        { name: 'Nike Air Jordan', file: 'nike_air_jordan.glb', category: 'Objects' },
+        { name: 'PS5 DualSense', file: 'ps5_dualsense.glb', category: 'Objects' },
+        { name: 'Game Boy Classic', file: 'game_boy_classic.glb', category: 'Objects' },
+        { name: 'Nintendo Switch', file: 'nintendo_switch.glb', category: 'Objects' },
+        { name: 'Fantasy Book', file: 'fantasy_book.glb', category: 'Objects' },
+        { name: 'Trumpet', file: 'trumpet.glb', category: 'Objects' },
+        { name: 'Retro Piano', file: 'retro_piano.glb', category: 'Objects' }
+      ];
+
+      // ---- State ----
+      var sceneViewInstance = null;
+      var currentSource = 'cdn';
+      var currentTab = 'models';
+      var autoRotate = true;
+      var bloomEnabled = false;
+      var geometryCount = 0;
+
+      // ---- DOM references ----
+      var canvas = document.getElementById('scene-canvas');
+      var loadingOverlay = document.getElementById('loading-overlay');
+      var loadingModelName = document.getElementById('loading-model-name');
+      var loadingChip = document.getElementById('loading-chip');
+      var loadingChipText = document.getElementById('loading-chip-text');
+      var searchInput = document.getElementById('search-input');
+      var searchBtn = document.getElementById('search-btn');
+      var searchBox = document.getElementById('search-box');
+      var modelResults = document.getElementById('model-results');
+      var controlsInfo = document.getElementById('controls-info');
+
+      // ---- Initialization ----
+
+      function init() {
+        setupCanvas();
+        initSceneView('khronos_damaged_helmet.glb', 'Damaged Helmet');
+        setupTabs();
+        setupSourceToggle();
+        setupSearch();
+        setupGeometry();
+        setupPhysics();
+        setupSettings();
+        setupXR();
+        showCDNModels();
+        setupDeepLink();
+      }
+
+      // ---- Deep linking ----
+      //
+      // Honour a `#double-pendulum` URL fragment so the Physics demo is
+      // directly addressable, mirroring the `sceneview://demo/double-pendulum`
+      // deep link the Android and iOS demos respond to. The physics scene
+      // needs the engine ready, so the actual switch is deferred until the
+      // loading overlay clears (see flushPendingDeepLink).
+      var pendingDeepLink = null;
+
+      function setupDeepLink() {
+        var hash = (location.hash || '').replace('#', '').toLowerCase();
+        if (hash === 'double-pendulum' || hash === 'physics') {
+          pendingDeepLink = 'physics';
+        }
+        window.addEventListener('hashchange', function() {
+          var h = (location.hash || '').replace('#', '').toLowerCase();
+          if (h === 'double-pendulum' || h === 'physics') switchTab('physics');
+        });
+      }
+
+      function flushPendingDeepLink() {
+        if (pendingDeepLink == null) return;
+        var tab = pendingDeepLink;
+        pendingDeepLink = null;
+        switchTab(tab);
+      }
+
+      function setupCanvas() {
+        canvas.width = canvas.clientWidth * (window.devicePixelRatio || 1);
+        canvas.height = canvas.clientHeight * (window.devicePixelRatio || 1);
+        window.addEventListener('resize', function() {
+          canvas.width = canvas.clientWidth * (window.devicePixelRatio || 1);
+          canvas.height = canvas.clientHeight * (window.devicePixelRatio || 1);
+        });
+      }
+
+      function initSceneView(modelFile, modelName) {
+        loadingModelName.textContent = modelName || modelFile;
+
+        var modelUrl = CDN_BASE + modelFile;
+        SceneView.modelViewer('scene-canvas', modelUrl)
+          .then(function(instance) {
+            sceneViewInstance = instance;
+            instance.setAutoRotate(autoRotate);
+            instance.setQuality('medium');
+            loadingOverlay.classList.add('hidden');
+            console.log('SceneView Web Demo initialized — v4.5.0');
+            // Engine init complete — surface any update snackbar deferred
+            // while the loading overlay was still covering the viewport.
+            flushPendingUpdateSnackbar();
+            // Engine ready — honour a `#double-pendulum` deep link now that
+            // the physics scene can actually be built.
+            flushPendingDeepLink();
+          })
+          .catch(function(err) {
+            console.error('SceneView init failed:', err);
+            loadingOverlay.querySelector('.loading-text').textContent = 'Failed to initialize: ' + err.message;
+            // Engine init failed, but the update snackbar is pure DOM and not
+            // engine-dependent — flush any deferred version so it isn't stranded
+            // in pendingUpdateVersion forever. flushPendingUpdateSnackbar() nulls
+            // pendingUpdateVersion, so the success path can never double-show it.
+            flushPendingUpdateSnackbar();
+          });
+      }
+
+      // ---- Load model ----
+
+      function loadModel(url, name) {
+        if (!sceneViewInstance) return;
+        showChip('Loading ' + (name || 'model') + '...');
+        sceneViewInstance.loadModel(url)
+          .then(function() {
+            hideChip();
+            sceneViewInstance.setAutoRotate(autoRotate);
+            console.log('Model loaded: ' + name);
+          })
+          .catch(function(err) {
+            hideChip();
+            showChip('Failed to load model');
+            setTimeout(hideChip, 3000);
+            console.error('Load error:', err);
+          });
+      }
+
+      // ---- Tab navigation ----
+
+      function setupTabs() {
+        var buttons = document.querySelectorAll('.tab-btn');
+        for (var i = 0; i < buttons.length; i++) {
+          (function(btn) {
+            btn.addEventListener('click', function() {
+              var tab = btn.getAttribute('data-tab');
+              switchTab(tab);
+            });
+          })(buttons[i]);
+        }
+      }
+
+      function switchTab(tab) {
+        currentTab = tab;
+        var buttons = document.querySelectorAll('.tab-btn');
+        for (var i = 0; i < buttons.length; i++) {
+          var btn = buttons[i];
+          btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
+        }
+        var panels = ['models', 'geometry', 'physics', 'settings'];
+        panels.forEach(function(p) {
+          var panel = document.getElementById('panel-' + p);
+          if (panel) {
+            if (p === tab) {
+              panel.classList.add('active');
+            } else {
+              panel.classList.remove('active');
+            }
+          }
+        });
+        // Adjust controls-info position
+        var sidePanel = (tab === 'models' || tab === 'geometry' || tab === 'physics');
+        controlsInfo.style.left = sidePanel ? '380px' : '20px';
+        // The Double Pendulum runs its own physics scene; entering or leaving
+        // the Physics tab swaps the scene in/out so it never lingers behind
+        // the model viewer.
+        if (tab === 'physics') {
+          startDoublePendulum();
+        } else {
+          stopDoublePendulum();
+        }
+      }
+
+      // ---- Source toggle (CDN / Sketchfab) ----
+
+      function setupSourceToggle() {
+        var buttons = document.querySelectorAll('.source-btn');
+        for (var i = 0; i < buttons.length; i++) {
+          (function(btn) {
+            btn.addEventListener('click', function() {
+              var source = btn.getAttribute('data-source');
+              setSource(source);
+            });
+          })(buttons[i]);
+        }
+      }
+
+      function setSource(source) {
+        currentSource = source;
+        var buttons = document.querySelectorAll('.source-btn');
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].classList.toggle('active', buttons[i].getAttribute('data-source') === source);
+        }
+        if (source === 'cdn') {
+          searchBox.style.display = 'none';
+          showCDNModels();
+        } else {
+          searchBox.style.display = 'flex';
+          modelResults.innerHTML = '<div class="search-status">Search Sketchfab for downloadable 3D models.</div>';
+        }
+      }
+
+      // ---- CDN Model Gallery ----
+
+      function showCDNModels() {
+        modelResults.innerHTML = '';
+        var categories = {};
+        CDN_MODELS.forEach(function(m) {
+          if (!categories[m.category]) categories[m.category] = [];
+          categories[m.category].push(m);
+        });
+
+        var catOrder = ['Showcase', 'Vehicles', 'Animated', 'Characters', 'Objects'];
+        catOrder.forEach(function(cat) {
+          var models = categories[cat];
+          if (!models) return;
+
+          // Category label
+          var label = document.createElement('div');
+          label.style.cssText = 'font-size:11px;font-weight:700;color:var(--sv-text-faint);text-transform:uppercase;letter-spacing:0.06em;padding:8px 4px 2px;';
+          label.textContent = cat;
+          modelResults.appendChild(label);
+
+          models.forEach(function(m) {
+            var card = document.createElement('div');
+            card.className = 'result-card';
+            card.innerHTML = '<div class="result-info">' +
+              '<div class="result-name">' + escapeHtml(m.name) + '</div>' +
+              '<div class="result-badge">CDN ' + m.file.split('.').pop().toUpperCase() + '</div>' +
+              '</div>';
+            card.addEventListener('click', function() {
+              highlightCard(card);
+              loadModel(CDN_BASE + m.file, m.name);
+            });
+            modelResults.appendChild(card);
+          });
+        });
+      }
+
+      // ---- Sketchfab Search ----
+
+      function setupSearch() {
+        searchBtn.addEventListener('click', function() {
+          var q = searchInput.value.trim();
+          if (q) searchSketchfab(q);
+        });
+        searchInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            var q = searchInput.value.trim();
+            if (q) searchSketchfab(q);
+          }
+        });
+      }
+
+      // Helpers: build status row / result card via DOM construction.
+      // Sketchfab response fields (model.name, model.user.displayName,
+      // model.thumbnails[*].url) are attacker-controlled — string-concat
+      // into innerHTML allows a `"` inside any field to break out of an
+      // attribute. The Kotlin path in Main.kt was patched in #957; this
+      // inline JS path is the second copy of the same search and needs
+      // the same hygiene. See follow-up to #957.
+      function buildStatusRow(text, isError) {
+        var div = document.createElement('div');
+        div.className = isError ? 'search-status error' : 'search-status';
+        div.textContent = text;
+        return div;
+      }
+      function clearResults() {
+        while (modelResults.firstChild) {
+          modelResults.removeChild(modelResults.firstChild);
+        }
+      }
+      function buildResultCard(model) {
+        var name = model.name || 'Untitled';
+        var author = (model.user && (model.user.displayName || model.user.username)) || 'Unknown';
+        var views = model.viewCount || 0;
+        var thumb = extractThumb(model);
+
+        var card = document.createElement('div');
+        card.className = 'result-card';
+
+        if (thumb) {
+          var img = document.createElement('img');
+          img.className = 'result-thumb';
+          // setAttribute treats the value as an attribute string; a `"`
+          // inside `thumb` stays in the attribute, never terminates it.
+          img.setAttribute('src', thumb);
+          img.setAttribute('alt', '');
+          img.setAttribute('loading', 'lazy');
+          // Re-attach the "hide on 404" handler as an event listener so
+          // we don't have an inline `onerror=` in the markup.
+          img.addEventListener('error', function() {
+            img.style.display = 'none';
+          });
+          card.appendChild(img);
+        }
+
+        var info = document.createElement('div');
+        info.className = 'result-info';
+
+        var nameDiv = document.createElement('div');
+        nameDiv.className = 'result-name';
+        nameDiv.setAttribute('title', name);
+        nameDiv.textContent = name;
+        info.appendChild(nameDiv);
+
+        var authorDiv = document.createElement('div');
+        authorDiv.className = 'result-author';
+        authorDiv.textContent = 'by ' + author;
+        info.appendChild(authorDiv);
+
+        var badge = document.createElement('div');
+        badge.className = 'result-badge';
+        badge.textContent = formatViews(views) + ' views';
+        info.appendChild(badge);
+
+        card.appendChild(info);
+        return card;
+      }
+
+      function searchSketchfab(query) {
+        clearResults();
+        modelResults.appendChild(buildStatusRow('Searching "' + query + '"...'));
+
+        fetch(SKETCHFAB_API + '&q=' + encodeURIComponent(query) + '&count=20')
+          .then(function(r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+          })
+          .then(function(data) {
+            var results = data.results || [];
+            clearResults();
+            if (results.length === 0) {
+              modelResults.appendChild(
+                buildStatusRow('No downloadable models found for "' + query + '".')
+              );
+              return;
+            }
+
+            results.forEach(function(model) {
+              var uid = model.uid;
+              var name = model.name || 'Untitled';
+              var card = buildResultCard(model);
+              card.addEventListener('click', function() {
+                highlightCard(card);
+                downloadSketchfabModel(uid, name);
+              });
+              modelResults.appendChild(card);
+            });
+          })
+          .catch(function(err) {
+            clearResults();
+            modelResults.appendChild(
+              buildStatusRow('Search failed: ' + (err && err.message ? err.message : err), true)
+            );
+          });
+      }
+
+      function extractThumb(model) {
+        if (!model.thumbnails || !model.thumbnails.images) return '';
+        var imgs = model.thumbnails.images;
+        for (var i = 0; i < imgs.length; i++) {
+          if (imgs[i].width >= 100 && imgs[i].width <= 400) return imgs[i].url || '';
+        }
+        return imgs.length > 0 ? (imgs[0].url || '') : '';
+      }
+
+      function downloadSketchfabModel(uid, name) {
+        showChip('Fetching download link...');
+
+        fetch('https://api.sketchfab.com/v3/models/' + uid + '/download')
+          .then(function(r) {
+            if (!r.ok) {
+              // Most models require auth for download — open Sketchfab page
+              showChip('Auth required — opening on Sketchfab');
+              setTimeout(hideChip, 3000);
+              window.open('https://sketchfab.com/3d-models/' + uid, '_blank');
+              return null;
+            }
+            return r.json();
+          })
+          .then(function(data) {
+            if (!data) return;
+            var glbUrl = data.gltf && data.gltf.url;
+            if (glbUrl) {
+              loadModel(glbUrl, name);
+            } else {
+              showChip('No GLB available — opening on Sketchfab');
+              setTimeout(hideChip, 3000);
+              window.open('https://sketchfab.com/3d-models/' + uid, '_blank');
+            }
+          })
+          .catch(function() {
+            showChip('Download unavailable — opening on Sketchfab');
+            setTimeout(hideChip, 3000);
+            window.open('https://sketchfab.com/3d-models/' + uid, '_blank');
+          });
+      }
+
+      // ---- Geometry Showcase ----
+
+      function setupGeometry() {
+        // Slider value display
+        var sliders = document.querySelectorAll('.geo-slider');
+        for (var i = 0; i < sliders.length; i++) {
+          (function(slider) {
+            var display = slider.parentElement.querySelector('.slider-value');
+            slider.addEventListener('input', function() {
+              if (display) display.textContent = parseFloat(slider.value).toFixed(1);
+            });
+          })(sliders[i]);
+        }
+
+        // Add buttons
+        var addBtns = document.querySelectorAll('.geo-add-btn');
+        for (var i = 0; i < addBtns.length; i++) {
+          (function(btn) {
+            var geoType = btn.getAttribute('data-geo');
+            btn.addEventListener('click', function() {
+              addGeometry(geoType);
+            });
+          })(addBtns[i]);
+        }
+
+        // Clear button
+        document.getElementById('geo-clear').addEventListener('click', function() {
+          if (sceneViewInstance) {
+            sceneViewInstance.clearScene();
+            geometryCount = 0;
+          }
+        });
+      }
+
+      function addGeometry(type) {
+        if (!sceneViewInstance) return;
+
+        var colorInput = document.querySelector('[data-geo-color="' + type + '"]');
+        var sizeInput = document.querySelector('[data-geo-size="' + type + '"]');
+        var hex = colorInput ? colorInput.value : '#888888';
+        var size = sizeInput ? parseFloat(sizeInput.value) : 1;
+
+        var rgb = hexToRgb(hex);
+        var color = [rgb[0], rgb[1], rgb[2], 1.0];
+
+        // Offset each primitive so they don't overlap
+        var col = geometryCount % 5;
+        var row = Math.floor(geometryCount / 5);
+        var x = (col - 2) * 2.5;
+        var z = row * -2.5;
+        geometryCount++;
+
+        switch (type) {
+          case 'cube':
+            sceneViewInstance.createBox([x, size / 2, z], [size, size, size], color);
+            break;
+          case 'sphere':
+            sceneViewInstance.createSphere([x, size, z], size, color);
+            break;
+          case 'cylinder':
+            var height = size * 2;
+            sceneViewInstance.createCylinder([x, height / 2, z], size, height, color);
+            break;
+          case 'plane':
+            // Flat box as plane
+            sceneViewInstance.createBox([x, 0.025, z], [size, 0.05, size], color);
+            break;
+        }
+      }
+
+      function hexToRgb(hex) {
+        var c = hex.replace('#', '');
+        return [
+          parseInt(c.substring(0, 2), 16) / 255,
+          parseInt(c.substring(2, 4), 16) / 255,
+          parseInt(c.substring(4, 6), 16) / 255
+        ];
+      }
+
+      // ---- Physics: Double Pendulum (issue #1221) -----------------------
+      //
+      // Web face of the cross-platform Double Pendulum demo. The integrator
+      // below is a 1:1 JavaScript port of the shared, platform-independent
+      // `DoublePendulum` simulation in `sceneview-core`
+      // (sceneview-core/.../physics/DoublePendulum.kt) — same symplectic
+      // (semi-implicit) Euler integrator, same Lagrangian angular-acceleration
+      // equations, same 1/240 s sub-stepping. The web demo runs on the CDN
+      // `sceneview.js` engine (plain JS, no Kotlin/JS), so the physics is
+      // mirrored here verbatim rather than imported; keep the two in sync.
+      // Adapted from @radcli14's MIT-licensed `twolinks`.
+
+      // Largest dt a single integration sub-step uses — mirrors
+      // `DoublePendulum.MAX_TIME_STEP`. A chaotic pendulum needs a fine dt
+      // to keep symplectic Euler's energy band tight.
+      var DP_MAX_TIME_STEP = 1 / 240;
+      var DP_HALF_PI = Math.PI / 2;
+
+      // Mutable simulation state (mirrors DoublePendulumState). Angles are in
+      // radians from the downward vertical; positive = counter-clockwise.
+      var dpState = null;
+      var dpRunning = false;
+      var dpRafId = null;
+      var dpLastTimestamp = 0;
+      var dpLink1Asset = null;   // upper link box (CDN sceneview.js asset)
+      var dpLink2Asset = null;   // lower link box
+      var dpPivotAsset = null;   // fixed hinge marker
+
+      // Build a fresh simulation from the current slider values. The pendulum
+      // starts raised so the first frame already shows dramatic motion —
+      // identical seeding to the Android `DoublePendulumDemo`.
+      function dpSeedState() {
+        var l1 = parseFloat(document.getElementById('dp-length1').value);
+        var l2 = parseFloat(document.getElementById('dp-length2').value);
+        var g = parseFloat(document.getElementById('dp-gravity').value);
+        return {
+          // pivot fixed above the origin so the swinging mass stays framed.
+          pivotX: 0, pivotY: 0.45, pivotZ: 0,
+          length1: l1, mass1: 1, angle1: DP_HALF_PI, omega1: 0,
+          length2: l2, mass2: 1, angle2: DP_HALF_PI * 0.6, omega2: 0,
+          gravity: g, damping: 0.04
+        };
+      }
+
+      // One symplectic-Euler integration sub-step of fixed `dt`. Verbatim port
+      // of `DoublePendulum.integrate` — see the Kotlin source for the
+      // derivation of the angular accelerations.
+      function dpIntegrate(s, dt) {
+        var l1 = s.length1, l2 = s.length2;
+        var m1 = s.mass1, m2 = s.mass2;
+        var a1 = s.angle1, a2 = s.angle2;
+        var w1 = s.omega1, w2 = s.omega2;
+        var g = s.gravity;
+
+        var delta = a1 - a2;
+        var cosD = Math.cos(delta);
+        var sinD = Math.sin(delta);
+
+        var den1 = l1 * (2 * m1 + m2 - m2 * Math.cos(2 * delta));
+        var den2 = l2 * (2 * m1 + m2 - m2 * Math.cos(2 * delta));
+        // Guard against the degenerate zero-length / zero-mass case.
+        if (den1 === 0 || den2 === 0) return s;
+
+        var acc1 = (
+          -g * (2 * m1 + m2) * Math.sin(a1) -
+          m2 * g * Math.sin(a1 - 2 * a2) -
+          2 * sinD * m2 * (w2 * w2 * l2 + w1 * w1 * l1 * cosD)
+        ) / den1;
+
+        var acc2 = (
+          2 * sinD * (
+            w1 * w1 * l1 * (m1 + m2) +
+            g * (m1 + m2) * Math.cos(a1) +
+            w2 * w2 * l2 * m2 * cosD
+          )
+        ) / den2;
+
+        // Symplectic Euler: update velocities first, then advance the angles
+        // from the *new* velocities.
+        var dampFactor = Math.min(1, Math.max(0, 1 - s.damping * dt));
+        var newW1 = (w1 + acc1 * dt) * dampFactor;
+        var newW2 = (w2 + acc2 * dt) * dampFactor;
+        s.omega1 = newW1;
+        s.omega2 = newW2;
+        s.angle1 = a1 + newW1 * dt;
+        s.angle2 = a2 + newW2 * dt;
+        return s;
+      }
+
+      // Advance the simulation by `deltaSeconds`, sub-stepping at
+      // DP_MAX_TIME_STEP resolution — mirrors `DoublePendulum.step`.
+      function dpStep(s, deltaSeconds) {
+        if (deltaSeconds <= 0) return s;
+        var remaining = Math.min(deltaSeconds, 1); // never simulate >1s at once
+        while (remaining > 0) {
+          var dt = Math.min(remaining, DP_MAX_TIME_STEP);
+          dpIntegrate(s, dt);
+          remaining -= dt;
+        }
+        return s;
+      }
+
+      // World-space joint position (tip of the upper link).
+      function dpJoint(s) {
+        return [
+          s.pivotX + s.length1 * Math.sin(s.angle1),
+          s.pivotY - s.length1 * Math.cos(s.angle1),
+          s.pivotZ
+        ];
+      }
+      // World-space free tip of the lower link.
+      function dpTip(s) {
+        var j = dpJoint(s);
+        return [
+          j[0] + s.length2 * Math.sin(s.angle2),
+          j[1] - s.length2 * Math.cos(s.angle2),
+          j[2]
+        ];
+      }
+
+      // Position, orient and stretch a unit-tall (1 m along +Y) link box so its
+      // two ends sit at `from` and `to`. Mirrors the Android `applyLinkTransform`:
+      // scale Y by the segment length, centre the box at the midpoint, rotate
+      // about Z so local +Y points from `from` toward `to`.
+      function dpApplyLinkTransform(asset, from, to) {
+        if (!asset || !sceneViewInstance) return;
+        var dx = to[0] - from[0];
+        var dy = to[1] - from[1];
+        var length = Math.max(Math.sqrt(dx * dx + dy * dy), 0.001);
+        // atan2(dx, dy): 0 when the link points straight up (+Y).
+        var angleZ = -Math.atan2(dx, dy);
+        var cx = (from[0] + to[0]) * 0.5;
+        var cy = (from[1] + to[1]) * 0.5;
+        var cz = from[2];
+        dpSetTransform(asset, [cx, cy, cz], angleZ, [1, length, 1]);
+      }
+
+      // Compose translation * Z-rotation * scale into a column-major mat4 and
+      // push it to the asset root via the Filament TransformManager.
+      function dpSetTransform(asset, translation, angleZ, scale) {
+        try {
+          var tm = sceneViewInstance._engine.getTransformManager();
+          var root = asset.getRoot();
+          if (!tm.hasComponent(root)) tm.create(root);
+          var inst = tm.getInstance(root);
+          var c = Math.cos(angleZ), sn = Math.sin(angleZ);
+          var sx = scale[0], sy = scale[1], sz = scale[2];
+          // Column-major: M = T * Rz * S.
+          var m = [
+            c * sx,  sn * sx, 0,       0,
+            -sn * sy, c * sy, 0,       0,
+            0,       0,       sz,      0,
+            translation[0], translation[1], translation[2], 1
+          ];
+          tm.setTransform(inst, m);
+        } catch (e) { /* swallow — don't crash the demo */ }
+      }
+
+      function dpRenderFrame(timestamp) {
+        if (!dpRunning) return;
+        var dt = dpLastTimestamp > 0 ? (timestamp - dpLastTimestamp) / 1000 : 0;
+        dpLastTimestamp = timestamp;
+        dpStep(dpState, dt);
+        var pivot = [dpState.pivotX, dpState.pivotY, dpState.pivotZ];
+        var joint = dpJoint(dpState);
+        var tip = dpTip(dpState);
+        dpApplyLinkTransform(dpLink1Asset, pivot, joint);
+        dpApplyLinkTransform(dpLink2Asset, joint, tip);
+        dpRafId = requestAnimationFrame(dpRenderFrame);
+      }
+
+      // Build the two metallic links + pivot marker and start the loop.
+      function startDoublePendulum() {
+        if (!sceneViewInstance || dpRunning) return;
+        sceneViewInstance.clearScene();
+        geometryCount = 0;
+        dpState = dpSeedState();
+        // Thin unit-tall boxes — the frame loop stretches/orients them.
+        // Metallic grey for the links, brass-toned marker for the pivot.
+        dpLink1Asset = sceneViewInstance.createBox([0, 0, 0], [0.045, 1, 0.045], [0.60, 0.65, 0.71, 1]);
+        dpLink2Asset = sceneViewInstance.createBox([0, 0, 0], [0.04, 1, 0.04], [0.60, 0.65, 0.71, 1]);
+        dpPivotAsset = sceneViewInstance.createBox(
+          [dpState.pivotX, dpState.pivotY, dpState.pivotZ], [0.07, 0.07, 0.07], [0.84, 0.64, 0.29, 1]
+        );
+        dpRunning = true;
+        dpLastTimestamp = 0;
+        dpRafId = requestAnimationFrame(dpRenderFrame);
+        console.log('Double Pendulum started — physics mirrors sceneview-core DoublePendulum');
+      }
+
+      // Stop the loop and clear the physics scene.
+      function stopDoublePendulum() {
+        if (!dpRunning) return;
+        dpRunning = false;
+        if (dpRafId != null) { cancelAnimationFrame(dpRafId); dpRafId = null; }
+        dpLink1Asset = null;
+        dpLink2Asset = null;
+        dpPivotAsset = null;
+        if (sceneViewInstance) {
+          sceneViewInstance.clearScene();
+          geometryCount = 0;
+          // Restore the default model so leaving the tab isn't a black screen.
+          loadModel(CDN_BASE + 'khronos_damaged_helmet.glb', 'Damaged Helmet');
+        }
+      }
+
+      // Reset (re-seed) the simulation in place — keeps the same boxes.
+      function dpReset() {
+        if (!dpRunning) { startDoublePendulum(); return; }
+        dpState = dpSeedState();
+        dpLastTimestamp = 0;
+      }
+
+      function setupPhysics() {
+        var l1 = document.getElementById('dp-length1');
+        var l2 = document.getElementById('dp-length2');
+        var g = document.getElementById('dp-gravity');
+        l1.addEventListener('input', function() {
+          document.getElementById('dp-length1-value').textContent =
+            parseFloat(l1.value).toFixed(2) + ' m';
+          if (dpRunning) dpReset();
+        });
+        l2.addEventListener('input', function() {
+          document.getElementById('dp-length2-value').textContent =
+            parseFloat(l2.value).toFixed(2) + ' m';
+          if (dpRunning) dpReset();
+        });
+        g.addEventListener('input', function() {
+          document.getElementById('dp-gravity-value').textContent =
+            parseFloat(g.value).toFixed(1) + ' m/s²';
+          if (dpRunning) dpReset();
+        });
+        document.getElementById('dp-reset').addEventListener('click', dpReset);
+      }
+
+      // ---- Settings ----
+
+      function setupSettings() {
+        // Quality
+        var qualitySelect = document.getElementById('quality-select');
+        qualitySelect.addEventListener('change', function() {
+          if (sceneViewInstance) {
+            sceneViewInstance.setQuality(qualitySelect.value);
+          }
+        });
+
+        // Bloom toggle
+        var bloomToggle = document.getElementById('bloom-toggle');
+        bloomToggle.addEventListener('click', function() {
+          bloomEnabled = !bloomEnabled;
+          bloomToggle.classList.toggle('active', bloomEnabled);
+          if (sceneViewInstance) {
+            sceneViewInstance.setBloom(bloomEnabled);
+          }
+        });
+
+        // Rotate toggle (settings panel)
+        var rotateToggle = document.getElementById('rotate-toggle');
+        rotateToggle.addEventListener('click', function() {
+          autoRotate = !autoRotate;
+          rotateToggle.classList.toggle('active', autoRotate);
+          if (sceneViewInstance) {
+            sceneViewInstance.setAutoRotate(autoRotate);
+          }
+          // Sync the top-bar button
+          var topBtn = document.getElementById('auto-rotate-toggle');
+          topBtn.classList.toggle('active', autoRotate);
+        });
+
+        // Auto-rotate top-bar button
+        var autoRotateBtn = document.getElementById('auto-rotate-toggle');
+        autoRotateBtn.addEventListener('click', function() {
+          autoRotate = !autoRotate;
+          autoRotateBtn.classList.toggle('active', autoRotate);
+          if (sceneViewInstance) {
+            sceneViewInstance.setAutoRotate(autoRotate);
+          }
+          // Sync settings panel toggle
+          var rotateToggle2 = document.getElementById('rotate-toggle');
+          rotateToggle2.classList.toggle('active', autoRotate);
+        });
+
+        // Background color
+        var bgColor = document.getElementById('bg-color');
+        bgColor.addEventListener('input', function() {
+          if (sceneViewInstance) {
+            var rgb = hexToRgb(bgColor.value);
+            sceneViewInstance.setBackgroundColor(rgb[0], rgb[1], rgb[2], 1.0);
+          }
+        });
+      }
+
+      // ---- WebXR ----
+
+      function setupXR() {
+        // Check AR support
+        if (navigator.xr) {
+          navigator.xr.isSessionSupported('immersive-ar').then(function(supported) {
+            if (supported) {
+              document.getElementById('enter-ar').style.display = 'inline-block';
+            }
+          }).catch(function() {});
+
+          navigator.xr.isSessionSupported('immersive-vr').then(function(supported) {
+            if (supported) {
+              document.getElementById('enter-vr').style.display = 'inline-block';
+            }
+          }).catch(function() {});
+        }
+
+        document.getElementById('enter-ar').addEventListener('click', function() {
+          if (navigator.xr) {
+            navigator.xr.requestSession('immersive-ar', { requiredFeatures: ['hit-test'] })
+              .then(function(session) {
+                console.log('AR session started');
+                session.addEventListener('end', function() {
+                  console.log('AR session ended');
+                });
+              })
+              .catch(function(err) {
+                alert('Failed to start AR: ' + err.message);
+              });
+          }
+        });
+
+        document.getElementById('enter-vr').addEventListener('click', function() {
+          if (navigator.xr) {
+            navigator.xr.requestSession('immersive-vr')
+              .then(function(session) {
+                console.log('VR session started');
+                session.addEventListener('end', function() {
+                  console.log('VR session ended');
+                });
+              })
+              .catch(function(err) {
+                alert('Failed to start VR: ' + err.message);
+              });
+          }
+        });
+      }
+
+      // ---- Loading UI helpers ----
+
+      function showChip(text) {
+        loadingChipText.textContent = text;
+        loadingChip.classList.add('visible');
+      }
+      function hideChip() {
+        loadingChip.classList.remove('visible');
+      }
+
+      // ---- Utility ----
+
+      function highlightCard(card) {
+        var all = document.querySelectorAll('.result-card');
+        for (var i = 0; i < all.length; i++) all[i].classList.remove('active');
+        card.classList.add('active');
+      }
+
+      function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+      }
+
+      function formatViews(n) {
+        if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+        if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+        return String(n);
+      }
+
+      // ---- Auto-update check ----
+      //
+      // Pattern: compare the constant `BUILD_VERSION` stamped at build time
+      // against `https://sceneview.github.io/version.json` (regenerated by CI
+      // at every release tag). Fired on app load AND on every
+      // `visibilitychange` → `document.visibilityState === 'visible'` so a
+      // user who left the tab open across a deploy sees the snackbar when
+      // they come back. Throttled to one network round-trip per 12h via
+      // localStorage.
+      //
+      // No-op if version.json is missing (dev mode, no deploy yet, fetch
+      // blocked by an ad-blocker, …) — the snackbar just stays hidden.
+
+      var BUILD_VERSION = '4.5.0';
+      var VERSION_URL = '/version.json';
+      var UPDATE_THROTTLE_MS = 12 * 60 * 60 * 1000;     // 12 hours
+      var UPDATE_LAST_CHECK_KEY = 'sceneview.update.lastCheckAt';
+      var UPDATE_SNOOZED_KEY = 'sceneview.update.snoozedVersion';
+
+      function shouldCheckUpdate() {
+        try {
+          var last = parseInt(localStorage.getItem(UPDATE_LAST_CHECK_KEY) || '0', 10);
+          return (Date.now() - last) >= UPDATE_THROTTLE_MS;
+        } catch (e) {
+          return true; // localStorage disabled — degrade open, network is cheap
+        }
+      }
+
+      function markChecked() {
+        try { localStorage.setItem(UPDATE_LAST_CHECK_KEY, String(Date.now())); }
+        catch (e) { /* ignored */ }
+      }
+
+      function isSnoozed(version) {
+        try { return localStorage.getItem(UPDATE_SNOOZED_KEY) === version; }
+        catch (e) { return false; }
+      }
+
+      function snooze(version) {
+        try { localStorage.setItem(UPDATE_SNOOZED_KEY, version); }
+        catch (e) { /* ignored */ }
+      }
+
+      function compareVersions(a, b) {
+        var la = a.split('.').map(function(n) { return parseInt(n, 10) || 0; });
+        var lb = b.split('.').map(function(n) { return parseInt(n, 10) || 0; });
+        var len = Math.max(la.length, lb.length);
+        for (var i = 0; i < len; i++) {
+          var x = la[i] || 0, y = lb[i] || 0;
+          if (x > y) return 1;
+          if (x < y) return -1;
+        }
+        return 0;
+      }
+
+      // Pending version to surface once the engine has finished initializing.
+      // The update snackbar (z-index 60) sits BELOW the loading overlay
+      // (z-index 100), so showing it while the overlay is still up would
+      // hide it behind the spinner. Gate on `loading-overlay.hidden` and
+      // defer if the version check resolves before engine init completes.
+      var pendingUpdateVersion = null;
+
+      function showUpdateSnackbar(version) {
+        var snack = document.getElementById('update-snackbar');
+        var versionLabel = document.getElementById('update-snackbar-version');
+        if (!snack) return;
+        var overlay = document.getElementById('loading-overlay');
+        if (overlay && !overlay.classList.contains('hidden')) {
+          // Engine still initializing — defer until the overlay is hidden so
+          // the snackbar isn't stranded behind the loading spinner.
+          pendingUpdateVersion = version;
+          return;
+        }
+        if (versionLabel) versionLabel.textContent = 'v' + version + ' is ready — reload to load it.';
+        snack.classList.add('visible');
+      }
+
+      // Called by the init path once the loading overlay is hidden — flushes
+      // any update snackbar deferred while the engine was still booting.
+      function flushPendingUpdateSnackbar() {
+        if (pendingUpdateVersion == null) return;
+        var version = pendingUpdateVersion;
+        pendingUpdateVersion = null;
+        showUpdateSnackbar(version);
+      }
+
+      function hideUpdateSnackbar() {
+        var snack = document.getElementById('update-snackbar');
+        if (snack) snack.classList.remove('visible');
+      }
+
+      function checkForUpdate(force) {
+        if (!force && !shouldCheckUpdate()) return;
+        // `cache: 'no-cache'` so a stale CDN copy doesn't pin us to an old
+        // version after a deploy. The browser still uses ETag/If-Modified-Since
+        // — 304s come back free.
+        fetch(VERSION_URL, { cache: 'no-cache' })
+          .then(function(r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+          })
+          .then(function(data) {
+            // Mark checked ONLY after the JSON parses — a 503 / DNS fail
+            // leaves `lastCheckAt` untouched so the next visibilitychange
+            // can retry instead of burning the 12 h budget on a transient.
+            markChecked();
+            var latest = data && data.version;
+            if (!latest) return;
+            if (compareVersions(latest, BUILD_VERSION) <= 0) return;
+            if (isSnoozed(latest)) return;
+            showUpdateSnackbar(latest);
+          })
+          .catch(function() { /* silent — see comment above */ });
+      }
+
+      function setupUpdateSnackbar() {
+        var btn = document.getElementById('update-snackbar-btn');
+        var dismiss = document.getElementById('update-snackbar-dismiss');
+        if (btn) {
+          btn.addEventListener('click', function() {
+            // Cache-bust on reload so the new bundle actually downloads.
+            location.reload();
+          });
+        }
+        if (dismiss) {
+          dismiss.addEventListener('click', function() {
+            var snack = document.getElementById('update-snackbar');
+            var versionLabel = document.getElementById('update-snackbar-version');
+            // Pull the version out of the label so a future `checkForUpdate`
+            // with the same `latest` stays silent until a NEW version lands.
+            var match = versionLabel && /v(\d+\.\d+\.\d+)/.exec(versionLabel.textContent || '');
+            if (match) snooze(match[1]);
+            hideUpdateSnackbar();
+          });
+        }
+        document.addEventListener('visibilitychange', function() {
+          if (document.visibilityState === 'visible') checkForUpdate(false);
+        });
+      }
+
+      // ---- Boot ----
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          init();
+          setupUpdateSnackbar();
+          checkForUpdate(true); // initial check on load
+        });
+      } else {
+        init();
+        setupUpdateSnackbar();
+        checkForUpdate(true);
+      }
+
+    })();
+    </script>
+</body>
+</html>
