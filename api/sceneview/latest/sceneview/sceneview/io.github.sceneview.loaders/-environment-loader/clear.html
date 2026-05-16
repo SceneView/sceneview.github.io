@@ -108,7 +108,7 @@
   <div class="cover ">
     <h1 class="cover"><span><span>clear</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="clear.html"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><p class="paragraph">Releases every <a href="../../io.github.sceneview.environment/-environment/index.html">Environment</a> produced by this loader.</p><p class="paragraph">Does <strong>not</strong> cancel the loader's coroutine scope — the loader stays usable and a subsequent <code class="lang-kotlin">loadHDREnvironment</code>/<code class="lang-kotlin">loadKTX1Environment</code> still launches correctly. Scope cancellation happens only in <a href="destroy.html">destroy</a> (#933), so calling <code class="lang-kotlin">clear()</code> to drop environments mid-life never leaves the loader with a dead scope.</p></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sceneview/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="clear.html"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">
