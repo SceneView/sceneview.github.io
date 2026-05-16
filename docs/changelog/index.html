@@ -2404,6 +2404,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v462-ci-hotfix-land-the-demo-app-on-the-play-store-api-docs-2026-05-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v4.6.2 — CI hotfix: land the demo app on the Play Store + API docs (2026-05-16)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.6.2 — CI hotfix: land the demo app on the Play Store + API docs (2026-05-16)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v461-ci-hotfix-unblock-the-play-store-deploy-for-the-demo-app-2026-05-16" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2416,7 +2444,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed" class="md-nav__link">
+  <a href="#fixed_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -2466,7 +2494,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_1" class="md-nav__link">
+  <a href="#fixed_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -2615,7 +2643,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_2" class="md-nav__link">
+  <a href="#fixed_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -3558,6 +3586,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v462-ci-hotfix-land-the-demo-app-on-the-play-store-api-docs-2026-05-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v4.6.2 — CI hotfix: land the demo app on the Play Store + API docs (2026-05-16)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.6.2 — CI hotfix: land the demo app on the Play Store + API docs (2026-05-16)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v461-ci-hotfix-unblock-the-play-store-deploy-for-the-demo-app-2026-05-16" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3570,7 +3626,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed" class="md-nav__link">
+  <a href="#fixed_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -3620,7 +3676,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_1" class="md-nav__link">
+  <a href="#fixed_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -3769,7 +3825,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_2" class="md-nav__link">
+  <a href="#fixed_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -4666,8 +4722,14 @@
 
 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">&para;</a></h2>
-<h2 id="v461-ci-hotfix-unblock-the-play-store-deploy-for-the-demo-app-2026-05-16">v4.6.1 — CI hotfix: unblock the Play Store deploy for the demo app (2026-05-16)<a class="headerlink" href="#v461-ci-hotfix-unblock-the-play-store-deploy-for-the-demo-app-2026-05-16" title="Permanent link">&para;</a></h2>
+<h2 id="v462-ci-hotfix-land-the-demo-app-on-the-play-store-api-docs-2026-05-16">v4.6.2 — CI hotfix: land the demo app on the Play Store + API docs (2026-05-16)<a class="headerlink" href="#v462-ci-hotfix-land-the-demo-app-on-the-play-store-api-docs-2026-05-16" title="Permanent link">&para;</a></h2>
 <h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Play Store release deploy no longer blocked by AAB validation (<a href="https://github.com/sceneview/sceneview/issues/1416">#1416</a>).</strong> The pre-upload guard now introspects Android App Bundles with <code>bundletool dump manifest</code> (the correct tool for <code>.aab</code> files) instead of <code>aapt2</code>, which can only read APKs and was mis-reporting bundles as corrupt. The validation step is also marked <code>continue-on-error</code> so a tooling gap can never veto a release. This unblocks the demo-app Play Store deploy that missed v4.6.0 and v4.6.1.</li>
+<li><strong>API-docs deploy no longer races the website deploy on a release tag (<a href="https://github.com/sceneview/sceneview/issues/1417">#1417</a>).</strong> <code>release.yml</code>'s Dokka deploy and <code>docs.yml</code>'s site deploy both push to the external <code>sceneview.github.io</code> repo; on a release tag they ran concurrently and the second push failed non-fast-forward. A shared cross-workflow <code>concurrency</code> group now serialises the two pushes so a release reliably publishes both the API docs and the site.</li>
+</ul>
+<h2 id="v461-ci-hotfix-unblock-the-play-store-deploy-for-the-demo-app-2026-05-16">v4.6.1 — CI hotfix: unblock the Play Store deploy for the demo app (2026-05-16)<a class="headerlink" href="#v461-ci-hotfix-unblock-the-play-store-deploy-for-the-demo-app-2026-05-16" title="Permanent link">&para;</a></h2>
+<h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Play Store deploy no longer blocked by AAB manifest validation (<a href="https://github.com/sceneview/sceneview/issues/1413">#1413</a>).</strong> <code>validate-release-artifact.sh</code> now resolves <code>aapt2</code> from <code>$ANDROID_SDK_ROOT/build-tools/&lt;newest&gt;/</code> instead of relying on <code>PATH</code> (where it never is), and the pre-upload guard now warns and skips instead of hard-failing when the validation tooling itself is unavailable — only a genuine manifest mismatch blocks a release.</li>
 </ul>
@@ -4687,7 +4749,7 @@
 <li><strong>Added <code>jsTest</code> coverage for the <code>sceneview-web</code> core logic classes (<a href="https://github.com/sceneview/sceneview/issues/1394">#1394</a>).</strong> New unit tests pin the <code>OrbitCameraController</code> orbit/zoom/pan math (spherical-to-Cartesian eye conversion, phi/distance clamping, auto-rotate, damping), the <code>GeometryGLBBuilder</code> GLB container output (header, chunk alignment, accessors, <code>KHR_materials_unlit</code> extension, node transforms), and the auto-center one-shot gate. The <code>didCenterContent</code> flag was extracted into a testable <code>AutoCenterGate</code> so the #1357 regression — a 2nd <code>loadModel</code> must re-run content centering — is now directly covered. <code>Closes #1394</code>.</li>
 <li><strong>API docs: KDoc for the <code>sceneview</code> module geometry, texture and material helpers (<a href="https://github.com/sceneview/sceneview/issues/965">#965</a>).</strong> Added accurate KDoc to previously undocumented public declarations in the <code>sceneview</code> Android module: the six geometry builders (<code>Cube</code>, <code>Cone</code>, <code>Cylinder</code>, <code>Sphere</code>, <code>Capsule</code>, <code>Torus</code>), the texture helpers (<code>ImageTexture</code>, <code>VideoTexture</code>, <code>TextureSampler2D</code>/<code>TextureSamplerExternal</code>, <code>Texture.use</code>/<code>setBitmap</code>), <code>RenderableManager</code> extensions, <code>NodeAnimator</code>, and the ubershader <code>MaterialInstance</code> parameter setters. Documentation only — no behavior change. <code>arsceneview</code> is tracked separately.</li>
 </ul>
-<h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_2">Fixed<a class="headerlink" href="#fixed_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Samples cleanup (<a href="https://github.com/sceneview/sceneview/issues/1361">#1361</a>).</strong> Rewrote <code>samples/MULTIPLATFORM.md</code> so the architecture diagram and recipe list match the real tree (<code>*-demo/</code> folders, the 11 actual <code>recipes/*.md</code> files). Finished the android-demo first-frame loading-scrim rollout to the remaining 13 non-AR demos so cold starts no longer flash a black viewport (AR demos intentionally skip it — they show a live camera feed, not a black Filament viewport). Converted the dead <code>else -&gt; PlaceholderDemo</code> router fallback in <code>MainActivity.kt</code> into a debug-only drift guard that crashes loudly if a new <code>ALL_DEMOS</code> entry is added without a matching route, while still degrading gracefully in release builds.</li>
 <li><strong>iOS demo cleanup + Android parity (<a href="https://github.com/sceneview/sceneview/issues/1373">#1373</a>).</strong> Renamed the <code>Scenes</code> tab to <code>Samples</code>, aligned the Samples category taxonomy to Android, removed the <code>Auto Rotate</code> / <code>AR Record &amp; Playback</code> duplicate entries and the dead Explore buttons, fixed the <code>Settings</code> pill overlapping the controls FAB, and corrected several inaccurate demo subtitles and captions.</li>
@@ -4742,7 +4804,7 @@
 <ul>
 <li><strong>Nightly full-CI safety-net workflow (<a href="https://github.com/sceneview/sceneview/issues/1324">#1324</a>).</strong> <code>nightly-ci.yml</code> runs the full heavy validation surface (compile + builds + unit tests + render tests + quality gate) against <code>main</code> HEAD once a night, reusing the existing workflows via <code>workflow_call</code>, so a path-gated-out regression still surfaces within 24h. Not a PR gate.</li>
 </ul>
-<h3 id="fixed_2">Fixed<a class="headerlink" href="#fixed_2" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_3">Fixed<a class="headerlink" href="#fixed_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>iOS <code>FogNode.heightFalloff</code> / <code>heightBased</code> are now honestly documented as a RealityKit parity gap (<a href="https://github.com/sceneview/sceneview/issues/1380">#1380</a>).</strong> the height gradient was a silent no-op — a uniform translucent sphere cannot vary opacity by world height; the parameter is kept for Android parity but now clearly documents that height-based fog renders identically to exponential fog on iOS (<a href="https://github.com/sceneview/sceneview/issues/1373">#1373</a>).</p>
@@ -5870,7 +5932,7 @@ Five low-effort high-impact fixes shipped (<code>65f6d8db</code>, <code>ea4c513e
 <li><strong>TV-only assets split</strong> (<a href="https://github.com/sceneview/sceneview/commit/9877918e"><code>9877918e</code></a>, closes <a href="https://github.com/sceneview/sceneview/issues/879">#879</a>) — moved 6 TV-exclusive models (<code>nike_air_jordan.glb</code> 30 MB, <code>khronos_iridescent_dish.glb</code>, <code>khronos_sheen_chair.glb</code>, <code>khronos_glam_velvet_sofa.glb</code>, <code>toon_cat.glb</code>, <code>khronos_duck.glb</code>) from the shared <code>android-demo/assets/</code> symlink target to a TV-demo-private folder. TV demo picks up shared assets via <code>sourceSets.main.assets.srcDirs += '../android-demo/src/main/assets'</code>. Phone APK 131 → <strong>100 MB</strong>.</li>
 <li><strong>Disabled asset-pack module dropped</strong> (<a href="https://github.com/sceneview/sceneview/commit/c2fe9010"><code>c2fe9010</code></a>) — 186 MB on-disk repo cleanup. The <code>samples/android-demo-assets/</code> <code>com.android.asset-pack</code> module was disabled (<code>assetPacks = […]</code> commented in the demo's build.gradle) but still tracked in git. None of its 25 GLBs were referenced by code.</li>
 </ul>
-<h3 id="fixed_3">Fixed<a class="headerlink" href="#fixed_3" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_4">Fixed<a class="headerlink" href="#fixed_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Play Store deploy workflow race</strong> (<a href="https://github.com/sceneview/sceneview/commit/f2829214"><code>f2829214</code></a>) — added <code>max-parallel: 1</code> to the publish job's matrix so the <code>internal</code> and <code>production</code> tracks upload sequentially. Before this, both jobs would grab the same Google Play Edit ID, one would finish first, and the other would fail with "This Edit has been deleted". Recurred on every tag push since v4.0.5; v4.0.9 deploy uses the new sequential path.</li>
 <li><strong>iOS demo <code>MARKETING_VERSION</code> blind spot</strong> (<a href="https://github.com/sceneview/sceneview/commit/04e75ad5"><code>04e75ad5</code></a>) — <code>samples/ios-demo/SceneViewDemo.xcodeproj/project.pbxproj</code> was missed for 8+ releases. <code>sync-versions.sh</code> now covers it (29 checks, was 28).</li>
@@ -5899,7 +5961,7 @@ Five low-effort high-impact fixes shipped (<code>65f6d8db</code>, <code>ea4c513e
 <li><strong><code>MultiModelDemo</code></strong> — refonte from a generic spread-slider carousel to a tabletop living-room display lit by <code>studio_warm_2k.hdr</code>. Front row at z=-1.3, back row at z=-1.7. Spread slider removed (the new layout is hand-tuned for the dusk-lit display).</li>
 <li><strong><code>LightingDemo</code></strong> — 3×2.4 m backdrop wall + small coloured marker sphere at the light source so directional / point / spot read distinctly. Light pinned at (0, 1.4, 1.0) with tightened spot cone and 4 m falloff.</li>
 </ul>
-<h3 id="fixed_4">Fixed<a class="headerlink" href="#fixed_4" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_5">Fixed<a class="headerlink" href="#fixed_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong><code>Scene.kt</code> cameraManipulator swap reactivity</strong> — <code>cameraManipulator</code> is now wrapped in <code>rememberUpdatedState</code> so the frame loop reads through a state ref. Callers that swap manipulators at runtime (e.g. <code>AnimationDemo</code>'s scripted → Free hand-off, custom mode pickers) now see <code>getTransform()</code> route to the new manipulator on the next frame instead of staying stuck on the launch-time value.</li>
 </ul>
@@ -5984,7 +6046,7 @@ now surfaced everywhere a SceneView consumer might look:</p>
 </ul>
 <h2 id="v406-streetscape-geometry-geospatial-enabled-in-production-2026-05-06">v4.0.6 — Streetscape Geometry / Geospatial enabled in production (2026-05-06)<a class="headerlink" href="#v406-streetscape-geometry-geospatial-enabled-in-production-2026-05-06" title="Permanent link">&para;</a></h2>
 <p><strong>Status:</strong> stable. Activates the AR Streetscape Geometry, Geospatial, and Cloud Anchors demos for Play Store and App Store builds. The library artefacts on Maven Central are unchanged from v4.0.5 — this release only re-builds the sample apps with the now-wired ARCore Cloud API key.</p>
-<h3 id="fixed_5">Fixed<a class="headerlink" href="#fixed_5" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_6">Fixed<a class="headerlink" href="#fixed_6" title="Permanent link">&para;</a></h3>
 <p>The v4.0.5 sample apps shipped with <code>com.google.android.ar.API_KEY</code> empty in the manifest, which left the Streetscape / Geospatial / Cloud Anchors demos disabled at runtime. The wiring landed on main <em>after</em> v4.0.5 was tagged (commit <code>b280b6d9</code> — <code>samples/android-demo/build.gradle</code> reads <code>ARCORE_API_KEY</code> from env or <code>local.properties</code>, injects it via <code>manifestPlaceholders</code>).</p>
 <p>v4.0.6 re-cuts the sample-app AAB / iOS archive with the env var supplied by CI (<code>secrets.ARCORE_API_KEY</code>, restricted to package <code>io.github.sceneview.demo</code> + the debug, upload, and Play App Signing SHA-1s). End users of the published demos can now exercise Streetscape Geometry and Geospatial on the production builds.</p>
 <h3 id="internal_1">Internal<a class="headerlink" href="#internal_1" title="Permanent link">&para;</a></h3>
@@ -5994,7 +6056,7 @@ now surfaced everywhere a SceneView consumer might look:</p>
 </ul>
 <h2 id="v405-hotfix-android-demo-compile-ios-bundle-bump-2026-05-06">v4.0.5 — hotfix: android-demo compile + iOS bundle bump (2026-05-06)<a class="headerlink" href="#v405-hotfix-android-demo-compile-ios-bundle-bump-2026-05-06" title="Permanent link">&para;</a></h2>
 <p><strong>Status:</strong> stable. Hotfix on top of v4.0.4 — that release's tag triggered Maven Central publication successfully, but the store-bound builds (Play Store APK, App Store iOS archive) failed in CI:</p>
-<h3 id="fixed_6">Fixed<a class="headerlink" href="#fixed_6" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_7">Fixed<a class="headerlink" href="#fixed_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>samples/android-demo/MainActivity.kt</code>: <code>Unresolved reference 'initialDemo'</code> — leftover reference to the old launch-time deep-link param after the v4.0.4 conflict resolution. Replaced with a <code>remember { activity?.pendingDemoIdFlow?.value }</code> capture so the NavHost picks the right start destination on first composition without re-introducing the param.</li>
 <li><code>samples/android-demo/demos/PhysicsDemo.kt</code>: <code>Assignment type mismatch: actual type is 'Node', but 'SphereNode?' was expected.</code> — the conflict resolution wrapped the falling spheres in a <code>Node()</code> to attach a position via the wrapper, breaking <code>apply = { nodeRef = this }</code> because <code>this</code> was the wrapper Node, not the inner SphereNode. Collapsed back to <code>SphereNode(position = …, apply = { nodeRef = this })</code> since SphereNode supports both.</li>
