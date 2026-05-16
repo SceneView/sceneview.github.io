@@ -3032,19 +3032,24 @@ behaviour, so spending 10-20 min of emulator time to re-build and re-render
 is pure noise. You will see fewer green checks than on a code PR; this is
 correct. Specifically:</p>
 <ul>
-<li><strong><code>quality-gate.yml</code></strong> and <strong><code>pr-check.yml</code></strong> carry a <code>paths-ignore</code> filter
-  for those paths, so neither triggers on a docs-only PR.</li>
-<li><strong><code>ci.yml</code></strong> carries an equivalent <code>paths-ignore</code> filter (it also ignores
-  <code>mcp*/**</code>, which <code>quality-gate.yml</code> deliberately does not).</li>
+<li><strong><code>ci.yml</code></strong> — the single consolidated PR workflow (<code>build</code>, <code>lint</code>,
+  <code>unit-test</code>, <code>web-desktop</code>, <code>flutter-demo</code>, <code>compile-kmp</code>, <code>repo-hygiene</code>,
+  <code>quality-gate</code>) — carries a <code>paths-ignore</code> filter for those paths, so it
+  does not trigger on a docs-only PR. (Before #1370 this was three separate
+  workflows — <code>ci.yml</code>, <code>pr-check.yml</code>, <code>quality-gate.yml</code> — each with its
+  own <code>changes</code> job; they are now one workflow with one path-detection job.)</li>
 <li><strong><code>render-tests.yml</code></strong> never runs on <em>any</em> pull request — it is push-to-main</li>
 <li><code>workflow_dispatch</code> only — so docs-only PRs skip it for that reason rather
   than via a path filter.</li>
+<li>The <strong><code>CI Gate</code></strong> aggregator (<code>ci-gate.yml</code>) still runs on every PR and
+  resolves green when the path-filtered jobs are skipped — that is how a
+  docs-only PR stays mergeable.</li>
 </ul>
 <p>If your docs PR needs to force a full CI run (for example, you suspect a
 markdown change has accidentally invalidated an example referenced from
 runtime code), trigger the gates manually from the Actions tab —
-<code>Run workflow</code> on <code>quality-gate.yml</code> / <code>ci.yml</code> / <code>render-tests.yml</code>
-accepts your PR's branch as input.</p>
+<code>Run workflow</code> on <code>ci.yml</code> / <code>render-tests.yml</code> accepts your PR's branch as
+input.</p>
 <h3 id="code-style">Code style<a class="headerlink" href="#code-style" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Kotlin</strong>: follow the official <a href="https://developer.android.com/kotlin/style-guide">Kotlin style guide</a> and existing Compose API conventions (composable functions, <code>remember*</code> helpers, named parameters). The code style is stored in the repository and auto-configured by Android Studio.</li>
