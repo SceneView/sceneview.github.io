@@ -2401,6 +2401,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Unreleased">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2483,7 +2500,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed" class="md-nav__link">
+  <a href="#changed_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Changed
@@ -2544,7 +2561,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#changed_1" class="md-nav__link">
+  <a href="#changed_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Changed
@@ -3133,7 +3150,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed_2" class="md-nav__link">
+  <a href="#changed_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Changed
@@ -3583,6 +3600,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Unreleased">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3665,7 +3699,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed" class="md-nav__link">
+  <a href="#changed_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Changed
@@ -3726,7 +3760,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#changed_1" class="md-nav__link">
+  <a href="#changed_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Changed
@@ -4315,7 +4349,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed_2" class="md-nav__link">
+  <a href="#changed_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Changed
@@ -4722,6 +4756,10 @@
 
 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">&para;</a></h2>
+<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Render tests are no longer orphan <code>@Ignore</code>'d code (<a href="https://github.com/sceneview/sceneview/issues/912">#912</a>).</strong> The five headless Filament render-test classes (<code>RenderSmokeTest</code>, <code>LightingRenderTest</code>, <code>GeometryRenderTest</code>, <code>VisualVerificationTest</code>, <code>DemoParametersRenderTest</code>) were wholly class-level <code>@Ignore</code>'d — compiled but never executed, so they could never catch a regression and silently drifted. They now use a runtime capability gate (<code>RenderTestCapabilities.assumeGpuReadbackAvailable()</code>): the tests <strong>run</strong> on a hardware-GPU runner that opts in via <code>-Pandroid.testInstrumentationRunnerArguments.gpuReadback=true</code>, and cleanly <strong>skip</strong> (JUnit assumption, not orphan, not failure) on the SwiftShader / Apple-Silicon emulator where Filament's async <code>readPixels</code> callback never fires (the harness limitation tracked in <a href="https://github.com/sceneview/sceneview/issues/803">#803</a>). <code>Closes #912</code>.</li>
+</ul>
 <h2 id="v462-ci-hotfix-land-the-demo-app-on-the-play-store-api-docs-2026-05-16">v4.6.2 — CI hotfix: land the demo app on the Play Store + API docs (2026-05-16)<a class="headerlink" href="#v462-ci-hotfix-land-the-demo-app-on-the-play-store-api-docs-2026-05-16" title="Permanent link">&para;</a></h2>
 <h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
 <ul>
@@ -4740,7 +4778,7 @@
 <li><strong>AR demo screenshot regression pipeline (<a href="https://github.com/sceneview/sceneview/issues/1050">#1050</a>).</strong> New <code>ARPlaybackScreenshotTest</code> replays the bundled ARCore recording through <code>ARRecordPlaybackDemo</code> and captures the rendered AR frame at <strong>fixed ARCore frame indices</strong> (f=30/60/120/180) for golden comparison. Captures are gated on a per-frame counter (<code>DemoSettings.arPlaybackFrameCount</code>, bumped once per <code>onSessionUpdated</code>) rather than wall-clock sleeps, so they land on the same frame on every machine regardless of emulator load. Wired into <code>render-tests.yml</code> on a pinned emulator profile and documented in <code>samples/android-demo/AR_TESTING.md</code>.</li>
 <li><strong>Flutter &amp; React Native demos: Double Pendulum physics demo</strong> (<a href="https://github.com/sceneview/sceneview/issues/1332">#1332</a>) — a new "Physics" tab in <code>samples/flutter-demo</code> and <code>samples/react-native-demo</code> runs the chaotic two-link pendulum with link-length / gravity sliders + reset, mirroring the Android, iOS and web demos. The bridge sample apps have no per-frame transform-mutation API, so the integrator is a 1:1 port of the shared <code>sceneview-core</code> <code>DoublePendulum</code> simulation rendered via a Flutter <code>CustomPainter</code> / React Native views. <code>Closes #1332</code>.</li>
 </ul>
-<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<h3 id="changed_1">Changed<a class="headerlink" href="#changed_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong><code>play-store.yml</code> now validates the release AAB manifest before upload (<a href="https://github.com/sceneview/sceneview/issues/1301">#1301</a>).</strong> A new gate runs after the <code>bundleRelease</code> build and fails the job fast if the artifact's <code>package</code>, <code>versionName</code>, or <code>versionCode</code> don't match what gradle was told to build — catching a stale or wrong-variant bundle in ~1 s instead of as a Play Console rejection minutes later. Backed by <code>.claude/scripts/validate-release-artifact.sh</code> + an <code>android_cli_describe</code> helper (wrapping <code>aapt2</code>, since the <code>android</code> CLI's <code>describe</code> subcommand introspects projects, not built artifacts). <code>Closes #1301</code>.</li>
 <li><strong><code>cross-platform-check.sh</code> can cross-check the demo APK manifest (<a href="https://github.com/sceneview/sceneview/issues/1302">#1302</a>).</strong> A new opt-in <code>--with-apk</code> flag builds (or reuses) the <code>android-demo</code> debug APK and inspects its manifest via the <code>aapt2</code>-backed <code>android_cli_describe</code> helper to verify the exposed entry points match expectations — the <code>io.github.sceneview.demo</code> package id, a launchable <code>MainActivity</code>, and the <code>sceneview://</code> deep-link scheme — then cross-checks the Android <code>DemoRegistry</code> demo count against the iOS <code>SamplesTab</code> inventory so a platform missing a demo surfaces as drift. The fast source-only path stays the default.</li>
@@ -4768,7 +4806,7 @@
 <li><strong><code>/issue-batch</code> skill rewritten as a launch-and-go continuous cycle (<a href="https://github.com/sceneview/sceneview/issues/1297">#1297</a>).</strong> The skill now encodes the validated operating mode: a replace-on-completion pipeline of 6-8 lean-clone background agents (shallow sparse clones, ~0.3-0.6 GB vs ~2.3 GB full), fire-and-forget <code>gh pr merge --auto</code>, disk-gated spawn (refuse &lt; 15 GB), disjoint-module parallelism, autonomous dispatch, and a release checkpoint per iteration. <code>Closes #1297</code>.</li>
 </ul>
 <h2 id="v450-visionos-immersive-space-skybox-fragment-changelog-system-ios-unlitreactive-light-parity-ci-hardening-2026-05-15">v4.5.0 — visionOS immersive-space skybox + fragment changelog system + iOS unlit/reactive-light parity + CI hardening (2026-05-15)<a class="headerlink" href="#v450-visionos-immersive-space-skybox-fragment-changelog-system-ios-unlitreactive-light-parity-ci-hardening-2026-05-15" title="Permanent link">&para;</a></h2>
-<h3 id="changed_1">Changed<a class="headerlink" href="#changed_1" title="Permanent link">&para;</a></h3>
+<h3 id="changed_2">Changed<a class="headerlink" href="#changed_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Adopted a towncrier-style fragment changelog (<a href="https://github.com/sceneview/sceneview/issues/1337">#1337</a>).</strong> PRs now drop a small file in <code>changelog.d/</code> instead of editing <code>CHANGELOG.md</code>'s <code>## Unreleased</code> anchor, so parallel PRs no longer conflict on the changelog. <code>.claude/scripts/collate-changelog.sh X.Y.Z</code> collates the fragments into a new <code>## vX.Y.Z</code> section at release time. <code>Closes #1337</code>.</li>
 </ul>
@@ -5035,7 +5073,7 @@
 - <code>play-store.yml</code>'s <code>verify-arcore-key.sh</code> CI guard passed green on the v4.3.5 release run (run 25891143675, 2026-05-14 23:24 UTC)
 - Package name <code>io.github.sceneview.demo</code> matches the Cloud Console restriction (no <code>applicationIdSuffix</code>)</p>
 <p>So the bug is Cloud-Console-side configuration drift, not an APK-side regression. v4.3.6 expands the docs surface so the next maintainer / contributor hitting this can self-diagnose without escalating.</p>
-<h3 id="changed_2">Changed<a class="headerlink" href="#changed_2" title="Permanent link">&para;</a></h3>
+<h3 id="changed_3">Changed<a class="headerlink" href="#changed_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong><code>samples/android-demo/STREETSCAPE_SETUP.md</code> adds a new "Troubleshooting — <code>ERROR_NOT_AUTHORIZED</code> persists after SHA-1 is whitelisted" subsection</strong> under the existing "Play App Signing key" block. Five-step checklist with direct Cloud Console deep-links (replace <code>&lt;PROJECT_ID&gt;</code> with <code>pc-api-4638313286439917620-648</code> for the SceneView demo project):</li>
 <li>Billing enabled and active on the Cloud project (Geospatial / Cloud Anchors hit paid backends; silently rejects without billing).</li>
@@ -5990,7 +6028,7 @@ Five low-effort high-impact fixes shipped (<code>65f6d8db</code>, <code>ea4c513e
 <li><code>samples/android-demo/RECORDING_PLAYBACK.md</code> — sample-app feature guide for demo users.</li>
 <li><code>README.md</code> — new "Record &amp; Replay AR sessions" sub-section under Developer tools.</li>
 </ul>
-<h3 id="changed_3">Changed<a class="headerlink" href="#changed_3" title="Permanent link">&para;</a></h3>
+<h3 id="changed_4">Changed<a class="headerlink" href="#changed_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>ARSceneView</code>: new optional <code>playbackDataset: File? = null</code> param. Snapshotted at first composition; switch playback files via <code>key(playbackDataset) { ARSceneView(...) }</code>. <code>PlaybackFailedException</code> is routed to <code>onSessionFailed</code>.</li>
 </ul>
