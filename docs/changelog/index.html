@@ -2401,8 +2401,30 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Unreleased">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v480-bottom-sheet-settings-web-rn-bridge-fixes-2026-05-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v4.8.0 — Bottom-sheet settings, web &amp; RN bridge fixes (2026-05-16)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.8.0 — Bottom-sheet settings, web &amp; RN bridge fixes (2026-05-16)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#fixed" class="md-nav__link">
@@ -2433,7 +2455,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added" class="md-nav__link">
+  <a href="#added_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Added
@@ -2466,7 +2488,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_1" class="md-nav__link">
+  <a href="#added_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Added
@@ -2561,7 +2583,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_2" class="md-nav__link">
+  <a href="#added_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Added
@@ -3672,8 +3694,30 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Unreleased">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v480-bottom-sheet-settings-web-rn-bridge-fixes-2026-05-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v4.8.0 — Bottom-sheet settings, web &amp; RN bridge fixes (2026-05-16)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.8.0 — Bottom-sheet settings, web &amp; RN bridge fixes (2026-05-16)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#fixed" class="md-nav__link">
@@ -3704,7 +3748,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added" class="md-nav__link">
+  <a href="#added_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Added
@@ -3737,7 +3781,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_1" class="md-nav__link">
+  <a href="#added_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Added
@@ -3832,7 +3876,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_2" class="md-nav__link">
+  <a href="#added_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Added
@@ -4900,12 +4944,30 @@
 
 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">&para;</a></h2>
+<h2 id="v480-bottom-sheet-settings-web-rn-bridge-fixes-2026-05-16">v4.8.0 — Bottom-sheet settings, web &amp; RN bridge fixes (2026-05-16)<a class="headerlink" href="#v480-bottom-sheet-settings-web-rn-bridge-fixes-2026-05-16" title="Permanent link">&para;</a></h2>
+<h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Demo settings bottom sheet gains a header, "Reset" button and status-aware peek chip (<a href="https://github.com/sceneview/sceneview/issues/1154">#1154</a>).</strong> <code>DemoScaffold</code> (Android demo app) now renders a pinned sheet header; demos can opt into an <code>onResetSettings</code> callback to show a "Reset" text button that restores their defaults, and into a <code>peekHeader</code> string so the closed peek chip can surface a short live status (e.g. "3 anchors placed") instead of the generic "Settings" label. Drag-down-to-dismiss now fires a subtle haptic tick, and the previously hardcoded chip/FAB labels moved to string resources. <code>FogDemo</code> wires up the new reset button as the reference adoption. Part of the #1154 umbrella (Stage 3 polish, Android slice).</li>
+</ul>
 <h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
 <ul>
+<li><strong>Play Store listing sync no longer marks a successful deploy red (<a href="https://github.com/sceneview/sceneview/issues/1386">#1386</a>).</strong> The <code>Sync Play Store listing (en-US)</code> job in <code>play-store.yml</code> is now <code>continue-on-error: true</code> and swallows a <code>403 Forbidden</code> (missing 'Edit store listing' permission) with a warning. The AAB build/publish jobs stay strict, so the listing-text sync is best-effort and can never block a release.</li>
+<li><strong>iOS <code>SceneView</code> now frames multi-model scenes by the union of all loaded content (<a href="https://github.com/sceneview/sceneview/issues/1391">#1391</a>).</strong> The fit-to-bounds camera pass added in #1385 framed a single content entity and latched on the first model that loaded, so multi-model demos like <code>Multi-Model Park</code> rendered their streamed models bunched in a corner of an otherwise empty viewport. The pass now computes the union axis-aligned bounding box of every content entity, centres the camera on the union centre, dollies to fit the whole union, and re-frames as each streamed/async model finishes loading — latching only once the union stabilises. Single-model demos are unaffected. Part of #1373.</li>
+<li>Model Viewer demo: the top-right "Streaming…" asset-source pill now clears to "Streamed" once a streamed model finishes loading, instead of staying pinned for the whole session. The streamed model instance is now loaded from a stable composable slot so the load-completion state invalidates the chip correctly (#1464).</li>
+<li>Scene Gallery demo no longer shows contradictory status labels: the top-right asset-source chip now stays "Streaming…" until the model is fully loaded, matching the centre loading overlay, instead of flipping to "Streamed (cached)" the moment the file path resolves (#1465).</li>
+<li><strong>Light Types demo:</strong> re-scaled the backdrop wall from 3 × 2.4 m down to 1.6 × 1.2 m and re-centred it on the helmet. The oversized quad previously filled ~⅔ of the viewport with a hard diagonal top edge, cramming the model into the lower-left corner (#1466).</li>
+<li>Movable Light demo: the draggable yellow light handle is now persistently visible. The light's orbit radius was reduced from 1.5 m to 0.75 m and its elevation clamped to ±50° so the handle stays inside the fixed camera's frustum for the whole drag, instead of swinging off-screen for most of the orbit. The handle sphere is also slightly larger (radius 0.09 m) so it reads as a clear, aimable target (#1467).</li>
+<li><strong><code>sync-versions.sh</code> no longer bumps the Flutter/RN plugins' consumed SceneView dependency (<a href="https://github.com/sceneview/sceneview/issues/1494">#1494</a>).</strong> The <code>io.github.sceneview:(ar)sceneview:X.Y.Z</code> coordinate in the Flutter plugin and React Native bridge Gradle files is a dependency on the <em>published</em> Maven Central artifact, so it must lag to the last released version — pointing it at the in-flight release broke the <code>Build flutter-demo APK</code> CI check during v4.7.0. The script now reports these consumed-dependency coordinates WARN-only (never MISMATCH) and excludes them from every <code>--fix</code> sweep, while the plugins' own package versions still bump correctly.</li>
+<li><strong>Web <code>SceneView</code> no longer leaks IBL + skybox GPU resources (<a href="https://github.com/sceneview/sceneview/issues/1496">#1496</a>).</strong> <code>sceneview-web</code>'s <code>SceneView.loadEnvironment</code> created a Filament <code>IndirectLight</code> and <code>Skybox</code> but never tracked the handles — <code>destroy()</code> left both resources allocated on the GPU, and a 2nd <code>loadEnvironment</code> / <code>loadDefaultEnvironment</code> call overwrote the scene's environment while orphaning the previous handle. The handles are now tracked by an <code>EnvironmentResourceTracker</code>, the previous IBL/skybox is destroyed before a replacement is bound, and <code>destroy()</code> detaches and destroys both.</li>
+<li><strong>CI hygiene cluster 2 (<a href="https://github.com/sceneview/sceneview/issues/1500">#1500</a>).</strong> Narrowed <code>app-store.yml</code>'s tag trigger from <code>v*</code> to the strict <code>v[0-9]+.[0-9]+.[0-9]+</code> semver glob so pre-release or stray tags can no longer fire an App Store deploy; <code>ci-gate.yml</code> no longer treats a <code>stale</code> check conclusion as a failure (a <code>stale</code> run is superseded, not broken) and now refuses to report green until at least one non-self check run has registered, closing a warm-up race; <code>render-tests.yml</code> <code>paths</code> now also matches <code>build.gradle*</code>/<code>settings.gradle*</code>/<code>gradle.properties</code> so renderer-affecting build-script changes are not skipped; and <code>release.yml</code>'s dead cross-run <code>dokka-api-docs</code> artifact upload was removed (<code>download-artifact</code> only resolves same-run artifacts).</li>
+<li><strong>React Native Android bridge now compiles against the current SceneView 4.7.0 (<a href="https://github.com/sceneview/sceneview/issues/1501">#1501</a>).</strong> <code>react-native/react-native-sceneview/android/build.gradle.kts</code> depended on the year-old <code>io.github.sceneview:sceneview:3.6.0</code> / <code>arsceneview:3.6.0</code> — pre the v3.6 <code>Scene</code>-to-<code>SceneView</code> composable rename and missing every 4.x feature — while the published <code>@sceneview-sdk/react-native</code> package is versioned 4.7.0. The Maven coordinates are bumped to the last-published <code>4.7.0</code> (a <em>consumed</em> dependency, so it tracks the released artifact per <a href="https://github.com/sceneview/sceneview/issues/1494">#1494</a>). The stale <code>compose-bom:2024.06.00</code> is aligned to the repo's <code>2026.05.00</code>, and the obsolete <code>composeOptions { kotlinCompilerExtensionVersion }</code> block is replaced by the Kotlin 2.x Compose Compiler Gradle plugin (<code>org.jetbrains.kotlin.plugin.compose</code>). The bridge Kotlin already targeted the 4.x API surface, so no source migration was needed — only the build configuration lagged.</li>
+<li><strong>Refreshed stale docs flagged by the post-v4.7.0 audit (<a href="https://github.com/sceneview/sceneview/issues/1502">#1502</a>).</strong> <code>docs/docs/desktop-filament.md</code> pinned Filament <code>v1.70.1</code> throughout (clone/download archives and the <code>filament-android:1.70.1</code> AAR), but the repo runtime is <code>1.71.0</code> and the committed <code>.filamat</code> blobs are v71 — all six references now read <code>1.71.0</code>. <code>CLAUDE.md</code>'s pre-push unit-test command mixed <code>:sceneview:test</code> with <code>:arsceneview:testDebugUnitTest</code>; both modules now use <code>testDebugUnitTest</code>, consistent with CI. The fully-completed <code>docs/v3.6.0-roadmap.md</code> (all 14 issues done, predating the 4.x line) is moved to <code>docs/archive/v3.6.0-roadmap.md</code>.</li>
+<li><strong>web-demo: <code>Main.kt</code>'s stale tab switcher fixed (<a href="https://github.com/sceneview/sceneview/issues/1503">#1503</a>).</strong> The Kotlin/JS <code>switchTab()</code> toggled <code>panel-viewer</code>/<code>panel-geometry</code>, but <code>index.html</code> ships <code>panel-models</code>, <code>panel-geometry</code>, <code>panel-physics</code>, <code>panel-settings</code> — a drift that left 3 of 4 panels unreachable from that entry point, with <code>currentTab</code> also defaulting to the non-existent <code>"viewer"</code>. <code>switchTab()</code> now toggles all four shipped panels and <code>currentTab</code> defaults to <code>"models"</code>. The shipped <code>index.html</code> inline-JS demo (the actual runtime path) already wires all four tabs plus the Double Pendulum physics and Settings panels correctly. The stale <code>samples/web-demo/README.md</code> and the Playwright suite were also refreshed to match the shipped 4-tab UI, and a new <code>render.spec.ts</code> test clicks every <code>.tab-btn</code> and asserts the matching <code>panel-*</code> becomes <code>active</code>.</li>
+<li><strong>android-demo: honest demo-status badges, correct AR icon, and a fixed Blender recipe path (<a href="https://github.com/sceneview/sceneview/issues/1504">#1504</a>).</strong> The <code>DemoStatus</code> enum and <code>StatusChip</code> UI were fully built, but all 41 <code>ALL_DEMOS</code> entries used the default <code>Working</code>, leaving the honest-badge feature inert. The four ARCore Geospatial / Cloud Anchor demos (<code>ar-cloud-anchor</code>, <code>ar-streetscape</code>, <code>ar-terrain</code>, <code>ar-rooftop</code>) — which all require a Cloud project API key not wired into default builds — are now marked <code>KnownIssue</code>, so they surface a "Preview" chip instead of lying as all-green. <code>ar-instant-placement</code> no longer uses the <code>HourglassEmpty</code> ('coming soon') glyph despite routing to a real working demo — it now uses the placement-themed <code>Bolt</code> icon. Finally, <code>samples/recipes/blender-to-sceneview.md</code> no longer points at the non-existent concrete path <code>samples/android-demo/src/main/assets/models/car.glb</code>; it now shows an illustrative relative path with a note clarifying that <code>car.glb</code> is the reader's own exported file and pointing at the real sample models.</li>
 <li><strong><code>VideoNode.destroy()</code> no longer risks a native SIGABRT (<a href="https://github.com/sceneview/sceneview/issues/1497">#1497</a>).</strong> <code>destroy()</code> freed the external <code>Texture</code>/<code>Stream</code> immediately after destroying the <code>MaterialInstance</code> that referenced them — the exact ordering that triggers Filament's <code>Invalid texture still bound to MaterialInstance</code> abort, since MaterialInstance reclamation is coupled to the render loop rather than to the <code>destroy()</code> call site. Teardown now drains the frame pipeline (<code>Engine.drainFramePipeline()</code>) between destroying the MaterialInstance and freeing the external texture/stream, mirroring the safe pattern documented on the sibling <code>ImageNode</code>. Adds <code>VideoNodeTest</code> pinning the teardown ordering.</li>
 </ul>
 <h2 id="v470-bridge-expansion-slimmer-apk-demo-app-polish-2026-05-16">v4.7.0 — Bridge expansion, slimmer APK &amp; demo-app polish (2026-05-16)<a class="headerlink" href="#v470-bridge-expansion-slimmer-apk-demo-app-polish-2026-05-16" title="Permanent link">&para;</a></h2>
-<h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
+<h3 id="added_1">Added<a class="headerlink" href="#added_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Animated 3D particle background on the Samples home (<a href="https://github.com/sceneview/sceneview/issues/1488">#1488</a>).</strong> The android-demo Samples tab now renders a subtle, on-brand particle field behind the demo grid — a <code>SceneView</code> scene of drifting low-poly spheres with a slow auto-orbiting camera, seeded per launch. A first visual experiment that dogfoods the SDK on the app's own home screen; tuning constants live in <code>ParticleBackground.kt</code>.</li>
 </ul>
@@ -4944,7 +5006,7 @@
 <li><strong>AR placement demos no longer drop the helmet face-down (<a href="https://github.com/sceneview/sceneview/issues/1477">#1477</a>).</strong> The bundled Khronos <em>DamagedHelmet</em> GLB ships a residual +90° X root rotation from its Blender export, which landed it nose-into-the-floor when placed under an ARCore plane anchor. The Cloud Anchor, Tap to Place, and Depth Occlusion demos now apply a shared <code>-90°</code> X correcting rotation at placement time so the helmet stands upright, visor forward. Other bundled cycle models are unaffected.</li>
 <li><strong>Playground <code>Duck</code> model no longer 404s (<a href="https://github.com/sceneview/sceneview/issues/1487">#1487</a>).</strong> Added the self-hosted <code>Duck.glb</code> asset so the playground's <code>Duck</code> model option and the Spring Physics example load correctly instead of issuing a 404 for the missing file.</li>
 </ul>
-<h3 id="added_1">Added<a class="headerlink" href="#added_1" title="Permanent link">&para;</a></h3>
+<h3 id="added_2">Added<a class="headerlink" href="#added_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Flutter bridge: <code>addGeometry</code> / <code>addLight</code> are now rendered natively on Android (<a href="https://github.com/sceneview/sceneview/issues/909">#909</a>).</strong> These two <code>SceneViewController</code> methods previously returned <code>result.success(null)</code> without drawing anything — the Flutter demo's feature badges did not reflect that. The Android <code>SceneViewPlugin</code> now appends to reactive <code>geometryNodes</code> / <code>lightNodes</code> Compose state lists, so <code>cube</code>/<code>box</code>, <code>sphere</code>, <code>cylinder</code> and <code>plane</code> primitives and <code>directional</code>/<code>point</code>/<code>spot</code> lights render in both <code>SceneView</code> and <code>ARSceneView</code>, matching the React Native bridge. Material instances are cached per <code>(color, unlit)</code> and released on dispose. The Flutter demo's GeometryNode / LightNode feature cards are re-labelled "Android only" (the iOS RealityKit port stays tracked under the #909 umbrella). First Dart unit tests for the plugin (data-class serialization + controller attach guards) were also added.</li>
 <li><strong>Regression tests for the <code>samples/common</code> shared helpers (<a href="https://github.com/sceneview/sceneview/issues/972">#972</a>).</strong> The <code>LifecycleAwareLaunchedEffect</code> (#936) and <code>rememberMaterialInstance</code> / <code>rememberUnlitMaterialInstance</code> (#937) helpers shipped with no tests. New JVM/Robolectric suites pin their contracts: <code>LifecycleAwareLaunchedEffectTest</code> drives a real <code>TestLifecycleOwner</code> to assert the body cancels on <code>onStop</code> and re-runs from the top on <code>onStart</code>, and <code>RememberMaterialInstanceTest</code> fails if a future edit puts <code>metallic</code>/<code>roughness</code>/<code>reflectance</code> back into the <code>remember(...)</code> key (the 60 Hz <code>MaterialInstance</code> churn caught by the #937 review). <code>:samples:common:testDebugUnitTest</code> is now wired into the CI unit-test step.</li>
@@ -4965,7 +5027,7 @@
 <li><strong>Play Store deploy no longer blocked by AAB manifest validation (<a href="https://github.com/sceneview/sceneview/issues/1413">#1413</a>).</strong> <code>validate-release-artifact.sh</code> now resolves <code>aapt2</code> from <code>$ANDROID_SDK_ROOT/build-tools/&lt;newest&gt;/</code> instead of relying on <code>PATH</code> (where it never is), and the pre-upload guard now warns and skips instead of hard-failing when the validation tooling itself is unavailable — only a genuine manifest mismatch blocks a release.</li>
 </ul>
 <h2 id="v460-demo-polish-cross-platform-parity-iosandroid-demo-unification-samples-tab-fixes-ar-screenshot-regression-pipeline-ci-hygiene-2026-05-16">v4.6.0 — Demo polish &amp; cross-platform parity: iOS/Android demo unification + Samples tab fixes + AR screenshot regression pipeline + CI hygiene (2026-05-16)<a class="headerlink" href="#v460-demo-polish-cross-platform-parity-iosandroid-demo-unification-samples-tab-fixes-ar-screenshot-regression-pipeline-ci-hygiene-2026-05-16" title="Permanent link">&para;</a></h2>
-<h3 id="added_2">Added<a class="headerlink" href="#added_2" title="Permanent link">&para;</a></h3>
+<h3 id="added_3">Added<a class="headerlink" href="#added_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Reusable branch + worktree cleanup task.</strong> New <code>.claude/scripts/cleanup-branches-worktrees.sh</code> deletes merged local and remote <code>claude/*</code> branches (single <code>git push --delete</code>, no bot-burst) and prunes stale <code>.claude/worktrees/*</code> directories, with current-branch / unmerged / open-PR safety guards and a <code>--dry-run</code> default. A daily <code>branch-cleanup</code> job in <code>maintenance.yml</code> prunes merged remote branches automatically.</li>
 <li><strong>AR demo screenshot regression pipeline (<a href="https://github.com/sceneview/sceneview/issues/1050">#1050</a>).</strong> New <code>ARPlaybackScreenshotTest</code> replays the bundled ARCore recording through <code>ARRecordPlaybackDemo</code> and captures the rendered AR frame at <strong>fixed ARCore frame indices</strong> (f=30/60/120/180) for golden comparison. Captures are gated on a per-frame counter (<code>DemoSettings.arPlaybackFrameCount</code>, bumped once per <code>onSessionUpdated</code>) rather than wall-clock sleeps, so they land on the same frame on every machine regardless of emulator load. Wired into <code>render-tests.yml</code> on a pinned emulator profile and documented in <code>samples/android-demo/AR_TESTING.md</code>.</li>

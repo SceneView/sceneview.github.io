@@ -2742,7 +2742,7 @@ replacing the current software renderer in <code>samples/desktop-demo/</code>.</
 <hr />
 <h2 id="filament-javajni-desktop-support-what-exists">Filament Java/JNI desktop support — what exists<a class="headerlink" href="#filament-javajni-desktop-support-what-exists" title="Permanent link">&para;</a></h2>
 <h3 id="official-support-status">Official support status<a class="headerlink" href="#official-support-status" title="Permanent link">&para;</a></h3>
-<p>Filament (v1.70.1, March 2026) officially supports desktop platforms (macOS, Linux, Windows)
+<p>Filament (v1.71.0, March 2026) officially supports desktop platforms (macOS, Linux, Windows)
 via its native C++ API. It also provides <strong>Java/JNI bindings</strong> for desktop use:</p>
 <ul>
 <li><strong><code>filament-java.jar</code></strong> — Java classes (Engine, Scene, View, Camera, Renderer, Material, etc.)</li>
@@ -2771,8 +2771,8 @@ Filament rendering in standard Java desktop applications. Usage:</p>
 <ul>
 <li><strong>No Maven Central artifacts for desktop</strong> — only <code>com.google.android.filament:filament-android</code>
   is published to Maven Central (as AAR for Android)</li>
-<li><strong>No pre-built desktop JNI in GitHub releases</strong> — the <code>filament-v1.70.1-mac.tgz</code>,
-  <code>filament-v1.70.1-linux.tgz</code>, <code>filament-v1.70.1-windows.tgz</code> archives contain native
+<li><strong>No pre-built desktop JNI in GitHub releases</strong> — the <code>filament-v1.71.0-mac.tgz</code>,
+  <code>filament-v1.71.0-linux.tgz</code>, <code>filament-v1.71.0-windows.tgz</code> archives contain native
   C++ libraries and tools, but NOT <code>filament-java.jar</code> or <code>libfilament-jni</code></li>
 <li><strong>The CI release workflow does not build Java for desktop</strong> — Java is only enabled in
   the Android build job</li>
@@ -2786,7 +2786,7 @@ Filament rendering in standard Java desktop applications. Usage:</p>
 By default it attempts to compile Java bindings. The <code>-j</code> flag can skip Java compilation.</p>
 <p><strong>Steps:</strong></p>
 <ol>
-<li>Clone <code>google/filament</code> (v1.70.1)</li>
+<li>Clone <code>google/filament</code> (v1.71.0)</li>
 <li>Build for each desktop platform with Java enabled:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/path/to/jdk17
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>./build.sh<span class="w"> </span>-p<span class="w"> </span>desktop<span class="w"> </span>release
@@ -2808,7 +2808,7 @@ By default it attempts to compile Java bindings. The <code>-j</code> flag can sk
 These classes are the same ones used on desktop (pure Java, no Android APIs).</p>
 <p><strong>Steps:</strong></p>
 <ol>
-<li>Download <code>com.google.android.filament:filament-android:1.70.1</code> AAR</li>
+<li>Download <code>com.google.android.filament:filament-android:1.71.0</code> AAR</li>
 <li>Extract <code>classes.jar</code> (rename to <code>filament-java.jar</code>)</li>
 <li>Build only the native JNI shared library from Filament source for each desktop platform</li>
 <li>Load with <code>System.loadLibrary("filament-jni")</code> or <code>Filament.init()</code></li>
@@ -2890,7 +2890,7 @@ LWJGL OpenGL context in a Compose Desktop window.</p>
 <tbody>
 <tr>
 <td>filament-android (AAR)</td>
-<td>Yes (v1.70.1)</td>
+<td>Yes (v1.71.0)</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
@@ -3070,7 +3070,7 @@ in any pre-built form.</p>
 <li><a href="https://github.com/google/filament/issues/142">Filament issue #142 — macOS JNI loading</a></li>
 <li><a href="https://github.com/JetBrains/compose-multiplatform/tree/master/experimental/lwjgl-integration">Compose Multiplatform LWJGL integration</a></li>
 <li><a href="https://github.com/JetBrains/compose-multiplatform/issues/3810">Compose Multiplatform OpenGL issue</a></li>
-<li><a href="https://github.com/google/filament/releases">Filament releases (v1.70.1)</a></li>
+<li><a href="https://github.com/google/filament/releases">Filament releases (v1.71.0)</a></li>
 <li><a href="https://central.sonatype.com/artifact/com.google.android.filament/filament-android">Filament Android on Maven Central</a></li>
 </ul>
 
