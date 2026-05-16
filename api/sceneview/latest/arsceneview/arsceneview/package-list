@@ -296,7 +296,6 @@ $dokka.location:io.github.sceneview.ar//ARSceneView/#androidx.compose.ui.Modifie
 $dokka.location:io.github.sceneview.ar//createARCameraNode/#com.google.android.filament.Engine/PointingToDeclaration/arsceneview/io.github.sceneview.ar/create-a-r-camera-node.html
 $dokka.location:io.github.sceneview.ar//createARCameraStream/#io.github.sceneview.loaders.MaterialLoader/PointingToDeclaration/arsceneview/io.github.sceneview.ar/create-a-r-camera-stream.html
 $dokka.location:io.github.sceneview.ar//createAREnvironment/#com.google.android.filament.Engine#java.nio.Buffer?/PointingToDeclaration/arsceneview/io.github.sceneview.ar/create-a-r-environment.html
-$dokka.location:io.github.sceneview.ar//frontCameraConfig/#com.google.ar.core.Session/PointingToDeclaration/arsceneview/io.github.sceneview.ar/front-camera-config.html
 $dokka.location:io.github.sceneview.ar//getDescription/com.google.ar.core.TrackingFailureReason#android.content.Context/PointingToDeclaration/arsceneview/io.github.sceneview.ar/get-description.html
 $dokka.location:io.github.sceneview.ar//highestResolutionCameraConfig/#com.google.ar.core.Session/PointingToDeclaration/arsceneview/io.github.sceneview.ar/highest-resolution-camera-config.html
 $dokka.location:io.github.sceneview.ar//kDefaultHitTestInstantDistance/#/PointingToDeclaration/arsceneview/io.github.sceneview.ar/k-default-hit-test-instant-distance.html
