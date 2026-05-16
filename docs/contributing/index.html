@@ -2500,6 +2500,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#device-qa-flows-when-adding-a-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device-QA flows when adding a demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#changelog-entries" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2799,6 +2810,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#device-qa-flows-when-adding-a-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device-QA flows when adding a demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#changelog-entries" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3010,6 +3032,26 @@ for full API context in any chat:</p>
 <li><strong>Keep commits clean.</strong> Squash fixups before requesting review.</li>
 </ol>
 <p>Contributions to any part of the project are welcome — Android (<code>sceneview/</code>, <code>arsceneview/</code>), iOS (<code>SceneViewSwift/</code>), shared KMP core (<code>sceneview-core/</code>), samples, documentation, or the MCP server.</p>
+<h3 id="device-qa-flows-when-adding-a-demo">Device-QA flows when adding a demo<a class="headerlink" href="#device-qa-flows-when-adding-a-demo" title="Permanent link">&para;</a></h3>
+<p>The demo apps are exercised on real emulators/simulators by the <strong>autonomous
+device-QA harness</strong> (<code>bash .claude/scripts/device-qa.sh</code>). When you <strong>add or
+change a demo</strong>, update its device-QA coverage in the same PR — an untested
+demo is invisible to the release-checkpoint gate:</p>
+<ul>
+<li><strong>Android</strong> — add the demo to its category flow under <code>.maestro/android/</code>
+  (<code>3d-basics.yaml</code>, <code>lighting.yaml</code>, <code>content.yaml</code>, <code>interaction.yaml</code>,
+  <code>advanced.yaml</code>, or <code>ar.yaml</code>) and to the master <code>catalog.yaml</code>. Each entry
+  reuses <code>flows/demo.yaml</code> with the demo's <code>DEMO_ID</code> / <code>DEMO_NAME</code>.</li>
+<li><strong>iOS</strong> — add the matching entry under <code>.maestro/ios/</code> (same category files</li>
+<li><code>catalog.yaml</code>). A deep-linkable demo must also be registered in
+  <code>DemoDeepLinkRegistry.allowedIds</code> so the <code>sceneview://demo/&lt;id&gt;</code> ingress can
+  reach it; otherwise add a <code>placeholders.yaml</code> entry.</li>
+<li><strong>Web</strong> — extend the Playwright <code>catalog.spec.ts</code> coverage in
+  <code>samples/web-demo/tests/</code> so the new demo/tab is walked and asserted.</li>
+</ul>
+<p>See <a href=".maestro/README.md"><code>.maestro/README.md</code></a> for the flow layout and the
+known no-pinch / deep-link-zoom limitation. Run <code>device-qa.sh</code> for the affected
+platform before requesting review.</p>
 <h3 id="changelog-entries">Changelog entries<a class="headerlink" href="#changelog-entries" title="Permanent link">&para;</a></h3>
 <p><strong>Do not edit <code>CHANGELOG.md</code> directly.</strong> Changelog entries go in <code>changelog.d/</code>
 as a small fragment file — one per PR. Add a file named
