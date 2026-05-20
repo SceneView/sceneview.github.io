@@ -3690,6 +3690,11 @@ silent stub.</p>
 <td><code>DirectionalLightComponent.Shadow</code> has no <code>color</code> property</td>
 <td>Use <code>castsShadow(_:)</code> + <code>shadowMaximumDistance(_:)</code></td>
 </tr>
+<tr>
+<td><code>FogNode.heightBased(...)</code> / <code>FogNode.heightFalloff</code></td>
+<td><code>UnlitMaterial</code> cannot vary opacity by world height; no per-view fog API in RealityKit (#1380)</td>
+<td><code>FogNode.exponential(density:color:)</code></td>
+</tr>
 </tbody>
 </table>
 <h3 id="android-only-no-port-planned-or-pending">Android-only — no port planned (or pending)<a class="headerlink" href="#android-only-no-port-planned-or-pending" title="Permanent link">&para;</a></h3>
@@ -3737,9 +3742,9 @@ Use as you would on Android; expect minor visual differences.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>FogNode.linear / .exponential / .heightBased</code></td>
+<td><code>FogNode.linear / .exponential</code></td>
 <td>Filament fog modes</td>
-<td>Translucent-sphere shader (visual approximation; same factory API)</td>
+<td>Translucent-sphere shader (visual approximation; same factory API). <code>FogNode.heightBased</code> is deprecated on iOS — see #1380.</td>
 </tr>
 <tr>
 <td><code>ReflectionProbeNode.box(...) / .sphere(...)</code></td>
