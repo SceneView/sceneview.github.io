@@ -2500,6 +2500,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#adding-a-demo-to-samplesandroid-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a demo to samples/android-demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#device-qa-flows-when-adding-a-demo" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2849,6 +2860,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#adding-a-demo-to-samplesandroid-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a demo to samples/android-demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#device-qa-flows-when-adding-a-demo" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3110,6 +3132,26 @@ for full API context in any chat:</p>
 <li><strong>Keep commits clean.</strong> Squash fixups before requesting review.</li>
 </ol>
 <p>Contributions to any part of the project are welcome — Android (<code>sceneview/</code>, <code>arsceneview/</code>), iOS (<code>SceneViewSwift/</code>), shared KMP core (<code>sceneview-core/</code>), samples, documentation, or the MCP server.</p>
+<h3 id="adding-a-demo-to-samplesandroid-demo">Adding a demo to <code>samples/android-demo</code><a class="headerlink" href="#adding-a-demo-to-samplesandroid-demo" title="Permanent link">&para;</a></h3>
+<p>The Android demo app uses an <strong>append-only fragment registry</strong> so that two
+parallel PRs adding two different demos never conflict on a shared file
+(issue #1797). To add a demo:</p>
+<ol>
+<li>Add the demo composable under
+   <code>samples/android-demo/src/main/java/io/github/sceneview/demo/demos/</code>.</li>
+<li>Drop a new fragment file at
+   <code>samples/android-demo/src/main/java/io/github/sceneview/demo/fragments/&lt;MyDemo&gt;Fragment.kt</code>
+   declaring <code>object &lt;MyDemo&gt;Fragment : DemoFragment</code> with the demo's id,
+   title/subtitle string resources, category, icon, and a one-line <code>Screen</code>
+   wrapper calling your composable. See <a href="samples/android-demo/src/main/java/io/github/sceneview/demo/fragments/README.md">the package
+   README</a>
+   for the full template.</li>
+<li>Run the collator to regenerate <code>GeneratedDemos.kt</code>:
+   <code>bash samples/android-demo/scripts/collate-demos.sh</code>. The quality gate runs
+   the collator in <code>--check</code> mode and blocks the push if the file is stale.</li>
+</ol>
+<p>You should <strong>never</strong> edit <code>DemoRegistry.kt</code>, <code>MainActivity.kt</code>, or
+<code>GeneratedDemos.kt</code> by hand — the fragments are the single source of truth.</p>
 <h3 id="device-qa-flows-when-adding-a-demo">Device-QA flows when adding a demo<a class="headerlink" href="#device-qa-flows-when-adding-a-demo" title="Permanent link">&para;</a></h3>
 <p>The demo apps are exercised on real emulators/simulators by the <strong>autonomous
 device-QA harness</strong> (<code>bash .claude/scripts/device-qa.sh</code>). When you <strong>add or
