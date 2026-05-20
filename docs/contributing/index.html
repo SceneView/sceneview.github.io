@@ -2577,6 +2577,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#maintenance-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maintenance scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worktree-auto-prunesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        worktree-auto-prune.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup-branches-worktreessh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cleanup-branches-worktrees.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#issues-and-discussions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2887,6 +2926,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#maintenance-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maintenance scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worktree-auto-prunesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        worktree-auto-prune.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup-branches-worktreessh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cleanup-branches-worktrees.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#issues-and-discussions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3122,6 +3200,71 @@ input.</p>
 <li>Commit <strong>the runtime bump in <code>gradle/libs.versions.toml</code> AND the recompiled <code>.filamat</code> files in the SAME PR</strong>. Never split them across commits — that's the failure mode that broke v4.1.0.</li>
 </ol>
 <p>If you bump the runtime without touching the blobs (or vice versa), CI will not catch it. The first signal is a runtime crash on whichever demo loads the affected material first.</p>
+<hr />
+<h2 id="maintenance-scripts">Maintenance scripts<a class="headerlink" href="#maintenance-scripts" title="Permanent link">&para;</a></h2>
+<p>The <code>.claude/scripts/</code> directory holds the housekeeping scripts that
+keep parallel-orchestrator sessions tidy. Two are worth knowing about
+explicitly because the safety contract has gotten complex enough that
+you can't infer it from the source on first read.</p>
+<h3 id="worktree-auto-prunesh"><code>worktree-auto-prune.sh</code><a class="headerlink" href="#worktree-auto-prunesh" title="Permanent link">&para;</a></h3>
+<p>Reclaims <code>.claude/worktrees/*</code> whose branch has merged. Safe-by-default:
+the only way it can lose work is via an explicit override flag.</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--dry-run</code></td>
+<td>Preview only. No worktree is removed.</td>
+</tr>
+<tr>
+<td><code>--yes</code></td>
+<td>Non-interactive. Skip the confirmation prompt.</td>
+</tr>
+<tr>
+<td><code>--keep &lt;path&gt;</code></td>
+<td>Repeatable. Never touch this worktree (the caller's own tree should always be <code>--keep</code>).</td>
+</tr>
+<tr>
+<td><code>--allow-stale</code></td>
+<td>Proceed offline if <code>git fetch origin main</code> fails. <code>ahead=0</code> then additionally requires a merged-PR signal.</td>
+</tr>
+<tr>
+<td><code>--no-check-active-sessions</code></td>
+<td>Disable the cwd scan that protects worktrees with a live process inside them. Almost never the right call.</td>
+</tr>
+<tr>
+<td><code>--unlock-locked</code></td>
+<td>Override <code>git worktree lock</code>: prune locked-but-clean worktrees too. The dirty check still wins.</td>
+</tr>
+</tbody>
+</table>
+<p>Skip ladder (a worktree must pass every layer to be reclaimed):</p>
+<ol>
+<li>Not in <code>--keep</code>.</li>
+<li><code>git status --porcelain</code> is empty (no uncommitted changes).</li>
+<li>Not <code>locked</code> via <code>git worktree lock</code> (unless <code>--unlock-locked</code>).</li>
+<li>No process anywhere on the host has cwd inside the worktree
+   (gradle daemons, <code>python</code>, IDE indexers — all detected, not just
+   <code>node</code>/<code>claude</code>).</li>
+<li>Either <code>ahead-count == 0</code> vs <code>origin/main</code>, OR the branch's
+   associated GitHub PR is <code>MERGED</code>.</li>
+</ol>
+<p>Forensic trail: every evaluated worktree appends one JSON line to
+<code>~/.claude/logs/worktree-prune-YYYYMMDD.log</code> (daily-rotated, never
+auto-deleted). Cheap to write, priceless if an incident occurs.</p>
+<p>Pin: <code>.claude/scripts/test-worktree-auto-prune.sh</code> exercises 7 scenarios
+(merged, unmerged, dirty, locked, locked + <code>--unlock-locked</code>, active
+subprocess, <code>--keep</code>) and runs advisorily inside <code>quality-gate.sh</code>.</p>
+<h3 id="cleanup-branches-worktreessh"><code>cleanup-branches-worktrees.sh</code><a class="headerlink" href="#cleanup-branches-worktreessh" title="Permanent link">&para;</a></h3>
+<p>Wrapper that runs <code>worktree-auto-prune.sh</code> AND deletes the corresponding
+merged <code>claude/*</code> branches (local + remote) in a single batched
+<code>git push --delete</code> to avoid bot-burst rate limits. Same flags, same
+safety contract; runs daily in <code>.github/workflows/maintenance.yml</code>.</p>
 <hr />
 <h2 id="issues-and-discussions">Issues and discussions<a class="headerlink" href="#issues-and-discussions" title="Permanent link">&para;</a></h2>
 <ul>
