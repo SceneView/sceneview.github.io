@@ -881,6 +881,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#coming-from-sceneform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coming from Sceneform?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#join-the-community" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2949,6 +2960,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#coming-from-sceneform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coming from Sceneform?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#join-the-community" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3233,6 +3255,16 @@ dependencies {
 <hr />
 <h2 id="upgrading-from-v2x">Upgrading from v2.x?<a class="headerlink" href="#upgrading-from-v2x" title="Permanent link">&para;</a></h2>
 <p>See the <a href="migration/">Migration Guide</a> for a step-by-step walkthrough of every breaking change.</p>
+<hr />
+<h2 id="coming-from-sceneform">Coming from Sceneform?<a class="headerlink" href="#coming-from-sceneform" title="Permanent link">&para;</a></h2>
+<p>Google <a href="https://github.com/google-ar/sceneform-android-sdk">archived Sceneform</a> in 2021 and
+ships no first-party declarative AR renderer. <strong>SceneView is its Compose-native successor</strong> —
+it descends from the maintained Sceneform community fork and pairs ARCore (perception) with
+Filament (rendering) behind a Jetpack Compose API. The <code>.sfb</code> model format gives way to
+standard glTF (<code>.glb</code> / <code>.gltf</code>), and manual lifecycle handling is replaced by the Compose
+lifecycle. See the <a href="migration/">Migration Guide</a> for the concept-by-concept mapping
+(<code>ArFragment</code> → <code>ARScene { }</code>, <code>ModelRenderable</code> → <code>rememberModelInstance</code>, …) and the
+<a href="comparison/">comparison page</a> for a side-by-side feature table.</p>
 <hr />
 <div class="sv-community">
 <h2 id="join-the-community">Join the Community<a class="headerlink" href="#join-the-community" title="Permanent link">&para;</a></h2>
