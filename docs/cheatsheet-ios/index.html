@@ -3705,6 +3705,11 @@ silent stub.</p>
 <td><code>ARGeoAnchor</code> only does ground; rooftop has no ARKit equivalent</td>
 <td>iOS-skip with doc warning</td>
 </tr>
+<tr>
+<td><code>Config.SemanticMode.ENABLED</code> + <code>Frame.semanticImage()</code> / <code>.semanticConfidenceImage()</code> / <code>.semanticLabelFraction(label)</code> (#1730)</td>
+<td>ARKit has no equivalent per-pixel outdoor classifier — the closest primitive is <code>ARFrame.detectedBody.skeleton</code> (single-person joints, not pixel labels)</td>
+<td>iOS-skip with doc warning. Apps that need semantic-aware placement on iOS must ship their own Vision/Core ML segmentation model; AR-engine integration is not on the SceneViewSwift roadmap.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="ar-depth-cloud-anchors-may-2026-sprint-1813">AR Depth &amp; Cloud Anchors — May 2026 sprint (#1813)<a class="headerlink" href="#ar-depth-cloud-anchors-may-2026-sprint-1813" title="Permanent link">&para;</a></h3>
