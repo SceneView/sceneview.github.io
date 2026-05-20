@@ -1261,10 +1261,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#approximated-ios-implements-via-different-mechanism" class="md-nav__link">
+  <a href="#ar-depth-cloud-anchors-may-2026-sprint-1813" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Approximated — iOS implements via different mechanism
+        AR Depth &amp; Cloud Anchors — May 2026 sprint (#1813)
       
     </span>
   </a>
@@ -1273,17 +1273,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#android" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Android
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3063,10 +3052,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#approximated-ios-implements-via-different-mechanism" class="md-nav__link">
+  <a href="#ar-depth-cloud-anchors-may-2026-sprint-1813" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Approximated — iOS implements via different mechanism
+        AR Depth &amp; Cloud Anchors — May 2026 sprint (#1813)
       
     </span>
   </a>
@@ -3075,17 +3064,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#android" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Android
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3729,6 +3707,47 @@ silent stub.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="ar-depth-cloud-anchors-may-2026-sprint-1813">AR Depth &amp; Cloud Anchors — May 2026 sprint (#1813)<a class="headerlink" href="#ar-depth-cloud-anchors-may-2026-sprint-1813" title="Permanent link">&para;</a></h3>
+<p>The May 2026 AR sprint shipped four new Android-only public surfaces. Each has a
+documented RealityKit / ARKit counterpart — the table below maps them so AI-generated
+SceneViewSwift code can pick the closest native primitive instead of asking for the
+Android API name. Implementation issues are tracked under <code>platform: ios</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Android API</th>
+<th>iOS counterpart</th>
+<th>Migration note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DepthMeshNode</code> + <code>rememberDepthMesh</code> (renderable depth mesh)</td>
+<td>ARKit <code>ARMeshAnchor</code> via <a href="https://developer.apple.com/documentation/arkit/arconfiguration/sceneReconstruction">Scene Reconstruction</a> (<code>ARWorldTrackingConfiguration.sceneReconstruction = .mesh</code>) — LiDAR-only (iPad Pro / iPhone Pro / Vision Pro). Not yet wrapped — tracked in <a href="https://github.com/sceneview/sceneview/issues/1860">#1860</a>.</td>
+<td>iOS surfaces the real-world mesh as a stream of <code>ARMeshAnchor</code>s with <code>MTLBuffer</code>-backed geometry. There is no ARCore-style depth image; the mesh comes directly from the LiDAR fusion pipeline. Devices without LiDAR have no equivalent — fall back to plane detection.</td>
+</tr>
+<tr>
+<td><code>DepthCollider</code> + <code>rememberDepthCollider</code> (depth → physics collider)</td>
+<td><code>ARMeshAnchor</code> geometry → <code>CollisionComponent</code> with a <code>ShapeResource.generateConvex(from:)</code> / <code>.generateStaticMesh(positions:faceIndices:)</code> per anchor. Not yet wrapped — tracked in <a href="https://github.com/sceneview/sceneview/issues/1860">#1860</a>.</td>
+<td>Drive <code>PhysicsBodyComponent.dynamic</code> bodies in RealityKit; the static-mesh collider is rebuilt on <code>ARSession</code>-delivered mesh-anchor updates. Same LiDAR-only constraint as <code>DepthMeshNode</code>.</td>
+</tr>
+<tr>
+<td><code>Frame.hitTestDepth(xPx, yPx)</code> (single-pixel depth raycast → position + normal)</td>
+<td><code>ARView.raycast(from:allowing:alignment:)</code> with <code>.estimatedPlane</code> + <code>.any</code>, or <code>ARView.scene.raycast(origin:direction:length:query:mask:)</code> against <code>CollisionComponent</code>s built from <code>ARMeshAnchor</code>. Use the returned <code>ARRaycastResult.worldTransform</code> for both position and normal.</td>
+<td>The iOS API is already documented — use it directly. The pixel-screen → world ray conversion is <code>view.unprojectPoint</code> or just feed <code>CGPoint</code> from a <code>UITapGestureRecognizer</code>. No new library wrapper needed.</td>
+</tr>
+<tr>
+<td><code>CloudAnchorNode.host</code> / <code>.resolve</code> returning <code>Future</code> + cancel-on-dispose (#1768)</td>
+<td><code>ARGeoAnchor</code> is not equivalent; iOS Cloud Anchors require Google's <code>arcore-ios-sdk</code> (Swift Package). The Future + cancel-on-dispose pattern needs porting to <code>SceneViewSwift.CloudAnchorNode</code> — tracked in <a href="https://github.com/sceneview/sceneview/issues/1859">#1859</a>.</td>
+<td>The Future pattern matters because Cloud Anchor hosting is a billed network round-trip — cancelling on <code>View</code> disappearance avoids accruing Google Cloud charges. The iOS port wraps <code>GARSession.hostCloudAnchor</code> similarly.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why this matters for AI assistants:</strong> when a developer asks for "real-world depth"
+or "cloud anchor" code on iOS, generate the RealityKit / ARKit primitive listed above
+rather than the Android-only SceneView symbol. The implementation issues (#1859,</p>
+<h1 id="1860-track-when-a-sceneviewswift-wrapper-will-exist-until-then-raw-arkit-is-the">1860) track when a SceneViewSwift wrapper will exist; until then, raw ARKit is the<a class="headerlink" href="#1860-track-when-a-sceneviewswift-wrapper-will-exist-until-then-raw-arkit-is-the" title="Permanent link">&para;</a></h1>
+<p>supported path.</p>
 <h3 id="approximated-ios-implements-via-different-mechanism">Approximated — iOS implements via different mechanism<a class="headerlink" href="#approximated-ios-implements-via-different-mechanism" title="Permanent link">&para;</a></h3>
 <p>Same public API name on both platforms, but the iOS render path differs.
 Use as you would on Android; expect minor visual differences.</p>
