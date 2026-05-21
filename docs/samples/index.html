@@ -2705,6 +2705,16 @@
 </ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./gradlew<span class="w"> </span>:samples:android-demo:assembleDebug
 </span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">In-app feedback</p>
+<p>The Android demo includes an opt-in <strong>feedback button</strong> for reporting a bug
+or sharing an idea. When used, it records the screen and microphone and
+uploads them to the SceneView feedback service, which transcribes the audio
+and opens a pre-filled GitHub issue. The feature is consent-gated, the raw
+recording stays private and is deleted after 90 days, and only the
+transcript + device context appear on the public issue. See the
+<a href="../privacy/">Privacy Policy</a> for the full data flow.</p>
+</div>
 <h3 id="ios-demo">iOS Demo<a class="headerlink" href="#ios-demo" title="Permanent link">&para;</a></h3>
 <p><strong><code>samples/ios-demo/</code></strong> — App Store ready, SwiftUI</p>
 <p>3-tab SwiftUI app:</p>
