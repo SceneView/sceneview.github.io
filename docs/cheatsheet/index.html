@@ -1111,6 +1111,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#spatial-audio-haptic-cross-platform-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spatial Audio &amp; Haptic — cross-platform availability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#apple-platforms" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2803,6 +2814,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#spatial-audio-haptic-cross-platform-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spatial Audio &amp; Haptic — cross-platform availability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#apple-platforms" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3184,6 +3206,37 @@ the AR session frame-by-frame in any browser — no install required, no
 re-hosting needed for local inspection. To share with a remote teammate,
 re-host the file (R2, GitHub release, gist) and send them
 <strong><code>https://sceneview.github.io/rerun/?url=&lt;encoded-public-url&gt;</code></strong>.</p>
+<hr />
+<h2 id="spatial-audio-haptic-cross-platform-availability">Spatial Audio &amp; Haptic — cross-platform availability<a class="headerlink" href="#spatial-audio-haptic-cross-platform-availability" title="Permanent link">&para;</a></h2>
+<p>v4.12.0 shipped Spatial Audio (#1900) and Haptic Feedback (#1901). Both have
+real implementations on <strong>all three platforms</strong> — they are <em>not</em> Android-only —
+each using the platform-native audio / vibration backend:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Android</th>
+<th>Web (<code>sceneview-web</code>)</th>
+<th>iOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spatial Audio</strong></td>
+<td><code>SpatialAudioNode { }</code> composable</td>
+<td><code>io.github.sceneview.web.audio.SpatialAudioNode</code> — a real Kotlin/JS class backed by the Web Audio <code>PannerNode</code> (HRTF panning + distance falloff). Load assets with <code>loadAudioSource(url)</code> / <code>loadAudioSourcePromise(url)</code>; drive the listener with <code>setSpatialAudioListenerPose(...)</code>. <strong>Exposed to Kotlin/JS consumers</strong> — it is <em>not</em> <code>@JsExport</code>-ed to a plain-JavaScript <code>sceneview.js</code> global (the module uses <code>suspend</code>, <code>external</code> Web Audio declarations and a <code>sealed interface</code>, none <code>@JsExport</code>-compatible). The web Spatial Audio demo (#1944) uses this API.</td>
+<td><code>SpatialAudioNode.spatial(...)</code></td>
+</tr>
+<tr>
+<td><strong>Haptic Feedback</strong></td>
+<td><code>rememberHapticFeedback()</code> → <code>SceneViewHaptic</code></td>
+<td><code>io.github.sceneview.web.haptic.SceneViewHaptic</code> — semantic presets via the <a href="https://developer.mozilla.org/docs/Web/API/Navigator/vibrate">Web Vibration API</a> (<code>navigator.vibrate</code>). <strong><code>@JsExport</code>-ed</strong> — callable from plain JavaScript as <code>sceneview.haptic.light()</code> / <code>.success()</code> / <code>.continuous(intensity, durationMs)</code> etc. Durations only — <code>intensity</code> / <code>sharpness</code> are accepted for cross-platform parity but ignored at runtime (the Vibration API has no amplitude control). Silent no-op on browsers without <code>navigator.vibrate</code> (most desktop, Safari iOS).</td>
+<td><code>SceneViewHaptic()</code> (Core Haptics)</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="../cheatsheet-ios/#spatial-audio--haptic-parity-1900-1901">Apple API Cheatsheet</a>
+for the iOS maturity detail.</p>
 <hr />
 <h2 id="apple-platforms">Apple platforms<a class="headerlink" href="#apple-platforms" title="Permanent link">&para;</a></h2>
 <p>Building for iOS, macOS, or visionOS? See the <a href="../cheatsheet-ios/">Apple API Cheatsheet</a>.</p>

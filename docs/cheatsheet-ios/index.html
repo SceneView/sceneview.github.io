@@ -1213,6 +1213,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Android ↔ Apple API Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spatial-audio-haptic-parity-1900-1901" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spatial Audio &amp; Haptic parity (#1900, #1901)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3004,6 +3021,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Android ↔ Apple API Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spatial-audio-haptic-parity-1900-1901" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spatial Audio &amp; Haptic parity (#1900, #1901)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3576,6 +3610,42 @@ over passthrough and ignores the HDR skybox. For a fully immersive
 <tr>
 <td><code>PhysicsNode(node, mass)</code></td>
 <td><code>PhysicsNode.dynamic(entity, mass:)</code></td>
+</tr>
+<tr>
+<td><code>SpatialAudioNode { }</code> composable (v4.12.0+, <code>#1900</code>)</td>
+<td><code>SpatialAudioNode.spatial(named:falloff:loop:)</code> — see <a href="#spatial-audio--haptic-parity-1900-1901">Spatial Audio &amp; Haptic parity</a> below</td>
+</tr>
+<tr>
+<td><code>rememberHapticFeedback()</code> (v4.12.0+, <code>#1901</code>)</td>
+<td><code>SceneViewHaptic()</code> — see <a href="#spatial-audio--haptic-parity-1900-1901">Spatial Audio &amp; Haptic parity</a> below</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spatial-audio-haptic-parity-1900-1901">Spatial Audio &amp; Haptic parity (#1900, #1901)<a class="headerlink" href="#spatial-audio-haptic-parity-1900-1901" title="Permanent link">&para;</a></h3>
+<p>v4.12.0 shipped Spatial Audio (#1900) and Haptic Feedback (#1901). <strong>Both are
+implemented on iOS</strong> — they are <em>not</em> Android-only — but with platform-native
+backends, so the API shape differs slightly:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Android</th>
+<th>iOS</th>
+<th>iOS maturity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spatial Audio</strong></td>
+<td><code>SpatialAudioNode { }</code> composable, <code>AudioSource</code>, <code>AudioFalloff</code>, <code>AudioController</code></td>
+<td><code>SpatialAudioNode.spatial(named:in:falloff:loop:autoPlay:volume:pitch:)</code>, <code>.audioListener(_:)</code> view modifier — backed by RealityKit <code>SpatialAudioComponent</code> / <code>Entity.playAudio</code></td>
+<td><strong>Shipped (phase 1)</strong>. Positional pan + distance falloff work natively. Known phase-1 limits: <code>pitch</code> is stored but not applied (no <code>AudioPlaybackController</code> pitch knob in RealityKit), <code>seek</code> only supports rewind-to-0, <code>.audioListener(.anchor)</code> falls back to <code>.camera</code>. Phase 2 (PHASE engine: occlusion, reverb, pitch) tracked in <a href="https://github.com/sceneview/sceneview/issues/1900">#1900</a>.</td>
+</tr>
+<tr>
+<td><strong>Haptic Feedback</strong></td>
+<td><code>rememberHapticFeedback()</code> → <code>SceneViewHaptic</code> (<code>light()</code>/<code>medium()</code>/<code>heavy()</code>/<code>success()</code>/<code>warning()</code>/<code>error()</code>/<code>selection()</code>, <code>continuous(intensity:durationMs:)</code>, <code>pattern(_:)</code>)</td>
+<td><code>SceneViewHaptic()</code> / <code>SceneViewHaptic.shared</code> — same semantic preset surface, <code>continuous(intensity:durationMs:)</code> + <code>pattern(_:)</code> backed by Core Haptics with <code>UIFeedbackGenerator</code> fallback</td>
+<td><strong>Shipped — full parity</strong>. All seven presets, <code>HapticEvent</code>/<code>HapticPreset</code>, and Core Haptics patterns are implemented. Gracefully degrades to the preset generators on devices without Core Haptics. iOS-only (no macOS/visionOS — guarded by <code>#if os(iOS)</code>).</td>
 </tr>
 </tbody>
 </table>
