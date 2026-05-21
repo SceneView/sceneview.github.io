@@ -3887,6 +3887,59 @@ code, treat the Deprecated row as no-ops to avoid; Android-only entries
 as iOS-not-implemented; Approximated entries are fine to use as-is and
 will compile + render with visual fidelity differences only.</p>
 <hr />
+<h2 id="hand-face-body-tracking-parity-1904">Hand / Face / Body tracking parity (#1904)<a class="headerlink" href="#hand-face-body-tracking-parity-1904" title="Permanent link">&para;</a></h2>
+<p>SceneView spans two ARCore runtimes on Android plus ARKit on Apple, and
+each surfaces hand / face / body perception differently. This table maps
+every tracking primitive across all five SceneView surfaces so an AI
+assistant picks the right API for the requested platform. The Android
+Jetpack XR foundation landed in <a href="https://github.com/sceneview/sceneview/issues/1738">#1738</a>;
+the design notes live in <a href="https://github.com/sceneview/sceneview/blob/main/arsceneview/docs/JETPACK-XR-INTEGRATION.md"><code>arsceneview/docs/JETPACK-XR-INTEGRATION.md</code></a>.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Mobile ARCore (Android phone)</th>
+<th>Jetpack XR (Android XR headset)</th>
+<th>ARKit phone (<code>SceneViewSwift</code>)</th>
+<th>visionOS</th>
+<th>WebXR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hand tracking</strong></td>
+<td>Not available — ARCore phones have no hand perception</td>
+<td><code>XrHandNode</code> over <code>androidx.xr.arcore</code> <code>Hand</code> perception. Foundation (<code>XrFeatures</code> gate) shipped in #1738; node tracked in <a href="https://github.com/sceneview/sceneview/issues/1902">#1902</a> (preview, <code>1.0.0-alpha14</code>)</td>
+<td>Not available on iPhone/iPad — ARKit has no hand-tracking config; hand tracking is a visionOS-only <code>ARKit</code> provider</td>
+<td>ARKit <code>HandTrackingProvider</code> + <code>ARKitSession</code> give per-joint skeletons in an <code>ImmersiveSpace</code>. <strong>Not yet wrapped</strong> by <code>SceneViewSwift</code> — tracked in <a href="https://github.com/sceneview/sceneview/issues/1902">#1902</a>; drop to raw <code>HandTrackingProvider</code> today</td>
+<td>WebXR <code>hand-tracking</code> feature — tracked in <a href="https://github.com/sceneview/sceneview/issues/1778">#1778</a></td>
+</tr>
+<tr>
+<td><strong>Face tracking</strong></td>
+<td><code>AugmentedFaceNode</code> — front-camera, stable, includes the 468-point morphing face mesh</td>
+<td><code>XrFaceNode</code> over <code>androidx.xr.arcore</code> <code>Face</code> perception (headset, alpha). Tracked in <a href="https://github.com/sceneview/sceneview/issues/1903">#1903</a> (preview, <code>1.0.0-alpha14</code>)</td>
+<td><code>AnchorNode.face()</code> — <strong>shipped</strong>. Wraps RealityKit <code>AnchorEntity(.face)</code> (<code>ARFaceTrackingConfiguration</code>); provides face <em>pose</em> only, <strong>no mesh</strong>. For the morphing-mesh overlay drop to a raw <code>ARFaceAnchor</code> + custom mesh entity</td>
+<td>Same <code>AnchorNode.face()</code> path — <code>ARFaceTrackingConfiguration</code> runs on Vision Pro's front sensors</td>
+<td>Not exposed by WebXR</td>
+</tr>
+<tr>
+<td><strong>Body tracking</strong></td>
+<td>Not available — ARCore has no body perception (ML Kit / MediaPipe would be needed)</td>
+<td>Not available — <code>androidx.xr.arcore</code> exposes only <code>Hand</code> + <code>Face</code>, no body. Deferred-scope decision recorded in #1738</td>
+<td><code>AnchorNode.body()</code> — <strong>shipped</strong>. Wraps RealityKit <code>AnchorEntity(.body)</code> (<code>ARBodyTrackingConfiguration</code>); anchors at the detected body's root joint. <strong>ARKit-only</strong> — no Android counterpart on either runtime</td>
+<td><code>ARBodyTrackingConfiguration</code> is unavailable on visionOS; no body-tracking path</td>
+<td>Not exposed by WebXR</td>
+</tr>
+</tbody>
+</table>
+<p><strong>iOS maturity summary.</strong> Face and body anchoring are <strong>shipped today</strong> in
+<code>SceneViewSwift</code> as <code>AnchorNode.face()</code> / <code>AnchorNode.body()</code> (pose-level
+anchors — no morphing face mesh, no per-joint skeleton). visionOS <strong>hand
+tracking</strong> is <strong>not yet wrapped</strong>: the ARKit <code>HandTrackingProvider</code> exists
+but a <code>SceneViewSwift</code> node is still pending — tracked in
+<a href="https://github.com/sceneview/sceneview/issues/1902">#1902</a>. Body tracking
+is an ARKit-exclusive feature with no equivalent on either Android runtime.</p>
+<hr />
 <h2 id="android">Android<a class="headerlink" href="#android" title="Permanent link">&para;</a></h2>
 <p>Building for Android with Jetpack Compose? See the <a href="../cheatsheet/">Android API Cheatsheet</a>.</p>
 
