@@ -3686,9 +3686,39 @@ silent stub.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>ARSceneView(playbackDataset:)</code></td>
+<td><code>ARSceneView(playbackDataset:)</code> / <code>ARSceneView(playbackDatasetUri:)</code> (#1770)</td>
 <td>ARKit has no deterministic recording playback</td>
 <td>Record-only via <a href="https://github.com/sceneview/sceneview/issues/1032">#1032 ReplayKit</a>; replay stays Android-only</td>
+</tr>
+<tr>
+<td><code>rememberARPlaybackStatus(session)</code> (#1770)</td>
+<td>Mirrors ARCore <code>Session.getPlaybackStatus</code> — no ARKit counterpart</td>
+<td>iOS-skip; surface "Live AR only" in UI</td>
+</tr>
+<tr>
+<td><code>ARRecorder.addTrack / recordTrack / State.IO_ERROR</code> (#1770)</td>
+<td>ARCore custom-data-track + RecordingStatus disk-IO surface; no ARKit analogue</td>
+<td>iOS-skip with doc warning</td>
+</tr>
+<tr>
+<td><code>ARSessionFailure</code> sealed taxonomy + <code>onSessionFailure</code> callback (#1759)</td>
+<td>Wraps the 25 ARCore <code>*Exception</code> types; ARKit surfaces failures via <code>ARErrorCode</code> instead</td>
+<td>Use SwiftUI <code>onSessionFailed</code> (raw <code>Error</code>) and switch on <code>ARError.Code</code></td>
+</tr>
+<tr>
+<td><code>DepthHitResultNode</code> / <code>Frame.hitTestDepth</code> (#1712)</td>
+<td>Backed by ARCore <code>Frame.acquire(Raw)DepthImage16Bits</code> — ARKit <code>ARKit.captureDepth*</code> is API-incompatible</td>
+<td>Use <code>RealityView</code>'s standard hit-test or <code>ARView.smartHitTest</code></td>
+</tr>
+<tr>
+<td><code>cameraConfigFilter { … }</code> DSL (#1733, #1772)</td>
+<td>ARCore <code>CameraConfigFilter</code> selection model; ARKit picks its config automatically from <code>ARConfiguration</code></td>
+<td>iOS-skip</td>
+</tr>
+<tr>
+<td><code>Frame.cameraImage()</code> (#1771)</td>
+<td>ARCore CPU image stream — ARKit exposes <code>ARFrame.capturedImage</code> directly on the frame</td>
+<td>Use <code>arSession.currentFrame?.capturedImage</code></td>
 </tr>
 <tr>
 <td><code>SurfaceType.texture</code></td>

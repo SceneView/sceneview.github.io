@@ -3232,22 +3232,62 @@ input.</p>
 <p><strong>The Filament runtime version (in <a href="gradle/libs.versions.toml"><code>gradle/libs.versions.toml</code></a> → <code>filament = "X.Y.Z"</code>) and the <code>matc</code> toolchain that produced every committed <code>.filamat</code> blob MUST be the same major version.</strong></p>
 </blockquote>
 <p>Filament refuses any material whose binary version field does not match the runtime, with <code>Filament panic — material version N ≠ runtime M</code> on first frame. There is no compile-time check; the mismatch only manifests at runtime, demo by demo. v4.1.0 shipped with the runtime at 1.70.2 and blobs at 1.71 (two parallel branches each fixed half of the pair) — 10 demos crashed; v4.1.1 hot-fixed by realigning both sides to 1.71.</p>
-<p><strong>The 11 committed blobs that must be recompiled together</strong> (under <code>sceneview/src/main/assets/materials/</code>):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>image_texture.filamat                  transparent_colored.filamat
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>opaque_colored.filamat                 transparent_textured.filamat
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>opaque_textured.filamat                transparent_unlit_colored.filamat
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>opaque_unlit_colored.filamat           video_texture.filamat
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>video_texture_chroma_key.filamat       view_texture_lit.filamat
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>view_texture_unlit.filamat
+<p><strong>The 20 committed blobs that must stay in sync with their <code>.mat</code> sources</strong>, spread across three modules:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sceneview/src/main/assets/materials/     (11) — image_texture, opaque/transparent
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>                                                colored/textured/unlit, video_texture(_chroma_key),
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>                                                view_texture_lit/_unlit
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>arsceneview/src/main/assets/materials/    (6) — camera_stream_flat/_depth, face_mesh(_occluder),
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>                                                plane_renderer(_shadow)
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>website-static/materials/                 (3) — lit_colored, transparent_colored, unlit_colored
 </span></code></pre></div>
+<p><strong>The <code>tools/GenerateFilamat.sh</code> workflow.</strong> <a href="tools/GenerateFilamat.sh"><code>tools/GenerateFilamat.sh</code></a> is the single entry point for every Filament material in the repo. It auto-downloads the <code>matc</code> toolchain pinned to the Filament version in <a href="gradle/libs.versions.toml"><code>gradle/libs.versions.toml</code></a> and compiles each <code>.mat</code> to its <code>.filamat</code> blob — no manual <code>matc</code> install needed.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>bash tools/GenerateFilamat.sh                 # regenerate all 20 .filamat blobs in place
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>bash tools/GenerateFilamat.sh --check         # diff against committed blobs; exit 1 on drift
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>bash tools/GenerateFilamat.sh --mat &lt;name&gt;    # regenerate one (e.g. --mat opaque_colored)
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>bash tools/GenerateFilamat.sh --ci-tolerant   # treat a matc download failure as WARN, not FAIL
+</span></code></pre></div>
+<p>The <code>matc</code> binary is cached at <code>~/.cache/sceneview/matc-&lt;version&gt;/</code> (overridable via <code>$XDG_CACHE_HOME</code>); the first run downloads it, subsequent runs reuse it. <code>--ci-tolerant</code> exists for sandboxed CI runners with no network — it lets the check pass with a WARN instead of failing the build when <code>matc</code> cannot be fetched.</p>
+<p><strong>The drift gate.</strong> <code>bash .claude/scripts/quality-gate.sh</code> runs <code>GenerateFilamat.sh --check</code> on every pre-push gate. Editing a <code>.mat</code> source <strong>without</strong> recompiling its <code>.filamat</code> blob now <strong>blocks the PR</strong> — the gate reports the drifted blob(s) and fails. This catches the v4.1.0-class mistake before it ships.</p>
+<p><strong>The four matc flag profiles.</strong> The committed blobs were compiled with four distinct profiles (recorded in each blob's MRPC chunk). <code>GenerateFilamat.sh</code> reproduces each one — including flag <em>order</em>, since matc embeds the verbatim flag string:</p>
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>Flags</th>
+<th>Module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong> — heavy Android</td>
+<td><code>-p all -a all</code></td>
+<td><code>sceneview/</code> lit/textured/video/view materials</td>
+</tr>
+<tr>
+<td><strong>B</strong> — lean Android</td>
+<td><code>-a opengl -p mobile</code></td>
+<td><code>sceneview/</code> unlit colored materials (2)</td>
+</tr>
+<tr>
+<td><strong>C</strong> — ARCore</td>
+<td><code>--optimize-size -p mobile -a opengl -a vulkan</code></td>
+<td><code>arsceneview/</code> (6)</td>
+</tr>
+<tr>
+<td><strong>D</strong> — website / WebGL</td>
+<td><code>-p mobile -a opengl</code></td>
+<td><code>website-static/materials/</code> (3)</td>
+</tr>
+</tbody>
+</table>
+<p>When adding a new material, pick a profile by deployment target and add an entry to the <code>MATS</code> inventory in <code>GenerateFilamat.sh</code>. Each <code>.mat</code> source carries a short header block (purpose, used-by, parameters, profile) — read those headers to learn what an individual material does and where it is consumed.</p>
 <p><strong>How to recompile after a Filament version bump:</strong></p>
 <ol>
-<li>Download the matching <code>matc</code> from the Filament release tarball — <code>https://github.com/google/filament/releases/tag/vX.Y.Z</code> → <code>filament-vX.Y.Z-mac.tgz</code> (or <code>-linux.tgz</code>) → <code>./bin/matc</code>.</li>
-<li>Put <code>matc</code> on your <code>PATH</code> (or update <a href="tools/GenerateFilamat.sh"><code>tools/GenerateFilamat.sh</code></a> to point at it).</li>
-<li>Run <code>cd tools &amp;&amp; bash GenerateFilamat.sh</code> — recompiles every <code>.filamat</code> from its <code>.mat</code> source.</li>
-<li>Commit <strong>the runtime bump in <code>gradle/libs.versions.toml</code> AND the recompiled <code>.filamat</code> files in the SAME PR</strong>. Never split them across commits — that's the failure mode that broke v4.1.0.</li>
+<li>Bump <code>filament = "X.Y.Z"</code> in <a href="gradle/libs.versions.toml"><code>gradle/libs.versions.toml</code></a>.</li>
+<li>Run <code>bash tools/GenerateFilamat.sh</code> — it downloads the matching <code>matc</code> and recompiles every <code>.filamat</code> from its <code>.mat</code> source.</li>
+<li>Commit <strong>the runtime bump AND the recompiled <code>.filamat</code> files in the SAME PR</strong>. Never split them across commits — that's the failure mode that broke v4.1.0.</li>
 </ol>
-<p>If you bump the runtime without touching the blobs (or vice versa), CI will not catch it. The first signal is a runtime crash on whichever demo loads the affected material first.</p>
+<p><code>GenerateFilamat.sh --check</code> (and the <code>quality-gate.sh</code> drift gate) will catch a runtime/blob mismatch before merge. If you somehow bypass the gate, the first signal is a runtime crash on whichever demo loads the affected material first.</p>
 <hr />
 <h2 id="maintenance-scripts">Maintenance scripts<a class="headerlink" href="#maintenance-scripts" title="Permanent link">&para;</a></h2>
 <p>The <code>.claude/scripts/</code> directory holds the housekeeping scripts that
