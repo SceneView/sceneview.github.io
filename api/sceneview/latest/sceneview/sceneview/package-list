@@ -108,36 +108,6 @@ $dokka.location:io.github.sceneview.animation/Transition/animateScale/androidx.c
 $dokka.location:io.github.sceneview.animation/VectorConverters///PointingToDeclaration/sceneview/io.github.sceneview.animation/-vector-converters/index.html
 $dokka.location:io.github.sceneview.animation/VectorConverters/Float3VectorConverter/#/PointingToDeclaration/sceneview/io.github.sceneview.animation/-vector-converters/-float3-vector-converter.html
 $dokka.location:io.github.sceneview.animation/VectorConverters/QuaternionVectorConverter/#/PointingToDeclaration/sceneview/io.github.sceneview.animation/-vector-converters/-quaternion-vector-converter.html
-$dokka.location:io.github.sceneview.audio////PointingToDeclaration/sceneview/io.github.sceneview.audio/index.html
-$dokka.location:io.github.sceneview.audio//AudioListener/io.github.sceneview.SceneScope#io.github.sceneview.audio.AudioListenerSource/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-listener.html
-$dokka.location:io.github.sceneview.audio//SpatialAudioNode/io.github.sceneview.SceneScope#io.github.sceneview.audio.AudioSource#dev.romainguy.kotlin.math.Float3#io.github.sceneview.audio.AudioFalloff#kotlin.Boolean#kotlin.Boolean#kotlin.Float#kotlin.Float#kotlin.Function1[io.github.sceneview.audio.AudioController,kotlin.Unit]#kotlin.Function1[io.github.sceneview.NodeScope,kotlin.Unit]?/PointingToDeclaration/sceneview/io.github.sceneview.audio/-spatial-audio-node.html
-$dokka.location:io.github.sceneview.audio//rememberAudioSource/#kotlin.String/PointingToDeclaration/sceneview/io.github.sceneview.audio/remember-audio-source.html
-$dokka.location:io.github.sceneview.audio//setSpatialAudioListenerPose/#dev.romainguy.kotlin.math.Float3#dev.romainguy.kotlin.math.Float3#dev.romainguy.kotlin.math.Float3/PointingToDeclaration/sceneview/io.github.sceneview.audio/set-spatial-audio-listener-pose.html
-$dokka.location:io.github.sceneview.audio/AudioController///PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-controller/index.html
-$dokka.location:io.github.sceneview.audio/AudioController/isPlaying/#/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-controller/is-playing.html
-$dokka.location:io.github.sceneview.audio/AudioController/pause/#/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-controller/pause.html
-$dokka.location:io.github.sceneview.audio/AudioController/play/#/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-controller/play.html
-$dokka.location:io.github.sceneview.audio/AudioController/seekTo/#kotlin.Long/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-controller/seek-to.html
-$dokka.location:io.github.sceneview.audio/AudioController/stop/#/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-controller/stop.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.Companion///PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-companion/index.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.Companion/gainFor/#io.github.sceneview.audio.AudioFalloff#kotlin.Float/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-companion/gain-for.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.Inverse///PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-inverse/index.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.Inverse/Inverse/#kotlin.Float#kotlin.Float#kotlin.Float/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-inverse/-inverse.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.Inverse/maxDistance/#/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-inverse/max-distance.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.Inverse/refDistance/#/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-inverse/ref-distance.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.Inverse/rolloffFactor/#/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-inverse/rolloff-factor.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.Linear///PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-linear/index.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.Linear/Linear/#kotlin.Float#kotlin.Float/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-linear/-linear.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.Linear/maxDistance/#/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-linear/max-distance.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.Linear/refDistance/#/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-linear/ref-distance.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff.None///PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/-none/index.html
-$dokka.location:io.github.sceneview.audio/AudioFalloff///PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-falloff/index.html
-$dokka.location:io.github.sceneview.audio/AudioListenerSource.Anchor///PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-listener-source/-anchor/index.html
-$dokka.location:io.github.sceneview.audio/AudioListenerSource.Anchor/Anchor/#io.github.sceneview.node.Node/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-listener-source/-anchor/-anchor.html
-$dokka.location:io.github.sceneview.audio/AudioListenerSource.Anchor/node/#/PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-listener-source/-anchor/node.html
-$dokka.location:io.github.sceneview.audio/AudioListenerSource.Camera///PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-listener-source/-camera/index.html
-$dokka.location:io.github.sceneview.audio/AudioListenerSource///PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-listener-source/index.html
-$dokka.location:io.github.sceneview.audio/AudioSource///PointingToDeclaration/sceneview/io.github.sceneview.audio/-audio-source/index.html
 $dokka.location:io.github.sceneview.collision////PointingToDeclaration/sceneview/io.github.sceneview.collision/index.html
 $dokka.location:io.github.sceneview.collision/Collider///PointingToDeclaration/sceneview/io.github.sceneview.collision/-collider/index.html
 $dokka.location:io.github.sceneview.collision/Collider/Collider/#io.github.sceneview.node.Node/PointingToDeclaration/sceneview/io.github.sceneview.collision/-collider/-collider.html
@@ -685,37 +655,6 @@ $dokka.location:io.github.sceneview.gesture/ScaleGestureDetector///PointingToDec
 $dokka.location:io.github.sceneview.gesture/ScaleGestureDetector/ScaleGestureDetector/#android.content.Context#io.github.sceneview.gesture.ScaleGestureDetector.OnScaleListener/PointingToDeclaration/sceneview/io.github.sceneview.gesture/-scale-gesture-detector/-scale-gesture-detector.html
 $dokka.location:io.github.sceneview.gesture/ScaleGestureDetector/event/#/PointingToDeclaration/sceneview/io.github.sceneview.gesture/-scale-gesture-detector/event.html
 $dokka.location:io.github.sceneview.gesture/ScaleGestureDetector/onTouchEvent/#android.view.MotionEvent/PointingToDeclaration/sceneview/io.github.sceneview.gesture/-scale-gesture-detector/on-touch-event.html
-$dokka.location:io.github.sceneview.haptic////PointingToDeclaration/sceneview/io.github.sceneview.haptic/index.html
-$dokka.location:io.github.sceneview.haptic//SceneViewHaptic/#android.content.Context/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic.html
-$dokka.location:io.github.sceneview.haptic//rememberHapticFeedback/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/remember-haptic-feedback.html
-$dokka.location:io.github.sceneview.haptic/HapticEvent///PointingToDeclaration/sceneview/io.github.sceneview.haptic/-haptic-event/index.html
-$dokka.location:io.github.sceneview.haptic/HapticEvent/HapticEvent/#kotlin.Float#kotlin.Float#kotlin.Int#kotlin.Int/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-haptic-event/-haptic-event.html
-$dokka.location:io.github.sceneview.haptic/HapticEvent/delayMs/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-haptic-event/delay-ms.html
-$dokka.location:io.github.sceneview.haptic/HapticEvent/durationMs/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-haptic-event/duration-ms.html
-$dokka.location:io.github.sceneview.haptic/HapticEvent/intensity/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-haptic-event/intensity.html
-$dokka.location:io.github.sceneview.haptic/HapticEvent/sharpness/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-haptic-event/sharpness.html
-$dokka.location:io.github.sceneview.haptic/HapticPreset.Error///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}sceneview/io.github.sceneview.haptic/-haptic-preset/-error/index.html
-$dokka.location:io.github.sceneview.haptic/HapticPreset.Heavy///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}sceneview/io.github.sceneview.haptic/-haptic-preset/-heavy/index.html
-$dokka.location:io.github.sceneview.haptic/HapticPreset.Light///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}sceneview/io.github.sceneview.haptic/-haptic-preset/-light/index.html
-$dokka.location:io.github.sceneview.haptic/HapticPreset.Medium///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}sceneview/io.github.sceneview.haptic/-haptic-preset/-medium/index.html
-$dokka.location:io.github.sceneview.haptic/HapticPreset.Selection///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}sceneview/io.github.sceneview.haptic/-haptic-preset/-selection/index.html
-$dokka.location:io.github.sceneview.haptic/HapticPreset.Success///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}sceneview/io.github.sceneview.haptic/-haptic-preset/-success/index.html
-$dokka.location:io.github.sceneview.haptic/HapticPreset.Warning///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}sceneview/io.github.sceneview.haptic/-haptic-preset/-warning/index.html
-$dokka.location:io.github.sceneview.haptic/HapticPreset///PointingToDeclaration/sceneview/io.github.sceneview.haptic/-haptic-preset/index.html
-$dokka.location:io.github.sceneview.haptic/HapticPreset/entries/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-haptic-preset/entries.html
-$dokka.location:io.github.sceneview.haptic/HapticPreset/valueOf/#kotlin.String/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-haptic-preset/value-of.html
-$dokka.location:io.github.sceneview.haptic/HapticPreset/values/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-haptic-preset/values.html
-$dokka.location:io.github.sceneview.haptic/SceneViewHaptic///PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic/index.html
-$dokka.location:io.github.sceneview.haptic/SceneViewHaptic/cancel/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic/cancel.html
-$dokka.location:io.github.sceneview.haptic/SceneViewHaptic/continuous/#kotlin.Float#kotlin.Long/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic/continuous.html
-$dokka.location:io.github.sceneview.haptic/SceneViewHaptic/error/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic/error.html
-$dokka.location:io.github.sceneview.haptic/SceneViewHaptic/heavy/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic/heavy.html
-$dokka.location:io.github.sceneview.haptic/SceneViewHaptic/light/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic/light.html
-$dokka.location:io.github.sceneview.haptic/SceneViewHaptic/medium/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic/medium.html
-$dokka.location:io.github.sceneview.haptic/SceneViewHaptic/pattern/#kotlin.collections.List[io.github.sceneview.haptic.HapticEvent]/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic/pattern.html
-$dokka.location:io.github.sceneview.haptic/SceneViewHaptic/selection/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic/selection.html
-$dokka.location:io.github.sceneview.haptic/SceneViewHaptic/success/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic/success.html
-$dokka.location:io.github.sceneview.haptic/SceneViewHaptic/warning/#/PointingToDeclaration/sceneview/io.github.sceneview.haptic/-scene-view-haptic/warning.html
 $dokka.location:io.github.sceneview.loaders////PointingToDeclaration/sceneview/io.github.sceneview.loaders/index.html
 $dokka.location:io.github.sceneview.loaders/EnvironmentLoader///PointingToDeclaration/sceneview/io.github.sceneview.loaders/-environment-loader/index.html
 $dokka.location:io.github.sceneview.loaders/EnvironmentLoader/EnvironmentLoader/#com.google.android.filament.Engine#android.content.Context#kotlinx.coroutines.CoroutineScope/PointingToDeclaration/sceneview/io.github.sceneview.loaders/-environment-loader/-environment-loader.html
@@ -928,8 +867,8 @@ $dokka.location:io.github.sceneview.model/ModelInstance///PointingToDeclaration/
 $dokka.location:io.github.sceneview.node////PointingToDeclaration/sceneview/io.github.sceneview.node/index.html
 $dokka.location:io.github.sceneview.node//DynamicSkyNode/io.github.sceneview.SceneScope#kotlin.Float#kotlin.Float#kotlin.Float/PointingToDeclaration/sceneview/io.github.sceneview.node/-dynamic-sky-node.html
 $dokka.location:io.github.sceneview.node//FogNode/io.github.sceneview.SceneScope#com.google.android.filament.View#kotlin.Float#kotlin.Float#androidx.compose.ui.graphics.Color#kotlin.Boolean/PointingToDeclaration/sceneview/io.github.sceneview.node/-fog-node.html
-$dokka.location:io.github.sceneview.node//PhysicsNode/#io.github.sceneview.node.Node#kotlin.Float#dev.romainguy.kotlin.math.Float3#kotlin.Float#kotlin.Float#io.github.sceneview.node.FloorProvider?/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-node.html
-$dokka.location:io.github.sceneview.node//PhysicsNode/#io.github.sceneview.node.Node#kotlin.Float#kotlin.Float#dev.romainguy.kotlin.math.Float3#kotlin.Float#kotlin.Float#io.github.sceneview.node.FloorProvider?/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-node.html
+$dokka.location:io.github.sceneview.node//PhysicsNode/#io.github.sceneview.node.Node#kotlin.Float#dev.romainguy.kotlin.math.Float3#kotlin.Float#kotlin.Float/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-node.html
+$dokka.location:io.github.sceneview.node//PhysicsNode/#io.github.sceneview.node.Node#kotlin.Float#kotlin.Float#dev.romainguy.kotlin.math.Float3#kotlin.Float#kotlin.Float/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-node.html
 $dokka.location:io.github.sceneview.node//ReflectionProbeNode/#com.google.android.filament.Scene#io.github.sceneview.environment.Environment#dev.romainguy.kotlin.math.Float3#kotlin.Float#kotlin.Int#dev.romainguy.kotlin.math.Float3/PointingToDeclaration/sceneview/io.github.sceneview.node/-reflection-probe-node.html
 $dokka.location:io.github.sceneview.node//applyState/io.github.sceneview.node.Node#io.github.sceneview.node.NodeState/PointingToDeclaration/sceneview/io.github.sceneview.node/apply-state.html
 $dokka.location:io.github.sceneview.node//get/kotlin.collections.List[TypeParam(bounds=[com.google.android.filament.MaterialInstance])]#kotlin.String/PointingToDeclaration/sceneview/io.github.sceneview.node/get.html
@@ -984,8 +923,6 @@ $dokka.location:io.github.sceneview.node/CylinderNode/CylinderNode/#com.google.a
 $dokka.location:io.github.sceneview.node/CylinderNode/CylinderNode/#com.google.android.filament.Engine#kotlin.Float#kotlin.Float#dev.romainguy.kotlin.math.Float3#kotlin.Int#kotlin.collections.List[com.google.android.filament.MaterialInstance?]#kotlin.Function1[com.google.android.filament.RenderableManager.Builder,kotlin.Unit]/PointingToDeclaration/sceneview/io.github.sceneview.node/-cylinder-node/-cylinder-node.html
 $dokka.location:io.github.sceneview.node/CylinderNode/geometry/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-cylinder-node/geometry.html
 $dokka.location:io.github.sceneview.node/CylinderNode/updateGeometry/#kotlin.Float#kotlin.Float#dev.romainguy.kotlin.math.Float3#kotlin.Int/PointingToDeclaration/sceneview/io.github.sceneview.node/-cylinder-node/update-geometry.html
-$dokka.location:io.github.sceneview.node/FloorProvider///PointingToDeclaration/sceneview/io.github.sceneview.node/-floor-provider/index.html
-$dokka.location:io.github.sceneview.node/FloorProvider/floorYAt/#kotlin.Float#kotlin.Float#kotlin.Float#kotlin.Float/PointingToDeclaration/sceneview/io.github.sceneview.node/-floor-provider/floor-y-at.html
 $dokka.location:io.github.sceneview.node/GeometryNode///PointingToDeclaration/sceneview/io.github.sceneview.node/-geometry-node/index.html
 $dokka.location:io.github.sceneview.node/GeometryNode/GeometryNode/#com.google.android.filament.Engine#io.github.sceneview.geometries.Geometry#com.google.android.filament.MaterialInstance?#kotlin.Boolean#kotlin.Function1[com.google.android.filament.RenderableManager.Builder,kotlin.Unit]/PointingToDeclaration/sceneview/io.github.sceneview.node/-geometry-node/-geometry-node.html
 $dokka.location:io.github.sceneview.node/GeometryNode/GeometryNode/#com.google.android.filament.Engine#io.github.sceneview.geometries.Geometry#kotlin.collections.List[com.google.android.filament.MaterialInstance?]#kotlin.collections.List[kotlin.ranges.IntRange]#kotlin.Boolean#kotlin.Function1[com.google.android.filament.RenderableManager.Builder,kotlin.Unit]/PointingToDeclaration/sceneview/io.github.sceneview.node/-geometry-node/-geometry-node.html
@@ -1290,9 +1227,8 @@ $dokka.location:io.github.sceneview.node/PhysicsBody.Companion///PointingToDecla
 $dokka.location:io.github.sceneview.node/PhysicsBody.Companion/GRAVITY/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-body/-companion/-g-r-a-v-i-t-y.html
 $dokka.location:io.github.sceneview.node/PhysicsBody.Companion/SLEEP_THRESHOLD/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-body/-companion/-s-l-e-e-p_-t-h-r-e-s-h-o-l-d.html
 $dokka.location:io.github.sceneview.node/PhysicsBody///PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-body/index.html
-$dokka.location:io.github.sceneview.node/PhysicsBody/PhysicsBody/#io.github.sceneview.node.Node#kotlin.Float#kotlin.Float#kotlin.Float#dev.romainguy.kotlin.math.Float3#io.github.sceneview.node.FloorProvider?/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-body/-physics-body.html
+$dokka.location:io.github.sceneview.node/PhysicsBody/PhysicsBody/#io.github.sceneview.node.Node#kotlin.Float#kotlin.Float#kotlin.Float#dev.romainguy.kotlin.math.Float3/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-body/-physics-body.html
 $dokka.location:io.github.sceneview.node/PhysicsBody/PhysicsBody/#io.github.sceneview.node.Node#kotlin.Float#kotlin.Float#kotlin.Float#kotlin.Float#dev.romainguy.kotlin.math.Float3/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-body/-physics-body.html
-$dokka.location:io.github.sceneview.node/PhysicsBody/floorProvider/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-body/floor-provider.html
 $dokka.location:io.github.sceneview.node/PhysicsBody/floorY/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-body/floor-y.html
 $dokka.location:io.github.sceneview.node/PhysicsBody/isAsleep/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-body/is-asleep.html
 $dokka.location:io.github.sceneview.node/PhysicsBody/mass/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-physics-body/mass.html
@@ -1738,13 +1674,11 @@ $dokka.location:io.github.sceneview/SurfaceType/valueOf/#kotlin.String/PointingT
 $dokka.location:io.github.sceneview/SurfaceType/values/#/PointingToDeclaration/sceneview/io.github.sceneview/-surface-type/values.html
 io.github.sceneview
 io.github.sceneview.animation
-io.github.sceneview.audio
 io.github.sceneview.collision
 io.github.sceneview.components
 io.github.sceneview.environment
 io.github.sceneview.geometries
 io.github.sceneview.gesture
-io.github.sceneview.haptic
 io.github.sceneview.loaders
 io.github.sceneview.managers
 io.github.sceneview.material
