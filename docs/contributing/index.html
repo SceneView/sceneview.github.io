@@ -3241,14 +3241,14 @@ input.</p>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>website-static/materials/                 (3) — lit_colored, transparent_colored, unlit_colored
 </span></code></pre></div>
 <p><strong>The <code>tools/GenerateFilamat.sh</code> workflow.</strong> <a href="tools/GenerateFilamat.sh"><code>tools/GenerateFilamat.sh</code></a> is the single entry point for every Filament material in the repo. It auto-downloads the <code>matc</code> toolchain pinned to the Filament version in <a href="gradle/libs.versions.toml"><code>gradle/libs.versions.toml</code></a> and compiles each <code>.mat</code> to its <code>.filamat</code> blob — no manual <code>matc</code> install needed.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>bash tools/GenerateFilamat.sh                 # regenerate all 20 .filamat blobs in place
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>bash tools/GenerateFilamat.sh                 # regenerate all 21 .filamat blobs in place
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>bash tools/GenerateFilamat.sh --check         # diff against committed blobs; exit 1 on drift
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>bash tools/GenerateFilamat.sh --mat &lt;name&gt;    # regenerate one (e.g. --mat opaque_colored)
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>bash tools/GenerateFilamat.sh --ci-tolerant   # treat a matc download failure as WARN, not FAIL
 </span></code></pre></div>
 <p>The <code>matc</code> binary is cached at <code>~/.cache/sceneview/matc-&lt;version&gt;/</code> (overridable via <code>$XDG_CACHE_HOME</code>); the first run downloads it, subsequent runs reuse it. <code>--ci-tolerant</code> exists for sandboxed CI runners with no network — it lets the check pass with a WARN instead of failing the build when <code>matc</code> cannot be fetched.</p>
 <p><strong>The drift gate.</strong> <code>bash .claude/scripts/quality-gate.sh</code> runs <code>GenerateFilamat.sh --check</code> on every pre-push gate. Editing a <code>.mat</code> source <strong>without</strong> recompiling its <code>.filamat</code> blob now <strong>blocks the PR</strong> — the gate reports the drifted blob(s) and fails. This catches the v4.1.0-class mistake before it ships.</p>
-<p><strong>The four matc flag profiles.</strong> The committed blobs were compiled with four distinct profiles (recorded in each blob's MRPC chunk). <code>GenerateFilamat.sh</code> reproduces each one — including flag <em>order</em>, since matc embeds the verbatim flag string:</p>
+<p><strong>The five matc flag profiles.</strong> The committed blobs were compiled with five distinct profiles (recorded in each blob's MRPC chunk). <code>GenerateFilamat.sh</code> reproduces each one — including flag <em>order</em>, since matc embeds the verbatim flag string:</p>
 <table>
 <thead>
 <tr>
@@ -3277,6 +3277,11 @@ input.</p>
 <td><strong>D</strong> — website / WebGL</td>
 <td><code>-p mobile -a opengl</code></td>
 <td><code>website-static/materials/</code> (3)</td>
+</tr>
+<tr>
+<td><strong>E</strong> — Android occluder</td>
+<td><code>-a vulkan -a opengl -p mobile</code></td>
+<td><code>sceneview/</code> occlusion material (1)</td>
 </tr>
 </tbody>
 </table>
