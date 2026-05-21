@@ -3232,13 +3232,13 @@ input.</p>
 <p><strong>The Filament runtime version (in <a href="gradle/libs.versions.toml"><code>gradle/libs.versions.toml</code></a> → <code>filament = "X.Y.Z"</code>) and the <code>matc</code> toolchain that produced every committed <code>.filamat</code> blob MUST be the same major version.</strong></p>
 </blockquote>
 <p>Filament refuses any material whose binary version field does not match the runtime, with <code>Filament panic — material version N ≠ runtime M</code> on first frame. There is no compile-time check; the mismatch only manifests at runtime, demo by demo. v4.1.0 shipped with the runtime at 1.70.2 and blobs at 1.71 (two parallel branches each fixed half of the pair) — 10 demos crashed; v4.1.1 hot-fixed by realigning both sides to 1.71.</p>
-<p><strong>The 12 committed blobs that must be recompiled together</strong> (under <code>sceneview/src/main/assets/materials/</code>):</p>
+<p><strong>The 11 committed blobs that must be recompiled together</strong> (under <code>sceneview/src/main/assets/materials/</code>):</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>image_texture.filamat                  transparent_colored.filamat
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>opaque_colored.filamat                 transparent_textured.filamat
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>opaque_textured.filamat                transparent_unlit_colored.filamat
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>opaque_unlit_colored.filamat           video_texture.filamat
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>view_renderable.filamat                video_texture_chroma_key.filamat
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>view_texture_lit.filamat               view_texture_unlit.filamat
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>video_texture_chroma_key.filamat       view_texture_lit.filamat
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>view_texture_unlit.filamat
 </span></code></pre></div>
 <p><strong>How to recompile after a Filament version bump:</strong></p>
 <ol>
