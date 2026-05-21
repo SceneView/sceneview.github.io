@@ -2696,13 +2696,21 @@
 <h2 id="platform-demos">Platform Demos<a class="headerlink" href="#platform-demos" title="Permanent link">&para;</a></h2>
 <h3 id="android-demo">Android Demo<a class="headerlink" href="#android-demo" title="Permanent link">&para;</a></h3>
 <p><strong><code>samples/android-demo/</code></strong> — Play Store ready, Material 3 Expressive</p>
-<p>4-tab showcase with 14 interactive demos:</p>
+<p>4-tab showcase (<strong>Explore / AR View / Samples / About</strong>) backed by an
+append-only demo registry of <strong>59 demos</strong> (30 non-AR + 29 AR):</p>
 <ul>
-<li><strong>3D tab</strong>: 8 models, 6 HDR environments, orbit camera, animations</li>
-<li><strong>AR tab</strong>: Tap-to-place, plane detection, 4 AR models, gesture controls</li>
-<li><strong>Samples tab</strong>: Model viewer, geometry, animation, dynamic sky demos</li>
-<li><strong>About tab</strong>: Platform info, GitHub links</li>
+<li><strong>Explore tab</strong>: Featured 3D &amp; AR demos and Sketchfab model streaming</li>
+<li><strong>AR View tab</strong>: Live <code>ARSceneView</code> camera with plane detection and tap-to-place</li>
+<li><strong>Samples tab</strong>: The full demo catalog, grouped into six categories —
+  3D Basics, Lighting &amp; Environment, Content, Interaction, Advanced,
+  Augmented Reality</li>
+<li><strong>About tab</strong>: Platform info, version, and GitHub links</li>
 </ul>
+<p>Each demo is one append-only <code>*Fragment.kt</code> under
+<code>samples/android-demo/src/main/java/io/github/sceneview/demo/fragments/</code> and is
+deep-link addressable as <code>sceneview://demo/&lt;id&gt;</code>. The collator
+(<code>samples/android-demo/scripts/collate-demos.sh</code>) generates the demo registry
+and the <code>llms.txt</code> demo list from those fragments, so the catalog never drifts.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./gradlew<span class="w"> </span>:samples:android-demo:assembleDebug
 </span></code></pre></div>
 <div class="admonition info">
