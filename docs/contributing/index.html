@@ -2411,6 +2411,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#store-secrets-and-the-release-build-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Store secrets and the release-build guard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#run-tests" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2771,6 +2782,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#store-secrets-and-the-release-build-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Store secrets and the release-build guard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#run-tests" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3052,18 +3074,41 @@
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>./gradlew<span class="w"> </span>:samples:android-demo:assembleDebug
 </span></code></pre></div>
 <p>For iOS (SceneViewSwift), open <code>SceneViewSwift/Package.swift</code> in Xcode and build from there.</p>
+<h3 id="store-secrets-and-the-release-build-guard">Store secrets and the release-build guard<a class="headerlink" href="#store-secrets-and-the-release-build-guard" title="Permanent link">&para;</a></h3>
+<p>The demo apps read two optional secrets — <code>SKETCHFAB_API_KEY</code> (Sketchfab
+carousels in the Explore tab) and <code>ARCORE_API_KEY</code> (AR Streetscape / Geospatial
+/ Cloud Anchor demos). They're resolved from an environment variable or, on
+developer machines, from the repo-root <code>local.properties</code>
+(<code>sketchfab.api.key</code> and <code>ARCORE_API_KEY</code> respectively).</p>
+<p><strong>Debug builds are permissive</strong> — a missing key just disables those features at
+runtime, so you can build and contribute without either secret.</p>
+<p><strong>Release builds fail loud (#1915).</strong> A release <code>assembleRelease</code> /
+<code>bundleRelease</code> (Android) or <code>Release</code> archive (iOS) <em>refuses to build</em> when a
+secret is empty or unsubstituted, instead of silently shipping a store APK with
+invisible Sketchfab carousels (the regression class behind #1909). This guard
+only fires on the release path — it never affects <code>assembleDebug</code> or PR-check
+builds.</p>
+<p>Forks have no access to the org GitHub Secrets, so to produce a release build
+without the keys, opt out of the guard:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Android</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>./gradlew<span class="w"> </span>:samples:android-demo:bundleRelease<span class="w"> </span>-PSV_ALLOW_MISSING_SECRETS<span class="o">=</span><span class="m">1</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># or export SV_ALLOW_MISSING_SECRETS=1</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># iOS</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>xcodebuild<span class="w"> </span>archive<span class="w"> </span>...<span class="w"> </span><span class="nv">SV_ALLOW_MISSING_SECRETS</span><span class="o">=</span><span class="m">1</span>
+</span></code></pre></div>
 <h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># All tests</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>./gradlew<span class="w"> </span><span class="nb">test</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># KMP core tests only</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>./gradlew<span class="w"> </span>:sceneview-core:allTests
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># All tests</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>./gradlew<span class="w"> </span><span class="nb">test</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># KMP core tests only</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>./gradlew<span class="w"> </span>:sceneview-core:allTests
 </span></code></pre></div>
 <h3 id="set-up-an-emulator">Set up an emulator<a class="headerlink" href="#set-up-an-emulator" title="Permanent link">&para;</a></h3>
 <p>Google's <code>android</code> CLI creates and boots emulators with one command — no
 sdkmanager / avdmanager dance:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>android<span class="w"> </span>emulator<span class="w"> </span>create<span class="w"> </span>medium_phone<span class="w">        </span><span class="c1"># positional &lt;profile&gt;; device auto-named from it</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>android<span class="w"> </span>emulator<span class="w"> </span>start<span class="w"> </span>medium_phone<span class="w">         </span><span class="c1"># boots, waits for ready</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>android<span class="w"> </span>emulator<span class="w"> </span>create<span class="w"> </span>medium_phone<span class="w">        </span><span class="c1"># positional &lt;profile&gt;; device auto-named from it</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>android<span class="w"> </span>emulator<span class="w"> </span>start<span class="w"> </span>medium_phone<span class="w">         </span><span class="c1"># boots, waits for ready</span>
 </span></code></pre></div>
 <p><code>android emulator create</code> takes a single positional argument — the <strong>profile</strong>
 — and the resulting device is auto-named from the profile (so <code>medium_phone</code>
@@ -3116,11 +3161,11 @@ from the first keystroke — no context-gathering needed.</p>
 <h3 id="mcp-server-optional">MCP server (optional)<a class="headerlink" href="#mcp-server-optional" title="Permanent link">&para;</a></h3>
 <p>If you use Claude Desktop or another MCP-compatible editor, add the SceneView MCP server
 for full API context in any chat:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;sceneview&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npx&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sceneview-mcp&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;sceneview&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npx&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sceneview-mcp&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr />
 <h2 id="pull-request-guidelines">Pull request guidelines<a class="headerlink" href="#pull-request-guidelines" title="Permanent link">&para;</a></h2>
@@ -3183,8 +3228,8 @@ platform before requesting review.</p>
 as a small fragment file — one per PR. Add a file named
 <code>changelog.d/&lt;issue-or-pr-number&gt;-&lt;short-slug&gt;.md</code> containing your release-note
 bullet(s), prefixed with a category tag:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&lt;!-- category: Fixed --&gt;
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Short headline ([#1234](https://github.com/sceneview/sceneview/issues/1234)).**</span> What changed and why.
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&lt;!-- category: Fixed --&gt;
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Short headline ([#1234](https://github.com/sceneview/sceneview/issues/1234)).**</span> What changed and why.
 </span></code></pre></div>
 <p>Recognised categories: <code>Added</code>, <code>Changed</code>, <code>Fixed</code>, <code>Removed</code>, <code>Tests</code>, <code>Docs</code>.
 Distinct filenames mean parallel PRs never conflict on the changelog. At release
@@ -3233,18 +3278,18 @@ input.</p>
 </blockquote>
 <p>Filament refuses any material whose binary version field does not match the runtime, with <code>Filament panic — material version N ≠ runtime M</code> on first frame. There is no compile-time check; the mismatch only manifests at runtime, demo by demo. v4.1.0 shipped with the runtime at 1.70.2 and blobs at 1.71 (two parallel branches each fixed half of the pair) — 10 demos crashed; v4.1.1 hot-fixed by realigning both sides to 1.71.</p>
 <p><strong>The 20 committed blobs that must stay in sync with their <code>.mat</code> sources</strong>, spread across three modules:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sceneview/src/main/assets/materials/     (11) — image_texture, opaque/transparent
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>                                                colored/textured/unlit, video_texture(_chroma_key),
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>                                                view_texture_lit/_unlit
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>arsceneview/src/main/assets/materials/    (6) — camera_stream_flat/_depth, face_mesh(_occluder),
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>                                                plane_renderer(_shadow)
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>website-static/materials/                 (3) — lit_colored, transparent_colored, unlit_colored
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sceneview/src/main/assets/materials/     (11) — image_texture, opaque/transparent
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>                                                colored/textured/unlit, video_texture(_chroma_key),
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>                                                view_texture_lit/_unlit
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>arsceneview/src/main/assets/materials/    (6) — camera_stream_flat/_depth, face_mesh(_occluder),
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>                                                plane_renderer(_shadow)
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>website-static/materials/                 (3) — lit_colored, transparent_colored, unlit_colored
 </span></code></pre></div>
 <p><strong>The <code>tools/GenerateFilamat.sh</code> workflow.</strong> <a href="tools/GenerateFilamat.sh"><code>tools/GenerateFilamat.sh</code></a> is the single entry point for every Filament material in the repo. It auto-downloads the <code>matc</code> toolchain pinned to the Filament version in <a href="gradle/libs.versions.toml"><code>gradle/libs.versions.toml</code></a> and compiles each <code>.mat</code> to its <code>.filamat</code> blob — no manual <code>matc</code> install needed.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>bash tools/GenerateFilamat.sh                 # regenerate all 21 .filamat blobs in place
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>bash tools/GenerateFilamat.sh --check         # diff against committed blobs; exit 1 on drift
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>bash tools/GenerateFilamat.sh --mat &lt;name&gt;    # regenerate one (e.g. --mat opaque_colored)
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>bash tools/GenerateFilamat.sh --ci-tolerant   # treat a matc download failure as WARN, not FAIL
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>bash tools/GenerateFilamat.sh                 # regenerate all 21 .filamat blobs in place
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>bash tools/GenerateFilamat.sh --check         # diff against committed blobs; exit 1 on drift
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>bash tools/GenerateFilamat.sh --mat &lt;name&gt;    # regenerate one (e.g. --mat opaque_colored)
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>bash tools/GenerateFilamat.sh --ci-tolerant   # treat a matc download failure as WARN, not FAIL
 </span></code></pre></div>
 <p>The <code>matc</code> binary is cached at <code>~/.cache/sceneview/matc-&lt;version&gt;/</code> (overridable via <code>$XDG_CACHE_HOME</code>); the first run downloads it, subsequent runs reuse it. <code>--ci-tolerant</code> exists for sandboxed CI runners with no network — it lets the check pass with a WARN instead of failing the build when <code>matc</code> cannot be fetched.</p>
 <p><strong>The drift gate.</strong> <code>bash .claude/scripts/quality-gate.sh</code> runs <code>GenerateFilamat.sh --check</code> on every pre-push gate. Editing a <code>.mat</code> source <strong>without</strong> recompiling its <code>.filamat</code> blob now <strong>blocks the PR</strong> — the gate reports the drifted blob(s) and fails. This catches the v4.1.0-class mistake before it ships.</p>
