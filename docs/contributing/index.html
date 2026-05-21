@@ -3269,6 +3269,14 @@ input.</p>
 <li><strong>Swift</strong>: follow the existing SceneViewSwift patterns (builder-style modifiers, RealityKit conventions).</li>
 <li>No wildcard imports. No unused imports.</li>
 <li>Keep changes minimal — you can fix obvious mistakes in formatting or documentation along the way.</li>
+<li><strong>Swift <code>#if os(...)</code> guards</strong>: do not nest a platform <code>#if</code> whose condition is
+  a permutation of the file's outer guard — it is always true and only adds
+  noise (issue #2044). Every <code>SceneViewSwift</code> file is wrapped in
+  <code>#if os(iOS) || os(macOS) || os(visionOS)</code>; an inner
+  <code>#if os(iOS) || os(visionOS) || os(macOS)</code> is the same three platforms and
+  therefore dead. Use a <code>#if</code> only for a genuinely narrower set
+  (<code>#if os(visionOS)</code>, <code>#if !os(visionOS)</code>, <code>#if os(macOS)</code>), and prefer a
+  runtime <code>#available</code> check when the gate is an OS-version requirement.</li>
 </ul>
 <h3 id="changes-in-filament-materials">Changes in Filament materials<a class="headerlink" href="#changes-in-filament-materials" title="Permanent link">&para;</a></h3>
 <p>Recompile Filament materials using the <a href="https://github.com/google/filament/releases">current Filament version</a> if you modify them. Enable the <a href="https://github.com/sceneview/sceneview/blob/main/gradle.properties">Filament plugin</a> and build.</p>
