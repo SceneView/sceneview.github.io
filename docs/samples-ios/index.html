@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="SwiftUI + RealityKit sample code for SceneViewSwift: model viewer, geometry shapes, dynamic sky, physics, text, fog, reflections, and AR tap-to-place.">
+        <meta name="description" content="SwiftUI + RealityKit sample code for SceneViewSwift: model viewer, geometry shapes, camera controls, AR tap-to-place, physics, audio, text, fog, reflections, and 50+ more demos.">
       
       
       
@@ -64,7 +64,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Samples — SceneView for iOS, macOS, visionOS - SceneView — 3D & AR SDK" />
-<meta property="og:description" content="SwiftUI + RealityKit sample code for SceneViewSwift: model viewer, geometry shapes, dynamic sky, physics, text, fog, reflections, and AR tap-to-place." />
+<meta property="og:description" content="SwiftUI + RealityKit sample code for SceneViewSwift: model viewer, geometry shapes, camera controls, AR tap-to-place, physics, audio, text, fog, reflections, and 50+ more demos." />
 <meta property="og:image" content="https://sceneview.github.io/assets/images/social/samples-ios.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -72,7 +72,7 @@
 <meta property="og:url" content="https://sceneview.github.io/samples-ios/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Samples — SceneView for iOS, macOS, visionOS - SceneView — 3D & AR SDK" />
-<meta property="twitter:description" content="SwiftUI + RealityKit sample code for SceneViewSwift: model viewer, geometry shapes, dynamic sky, physics, text, fog, reflections, and AR tap-to-place." />
+<meta property="twitter:description" content="SwiftUI + RealityKit sample code for SceneViewSwift: model viewer, geometry shapes, camera controls, AR tap-to-place, physics, audio, text, fog, reflections, and 50+ more demos." />
 <meta property="twitter:image" content="https://sceneview.github.io/assets/images/social/samples-ios.png" />
 </head>
   
@@ -2312,22 +2312,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#3d-samples" class="md-nav__link">
+  <a href="#demo-catalog" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3D samples
+        Demo catalog
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3D samples">
+    <nav class="md-nav" aria-label="Demo catalog">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#model-viewer" class="md-nav__link">
+  <a href="#3d-basics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Model Viewer
+        3D Basics
       
     </span>
   </a>
@@ -2335,10 +2335,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#geometry-shapes" class="md-nav__link">
+  <a href="#lighting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Geometry Shapes
+        Lighting
       
     </span>
   </a>
@@ -2346,10 +2346,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dynamic-sky" class="md-nav__link">
+  <a href="#content" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dynamic Sky
+        Content
       
     </span>
   </a>
@@ -2357,10 +2357,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#physics-playground" class="md-nav__link">
+  <a href="#interaction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Physics Playground
+        Interaction
       
     </span>
   </a>
@@ -2368,10 +2368,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#text-billboards" class="md-nav__link">
+  <a href="#advanced" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Text &amp; Billboards
+        Advanced
       
     </span>
   </a>
@@ -2379,21 +2379,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#image-video" class="md-nav__link">
+  <a href="#ar-ios-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Image &amp; Video
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fog-reflections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fog &amp; Reflections
+        AR (iOS only)
       
     </span>
   </a>
@@ -2406,22 +2395,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ar-samples" class="md-nav__link">
+  <a href="#minimal-working-examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AR samples
+        Minimal working examples
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="AR samples">
+    <nav class="md-nav" aria-label="Minimal working examples">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model viewer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedural-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedural geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-controls-with-native-apple-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camera controls with native Apple modes
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#ar-tap-to-place" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AR Tap-to-Place
+        AR tap-to-place
       
     </span>
   </a>
@@ -2446,7 +2468,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#3d-samples_1" class="md-nav__link">
+  <a href="#3d-samples" class="md-nav__link">
     <span class="md-ellipsis">
       
         3D samples
@@ -2457,7 +2479,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ar-samples_1" class="md-nav__link">
+  <a href="#ar-samples" class="md-nav__link">
     <span class="md-ellipsis">
       
         AR samples
@@ -2626,22 +2648,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#3d-samples" class="md-nav__link">
+  <a href="#demo-catalog" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3D samples
+        Demo catalog
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3D samples">
+    <nav class="md-nav" aria-label="Demo catalog">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#model-viewer" class="md-nav__link">
+  <a href="#3d-basics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Model Viewer
+        3D Basics
       
     </span>
   </a>
@@ -2649,10 +2671,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#geometry-shapes" class="md-nav__link">
+  <a href="#lighting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Geometry Shapes
+        Lighting
       
     </span>
   </a>
@@ -2660,10 +2682,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dynamic-sky" class="md-nav__link">
+  <a href="#content" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dynamic Sky
+        Content
       
     </span>
   </a>
@@ -2671,10 +2693,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#physics-playground" class="md-nav__link">
+  <a href="#interaction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Physics Playground
+        Interaction
       
     </span>
   </a>
@@ -2682,10 +2704,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#text-billboards" class="md-nav__link">
+  <a href="#advanced" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Text &amp; Billboards
+        Advanced
       
     </span>
   </a>
@@ -2693,21 +2715,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#image-video" class="md-nav__link">
+  <a href="#ar-ios-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Image &amp; Video
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fog-reflections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fog &amp; Reflections
+        AR (iOS only)
       
     </span>
   </a>
@@ -2720,22 +2731,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ar-samples" class="md-nav__link">
+  <a href="#minimal-working-examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AR samples
+        Minimal working examples
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="AR samples">
+    <nav class="md-nav" aria-label="Minimal working examples">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model viewer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedural-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedural geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-controls-with-native-apple-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camera controls with native Apple modes
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#ar-tap-to-place" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AR Tap-to-Place
+        AR tap-to-place
       
     </span>
   </a>
@@ -2760,7 +2804,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#3d-samples_1" class="md-nav__link">
+  <a href="#3d-samples" class="md-nav__link">
     <span class="md-ellipsis">
       
         3D samples
@@ -2771,7 +2815,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ar-samples_1" class="md-nav__link">
+  <a href="#ar-samples" class="md-nav__link">
     <span class="md-ellipsis">
       
         AR samples
@@ -2825,18 +2869,292 @@
 <h1 id="samples-apple-platforms">Samples — Apple Platforms<a class="headerlink" href="#samples-apple-platforms" title="Permanent link">&para;</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Looking for Android samples?</p>
-<p>See <a href="../samples/">Samples</a> for 15 working Jetpack Compose sample apps with source code.</p>
+<p>See <a href="../samples/">Samples</a> for Jetpack Compose sample apps with source code.</p>
 </div>
-<p>These samples demonstrate SceneViewSwift capabilities using <strong>SwiftUI + RealityKit</strong> on iOS, macOS, and visionOS. Each example is a self-contained SwiftUI view you can drop into an Xcode project after adding the SceneViewSwift package.</p>
+<p>These samples demonstrate SceneViewSwift capabilities using <strong>SwiftUI + RealityKit</strong> on iOS, macOS, and visionOS. The <a href="https://apps.apple.com/app/sceneview/id6761329763">iOS demo app</a> ships <strong>59 demos</strong> covering every category.</p>
 <div class="language-swift highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">.</span><span class="n">package</span><span class="p">(</span><span class="n">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/sceneview/sceneview.git&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">from</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;4.15.1&quot;</span><span class="p">)</span>
 </span></code></pre></div>
+<p>All demo source files live in
+<a href="https://github.com/sceneview/sceneview/tree/main/samples/ios-demo/SceneViewDemo/Views/Demos/"><code>samples/ios-demo/SceneViewDemo/Views/Demos/</code></a>.</p>
 <hr />
-<h2 id="3d-samples">3D samples<a class="headerlink" href="#3d-samples" title="Permanent link">&para;</a></h2>
-<h3 id="model-viewer">Model Viewer<a class="headerlink" href="#model-viewer" title="Permanent link">&para;</a></h3>
-<!-- Screenshot placeholder: A USDZ car model rendered with studio IBL lighting,
-     orbit camera at ~30 degrees elevation, soft grounding shadow beneath the model. -->
-
-<p>Load a USDZ model with environment lighting, orbit camera, and animation playback.</p>
+<h2 id="demo-catalog">Demo catalog<a class="headerlink" href="#demo-catalog" title="Permanent link">&para;</a></h2>
+<p>The iOS demo app organises all samples under six categories, mirroring the Android catalog.</p>
+<h3 id="3d-basics">3D Basics<a class="headerlink" href="#3d-basics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Demo</th>
+<th>Source</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model Viewer</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ModelViewerDemo.swift"><code>ModelViewerDemo.swift</code></a></td>
+<td>Load a USDZ with orbit camera, IBL, and animation</td>
+</tr>
+<tr>
+<td>Geometry</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/GeometryDemo.swift"><code>GeometryDemo.swift</code></a></td>
+<td>Procedural shapes — cube, sphere, cylinder, cone, plane</td>
+</tr>
+<tr>
+<td>Animation</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/AnimationDemo.swift"><code>AnimationDemo.swift</code></a></td>
+<td><code>playAllAnimations()</code>, <code>autoRotate</code>, timeline scrubbing</td>
+</tr>
+<tr>
+<td>Multi-Model</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/MultiModelDemo.swift"><code>MultiModelDemo.swift</code></a></td>
+<td>Multiple models loaded and placed in one scene</td>
+</tr>
+<tr>
+<td>Scene Gallery</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/SceneGalleryDemo.swift"><code>SceneGalleryDemo.swift</code></a></td>
+<td>Carousel of USDZ models with Sketchfab integration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lighting">Lighting<a class="headerlink" href="#lighting" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Demo</th>
+<th>Source</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lighting</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/LightingDemo.swift"><code>LightingDemo.swift</code></a></td>
+<td>Directional, point, and spot lights with PBR materials</td>
+</tr>
+<tr>
+<td>Movable Light</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/MovableLightDemo.swift"><code>MovableLightDemo.swift</code></a></td>
+<td>Drag a <code>LightNode</code> around the scene</td>
+</tr>
+<tr>
+<td>Dynamic Sky</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/DynamicSkyDemo.swift"><code>DynamicSkyDemo.swift</code></a></td>
+<td>Time-of-day slider drives <code>DynamicSkyNode</code></td>
+</tr>
+<tr>
+<td>Fog</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/FogDemo.swift"><code>FogDemo.swift</code></a></td>
+<td>Linear / exponential / height-based atmospheric fog</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/EnvironmentDemo.swift"><code>EnvironmentDemo.swift</code></a></td>
+<td>HDR environment presets (<code>.studio</code>, <code>.outdoor</code>, <code>.night</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Demo</th>
+<th>Source</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3D Text</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/TextDemo.swift"><code>TextDemo.swift</code></a></td>
+<td>Extruded 3D text with depth, color, and font control</td>
+</tr>
+<tr>
+<td>Lines &amp; Paths</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/LinesPathsDemo.swift"><code>LinesPathsDemo.swift</code></a></td>
+<td><code>LineNode</code>, <code>PathNode</code>, axis gizmo</td>
+</tr>
+<tr>
+<td>Image Planes</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ImageDemo.swift"><code>ImageDemo.swift</code></a></td>
+<td><code>ImageNode</code> — textures on planes in 3D space</td>
+</tr>
+<tr>
+<td>Billboard</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/BillboardDemo.swift"><code>BillboardDemo.swift</code></a></td>
+<td>Camera-facing labels and sprites</td>
+</tr>
+<tr>
+<td>Video Texture</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/VideoTextureDemo.swift"><code>VideoTextureDemo.swift</code></a></td>
+<td><code>VideoNode</code> — play / pause / loop video on a 3D plane</td>
+</tr>
+<tr>
+<td>Texture Streaming</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/TextureStreamingDemo.swift"><code>TextureStreamingDemo.swift</code></a></td>
+<td>Swap PBR material presets in real time — no geometry rebuild</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction">Interaction<a class="headerlink" href="#interaction" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Demo</th>
+<th>Source</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Camera Controls</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/CameraControlsDemo.swift"><code>CameraControlsDemo.swift</code></a></td>
+<td><code>.orbit</code>, <code>.pan</code>, <code>.firstPerson</code>; native Apple modes <code>.none/.tilt/.dolly</code> (iOS 18+)</td>
+</tr>
+<tr>
+<td>Collision &amp; Hit Test</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/CollisionHitTestDemo.swift"><code>CollisionHitTestDemo.swift</code></a></td>
+<td>Ray-casting against geometry, highlight on tap</td>
+</tr>
+<tr>
+<td>Gesture Editing</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/GestureEditingDemo.swift"><code>GestureEditingDemo.swift</code></a></td>
+<td>Drag, scale, and rotate entities via multi-touch gestures</td>
+</tr>
+</tbody>
+</table>
+<h3 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Demo</th>
+<th>Source</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physics</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/PhysicsDemo.swift"><code>PhysicsDemo.swift</code></a></td>
+<td>Rigid-body simulation — tap to spawn bouncing balls</td>
+</tr>
+<tr>
+<td>Double Pendulum</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/DoublePendulumDemo.swift"><code>DoublePendulumDemo.swift</code></a></td>
+<td>Chaotic double-pendulum physics</td>
+</tr>
+<tr>
+<td>Custom Mesh</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/CustomMeshDemo.swift"><code>CustomMeshDemo.swift</code></a></td>
+<td><code>MeshNode.fromVertices</code> — raw vertex data</td>
+</tr>
+<tr>
+<td>PBR Materials</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/MaterialsDemo.swift"><code>MaterialsDemo.swift</code></a></td>
+<td>Full PBR material parameter explorer</td>
+</tr>
+<tr>
+<td>Spatial Audio</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/SpatialAudioDemo.swift"><code>SpatialAudioDemo.swift</code></a></td>
+<td><code>SpatialAudioNode</code> — positional audio tied to scene entities</td>
+</tr>
+<tr>
+<td>Reflection Probes</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ReflectionProbesDemo.swift"><code>ReflectionProbesDemo.swift</code></a></td>
+<td>Local cubemap reflection probes</td>
+</tr>
+<tr>
+<td>Shape Extrude</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ShapeExtrudeDemo.swift"><code>ShapeExtrudeDemo.swift</code></a></td>
+<td><code>ShapeNode</code> — extrude a 2D path into a 3D solid</td>
+</tr>
+<tr>
+<td>Occlusion Material</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/OcclusionMaterialDemo.swift"><code>OcclusionMaterialDemo.swift</code></a></td>
+<td>Occluder plane that hides entities behind virtual geometry</td>
+</tr>
+<tr>
+<td>Debug Overlay</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/DebugOverlayDemo.swift"><code>DebugOverlayDemo.swift</code></a></td>
+<td>Live FPS counter + sphere stress test</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ar-ios-only">AR (iOS only)<a class="headerlink" href="#ar-ios-only" title="Permanent link">&para;</a></h3>
+<p>AR samples require a physical device with ARKit support (A9+ chip, iOS 18+).</p>
+<table>
+<thead>
+<tr>
+<th>Demo</th>
+<th>Source</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AR Placement</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ARPlacementDemo.swift"><code>ARPlacementDemo.swift</code></a></td>
+<td>Tap-to-place USDZ on a detected plane</td>
+</tr>
+<tr>
+<td>AR Instant Placement</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ARInstantPlacementDemo.swift"><code>ARInstantPlacementDemo.swift</code></a></td>
+<td>Place without waiting for plane detection</td>
+</tr>
+<tr>
+<td>AR Orbital</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/OrbitalARDemo.swift"><code>OrbitalARDemo.swift</code></a></td>
+<td>Orbit camera in AR passthrough mode</td>
+</tr>
+<tr>
+<td>AR Lighting</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ARLightingDemo.swift"><code>ARLightingDemo.swift</code></a></td>
+<td>ARKit environmental lighting estimation</td>
+</tr>
+<tr>
+<td>AR Recording</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ARRecorderDemo.swift"><code>ARRecorderDemo.swift</code></a></td>
+<td>ReplayKit-backed AR session capture</td>
+</tr>
+<tr>
+<td>AR Image Tracking</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ARImageTrackingDemo.swift"><code>ARImageTrackingDemo.swift</code></a></td>
+<td>Track printed reference images</td>
+</tr>
+<tr>
+<td>Augmented Faces</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ARAugmentedFacesDemo.swift"><code>ARAugmentedFacesDemo.swift</code></a></td>
+<td>Front-camera face pose tracking (<code>AnchorNode.face()</code>)</td>
+</tr>
+<tr>
+<td>AR Depth Occlusion</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ARDepthOcclusionDemo.swift"><code>ARDepthOcclusionDemo.swift</code></a></td>
+<td>LiDAR depth occlusion on supported devices</td>
+</tr>
+<tr>
+<td>AR People Occlusion</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ARPeopleOcclusionDemo.swift"><code>ARPeopleOcclusionDemo.swift</code></a></td>
+<td>Occlude AR content behind real people</td>
+</tr>
+<tr>
+<td>AR Body Tracker</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ARBodyTrackerDemo.swift"><code>ARBodyTrackerDemo.swift</code></a></td>
+<td>Full-body skeleton tracking</td>
+</tr>
+<tr>
+<td>AR Scene Mesh</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/ARSceneMeshDemo.swift"><code>ARSceneMeshDemo.swift</code></a></td>
+<td>LiDAR scene reconstruction mesh</td>
+</tr>
+<tr>
+<td>AR Debug (Rerun)</td>
+<td><a href="https://github.com/sceneview/sceneview/blob/main/samples/ios-demo/SceneViewDemo/Views/Demos/RerunDebugDemo.swift"><code>RerunDebugDemo.swift</code></a></td>
+<td>Live AR debug data streamed to <a href="https://rerun.io">Rerun.io</a> viewer</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="minimal-working-examples">Minimal working examples<a class="headerlink" href="#minimal-working-examples" title="Permanent link">&para;</a></h2>
+<h3 id="model-viewer">Model viewer<a class="headerlink" href="#model-viewer" title="Permanent link">&para;</a></h3>
 <div class="language-swift highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SwiftUI</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SceneViewSwift</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -2860,338 +3178,78 @@
 </span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><strong>Demonstrates:</strong> <code>ModelNode.load</code>, <code>scaleToUnits</code>, <code>playAllAnimations</code>, <code>SceneEnvironment.studio</code>, orbit camera, grounding shadows</p>
-<hr />
-<h3 id="geometry-shapes">Geometry Shapes<a class="headerlink" href="#geometry-shapes" title="Permanent link">&para;</a></h3>
-<!-- Screenshot placeholder: Four procedural shapes (red cube, metallic sphere,
-     blue cylinder, green cone) arranged in a row with studio lighting. -->
-
-<p>Create procedural geometry with PBR materials — no external model files required.</p>
+<h3 id="procedural-geometry">Procedural geometry<a class="headerlink" href="#procedural-geometry" title="Permanent link">&para;</a></h3>
 <div class="language-swift highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SwiftUI</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SceneViewSwift</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kd">struct</span><span class="w"> </span><span class="nc">GeometryShapesSample</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="n">SceneView</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="k">in</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="c1">// Red cube</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">cube</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">cube</span><span class="p">(</span><span class="n">size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">red</span><span class="p">)</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">                </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">cube</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">            </span><span class="c1">// Metallic sphere</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">sphere</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">sphere</span><span class="p">(</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">                </span><span class="n">radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">                </span><span class="n">material</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">pbr</span><span class="p">(</span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">gray</span><span class="p">,</span><span class="w"> </span><span class="n">metallic</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">roughness</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">)</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">            </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">            </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">sphere</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">            </span><span class="c1">// Blue cylinder</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">cylinder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">cylinder</span><span class="p">(</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">                </span><span class="n">radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">blue</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">            </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">            </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">cylinder</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">            </span><span class="c1">// Green cone</span>
-</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">cone</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">cone</span><span class="p">(</span>
-</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">                </span><span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="n">radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">green</span>
-</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">            </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
-</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">            </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">cone</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">        </span><span class="p">.</span><span class="n">environment</span><span class="p">(.</span><span class="n">studio</span><span class="p">)</span>
-</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">        </span><span class="p">.</span><span class="n">cameraControls</span><span class="p">(.</span><span class="n">orbit</span><span class="p">)</span>
-</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="p">}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="n">SceneView</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">cube</span><span class="p">(</span><span class="n">size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">red</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">                </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">            </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">sphere</span><span class="p">(</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">                </span><span class="n">radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">                </span><span class="n">material</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">pbr</span><span class="p">(</span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">gray</span><span class="p">,</span><span class="w"> </span><span class="n">metallic</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">roughness</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">)</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">            </span><span class="p">)</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">            </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="p">.</span><span class="n">environment</span><span class="p">(.</span><span class="n">studio</span><span class="p">)</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="p">.</span><span class="n">cameraControls</span><span class="p">(.</span><span class="n">orbit</span><span class="p">)</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><strong>Demonstrates:</strong> <code>GeometryNode.cube</code>, <code>sphere</code>, <code>cylinder</code>, <code>cone</code>, <code>GeometryMaterial.pbr</code>, procedural mesh generation, PBR material parameters</p>
-<hr />
-<h3 id="dynamic-sky">Dynamic Sky<a class="headerlink" href="#dynamic-sky" title="Permanent link">&para;</a></h3>
-<!-- Screenshot placeholder: A scene with a sphere on a plane, warm sunset
-     directional light casting long shadows, slider at the bottom controlling time of day. -->
-
-<p>Drive a directional light's color, direction, and intensity from a time-of-day slider. Sunrise at 06:00, noon at 12:00, sunset at 18:00.</p>
+<h3 id="camera-controls-with-native-apple-modes">Camera controls with native Apple modes<a class="headerlink" href="#camera-controls-with-native-apple-modes" title="Permanent link">&para;</a></h3>
 <div class="language-swift highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SwiftUI</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SceneViewSwift</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kd">struct</span><span class="w"> </span><span class="nc">DynamicSkySample</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">hour</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">12</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kd">struct</span><span class="w"> </span><span class="nc">CameraControlsSample</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">mode</span><span class="p">:</span><span class="w"> </span><span class="n">CameraControlMode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">.</span><span class="n">orbit</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="n">VStack</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">            </span><span class="n">SceneView</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="k">in</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">                </span><span class="c1">// Ground plane</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nv">ground</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">plane</span><span class="p">(</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">                    </span><span class="n">width</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">depth</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">white</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">                </span><span class="p">)</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">                </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">ground</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">                </span><span class="c1">// Subject sphere</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nv">sphere</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">sphere</span><span class="p">(</span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">                    </span><span class="n">radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">                    </span><span class="n">material</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">pbr</span><span class="p">(</span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">white</span><span class="p">,</span><span class="w"> </span><span class="n">metallic</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">roughness</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span>
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">                </span><span class="p">)</span>
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">                </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">                </span><span class="p">.</span><span class="n">withGroundingShadow</span><span class="p">()</span>
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">                </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">sphere</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
-</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">                </span><span class="c1">// Dynamic sky light driven by slider</span>
-</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nv">sky</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">DynamicSkyNode</span><span class="p">(</span>
-</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">                    </span><span class="n">timeOfDay</span><span class="p">:</span><span class="w"> </span><span class="n">hour</span><span class="p">,</span>
-</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">                    </span><span class="n">turbidity</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">                    </span><span class="n">sunIntensity</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span>
-</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">                </span><span class="p">)</span>
-</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">                </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">sky</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">            </span><span class="p">.</span><span class="n">cameraControls</span><span class="p">(.</span><span class="n">orbit</span><span class="p">)</span>
-</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
-</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">            </span><span class="n">HStack</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">                </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;06:00&quot;</span><span class="p">)</span>
-</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">                </span><span class="n">Slider</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="n">hour</span><span class="p">,</span><span class="w"> </span><span class="k">in</span><span class="p">:</span><span class="w"> </span><span class="mf">0.</span><span class="p">..</span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="n">step</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span>
-</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">                </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;24:00&quot;</span><span class="p">)</span>
-</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">            </span><span class="p">.</span><span class="n">padding</span><span class="p">()</span>
-</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="p">}</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="n">SceneView</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="k">in</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">cube</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">cube</span><span class="p">(</span><span class="n">size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.35</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">orange</span><span class="p">)</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">            </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">cube</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="p">.</span><span class="n">cameraControls</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="p">.</span><span class="n">ignoresSafeArea</span><span class="p">()</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="c1">// mode options: .orbit | .pan | .firstPerson</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="c1">// native Apple modes (iOS 18+, not available on visionOS):</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="c1">//   .none | .tilt | .dolly</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><strong>Demonstrates:</strong> <code>DynamicSkyNode</code>, time-of-day presets (<code>.sunrise()</code>, <code>.noon()</code>, <code>.sunset()</code>, <code>.night()</code>), turbidity, reactive SwiftUI state driving 3D lighting</p>
-<hr />
-<h3 id="physics-playground">Physics Playground<a class="headerlink" href="#physics-playground" title="Permanent link">&para;</a></h3>
-<!-- Screenshot placeholder: Several colored cubes and spheres mid-fall above
-     a grey floor plane, some resting and stacked at the bottom. -->
-
-<p>Tap to throw balls that bounce off a floor and each other using rigid-body physics.</p>
+<h3 id="ar-tap-to-place">AR tap-to-place<a class="headerlink" href="#ar-tap-to-place" title="Permanent link">&para;</a></h3>
 <div class="language-swift highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SwiftUI</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SceneViewSwift</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kd">struct</span><span class="w"> </span><span class="nc">PhysicsPlaygroundSample</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">balls</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Entity</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kd">struct</span><span class="w"> </span><span class="nc">ARTapToPlaceSample</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">model</span><span class="p">:</span><span class="w"> </span><span class="n">ModelNode</span><span class="p">?</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="n">SceneView</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="k">in</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">            </span><span class="c1">// Static floor</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">floor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">plane</span><span class="p">(</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">                </span><span class="n">width</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">depth</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">lightGray</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">            </span><span class="n">PhysicsNode</span><span class="p">.</span><span class="kd">static</span><span class="p">(</span><span class="n">floor</span><span class="p">.</span><span class="n">entity</span><span class="p">,</span><span class="w"> </span><span class="n">restitution</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">)</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">            </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">floor</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">            </span><span class="c1">// Dynamic balls</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="n">ball</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">balls</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">                </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">ball</span><span class="p">)</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">        </span><span class="p">.</span><span class="n">environment</span><span class="p">(.</span><span class="n">studio</span><span class="p">)</span>
-</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">        </span><span class="p">.</span><span class="n">cameraControls</span><span class="p">(.</span><span class="n">orbit</span><span class="p">)</span>
-</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">        </span><span class="p">.</span><span class="n">onEntityTapped</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kc">_</span><span class="w"> </span><span class="k">in</span>
-</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">            </span><span class="c1">// Spawn a ball at a random position above the floor</span>
-</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">colors</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">SimpleMaterial</span><span class="p">.</span><span class="n">Color</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[.</span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">blue</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">yellow</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">orange</span><span class="p">]</span>
-</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">ball</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">sphere</span><span class="p">(</span>
-</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">                </span><span class="n">radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span>
-</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">                </span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="n">colors</span><span class="p">.</span><span class="n">randomElement</span><span class="p">()</span><span class="w"> </span><span class="p">??</span><span class="w"> </span><span class="p">.</span><span class="n">red</span>
-</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">            </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span>
-</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">                </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="p">.</span><span class="n">random</span><span class="p">(</span><span class="k">in</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1.</span><span class="p">..</span><span class="mi">1</span><span class="p">),</span>
-</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">                </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span>
-</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">                </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="p">.</span><span class="n">random</span><span class="p">(</span><span class="k">in</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mf">2.</span><span class="p">..(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">            </span><span class="p">))</span>
-</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">            </span><span class="n">PhysicsNode</span><span class="p">.</span><span class="kr">dynamic</span><span class="p">(</span>
-</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">                </span><span class="n">ball</span><span class="p">.</span><span class="n">entity</span><span class="p">,</span>
-</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">                </span><span class="n">mass</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
-</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">                </span><span class="n">restitution</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span>
-</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">                </span><span class="n">friction</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span>
-</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">            </span><span class="n">balls</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">ball</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="p">}</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="n">ARSceneView</span><span class="p">(</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">            </span><span class="n">planeDetection</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">            </span><span class="n">showPlaneOverlay</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">            </span><span class="n">showCoachingOverlay</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">            </span><span class="n">onTapOnPlane</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">arView</span><span class="w"> </span><span class="k">in</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">                </span><span class="k">guard</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">model</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nv">anchor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">AnchorNode</span><span class="p">.</span><span class="n">world</span><span class="p">(</span><span class="n">position</span><span class="p">:</span><span class="w"> </span><span class="n">position</span><span class="p">)</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">                </span><span class="n">anchor</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">                </span><span class="n">arView</span><span class="p">.</span><span class="n">scene</span><span class="p">.</span><span class="n">addAnchor</span><span class="p">(</span><span class="n">anchor</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="p">.</span><span class="n">ignoresSafeArea</span><span class="p">()</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">        </span><span class="p">.</span><span class="n">task</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">            </span><span class="n">model</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="p">?</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">ModelNode</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;models/chair.usdz&quot;</span><span class="p">)</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">                </span><span class="p">.</span><span class="n">scaleToUnits</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><strong>Demonstrates:</strong> <code>PhysicsNode.dynamic</code>, <code>PhysicsNode.static</code>, <code>restitution</code> (bounciness), <code>friction</code>, collision shapes, <code>applyImpulse</code>, <code>setVelocity</code></p>
-<hr />
-<h3 id="text-billboards">Text &amp; Billboards<a class="headerlink" href="#text-billboards" title="Permanent link">&para;</a></h3>
-<!-- Screenshot placeholder: Three spheres at different positions with white text labels
-     floating above each one ("Earth", "Mars", "Venus"), all facing the camera. -->
-
-<p>Place 3D text labels that always face the camera using <code>BillboardNode</code>.</p>
-<div class="language-swift highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SwiftUI</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SceneViewSwift</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kd">struct</span><span class="w"> </span><span class="nc">TextBillboardSample</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="n">SceneView</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="k">in</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">planets</span><span class="p">:</span><span class="w"> </span><span class="p">[(</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">SIMD3</span><span class="p">&lt;</span><span class="nb">Float</span><span class="p">&gt;,</span><span class="w"> </span><span class="n">SimpleMaterial</span><span class="p">.</span><span class="n">Color</span><span class="p">)]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">                </span><span class="p">(</span><span class="s">&quot;Earth&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">.</span><span class="n">cyan</span><span class="p">),</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">                </span><span class="p">(</span><span class="s">&quot;Mars&quot;</span><span class="p">,</span><span class="w">  </span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w">  </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">.</span><span class="n">red</span><span class="p">),</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">                </span><span class="p">(</span><span class="s">&quot;Venus&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w">  </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">.</span><span class="n">orange</span><span class="p">),</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">            </span><span class="p">]</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">planets</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">                </span><span class="c1">// Planet sphere</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nv">sphere</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">sphere</span><span class="p">(</span><span class="n">radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="n">color</span><span class="p">)</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">                    </span><span class="p">.</span><span class="n">position</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">                </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">sphere</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">                </span><span class="c1">// Billboard label above the sphere</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">BillboardNode</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">fontSize</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">                    </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">pos</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">pos</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.35</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="n">pos</span><span class="p">.</span><span class="n">z</span><span class="p">))</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">                </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">label</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">        </span><span class="p">.</span><span class="n">environment</span><span class="p">(.</span><span class="n">studio</span><span class="p">)</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">        </span><span class="p">.</span><span class="n">cameraControls</span><span class="p">(.</span><span class="n">orbit</span><span class="p">)</span>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="p">}</span>
-</span></code></pre></div>
-<p><strong>Demonstrates:</strong> <code>TextNode</code>, <code>BillboardNode</code>, <code>BillboardNode.text</code> convenience, <code>BillboardComponent</code>, camera-facing behavior, <code>.centered()</code></p>
-<hr />
-<h3 id="image-video">Image &amp; Video<a class="headerlink" href="#image-video" title="Permanent link">&para;</a></h3>
-<!-- Screenshot placeholder: A poster image on the left and a 16:9 video screen
-     on the right, both floating in a 3D scene with studio lighting. -->
-
-<p>Display images and videos on 3D planes in the scene.</p>
-<div class="language-swift highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SwiftUI</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SceneViewSwift</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kd">struct</span><span class="w"> </span><span class="nc">ImageVideoSample</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">imageNode</span><span class="p">:</span><span class="w"> </span><span class="n">ImageNode</span><span class="p">?</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">videoNode</span><span class="p">:</span><span class="w"> </span><span class="n">VideoNode</span><span class="p">?</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="n">SceneView</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="k">in</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">            </span><span class="c1">// Image on a plane</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">imageNode</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">                </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">imageNode</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">            </span><span class="c1">// Video on a plane</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">videoNode</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">                </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">videoNode</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">        </span><span class="p">.</span><span class="n">environment</span><span class="p">(.</span><span class="n">studio</span><span class="p">)</span>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">        </span><span class="p">.</span><span class="n">cameraControls</span><span class="p">(.</span><span class="n">orbit</span><span class="p">)</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">        </span><span class="p">.</span><span class="n">task</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">            </span><span class="c1">// Load an image from the bundle</span>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">            </span><span class="n">imageNode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="p">?</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">ImageNode</span><span class="p">.</span><span class="n">load</span><span class="p">(</span>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">                </span><span class="s">&quot;textures/poster.png&quot;</span><span class="p">,</span>
-</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">                </span><span class="n">width</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">                </span><span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span>
-</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">            </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">))</span>
-</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
-</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="w">            </span><span class="c1">// Load a video from the bundle</span>
-</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="w">            </span><span class="n">videoNode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">VideoNode</span><span class="p">.</span><span class="n">load</span><span class="p">(</span>
-</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">                </span><span class="s">&quot;videos/intro.mp4&quot;</span><span class="p">,</span>
-</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="w">                </span><span class="n">width</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">,</span>
-</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="w">                </span><span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="mf">0.675</span><span class="p">,</span>
-</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="w">                </span><span class="n">loop</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a><span class="w">            </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">))</span>
-</span><span id="__span-6-39"><a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a><span class="w">            </span><span class="n">videoNode</span><span class="p">?.</span><span class="n">play</span><span class="p">()</span>
-</span><span id="__span-6-40"><a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-6-41"><a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-6-42"><a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a><span class="p">}</span>
-</span></code></pre></div>
-<p><strong>Demonstrates:</strong> <code>ImageNode.load</code>, <code>VideoNode.load</code>, <code>VideoNode.play</code> / <code>pause</code> / <code>stop</code> / <code>seek</code>, video looping, image sizing, unlit vs lit image materials</p>
-<hr />
-<h3 id="fog-reflections">Fog &amp; Reflections<a class="headerlink" href="#fog-reflections" title="Permanent link">&para;</a></h3>
-<!-- Screenshot placeholder: A metallic sphere and cube on a floor with cool-tinted
-     linear fog fading distant objects, subtle cubemap reflections visible on the sphere. -->
-
-<p>Combine atmospheric fog with local cubemap reflections for realistic environments.</p>
-<div class="language-swift highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SwiftUI</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SceneViewSwift</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kd">struct</span><span class="w"> </span><span class="nc">FogReflectionSample</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="n">SceneView</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="k">in</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">            </span><span class="c1">// Ground plane</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">floor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">plane</span><span class="p">(</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">                </span><span class="n">width</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">depth</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">white</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">            </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">floor</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">            </span><span class="c1">// Metallic sphere</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">sphere</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">sphere</span><span class="p">(</span>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">                </span><span class="n">radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">                </span><span class="n">material</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">pbr</span><span class="p">(</span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">gray</span><span class="p">,</span><span class="w"> </span><span class="n">metallic</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">roughness</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">)</span>
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">            </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">))</span>
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">            </span><span class="p">.</span><span class="n">withGroundingShadow</span><span class="p">()</span>
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">            </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">sphere</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
-</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">            </span><span class="c1">// Rough cube</span>
-</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">cube</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GeometryNode</span><span class="p">.</span><span class="n">cube</span><span class="p">(</span>
-</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">                </span><span class="n">size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span>
-</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">                </span><span class="n">material</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">pbr</span><span class="p">(</span><span class="n">color</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">blue</span><span class="p">,</span><span class="w"> </span><span class="n">metallic</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">roughness</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">),</span>
-</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">                </span><span class="n">cornerRadius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span>
-</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">            </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">))</span>
-</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">            </span><span class="p">.</span><span class="n">withGroundingShadow</span><span class="p">()</span>
-</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">            </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">cube</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
-</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="w">            </span><span class="c1">// Linear fog</span>
-</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">fog</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">FogNode</span><span class="p">.</span><span class="n">linear</span><span class="p">(</span><span class="n">start</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">:</span><span class="w"> </span><span class="mf">15.0</span><span class="p">)</span>
-</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">                </span><span class="p">.</span><span class="n">color</span><span class="p">(.</span><span class="n">cool</span><span class="p">)</span>
-</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="w">            </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">fog</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>
-</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="w">            </span><span class="c1">// Reflection probe around the objects</span>
-</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">probe</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ReflectionProbeNode</span><span class="p">.</span><span class="n">box</span><span class="p">(</span>
-</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="w">                </span><span class="n">size</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">repeating</span><span class="p">:</span><span class="w"> </span><span class="mf">6.0</span><span class="p">),</span>
-</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="w">                </span><span class="n">intensity</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span>
-</span><span id="__span-7-41"><a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-7-42"><a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="w">            </span><span class="p">.</span><span class="n">position</span><span class="p">(.</span><span class="kd">init</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">))</span>
-</span><span id="__span-7-43"><a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="w">            </span><span class="n">root</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">probe</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-7-44"><a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-7-45"><a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="w">        </span><span class="p">.</span><span class="n">environment</span><span class="p">(.</span><span class="n">outdoor</span><span class="p">)</span>
-</span><span id="__span-7-46"><a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="w">        </span><span class="p">.</span><span class="n">cameraControls</span><span class="p">(.</span><span class="n">orbit</span><span class="p">)</span>
-</span><span id="__span-7-47"><a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-7-48"><a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="p">}</span>
-</span></code></pre></div>
-<p><strong>Demonstrates:</strong> <code>FogNode.linear</code>, <code>FogNode.exponential</code>, <code>FogNode.heightBased</code>, <code>FogNode.Color.cool</code>, <code>ReflectionProbeNode.box</code>, <code>ReflectionProbeNode.sphere</code>, <code>.intensity()</code>, <code>.environmentTexture()</code></p>
-<hr />
-<h2 id="ar-samples">AR samples<a class="headerlink" href="#ar-samples" title="Permanent link">&para;</a></h2>
-<h3 id="ar-tap-to-place">AR Tap-to-Place<a class="headerlink" href="#ar-tap-to-place" title="Permanent link">&para;</a></h3>
-<!-- Screenshot placeholder: Camera feed showing a detected horizontal plane with
-     a 3D model (a small chair) placed on a real table surface, plane overlay visible. -->
-
-<p>Detect real-world surfaces and tap to place a 3D model. Includes coaching overlay and plane visualization.</p>
-<div class="language-swift highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SwiftUI</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">import</span><span class="w"> </span><span class="nc">SceneViewSwift</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kd">struct</span><span class="w"> </span><span class="nc">ARTapToPlaceSample</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">model</span><span class="p">:</span><span class="w"> </span><span class="n">ModelNode</span><span class="p">?</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="n">ARSceneView</span><span class="p">(</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">            </span><span class="n">planeDetection</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">            </span><span class="n">showPlaneOverlay</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">            </span><span class="n">showCoachingOverlay</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">            </span><span class="n">onTapOnPlane</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">arView</span><span class="w"> </span><span class="k">in</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">                </span><span class="k">guard</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">model</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">                </span><span class="c1">// Create an anchor at the tapped surface point</span>
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nv">anchor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">AnchorNode</span><span class="p">.</span><span class="n">world</span><span class="p">(</span><span class="n">position</span><span class="p">:</span><span class="w"> </span><span class="n">position</span><span class="p">)</span>
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">                </span><span class="n">anchor</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">                </span><span class="n">arView</span><span class="p">.</span><span class="n">scene</span><span class="p">.</span><span class="n">addAnchor</span><span class="p">(</span><span class="n">anchor</span><span class="p">.</span><span class="n">entity</span><span class="p">)</span>
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">        </span><span class="p">)</span>
-</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">        </span><span class="p">.</span><span class="n">ignoresSafeArea</span><span class="p">()</span>
-</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">        </span><span class="p">.</span><span class="n">task</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">            </span><span class="n">model</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="p">?</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">ModelNode</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;models/chair.usdz&quot;</span><span class="p">)</span>
-</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">                </span><span class="p">.</span><span class="n">scaleToUnits</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="p">}</span>
-</span></code></pre></div>
-<p><strong>Demonstrates:</strong> <code>ARSceneView</code>, <code>AnchorNode.world</code>, plane detection (<code>.horizontal</code>, <code>.vertical</code>, <code>.both</code>), coaching overlay, <code>onTapOnPlane</code> hit testing, <code>ModelNode</code> in AR</p>
 <hr />
 <h2 id="running-the-samples">Running the samples<a class="headerlink" href="#running-the-samples" title="Permanent link">&para;</a></h2>
-<h3 id="3d-samples_1">3D samples<a class="headerlink" href="#3d-samples_1" title="Permanent link">&para;</a></h3>
+<h3 id="3d-samples">3D samples<a class="headerlink" href="#3d-samples" title="Permanent link">&para;</a></h3>
 <p>3D samples run on iOS 18+, macOS 15+, and visionOS 1+. They work in both the Simulator and on physical devices.</p>
-<h3 id="ar-samples_1">AR samples<a class="headerlink" href="#ar-samples_1" title="Permanent link">&para;</a></h3>
+<h3 id="ar-samples">AR samples<a class="headerlink" href="#ar-samples" title="Permanent link">&para;</a></h3>
 <p>AR samples require:</p>
 <ul>
 <li>A physical iPhone or iPad with ARKit support (A9 chip or later)</li>
