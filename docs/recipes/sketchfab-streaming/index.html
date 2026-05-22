@@ -2728,7 +2728,7 @@ fun MyDemo(onBack: () -&gt; Unit) {
 <li>Compute a realistic <code>scaleToUnits</code> (the resolver's bounds sanity check rejects outside <code>[0.05 m, 5 m]</code>).</li>
 <li>Pick a bundled fallback that visually resembles the streamed model so an offline render isn't broken.</li>
 <li>Add the entry to <strong>both</strong> <code>SampleAssets.kt</code> and <code>SampleAssets.swift</code>, grouped by category.</li>
-<li>Run <code>./gradlew :samples:android-demo:testDebugUnitTest --tests "io.github.sceneview.demo.sketchfab.SampleAssetsTest"</code> — the test enforces CC-BY validation, 32-char hex uids, no duplicate uids, and every Stage 2 category present.</li>
+<li>Run <code>./gradlew :samples:android-demo:testDebugUnitTest --tests "io.github.sceneview.demo.sketchfab.SampleAssetsTest"</code> — the test enforces CC-BY validation, 32-char hex uids, no duplicate uids, and every demo category present.</li>
 </ol>
 <h2 id="api-key-wiring">API key wiring<a class="headerlink" href="#api-key-wiring" title="Permanent link">&para;</a></h2>
 <p>The Sketchfab API key is a <strong>build-time secret</strong>, never a user-facing field. Android reads it from <code>local.properties</code> (<code>sketchfab.api.key=...</code>) or the <code>SKETCHFAB_API_KEY</code> GitHub Secret in CI — see <code>samples/android-demo/build.gradle</code> lines 45–61. iOS reads it from a generated <code>SketchfabConfig.swift</code> so TestFlight + App Store binaries see the live key — see <code>samples/ios-demo/Scripts/inject-sketchfab-key.sh</code> (issue <a href="https://github.com/sceneview/sceneview/issues/1157">#1157</a> shipped this in v4.3.1).</p>
