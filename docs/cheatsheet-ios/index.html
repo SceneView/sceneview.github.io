@@ -3828,13 +3828,13 @@ Android API name. Implementation issues are tracked under <code>platform: ios</c
 <tbody>
 <tr>
 <td><code>DepthMeshNode</code> + <code>rememberDepthMesh</code> (renderable depth mesh)</td>
-<td>ARKit <code>ARMeshAnchor</code> via <a href="https://developer.apple.com/documentation/arkit/arconfiguration/sceneReconstruction">Scene Reconstruction</a> (<code>ARWorldTrackingConfiguration.sceneReconstruction = .mesh</code>) — LiDAR-only (iPad Pro / iPhone Pro / Vision Pro). Not yet wrapped — tracked in <a href="https://github.com/sceneview/sceneview/issues/1860">#1860</a>.</td>
-<td>iOS surfaces the real-world mesh as a stream of <code>ARMeshAnchor</code>s with <code>MTLBuffer</code>-backed geometry. There is no ARCore-style depth image; the mesh comes directly from the LiDAR fusion pipeline. Devices without LiDAR have no equivalent — fall back to plane detection.</td>
+<td><strong>Available</strong> — <code>SceneReconstructionNode.enableReconstruction(in: arView)</code> enables ARKit scene reconstruction (LiDAR). Use <code>SceneReconstructionNode.hideMeshVisualization</code> / <code>arView.debugOptions.insert(.showSceneUnderstanding)</code> to toggle the mesh overlay. LiDAR-only (iPhone 12 Pro+ / iPad Pro).</td>
+<td>iOS surfaces the real-world mesh as a stream of <code>ARMeshAnchor</code>s with <code>MTLBuffer</code>-backed geometry, handled automatically by RealityKit's scene understanding pipeline. Devices without LiDAR have no equivalent — check <code>SceneReconstructionNode.isSupported</code> first.</td>
 </tr>
 <tr>
 <td><code>DepthCollider</code> + <code>rememberDepthCollider</code> (depth → physics collider)</td>
-<td><code>ARMeshAnchor</code> geometry → <code>CollisionComponent</code> with a <code>ShapeResource.generateConvex(from:)</code> / <code>.generateStaticMesh(positions:faceIndices:)</code> per anchor. Not yet wrapped — tracked in <a href="https://github.com/sceneview/sceneview/issues/1860">#1860</a>.</td>
-<td>Drive <code>PhysicsBodyComponent.dynamic</code> bodies in RealityKit; the static-mesh collider is rebuilt on <code>ARSession</code>-delivered mesh-anchor updates. Same LiDAR-only constraint as <code>DepthMeshNode</code>.</td>
+<td><strong>Available</strong> — <code>SceneReconstructionNode.enablePhysics(in: arView)</code> enables real-world mesh collision via <code>arView.environment.sceneUnderstanding.options.insert(.physics)</code>. Virtual objects (with <code>PhysicsBodyComponent.dynamic</code>) will collide with the LiDAR mesh automatically.</td>
+<td>RealityKit manages mesh-anchor collision shapes internally — no per-anchor <code>CollisionComponent</code> rebuild needed. Use <code>SceneReconstructionNode.enableOcclusion(in:)</code> to also occlude virtual objects behind real surfaces. Same LiDAR-only constraint as the mesh node.</td>
 </tr>
 <tr>
 <td><code>Frame.hitTestDepth(xPx, yPx)</code> (single-pixel depth raycast → position + normal)</td>
