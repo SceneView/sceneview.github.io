@@ -2698,7 +2698,7 @@ fun MyDemo(onBack: () -&gt; Unit) {
 <li><strong>AR scenes</strong> — opening the sheet does NOT pause the underlying <code>ARSceneView</code>. The sheet sits on top of the live AR feed; ARCore keeps tracking 6DOF underneath.</li>
 </ul>
 <h2 id="picker-pattern-stage-2-of-1152">Picker pattern (Stage 2 of <a href="https://github.com/sceneview/sceneview/issues/1152">#1152</a>)<a class="headerlink" href="#picker-pattern-stage-2-of-1152" title="Permanent link">&para;</a></h2>
-<p>A common pattern in the sample app: a horizontal chip row in the controls sheet picks between bundled / streamed assets. The <code>OrbitalARDemo</code> / <code>MultiModelDemo</code> / <code>AnimationDemo</code> / <code>MaterialsDemo</code> / <code>PhysicsDemo</code> / <code>ARPlacementDemo</code> / <code>ARInstantPlacementDemo</code> all use it:</p>
+<p>A common pattern in the sample app: a horizontal chip row in the controls sheet picks between bundled / streamed assets. The <code>OrbitalARDemo</code> / <code>ModelViewerDemo</code> / <code>AnimationDemo</code> / <code>MaterialsDemo</code> / <code>PhysicsDemo</code> / <code>ARPlacementDemo</code> / <code>ARInstantPlacementDemo</code> all use it:</p>
 <pre class="language-kotlin"><code>DemoScaffold(
     title = stringResource(R.string.demo_my_title),
     onBack = onBack,
