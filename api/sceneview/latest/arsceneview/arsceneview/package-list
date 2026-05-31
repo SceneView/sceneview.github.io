@@ -56,7 +56,6 @@ $dokka.location:io.github.sceneview.ar.arcore//semanticLabelFraction/com.google.
 $dokka.location:io.github.sceneview.ar.arcore//snapshot/com.google.ar.core.GeospatialPose#/PointingToDeclaration/arsceneview/io.github.sceneview.ar.arcore/snapshot.html
 $dokka.location:io.github.sceneview.ar.arcore//subsumedBy/com.google.ar.core.Plane#/PointingToDeclaration/arsceneview/io.github.sceneview.ar.arcore/subsumed-by.html
 $dokka.location:io.github.sceneview.ar.arcore//toArgbBitmap/android.media.Image#kotlin.Int#kotlin.Int/PointingToDeclaration/arsceneview/io.github.sceneview.ar.arcore/to-argb-bitmap.html
-$dokka.location:io.github.sceneview.ar.arcore//toTransform/com.google.ar.core.Pose#kotlin.FloatArray/PointingToDeclaration/arsceneview/io.github.sceneview.ar.arcore/to-transform.html
 $dokka.location:io.github.sceneview.ar.arcore//transform/com.google.ar.core.GeospatialPose#/PointingToDeclaration/arsceneview/io.github.sceneview.ar.arcore/transform.html
 $dokka.location:io.github.sceneview.ar.arcore//transform/com.google.ar.core.Pose#/PointingToDeclaration/arsceneview/io.github.sceneview.ar.arcore/transform.html
 $dokka.location:io.github.sceneview.ar.arcore//viewTransform/com.google.ar.core.Camera#/PointingToDeclaration/arsceneview/io.github.sceneview.ar.arcore/view-transform.html

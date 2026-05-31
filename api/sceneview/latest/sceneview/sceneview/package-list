@@ -1014,7 +1014,6 @@ $dokka.location:io.github.sceneview.node/LightNode/LightNode/#com.google.android
 $dokka.location:io.github.sceneview.node/LightNode/destroy/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-light-node/destroy.html
 $dokka.location:io.github.sceneview.node/LightNode/isEditable/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-light-node/is-editable.html
 $dokka.location:io.github.sceneview.node/LightNode/isTouchable/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-light-node/is-touchable.html
-$dokka.location:io.github.sceneview.node/LightNode/lightInstance/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-light-node/light-instance.html
 $dokka.location:io.github.sceneview.node/LineNode///PointingToDeclaration/sceneview/io.github.sceneview.node/-line-node/index.html
 $dokka.location:io.github.sceneview.node/LineNode/LineNode/#com.google.android.filament.Engine#dev.romainguy.kotlin.math.Float3#dev.romainguy.kotlin.math.Float3#com.google.android.filament.MaterialInstance?#kotlin.Function1[com.google.android.filament.RenderableManager.Builder,kotlin.Unit]/PointingToDeclaration/sceneview/io.github.sceneview.node/-line-node/-line-node.html
 $dokka.location:io.github.sceneview.node/LineNode/LineNode/#com.google.android.filament.Engine#io.github.sceneview.geometries.Line#com.google.android.filament.MaterialInstance?#kotlin.Function1[com.google.android.filament.RenderableManager.Builder,kotlin.Unit]/PointingToDeclaration/sceneview/io.github.sceneview.node/-line-node/-line-node.html
@@ -1048,11 +1047,8 @@ $dokka.location:io.github.sceneview.node/ModelNode.PlayingAnimation/loop/#/Point
 $dokka.location:io.github.sceneview.node/ModelNode.PlayingAnimation/speed/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/-playing-animation/speed.html
 $dokka.location:io.github.sceneview.node/ModelNode.PlayingAnimation/startTime/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/-playing-animation/start-time.html
 $dokka.location:io.github.sceneview.node/ModelNode.RenderableNode///PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/-renderable-node/index.html
-$dokka.location:io.github.sceneview.node/ModelNode.RenderableNode/axisAlignedBoundingBox/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/-renderable-node/axis-aligned-bounding-box.html
 $dokka.location:io.github.sceneview.node/ModelNode.RenderableNode/modelInstance/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/-renderable-node/model-instance.html
 $dokka.location:io.github.sceneview.node/ModelNode.RenderableNode/name/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/-renderable-node/name.html
-$dokka.location:io.github.sceneview.node/ModelNode.RenderableNode/setGeometry/#io.github.sceneview.geometries.Geometry/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/-renderable-node/set-geometry.html
-$dokka.location:io.github.sceneview.node/ModelNode.RenderableNode/setGeometryAt/#kotlin.Int#com.google.android.filament.RenderableManager.PrimitiveType#com.google.android.filament.VertexBuffer#com.google.android.filament.IndexBuffer#kotlin.Int#kotlin.Int/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/-renderable-node/set-geometry-at.html
 $dokka.location:io.github.sceneview.node/ModelNode///PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/index.html
 $dokka.location:io.github.sceneview.node/ModelNode/ModelNode/#com.google.android.filament.gltfio.FilamentInstance#kotlin.Boolean#kotlin.Float?#dev.romainguy.kotlin.math.Float3?/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/-model-node.html
 $dokka.location:io.github.sceneview.node/ModelNode/animationCount/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/animation-count.html
@@ -1077,7 +1073,6 @@ $dokka.location:io.github.sceneview.node/ModelNode/modelInstance/#/PointingToDec
 $dokka.location:io.github.sceneview.node/ModelNode/nodes/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/nodes.html
 $dokka.location:io.github.sceneview.node/ModelNode/onFrame/#kotlin.Long/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/on-frame.html
 $dokka.location:io.github.sceneview.node/ModelNode/onFrameError/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/on-frame-error.html
-$dokka.location:io.github.sceneview.node/ModelNode/onWorldTransformChanged/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/on-world-transform-changed.html
 $dokka.location:io.github.sceneview.node/ModelNode/playAnimation/#kotlin.Int#kotlin.Float#kotlin.Boolean/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/play-animation.html
 $dokka.location:io.github.sceneview.node/ModelNode/playAnimation/#kotlin.String#kotlin.Float#kotlin.Boolean/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/play-animation.html
 $dokka.location:io.github.sceneview.node/ModelNode/playingAnimations/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-model-node/playing-animations.html
@@ -1322,7 +1317,6 @@ $dokka.location:io.github.sceneview.node/RenderableNode///PointingToDeclaration/
 $dokka.location:io.github.sceneview.node/RenderableNode/RenderableNode/#com.google.android.filament.Engine#kotlin.Int#kotlin.Int#com.google.android.filament.Box#kotlin.collections.List[com.google.android.filament.MaterialInstance?]#kotlin.Boolean#kotlin.Function1[com.google.android.filament.RenderableManager.Builder,kotlin.Unit]/PointingToDeclaration/sceneview/io.github.sceneview.node/-renderable-node/-renderable-node.html
 $dokka.location:io.github.sceneview.node/RenderableNode/RenderableNode/#com.google.android.filament.Engine#kotlin.Int/PointingToDeclaration/sceneview/io.github.sceneview.node/-renderable-node/-renderable-node.html
 $dokka.location:io.github.sceneview.node/RenderableNode/destroy/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-renderable-node/destroy.html
-$dokka.location:io.github.sceneview.node/RenderableNode/renderableInstance/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-renderable-node/renderable-instance.html
 $dokka.location:io.github.sceneview.node/RenderableNode/updateCollisionShape/#/PointingToDeclaration/sceneview/io.github.sceneview.node/-renderable-node/update-collision-shape.html
 $dokka.location:io.github.sceneview.node/ShapeNode///PointingToDeclaration/sceneview/io.github.sceneview.node/-shape-node/index.html
 $dokka.location:io.github.sceneview.node/ShapeNode/ShapeNode/#com.google.android.filament.Engine#android.graphics.Path#kotlin.Float#kotlin.collections.List[kotlin.Int]#kotlin.collections.List[dev.romainguy.kotlin.math.Float2]#dev.romainguy.kotlin.math.Float3#dev.romainguy.kotlin.math.Float2#dev.romainguy.kotlin.math.Float4?#kotlin.collections.List[com.google.android.filament.MaterialInstance?]#kotlin.Function1[com.google.android.filament.RenderableManager.Builder,kotlin.Unit]/PointingToDeclaration/sceneview/io.github.sceneview.node/-shape-node/-shape-node.html
