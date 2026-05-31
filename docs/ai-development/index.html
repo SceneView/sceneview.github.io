@@ -2836,24 +2836,20 @@
 </tr>
 <tr>
 <td><code>/review</code></td>
-<td>Check threading rules, Compose API patterns, Kotlin style, module boundaries</td>
+<td>Threading, Compose API, style, module boundaries — plus <code>--score</code> (weighted eval), <code>--coverage</code> (test gaps), <code>high</code> (multi-agent triptych)</td>
 </tr>
 <tr>
 <td><code>/document</code></td>
 <td>Generate/update KDoc for changed public APIs, update <code>llms.txt</code></td>
 </tr>
 <tr>
-<td><code>/test</code></td>
-<td>Audit test coverage and generate missing tests</td>
-</tr>
-<tr>
-<td><code>/release</code>, <code>/quality-gate</code>, <code>/publish-check</code>, <code>/sync-check</code>, <code>/version-bump</code>, <code>/evaluate</code>, <code>/maintain</code></td>
+<td><code>/release</code>, <code>/quality-gate</code>, <code>/sync-check</code>, <code>/store-status</code>, <code>/version-bump</code>, <code>/maintain</code></td>
 <td>Pre-PR + release lifecycle</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>Tip — namespace conflict:</strong> the bare <code>/review</code> and <code>/test</code> commands shadow Claude Code built-ins. With the plugin installed, prefer the prefixed forms <code>/sceneview:review</code> and <code>/sceneview:test</code> to disambiguate.</p>
+<p><strong>Tip — namespace conflict:</strong> the bare <code>/review</code> command shadows a Claude Code built-in. With the plugin installed, prefer the prefixed form <code>/sceneview:review</code> to disambiguate.</p>
 </blockquote>
 <h3 id="example-workflow">Example workflow<a class="headerlink" href="#example-workflow" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>sceneview
