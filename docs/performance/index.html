@@ -1543,6 +1543,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#hot-paths-allocation-free-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hot Paths &amp; Allocation-Free APIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hot Paths &amp; Allocation-Free APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-it-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cheat-sheet-avoid-in-the-hot-path-use-instead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet — avoid in the hot path → use instead
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-line-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-line takeaway
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#measuring-performance" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2746,6 +2796,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#hot-paths-allocation-free-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hot Paths &amp; Allocation-Free APIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hot Paths &amp; Allocation-Free APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-it-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cheat-sheet-avoid-in-the-hot-path-use-instead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet — avoid in the hot path → use instead
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-line-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-line takeaway
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#measuring-performance" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3063,6 +3163,172 @@
 <p>Ship smooth 60fps 3D and AR experiences on Android. This guide covers profiling,
 asset optimization, scene tuning, Compose best practices, and device-tier strategies
 for the SceneView SDK.</p>
+<hr />
+<h2 id="hot-paths-allocation-free-apis">Hot Paths &amp; Allocation-Free APIs<a class="headerlink" href="#hot-paths-allocation-free-apis" title="Permanent link">&para;</a></h2>
+<p>This is the <strong>single most common performance bug</strong> in SceneView apps, and the one
+that AI assistants reintroduce most often. A cross-platform <a href="https://github.com/sceneview/sceneview/issues/2263">hot-path audit
+(umbrella #2263)</a> found the
+exact same anti-pattern on all five platforms: <strong>getters that decompose a matrix
+or allocate are far too easy to call once per frame.</strong> They cost almost nothing
+when called occasionally, so the cost is invisible in code review — but in a
+render-rate loop they melt your frame budget.</p>
+<div class="admonition danger">
+<p class="admonition-title">The rule</p>
+<p><strong>Never call a decomposing or allocating getter inside <code>onFrame</code>,
+<code>onSessionUpdated</code>, an <code>update</code> closure, a <code>requestAnimationFrame</code> tick, or any
+other per-frame loop.</strong> Read once, cache outside the loop, or use the
+allocation-free overload. The frame loop runs <strong>30–60 times per second</strong> — one
+stray <code>FloatArray(16)</code> there is thousands of garbage objects per second.</p>
+</div>
+<h3 id="why-it-matters">Why it matters<a class="headerlink" href="#why-it-matters" title="Permanent link">&para;</a></h3>
+<p>Three distinct failure modes, all from the same root cause:</p>
+<ul>
+<li><strong>Float drift.</strong> Decomposing a matrix into components and recomposing it every
+  frame is lossy. The trigger for this whole audit (<a href="https://github.com/sceneview/sceneview/issues/2187">#2187</a>)
+  was <code>node.quaternion = q</code> round-tripping through the world matrix → measurable
+  rotational drift over time. Writing one TRS component at a time forces a
+  decompose-edit-recompose cycle; set the whole <code>transform</code> once instead.</li>
+<li><strong>GC sawtooth.</strong> Per-frame allocation produces the classic memory-profiler
+  sawtooth: allocate → GC pause → jank. It is worst on <strong>iOS Safari / mobile web</strong>,
+  where the JS heap is small and a collection mid-<code>rAF</code> drops a frame outright.</li>
+<li><strong>JNI / bridge thunks.</strong> On Android each Filament world-matrix read is a JNI
+  round-trip; doing it three times per frame per node (position + rotation +
+  scale) is three thunks where one cached read would do.</li>
+</ul>
+<h3 id="cheat-sheet-avoid-in-the-hot-path-use-instead">Cheat sheet — avoid in the hot path → use instead<a class="headerlink" href="#cheat-sheet-avoid-in-the-hot-path-use-instead" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Android (Kotlin / Compose)</label><label for="__tabbed_1_2">AR (ARCore)</label><label for="__tabbed_1_3">KMP collision (sceneview-core)</label><label for="__tabbed_1_4">Web (Filament.js)</label><label for="__tabbed_1_5">Apple (SwiftUI / RealityKit)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Avoid per frame</th>
+<th>Use instead</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setting <code>node.position</code> / <code>node.quaternion</code> / <code>node.rotation</code> / <code>node.scale</code> individually in a loop</td>
+<td>Build a <code>Transform</code> (<code>Mat4</code>) and assign <code>node.transform = …</code> <strong>once</strong></td>
+<td>Each component setter recomposes the matrix; one-at-a-time writes also round-trip and drift (#2187)</td>
+</tr>
+<tr>
+<td><code>Mat4.toColumnsFloatArray()</code> for a per-frame uniform / <code>TransformManager.setTransform</code> upload</td>
+<td><code>Mat4.copyColumnsInto(scratch)</code> into a reused <code>FloatArray(16)</code> (also <code>Mat3.copyColumnsInto</code>)</td>
+<td><code>toColumnsFloatArray()</code> allocates a fresh array every call (#2271)</td>
+</tr>
+<tr>
+<td><code>slerp(startTransform, endTransform, …)</code> when you already hold the TRS components</td>
+<td>the TRS-tuple overload <code>slerp(startPosition, startQuaternion, startScale, …)</code></td>
+<td>The <code>Transform</code> overload runs <strong>6 matrix decompositions</strong> per call (#2265)</td>
+</tr>
+<tr>
+<td>Re-loading a model / re-creating a node per recomposition</td>
+<td><code>rememberModelInstance(modelLoader, "models/x.glb")</code>, <code>rememberNode { … }</code></td>
+<td>They cache and marshal Filament JNI onto the main thread for you</td>
+</tr>
+</tbody>
+</table>
+<p><code>node.worldPosition</code> / <code>worldQuaternion</code> / <code>worldScale</code> / <code>worldRotation</code> are
+<strong>now cached</strong> (#2264) — reading them per frame is fine. They invalidate
+automatically when the transform or parenting changes.</p>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Avoid per frame</th>
+<th>Use instead</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pose.transform</code> inside <code>onSessionUpdated</code></td>
+<td><code>pose.toTransform(scratch)</code> with a reused <code>FloatArray(16)</code>, or just feed the pose to a node/anchor setter</td>
+<td>The <code>Pose.transform</code> getter allocates a <code>FloatArray(16)</code> every read (#2266)</td>
+</tr>
+<tr>
+<td>Allocating collections — <code>frame.getUpdatedPlanes().map { … }</code>, <code>listOf(...)</code>, <code>filter</code> — every frame</td>
+<td>Hoist the references out of the callback; iterate without building new lists</td>
+<td><code>onSessionUpdated</code> runs every frame; per-frame collections are pure GC pressure</td>
+</tr>
+</tbody>
+</table>
+<p>Anchor / <code>PoseNode</code> setters already do the matrix work internally — let them,
+rather than reading <code>pose.transform</code> yourself.</p>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Avoid per frame</th>
+<th>Use instead</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A fresh <code>Ray(origin, direction)</code> per pick/cast</td>
+<td>Reuse one <code>Ray</code> and <code>setOrigin(...)</code> / <code>setDirection(...)</code></td>
+<td>Each <code>Ray</code> and each <code>getOrigin()</code> / <code>getDirection()</code> returns a <strong>new <code>Vector3</code> copy</strong></td>
+</tr>
+<tr>
+<td>Allocating per triangle in a mesh-intersection loop</td>
+<td>Reuse scratch <code>Vector3</code> / arrays across the loop</td>
+<td>Triangle loops run thousands of iterations per cast</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Avoid per frame</th>
+<th>Use instead</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fresh <code>[x, y, z]</code> / <code>float3(...)</code> / mat4 array literals every <code>requestAnimationFrame</code> tick</td>
+<td>Preallocate scratch arrays once and <strong>mutate in place</strong> before the call</td>
+<td>Filament.js reads the array synchronously, so reuse is safe; fresh literals = GC sawtooth on Safari</td>
+</tr>
+</tbody>
+</table>
+<p>SceneView's own <code>OrbitCameraController</code> already does this — it keeps
+<code>eyeScratch</code> / <code>centerScratch</code> / <code>upScratch</code> and rewrites them per frame instead
+of allocating (#2268). Follow the same pattern in your render loop.</p>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Avoid per frame</th>
+<th>Use instead</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Driving <code>@State</code> from a per-frame <code>onFrame</code> / RealityKit <code>update</code> closure</td>
+<td>Mutate a reference box (a <code>class</code> you hold), or subscribe to scene events, and only flip <code>@State</code> when UI-visible state actually changes</td>
+<td>A <code>@State</code> write every frame churns the SwiftUI view <code>body</code> — the per-frame loop should touch entities, not view state</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id="one-line-takeaway">One-line takeaway<a class="headerlink" href="#one-line-takeaway" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Per-frame code reads cached values and writes whole transforms. If a getter's
+name implies a decomposition (<code>world*</code>, <code>*.transform</code>) or returns a fresh array
+or object, hoist it out of the loop or use its allocation-free overload.</p>
+</blockquote>
 <hr />
 <h2 id="measuring-performance">Measuring Performance<a class="headerlink" href="#measuring-performance" title="Permanent link">&para;</a></h2>
 <p>Before optimizing, measure. Guessing where time is spent leads to wasted effort.</p>
