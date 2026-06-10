@@ -1288,8 +1288,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#approximated-ios-implements-via-different-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approximated — iOS implements via different mechanism
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hand-face-body-tracking-parity-1904" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hand / Face / Body tracking parity (#1904)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android
+      
+    </span>
+  </a>
   
 </li>
       
@@ -3096,8 +3129,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#approximated-ios-implements-via-different-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approximated — iOS implements via different mechanism
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hand-face-body-tracking-parity-1904" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hand / Face / Body tracking parity (#1904)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android
+      
+    </span>
+  </a>
   
 </li>
       
@@ -3843,16 +3909,17 @@ Android API name. Implementation issues are tracked under <code>platform: ios</c
 </tr>
 <tr>
 <td><code>CloudAnchorNode.host</code> / <code>.resolve</code> returning <code>Future</code> + cancel-on-dispose (#1768)</td>
-<td><code>ARGeoAnchor</code> is not equivalent; iOS Cloud Anchors require Google's <code>arcore-ios-sdk</code> (Swift Package). The Future + cancel-on-dispose pattern needs porting to <code>SceneViewSwift.CloudAnchorNode</code> — tracked in <a href="https://github.com/sceneview/sceneview/issues/1859">#1859</a>.</td>
-<td>The Future pattern matters because Cloud Anchor hosting is a billed network round-trip — cancelling on <code>View</code> disappearance avoids accruing Google Cloud charges. The iOS port wraps <code>GARSession.hostCloudAnchor</code> similarly.</td>
+<td><strong>Available</strong> — <code>CloudAnchorNode.host(ttlDays:completion:operation:)</code> / <code>.resolve(cloudAnchorId:completion:operation:)</code> return a cancellable <code>CloudAnchorFuture</code>; call <code>future.cancel()</code> from <code>.onDisappear</code> (the SwiftUI analogue of Android's <code>DisposableEffect { onDispose { future.cancel() } }</code>). To keep the core library dependency-free, the actual <code>GARSession.hostCloudAnchor</code> round-trip (Google's <code>arcore-ios-sdk</code>) is supplied by the app through the <code>operation</code> closure. (#1859)</td>
+<td>The Future pattern matters because Cloud Anchor hosting is a billed network round-trip — cancelling on <code>View</code> disappearance avoids accruing Google Cloud charges. <code>CloudAnchorFuture</code> owns the cancellation lifecycle (single-fire completion, never fires after <code>cancel()</code>/dealloc); the app adds <code>arcore-ios-sdk</code> and plugs <code>GARSession</code> into <code>operation</code>.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Why this matters for AI assistants:</strong> when a developer asks for "real-world depth"
 or "cloud anchor" code on iOS, generate the RealityKit / ARKit primitive listed above
-rather than the Android-only SceneView symbol. The implementation issues (#1859,</p>
-<h1 id="1860-track-when-a-sceneviewswift-wrapper-will-exist-until-then-raw-arkit-is-the">1860) track when a SceneViewSwift wrapper will exist; until then, raw ARKit is the<a class="headerlink" href="#1860-track-when-a-sceneviewswift-wrapper-will-exist-until-then-raw-arkit-is-the" title="Permanent link">&para;</a></h1>
-<p>supported path.</p>
+rather than the Android-only SceneView symbol. Cloud Anchors now also ship the
+cancellable-Future lifecycle wrapper (<code>CloudAnchorNode</code> / <code>CloudAnchorFuture</code>, #1859) —
+prefer it over a hand-rolled cancel flag; the app still supplies the <code>GARSession</code> call
+via <code>operation</code>.</p>
 <h3 id="approximated-ios-implements-via-different-mechanism">Approximated — iOS implements via different mechanism<a class="headerlink" href="#approximated-ios-implements-via-different-mechanism" title="Permanent link">&para;</a></h3>
 <p>Same public API name on both platforms, but the iOS render path differs.
 Use as you would on Android; expect minor visual differences.</p>
