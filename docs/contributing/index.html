@@ -3307,13 +3307,14 @@ input.</p>
 <p><strong>The Filament runtime version (in <a href="gradle/libs.versions.toml"><code>gradle/libs.versions.toml</code></a> → <code>filament = "X.Y.Z"</code>) and the <code>matc</code> toolchain that produced every committed <code>.filamat</code> blob MUST be the same major version.</strong></p>
 </blockquote>
 <p>Filament refuses any material whose binary version field does not match the runtime, with <code>Filament panic — material version N ≠ runtime M</code> on first frame. There is no compile-time check; the mismatch only manifests at runtime, demo by demo. v4.1.0 shipped with the runtime at 1.70.2 and blobs at 1.71 (two parallel branches each fixed half of the pair) — 10 demos crashed; v4.1.1 hot-fixed by realigning both sides to 1.71.</p>
-<p><strong>The 22 committed blobs that must stay in sync with their <code>.mat</code> sources</strong>, spread across three modules:</p>
+<p><strong>The 25 committed blobs that must stay in sync with their <code>.mat</code> sources</strong>, spread across three modules:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sceneview/src/main/assets/materials/     (13) — image_texture, occlusion, opaque/transparent
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>                                                colored/textured/unlit, semantics_overlay,
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>                                                video_texture(_chroma_key), view_texture_lit/_unlit
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>arsceneview/src/main/assets/materials/    (6) — camera_stream_flat/_depth, face_mesh(_occluder),
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>                                                plane_renderer(_shadow)
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>website-static/materials/                 (3) — lit_colored, transparent_colored, unlit_colored
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>arsceneview/src/main/assets/materials/    (9) — camera_stream_flat/_depth/_person_occlusion,
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>                                                face_mesh(_occluder), plane_renderer(_shadow)(_v2),
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>                                                shadow_receiver
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>website-static/materials/                 (3) — lit_colored, transparent_colored, unlit_colored
 </span></code></pre></div>
 <p><strong>The <code>tools/GenerateFilamat.sh</code> workflow.</strong> <a href="tools/GenerateFilamat.sh"><code>tools/GenerateFilamat.sh</code></a> is the single entry point for every Filament material in the repo. It auto-downloads the <code>matc</code> toolchain pinned to the Filament version in <a href="gradle/libs.versions.toml"><code>gradle/libs.versions.toml</code></a> and compiles each <code>.mat</code> to its <code>.filamat</code> blob — no manual <code>matc</code> install needed.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>bash tools/GenerateFilamat.sh                 # regenerate all 22 .filamat blobs in place
@@ -3346,7 +3347,7 @@ input.</p>
 <tr>
 <td><strong>C</strong> — ARCore</td>
 <td><code>--optimize-size -p mobile -a opengl -a vulkan</code></td>
-<td><code>arsceneview/</code> (6) + <code>sceneview/</code> semantics_overlay (1)</td>
+<td><code>arsceneview/</code> (9) + <code>sceneview/</code> semantics_overlay (1)</td>
 </tr>
 <tr>
 <td><strong>D</strong> — website / WebGL</td>
