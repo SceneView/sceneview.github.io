@@ -894,6 +894,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#imperative-node-api-plain-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imperative node API (plain JavaScript)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#environment-lighting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2604,6 +2615,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#imperative-node-api-plain-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imperative node API (plain JavaScript)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#environment-lighting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2741,6 +2763,32 @@ fun main() {
 </tr>
 </tbody>
 </table>
+<h2 id="imperative-node-api-plain-javascript">Imperative node API (plain JavaScript)<a class="headerlink" href="#imperative-node-api-plain-javascript" title="Permanent link">&para;</a></h2>
+<p>The <code>configure {}</code> builder DSL is fire-and-forget: it describes a static scene
+once. Since <a href="https://github.com/sceneview/sceneview/issues/2024">#2024</a> slice 3
+the plain-JavaScript viewer (<code>window.sceneview</code>) also exposes a minimal
+<strong>imperative node surface</strong> for scenes that mutate at runtime. Each factory adds
+a retained node and returns an opaque <code>NodeHandle</code> you keep to move, rotate,
+scale, hide, re-parent, or destroy the content <strong>after</strong> it is built:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">sceneview</span><span class="p">.</span><span class="nx">createViewer</span><span class="p">(</span><span class="s2">&quot;scene-canvas&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">sv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cube</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sv</span><span class="p">.</span><span class="nx">addCubeNode</span><span class="p">(</span><span class="mf">0.2</span><span class="p">);</span><span class="w">        </span><span class="c1">// → NodeHandle, content already in scene</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nx">cube</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nx">cube</span><span class="p">.</span><span class="nx">setRotation</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">              </span><span class="c1">// Euler degrees (ZYX)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">cube</span><span class="p">.</span><span class="nx">setScaleUniform</span><span class="p">(</span><span class="mf">1.5</span><span class="p">);</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nx">sv</span><span class="p">.</span><span class="nx">addModelNode</span><span class="p">(</span><span class="s2">&quot;models/DamagedHelmet.glb&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">model</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nx">model</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">cube</span><span class="p">);</span><span class="w">                  </span><span class="c1">// cube now follows the model</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p">});</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">});</span>
+</span></code></pre></div>
+<p>Factories: <code>addNode()</code> (empty pivot), <code>addModelNode(url)</code> (→ <code>Promise&lt;NodeHandle&gt;</code>),
+<code>addCubeNode(size)</code>, <code>addSphereNode(radius)</code>,
+<code>addLightNode("directional" | "point" | "spot")</code>, and <code>removeNode(handle)</code>.
+<code>NodeHandle</code> methods: <code>setPosition</code> / <code>setRotation</code> (Euler degrees) / <code>setScale</code>
+/ <code>setScaleUniform</code> / <code>setVisible</code> / <code>visible</code> / <code>addChild</code> / <code>removeChild</code> /
+<code>getWorldPosition</code> / <code>destroy</code>. This is a first, minimal slice — no gestures or
+collision yet, and <code>CameraNode</code> / <code>addGeometryNode</code> stay Kotlin-only. Full
+Android/iOS node parity continues under #2024.</p>
 <h2 id="environment-lighting">Environment Lighting<a class="headerlink" href="#environment-lighting" title="Permanent link">&para;</a></h2>
 <pre class="language-kotlin"><code>environment(
     iblUrl = "environments/pillars_2k_ibl.ktx",
