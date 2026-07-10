@@ -3829,6 +3829,11 @@ silent stub.</p>
 <td>Record-only via <a href="https://github.com/sceneview/sceneview/issues/1032">#1032 ReplayKit</a>; replay stays Android-only</td>
 </tr>
 <tr>
+<td><code>SurfaceMirrorer</code> / <code>rememberSurfaceMirrorer()</code> (+ <code>surfaceMirrorer</code> on <code>SceneView</code>/<code>ARSceneView</code>, #2626)</td>
+<td>In-app scene→MP4 mirroring via Filament <code>Renderer.copyFrame</code>; RealityKit has no per-frame surface-copy equivalent</td>
+<td>iOS records the scene via ReplayKit <code>RPScreenRecorder</code> — see <a href="#arrecorder-v430-record-only">ARRecorder</a> above; the <code>surfaceMirrorer</code> parameter stays Android-only</td>
+</tr>
+<tr>
 <td><code>rememberARPlaybackStatus(session)</code> (#1770)</td>
 <td>Mirrors ARCore <code>Session.getPlaybackStatus</code> — no ARKit counterpart</td>
 <td>iOS-skip; surface "Live AR only" in UI</td>
