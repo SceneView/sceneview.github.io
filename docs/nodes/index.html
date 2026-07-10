@@ -3878,7 +3878,7 @@
 <li><a href="#threading-rule">Threading rule — Filament JNI is main-thread only</a></li>
 <li><a href="#remembermodelinstance">Loading models: <code>rememberModelInstance</code></a></li>
 <li><a href="#materialloader">Creating materials: <code>materialLoader.*</code></a></li>
-<li><a href="#recomposition-model">Recomposition model: params are applied via <code>SideEffect</code></a></li>
+<li><a href="#recomposition-model">Recomposition model: two-tier transform application (keyed <code>DisposableEffect</code> vs <code>SideEffect</code>)</a></li>
 </ul>
 <p><strong>Standard nodes</strong></p>
 <ul>
@@ -4048,22 +4048,53 @@ CubeNode(materialInstance = redMaterial)</code></pre>
 <p><strong>Gotcha:</strong> material instances are owned by the <code>MaterialLoader</code> and destroyed when the composable tree disposes. Don't cache them across <code>Scene</code> recompositions — use <code>remember(materialLoader)</code>.</p>
 <hr />
 <h2 id="recomposition-model">Recomposition model<a class="headerlink" href="#recomposition-model" title="Permanent link">&para;</a></h2>
-<p>Every node composable follows the same lifecycle:</p>
+<p>All node composables share the same skeleton — a <code>remember</code>'d node impl, an effect that
+pushes declarative params to that runtime node, and <code>NodeLifecycle</code> to attach/dispose — but
+they split into <strong>two tiers</strong> by <em>how</em> they push the transform (<code>position</code> / <code>rotation</code> /
+<code>scale</code>).</p>
+<p><strong>Transform-declaring nodes</strong> — <code>Node</code>, <code>ModelNode</code>, <code>SphereNode</code>, <code>ViewNode</code> — push each
+transform component through a <strong>component-keyed <code>DisposableEffect</code></strong>, so a component is
+re-applied to the runtime node <strong>only when its declared value actually changes</strong>:</p>
 <pre class="language-kotlin"><code>val node = remember(engine, /* stable id */) {
     // Constructor — runs ONCE per unique id. Heavy work goes here.
     NodeImpl(engine = engine, /* initial params */).apply { /* apply block */ }
 }
-SideEffect {
-    // Runs EVERY recomposition. Cheap mutations of existing node go here
-    // (position, rotation, scale, isVisible, etc.).
+// Keyed on the scalar components: the body re-runs ONLY when a declared component changes.
+DisposableEffect(node, position.x, position.y, position.z) {
+    node.position = position; onDispose {}
+}
+DisposableEffect(node, rotation.x, rotation.y, rotation.z) {
+    node.rotation = rotation; onDispose {}
+}
+// … scale, isVisible, isEditable keyed the same way
+NodeLifecycle(node, content) // attaches to scene + disposes on leave</code></pre>
+<p>Because the effect body runs only when a declared component changes, a <strong>bare</strong> recomposition
+(one where <code>rotation</code> never changed) no longer re-applies the declared value — so a rotation a
+gesture (<code>NodeGestureDelegate</code>) or a frame-loop driver (physics, animation, camera-follow) wrote
+directly on the runtime node <strong>survives</strong> the recomposition. Reverting this back to an unkeyed
+<code>SideEffect</code> reintroduces <a href="https://github.com/sceneview/sceneview/issues/2639">#2639</a> (a
+gesture-rotated model snapping back to its declared rotation). The keys are the individual scalar
+components, not the <code>Float3</code> wrapper.</p>
+<p><strong>Geometry / media nodes</strong> — <code>CubeNode</code>, <code>CylinderNode</code>, <code>PlaneNode</code>, <code>ImageNode</code>, <code>TextNode</code>,
+<code>VideoNode</code> — still push their transform from the <strong>older unkeyed <code>SideEffect</code> idiom</strong>, which
+re-applies <code>position</code> / <code>rotation</code> / <code>scale</code> after <strong>every</strong> successful recomposition:</p>
+<pre class="language-kotlin"><code>SideEffect {
+    // Runs EVERY recomposition — geometry/material diffing plus an unconditional transform re-apply.
     node.position = position
     node.rotation = rotation
-    // …
-}
-NodeLifecycle(node, content) // attaches to scene + disposes on leave</code></pre>
+    node.scale = scale
+}</code></pre>
+<p>Migrating these to the keyed-<code>DisposableEffect</code> idiom (so a runtime-mutated transform survives a
+bare recomposition here too) is tracked in
+<strong><a href="https://github.com/sceneview/sceneview/issues/2653">#2653</a></strong>.</p>
 <p>Key consequences:</p>
 <ul>
-<li><strong>Changing <code>position</code> / <code>rotation</code> / <code>scale</code> is cheap</strong> — driven by <code>SideEffect</code>, reapplied on every recomposition.</li>
+<li><strong>On transform-declaring nodes (<code>Node</code> / <code>ModelNode</code> / <code>SphereNode</code> / <code>ViewNode</code>), a declared
+  <code>position</code> / <code>rotation</code> / <code>scale</code> is applied only when it changes</strong> — a runtime transform a gesture
+  or frame driver wrote is not clobbered by an unrelated recomposition (#2639).</li>
+<li><strong>On geometry / media nodes (<code>CubeNode</code> etc.), <code>position</code> / <code>rotation</code> / <code>scale</code> are still
+  reapplied on every recomposition</strong> — declaring them <em>and</em> driving them from a gesture/frame driver
+  can fight until <a href="https://github.com/sceneview/sceneview/issues/2653">#2653</a> lands.</li>
 <li><strong>Changing geometry parameters (<code>size</code>, <code>radius</code>, <code>stacks</code>, …) triggers <code>updateGeometry()</code></strong> under the hood — a O(vertex count) rebuild. Cheap for small meshes, not free.</li>
 <li><strong>Changing the <code>modelInstance</code> reference rebuilds the node</strong> — use the same instance when toggling props.</li>
 <li><strong>Never call <code>node.destroy()</code> manually</strong> — let the composable's <code>NodeLifecycle</code> do it.</li>
@@ -4571,7 +4602,7 @@ val worldTr  = node.worldTransform
 child.worldPosition = Position(5f, 0f, 0f)</code></pre>
 <hr />
 <h2 id="reactive-params">Reactive params<a class="headerlink" href="#reactive-params" title="Permanent link">&para;</a></h2>
-<p>Every visual parameter that is <strong>stored as state on the node impl</strong> (position, rotation, scale, visibility, color, intensity, …) can be driven directly by Compose state. Changes flow through <code>SideEffect</code> and do not reallocate the node.</p>
+<p>Every visual parameter that is <strong>stored as state on the node impl</strong> (position, rotation, scale, visibility, color, intensity, …) can be driven directly by Compose state, and none of these reallocate the node. Transform components (<code>position</code> / <code>rotation</code> / <code>scale</code>) on <code>Node</code> / <code>ModelNode</code> / <code>SphereNode</code> / <code>ViewNode</code> are pushed through <strong>component-keyed <code>DisposableEffect</code>s</strong> — applied only when the declared value changes (see <a href="#recomposition-model">Recomposition model</a>) — while other parameters, and the transforms of the geometry/media nodes, still flow through <code>SideEffect</code>.</p>
 <pre class="language-kotlin"><code>var glowing by remember { mutableStateOf(false) }
 
 LightNode(

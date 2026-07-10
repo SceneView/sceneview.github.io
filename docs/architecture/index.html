@@ -1437,10 +1437,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-property-updates-via-sideeffect" class="md-nav__link">
+  <a href="#2-property-updates-via-keyed-disposableeffect-and-sideeffect" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Property updates via SideEffect
+        2. Property updates via keyed DisposableEffect (and SideEffect)
       
     </span>
   </a>
@@ -2719,10 +2719,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-property-updates-via-sideeffect" class="md-nav__link">
+  <a href="#2-property-updates-via-keyed-disposableeffect-and-sideeffect" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Property updates via SideEffect
+        2. Property updates via keyed DisposableEffect (and SideEffect)
       
     </span>
   </a>
@@ -3019,18 +3019,32 @@ changes to that list via <code>snapshotFlow</code> and calls <code>SceneNodeMana
 <p>When the composable leaves the tree, <code>onDispose</code> detaches the node synchronously (so the
 Filament entity is gone before <code>node.destroy()</code> releases its material/mesh resources) and
 then destroys it.</p>
-<h3 id="2-property-updates-via-sideeffect">2. Property updates via <code>SideEffect</code><a class="headerlink" href="#2-property-updates-via-sideeffect" title="Permanent link">&para;</a></h3>
+<h3 id="2-property-updates-via-keyed-disposableeffect-and-sideeffect">2. Property updates via keyed <code>DisposableEffect</code> (and <code>SideEffect</code>)<a class="headerlink" href="#2-property-updates-via-keyed-disposableeffect-and-sideeffect" title="Permanent link">&para;</a></h3>
 <p>Position, rotation, scale, visibility, and other node properties are pushed to the Filament
-entity inside a <code>SideEffect</code> block that runs after every recomposition:</p>
+entity from an effect that runs on the main thread. The <strong>transform-declaring nodes</strong> (<code>Node</code>,
+<code>ModelNode</code>, <code>SphereNode</code>, <code>ViewNode</code>) key each transform component on its scalar values, so the
+value is re-applied to the runtime node <strong>only when the declared value actually changes</strong> — not
+on an unrelated recomposition:</p>
 <pre class="language-kotlin"><code>// From SceneScope.Node()
 val node = remember(engine) { Node(engine = engine).apply(apply) }
-SideEffect {
-    node.position = position
-    node.rotation = rotation
-    node.scale = scale
-    node.isVisible = isVisible
-}</code></pre>
-<p>Because <code>SideEffect</code> runs on the main thread after composition, Filament's JNI calls (which
+DisposableEffect(node, position.x, position.y, position.z) {
+    node.position = position; onDispose {}
+}
+DisposableEffect(node, rotation.x, rotation.y, rotation.z) {
+    node.rotation = rotation; onDispose {}
+}
+DisposableEffect(node, scale.x, scale.y, scale.z) {
+    node.scale = scale; onDispose {}
+}
+DisposableEffect(node, isVisible) { node.isVisible = isVisible; onDispose {} }</code></pre>
+<p>Keying on the components means a recomposition that did <strong>not</strong> change a transform leaves the
+runtime node untouched — so a transform that a gesture or a frame-loop driver wrote directly on
+the node survives the recomposition
+(<a href="https://github.com/sceneview/sceneview/issues/2639">#2639</a>). The geometry/media nodes
+(<code>CubeNode</code>, <code>TextNode</code>, …) still push their transform from an unkeyed <code>SideEffect</code> that
+re-applies on every recomposition — migrating them is tracked in
+<a href="https://github.com/sceneview/sceneview/issues/2653">#2653</a>.</p>
+<p>Because these effects run on the main thread after composition, Filament's JNI calls (which
 <em>must</em> happen on the main thread) are naturally satisfied.</p>
 <h3 id="3-scene-level-sync-via-snapshotflow">3. Scene-level sync via <code>snapshotFlow</code><a class="headerlink" href="#3-scene-level-sync-via-snapshotflow" title="Permanent link">&para;</a></h3>
 <p>The <code>Scene</code> composable uses a <code>LaunchedEffect</code> that watches <code>scopeChildNodes</code> (a
@@ -3170,7 +3184,7 @@ registered models when the loader itself is disposed.</p>
 <h2 id="scene-rendering-pipeline">Scene rendering pipeline<a class="headerlink" href="#scene-rendering-pipeline" title="Permanent link">&para;</a></h2>
 <p>Every frame follows this sequence:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> 1.  Compose recomposition
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>     └─ SideEffect pushes updated node properties to Filament entities
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>     └─ keyed DisposableEffect / SideEffect pushes changed node properties to Filament entities
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a> 2.  Choreographer frame callback (withFrameNanos)
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>     ├─ modelLoader.updateLoad()         ← finishes async resource loads
