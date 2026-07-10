@@ -3021,10 +3021,9 @@ Filament entity is gone before <code>node.destroy()</code> releases its material
 then destroys it.</p>
 <h3 id="2-property-updates-via-keyed-disposableeffect-and-sideeffect">2. Property updates via keyed <code>DisposableEffect</code> (and <code>SideEffect</code>)<a class="headerlink" href="#2-property-updates-via-keyed-disposableeffect-and-sideeffect" title="Permanent link">&para;</a></h3>
 <p>Position, rotation, scale, visibility, and other node properties are pushed to the Filament
-entity from an effect that runs on the main thread. The <strong>transform-declaring nodes</strong> (<code>Node</code>,
-<code>ModelNode</code>, <code>SphereNode</code>, <code>ViewNode</code>) key each transform component on its scalar values, so the
-value is re-applied to the runtime node <strong>only when the declared value actually changes</strong> — not
-on an unrelated recomposition:</p>
+entity from an effect that runs on the main thread. <strong>Every node composable</strong> keys each
+transform component on its scalar values, so the value is re-applied to the runtime node
+<strong>only when the declared value actually changes</strong> — not on an unrelated recomposition:</p>
 <pre class="language-kotlin"><code>// From SceneScope.Node()
 val node = remember(engine) { Node(engine = engine).apply(apply) }
 DisposableEffect(node, position.x, position.y, position.z) {
@@ -3041,9 +3040,10 @@ DisposableEffect(node, isVisible) { node.isVisible = isVisible; onDispose {} }</
 runtime node untouched — so a transform that a gesture or a frame-loop driver wrote directly on
 the node survives the recomposition
 (<a href="https://github.com/sceneview/sceneview/issues/2639">#2639</a>). The geometry/media nodes
-(<code>CubeNode</code>, <code>TextNode</code>, …) still push their transform from an unkeyed <code>SideEffect</code> that
-re-applies on every recomposition — migrating them is tracked in
-<a href="https://github.com/sceneview/sceneview/issues/2653">#2653</a>.</p>
+(<code>CubeNode</code>, <code>TextNode</code>, …) used the same unkeyed-<code>SideEffect</code> idiom until
+<a href="https://github.com/sceneview/sceneview/issues/2653">#2653</a> migrated their transforms to this
+component-keyed idiom too; their <code>SideEffect</code> now only carries diffed geometry/material updates
+(and idempotent text/bitmap setters).</p>
 <p>Because these effects run on the main thread after composition, Filament's JNI calls (which
 <em>must</em> happen on the main thread) are naturally satisfied.</p>
 <h3 id="3-scene-level-sync-via-snapshotflow">3. Scene-level sync via <code>snapshotFlow</code><a class="headerlink" href="#3-scene-level-sync-via-snapshotflow" title="Permanent link">&para;</a></h3>
