@@ -3314,7 +3314,7 @@ on first invocation per Apple's privacy policy.</p>
 <tr>
 <td><code>ModelNode</code></td>
 <td><code>ModelNode.load("file.usdz")</code></td>
-<td><code>async throws</code>, <code>.scaleToUnits()</code>, <code>.position()</code>, <code>.rotation()</code></td>
+<td><code>async throws</code>, <code>.scaleToUnits()</code>, <code>.centerOrigin(normalized:)</code>, <code>.position()</code>, <code>.rotation()</code></td>
 </tr>
 <tr>
 <td><code>GeometryNode</code></td>
@@ -3638,6 +3638,10 @@ over passthrough and ignores the HDR skybox. For a fully immersive
 <tr>
 <td><code>ModelNode(modelInstance, scaleToUnits)</code></td>
 <td><code>model.scaleToUnits(units)</code></td>
+</tr>
+<tr>
+<td><code>ModelNode(centerOrigin = Position(0,-1,0))</code> (normalized AABB origin)</td>
+<td><code>.centerOrigin(normalized: SIMD3(0, -1, 0))</code> (apply before positioning — does not compose additively with a prior <code>.position</code>)</td>
 </tr>
 <tr>
 <td><code>CubeNode(size, material)</code></td>
