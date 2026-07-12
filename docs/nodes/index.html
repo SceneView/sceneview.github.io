@@ -4707,6 +4707,11 @@ Button(onClick = { glowing = !glowing }) { Text("Toggle glow") }</code></pre>
 <td>Use <code>?.let { }</code> or <code>if (instance != null)</code> guards</td>
 </tr>
 <tr>
+<td>glTF with WebP-encoded textures (<code>EXT_texture_webp</code>)</td>
+<td>Model loads/animates but renders untextured; Logcat shows <code>Missing texture provider for image/webp</code></td>
+<td>Android's Filament build has no WebP decoder — re-encode textures to PNG/JPEG/KTX2 before bundling (<a href="https://github.com/sceneview/sceneview/issues/2305">#2305</a>, <a href="../troubleshooting/#model-loads-but-renders-untextured-webp-textures">details</a>)</td>
+</tr>
+<tr>
 <td>Calling <code>node.destroy()</code> manually</td>
 <td>Use-after-free, crashes on recomposition</td>
 <td>Let the composable own the lifecycle</td>
