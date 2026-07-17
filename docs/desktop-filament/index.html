@@ -23,7 +23,7 @@
     
     
       
-        <title>Filament Desktop JNI — Research - SceneView — 3D & AR SDK</title>
+        <title>Filament on Compose Desktop — status & decision - SceneView — 3D & AR SDK</title>
       
     
     
@@ -59,7 +59,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Filament Desktop JNI — Research - SceneView — 3D & AR SDK" />
+<meta property="og:title" content="Filament on Compose Desktop — status &amp; decision - SceneView — 3D & AR SDK" />
 <meta property="og:description" content="The #1 open-source 3D & AR SDK for Android and iOS. Compose-native scenes powered by Google Filament and ARCore on Android, SwiftUI and RealityKit on iOS. Drop-in SceneView{} and ARSceneView{} composables for model viewing, AR placement, physics, and immersive experiences." />
 <meta property="og:image" content="https://sceneview.github.io/assets/images/social/desktop-filament.png" />
 <meta property="og:image:type" content="image/png" />
@@ -67,7 +67,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://sceneview.github.io/desktop-filament/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Filament Desktop JNI — Research - SceneView — 3D & AR SDK" />
+<meta property="twitter:title" content="Filament on Compose Desktop — status &amp; decision - SceneView — 3D & AR SDK" />
 <meta property="twitter:description" content="The #1 open-source 3D & AR SDK for Android and iOS. Compose-native scenes powered by Google Filament and ARCore on Android, SwiftUI and RealityKit on iOS. Drop-in SceneView{} and ARSceneView{} composables for model viewing, AR placement, physics, and immersive experiences." />
 <meta property="twitter:image" content="https://sceneview.github.io/assets/images/social/desktop-filament.png" />
 </head>
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#filament-desktop-jni-research" class="md-skip">
+        <a href="#filament-on-compose-desktop-status-decision" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Filament Desktop JNI — Research
+              Filament on Compose Desktop — status &amp; decision
             
           </span>
         </div>
@@ -2412,55 +2412,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#filament-javajni-desktop-support-what-exists" class="md-nav__link">
+  <a href="#ground-truth-what-filament-provides-on-desktop-verified-2026-07" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Filament Java/JNI desktop support — what exists
+        Ground truth: what Filament provides on desktop (verified 2026-07)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Filament Java/JNI desktop support — what exists">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-bindings-filament-kmp-the-s1-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community bindings: filament-kmp (the S1 supply)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-2540-2026-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision (#2540, 2026-07)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decision (#2540, 2026-07)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#official-support-status" class="md-nav__link">
+  <a href="#integration-notes-for-whoever-writes-the-pr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Official support status
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#awtswing-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        AWT/Swing integration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#headless-offscreen-rendering" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Headless / offscreen rendering
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-is-not-available" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What is NOT available
+        Integration notes for whoever writes the PR
       
     </span>
   </a>
@@ -2469,222 +2458,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-approaches" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration approaches
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Integration approaches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#approach-1-build-filament-from-source-with-javajni-enabled-recommended" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach 1: Build Filament from source with Java/JNI enabled (Recommended)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#approach-2-extract-java-classes-from-android-aar-build-native-jni-separately" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach 2: Extract Java classes from Android AAR + build native JNI separately
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#approach-3-lwjgl-window-filament-headless-rendering-compose-overlay" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach 3: LWJGL window + Filament headless rendering + Compose overlay
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#approach-4-separate-filament-window-compose-desktop-ui-window" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach 4: Separate Filament window + Compose Desktop UI window
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-architecture-for-sceneview-desktop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recommended architecture for SceneView Desktop
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Recommended architecture for SceneView Desktop">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rendering-pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rendering pipeline
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#module-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Module structure
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pre-built-binaries-availability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pre-built binaries availability
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#challenges" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Challenges
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Challenges">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-native-library-building-and-distribution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Native library building and distribution
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-opengl-context-sharing-between-compose-and-filament" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. OpenGL context sharing between Compose and Filament
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-platform-specific-windowing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Platform-specific windowing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-no-official-kmpcompose-desktop-support-from-filament-team" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. No official KMP/Compose Desktop support from Filament team
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-gltfio-and-asset-loading" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. gltfio and asset loading
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-material-compilation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Material compilation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#estimated-complexity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Estimated complexity
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alternative-lighter-weight-approaches" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alternative: lighter-weight approaches
-      
-    </span>
-  </a>
   
 </li>
       
@@ -2724,10 +2497,16 @@
   
 
 
-<h1 id="filament-desktop-jni-research">Filament Desktop JNI — Research<a class="headerlink" href="#filament-desktop-jni-research" title="Permanent link">&para;</a></h1>
-<p>Research document for hardware-accelerated 3D rendering on Desktop via Filament JNI,
-replacing the current software renderer in <code>samples/desktop-demo/</code>.</p>
-<p><strong>Last updated:</strong> 2026-03-25</p>
+<h1 id="filament-on-compose-desktop-status-decision">Filament on Compose Desktop — status &amp; decision<a class="headerlink" href="#filament-on-compose-desktop-status-decision" title="Permanent link">&para;</a></h1>
+<p>Decision record for hardware-accelerated 3D rendering on Desktop, replacing the
+wireframe placeholder in <code>samples/desktop-demo/</code>.</p>
+<p><strong>Last updated:</strong> 2026-07-17 · <strong>Decision:</strong> <a href="https://github.com/sceneview/sceneview/issues/2540">issue #2540</a>
+(full design doc lives in that issue; this page is the durable summary).</p>
+<blockquote>
+<p>Supersedes the 2026-03-25 research version of this page, which incorrectly
+presented Filament's desktop Java build (<code>filament-java.jar</code>, <code>FilamentCanvas</code>,
+<code>FilamentPanel</code>) as something upstream still provides. It does not — see below.</p>
+</blockquote>
 <hr />
 <h2 id="current-state-software-renderer">Current state: software renderer<a class="headerlink" href="#current-state-software-renderer" title="Permanent link">&para;</a></h2>
 <p>The desktop demo (<code>samples/desktop-demo/</code>) uses a pure-software approach:</p>
@@ -2736,342 +2515,99 @@ replacing the current software renderer in <code>samples/desktop-demo/</code>.</
 <li><strong>Compose Canvas</strong> draws wireframe geometry (cube, octahedron, diamond)</li>
 <li><strong>sceneview-core</strong> KMP math is available but rendering is manual projection + line drawing</li>
 <li>No texture mapping, no PBR materials, no glTF loading, no shadows</li>
-<li>LWJGL 3.3.6 is already declared as a dependency (OpenGL, GLFW, STB) but unused</li>
 </ul>
-<p>This is a placeholder. The About screen states "Filament JNI planned" for hardware rendering.</p>
+<p>This is a placeholder and says so in its README/About screen.</p>
 <hr />
-<h2 id="filament-javajni-desktop-support-what-exists">Filament Java/JNI desktop support — what exists<a class="headerlink" href="#filament-javajni-desktop-support-what-exists" title="Permanent link">&para;</a></h2>
-<h3 id="official-support-status">Official support status<a class="headerlink" href="#official-support-status" title="Permanent link">&para;</a></h3>
-<p>Filament (v1.71.0, March 2026) officially supports desktop platforms (macOS, Linux, Windows)
-via its native C++ API. It also provides <strong>Java/JNI bindings</strong> for desktop use:</p>
+<h2 id="ground-truth-what-filament-provides-on-desktop-verified-2026-07">Ground truth: what Filament provides on desktop (verified 2026-07)<a class="headerlink" href="#ground-truth-what-filament-provides-on-desktop-verified-2026-07" title="Permanent link">&para;</a></h2>
+<p><strong>Upstream removed Java/desktop support in July 2021</strong>
+(<a href="https://github.com/google/filament/pull/4263">google/filament#4263</a> — <em>"Remove
+support for Java/desktop builds. These builds are never tested nor used on our
+end."</em>). Concretely, today:</p>
 <ul>
-<li><strong><code>filament-java.jar</code></strong> — Java classes (Engine, Scene, View, Camera, Renderer, Material, etc.)</li>
-<li><strong><code>libfilament-jni</code></strong> — native JNI shared library (<code>.dylib</code> / <code>.so</code> / <code>.dll</code>)</li>
+<li><code>FilamentCanvas</code> / <code>FilamentPanel</code> (the old AWT/Swing hosts) are <strong>gone from the tree</strong>;
+  <code>build.sh</code> has no desktop Java path; the JNI library is only built inside the
+  Android Gradle build.</li>
+<li>The GitHub release archives (<code>filament-vX.Y.Z-{mac,linux,arm-linux,windows}.tgz</code>)
+  contain <strong>C++ static libs + host tools only</strong> — no <code>filament-java.jar</code>, no desktop
+  <code>libfilament-jni</code>.</li>
+<li>Maven Central under <code>com.google.android.filament</code> publishes <strong>Android AARs and the
+  <code>matc</code>/<code>cmgen</code> host-tool executables only</strong> — no desktop runtime library of any kind.</li>
+<li><a href="https://github.com/google/filament/issues/7558">google/filament#7558</a> (KMP desktop
+  request) is closed <strong>not planned</strong>.</li>
 </ul>
-<p>The Java API lives in <code>com.google.android.filament</code> (despite the package name, the classes
-are pure Java, not Android-specific). Key classes: <code>Engine</code>, <code>Renderer</code>, <code>Scene</code>, <code>View</code>,
-<code>Camera</code>, <code>SwapChain</code>, <code>Material</code>, <code>RenderableManager</code>, <code>LightManager</code>, <code>TransformManager</code>,
-<code>IndirectLight</code>, <code>Skybox</code>, <code>Texture</code>, <code>IndexBuffer</code>, <code>VertexBuffer</code>.</p>
-<h3 id="awtswing-integration">AWT/Swing integration<a class="headerlink" href="#awtswing-integration" title="Permanent link">&para;</a></h3>
-<p>Filament provides <code>FilamentCanvas</code> (AWT) and <code>FilamentPanel</code> (Swing) for embedding
-Filament rendering in standard Java desktop applications. Usage:</p>
+<p><strong>Bottom line:</strong> anyone doing Filament-on-JVM-desktop maintains their own native
+distribution — so the real supply question is <em>where the desktop bindings come from</em>.</p>
+<hr />
+<h2 id="community-bindings-filament-kmp-the-s1-supply">Community bindings: filament-kmp (the S1 supply)<a class="headerlink" href="#community-bindings-filament-kmp-the-s1-supply" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/Erkko68/filament-kmp">Erkko68/filament-kmp</a> — unofficial,
+Apache-2.0, actively maintained KMP wrapper around Filament, published on Maven
+Central (verified against <code>repo1.maven.org</code>, latest <code>0.1.3-beta04</code>, 2026-07-13):</p>
+<ul>
+<li><strong>Desktop/JVM via Project Panama (FFM, JDK 22+)</strong> over a single combined C wrapper,
+  natives bundled per platform: <code>io.github.erkko68.filament-ffm:filament-ffm</code> +
+  <code>filament-ffm-runtime-{macos-arm64, linux-x64, linux-arm64, windows-x64}</code>.
+  <strong>No macos-x64 (Intel Mac) natives today.</strong></li>
+<li>Wraps <strong>Filament 1.72.0</strong>; modules mirror upstream (<code>filament</code>, <code>gltfio</code>, <code>filamat</code>,
+  <code>filament-utils</code>). A legacy <code>filament-jni</code> group also exists; FFM is the current track.</li>
+<li>Backends on desktop: Metal on macOS, Vulkan default on Windows/Linux, OpenGL fallback.</li>
+<li>Its Compose Desktop integration is exactly the offscreen architecture adopted in
+  #2540, documented with real numbers in
+  <a href="https://github.com/Erkko68/filament-kmp/blob/main/docs/compose/integration-strategies.md">integration-strategies.md</a>.</li>
+</ul>
+<p>Known risks: pre-1.0 API churn, essentially single-maintainer (bus factor), version
+pin ahead of SceneView Android's Filament ref (see the <code>.filamat</code> note below).</p>
+<hr />
+<h2 id="decision-2540-2026-07">Decision (#2540, 2026-07)<a class="headerlink" href="#decision-2540-2026-07" title="Permanent link">&para;</a></h2>
+<p><strong>Offscreen route, contributor-driven, S1 bindings for the spike:</strong></p>
 <ol>
-<li>Call <code>Filament.init()</code> to load JNI</li>
-<li>Create <code>Engine</code> and <code>Renderer</code></li>
-<li>Instead of calling <code>beginFrame</code>/<code>endFrame</code> on the <code>Renderer</code>, call them on
-   <code>FilamentCanvas</code> or <code>FilamentPanel</code></li>
+<li><strong>Architecture (a) — offscreen render → pipelined <code>readPixels</code> → Skia image in
+   Compose.</strong> The 3D frame lives <em>inside</em> the Skia scene, so clipping, z-order,
+   overlays above <strong>and</strong> below, and stacked viewports all compose correctly. Cost:
+   a GPU→CPU copy (≈4 MB/frame at FHD, ≈33 MB/frame at 4K) and 1–2 frames of latency —
+   fine for a viewer/editor. AWT heavyweight interop was <strong>rejected</strong> (no reliable
+   Compose blending, and the requesting framework doesn't go through AWT); zero-copy
+   GPU interop is a later upgrade behind the same API, blocked on
+   <a href="https://github.com/JetBrains/compose-multiplatform/issues/3810">compose-multiplatform#3810</a>.</li>
+<li><strong>Binding supply S1 — consume <code>io.github.erkko68.filament-ffm</code> as a dependency.</strong>
+   Building our own distribution (S2, the 18–29-day plan from the 2026-03 version of
+   this page) is held in reserve as the documented fallback, not paid up front. If S2
+   ever happens, its sane shape is filament-kmp's (one combined C wrapper + FFM), not
+   resurrecting the 2021 JNI glue.</li>
+<li><strong>Phased, with measured gates and abandon criteria</strong> — P1 spike (engine boot +
+   offscreen + one GLB in <code>samples/desktop-demo</code> behind a flag; FPS/CPU/resize/leak
+   gates) → P2 <code>sceneview-desktop/</code> module mirroring the Android composable surface
+   for an honest subset → P3 demand-driven parity growth. Full gates and criteria in
+   <a href="https://github.com/sceneview/sceneview/issues/2540">#2540</a>.</li>
+<li><strong>Core-team cost is capped at review + CI wiring.</strong> Desktop is not a demand driver;
+   this track is green-lit because a contributor carries the implementation.</li>
 </ol>
-<h3 id="headless-offscreen-rendering">Headless / offscreen rendering<a class="headerlink" href="#headless-offscreen-rendering" title="Permanent link">&para;</a></h3>
-<p>Filament supports headless rendering via <code>NativeSurface</code>:</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">NativeSurface</span><span class="w"> </span><span class="n">surface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NativeSurface</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">);</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">SwapChain</span><span class="w"> </span><span class="n">swapChain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">engine</span><span class="p">.</span><span class="na">createSwapChainFromNativeSurface</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span></code></pre></div>
-<p>This works with the OpenGL backend. Vulkan headless has had issues (glX symbol lookup errors).</p>
-<h3 id="what-is-not-available">What is NOT available<a class="headerlink" href="#what-is-not-available" title="Permanent link">&para;</a></h3>
+<h3 id="integration-notes-for-whoever-writes-the-pr">Integration notes for whoever writes the PR<a class="headerlink" href="#integration-notes-for-whoever-writes-the-pr" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>No Maven Central artifacts for desktop</strong> — only <code>com.google.android.filament:filament-android</code>
-  is published to Maven Central (as AAR for Android)</li>
-<li><strong>No pre-built desktop JNI in GitHub releases</strong> — the <code>filament-v1.71.0-mac.tgz</code>,
-  <code>filament-v1.71.0-linux.tgz</code>, <code>filament-v1.71.0-windows.tgz</code> archives contain native
-  C++ libraries and tools, but NOT <code>filament-java.jar</code> or <code>libfilament-jni</code></li>
-<li><strong>The CI release workflow does not build Java for desktop</strong> — Java is only enabled in
-  the Android build job</li>
-<li><strong>Filament issue #7558</strong> (Feb 2024): request for KMP desktop support was closed as
-  "not planned" — the team stated the Android library is Java and not compatible with KMP</li>
+<li><strong><code>.filamat</code> ABI:</strong> SceneView's material blobs target mobile/web profiles compiled
+  with the repo-pinned <code>matc</code>. Custom desktop materials need a desktop profile
+  compiled with the <code>matc</code> <strong>matching the desktop runtime</strong> (1.72.0 under S1), which
+  puts the desktop module on its own Filament-version track — document it in the
+  Version Location Map, don't diverge silently. P1/P2 dodge this via gltfio's
+  built-in ubershaders.</li>
+<li><strong>JDK:</strong> FFM means a <strong>JDK 22+ runtime floor</strong> for the desktop module and demo
+  (jpackage bundles a modern JDK for the demo; library consumers get it documented
+  in the platform matrix).</li>
+<li><strong>Platform honesty:</strong> no Intel-Mac natives under S1 — say so in the docs rather
+  than failing at load time.</li>
+<li><strong>Frame pacing:</strong> drive rendering from <code>withFrameNanos</code>, render on the engine
+  thread (the repo's single-threaded Filament rule applies on desktop too), reuse
+  the two pixel buffers — no per-frame allocation.</li>
 </ul>
-<hr />
-<h2 id="integration-approaches">Integration approaches<a class="headerlink" href="#integration-approaches" title="Permanent link">&para;</a></h2>
-<h3 id="approach-1-build-filament-from-source-with-javajni-enabled-recommended">Approach 1: Build Filament from source with Java/JNI enabled (Recommended)<a class="headerlink" href="#approach-1-build-filament-from-source-with-javajni-enabled-recommended" title="Permanent link">&para;</a></h3>
-<p>The Filament build system (<code>build.sh</code>) supports Java JNI compilation when <code>JAVA_HOME</code> is set.
-By default it attempts to compile Java bindings. The <code>-j</code> flag can skip Java compilation.</p>
-<p><strong>Steps:</strong></p>
-<ol>
-<li>Clone <code>google/filament</code> (v1.71.0)</li>
-<li>Build for each desktop platform with Java enabled:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/path/to/jdk17
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>./build.sh<span class="w"> </span>-p<span class="w"> </span>desktop<span class="w"> </span>release
-</span></code></pre></div></li>
-<li>Collect output artifacts:</li>
-<li><code>out/release/filament/lib/filament-java.jar</code></li>
-<li><code>out/release/filament/lib/&lt;arch&gt;/libfilament-jni.{dylib,so,dll}</code></li>
-<li>Additional native deps: <code>libbackend</code>, <code>libbluegl</code>, <code>libbluevk</code>, <code>libfilabridge</code>,
-     <code>libfilaflat</code>, <code>libutils</code>, <code>libgeometry</code>, <code>libsmol-v</code>, <code>libibl</code></li>
-<li>Publish to a local or project Maven repository as:
-   <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>io.github.sceneview:filament-desktop-jni:&lt;version&gt;
-</span></code></pre></div>
-   with platform classifiers (e.g., <code>natives-macos-arm64</code>, <code>natives-linux</code>, <code>natives-windows</code>)</li>
-</ol>
-<p><strong>Pros:</strong> Full control, exact version match, all features available
-<strong>Cons:</strong> Complex CI (must build on 3+ platforms), large native binaries, maintenance burden</p>
-<h3 id="approach-2-extract-java-classes-from-android-aar-build-native-jni-separately">Approach 2: Extract Java classes from Android AAR + build native JNI separately<a class="headerlink" href="#approach-2-extract-java-classes-from-android-aar-build-native-jni-separately" title="Permanent link">&para;</a></h3>
-<p>The <code>filament-android</code> AAR on Maven Central contains the Java classes in <code>classes.jar</code>.
-These classes are the same ones used on desktop (pure Java, no Android APIs).</p>
-<p><strong>Steps:</strong></p>
-<ol>
-<li>Download <code>com.google.android.filament:filament-android:1.71.0</code> AAR</li>
-<li>Extract <code>classes.jar</code> (rename to <code>filament-java.jar</code>)</li>
-<li>Build only the native JNI shared library from Filament source for each desktop platform</li>
-<li>Load with <code>System.loadLibrary("filament-jni")</code> or <code>Filament.init()</code></li>
-</ol>
-<p><strong>Pros:</strong> Java classes always available from Maven Central without building
-<strong>Cons:</strong> Version sync risk between AAR classes and native library, some Android-specific
-classes may be present (<code>AndroidPlatform.java</code>), untested combination</p>
-<h3 id="approach-3-lwjgl-window-filament-headless-rendering-compose-overlay">Approach 3: LWJGL window + Filament headless rendering + Compose overlay<a class="headerlink" href="#approach-3-lwjgl-window-filament-headless-rendering-compose-overlay" title="Permanent link">&para;</a></h3>
-<p>Use LWJGL to create an OpenGL window context, render Filament to an offscreen texture,
-then composite with Compose Desktop UI.</p>
-<p><strong>Architecture:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>┌─────────────────────────────────┐
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>│         Compose Desktop         │
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│   (Material 3 UI, overlays)     │
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>├─────────────────────────────────┤
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│     LWJGL / GLFW window         │
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│    (OpenGL context owner)       │
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>├─────────────────────────────────┤
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│      Filament Engine            │
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│  (renders to SwapChain/FBO)     │
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│  PBR, IBL, shadows, glTF       │
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>├─────────────────────────────────┤
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│  Native: libfilament-jni        │
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│  Backend: OpenGL or Vulkan      │
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>└─────────────────────────────────┘
-</span></code></pre></div>
-<p>JetBrains has an experimental LWJGL integration for Compose Desktop that demonstrates
-this pattern (compose-multiplatform/experimental/lwjgl-integration). It creates a GLFW
-window, binds a Skia OpenGL context, and runs a ComposeScene on top.</p>
-<p><strong>Pros:</strong> Compose UI and Filament in the same window, LWJGL already in the build
-<strong>Cons:</strong> Complex GL context sharing, experimental Compose integration, frame sync issues</p>
-<h3 id="approach-4-separate-filament-window-compose-desktop-ui-window">Approach 4: Separate Filament window + Compose Desktop UI window<a class="headerlink" href="#approach-4-separate-filament-window-compose-desktop-ui-window" title="Permanent link">&para;</a></h3>
-<p>Run Filament in its own GLFW/SDL2 window (using the native C++ API or Java bindings)
-and Compose Desktop as a separate UI window. Communicate via shared state.</p>
-<p><strong>Pros:</strong> Simplest to implement, no GL context conflicts
-<strong>Cons:</strong> Two windows (bad UX), no overlay UI on the 3D viewport</p>
-<hr />
-<h2 id="recommended-architecture-for-sceneview-desktop">Recommended architecture for SceneView Desktop<a class="headerlink" href="#recommended-architecture-for-sceneview-desktop" title="Permanent link">&para;</a></h2>
-<p><strong>Approach 1 + elements of Approach 3</strong> — build Filament JNI from source, integrate via
-LWJGL OpenGL context in a Compose Desktop window.</p>
-<h3 id="rendering-pipeline">Rendering pipeline<a class="headerlink" href="#rendering-pipeline" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>1. Compose Desktop creates window via LWJGL/GLFW
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>2. Filament.init() loads libfilament-jni
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>3. Engine.create(Engine.Backend.OPENGL) creates Filament engine
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>4. SwapChain created from GLFW native window handle
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>5. Per frame:
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>   a. Compose layout pass (UI overlays, controls)
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>   b. Filament beginFrame / render / endFrame
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>   c. Compose renders UI on top via Skia
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>   d. glfwSwapBuffers()
-</span></code></pre></div>
-<h3 id="module-structure">Module structure<a class="headerlink" href="#module-structure" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sceneview-desktop/
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>├── build.gradle.kts          # Compose Desktop + LWJGL + filament-desktop-jni
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>├── src/desktopMain/kotlin/
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>│   ├── FilamentEngine.kt     # Engine lifecycle, SwapChain management
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>│   ├── DesktopScene.kt       # SceneView{} composable for desktop (mirrors Android API)
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>│   ├── DesktopModelLoader.kt # glTF/GLB loading via Filament gltfio
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>│   ├── DesktopRenderer.kt    # Frame loop, Compose+Filament composition
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>│   └── Main.kt               # Application entry point
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>└── libs/
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    ├── filament-java.jar
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    ├── natives-macos-arm64/libfilament-jni.dylib
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    ├── natives-macos/libfilament-jni.dylib
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    ├── natives-linux/libfilament-jni.so
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    └── natives-windows/filament-jni.dll
-</span></code></pre></div>
-<hr />
-<h2 id="pre-built-binaries-availability">Pre-built binaries availability<a class="headerlink" href="#pre-built-binaries-availability" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Artifact</th>
-<th>Maven Central</th>
-<th>GitHub Releases</th>
-<th>Build from source</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>filament-android (AAR)</td>
-<td>Yes (v1.71.0)</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>filament-java.jar (desktop)</td>
-<td>No</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>libfilament-jni (macOS arm64)</td>
-<td>No</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>libfilament-jni (macOS x86_64)</td>
-<td>No</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>libfilament-jni (Linux x86_64)</td>
-<td>No</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>filament-jni.dll (Windows x64)</td>
-<td>No</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Native C++ libs (desktop)</td>
-<td>No</td>
-<td>Yes (.tgz)</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>gltfio native (desktop)</td>
-<td>No</td>
-<td>Yes (.tgz)</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Key finding:</strong> Desktop JNI binaries must be built from source. They are not distributed
-in any pre-built form.</p>
-<hr />
-<h2 id="challenges">Challenges<a class="headerlink" href="#challenges" title="Permanent link">&para;</a></h2>
-<h3 id="1-native-library-building-and-distribution">1. Native library building and distribution<a class="headerlink" href="#1-native-library-building-and-distribution" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Must build Filament from source on macOS (arm64 + x86_64), Linux (x86_64), Windows (x64)</li>
-<li>CI needs 3 platform runners (GitHub Actions: <code>macos-14</code>, <code>ubuntu-24.04</code>, <code>windows-2022</code>)</li>
-<li>Total native binary size: ~50-100 MB per platform</li>
-<li>Must be packaged as Maven artifacts with platform classifiers</li>
-</ul>
-<h3 id="2-opengl-context-sharing-between-compose-and-filament">2. OpenGL context sharing between Compose and Filament<a class="headerlink" href="#2-opengl-context-sharing-between-compose-and-filament" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Compose Desktop uses Skia with an OpenGL backend</li>
-<li>Filament also wants an OpenGL context</li>
-<li>Sharing a single GL context between two renderers is fragile</li>
-<li>Alternative: Filament renders to FBO, Compose blits the texture (adds latency)</li>
-</ul>
-<h3 id="3-platform-specific-windowing">3. Platform-specific windowing<a class="headerlink" href="#3-platform-specific-windowing" title="Permanent link">&para;</a></h3>
-<ul>
-<li>macOS: requires <code>CAMetalLayer</code> or <code>NSOpenGLView</code> for Metal/GL backends</li>
-<li>Linux: X11 or Wayland surface</li>
-<li>Windows: HWND for the swap chain</li>
-<li>LWJGL/GLFW abstracts most of this, but Filament's <code>SwapChain</code> needs the native handle</li>
-</ul>
-<h3 id="4-no-official-kmpcompose-desktop-support-from-filament-team">4. No official KMP/Compose Desktop support from Filament team<a class="headerlink" href="#4-no-official-kmpcompose-desktop-support-from-filament-team" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Issue #7558 closed as "not planned"</li>
-<li>The <code>com.google.android.filament</code> package name suggests Android-first thinking</li>
-<li>Any desktop integration is community-maintained</li>
-</ul>
-<h3 id="5-gltfio-and-asset-loading">5. gltfio and asset loading<a class="headerlink" href="#5-gltfio-and-asset-loading" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>filament-utils</code> and <code>gltfio</code> (glTF loader) also need JNI bindings for desktop</li>
-<li>These are separate native libraries with their own JNI layers</li>
-<li>Without gltfio, cannot load <code>.glb</code> / <code>.gltf</code> models</li>
-</ul>
-<h3 id="6-material-compilation">6. Material compilation<a class="headerlink" href="#6-material-compilation" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Filament materials (<code>.filamat</code>) must be compiled with <code>matc</code> for the target backend</li>
-<li>Desktop uses OpenGL or Vulkan (not OpenGL ES like Android)</li>
-<li>Material files may need to be recompiled or use the <code>DESKTOP</code> target</li>
-</ul>
-<hr />
-<h2 id="estimated-complexity">Estimated complexity<a class="headerlink" href="#estimated-complexity" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Effort</th>
-<th>Risk</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Build Filament JNI from source (all 3 platforms)</td>
-<td>2-3 days</td>
-<td>Medium (build system complexity)</td>
-</tr>
-<tr>
-<td>CI pipeline for cross-platform native builds</td>
-<td>2-3 days</td>
-<td>Medium (platform runners, caching)</td>
-</tr>
-<tr>
-<td>LWJGL + Filament SwapChain integration</td>
-<td>3-5 days</td>
-<td>High (GL context sharing)</td>
-</tr>
-<tr>
-<td>Compose Desktop overlay rendering</td>
-<td>2-3 days</td>
-<td>High (Skia + Filament frame sync)</td>
-</tr>
-<tr>
-<td>glTF model loading (gltfio JNI)</td>
-<td>2-3 days</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td>SceneView{} composable API (mirror Android)</td>
-<td>3-5 days</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Material compilation for desktop backends</td>
-<td>1-2 days</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Testing and platform-specific fixes</td>
-<td>3-5 days</td>
-<td>High (3 platforms)</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>18-29 days</strong></td>
-<td><strong>High</strong></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="alternative-lighter-weight-approaches">Alternative: lighter-weight approaches<a class="headerlink" href="#alternative-lighter-weight-approaches" title="Permanent link">&para;</a></h2>
-<p>If full Filament JNI is too expensive, consider:</p>
-<ol>
-<li>
-<p><strong>Filament.js via embedded browser</strong> — Use a WebView/CEF component in Compose Desktop
-   to run the existing <code>sceneview-web</code> module. Simpler but adds browser overhead.</p>
-</li>
-<li>
-<p><strong>JMonkeyEngine or JOGL</strong> — Alternative JVM 3D engines with existing desktop support.
-   Different rendering quality than Filament but much easier to integrate.</p>
-</li>
-<li>
-<p><strong>Vulkan via LWJGL</strong> — Use LWJGL's Vulkan bindings directly with a custom renderer.
-   Maximum control but requires writing a renderer from scratch.</p>
-</li>
-<li>
-<p><strong>Keep software renderer</strong> — Adequate for previewing/debugging. Add rasterization
-   (filled triangles, depth buffer) without the Filament dependency.</p>
-</li>
-</ol>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://github.com/google/filament">Filament GitHub repository</a></li>
-<li><a href="https://github.com/google/filament/blob/main/filament/README.md">Filament README — Java/JNI usage</a></li>
-<li><a href="https://github.com/google/filament/blob/main/BUILDING.md">Filament BUILDING.md</a></li>
-<li><a href="https://github.com/google/filament/issues/7558">Filament issue #7558 — KMP desktop support</a></li>
-<li><a href="https://github.com/google/filament/issues/142">Filament issue #142 — macOS JNI loading</a></li>
-<li><a href="https://github.com/JetBrains/compose-multiplatform/tree/master/experimental/lwjgl-integration">Compose Multiplatform LWJGL integration</a></li>
-<li><a href="https://github.com/JetBrains/compose-multiplatform/issues/3810">Compose Multiplatform OpenGL issue</a></li>
-<li><a href="https://github.com/google/filament/releases">Filament releases (v1.71.0)</a></li>
-<li><a href="https://central.sonatype.com/artifact/com.google.android.filament/filament-android">Filament Android on Maven Central</a></li>
+<li><a href="https://github.com/sceneview/sceneview/issues/2540">Issue #2540 — decision + full design doc</a></li>
+<li><a href="https://github.com/google/filament/pull/4263">google/filament#4263 — removal of Java/desktop builds (2021)</a></li>
+<li><a href="https://github.com/google/filament/issues/7558">google/filament#7558 — KMP desktop support: not planned</a></li>
+<li><a href="https://github.com/Erkko68/filament-kmp">Erkko68/filament-kmp</a> ·
+  <a href="https://github.com/Erkko68/filament-kmp/blob/main/docs/compose/integration-strategies.md">Compose integration strategies</a></li>
+<li><a href="https://github.com/JetBrains/compose-multiplatform/issues/3810">compose-multiplatform#3810 — external GPU texture interop (open)</a></li>
+<li><a href="https://github.com/JetBrains/compose-multiplatform/tree/master/experimental/lwjgl-integration">JetBrains lwjgl-integration (experimental)</a></li>
 </ul>
 
 
