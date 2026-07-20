@@ -2654,10 +2654,13 @@
 <p>SceneView provides a Flutter plugin that bridges to native SceneView rendering on both Android (Filament) and iOS (RealityKit).</p>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><strong>Note:</strong> the 4.0 line of <code>sceneview_flutter</code> is not yet published on
-pub.dev (the registry still holds an unrelated 0.0.1 demo). Add the
-plugin as a Git dependency for now — see
-<a href="https://github.com/sceneview/sceneview/issues/923">#923</a>.</p>
+<p><strong>Note:</strong> the plugin publishes to pub.dev as <strong><code>flutter_sceneview</code></strong>
+(first publish in progress — <a href="https://github.com/sceneview/sceneview/issues/2735">#2735</a>).
+The pub.dev packages named <code>sceneview</code> and <code>sceneview_flutter</code> are
+unrelated third-party uploads — do not use them. Until the first
+<code>flutter_sceneview</code> publish lands, use the Git dependency below (the
+dependency key stays <code>sceneview_flutter</code> because that was the package
+name at tag v4.4.0).</p>
 </blockquote>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># pubspec.yaml</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">dependencies</span><span class="p">:</span>
