@@ -905,6 +905,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gaussian-splatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gaussian Splatting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#environment-lighting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2626,6 +2637,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gaussian-splatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gaussian Splatting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#environment-lighting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2784,12 +2806,33 @@ scale, hide, re-parent, or destroy the content <strong>after</strong> it is buil
 </span></code></pre></div>
 <p>Factories: <code>addNode()</code> (empty pivot), <code>addModelNode(url)</code> (→ <code>Promise&lt;NodeHandle&gt;</code>),
 <code>addCubeNode(size)</code>, <code>addSphereNode(radius)</code>,
-<code>addLightNode("directional" | "point" | "spot")</code>, and <code>removeNode(handle)</code>.
+<code>addLightNode("directional" | "point" | "spot")</code>, <code>addSplatNode(url)</code>
+(→ <code>Promise&lt;NodeHandle&gt;</code>, see below), and <code>removeNode(handle)</code>.
 <code>NodeHandle</code> methods: <code>setPosition</code> / <code>setRotation</code> (Euler degrees) / <code>setScale</code>
 / <code>setScaleUniform</code> / <code>setVisible</code> / <code>visible</code> / <code>addChild</code> / <code>removeChild</code> /
 <code>getWorldPosition</code> / <code>destroy</code>. This is a first, minimal slice — no gestures or
 collision yet, and <code>CameraNode</code> / <code>addGeometryNode</code> stay Kotlin-only. Full
 Android/iOS node parity continues under #2024.</p>
+<h2 id="gaussian-splatting">Gaussian Splatting<a class="headerlink" href="#gaussian-splatting" title="Permanent link">&para;</a></h2>
+<p>Since <a href="https://github.com/sceneview/sceneview/issues/2646">#2646</a> P2 the web
+viewer renders <strong>3D Gaussian Splatting</strong> captures (Scaniverse, Polycam, Luma,
+INRIA trainers) with the same Filament engine and the same rendering design as
+Android — camera-facing gaussian discs, per-splat data in <code>RGBA16F</code> textures,
+premultiplied-alpha blending, and a back-to-front painter's sort that re-runs as
+the camera moves.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">sceneview</span><span class="p">.</span><span class="nx">createViewer</span><span class="p">(</span><span class="s2">&quot;scene-canvas&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">sv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nx">sv</span><span class="p">.</span><span class="nx">addSplatNode</span><span class="p">(</span><span class="s2">&quot;models/splats/capture.ply&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">splat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">splat</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">   </span><span class="c1">// a NodeHandle like any other</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="p">});</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">});</span>
+</span></code></pre></div>
+<p><code>.ply</code> (INRIA binary little-endian) and <code>.spz</code> (Niantic) are auto-detected and
+parsed by the shared KMP <code>sceneview-core</code> parsers — the same code path Android
+uses. Kotlin/JS additionally exposes <code>SceneView.addSplatNode(splatCloud)</code> for an
+already-parsed <code>io.github.sceneview.core.splat.SplatCloud</code>.</p>
+<p>Current scope matches Android P1: <strong>isotropic</strong> billboards (each gaussian renders
+as the circumscribed disc of its largest axis) and SH degree-0 colour.
+Anisotropic screen-space ellipses are planned under the same epic.</p>
 <h2 id="environment-lighting">Environment Lighting<a class="headerlink" href="#environment-lighting" title="Permanent link">&para;</a></h2>
 <pre class="language-kotlin"><code>environment(
     iblUrl = "environments/pillars_2k_ibl.ktx",
@@ -2799,7 +2842,8 @@ Android/iOS node parity continues under #2024.</p>
 <ul>
 <li><strong>No AR</strong> — requires native sensors (camera, compass, accelerometer)</li>
 <li><strong>WebGL2 required</strong> — ~95% of browsers support it</li>
-<li><strong>glTF 2.0 / GLB only</strong> — same format as Android</li>
+<li><strong>glTF 2.0 / GLB for models</strong> — same format as Android (plus <code>.ply</code> / <code>.spz</code>
+  Gaussian-Splatting captures, see above)</li>
 <li><strong>Cross-origin</strong> — assets need CORS headers if hosted on a different domain</li>
 </ul>
 
