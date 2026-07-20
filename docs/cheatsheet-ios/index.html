@@ -1299,6 +1299,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#render-quality-knobs-ssao-bloom-msaa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Render quality knobs — SSAO / Bloom / MSAA
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3140,6 +3151,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#render-quality-knobs-ssao-bloom-msaa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Render quality knobs — SSAO / Bloom / MSAA
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3883,9 +3905,24 @@ silent stub.</p>
 <td>iOS-skip with doc warning</td>
 </tr>
 <tr>
-<td><code>Config.SemanticMode.ENABLED</code> + <code>Frame.semanticImage()</code> / <code>.semanticConfidenceImage()</code> / <code>.semanticLabelFraction(label)</code> (#1730)</td>
+<td><code>Config.SemanticMode.ENABLED</code> + <code>Frame.semanticImage()</code> / <code>.semanticConfidenceImage()</code> / <code>.semanticLabelFraction(label)</code> (#1730, <code>ar-scene-semantics</code> demo)</td>
 <td>ARKit has no equivalent per-pixel outdoor classifier — the closest primitive is <code>ARFrame.detectedBody.skeleton</code> (single-person joints, not pixel labels)</td>
 <td>iOS-skip with doc warning. Apps that need semantic-aware placement on iOS must ship their own Vision/Core ML segmentation model; AR-engine integration is not on the SceneViewSwift roadmap.</td>
+</tr>
+<tr>
+<td><code>SplatNode</code> / <code>SplatCloud</code> / <code>rememberSplatCloud</code> — 3D Gaussian Splatting (<code>splat-preview</code> demo, #2646)</td>
+<td>No first-party RealityKit Gaussian-splat primitive; would need a custom Metal render path or a mesh-impostor approximation</td>
+<td>iOS-skip — Android-only today, silently missing from every SceneViewSwift surface (#2768). Needs-decision on a future custom-Metal or impostor-mesh port.</td>
+</tr>
+<tr>
+<td><code>CollaborativeTransport</code> / <code>CollaborativeSession</code> / <code>NearbyCollaborativeTransport</code> (<code>io.github.sceneview.ar.collaborative</code>, <code>ar-collaborative</code> demo)</td>
+<td>ARCore has no native shared-AR session API (no <code>collaborationData</code>), so SceneView built a bespoke pluggable-transport + Cloud Anchor layer on top of Nearby Connections</td>
+<td><strong>Not yet built on iOS.</strong> ARKit's native <code>ARSession.collaborationData</code> (or RealityKit's <code>MultipeerConnectivityService</code>) would give iOS a <em>more</em> native path than Android's bespoke wire protocol — no custom transport abstraction needed. Tracked under the iOS-parity tracker (#2798, "Wave B").</td>
+</tr>
+<tr>
+<td><code>ar-ml-object-label</code> demo — ML Kit Object Detection over <code>Frame.cameraImage()</code> (see <code>ARMLObjectLabelDemo.kt</code>)</td>
+<td>Apple ships no built-in generic object-detection model (unlike ML Kit's default on-device model)</td>
+<td>iOS-skip — no demo port yet. The raw camera-image access this would need is already available (<code>ARFrame.capturedImage</code> — see the <code>Frame.cameraImage()</code> row above); a port would pair it with Vision + a bundled Core ML detector model.</td>
 </tr>
 </tbody>
 </table>
@@ -3964,6 +4001,63 @@ Use as you would on Android; expect minor visual differences.</p>
 code, treat the Deprecated row as no-ops to avoid; Android-only entries
 as iOS-not-implemented; Approximated entries are fine to use as-is and
 will compile + render with visual fidelity differences only.</p>
+<h3 id="render-quality-knobs-ssao-bloom-msaa">Render quality knobs — SSAO / Bloom / MSAA<a class="headerlink" href="#render-quality-knobs-ssao-bloom-msaa" title="Permanent link">&para;</a></h3>
+<p><code>.renderQuality(_:)</code> (<code>.cinematic</code> | <code>.default</code> | <code>.performance</code>) still picks
+the <em>best available</em> RealityKit defaults for each tier, but RealityKit's
+public render-options API is narrower than Filament's — some knobs Android
+exposes have no iOS equivalent at all. Ported from the source of truth,
+<code>SceneViewSwift/Sources/SceneViewSwift/RenderQuality.swift</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Knob</th>
+<th>Android (Filament)</th>
+<th>iOS (RealityKit)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shadows on/off</td>
+<td>via <code>View.setShadowingEnabled</code></td>
+<td>per-light via <code>DirectionalLightComponent.Shadow</code></td>
+</tr>
+<tr>
+<td>SSAO on/off</td>
+<td>via <code>View.ambientOcclusionOptions</code></td>
+<td>no public toggle — RealityKit auto-applies AO approximations</td>
+</tr>
+<tr>
+<td>Bloom on/off</td>
+<td>via <code>View.bloomOptions</code></td>
+<td>no public toggle</td>
+</tr>
+<tr>
+<td>MSAA</td>
+<td>via <code>View.multiSampleAntiAliasingOptions</code></td>
+<td>not user-controllable</td>
+</tr>
+<tr>
+<td>HDR color buffer</td>
+<td><code>QualityLevel.HIGH/MEDIUM/LOW</code></td>
+<td>not exposed</td>
+</tr>
+<tr>
+<td>Dynamic resolution</td>
+<td>via <code>View.dynamicResolutionOptions</code></td>
+<td>not exposed</td>
+</tr>
+<tr>
+<td>Environmental IBL intensity</td>
+<td>via <code>EnvironmentLoader</code> HDR</td>
+<td>via <code>ImageBasedLightComponent.intensityExponent</code></td>
+</tr>
+<tr>
+<td>Person occlusion (AR)</td>
+<td>(n/a)</td>
+<td>via <code>ARView.renderOptions</code> (AR only, not on <code>RealityView</code>)</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="hand-face-body-tracking-parity-1904">Hand / Face / Body tracking parity (#1904)<a class="headerlink" href="#hand-face-body-tracking-parity-1904" title="Permanent link">&para;</a></h2>
 <p>SceneView spans two ARCore runtimes on Android plus ARKit on Apple, and
