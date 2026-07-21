@@ -1221,6 +1221,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bottom-overlays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom overlays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#use-in-your-own-demo" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2548,6 +2559,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bottom-overlays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom overlays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#use-in-your-own-demo" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2648,14 +2670,55 @@ fun DemoScaffold(
     title: String,
     onBack: () -&gt; Unit,
     controls: (@Composable ColumnScope.() -&gt; Unit)? = null,
+    bottomOverlay: (@Composable DemoBottomOverlayScope.() -&gt; Unit)? = null,
     scene: @Composable BoxScope.() -&gt; Unit,
 )</code></pre>
 <ul>
 <li><strong><code>title</code></strong> — shown in the top app bar.</li>
 <li><strong><code>onBack</code></strong> — back navigation. The top app bar surfaces a back arrow.</li>
 <li><strong><code>controls</code></strong> — <em>optional</em> slot for the demo's controls. Rendered inside a vertically-scrolling <code>Column</code> so existing v1 side-panel <code>controls = { ... }</code> blocks port unchanged. <code>null</code> ⇒ no FAB, scene fills the whole viewport.</li>
+<li><strong><code>bottomOverlay</code></strong> — <em>optional</em> slot for a floating bottom banner / status pill / answer card. See <a href="#bottom-overlays">Bottom overlays</a> — put them here, never at a bare <code>Alignment.BottomCenter</code> inside <code>scene</code>.</li>
 <li><strong><code>scene</code></strong> — the trailing-lambda slot for the 3D / AR scene. Receives a <code>BoxScope</code>.</li>
 </ul>
+<h2 id="bottom-overlays">Bottom overlays<a class="headerlink" href="#bottom-overlays" title="Permanent link">&para;</a></h2>
+<p>The <code>Tune</code> FAB is <strong>scaffold chrome pinned bottom-end</strong>, and whether it exists at
+all depends on <code>controls</code>. An overlay the demo places itself at
+<code>Alignment.BottomCenter</code> therefore has no way to know whether — or by how much —
+it must get out of the way, and a long enough status string simply disappears
+under the FAB. Pixel 9 device QA found exactly that, on several demos at once
+(<a href="https://github.com/sceneview/sceneview/issues/2779">#2779</a>).</p>
+<p>Put the overlay in the <code>bottomOverlay</code> slot instead. Its receiver,
+<code>DemoBottomOverlayScope</code>, carries the one number needed:</p>
+<pre class="language-kotlin"><code>DemoScaffold(
+    title = stringResource(R.string.demo_my_title),
+    onBack = onBack,
+    controls = { /* … */ },              // ← decides whether a FAB exists at all
+    bottomOverlay = {
+        // Full-width card / banner: only its end edge can reach the FAB, so
+        // only the end edge is inset.
+        Surface(modifier = Modifier.fillMaxWidth().padding(end = settingsFabReservedSpace)) {
+            Text(answer)
+        }
+    },
+) { /* scene */ }</code></pre>
+<p>For a <strong>centred, content-width pill</strong>, inset <em>both</em> sides — a centred element
+grows outwards from the middle, so reserving only the end side would shift it
+off-centre without actually keeping its end edge out of the FAB's band:</p>
+<pre class="language-kotlin"><code>bottomOverlay = {
+    Text(
+        text = status,
+        modifier = Modifier
+            .padding(horizontal = settingsFabReservedSpace)   // symmetric ⇒ stays centred
+            .background(MaterialTheme.colorScheme.primary, RoundedCornerShape(24.dp))
+            .padding(horizontal = 24.dp, vertical = 12.dp),
+    )
+}</code></pre>
+<p><code>settingsFabReservedSpace</code> is <code>SETTINGS_FAB_RESERVED_SPACE</code> (88 dp = the 56 dp
+FAB plus its 2 × 16 dp gutter) when the demo passes <code>controls</code>, and <code>0.dp</code> when
+it does not. It is resolved <strong>once, scaffold-side</strong>, from the same condition that
+composes the FAB — so a demo whose controls are themselves conditional
+(<code>controls = if (DemoSettings.qaMode) { … } else null</code>) gets the right inset for
+free, with no duplicated condition to drift out of sync.</p>
 <h2 id="use-in-your-own-demo">Use in your own demo<a class="headerlink" href="#use-in-your-own-demo" title="Permanent link">&para;</a></h2>
 <pre class="language-kotlin"><code>@Composable
 fun MyDemo(onBack: () -&gt; Unit) {
