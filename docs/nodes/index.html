@@ -4199,7 +4199,15 @@ instance?.let {
 )</code></pre>
 <hr />
 <h2 id="viewnode">ViewNode<a class="headerlink" href="#viewnode" title="Permanent link">&para;</a></h2>
-<p>Renders a Jetpack Compose UI onto a flat plane in 3D space. Great for in-world labels, info cards, HUDs, and interactive panels.</p>
+<p>Renders a Jetpack Compose UI onto a flat plane in 3D space. Great for in-world labels, info cards, and HUDs.</p>
+<div class="admonition warning">
+<p class="admonition-title">The rendered UI is not interactive</p>
+<p>A <code>ViewNode</code> draws its Compose content into a texture, and the hosting window is
+<code>FLAG_NOT_TOUCHABLE</code> — a <code>Button</code> placed inside renders, but its <code>onClick</code> never
+fires (no ripple, no press state, no inner scrolling). To react to a tap, hit-test
+the node instead: <code>onSingleTapUp = { _, node -&gt; if (node is ViewNode) … }</code>.
+Real touch forwarding is tracked by <a href="https://github.com/sceneview/sceneview/issues/2845">#2845</a>.</p>
+</div>
 <h3 id="signature_2">Signature<a class="headerlink" href="#signature_2" title="Permanent link">&para;</a></h3>
 <pre class="language-kotlin"><code>ViewNode(
     windowManager: ViewNode.WindowManager,
