@@ -3737,18 +3737,44 @@ fun BouncingModelScreen() {
 <h2 id="camera">Camera<a class="headerlink" href="#camera" title="Permanent link">&para;</a></h2>
 <h3 id="orbit-camera-with-custom-home-position">Orbit camera with custom home position<a class="headerlink" href="#orbit-camera-with-custom-home-position" title="Permanent link">&para;</a></h3>
 <p>Use <code>rememberCameraManipulator</code> with <code>orbitHomePosition</code> and <code>targetPosition</code>.
-The user can orbit, pan, and zoom. Double-tap resets to the home position.</p>
+The user can orbit, pan, and zoom.</p>
 <pre class="language-kotlin"><code>SceneView(
     modifier = Modifier.fillMaxSize(),
     engine = engine,
     modelLoader = modelLoader,
     cameraManipulator = rememberCameraManipulator(
+        // Absolute eye position. Targets the origin here, so |orbitHomePosition| ≈ 4.47 m
+        // is the distance the subject is framed from.
         orbitHomePosition = Position(x = 0f, y = 2f, z = 4f),
         targetPosition = Position(x = 0f, y = 0f, z = 0f)
     )
 ) {
     // nodes here
 }</code></pre>
+<div class="admonition warning">
+<p class="admonition-title"><code>orbitHomePosition</code> is an absolute eye position, and its <strong>length</strong> is your framing distance</p>
+<p>Filament's <code>OrbitManipulator</code> uses <code>orbitHomePosition</code> verbatim as the eye
+(<code>mEye = mProps.orbitHomePosition</code>, default <code>(0, 0, 1)</code>); it is never re-based on
+<code>targetPosition</code>, which only sets the orbit pivot and the initial look direction.</p>
+<p>On top of that, <code>SceneView</code>'s default <code>autoCenterContent = true</code> translates the DSL
+content so its bounding-box centre lands on the <strong>world origin</strong>. The distance your
+subject is framed from is therefore <code>|orbitHomePosition|</code> — the coordinates you gave
+your nodes do not survive, and <code>targetPosition</code> does not enter into it:</p>
+<pre class="language-kotlin"><code>// Frames from |(0, 0.2, 1.2)| ≈ 1.22 m — NOT the 2.7 m that
+// |orbitHomePosition − targetPosition| suggests.
+rememberCameraManipulator(
+    orbitHomePosition = Position(0f, 0.2f, 1.2f),
+    targetPosition = Position(0f, 0f, -1.5f)
+)</code></pre>
+<p>Pick the distance you want and pass a vector of that <strong>length</strong>, or set
+<code>autoCenterContent = false</code> so authored world positions survive (the framing distance
+then becomes <code>|orbitHomePosition − contentCentre|</code>). Both readings coincide when the
+target is the origin — which is why every example on this page looks fine and why the
+discrepancy went unnoticed until <a href="https://github.com/sceneview/sceneview/issues/2873">#2873</a>.</p>
+<p>There is no built-in gesture that returns the camera to <code>orbitHomePosition</code>:
+<code>onDoubleTap</code> is a plain callback <code>SceneView</code> forwards to your code, never wired to
+the camera.</p>
+</div>
 <h3 id="fixed-camera-looking-at-a-point">Fixed camera looking at a point<a class="headerlink" href="#fixed-camera-looking-at-a-point" title="Permanent link">&para;</a></h3>
 <p>Use <code>rememberCameraNode</code> instead of a manipulator for a static viewpoint.</p>
 <pre class="language-kotlin"><code>val cameraNode = rememberCameraNode(engine) {
