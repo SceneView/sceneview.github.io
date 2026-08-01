@@ -3582,6 +3582,11 @@ on first invocation per Apple's privacy policy.</p>
 <p>Custom environment:</p>
 <div class="language-swift highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">.</span><span class="n">environment</span><span class="p">(.</span><span class="n">custom</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;My HDR&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hdrFile</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;custom.hdr&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">intensity</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">))</span>
 </span></code></pre></div>
+<p><code>intensity</code> is a <strong>linear multiplier</strong> — <code>1.0</code> leaves the HDR's own radiance
+untouched, <code>0.5</code> halves it. It is converted to RealityKit's power-of-two
+<code>intensityExponent</code> internally, so never pre-apply a <code>log2</code>. It is <strong>not</strong> an
+Android value: Android's IBL level is Filament's <code>IndirectLight.intensity</code> in
+absolute lux (default <code>10_000</code>), so the two are not interchangeable (#2897).</p>
 <p>visionOS — immersive-space skybox: a windowed / volumetric scene composites
 over passthrough and ignores the HDR skybox. For a fully immersive
 <code>ImmersiveSpace</code>, opt in with <code>.immersiveSpace()</code> to render the HDR as a
@@ -4073,8 +4078,8 @@ exposes have no iOS equivalent at all. Ported from the source of truth,
 </tr>
 <tr>
 <td>Environmental IBL intensity</td>
-<td>via <code>EnvironmentLoader</code> HDR</td>
-<td>via <code>ImageBasedLightComponent.intensityExponent</code></td>
+<td><code>IndirectLight.intensity</code>, absolute <strong>lux</strong> (<code>DEFAULT_IBL_INTENSITY</code> = 10 000)</td>
+<td><code>SceneEnvironment.intensity</code>, a linear <strong>multiplier</strong> (<code>1.0</code> = HDR untouched), converted to <code>ImageBasedLightComponent.intensityExponent</code> internally (#2897) — <strong>not</strong> interchangeable with the Android value</td>
 </tr>
 <tr>
 <td>Person occlusion (AR)</td>
