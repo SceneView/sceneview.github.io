@@ -3249,10 +3249,35 @@
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">.</span><span class="n">onEntityTapped</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">entity</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">}</span><span class="w">      </span><span class="c1">// tap handler</span>
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="p">.</span><span class="n">autoRotate</span><span class="p">(</span><span class="n">speed</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">)</span><span class="w">            </span><span class="c1">// turntable auto-rotation</span>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">.</span><span class="n">autoCenterContent</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w">           </span><span class="c1">// v4.3.0+ — library translates content centroid to orbit pivot (default true; pass false to keep explicit placements)</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="p">.</span><span class="n">mainLight</span><span class="p">(.</span><span class="n">systemDefault</span><span class="p">)</span><span class="w">         </span><span class="c1">// v4.2.0+ — see LightSlot</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">.</span><span class="n">fillLight</span><span class="p">(.</span><span class="n">systemDefault</span><span class="p">)</span><span class="w">         </span><span class="c1">// v4.2.0+</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="p">.</span><span class="n">renderQuality</span><span class="p">(.</span><span class="k">default</span><span class="p">)</span><span class="w">           </span><span class="c1">// v4.2.0+ — .cinematic | .default | .performance</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="p">.</span><span class="n">framingMargin</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span><span class="w">               </span><span class="c1">// v4.26.0+ — padding on the auto-fit distance (default 1.15; 1.0 = bounding sphere tangent; &lt; 1 fills the frame)</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">.</span><span class="n">cameraOrbit</span><span class="p">(</span><span class="n">azimuth</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">pi</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">elevation</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">pi</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span><span class="w">  </span><span class="c1">// v4.26.0+ — seeds the INITIAL orbit pose in radians; elevation is positive ABOVE the target (defaults: 0, 30°)</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="p">.</span><span class="n">mainLight</span><span class="p">(.</span><span class="n">systemDefault</span><span class="p">)</span><span class="w">         </span><span class="c1">// v4.2.0+ — see LightSlot</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="p">.</span><span class="n">fillLight</span><span class="p">(.</span><span class="n">systemDefault</span><span class="p">)</span><span class="w">         </span><span class="c1">// v4.2.0+</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="p">.</span><span class="n">renderQuality</span><span class="p">(.</span><span class="k">default</span><span class="p">)</span><span class="w">           </span><span class="c1">// v4.2.0+ — .cinematic | .default | .performance</span>
 </span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Getting a scene to fill the frame — and to show its sky</p>
+<p>The auto-fit pass fits the content's <strong>bounding sphere</strong> to the narrower
+frustum axis (so it never clips at any orbit angle), then scales that
+distance by <code>framingMargin</code>. Lower it towards <code>1.0</code> — or just below — to
+fill a tall portrait viewport; stay at or above ~<code>0.95</code> on an
+<code>autoRotate</code> scene, where the visible angle is arbitrary and a long model
+clips at its broadside azimuth.</p>
+<p><code>framingMargin</code> runs <em>inside</em> that auto-fit pass, so it has <strong>no effect at
+all when <code>autoCenterContent(false)</code> is set</strong> — it fails silently rather than
+warning. Android's equivalent lever is <code>CameraNode.frameToContent(padding =)</code>
+with <code>DEFAULT_FRAMING_PADDING = 0.15f</code>, a <em>fraction</em> where this is a
+<em>multiplier</em>: <code>margin == 1 + padding</code>, so iOS <code>1.15</code> is Android <code>0.15</code> and
+tangent is iOS <code>1.0</code> / Android <code>0.0</code>. Web has no framing-padding lever, but
+its initial orbit is settable imperatively with
+<code>sv.setCameraOrbit(theta, phi, distance)</code>.</p>
+<p><code>cameraOrbit</code> seeds only the starting pose; drag, <code>autoRotate</code> and the
+auto-fit take over from there (the fit changes distance, never these
+angles). Elevation is the one that surprises people: with the 60° vertical
+FOV, the <strong>30° default pitch puts the horizon exactly on the top edge of
+the frame</strong>, so a scene with a <code>showSkybox</code> environment shows none of its
+sky no matter how it is framed. Lower the elevation to bring the sky in.</p>
+</div>
 <hr />
 <h2 id="arsceneview-ar-ios-only">ARSceneView (AR — iOS only)<a class="headerlink" href="#arsceneview-ar-ios-only" title="Permanent link">&para;</a></h2>
 <div class="language-swift highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">ARSceneView</span><span class="p">(</span>
