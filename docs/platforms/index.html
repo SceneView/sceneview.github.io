@@ -1432,6 +1432,8 @@
       
         
       
+        
+      
     
     
     
@@ -1494,6 +1496,34 @@
     
   
     Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-multiplatform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compose Multiplatform
   
 
     
@@ -2754,8 +2784,24 @@
 <td><code>react-native/react-native-sceneview</code></td>
 <td>Alpha</td>
 </tr>
+<tr>
+<td><strong>Compose Multiplatform</strong></td>
+<td>per-platform</td>
+<td>Compose Multiplatform</td>
+<td><code>sceneview-compose</code></td>
+<td>Android implemented; iOS + Desktop placeholder</td>
+</tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Compose Multiplatform is a façade, not a platform</p>
+<p><code>sceneview-compose</code> gives you one <code>SceneViewer</code> composable from <code>commonMain</code> and
+delegates to the renderers above. It covers the <strong>viewer subset</strong> only — a model, an
+orbit camera, a light, an environment, tap hit-testing. <strong>No AR</strong>, no custom
+materials, no post-processing: those stay platform-native by design. Today Android
+renders; the iOS and Desktop actuals draw a visible "not available yet" notice.
+See <a href="../compose-multiplatform/">Compose Multiplatform</a>.</p>
+</div>
 <hr />
 <h2 id="android">Android<a class="headerlink" href="#android" title="Permanent link">&para;</a></h2>
 <p>The primary platform. SceneView wraps Google Filament (PBR rendering) and ARCore (augmented reality) in Jetpack Compose composables.</p>

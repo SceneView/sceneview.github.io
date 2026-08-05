@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://sceneview.github.io/quickstart-react-native/">
+        <link rel="canonical" href="https://sceneview.github.io/compose-multiplatform/">
       
       
-        <link rel="prev" href="../quickstart-flutter/">
+        <link rel="prev" href="../architecture/">
       
       
-        <link rel="next" href="../cheatsheet/">
+        <link rel="next" href="../android-xr/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Quickstart (React Native) - SceneView — 3D & AR SDK</title>
+        <title>Compose Multiplatform - SceneView — 3D & AR SDK</title>
       
     
     
@@ -63,17 +63,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Quickstart (React Native) - SceneView — 3D & AR SDK" />
+<meta property="og:title" content="Compose Multiplatform - SceneView — 3D & AR SDK" />
 <meta property="og:description" content="The #1 open-source 3D & AR SDK for Android and iOS. Compose-native scenes powered by Google Filament and ARCore on Android, SwiftUI and RealityKit on iOS. Drop-in SceneView{} and ARSceneView{} composables for model viewing, AR placement, physics, and immersive experiences." />
-<meta property="og:image" content="https://sceneview.github.io/assets/images/social/quickstart-react-native.png" />
+<meta property="og:image" content="https://sceneview.github.io/assets/images/social/compose-multiplatform.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://sceneview.github.io/quickstart-react-native/" />
+<meta property="og:url" content="https://sceneview.github.io/compose-multiplatform/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Quickstart (React Native) - SceneView — 3D & AR SDK" />
+<meta property="twitter:title" content="Compose Multiplatform - SceneView — 3D & AR SDK" />
 <meta property="twitter:description" content="The #1 open-source 3D & AR SDK for Android and iOS. Compose-native scenes powered by Google Filament and ARCore on Android, SwiftUI and RealityKit on iOS. Drop-in SceneView{} and ARSceneView{} composables for model viewing, AR placement, physics, and immersive experiences." />
-<meta property="twitter:image" content="https://sceneview.github.io/assets/images/social/quickstart-react-native.png" />
+<meta property="twitter:image" content="https://sceneview.github.io/assets/images/social/compose-multiplatform.png" />
 </head>
   
   
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#react-native-quickstart" class="md-skip">
+        <a href="#sceneview-on-compose-multiplatform-scope-decision" class="md-skip">
           Skip to content
         </a>
       
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quickstart (React Native)
+              Compose Multiplatform
             
           </span>
         </div>
@@ -281,12 +281,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../quickstart/" class="md-tabs__link">
           
   
@@ -324,10 +322,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../architecture/" class="md-tabs__link">
           
   
@@ -631,10 +631,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -666,22 +664,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -699,7 +696,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -854,37 +851,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quickstart (React Native)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../quickstart-react-native/" class="md-nav__link">
         
   
   
@@ -900,137 +870,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#3d-scene" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3D Scene
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ar-scene" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        AR Scene
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How It Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#props" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Props
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Props">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sceneview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SceneView
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arsceneview-extends-sceneview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ARSceneView (extends SceneView)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#type-definitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Type Definitions
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1145,13 +984,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -1160,7 +996,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
             
   
   
@@ -1431,8 +1267,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1456,21 +1294,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1488,7 +1327,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1531,10 +1370,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../compose-multiplatform/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compose Multiplatform
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1550,6 +1416,159 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ask
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-the-viewer-subset-and-nothing-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope: the viewer subset, and nothing more
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scope: the viewer subset, and nothing more">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicit-non-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit non-goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hard-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard guardrails
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desktop-bindings-vendored-from-filament-kmp-with-attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop bindings: vendored from filament-kmp, with attribution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desktop bindings: vendored from filament-kmp, with attribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attribution-is-mandatory-not-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attribution is mandatory, not optional
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-costs-stated-up-front" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inherited costs, stated up front
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#increments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Increments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2601,10 +2620,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
+  <a href="#the-ask" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install
+        The ask
       
     </span>
   </a>
@@ -2612,33 +2631,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
+  <a href="#decision" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Usage
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#3d-scene" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3D Scene
+        Decision
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#ar-scene" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#scope-the-viewer-subset-and-nothing-more" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AR Scene
+        Scope: the viewer subset, and nothing more
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scope: the viewer subset, and nothing more">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicit-non-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit non-goals
       
     </span>
   </a>
@@ -2651,10 +2670,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#hard-guardrails" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How It Works
+        Hard guardrails
       
     </span>
   </a>
@@ -2662,22 +2681,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#props" class="md-nav__link">
+  <a href="#desktop-bindings-vendored-from-filament-kmp-with-attribution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Props
+        Desktop bindings: vendored from filament-kmp, with attribution
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Props">
+    <nav class="md-nav" aria-label="Desktop bindings: vendored from filament-kmp, with attribution">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sceneview" class="md-nav__link">
+  <a href="#attribution-is-mandatory-not-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SceneView
+        Attribution is mandatory, not optional
       
     </span>
   </a>
@@ -2685,10 +2704,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#arsceneview-extends-sceneview" class="md-nav__link">
+  <a href="#inherited-costs-stated-up-front" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ARSceneView (extends SceneView)
+        Inherited costs, stated up front
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop gates
       
     </span>
   </a>
@@ -2701,10 +2731,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#type-definitions" class="md-nav__link">
+  <a href="#increments" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Type Definitions
+        Increments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
       
     </span>
   </a>
@@ -2728,7 +2769,7 @@
 
 
   
-    <a href="https://github.com/sceneview/sceneview/edit/main/docs/docs/quickstart-react-native.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/sceneview/sceneview/edit/main/docs/docs/compose-multiplatform.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2736,122 +2777,189 @@
   
 
 
-<h1 id="react-native-quickstart">React Native Quickstart<a class="headerlink" href="#react-native-quickstart" title="Permanent link">&para;</a></h1>
-<p>SceneView provides a React Native module that bridges to native SceneView rendering on both Android (Filament) and iOS (RealityKit).</p>
-<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>@sceneview-sdk/react-native
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>ios<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pod<span class="w"> </span>install
-</span></code></pre></div>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<h3 id="3d-scene">3D Scene<a class="headerlink" href="#3d-scene" title="Permanent link">&para;</a></h3>
-<div class="language-tsx highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">SceneView</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@sceneview-sdk/react-native&#39;</span><span class="p">;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">ModelViewer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">SceneView</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">flex</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="w"> </span><span class="p">}}</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="na">modelNodes</span><span class="o">=</span><span class="p">{[</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;models/damaged_helmet.glb&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="kt">1.0</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="p">]}</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="na">environment</span><span class="o">=</span><span class="s">&quot;environments/sky_2k.hdr&quot;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="na">cameraOrbit</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">/&gt;</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">);</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
-</span></code></pre></div>
-<h3 id="ar-scene">AR Scene<a class="headerlink" href="#ar-scene" title="Permanent link">&para;</a></h3>
-<div class="language-tsx highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ARSceneView</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@sceneview-sdk/react-native&#39;</span><span class="p">;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">ARViewer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">ARSceneView</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">flex</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="w"> </span><span class="p">}}</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="na">modelNodes</span><span class="o">=</span><span class="p">{[</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;models/chair.glb&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="kt">0.5</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="p">]}</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="na">planeDetection</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="na">onPlaneDetected</span><span class="o">=</span><span class="p">{(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Plane detected:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">nativeEvent</span><span class="p">);</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="p">}}</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="p">/&gt;</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="p">);</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">}</span>
-</span></code></pre></div>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>React Native (TypeScript)
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  └── Native Component
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        ├── Android → SimpleViewManager → ComposeView → SceneView { }
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        └── iOS → RCTViewManager → UIHostingController → SceneView { }
-</span></code></pre></div>
-<h2 id="props">Props<a class="headerlink" href="#props" title="Permanent link">&para;</a></h2>
-<h3 id="sceneview">SceneView<a class="headerlink" href="#sceneview" title="Permanent link">&para;</a></h3>
+<h1 id="sceneview-on-compose-multiplatform-scope-decision">SceneView on Compose Multiplatform — scope &amp; decision<a class="headerlink" href="#sceneview-on-compose-multiplatform-scope-decision" title="Permanent link">&para;</a></h1>
+<p>Decision record for <code>sceneview-compose</code>, a Compose Multiplatform façade over the
+existing per-platform renderers.</p>
+<p><strong>Last updated:</strong> 2026-08-03 · <strong>Answers:</strong> <a href="https://github.com/sceneview/sceneview/issues/558">#558</a>,
+<a href="https://github.com/sceneview/sceneview/issues/486">#486</a></p>
+<hr />
+<h2 id="the-ask">The ask<a class="headerlink" href="#the-ask" title="Permanent link">&para;</a></h2>
+<p>Two external users asked for Compose Multiplatform support and were closed without
+it ever existing:</p>
+<ul>
+<li><a href="https://github.com/sceneview/sceneview/issues/486">#486</a> (2024-05) — <em>"Support for
+  sceneview for Compose Multiplatform iOS"</em></li>
+<li><a href="https://github.com/sceneview/sceneview/issues/558">#558</a> (2024-09) — <em>"Compose
+  Multiplatform support"</em></li>
+</ul>
+<p>Compose Multiplatform for iOS has been stable since CMP 1.8.0 (May 2025), so a
+developer writing a CMP app today has no way to reach SceneView from <code>commonMain</code>.</p>
+<h2 id="decision">Decision<a class="headerlink" href="#decision" title="Permanent link">&para;</a></h2>
+<p><strong>Ship a thin <code>commonMain</code> façade that delegates to the existing native renderers.</strong>
+It is a <em>viewer subset</em>, published as a <strong>separate, additive artifact</strong>. Nothing in
+<code>sceneview/</code>, <code>arsceneview/</code>, <code>SceneViewSwift/</code> or <code>sceneview-web/</code> changes.</p>
 <table>
 <thead>
 <tr>
-<th>Prop</th>
-<th>Type</th>
-<th>Description</th>
+<th>Target</th>
+<th><code>actual</code> implementation</th>
+<th>Renderer</th>
+<th>Status</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>modelNodes</code></td>
-<td><code>ModelNode[]</code></td>
-<td>Array of models to display</td>
+<td>Android</td>
+<td>delegates to the existing <code>SceneView { }</code> composable</td>
+<td>Filament</td>
+<td>implemented</td>
 </tr>
 <tr>
-<td><code>environment</code></td>
-<td><code>string</code></td>
-<td>HDR environment path</td>
+<td>iOS</td>
+<td><code>UIKitView</code> hosting an app-supplied <code>UIView</code> (see <code>SceneViewerBridge</code>)</td>
+<td>RealityKit</td>
+<td>implemented — the app registers the factory</td>
 </tr>
 <tr>
-<td><code>cameraOrbit</code></td>
-<td><code>boolean</code></td>
-<td>Enable orbit camera controls</td>
-</tr>
-<tr>
-<td><code>onTap</code></td>
-<td><code>(event) =&gt; void</code></td>
-<td>Tap event with 3D coordinates</td>
+<td>Desktop (JVM)</td>
+<td>offscreen render → pipelined <code>readPixels</code> → Skia image</td>
+<td>Filament, via a vendored FFM binding</td>
+<td><strong>planned</strong> — draws a placeholder today</td>
 </tr>
 </tbody>
 </table>
-<h3 id="arsceneview-extends-sceneview">ARSceneView (extends SceneView)<a class="headerlink" href="#arsceneview-extends-sceneview" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Prop</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>planeDetection</code></td>
-<td><code>boolean</code></td>
-<td>Enable plane detection</td>
-</tr>
-<tr>
-<td><code>depthOcclusion</code></td>
-<td><code>boolean</code></td>
-<td>Enable LiDAR depth occlusion</td>
-</tr>
-<tr>
-<td><code>onPlaneDetected</code></td>
-<td><code>(event) =&gt; void</code></td>
-<td>Plane detection event</td>
-</tr>
-</tbody>
-</table>
-<h2 id="type-definitions">Type Definitions<a class="headerlink" href="#type-definitions" title="Permanent link">&para;</a></h2>
-<div class="language-typescript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">ModelNode</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">           </span><span class="c1">// glTF/GLB path</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nx">position</span><span class="o">?:</span><span class="w"> </span><span class="p">[</span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="p">];</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nx">rotation</span><span class="o">?:</span><span class="w"> </span><span class="p">[</span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="p">];</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nx">scale?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nx">animation?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
-</span></code></pre></div>
+<p>The point is that <strong>one API does not imply one renderer.</strong> RealityKit stays the Apple
+renderer — it is what ARKit and visionOS align with, and it is what the published App
+Store app uses.</p>
+<h2 id="scope-the-viewer-subset-and-nothing-more">Scope: the viewer subset, and nothing more<a class="headerlink" href="#scope-the-viewer-subset-and-nothing-more" title="Permanent link">&para;</a></h2>
+<p>The honest intersection of Filament, RealityKit and Filament.js is narrow. Measured on
+the current tree:</p>
+<ul>
+<li>Android exposes <strong>27 node types</strong> (31 files in
+  <code>sceneview/src/main/java/io/github/sceneview/node/</code>, four of which are the <code>Node</code> base
+  and its delegates/state rather than node types), Swift 20, web ~10. The intersection of
+  all three is <strong>5</strong>: Camera, Geometry, Light, Model, SpatialAudio.</li>
+<li><strong>77 of the 178 Kotlin files</strong> in <code>arsceneview/</code> import <code>com.google.ar.core</code> directly
+  (58 under <code>src/main</code>, 19 under <code>src/test</code>); 100 reference the package at all. On Apple
+  the equivalent surface is ARKit/RealityKit.</li>
+</ul>
+<p>The façade covers <strong>4</strong> of those 5. SpatialAudio is left out deliberately: it is not part
+of the viewer case, and each platform's audio session has its own lifecycle to own.</p>
+<p>So the façade covers the <em>model viewer</em> case — load a model, orbit it, light it, tap
+it — which is roughly 80% of real usage, and says so plainly.</p>
+<h3 id="explicit-non-goals">Explicit non-goals<a class="headerlink" href="#explicit-non-goals" title="Permanent link">&para;</a></h3>
+<p>These are <strong>not</strong> coming to <code>commonMain</code>, in this release or a later one:</p>
+<ul>
+<li><strong>AR.</strong> Abstracting <code>ARCore Config</code> and <code>ARKit ARConfiguration</code> behind one type
+  produces a lowest-common-denominator API that lies about both. <code>ARScene</code> stays
+  per-platform.</li>
+<li><strong>Materials, shaders, post-processing.</strong> <code>.filamat</code> blobs and RealityKit ShaderGraph
+  have no common ground.</li>
+<li><strong>The full node catalogue.</strong> Splat, Video, View, ContactShadow, Physics and Text stay
+  platform-native.</li>
+<li><strong>Migrating <code>sceneview/</code> to Compose Multiplatform.</strong> The Android library keeps
+  targeting Compose Android. Existing consumers are untouched.</li>
+</ul>
+<h2 id="hard-guardrails">Hard guardrails<a class="headerlink" href="#hard-guardrails" title="Permanent link">&para;</a></h2>
+<p>These are load-bearing. Breaking one turns a bounded, reversible module into a
+liability.</p>
+<ol>
+<li><strong>No renderer type in <code>commonMain</code>.</strong> Not Filament, not RealityKit, not LWJGL, not
+   any third-party binding. Enforced by binary-compatibility-validator plus a CI check
+   on the committed <code>.api</code> dumps.</li>
+<li><strong>No <code>public inline</code> functions touching a renderer.</strong> Inline bodies get baked into
+   consumer bytecode and walk straight around the façade.</li>
+<li><strong>Purely additive.</strong> The published Android, Apple and web surfaces do not change by
+   one byte, and neither do the store apps.</li>
+<li><strong>Scope stated in the module README, at commit 1.</strong> "Viewer subset" is a promise to
+   keep, not a phase to grow out of quietly.</li>
+</ol>
+<h2 id="desktop-bindings-vendored-from-filament-kmp-with-attribution">Desktop bindings: vendored from filament-kmp, with attribution<a class="headerlink" href="#desktop-bindings-vendored-from-filament-kmp-with-attribution" title="Permanent link">&para;</a></h2>
+<p>Google <a href="https://github.com/google/filament/pull/4263">removed Filament's Java/desktop support in 2021</a>
+and closed the <a href="https://github.com/google/filament/issues/7558">KMP request as <em>not planned</em></a>,
+so there is no official Filament JVM desktop binding. The alternatives were: depend on
+<a href="https://github.com/Erkko68/filament-kmp">Erkko68/filament-kmp</a>, write our own binding,
+or write a non-Filament renderer.</p>
+<p><strong>Decision: vendor the desktop path of filament-kmp under <code>third_party/</code>, under the
+terms of its Apache-2.0 licence.</strong> It is genuinely good work — Google's official C++
+prebuilts, a hand-written combined C wrapper, and FFM bindings generated with
+<code>jextract</code> — and copying it beats both re-deriving it and taking a runtime dependency.</p>
+<p>Why vendor rather than depend:</p>
+<ul>
+<li>Its <code>filament-compose</code> module is <em>already</em> a high-level declarative CMP API. Building
+  our façade on top of the published artifact would make SceneView a rename of its own
+  dependency, permanently one release behind. We take the bindings, not the DSL.</li>
+<li>It would otherwise put a single-maintainer, pre-1.0 dependency (~10 source-breaking
+  changes in <code>0.3.0</code> alone) on the critical path.</li>
+<li>Vendoring lets the desktop track its own Filament version deliberately. Upstream ships
+  1.74.0 (<code>MATERIAL_VERSION</code> 74) while SceneView Android pins 1.72.1 (73) and web pins
+  1.52.3 (52); the repo holds <strong>28 committed <code>.filamat</code> blobs</strong> across those tracks
+  (<code>git ls-files '*.filamat'</code>), and v4.1.0 already crashed 10 demos over exactly one such
+  mismatch.</li>
+</ul>
+<h3 id="attribution-is-mandatory-not-optional">Attribution is mandatory, not optional<a class="headerlink" href="#attribution-is-mandatory-not-optional" title="Permanent link">&para;</a></h3>
+<p>Apache-2.0 permits this copy and sets the conditions for it. All of the following are
+required, and a missing one makes the copy a licence violation:</p>
+<ul>
+<li>The upstream <code>LICENSE</code> ships inside <code>third_party/filament-kmp/</code>.</li>
+<li>A <code>NOTICE</code> names <strong>Èric Bitriá Ribes</strong> as the original author, links
+  <a href="https://github.com/Erkko68/filament-kmp">https://github.com/Erkko68/filament-kmp</a>, and records the copied version (<code>0.3.0</code>).</li>
+<li>Files we change carry a prominent notice that they were modified.</li>
+<li>Upstream sources carry no per-file copyright headers, so attribution lives at
+  directory level — that is the correct form here, not an omission.</li>
+</ul>
+<p><code>assets/CREDITS.md</code> is generated; the third-party entry must flow through its generator
+rather than being hand-edited.</p>
+<h3 id="inherited-costs-stated-up-front">Inherited costs, stated up front<a class="headerlink" href="#inherited-costs-stated-up-front" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>JDK 22+</strong> on the desktop module. Project Panama's FFM API is what makes the binding
+  possible; copying the code does not remove the floor.</li>
+<li><strong>A native build chain</strong>: Filament prebuilt download, CMake for the C wrapper, and a
+  pinned <code>jextract</code> early-access build.</li>
+<li><strong>Three-OS CI.</strong> The repo has 66 <code>ubuntu-latest</code> jobs and 5 macOS jobs and <strong>no
+  Windows runner</strong>; one has to be added for the native leg.</li>
+<li><strong>Recurring upkeep</strong> at each Filament release we choose to follow — the work upstream
+  would otherwise have absorbed.</li>
+</ul>
+<h3 id="desktop-gates">Desktop gates<a class="headerlink" href="#desktop-gates" title="Permanent link">&para;</a></h3>
+<p>The desktop actual ships only when it clears all of these:</p>
+<ol>
+<li>≥60 FPS at 1080p with one glTF model; CPU cost measured, not asserted.</li>
+<li>Zero per-frame allocation in steady state, double-buffered readback.</li>
+<li>Resize storm: 30 s of continuous drag, no crash, memory back to baseline.</li>
+<li>100 open/close cycles, RSS stable.</li>
+<li>Seam proof: the <code>.api</code> dump contains no renderer type, and a <code>Noop</code> implementation
+   satisfies the interface.</li>
+</ol>
+<h2 id="increments">Increments<a class="headerlink" href="#increments" title="Permanent link">&para;</a></h2>
+<p>Each one is independently shippable. No big bang.</p>
+<ol>
+<li><code>sceneview-compose</code> module, <code>commonMain</code> API, <strong>Android actual</strong> — the delegation is
+   near-free (on Android, Compose Multiplatform <em>is</em> androidx.compose).</li>
+<li><strong>iOS actual</strong> — shipped, but not the way this section originally planned. The plan
+   was to add an <code>@objc</code> façade <em>inside</em> <code>SceneViewSwift</code> and depend on it. That is not
+   buildable: a KMP module cannot depend on a Swift Package at all, so the dependency
+   direction had to be inverted. <code>SceneViewer</code> now declares what it needs — a factory
+   producing a <code>UIView</code> (<code>SceneViewerBridge</code>) — and the <strong>app</strong> supplies it once at
+   launch, where <code>SceneViewSwift</code> is already linked. Still open: the reusable Swift
+   <code>@objc</code> <code>UIView</code> wrapper itself, which also serves the Flutter and React Native
+   bridges.</li>
+<li><strong>Desktop actual</strong>, on the vendored Filament binding, behind the gates above. This is
+   the long pole: ~26 000 lines to vendor plus a three-OS native build chain.</li>
+<li>CMP sample, <code>llms.txt</code> section, honest platform matrix.</li>
+</ol>
+<p>Web is deliberately last and unscheduled: <code>sceneview-core</code>'s <code>wasmJs</code> target is still
+blocked on <code>dev.romainguy:kotlin-math</code> publishing a wasmJs variant.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/sceneview/sceneview/issues/558">#558</a> ·
+  <a href="https://github.com/sceneview/sceneview/issues/486">#486</a> — the original asks</li>
+<li><a href="../desktop-filament/">desktop-filament.md</a> — desktop renderer analysis and the
+  filament-kmp evaluation</li>
+<li><a href="https://github.com/google/filament/pull/4263">google/filament#4263</a> — Java/desktop
+  support removed (2021)</li>
+<li><a href="https://blog.jetbrains.com/kotlin/2025/05/compose-multiplatform-1-8-0-released-compose-multiplatform-for-ios-is-stable-and-production-ready/">CMP 1.8.0 — iOS stable</a></li>
+</ul>
 
 
 
