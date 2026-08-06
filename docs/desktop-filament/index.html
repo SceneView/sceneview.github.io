@@ -2492,6 +2492,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#re-vendoring-the-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-vendoring the binding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2536,12 +2547,15 @@ still stands; the <em>binding supply</em> decision does not.</p>
 <blockquote>
 <p><strong>2026-08-03 update.</strong> Desktop rendering is now delivered as the desktop <code>actual</code> of
 the <code>sceneview-compose</code> façade. The binding supply changed: instead of <em>depending on</em>
-<code>io.github.erkko68.filament-ffm</code>, its desktop path is <strong>vendored</strong> into
-<code>third_party/filament-kmp/</code> under its Apache-2.0 licence, with the attribution that
-licence requires. The offscreen architecture and the filament-kmp analysis below are
-unchanged and still the basis for the work. See
-<a href="../compose-multiplatform/">compose-multiplatform.md</a>. Original decision thread:
-<a href="https://github.com/sceneview/sceneview/issues/2540">issue #2540</a>.</p>
+<code>io.github.erkko68.filament-ffm</code>, its desktop path is <strong>vendored</strong> under its
+Apache-2.0 licence, with the attribution that licence requires. The offscreen
+architecture and the filament-kmp analysis below are unchanged and still the basis for
+the work. See <a href="../compose-multiplatform/">compose-multiplatform.md</a>. Original decision
+thread: <a href="https://github.com/sceneview/sceneview/issues/2540">issue #2540</a>.</p>
+<p><strong>2026-08-05 amendment — vendor stays the decision, the <em>timing</em> moved.</strong> The copy did
+land on <code>main</code> (commit <code>c01ae5d87</code>) and was removed again in the same week, unused. See
+<a href="#re-vendoring-the-binding">Re-vendoring the binding</a> below for why, and for the one
+command that brings it back.</p>
 <p>Supersedes the 2026-03-25 research version of this page, which incorrectly
 presented Filament's desktop Java build (<code>filament-java.jar</code>, <code>FilamentCanvas</code>,
 <code>FilamentPanel</code>) as something upstream still provides. It does not — see below.</p>
@@ -2622,7 +2636,8 @@ pin ahead of SceneView Android's Filament ref (see the <code>.filamat</code> not
    the copy — JDK 22+, the CMake/<code>jextract</code> chain, three-OS CI, recurring upkeep — are
    listed in <a href="../compose-multiplatform/">compose-multiplatform.md</a>. Attribution is
    mandatory, not discretionary: upstream <code>LICENSE</code> plus a <code>NOTICE</code> crediting
-   Èric Bitriá Ribes.</li>
+   Èric Bitriá Ribes. <strong>Amended again 2026-08-05: the copy is taken when the spike
+   starts, not before</strong> — see <a href="#re-vendoring-the-binding">Re-vendoring the binding</a>.</li>
 <li><strong>Phased, with measured gates and abandon criteria</strong> — P1 spike (engine boot +
    offscreen + one GLB in <code>samples/desktop-demo</code> behind a flag; FPS/CPU/resize/leak
    gates) → P2 <code>sceneview-desktop/</code> module mirroring the Android composable surface
@@ -2648,6 +2663,44 @@ pin ahead of SceneView Android's Filament ref (see the <code>.filamat</code> not
   thread (the repo's single-threaded Filament rule applies on desktop too), reuse
   the two pixel buffers — no per-frame allocation.</li>
 </ul>
+<hr />
+<h2 id="re-vendoring-the-binding">Re-vendoring the binding<a class="headerlink" href="#re-vendoring-the-binding" title="Permanent link">&para;</a></h2>
+<p>The vendored copy landed on <code>main</code> in <code>c01ae5d87</code> and was removed in the same week. It
+was never a mistake of <em>shape</em> — vendoring is still the decision above — it was a
+mistake of <em>timing</em>. Three measurements decided it:</p>
+<ul>
+<li><strong>Nothing compiled it.</strong> No <code>settings.gradle</code> referenced <code>third_party/</code>, so the 31 700
+  lines were dead weight in every checkout, every <code>grep</code>, and every cross-cutting lint.
+  It had already cost one repo-wide guard: <code>check-deprecated-api.sh</code> needed a
+  <code>third_party/*</code> whitelist, because Filament's own <code>Scene</code> class tripped SceneView's
+  deprecated-composable detector and the files could not be edited without falsifying
+  the §4(b) NOTICE.</li>
+<li><strong>Its guard made an unrelated repo a single point of failure.</strong> <code>diff-upstream.sh</code> ran
+  unconditionally in <code>Repo hygiene checks</code> and <code>git clone</code>d
+  <code>github.com/Erkko68/filament-kmp</code> on every CI invocation, exiting non-zero if the clone
+  failed. A rename, a privatisation or an outage on one individual's repository would
+  have reddened every pull request in the monorepo — to protect code nothing built.</li>
+<li><strong>A frozen 0.3.0 ages exactly like the churn it was meant to escape.</strong> The spike is
+  contributor-carried with no date; whoever starts it will want a current tag anyway.</li>
+</ul>
+<p><strong>Restoring it is one command</strong> — the full tree, plus <code>LICENSE</code>, <code>NOTICE</code>,
+<code>MANIFEST.sha256</code> and <code>diff-upstream.sh</code>, verbatim and independent of upstream's
+survival:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>c01ae5d87<span class="w"> </span>--<span class="w"> </span>third_party/filament-kmp
+</span></code></pre></div>
+<p>To take a <em>newer</em> upstream tag instead: clone at that tag, replace the tree, update the
+tag and commit lines in <code>third_party/filament-kmp/NOTICE</code>, then
+<code>bash third_party/filament-kmp/diff-upstream.sh --regenerate</code> and review the manifest
+diff — a file appearing or vanishing there is the point of the exercise.</p>
+<p>Either way, three things must land in the <strong>same</strong> PR as the restored tree, or the
+restore is not real:</p>
+<ol>
+<li>the §4(b) step back in <code>.github/workflows/ci.yml</code> under <code>repo-hygiene</code> (the version in
+   <code>c01ae5d87</code> is copy-pasteable) — a guard no job invokes is prose;</li>
+<li>the Filament KMP attribution block back in the root <code>NOTICE</code> (also in <code>c01ae5d87</code>);</li>
+<li>the <code>settings.gradle</code> include that makes something actually build it. Vendoring code
+   that nothing compiles is what this section exists to prevent repeating.</li>
+</ol>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>

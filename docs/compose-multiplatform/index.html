@@ -1506,6 +1506,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#the-copy-is-taken-when-the-spike-starts-not-before" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The copy is taken when the spike starts, not before
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#attribution-is-mandatory-not-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2693,6 +2704,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#the-copy-is-taken-when-the-spike-starts-not-before" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The copy is taken when the spike starts, not before
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#attribution-is-mandatory-not-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2823,7 +2845,7 @@ It is a <em>viewer subset</em>, published as a <strong>separate, additive artifa
 <tr>
 <td>Desktop (JVM)</td>
 <td>offscreen render → pipelined <code>readPixels</code> → Skia image</td>
-<td>Filament, via a vendored FFM binding</td>
+<td>Filament, via an FFM binding still to be vendored</td>
 <td><strong>planned</strong> — draws a placeholder today</td>
 </tr>
 </tbody>
@@ -2897,16 +2919,31 @@ prebuilts, a hand-written combined C wrapper, and FFM bindings generated with
   (<code>git ls-files '*.filamat'</code>), and v4.1.0 already crashed 10 demos over exactly one such
   mismatch.</li>
 </ul>
+<h3 id="the-copy-is-taken-when-the-spike-starts-not-before">The copy is taken when the spike starts, not before<a class="headerlink" href="#the-copy-is-taken-when-the-spike-starts-not-before" title="Permanent link">&para;</a></h3>
+<p>The tree was vendored, landed on <code>main</code> in <code>c01ae5d87</code>, and was removed again days later
+without ever being built. No <code>settings.gradle</code> referenced it, so 31 700 lines sat in
+every checkout compiling nothing — while its own §4(b) guard <code>git clone</code>d a
+single-maintainer GitHub repository on every CI run and failed the job if that clone
+failed, putting every pull request in the monorepo behind one individual's repo staying
+reachable.</p>
+<p>The decision above is unchanged; only its timing moved. Restoring the copy is one
+command and the full procedure — including the attribution and CI obligations that must
+land in the same PR — is in
+<a href="../desktop-filament/#re-vendoring-the-binding">desktop-filament.md § Re-vendoring the binding</a>.</p>
 <h3 id="attribution-is-mandatory-not-optional">Attribution is mandatory, not optional<a class="headerlink" href="#attribution-is-mandatory-not-optional" title="Permanent link">&para;</a></h3>
 <p>Apache-2.0 permits this copy and sets the conditions for it. All of the following are
-required, and a missing one makes the copy a licence violation:</p>
+required whenever the tree is present, and a missing one makes the copy a licence
+violation:</p>
 <ul>
 <li>The upstream <code>LICENSE</code> ships inside <code>third_party/filament-kmp/</code>.</li>
 <li>A <code>NOTICE</code> names <strong>Èric Bitriá Ribes</strong> as the original author, links
-  <a href="https://github.com/Erkko68/filament-kmp">https://github.com/Erkko68/filament-kmp</a>, and records the copied version (<code>0.3.0</code>).</li>
+  <a href="https://github.com/Erkko68/filament-kmp">https://github.com/Erkko68/filament-kmp</a>, and records the copied version, both in
+  that directory and in the repository's root <code>NOTICE</code>.</li>
 <li>Files we change carry a prominent notice that they were modified.</li>
 <li>Upstream sources carry no per-file copyright headers, so attribution lives at
   directory level — that is the correct form here, not an omission.</li>
+<li>A CI job actually runs <code>diff-upstream.sh</code>. Attribution that nothing verifies is a
+  claim, not a compliance position.</li>
 </ul>
 <p><code>assets/CREDITS.md</code> is generated; the third-party entry must flow through its generator
 rather than being hand-edited.</p>
