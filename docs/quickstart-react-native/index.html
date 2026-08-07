@@ -2798,7 +2798,7 @@ installing:</p>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;models/damaged_helmet.glb&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="kt">1.0</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="p">]}</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="na">environment</span><span class="o">=</span><span class="s">&quot;environments/sky_2k.hdr&quot;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="na">cameraOrbit</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="na">cameraControlMode</span><span class="o">=</span><span class="s">&quot;orbit&quot;</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="p">/&gt;</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="p">);</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
@@ -2825,7 +2825,7 @@ installing:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>React Native (TypeScript)
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  └── Native Component
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        ├── Android → SimpleViewManager → ComposeView → SceneView { }
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        └── iOS → RCTViewManager → UIHostingController → SceneView { }
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        └── iOS → RCTViewManager → SceneViewerHostView → SceneView { }
 </span></code></pre></div>
 <h2 id="props">Props<a class="headerlink" href="#props" title="Permanent link">&para;</a></h2>
 <h3 id="sceneview">SceneView<a class="headerlink" href="#sceneview" title="Permanent link">&para;</a></h3>
@@ -2849,9 +2849,14 @@ installing:</p>
 <td>HDR environment path</td>
 </tr>
 <tr>
+<td><code>cameraControlMode</code></td>
+<td><code>'orbit' \| 'pan' \| 'firstPerson'</code></td>
+<td>Camera mode. <code>pan</code>/<code>firstPerson</code> are iOS-only</td>
+</tr>
+<tr>
 <td><code>cameraOrbit</code></td>
 <td><code>boolean</code></td>
-<td>Enable orbit camera controls</td>
+<td><strong>Deprecated</strong>, inert on iOS — use <code>cameraControlMode</code></td>
 </tr>
 <tr>
 <td><code>onTap</code></td>

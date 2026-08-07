@@ -2726,11 +2726,13 @@ unrelated third-party uploads — do not use them.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Flutter (Dart)
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  └── PlatformView
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        ├── Android → ComposeView → SceneView { ModelNode(...) }
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        └── iOS → UIHostingController → SceneView { ModelNode(...) }
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        └── iOS → SceneViewerHostView → SceneView { ModelNode(...) }
 </span></code></pre></div>
 <ul>
 <li><strong>Android</strong>: Uses <code>ComposeView</code> hosting the Jetpack Compose <code>SceneView { }</code> composable with Filament renderer</li>
-<li><strong>iOS</strong>: Uses <code>UIHostingController</code> hosting the SwiftUI <code>SceneView { }</code> with RealityKit renderer</li>
+<li><strong>iOS</strong>: Uses <code>SceneViewerHostView</code> — the shared <code>@objc UIView</code> host in <code>SceneViewSwift</code>,
+  also used by the React Native bridge and <code>sceneview-compose</code> — with RealityKit renderer.
+  The AR path keeps its own platform view</li>
 </ul>
 <h2 id="available-methods">Available Methods<a class="headerlink" href="#available-methods" title="Permanent link">&para;</a></h2>
 <table>
