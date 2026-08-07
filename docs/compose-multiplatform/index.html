@@ -1494,6 +1494,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-ios-uiview-wrapper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The iOS UIView wrapper
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The iOS UIView wrapper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-wrapper-needed-from-sceneviewswift-and-why-it-is-additive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the wrapper needed from SceneViewSwift, and why it is additive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-pre-existing-bug-it-surfaced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One pre-existing bug it surfaced
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divergences-the-wrapper-reports-rather-than-hides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Divergences the wrapper reports rather than hides
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#desktop-bindings-vendored-from-filament-kmp-with-attribution" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2692,6 +2742,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-ios-uiview-wrapper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The iOS UIView wrapper
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The iOS UIView wrapper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-wrapper-needed-from-sceneviewswift-and-why-it-is-additive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the wrapper needed from SceneViewSwift, and why it is additive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-pre-existing-bug-it-surfaced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One pre-existing bug it surfaced
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divergences-the-wrapper-reports-rather-than-hides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Divergences the wrapper reports rather than hides
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#desktop-bindings-vendored-from-filament-kmp-with-attribution" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2838,7 +2938,7 @@ It is a <em>viewer subset</em>, published as a <strong>separate, additive artifa
 </tr>
 <tr>
 <td>iOS</td>
-<td><code>UIKitView</code> hosting an app-supplied <code>UIView</code> (see <code>SceneViewerBridge</code>)</td>
+<td><code>UIKitView</code> hosting an app-supplied <code>UIView</code> (<code>SceneViewerBridge</code> → <code>SceneViewerHostView</code>)</td>
 <td>RealityKit</td>
 <td>implemented — the app registers the factory</td>
 </tr>
@@ -2896,6 +2996,69 @@ liability.</p>
 <li><strong>Scope stated in the module README, at commit 1.</strong> "Viewer subset" is a promise to
    keep, not a phase to grow out of quietly.</li>
 </ol>
+<h2 id="the-ios-uiview-wrapper">The iOS <code>UIView</code> wrapper<a class="headerlink" href="#the-ios-uiview-wrapper" title="Permanent link">&para;</a></h2>
+<p><code>SceneViewerHostView</code> lives in <code>SceneViewSwift/Sources/SceneViewSwift/Bridge/</code>. It is a
+<code>@objc</code> <code>UIView</code> that hosts <code>SceneView</code> in a <code>UIHostingController</code> and is configured
+entirely through primitives on <code>SceneViewerConfiguration</code> — no Swift enums, no <code>SIMD3</code>,
+no optionals-of-scalars, because a bridge boundary cannot carry them.</p>
+<p><strong>One wrapper, three bridges.</strong> <code>sceneview-compose</code> needs a <code>UIView</code> because KMP cannot
+see SwiftUI through cinterop; the Flutter plugin and the React Native module need one
+because their host frameworks hand them a <code>UIView</code>. Solving "host a SwiftUI scene in
+UIKit correctly" once — retain cycles, Swift 6 actor isolation, the persistent content
+root that async-loaded models attach to, per-field change gating — is the point. Today
+only <code>sceneview-compose</code> consumes it; <code>SceneViewPlugin.swift</code> and <code>SceneViewModule.swift</code>
+still carry their own platform views, which do more than viewing (method channels, AR,
+tap-to-place) and are production-tested. Migrating them is worthwhile and is deliberately
+not bundled into the change that introduces the thing to migrate onto.</p>
+<h3 id="what-the-wrapper-needed-from-sceneviewswift-and-why-it-is-additive">What the wrapper needed from <code>SceneViewSwift</code>, and why it is additive<a class="headerlink" href="#what-the-wrapper-needed-from-sceneviewswift-and-why-it-is-additive" title="Permanent link">&para;</a></h3>
+<p>The published Swift surface could seed an orbit pose but never report one back, so a
+hoisted <code>CameraState</code> could only ever echo its own writes. Four additions close that,
+none of them changing existing behaviour:</p>
+<ul>
+<li><code>SceneView.cameraPose(_:)</code> — continuous camera write-through, applied only when the
+  <em>value</em> changes so it coexists with a live drag instead of fighting it.</li>
+<li><code>SceneView.onCameraChanged(_:)</code> — the read-back, fired from the single point that
+  already knows the camera really moved (the far side of the #2331 diff-guard), so it
+  covers drag, pinch, auto-rotate and re-framing rather than just the gesture handlers.</li>
+<li><code>SceneView.cameraGesturesEnabled(_:)</code> — freezes the gestures without handing the camera
+  to Apple's <code>realityViewCameraControls(_:)</code>, which <code>CameraControlMode.none</code> does and
+  which would silently switch off <code>cameraPose(_:)</code> too.</li>
+<li><code>SceneView.onEntityTapHit(_:)</code> — the tap plus a world-space position. A distinct
+  <em>base</em> name, arrived at the hard way: an overload distinguished only by a <code>hit:</code> label
+  does <strong>not</strong> protect existing call sites, because an unlabelled trailing closure ignores
+  the label. Measured, every published <code>.onEntityTapped { entity in }</code> snippet — in
+  <code>llms.txt</code>, both iOS cheatsheets and the SwiftUI codelab — stopped compiling under the
+  labelled overload.</li>
+</ul>
+<h3 id="one-pre-existing-bug-it-surfaced">One pre-existing bug it surfaced<a class="headerlink" href="#one-pre-existing-bug-it-surfaced" title="Permanent link">&para;</a></h3>
+<p><code>.onEntityTapped</code> never fired on iOS, and neither did any <code>NodeGesture</code> handler. Nodes
+generated collision shapes — the documented purpose of <code>enableCollision</code> is "for hit
+testing" — but SwiftUI's <code>targetedToAnyEntity()</code> gestures additionally require an
+<code>InputTargetComponent</code>, which nothing in the package ever set. The failure is completely
+silent: no error, no warning, a scene that looks correct until someone taps it. The
+repo's own <code>CollisionHitTestDemo</code> had never been tappable, and its header comment
+asserted the opposite.</p>
+<p>The first attempt at this fix touched <code>ModelNode.load</code> only, while the changelog
+announced the class — which the review caught. <code>InputTargetComponent</code> now goes on the
+whole content subtree in <code>buildContent</code> (covering <code>GeometryNode</code>, <code>MeshNode</code>, <code>TextNode</code>,
+<code>ImageNode</code>, <code>ShapeNode</code>, <code>ViewNode</code> and <code>PhysicsNode</code>), on the loaded model under
+<code>enableCollision</code>, and on the entity a <code>NodeGesture</code> handler registers against. Measured
+on the iOS 26.3 simulator: a tap on a loaded <code>.usdz</code> and on an inline <code>GeometryNode.cube</code>
+produced no callback before and fired on the first try after. This also repairs the
+Flutter bridge's <code>onTap</code> (<a href="https://github.com/sceneview/sceneview/issues/2051">#2051</a>).</p>
+<p>The other face of it is a behaviour change to code that did not ask: handlers registered
+through <code>NodeGesture</code> that were silently dead will now fire. Camera orbit and pinch are
+unaffected — the entity gestures are attached with <code>.simultaneousGesture</code>, and a drag
+over a model was verified to still orbit by the expected amount.</p>
+<h3 id="divergences-the-wrapper-reports-rather-than-hides">Divergences the wrapper reports rather than hides<a class="headerlink" href="#divergences-the-wrapper-reports-rather-than-hides" title="Permanent link">&para;</a></h3>
+<p>Stated in <code>sceneview-compose/README.md</code> and in the KDoc of each affected parameter:
+<code>onFrame</code> is never called (RealityKit publishes no per-frame callback); iOS reads
+<code>.usdz</code> / <code>.reality</code> and no glTF; a tap that misses produces no callback rather than a
+null hit; the hit position is the tapped entity's bounds centre, not the surface point;
+<code>EnvironmentSource.Color</code> still gets RealityKit's default IBL; <code>ambientIntensity</code> applies
+only to an HDR environment; and <code>CameraState.distance</code> is clamped to RealityKit's dolly
+envelope — with the clamped value reported back, so it is visible rather than a silent
+disagreement between the state and the screen.</p>
 <h2 id="desktop-bindings-vendored-from-filament-kmp-with-attribution">Desktop bindings: vendored from filament-kmp, with attribution<a class="headerlink" href="#desktop-bindings-vendored-from-filament-kmp-with-attribution" title="Permanent link">&para;</a></h2>
 <p>Google <a href="https://github.com/google/filament/pull/4263">removed Filament's Java/desktop support in 2021</a>
 and closed the <a href="https://github.com/google/filament/issues/7558">KMP request as <em>not planned</em></a>,
@@ -2978,9 +3141,10 @@ rather than being hand-edited.</p>
    buildable: a KMP module cannot depend on a Swift Package at all, so the dependency
    direction had to be inverted. <code>SceneViewer</code> now declares what it needs — a factory
    producing a <code>UIView</code> (<code>SceneViewerBridge</code>) — and the <strong>app</strong> supplies it once at
-   launch, where <code>SceneViewSwift</code> is already linked. Still open: the reusable Swift
-   <code>@objc</code> <code>UIView</code> wrapper itself, which also serves the Flutter and React Native
-   bridges.</li>
+   launch, where <code>SceneViewSwift</code> is already linked. The <code>@objc</code> façade did land inside
+   <code>SceneViewSwift</code> after all, as <code>SceneViewerHostView</code>; what changed is that nothing
+   depends on it at build time — the app links it and hands it over. See
+   <a href="#the-ios-uiview-wrapper">the iOS wrapper</a> below.</li>
 <li><strong>Desktop actual</strong>, on the vendored Filament binding, behind the gates above. This is
    the long pole: ~26 000 lines to vendor plus a three-OS native build chain.</li>
 <li>CMP sample, <code>llms.txt</code> section, honest platform matrix.</li>
