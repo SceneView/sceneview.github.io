@@ -2500,6 +2500,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Re-vendoring the binding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-build-logic-must-be-hardened-before-anything-builds-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The build-logic must be hardened before anything builds it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2700,7 +2717,33 @@ restore is not real:</p>
 <li>the Filament KMP attribution block back in the root <code>NOTICE</code> (also in <code>c01ae5d87</code>);</li>
 <li>the <code>settings.gradle</code> include that makes something actually build it. Vendoring code
    that nothing compiles is what this section exists to prevent repeating.</li>
+<li><strong>the two hardening fixes below, in that same PR — not a follow-up.</strong> Item 3 is what
+   makes them reachable, so shipping them later means shipping a window.</li>
 </ol>
+<h3 id="the-build-logic-must-be-hardened-before-anything-builds-it">The build-logic must be hardened before anything builds it<a class="headerlink" href="#the-build-logic-must-be-hardened-before-anything-builds-it" title="Permanent link">&para;</a></h3>
+<p><code>build-logic/src/main/kotlin/FilamentDownloads.kt</code> in the copy taken from <code>0.3.0</code> has two
+defects. Both are build-time code execution, and both are harmless only for as long as
+nothing compiles the tree — which item 3 ends:</p>
+<ul>
+<li><strong>Downloads are not verified.</strong> <code>downloadToCache()</code> streams a URL into the cache and
+  returns it. The <em>version</em> is pinned; the <em>bytes</em> are not. A GitHub release asset can be
+  deleted and re-uploaded under the same tag, and the <code>download.java.net</code> jextract builds
+  are explicitly transient. Fix: hash the bytes once the stream completes, compare against
+  a checked-in digest per artifact, and <strong>delete the cached file on mismatch</strong> — a
+  poisoned cache entry that survives is worse than a failed download.</li>
+<li><strong><code>extractAll()</code> is symlink-tar-slippable.</strong> It asserts each entry's own path stays
+  under the destination, which stops a <code>../../etc/passwd</code> entry, but it does not validate
+  <code>entry.linkName</code> before <code>Files.createSymbolicLink</code>. A tarball carrying <code>a -&gt; /tmp/evil</code>
+  followed by a regular entry <code>a/x</code> passes that assertion — <code>normalize()</code> does not resolve
+  symlinks — and writes outside the destination, into a tree that is then marked
+  executable and run. Fix: resolve <code>linkName</code> against the entry's parent, assert the
+  result stays under <code>destPath</code>, and reject absolute targets outright.</li>
+</ul>
+<p>This is not left to a reviewer's memory. <code>bash .claude/scripts/check-vendored-download-safety.sh</code>
+runs in <code>repo-hygiene</code> and in <code>pre-push-check.sh</code>: it is silent while the tree is absent
+or unbuilt, and <strong>fails from the moment a <code>settings.gradle</code> include lands</strong> with either
+fix missing. Its own failing path is exercised on synthetic trees by
+<code>test-check-vendored-download-safety.sh</code>, so the gate cannot rot while it is dormant.</p>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>

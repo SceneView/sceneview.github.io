@@ -1477,6 +1477,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a-failed-load-is-reported-not-just-logged-decided-2026-08-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A failed load is reported, not just logged (decided 2026-08-06)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2725,6 +2736,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a-failed-load-is-reported-not-just-logged-decided-2026-08-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A failed load is reported, not just logged (decided 2026-08-06)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2982,6 +3004,26 @@ it — which is roughly 80% of real usage, and says so plainly.</p>
 <li><strong>Migrating <code>sceneview/</code> to Compose Multiplatform.</strong> The Android library keeps
   targeting Compose Android. Existing consumers are untouched.</li>
 </ul>
+<h3 id="a-failed-load-is-reported-not-just-logged-decided-2026-08-06">A failed load is reported, not just logged (decided 2026-08-06)<a class="headerlink" href="#a-failed-load-is-reported-not-just-logged-decided-2026-08-06" title="Permanent link">&para;</a></h3>
+<p><code>SceneViewer</code> shipped with no error surface: a load that failed left the viewport showing
+the environment, which is <em>pixel-identical</em> to a load still in progress, and the only
+trace was a logcat line. That was flagged at review and consciously accepted — a viewer
+subset can reasonably decide that failures are the app's problem to detect.</p>
+<p>It was reconsidered and reversed, on one measurable fact: <strong>the module is unreleased</strong>
+(no <code>sceneview-compose</code> artifact on Maven Central, its changelog fragment still pending in
+<code>changelog.d/</code>). Adding a parameter costs nothing today and costs compatibility forever
+after the first publication, so deferring the decision was strictly worse than taking it.</p>
+<p>The shape is deliberately small — <code>onError: ((SceneViewerError) -&gt; Unit)? = null</code>, opt-in,
+with the log line unchanged when it is absent. It is <strong>not</strong> a general state machine: no
+loading/loaded/failed enum, no retry policy, no error taxonomy. Those would be a viewer
+API growing into an app framework, which the non-goals above rule out. What it guarantees
+is only this: an app can tell "failed" from "still loading", which it previously could not.</p>
+<p>Both shapes of failure reach it — an exception, and a loader answering <code>null</code> without
+throwing. The second is not a nicety: moving asset reads off the main thread in the same
+change swapped <code>createModelInstance</code> (which raised <code>IllegalArgumentException</code> when Filament
+refused to parse a buffer) for the suspending <code>loadModelInstance</code> (which returns <code>null</code> for
+the same input). Reporting only exceptions would have made every malformed model fail
+silently — a fix for one defect quietly creating another.</p>
 <h2 id="hard-guardrails">Hard guardrails<a class="headerlink" href="#hard-guardrails" title="Permanent link">&para;</a></h2>
 <p>These are load-bearing. Breaking one turns a bounded, reversible module into a
 liability.</p>
@@ -3130,6 +3172,18 @@ rather than being hand-edited.</p>
 <li>100 open/close cycles, RSS stable.</li>
 <li>Seam proof: the <code>.api</code> dump contains no renderer type, and a <code>Noop</code> implementation
    satisfies the interface.</li>
+<li><code>bash .claude/scripts/check-vendored-download-safety.sh</code> is green <strong>with the binding
+   restored and actually wired</strong>. The <code>0.3.0</code> build-logic downloads Filament and <code>jextract</code>
+   archives with no integrity check, and <code>extractAll</code> creates symlinks from an unvalidated
+   <code>entry.linkName</code> — a tarball carrying <code>a -&gt; /tmp/evil</code> followed by <code>a/x</code> writes outside
+   the destination, because <code>normalize()</code> does not resolve symlinks and the entry-path
+   check therefore passes. Both are build-time code execution, and both are harmless only
+   while nothing compiles the tree. The gate exits 0 on the tree as it stands (absent since
+   #3015) and fails from the instant a <code>settings.gradle</code> include lands, so this cannot be
+   deferred to a follow-up PR: the hardening lands <em>with</em> the build chain, not after it.
+   Full remediation in
+   <a href="../desktop-filament/#re-vendoring-the-binding">desktop-filament.md § Re-vendoring the binding</a>,
+   item 4.</li>
 </ol>
 <h2 id="increments">Increments<a class="headerlink" href="#increments" title="Permanent link">&para;</a></h2>
 <p>Each one is independently shippable. No big bang.</p>
