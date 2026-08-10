@@ -3398,10 +3398,11 @@ the full convention.</p>
   maintainer-only note and never reaches the published release notes. Close
   them — an unterminated <code>&lt;!--</code> would swallow the bullets after it, so the
   collator refuses instead.</li>
-<li><strong>Mark a breaking change</strong> with a <code>&lt;!-- breaking --&gt;</code> line. Major <code>4</code> is
-  frozen and breaking changes ship as a <strong>minor</strong> bump; a marked (or plainly
-  worded) fragment makes the release tooling refuse a patch-level tag, because
-  <code>release.yml</code> derives the npm version straight from the git tag.</li>
+<li><strong>Mark a breaking change</strong> with a <code>&lt;!-- breaking --&gt;</code> comment, on its own line
+  or trailing the bullet it describes. Major <code>4</code> is frozen and breaking changes
+  ship as a <strong>minor</strong> bump; a marked (or plainly worded) fragment makes the
+  release tooling refuse a patch-level tag, because <code>release.yml</code> derives the
+  npm version straight from the git tag.</li>
 </ul>
 <p>After your changes are merged, the Discord bot will award you the <strong>Contributor</strong> role.</p>
 <h3 id="public-api-changes">Public API changes<a class="headerlink" href="#public-api-changes" title="Permanent link">&para;</a></h3>
