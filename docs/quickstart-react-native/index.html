@@ -2861,7 +2861,7 @@ installing:</p>
 <tr>
 <td><code>onTap</code></td>
 <td><code>(event) =&gt; void</code></td>
-<td>Tap event with 3D coordinates</td>
+<td>Tap event: <code>{ x, y, z, nodeName }</code> — the tapped model's world position and its file base name without extension. <code>nodeName</code> is <code>null</code> when no model was hit (and always <code>null</code> for <code>ARSceneView</code> on iOS, see below); the key is always present, so one <code>nodeName == null</code> check covers every view and platform</td>
 </tr>
 </tbody>
 </table>
@@ -2892,6 +2892,22 @@ installing:</p>
 </tr>
 </tbody>
 </table>
+<p><code>onTap</code> is inherited from <code>SceneView</code>, but <em>what a hit reports</em> differs by
+platform:</p>
+<ul>
+<li><strong>Android</strong> hit-tests the AR scene, so a tap on a model reports that model's
+  file base name exactly as <code>SceneView</code> does; a tap on a plane or on nothing
+  reports <code>null</code> — a plane hit is not a model hit.</li>
+<li><strong>iOS</strong> always reports <code>null</code>: <code>SceneViewSwift</code>'s <code>ARSceneView</code> exposes no
+  entity hit-test hook, so its AR tap can only resolve the surface point.
+  Tracked under <a href="https://github.com/sceneview/sceneview/issues/2051">#2051</a>.</li>
+</ul>
+<p>The <em>key</em> is written on every dispatch path of both views on both platforms, so
+<code>nodeName == null</code> is still the single correct "the tap hit no model" test. How
+often it dispatches differs, though: on iOS a tap that hits no entity fires no
+<code>onTap</code> at all (RealityKit's gesture is entity-targeted), where Android
+dispatches a <code>0, 0, 0</code> miss — so tap-event totals are not comparable across
+platforms.</p>
 <h2 id="type-definitions">Type Definitions<a class="headerlink" href="#type-definitions" title="Permanent link">&para;</a></h2>
 <div class="language-typescript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">ModelNode</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">           </span><span class="c1">// glTF/GLB path</span>
@@ -2900,6 +2916,16 @@ installing:</p>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nx">scale?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nx">animation?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">TapEvent</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nx">z</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="c1">// The tapped model&#39;s file base name without extension, or `null` when the</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="c1">// tap hit no model — which is every AR tap on iOS (#2051). Never</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="c1">// `undefined`: every dispatch path writes the key.</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">  </span><span class="nx">nodeName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="p">}</span>
 </span></code></pre></div>
 
 
