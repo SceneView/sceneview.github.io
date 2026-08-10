@@ -3006,15 +3006,24 @@ the NDK or configure CMake yourself.</p>
 <li><strong>Check Logcat.</strong> Filter by <code>Filament</code> or <code>SceneView</code> — load failures are logged there.</li>
 </ol>
 <h3 id="model-loads-but-renders-untextured-webp-textures">Model loads but renders untextured (WebP textures)<a class="headerlink" href="#model-loads-but-renders-untextured-webp-textures" title="Permanent link">&para;</a></h3>
-<p>If a glTF/GLB model loads and animates but every surface is flat black/grey, and Logcat shows
-<code>Missing texture provider for image/webp</code>, the model's textures are WebP-encoded
-(<code>EXT_texture_webp</code>). <strong>WebP glTF textures are not supported on Android</strong>: Filament's Android
-prebuilt ships <code>gltfio</code> with WebP support compiled out, so the textures silently fail to decode
+<p>Filament's Android prebuilt ships <code>gltfio</code> with WebP support compiled out, so on its own it
+cannot decode glTF textures encoded as <code>EXT_texture_webp</code> (<code>image/webp</code>) and logs
+<code>Missing texture provider for image/webp</code> while the model renders untextured
 (<a href="https://github.com/sceneview/sceneview/issues/2305">#2305</a>).</p>
-<p><strong>Fix:</strong> re-encode the model's textures to PNG, JPEG, or KTX2 before bundling it (e.g. re-export
-from Blender with PNG/JPEG textures, or convert with a glTF texture tool). PNG, JPEG, and KTX2
-decode natively. The same limitation applies to the web build (Filament.js registers no
-<code>image/webp</code> provider either).</p>
+<p><strong>On Android, SceneView handles this for you.</strong> Since 4.28.0, <code>ModelLoader</code> re-encodes WebP
+textures to PNG with Android's own decoder before handing the asset to Filament, so a WebP-textured
+glTF loads with its textures. This costs one decode + PNG encode per texture at load time; a model
+without WebP textures is untouched.</p>
+<p>Two cases are still <strong>not</strong> covered, and each logs an actionable <code>SceneView</code> error rather than
+failing silently:</p>
+<ul>
+<li>textures stored as <strong>separate <code>.webp</code> files</strong> next to a <code>.gltf</code> (only images embedded in a GLB
+  buffer view or in a <code>data:</code> URI are converted);</li>
+<li>the <strong>web build</strong> — Filament.js registers no <code>image/webp</code> provider either.</li>
+</ul>
+<p><strong>Fix for those:</strong> re-encode the model's textures to PNG, JPEG, or KTX2, e.g.
+<code>npx @gltf-transform/cli optimize model.glb out.glb --texture-compress png</code>, or re-export from
+Blender with PNG/JPEG textures. PNG, JPEG, and KTX2 decode natively everywhere.</p>
 <h3 id="black-screen-no-rendering">Black screen / no rendering<a class="headerlink" href="#black-screen-no-rendering" title="Permanent link">&para;</a></h3>
 <p>A completely black or empty viewport usually means the scene is set up but nothing is visible to
 the camera.</p>
