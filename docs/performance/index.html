@@ -1817,6 +1817,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#stop-rendering-an-idle-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stop rendering an idle scene
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3070,6 +3081,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#stop-rendering-an-idle-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stop rendering an idle scene
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3681,6 +3703,60 @@ SceneView(/* ... */) {
 coroutine. <code>rememberModelInstance</code> handles this automatically. For imperative
 code, use <code>loadModelInstanceAsync</code>.</p>
 </div>
+<h3 id="stop-rendering-an-idle-scene">Stop rendering an idle scene<a class="headerlink" href="#stop-rendering-an-idle-scene" title="Permanent link">&para;</a></h3>
+<p>A <code>SceneView</code> renders every vsync for as long as it is composed, whether or not anything
+changed. Compose's frame clock does not idle on its own, so a screen showing a static model —
+a product viewer nobody is touching, a board game between turns — keeps the GPU drawing an
+identical frame 60 or 120 times a second. On devices whose Choreographer keeps ticking a
+visually static UI it is a measurable source of battery drain and thermal throttling (#3108).</p>
+<p>Pass <code>isRendering = false</code> to park the frame loop:</p>
+<pre class="language-kotlin"><code>SceneView(isRendering = sceneIsDirty) { /* … */ }</code></pre>
+<p>The loop <em>suspends</em> while paused, so an idle scene schedules no work at all — it does not
+trade GPU frames for a polling timer — and it resumes on the recomposition that passes <code>true</code>,
+with no restart. The resumed frame lands on the next vsync: <code>withFrameNanos</code> is awaited after
+the wake-up, so expect one frame of latency, not zero.</p>
+<div class="admonition warning">
+<p class="admonition-title">Nothing is presented while <code>isRendering = false</code></p>
+<p>A node added or moved, a camera or manipulator change and a material edit all leave the
+<strong>last drawn frame</strong> on screen until rendering resumes. <code>onFrame</code> does not fire either.</p>
+<p>Two things are <em>not</em> merely frozen:</p>
+<ul>
+<li>A <strong>new or resized surface</strong> holds no pixels of its own — first attach, app foregrounded,
+  foldable folded or unfolded, split-screen resize. Freezing there would mean a blank view,
+  so the library always presents one frame into a new or resized surface even while paused,
+  then parks again. You do not need to flip the flag on a configuration change.</li>
+<li>An <strong>async model load does not finalise</strong> while paused. Filament finishes texture uploads
+  from inside the frame loop, so a model whose load completes during a pause renders
+  <em>untextured</em> for as long as the scene stays paused. Hold <code>true</code> until
+  <code>modelLoader.progress == 1f</code>, not until the load call returns.</li>
+</ul>
+<p>So derive the flag from "is anything dirty", holding it <code>true</code> for at least one frame after
+the last mutation — <strong>not</strong> from "is an animation running". An animation flag is already
+<code>false</code> at the instant a one-shot change is published, which strands that change undrawn.
+And the dirty window itself has to be Compose state <strong>in both directions</strong>: a deadline
+compared against a clock flips <code>true</code> on the mutation that recomposes it and then never
+flips back, because time crossing a threshold invalidates no composition. The scene then
+renders forever and the parameter silently does nothing — the app looks correct, which is
+what makes this one expensive.</p>
+<pre class="language-kotlin"><code>// WRONG — a new position, a highlight, a finished load is never drawn.
+SceneView(isRendering = isAnimating) { /* … */ }
+
+// ALSO WRONG — `System.nanoTime()` is not snapshot state. Nothing recomposes when the
+// window elapses, so this never returns to `false` after the first mutation.
+SceneView(isRendering = isAnimating || System.nanoTime() &lt; dirtyUntilNanos) { /* … */ }
+
+// RIGHT — the window is state, and the effect writes it back to false.
+var isDirty by remember { mutableStateOf(true) }
+LaunchedEffect(dirtyToken) {          // dirtyToken is bumped by every scene mutation
+    isDirty = true
+    delay(200)
+    isDirty = false
+}
+SceneView(isRendering = isAnimating || isInteracting || isDirty) { /* … */ }</code></pre>
+<p>Note the <code>mutableStateOf(true)</code> seed: a scene whose content is set once, before any
+animation runs, would never render at all if the flag started <code>false</code>.</p>
+<p>Not applicable to <code>ARSceneView</code>: a camera feed is never idle, so there is nothing to park.</p>
+</div>
 <hr />
 <h2 id="ar-specific-optimization">AR-Specific Optimization<a class="headerlink" href="#ar-specific-optimization" title="Permanent link">&para;</a></h2>
 <p>AR adds the camera feed and ARCore tracking to your frame budget, leaving less room
@@ -3824,6 +3900,8 @@ SceneView(
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Shadows</strong> — limited to 1-2 shadow-casting lights</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Post-processing</strong> — adapted to device tier, SSAO disabled on low-end</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Compose</strong> — no allocations in composition body, <code>remember</code> for stable refs</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Idle scenes</strong> — <code>isRendering = false</code> when nothing changes, driven by a dirty
+      signal that outlives the last mutation by a frame (not by an animation flag)</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Engine</strong> — single shared Engine, ModelLoader, and MaterialLoader</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>AR callbacks</strong> — no allocations in <code>onSessionUpdated</code></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Plane renderer</strong> — disabled after object placement</li>
