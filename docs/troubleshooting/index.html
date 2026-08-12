@@ -3006,22 +3006,25 @@ the NDK or configure CMake yourself.</p>
 <li><strong>Check Logcat.</strong> Filter by <code>Filament</code> or <code>SceneView</code> — load failures are logged there.</li>
 </ol>
 <h3 id="model-loads-but-renders-untextured-webp-textures">Model loads but renders untextured (WebP textures)<a class="headerlink" href="#model-loads-but-renders-untextured-webp-textures" title="Permanent link">&para;</a></h3>
-<p>Filament's Android prebuilt ships <code>gltfio</code> with WebP support compiled out, so on its own it
-cannot decode glTF textures encoded as <code>EXT_texture_webp</code> (<code>image/webp</code>) and logs
+<p>Filament's Android prebuilt ships <code>gltfio</code> with WebP support compiled out, and Filament.js
+registers no <code>image/webp</code> texture provider either, so on their own neither can decode glTF
+textures encoded as <code>EXT_texture_webp</code> (<code>image/webp</code>): they log
 <code>Missing texture provider for image/webp</code> while the model renders untextured
-(<a href="https://github.com/sceneview/sceneview/issues/2305">#2305</a>).</p>
-<p><strong>On Android, SceneView handles this for you.</strong> Since 4.28.0, <code>ModelLoader</code> re-encodes WebP
-textures to PNG with Android's own decoder before handing the asset to Filament, so a WebP-textured
-glTF loads with its textures. This costs one decode + PNG encode per texture at load time; a model
-without WebP textures is untouched.</p>
-<p>Two cases are still <strong>not</strong> covered, and each logs an actionable <code>SceneView</code> error rather than
-failing silently:</p>
-<ul>
-<li>textures stored as <strong>separate <code>.webp</code> files</strong> next to a <code>.gltf</code> (only images embedded in a GLB
-  buffer view or in a <code>data:</code> URI are converted);</li>
-<li>the <strong>web build</strong> — Filament.js registers no <code>image/webp</code> provider either.</li>
-</ul>
-<p><strong>Fix for those:</strong> re-encode the model's textures to PNG, JPEG, or KTX2, e.g.
+(<a href="https://github.com/sceneview/sceneview/issues/2305">#2305</a> on Android,
+<a href="https://github.com/sceneview/sceneview/issues/3085">#3085</a> on the web).</p>
+<p><strong>SceneView handles this for you on both platforms.</strong> Since 4.28.0 on Android, <code>ModelLoader</code>
+re-encodes WebP textures to PNG with Android's own decoder before handing the asset to Filament;
+<code>sceneview-web</code> does the same in the browser (<code>createImageBitmap</code> → canvas → PNG) before
+<code>createAsset</code>. Either way a WebP-textured glTF loads with its textures. This costs one decode +
+PNG encode per texture at load time; a model without WebP textures is passed through untouched.</p>
+<p>One case is still <strong>not</strong> covered, and it logs an actionable <code>SceneView</code> error rather than failing
+silently: textures stored as <strong>separate <code>.webp</code> files</strong> next to a <code>.gltf</code>. Only images embedded in
+a GLB buffer view or in a <code>data:</code> URI are converted — an external URI is resolved later, by name,
+inside Filament.</p>
+<p>On the web there is one more caveat: a canvas 2D context stores premultiplied colour, so a texture
+with <em>partial</em> transparency comes back with rounding error in its low-alpha texels. Fully opaque
+textures round-trip exactly.</p>
+<p><strong>Fix for both:</strong> re-encode the model's textures to PNG, JPEG, or KTX2, e.g.
 <code>npx @gltf-transform/cli optimize model.glb out.glb --texture-compress png</code>, or re-export from
 Blender with PNG/JPEG textures. PNG, JPEG, and KTX2 decode natively everywhere.</p>
 <h3 id="black-screen-no-rendering">Black screen / no rendering<a class="headerlink" href="#black-screen-no-rendering" title="Permanent link">&para;</a></h3>
