@@ -3486,8 +3486,40 @@ input.</p>
 <p>Recompile Filament materials using the <a href="https://github.com/google/filament/releases">current Filament version</a> if you modify them. Enable the <a href="https://github.com/sceneview/sceneview/blob/main/gradle.properties">Filament plugin</a> and build.</p>
 <h4 id="filament-runtime-filamat-abi-invariant">Filament runtime ↔ <code>.filamat</code> ABI invariant<a class="headerlink" href="#filament-runtime-filamat-abi-invariant" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p><strong>The Filament runtime version (in <a href="gradle/libs.versions.toml"><code>gradle/libs.versions.toml</code></a> → <code>filament = "X.Y.Z"</code>) and the <code>matc</code> toolchain that produced every committed <code>.filamat</code> blob MUST be the same major version.</strong></p>
+<p><strong>Every committed <code>.filamat</code> blob MUST be produced by a <code>matc</code> toolchain whose version matches the Filament runtime <em>that loads that blob</em>.</strong></p>
 </blockquote>
+<p>There are <strong>three runtimes</strong>, so three pins in <a href="gradle/libs.versions.toml"><code>gradle/libs.versions.toml</code></a>, and a blob is only correct against its own:</p>
+<table>
+<thead>
+<tr>
+<th>Blob group</th>
+<th>Pin</th>
+<th>Runtime</th>
+<th>MATERIAL_VERSION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sceneview/</code>, <code>arsceneview/</code> assets</td>
+<td><code>filament</code></td>
+<td>Filament AAR (Android)</td>
+<td>72</td>
+</tr>
+<tr>
+<td><code>website-static/materials/</code></td>
+<td><code>filamentWebsite</code></td>
+<td>Filament.js vendored at <code>website-static/js/filament/</code></td>
+<td>70</td>
+</tr>
+<tr>
+<td><code>sceneview-web/materials/</code></td>
+<td><code>filamentWeb</code></td>
+<td>npm <code>filament</code> (Kotlin/JS bundle)</td>
+<td>52</td>
+</tr>
+</tbody>
+</table>
+<p>Wiring a group to the wrong pin is the same defect as forgetting to recompile: #2783 found the 3 <code>website-static</code> blobs at v72 (they rode the Android pin) against a v70 runtime — latent only because nothing on the site calls <code>createMaterial()</code> yet.</p>
 <p>Filament refuses any material whose binary version field does not match the runtime, with <code>Filament panic — material version N ≠ runtime M</code> on first frame. There is no compile-time check; the mismatch only manifests at runtime, demo by demo. v4.1.0 shipped with the runtime at 1.70.2 and blobs at 1.71 (two parallel branches each fixed half of the pair) — 10 demos crashed; v4.1.1 hot-fixed by realigning both sides to 1.71.</p>
 <p><strong>The 26 committed blobs that must stay in sync with their <code>.mat</code> sources</strong>, spread across three modules:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sceneview/src/main/assets/materials/     (14) — image_texture, occlusion, opaque/transparent
@@ -3506,6 +3538,7 @@ input.</p>
 </span></code></pre></div>
 <p>The <code>matc</code> binary is cached at <code>~/.cache/sceneview/matc-&lt;version&gt;/</code> (overridable via <code>$XDG_CACHE_HOME</code>); the first run downloads it, subsequent runs reuse it. <code>--ci-tolerant</code> exists for sandboxed CI runners with no network — it lets the check pass with a WARN instead of failing the build when <code>matc</code> cannot be fetched.</p>
 <p><strong>The drift gate.</strong> <code>bash .claude/scripts/quality-gate.sh</code> runs <code>GenerateFilamat.sh --check</code> on every pre-push gate. Editing a <code>.mat</code> source <strong>without</strong> recompiling its <code>.filamat</code> blob now <strong>blocks the PR</strong> — the gate reports the drifted blob(s) and fails. This catches the v4.1.0-class mistake before it ships.</p>
+<p><strong>The runtime gate (#2783).</strong> <code>--check</code> proves a blob matches its <code>.mat</code> <em>source</em>; it compiles with the pinned <code>matc</code>, so a blob wired to the wrong pin still passes. <a href=".claude/scripts/check-web-filamat-abi.sh"><code>.claude/scripts/check-web-filamat-abi.sh</code></a> closes that gap for the two web tracks: it reads each blob's <code>MATERIAL_VERSION</code> header and compares it to its own runtime pin, and sha256-pins the vendored <code>filament.js</code>/<code>.wasm</code> (via <code>website-static/js/filament/RUNTIME.json</code>) so the runtime cannot be swapped without moving the pin. It needs no <code>matc</code> and no network, so it is a hard gate leg.</p>
 <p><strong>The five matc flag profiles.</strong> The committed blobs were compiled with five distinct profiles (recorded in each blob's MRPC chunk). <code>GenerateFilamat.sh</code> reproduces each one — including flag <em>order</em>, since matc embeds the verbatim flag string:</p>
 <table>
 <thead>
