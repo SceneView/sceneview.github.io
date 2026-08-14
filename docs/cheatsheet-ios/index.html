@@ -4151,6 +4151,11 @@ exposes have no iOS equivalent at all. Ported from the source of truth,
 <td><code>SceneEnvironment.intensity</code>, a linear <strong>multiplier</strong> (<code>1.0</code> = HDR untouched), converted to <code>ImageBasedLightComponent.intensityExponent</code> internally (#2897) — <strong>not</strong> interchangeable with the Android value</td>
 </tr>
 <tr>
+<td>Reflection-probe IBL intensity</td>
+<td><code>ReflectionProbeNode</code> inherits the scene <code>IndirectLight</code> level</td>
+<td><code>ReflectionProbeNode.intensity</code>, the same linear <strong>multiplier</strong> as <code>SceneEnvironment.intensity</code> and converted the same way (#2956) — applies once <code>environmentTexture(_:)</code> is set, before or after</td>
+</tr>
+<tr>
 <td>Person occlusion (AR)</td>
 <td>(n/a)</td>
 <td>via <code>ARView.renderOptions</code> (AR only, not on <code>RealityView</code>)</td>
