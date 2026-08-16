@@ -4127,6 +4127,7 @@ work, and text/bitmap props are cheap idempotent setters:</p>
   every node composable, a runtime transform a gesture or frame driver wrote is not clobbered by
   an unrelated recomposition (#2639, #2653).</li>
 <li><strong>Changing geometry parameters (<code>size</code>, <code>radius</code>, <code>stacks</code>, …) triggers <code>updateGeometry()</code></strong> under the hood — a O(vertex count) rebuild. Cheap for small meshes, not free.</li>
+<li><strong>The collision shape follows the geometry.</strong> <code>updateGeometry()</code> re-derives <code>collisionShape</code> from the new bounding box, so a resized node picks at the size it renders at (#3194). If you assign <code>node.collisionShape</code> yourself, that collider is yours and is never overwritten — including a deliberate <code>null</code>, which keeps the node unpickable. Call <code>updateCollisionShape()</code> to hand it back to the automatic refresh.</li>
 <li><strong>Changing the <code>modelInstance</code> reference rebuilds the node</strong> — use the same instance when toggling props.</li>
 <li><strong>Never call <code>node.destroy()</code> manually</strong> — let the composable's <code>NodeLifecycle</code> do it.</li>
 </ul>
