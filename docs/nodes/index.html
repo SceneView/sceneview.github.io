@@ -4230,13 +4230,23 @@ instance?.let {
 <hr />
 <h2 id="viewnode">ViewNode<a class="headerlink" href="#viewnode" title="Permanent link">&para;</a></h2>
 <p>Renders a Jetpack Compose UI onto a flat plane in 3D space. Great for in-world labels, info cards, and HUDs.</p>
-<div class="admonition warning">
-<p class="admonition-title">The rendered UI is not interactive</p>
-<p>A <code>ViewNode</code> draws its Compose content into a texture, and the hosting window is
-<code>FLAG_NOT_TOUCHABLE</code> — a <code>Button</code> placed inside renders, but its <code>onClick</code> never
-fires (no ripple, no press state, no inner scrolling). To react to a tap, hit-test
-the node instead: <code>onSingleTapUp = { _, node -&gt; if (node is ViewNode) … }</code>.
-Real touch forwarding is tracked by <a href="https://github.com/sceneview/sceneview/issues/2845">#2845</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">The rendered UI is interactive</p>
+<p>A <code>ViewNode</code> draws its Compose content into a texture, so Android never dispatches
+touches to it. The node forwards them itself: the scene's picking hit is converted to a
+view pixel and the whole <code>DOWN → MOVE → UP</code> stream is dispatched into the embedded
+hierarchy, so <code>Button.onClick</code>, press states, ripples and inner scrolling work
+(<a href="https://github.com/sceneview/sceneview/issues/2845">#2845</a>).</p>
+<p>As on screen, a gesture the content <strong>consumes</strong> never reaches the scene gesture
+listener or the camera manipulator — and a Material <code>Surface</code>/<code>Card</code> consumes touches
+even with nothing clickable inside. Anything it does not consume still falls through to
+picking: <code>onSingleTapUp = { _, node -&gt; if (node is ViewNode) … }</code>. Pass
+<code>apply = { isTouchForwardingEnabled = false }</code> for a decorative overlay that must never
+steal a gesture.</p>
+<p>One limitation: the quad is double-sided and the material un-mirrors its UVs on the back
+face, so a <code>ViewNode</code> orbited from behind reads correctly on screen while a touch picked
+there lands on the horizontally mirrored pixel. Detecting the facing needs the camera,
+which the touch callback does not receive — do not rely on back-face interaction.</p>
 </div>
 <h3 id="signature_2">Signature<a class="headerlink" href="#signature_2" title="Permanent link">&para;</a></h3>
 <pre class="language-kotlin"><code>ViewNode(
@@ -4276,7 +4286,12 @@ SceneView(
 <li><strong>You MUST pass <code>viewNodeWindowManager = rememberViewNodeManager()</code> to <code>SceneView</code> / <code>ARSceneView</code>.</strong> Without it, the off-screen window is never attached → <code>Layout.onLayout</code> never fires → surface stays at 0×0 → Filament renders a black rectangle. Fixed in v4.0.0 by wiring the manager into the lifecycle observer, but the parameter is still required.</li>
 <li><strong>Use <code>unlit = true</code> for readable text.</strong> Under PBR lighting, Compose UI gets shaded by scene lights and may look dim or color-shifted.</li>
 <li><strong>ViewNode is relatively expensive.</strong> Each instance allocates a <code>SurfaceTexture</code>, a <code>FrameLayout</code>, and a ComposeView. Reuse or pool them if you need many.</li>
-<li><strong>Don't put touch-heavy widgets inside.</strong> The off-screen window uses <code>FLAG_NOT_TOUCHABLE</code> — interactive content works, but standard gesture plumbing does not route through the 3D scene the way you'd expect.</li>
+<li><strong>One contact point is forwarded, not several.</strong> The off-screen window keeps
+  <code>FLAG_NOT_TOUCHABLE</code>, so Android never dispatches to it and the node forwards touches
+  itself — from the scene's picking hit, which is a single ray per event. Taps, presses and
+  one-finger scrolling are exact; a pinch or a two-finger drag inside the content is not,
+  and the intermediate samples of a batched fast scroll are relocated with the event rather
+  than re-picked one by one. Single-pointer widgets are the supported surface.</li>
 </ul>
 <hr />
 <h2 id="cubenode">CubeNode<a class="headerlink" href="#cubenode" title="Permanent link">&para;</a></h2>
