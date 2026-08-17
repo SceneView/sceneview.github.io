@@ -2748,12 +2748,12 @@ screenshots, and video recordings.</p>
 <p>Open a terminal and run:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Accept licenses and install the Google Play XR image (API 34, ARM64)</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>yes<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">$ANDROID_HOME</span>/cmdline-tools/latest/bin/sdkmanager<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="s2">&quot;system-images;android-34;google-xr;arm64-v8a&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="s2">"system-images;android-34;google-xr;arm64-v8a"</span>
 </span></code></pre></div>
 <p>This downloads the <strong>Google Play XR ARM 64 v8a System Image (Developer Preview)</strong>.
 It requires emulator version <strong>35.6.7 or later</strong> (check with <code>emulator -version</code>).</p>
 <p>If your emulator is outdated:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$ANDROID_HOME</span>/cmdline-tools/latest/bin/sdkmanager<span class="w"> </span>--install<span class="w"> </span><span class="s2">&quot;emulator&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$ANDROID_HOME</span>/cmdline-tools/latest/bin/sdkmanager<span class="w"> </span>--install<span class="w"> </span><span class="s2">"emulator"</span>
 </span></code></pre></div>
 <h2 id="2-create-the-xr-avd">2. Create the XR AVD<a class="headerlink" href="#2-create-the-xr-avd" title="Permanent link">&para;</a></h2>
 <h3 id="option-a-android-studio-recommended">Option A: Android Studio (recommended)<a class="headerlink" href="#option-a-android-studio-recommended" title="Permanent link">&para;</a></h3>
@@ -2772,10 +2772,10 @@ have the stable release, use Option B below.</p>
 </div>
 <h3 id="option-b-command-line">Option B: Command line<a class="headerlink" href="#option-b-command-line" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Create AVD using a generic device profile with the XR system image</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;no&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">$ANDROID_HOME</span>/cmdline-tools/latest/bin/avdmanager<span class="w"> </span>create<span class="w"> </span>avd<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--name<span class="w"> </span><span class="s2">&quot;Android_XR&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--package<span class="w"> </span><span class="s2">&quot;system-images;android-34;google-xr;arm64-v8a&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>--device<span class="w"> </span><span class="s2">&quot;medium_tablet&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"no"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">$ANDROID_HOME</span>/cmdline-tools/latest/bin/avdmanager<span class="w"> </span>create<span class="w"> </span>avd<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--name<span class="w"> </span><span class="s2">"Android_XR"</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--package<span class="w"> </span><span class="s2">"system-images;android-34;google-xr;arm64-v8a"</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>--device<span class="w"> </span><span class="s2">"medium_tablet"</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>--force
 </span></code></pre></div>
 <p>Then optimize performance by editing <code>~/.android/avd/Android_XR.avd/config.ini</code>:</p>
@@ -2885,22 +2885,22 @@ dependencies {
     implementation("androidx.xr.scenecore:scenecore:1.0.0-alpha12")
 }</code></pre>
 <h3 id="manifest-configuration">Manifest configuration<a class="headerlink" href="#manifest-configuration" title="Permanent link">&para;</a></h3>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;manifest</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;manifest</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="cm">&lt;!-- Declare XR support (required=false allows same APK on phones) --&gt;</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&lt;uses-feature</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;android.software.xr.api.spatial&quot;</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="na">android:required=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="na">android:name=</span><span class="s">"android.software.xr.api.spatial"</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="na">android:required=</span><span class="s">"false"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">&lt;application</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="nt">&lt;activity</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">            </span><span class="na">android:name=</span><span class="s">&quot;.MainActivity&quot;</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">            </span><span class="na">android:enableOnBackInvokedCallback=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">            </span><span class="na">android:name=</span><span class="s">".MainActivity"</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">            </span><span class="na">android:enableOnBackInvokedCallback=</span><span class="s">"true"</span><span class="nt">&gt;</span>
 </span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
 </span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">            </span><span class="cm">&lt;!-- Auto-enter Full Space mode at launch --&gt;</span>
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">            </span><span class="nt">&lt;property</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">                </span><span class="na">android:name=</span><span class="s">&quot;android.window.PROPERTY_XR_ACTIVITY_START_MODE&quot;</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">                </span><span class="na">android:value=</span><span class="s">&quot;XR_ACTIVITY_START_MODE_FULL_SPACE_MANAGED&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">                </span><span class="na">android:name=</span><span class="s">"android.window.PROPERTY_XR_ACTIVITY_START_MODE"</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">                </span><span class="na">android:value=</span><span class="s">"XR_ACTIVITY_START_MODE_FULL_SPACE_MANAGED"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="nt">&lt;/activity&gt;</span>
 </span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="nt">&lt;/application&gt;</span>
 </span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="nt">&lt;/manifest&gt;</span>
