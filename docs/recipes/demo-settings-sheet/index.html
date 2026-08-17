@@ -1231,72 +1231,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#use-in-your-own-demo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use in your own demo
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gestures" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gestures
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#picker-pattern-stage-2-of-1152" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Picker pattern (Stage 2 of #1152)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#state-preservation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        State preservation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#discoverability-peek-chip-first-launch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Discoverability — peek chip first launch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        See also
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2599,72 +2533,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#use-in-your-own-demo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use in your own demo
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gestures" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gestures
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#picker-pattern-stage-2-of-1152" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Picker pattern (Stage 2 of #1152)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#state-preservation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        State preservation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#discoverability-peek-chip-first-launch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Discoverability — peek chip first launch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        See also
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2731,21 +2599,41 @@ under the FAB. Pixel 9 device QA found exactly that, on several demos at once
         }
     },
 ) { /* scene */ }</code></pre>
-<p>For a <strong>centred, content-width pill</strong>, inset <em>both</em> sides — a centred element
-grows outwards from the middle, so reserving only the end side would shift it
-off-centre without actually keeping its end edge out of the FAB's band:</p>
+<p>For a <strong>centred, content-width pill</strong>, do not reach for a symmetric inset. The
+end-only inset is still the right one — you centre inside what is left of the
+row, not inside the whole screen:</p>
 <pre class="language-kotlin"><code>bottomOverlay = {
-    Text(
-        text = status,
+    Box(
         modifier = Modifier
-            .padding(horizontal = settingsFabReservedSpace)   // symmetric ⇒ stays centred
-            .background(MaterialTheme.colorScheme.primary, RoundedCornerShape(24.dp))
-            .padding(horizontal = 24.dp, vertical = 12.dp),
-    )
+            .fillMaxWidth()
+            .padding(end = settingsFabReservedSpace),   // end only — one corner is occupied
+        contentAlignment = Alignment.Center,
+    ) {
+        Text(
+            text = status,
+            modifier = Modifier
+                .background(MaterialTheme.colorScheme.primary, RoundedCornerShape(24.dp))
+                .padding(horizontal = 24.dp, vertical = 12.dp),
+        )
+    }
 }</code></pre>
-<p><code>settingsFabReservedSpace</code> is <code>SETTINGS_FAB_RESERVED_SPACE</code> (88 dp = the 56 dp
-FAB plus its 2 × 16 dp gutter) when the demo passes <code>controls</code>, and <code>0.dp</code> when
-it does not. It is resolved <strong>once, scaffold-side</strong>, from the same condition that
+<p>This recipe prescribed <code>padding(horizontal = settingsFabReservedSpace)</code> until</p>
+<h1 id="3229-on-the-reasoning-that-a-centred-element-grows-outwards-from-the-middle-so">3229, on the reasoning that a centred element grows outwards from the middle so<a class="headerlink" href="#3229-on-the-reasoning-that-a-centred-element-grows-outwards-from-the-middle-so" title="Permanent link">&para;</a></h1>
+<p>both sides have to be reserved. The reserve is then spent twice to protect one
+corner, which was affordable while it was a flat constant and stopped being
+affordable once it started tracking the real cluster: measured on a 411 dp screen
+with <code>ar-measure</code>'s first-launch peek header, the symmetric form left the pill
+<strong>73 dp</strong> — narrower than the word "measuring" — where the end-only form leaves
+<strong>242 dp</strong>. The pill still reads as centred, because the band it centres in is the
+band visibly free of chrome.</p>
+<p>In the demo app you rarely write either by hand: <code>DemoStatusBanner</code> is this
+idiom, already applied.</p>
+<p><code>settingsFabReservedSpace</code> is the <strong>measured</strong> width of the Settings cluster,
+floored at <code>SETTINGS_FAB_RESERVED_SPACE</code> (104 dp), when the demo passes
+<code>controls</code>, and <code>0.dp</code> when it does not. It is measured rather than assumed
+because the widest thing in that corner is the peek chip, and a chip is text —
+its width follows the font scale, the locale and the demo's own <code>peekHeader</code>,
+none of which a constant can anticipate. It is resolved <strong>once, scaffold-side</strong>, from the same condition that
 composes the FAB — so a demo whose controls are themselves conditional
 (<code>controls = if (DemoSettings.qaMode) { … } else null</code>) gets the right inset for
 free, with no duplicated condition to drift out of sync.</p>
