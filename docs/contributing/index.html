@@ -2662,45 +2662,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#maintenance-scripts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Maintenance scripts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Maintenance scripts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#worktree-auto-prunesh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        worktree-auto-prune.sh
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cleanup-branches-worktreessh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cleanup-branches-worktrees.sh
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#issues-and-discussions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3066,45 +3027,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#maintenance-scripts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Maintenance scripts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Maintenance scripts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#worktree-auto-prunesh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        worktree-auto-prune.sh
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cleanup-branches-worktreessh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cleanup-branches-worktrees.sh
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#issues-and-discussions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3450,17 +3372,19 @@ correct. Specifically:</p>
 <ul>
 <li><strong><code>ci.yml</code></strong> — the single consolidated PR workflow (<code>build</code>, <code>lint</code>,
   <code>unit-test</code>, <code>api-check</code>, <code>web-desktop</code>, <code>flutter-demo</code>, <code>compile-kmp</code>,
-  <code>repo-hygiene</code>, <code>quality-gate</code>) — carries a <code>paths-ignore</code> filter for those
-  paths, so it
-  does not trigger on a docs-only PR. (Before #1370 this was three separate
+  <code>kmp-native-test</code>). Its <code>paths-ignore</code> filter sits under the <code>push:</code>
+  trigger only — on a pull request the skipping is done by the <code>changes</code>
+  job, which detects the touched paths and gates every other job, so a
+  docs-only PR runs none of them. (Before #1370 this was three separate
   workflows — <code>ci.yml</code>, <code>pr-check.yml</code>, <code>quality-gate.yml</code> — each with its
   own <code>changes</code> job; they are now one workflow with one path-detection job.)</li>
 <li><strong><code>render-tests.yml</code></strong> never runs on <em>any</em> pull request — it is push-to-main</li>
 <li><code>workflow_dispatch</code> only — so docs-only PRs skip it for that reason rather
   than via a path filter.</li>
-<li>The <strong><code>CI Gate</code></strong> aggregator (<code>ci-gate.yml</code>) still runs on every PR and
-  resolves green when the path-filtered jobs are skipped — that is how a
-  docs-only PR stays mergeable.</li>
+<li>The <strong><code>Path filter completed</code></strong> job (<code>changes-verdict</code> in <code>ci.yml</code>) runs
+  on every PR whatever it touches, and it is the required check: it resolves
+  green once path detection has run. That is how a docs-only PR stays
+  mergeable without any job being "skipped → green for life".</li>
 </ul>
 <p>If your docs PR needs to force a full CI run (for example, you suspect a
 markdown change has accidentally invalidated an example referenced from
@@ -3537,8 +3461,8 @@ input.</p>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>bash tools/GenerateFilamat.sh --ci-tolerant   # treat a matc download failure as WARN, not FAIL
 </span></code></pre></div>
 <p>The <code>matc</code> binary is cached at <code>~/.cache/sceneview/matc-&lt;version&gt;/</code> (overridable via <code>$XDG_CACHE_HOME</code>); the first run downloads it, subsequent runs reuse it. <code>--ci-tolerant</code> exists for sandboxed CI runners with no network — it lets the check pass with a WARN instead of failing the build when <code>matc</code> cannot be fetched.</p>
-<p><strong>The drift gate.</strong> <code>bash .claude/scripts/quality-gate.sh</code> runs <code>GenerateFilamat.sh --check</code> on every pre-push gate. Editing a <code>.mat</code> source <strong>without</strong> recompiling its <code>.filamat</code> blob now <strong>blocks the PR</strong> — the gate reports the drifted blob(s) and fails. This catches the v4.1.0-class mistake before it ships.</p>
-<p><strong>The runtime gate (#2783).</strong> <code>--check</code> proves a blob matches its <code>.mat</code> <em>source</em>; it compiles with the pinned <code>matc</code>, so a blob wired to the wrong pin still passes. <a href=".claude/scripts/check-web-filamat-abi.sh"><code>.claude/scripts/check-web-filamat-abi.sh</code></a> closes that gap for the two web tracks: it reads each blob's <code>MATERIAL_VERSION</code> header and compares it to its own runtime pin, and sha256-pins the vendored <code>filament.js</code>/<code>.wasm</code> (via <code>website-static/js/filament/RUNTIME.json</code>) so the runtime cannot be swapped without moving the pin. It needs no <code>matc</code> and no network, so it is a hard gate leg.</p>
+<p><strong>The drift check.</strong> <code>bash tools/GenerateFilamat.sh --check</code> reports every <code>.filamat</code> blob that no longer matches its <code>.mat</code> source. Nothing runs it for you — run it yourself in the same sitting as any <code>.mat</code> edit. Shipping a <code>.mat</code> change without recompiling its blob is the v4.1.0-class mistake, and this is the check that catches it.</p>
+<p><strong>The runtime check (#2783).</strong> <code>--check</code> proves a blob matches its <code>.mat</code> <em>source</em>; it compiles with the pinned <code>matc</code>, so a blob wired to the wrong pin still passes. <a href=".claude/scripts/check-web-filamat-abi.sh"><code>.claude/scripts/check-web-filamat-abi.sh</code></a> closes that gap for the two web tracks: it reads each blob's <code>MATERIAL_VERSION</code> header and compares it to its own runtime pin, and sha256-pins the vendored <code>filament.js</code>/<code>.wasm</code> (via <code>website-static/js/filament/RUNTIME.json</code>) so the runtime cannot be swapped without moving the pin. It needs no <code>matc</code> and no network, so it runs anywhere in a second — pair it with the drift check above.</p>
 <p><strong>The five matc flag profiles.</strong> The committed blobs were compiled with five distinct profiles (recorded in each blob's MRPC chunk). <code>GenerateFilamat.sh</code> reproduces each one — including flag <em>order</em>, since matc embeds the verbatim flag string:</p>
 <table>
 <thead>
@@ -3583,7 +3507,7 @@ input.</p>
 <li>Run <code>bash tools/GenerateFilamat.sh</code> — it downloads the matching <code>matc</code> and recompiles every <code>.filamat</code> from its <code>.mat</code> source.</li>
 <li>Commit <strong>the runtime bump AND the recompiled <code>.filamat</code> files in the SAME PR</strong>. Never split them across commits — that's the failure mode that broke v4.1.0.</li>
 </ol>
-<p><code>GenerateFilamat.sh --check</code> (and the <code>quality-gate.sh</code> drift gate) will catch a runtime/blob mismatch before merge. If you somehow bypass the gate, the first signal is a runtime crash on whichever demo loads the affected material first.</p>
+<p><code>GenerateFilamat.sh --check</code> and <code>check-web-filamat-abi.sh</code> catch a runtime/blob mismatch — but only if you run them. If you skip them, the first signal is a runtime crash on whichever demo loads the affected material first.</p>
 <h4 id="visual-qa-for-material-shader-changes-mac-friendly">Visual QA for material / shader changes (Mac-friendly)<a class="headerlink" href="#visual-qa-for-material-shader-changes-mac-friendly" title="Permanent link">&para;</a></h4>
 <p>A material change can compile, pass unit tests, and still render wrong (the v4.16.x plane-renderer "white blob", #2224, is the canonical example — three "fixes" shipped before the real cause was found). Compile + unit tests are <strong>not</strong> a visual gate. This is the validated flow, refined while fixing #2224.</p>
 <p><strong>1 — Diagnose &amp; iterate on the shader on a plain Mac, with no ARCore.</strong> ARCore cannot run in an Android emulator on Apple Silicon (x86 needs TCG → ARCore watchdog-timeouts; arm64 has no ARCore camera bridge — see <code>feedback_arcore_emulator_mac_dead_end</code> / issue #1645, definitively closed). <strong>But pure Filament rendering works perfectly on the standard arm64 emulator.</strong> So isolate the shader: render the exact committed <code>.filamat</code> on a static, hand-built mesh in a <strong>non-AR</strong> <code>SceneView</code>, with no ARCore session — the pattern in <a href="samples/android-demo/src/main/java/io/github/sceneview/demo/demos/PlaneGridPreviewDemo.kt"><code>PlaneGridPreviewDemo</code></a> (debug-only, <code>adb shell am start -n io.github.sceneview.demo/.DemoHostActivity --es demo_id plane-grid-preview</code>). Mirror the AR render pipeline: pass <code>renderQuality = RenderQuality.Performance</code> (bloom/SSAO <strong>off</strong>, like <code>ARSceneView</code>) — the default <code>SceneView</code> keeps bloom on, which washes a translucent material into a uniform blob and hides the real output.</p>
@@ -3591,71 +3515,6 @@ input.</p>
 <p><strong>3 — Confirm on a real device (the only true AR gate).</strong> USB, not wireless — <code>adb</code>-over-Wi-Fi drops mid-transfer on a 200+ MB demo APK. The Play Store build is release-signed, so <code>uninstall io.github.sceneview.demo</code> first (debug APK can't replace it; <code>INSTALL_FAILED_VERSION_DOWNGRADE</code> / signature mismatch otherwise). Launch an AR demo via <code>DemoHostActivity</code> (<code>--es demo_id ar-placement</code>), grant <code>android.permission.CAMERA</code>, and screen-record while sweeping over varied surfaces — <strong>especially a bright/outdoor one</strong>, the condition that made the #2224 blob worst.</p>
 <p><strong>4 — Analyse the screen recording.</strong> Pull it, then: contact-sheet the frames with ffmpeg's <code>tile</code> filter (<code>-vf "fps=1/3,scale=200:-1,tile=5x4"</code> — no ImageMagick needed) for a fast overview, then extract full-res frames at the interesting timestamps for the actual judgement. If the recording has narration, transcribe with Whisper <strong>large-v3</strong> (smaller models are not reliable for this). ⚠️ A transcript that is only <code>Sous-titrage ST'…</code> / <code>Merci</code> / <code>Amara.org</code> repeated is Whisper's <strong>silence hallucination</strong> — it means there was no speech, not a real transcript.</p>
 <p><strong>Two hard rules (born from the #2224 saga):</strong> (a) <strong>look at an actual rendered frame — and pixel-measure it — before claiming a visual fix works</strong>; never infer "it looks better" from code. (b) <strong>Verify any flag an LLM suggests against the real binary before trusting it</strong> — e.g. the proposed ARCore replay property <code>debug.com.google.ar.core.camera_playback_autostart</code> was a confident hallucination (0 hits in 1 M strings extracted from the ARCore APK).</p>
-<hr />
-<h2 id="maintenance-scripts">Maintenance scripts<a class="headerlink" href="#maintenance-scripts" title="Permanent link">&para;</a></h2>
-<p>The <code>.claude/scripts/</code> directory holds the housekeeping scripts that
-keep parallel-orchestrator sessions tidy. Two are worth knowing about
-explicitly because the safety contract has gotten complex enough that
-you can't infer it from the source on first read.</p>
-<h3 id="worktree-auto-prunesh"><code>worktree-auto-prune.sh</code><a class="headerlink" href="#worktree-auto-prunesh" title="Permanent link">&para;</a></h3>
-<p>Reclaims <code>.claude/worktrees/*</code> whose branch has merged. Safe-by-default:
-the only way it can lose work is via an explicit override flag.</p>
-<table>
-<thead>
-<tr>
-<th>Flag</th>
-<th>Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--dry-run</code></td>
-<td>Preview only. No worktree is removed.</td>
-</tr>
-<tr>
-<td><code>--yes</code></td>
-<td>Non-interactive. Skip the confirmation prompt.</td>
-</tr>
-<tr>
-<td><code>--keep &lt;path&gt;</code></td>
-<td>Repeatable. Never touch this worktree (the caller's own tree should always be <code>--keep</code>).</td>
-</tr>
-<tr>
-<td><code>--allow-stale</code></td>
-<td>Proceed offline if <code>git fetch origin main</code> fails. <code>ahead=0</code> then additionally requires a merged-PR signal.</td>
-</tr>
-<tr>
-<td><code>--no-check-active-sessions</code></td>
-<td>Disable the cwd scan that protects worktrees with a live process inside them. Almost never the right call.</td>
-</tr>
-<tr>
-<td><code>--unlock-locked</code></td>
-<td>Override <code>git worktree lock</code>: prune locked-but-clean worktrees too. The dirty check still wins.</td>
-</tr>
-</tbody>
-</table>
-<p>Skip ladder (a worktree must pass every layer to be reclaimed):</p>
-<ol>
-<li>Not in <code>--keep</code>.</li>
-<li><code>git status --porcelain</code> is empty (no uncommitted changes).</li>
-<li>Not <code>locked</code> via <code>git worktree lock</code> (unless <code>--unlock-locked</code>).</li>
-<li>No process anywhere on the host has cwd inside the worktree
-   (gradle daemons, <code>python</code>, IDE indexers — all detected, not just
-   <code>node</code>/<code>claude</code>).</li>
-<li>Either <code>ahead-count == 0</code> vs <code>origin/main</code>, OR the branch's
-   associated GitHub PR is <code>MERGED</code>.</li>
-</ol>
-<p>Forensic trail: every evaluated worktree appends one JSON line to
-<code>~/.claude/logs/worktree-prune-YYYYMMDD.log</code> (daily-rotated, never
-auto-deleted). Cheap to write, priceless if an incident occurs.</p>
-<p>Pin: <code>.claude/scripts/test-worktree-auto-prune.sh</code> exercises 7 scenarios
-(merged, unmerged, dirty, locked, locked + <code>--unlock-locked</code>, active
-subprocess, <code>--keep</code>) and runs advisorily inside <code>quality-gate.sh</code>.</p>
-<h3 id="cleanup-branches-worktreessh"><code>cleanup-branches-worktrees.sh</code><a class="headerlink" href="#cleanup-branches-worktreessh" title="Permanent link">&para;</a></h3>
-<p>Wrapper that runs <code>worktree-auto-prune.sh</code> AND deletes the corresponding
-merged <code>claude/*</code> branches (local + remote) in a single batched
-<code>git push --delete</code> to avoid bot-burst rate limits. Same flags, same
-safety contract; runs daily in <code>.github/workflows/maintenance.yml</code>.</p>
 <hr />
 <h2 id="issues-and-discussions">Issues and discussions<a class="headerlink" href="#issues-and-discussions" title="Permanent link">&para;</a></h2>
 <ul>
