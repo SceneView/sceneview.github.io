@@ -2552,6 +2552,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#changing-the-apple-platform-floor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing the Apple platform floor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#adding-a-demo-to-samplesandroid-demo" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2600,6 +2611,17 @@
     <span class="md-ellipsis">
       
         CI on docs-only PRs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heavy-suites-on-main-every-merge-reaches-a-verdict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heavy suites on main: every merge reaches a verdict
       
     </span>
   </a>
@@ -2917,6 +2939,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#changing-the-apple-platform-floor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing the Apple platform floor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#adding-a-demo-to-samplesandroid-demo" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2965,6 +2998,17 @@
     <span class="md-ellipsis">
       
         CI on docs-only PRs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heavy-suites-on-main-every-merge-reaches-a-verdict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heavy suites on main: every merge reaches a verdict
       
     </span>
   </a>
@@ -3070,7 +3114,7 @@
 <ul>
 <li><strong>JDK 17</strong> (for Android/KMP modules)</li>
 <li><strong>Android Studio</strong> (latest stable recommended)</li>
-<li><strong>Xcode 15+</strong> (for SceneViewSwift / iOS work only)</li>
+<li><strong>Xcode 16+</strong> (for SceneViewSwift / iOS work only — Swift 6 and the iOS 18 floor)</li>
 <li>Optional but recommended: Google's <a href="https://developer.android.com/tools/agents/android-cli"><code>android</code> CLI</a>
   for agent-driven QA. Bootstrap in one shot:
   <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bash<span class="w"> </span>.claude/scripts/android-env-check.sh<span class="w"> </span>--fix
@@ -3127,7 +3171,9 @@ without the keys, opt out of the guard:</p>
 tears down node trees 40 times per test and asserts engine state returns to
 baseline. It runs headless — no SwapChain, no <code>readPixels</code> — so unlike the
 <code>render</code> package it really executes on the CI emulator instead of skipping.
-It lands in <code>render-tests.yml</code>'s <code>continue-on-error</code> job, so a red run is an
+It lands in <code>render-tests.yml</code>'s <code>android-library-render</code> job. On a pull request
+that job reports its own verdict (a red job on the PR), but it is not a required
+check; on <code>main</code> and nightly it is <code>continue-on-error</code>, so a red run there is an
 advisory signal in the Actions tab, not a merge block.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">ANDROID_SERIAL</span><span class="o">=</span>&lt;your-emulator&gt;<span class="w"> </span>./gradlew<span class="w"> </span>:sceneview:connectedDebugAndroidTest<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>-Pandroid.testInstrumentationRunnerArguments.class<span class="o">=</span>io.github.sceneview.leak.LeakChurnTest
@@ -3255,6 +3301,15 @@ for full API context in any chat:</p>
 <li><strong>Keep commits clean.</strong> Squash fixups before requesting review.</li>
 </ol>
 <p>Contributions to any part of the project are welcome — Android (<code>sceneview/</code>, <code>arsceneview/</code>), iOS (<code>SceneViewSwift/</code>), shared KMP core (<code>sceneview-core/</code>), samples, documentation, or the MCP server.</p>
+<h3 id="changing-the-apple-platform-floor">Changing the Apple platform floor<a class="headerlink" href="#changing-the-apple-platform-floor" title="Permanent link">&para;</a></h3>
+<p><code>SceneViewSwift/Package.swift</code> is the only <em>enforced</em> statement of the iOS / macOS /
+visionOS minimum; the three podspecs, the root <code>Package.swift</code>, the README badges, the
+docs site, <code>llms.txt</code>, the MCP guides and the demo's About screen all repeat it as prose.
+When you move the floor, run
+<a href=".claude/scripts/check-ios-floor.sh"><code>.claude/scripts/check-ios-floor.sh</code></a> — it reads
+the manifest and lists every podspec and doc line that still names the old version
+(exit 1 on drift). It runs offline in under a second; nothing in CI runs it for you
+(#3046).</p>
 <h3 id="adding-a-demo-to-samplesandroid-demo">Adding a demo to <code>samples/android-demo</code><a class="headerlink" href="#adding-a-demo-to-samplesandroid-demo" title="Permanent link">&para;</a></h3>
 <p>The Android demo app uses an <strong>append-only fragment registry</strong> so that two
 parallel PRs adding two different demos never conflict on a shared file
@@ -3378,9 +3433,13 @@ correct. Specifically:</p>
   docs-only PR runs none of them. (Before #1370 this was three separate
   workflows — <code>ci.yml</code>, <code>pr-check.yml</code>, <code>quality-gate.yml</code> — each with its
   own <code>changes</code> job; they are now one workflow with one path-detection job.)</li>
-<li><strong><code>render-tests.yml</code></strong> never runs on <em>any</em> pull request — it is push-to-main</li>
-<li><code>workflow_dispatch</code> only — so docs-only PRs skip it for that reason rather
-  than via a path filter.</li>
+<li><strong><code>render-tests.yml</code></strong> has its own <code>pull_request</code> path filter: only a PR
+  touching <code>sceneview/**</code>, <code>sceneview-core/**</code>, <code>arsceneview/src/**</code> or the
+  Gradle build files runs it, and then only its <code>android-library-render</code> job
+  (<code>:sceneview:connectedDebugAndroidTest</code> on the emulator, #3216). The demo
+  screenshot, iOS and web legs are push-to-main + nightly + <code>workflow_dispatch</code>
+  only. A docs-only PR matches none of the paths, so the workflow does not
+  run at all.</li>
 <li>The <strong><code>Path filter completed</code></strong> job (<code>changes-verdict</code> in <code>ci.yml</code>) runs
   on every PR whatever it touches, and it is the required check: it resolves
   green once path detection has run. That is how a docs-only PR stays
@@ -3391,6 +3450,17 @@ markdown change has accidentally invalidated an example referenced from
 runtime code), trigger the gates manually from the Actions tab —
 <code>Run workflow</code> on <code>ci.yml</code> / <code>render-tests.yml</code> accepts your PR's branch as
 input.</p>
+<h3 id="heavy-suites-on-main-every-merge-reaches-a-verdict">Heavy suites on <code>main</code>: every merge reaches a verdict<a class="headerlink" href="#heavy-suites-on-main-every-merge-reaches-a-verdict" title="Permanent link">&para;</a></h3>
+<p><code>render-tests.yml</code> and <code>device-qa.yml</code> run on every (path-matched) push to
+<code>main</code>, and since #2917 / #3216 a later merge no longer cancels the run of
+the one before it: each run has its own concurrency group, so runs queue
+instead of being killed. Before that change roughly half of the runs on a
+busy <code>main</code> ended <code>cancelled</code> — neither pass nor fail — and the commit they
+were testing was never covered. The one place cancellation is still allowed
+is a pull request on <code>render-tests.yml</code>, where a new push to the same PR
+supersedes the previous SHA. The cost is GitHub-hosted minutes proportional
+to the merge rate; if the queue becomes a problem, the lever is the <code>paths:</code>
+filter on each workflow, not <code>cancel-in-progress</code>.</p>
 <h3 id="code-style">Code style<a class="headerlink" href="#code-style" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Kotlin</strong>: follow the official <a href="https://developer.android.com/kotlin/style-guide">Kotlin style guide</a> and existing Compose API conventions (composable functions, <code>remember*</code> helpers, named parameters). The code style is stored in the repository and auto-configured by Android Studio.</li>
