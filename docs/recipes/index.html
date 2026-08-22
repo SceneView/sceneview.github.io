@@ -1243,10 +1243,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#orbit-camera-with-custom-home-position" class="md-nav__link">
+  <a href="#orbit-camera-at-a-chosen-distance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Orbit camera with custom home position
+        Orbit camera at a chosen distance
       
     </span>
   </a>
@@ -3134,10 +3134,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#orbit-camera-with-custom-home-position" class="md-nav__link">
+  <a href="#orbit-camera-at-a-chosen-distance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Orbit camera with custom home position
+        Orbit camera at a chosen distance
       
     </span>
   </a>
@@ -3765,22 +3765,28 @@ fun BouncingModelScreen() {
 }</code></pre>
 <hr />
 <h2 id="camera">Camera<a class="headerlink" href="#camera" title="Permanent link">&para;</a></h2>
-<h3 id="orbit-camera-with-custom-home-position">Orbit camera with custom home position<a class="headerlink" href="#orbit-camera-with-custom-home-position" title="Permanent link">&para;</a></h3>
-<p>Use <code>rememberCameraManipulator</code> with <code>orbitHomePosition</code> and <code>targetPosition</code>.
-The user can orbit, pan, and zoom.</p>
+<h3 id="orbit-camera-at-a-chosen-distance">Orbit camera at a chosen distance<a class="headerlink" href="#orbit-camera-at-a-chosen-distance" title="Permanent link">&para;</a></h3>
+<p>Use <code>rememberCameraManipulator</code> with <code>orbitRadius</code> — the camera starts that many metres from
+the target, along the default 3/4 viewing angle (<code>orbitRadius = 2.78f</code> is the stock
+framing). The user can orbit, pan, and zoom.</p>
 <pre class="language-kotlin"><code>SceneView(
     modifier = Modifier.fillMaxSize(),
     engine = engine,
     modelLoader = modelLoader,
-    cameraManipulator = rememberCameraManipulator(
-        // Absolute eye position. Targets the origin here, so |orbitHomePosition| ≈ 4.47 m
-        // is the distance the subject is framed from.
-        orbitHomePosition = Position(x = 0f, y = 2f, z = 4f),
-        targetPosition = Position(x = 0f, y = 0f, z = 0f)
-    )
+    cameraManipulator = rememberCameraManipulator(orbitRadius = 4.5f)
 ) {
     // nodes here
 }</code></pre>
+<p>To place the eye yourself, pass <code>orbitHomePosition</code> and <code>targetPosition</code> instead
+(same behaviour as before 4.32; the name is kept as-is rather than renamed to <code>eyePosition</code>,
+since major version 4 forbids the binary break a rename of this Composable parameter would
+cause — there was never a "home" gesture):</p>
+<pre class="language-kotlin"><code>cameraManipulator = rememberCameraManipulator(
+    // Absolute eye position. Targets the origin here, so |orbitHomePosition| ≈ 4.47 m
+    // is the distance the subject is framed from.
+    orbitHomePosition = Position(x = 0f, y = 2f, z = 4f),
+    targetPosition = Position(x = 0f, y = 0f, z = 0f)
+)</code></pre>
 <div class="admonition warning">
 <p class="admonition-title"><code>orbitHomePosition</code> is an absolute eye position, and its <strong>length</strong> is your framing distance</p>
 <p>Filament's <code>OrbitManipulator</code> uses <code>orbitHomePosition</code> verbatim as the eye
@@ -3796,7 +3802,8 @@ rememberCameraManipulator(
     orbitHomePosition = Position(0f, 0.2f, 1.2f),
     targetPosition = Position(0f, 0f, -1.5f)
 )</code></pre>
-<p>Pick the distance you want and pass a vector of that <strong>length</strong>, or set
+<p>Prefer <code>rememberCameraManipulator(orbitRadius = …)</code>, which takes the distance directly;
+otherwise pass a vector of that <strong>length</strong>, or set
 <code>autoCenterContent = false</code> so authored world positions survive (the framing distance
 then becomes <code>|orbitHomePosition − contentCentre|</code>). Both readings coincide when the
 target is the origin — which is why every example on this page looks fine and why the
