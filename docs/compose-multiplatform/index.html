@@ -3024,6 +3024,12 @@ change swapped <code>createModelInstance</code> (which raised <code>IllegalArgum
 refused to parse a buffer) for the suspending <code>loadModelInstance</code> (which returns <code>null</code> for
 the same input). Reporting only exceptions would have made every malformed model fail
 silently — a fix for one defect quietly creating another.</p>
+<p><code>SceneViewerError</code> has a public constructor (#3051). The type reaches apps through
+<code>onError</code>, so an app must be able to build one to unit-test whatever it renders on
+failure — a retry button should not need a real renderer and a real failed load. The
+constructor was <code>internal</code> at merge to keep the door open for extra fields; that door
+stays open through defaulted parameters, which is the usual additive path and costs
+callers nothing.</p>
 <h2 id="hard-guardrails">Hard guardrails<a class="headerlink" href="#hard-guardrails" title="Permanent link">&para;</a></h2>
 <p>These are load-bearing. Breaking one turns a bounded, reversible module into a
 liability.</p>
