@@ -2789,15 +2789,12 @@ serve the folder:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npx<span class="w"> </span>http-server<span class="w"> </span>samples/web-demo/site<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>
 </span></code></pre></div>
 <h3 id="desktop-demo">Desktop Demo<a class="headerlink" href="#desktop-demo" title="Permanent link">&para;</a></h3>
-<p><strong><code>samples/desktop-demo/</code></strong> — Compose Desktop (Software Wireframe Placeholder)</p>
-<blockquote>
-<p><strong>Note:</strong> This demo does <strong>not</strong> use SceneView or Filament. It is a Compose Canvas
-wireframe renderer that serves as a UI placeholder for a future Filament JNI integration.</p>
-</blockquote>
+<p><strong><code>samples/desktop-demo/</code></strong> — Compose Desktop (<code>SceneViewer</code>)</p>
+<p><code>sceneview-compose</code> <code>SceneViewer</code> on JVM. Filament via filament-kmp (offscreen →
+Skia). <strong>JDK 22+</strong>.</p>
 <ul>
-<li>Rotating wireframe cube, octahedron, diamond (Canvas 2D drawing, not GPU-accelerated)</li>
-<li>Manual perspective projection with basic trigonometry</li>
-<li>Material 3 dark theme</li>
+<li>Loads <code>Duck.glb</code> through <code>ModelSource.Bytes</code></li>
+<li>Drag to orbit, scroll to zoom</li>
 </ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./gradlew<span class="w"> </span>:samples:desktop-demo:run
 </span></code></pre></div>

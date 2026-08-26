@@ -2924,7 +2924,7 @@
 <h1 id="sceneview-on-compose-multiplatform-scope-decision">SceneView on Compose Multiplatform — scope &amp; decision<a class="headerlink" href="#sceneview-on-compose-multiplatform-scope-decision" title="Permanent link">&para;</a></h1>
 <p>Decision record for <code>sceneview-compose</code>, a Compose Multiplatform façade over the
 existing per-platform renderers.</p>
-<p><strong>Last updated:</strong> 2026-08-03 · <strong>Answers:</strong> <a href="https://github.com/sceneview/sceneview/issues/558">#558</a>,
+<p><strong>Last updated:</strong> 2026-08-19 · <strong>Answers:</strong> <a href="https://github.com/sceneview/sceneview/issues/558">#558</a>,
 <a href="https://github.com/sceneview/sceneview/issues/486">#486</a></p>
 <hr />
 <h2 id="the-ask">The ask<a class="headerlink" href="#the-ask" title="Permanent link">&para;</a></h2>
@@ -2967,8 +2967,8 @@ It is a <em>viewer subset</em>, published as a <strong>separate, additive artifa
 <tr>
 <td>Desktop (JVM)</td>
 <td>offscreen render → pipelined <code>readPixels</code> → Skia image</td>
-<td>Filament, via an FFM binding still to be vendored</td>
-<td><strong>planned</strong> — draws a placeholder today</td>
+<td>Filament, via Maven <code>filament-kmp</code> 0.4.0 (FFM, JDK 22+)</td>
+<td><strong>implemented</strong> — <code>SceneViewer</code> desktop actual</td>
 </tr>
 </tbody>
 </table>
@@ -3209,8 +3209,12 @@ rather than being hand-edited.</p>
    <code>SceneViewSwift</code> after all, as <code>SceneViewerHostView</code>; what changed is that nothing
    depends on it at build time — the app links it and hands it over. See
    <a href="#the-ios-uiview-wrapper">the iOS wrapper</a> below.</li>
-<li><strong>Desktop actual</strong>, on the vendored Filament binding, behind the gates above. This is
-   the long pole: ~26 000 lines to vendor plus a three-OS native build chain.</li>
+<li><strong>Desktop actual</strong> — shipped via Maven <code>filament-kmp</code> 0.4.0 (<code>implementation</code>, never
+   <code>api</code>), not a vendored tree. filament-kmp already owns the offscreen readback → Skia
+   path; <code>SceneViewer.desktop.kt</code> is the façade. JDK 22+ and
+   <code>--enable-native-access=ALL-UNNAMED</code> at run. The vendoring gates below remain the
+   path <em>if</em> we later copy the binding into <code>third_party/</code>; they are not a blocker for
+   the Maven actual.</li>
 <li>CMP sample, <code>llms.txt</code> section, honest platform matrix.</li>
 </ol>
 <p>Web is deliberately last and unscheduled: <code>sceneview-core</code>'s <code>wasmJs</code> target is still
