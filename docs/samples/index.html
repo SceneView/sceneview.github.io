@@ -2767,13 +2767,16 @@
 <h3 id="android-demo">Android Demo<a class="headerlink" href="#android-demo" title="Permanent link">&para;</a></h3>
 <p><strong><code>samples/android-demo/</code></strong> — Play Store ready, Material 3 Expressive</p>
 <p>3-tab showcase (<strong>Showcase / AR View / About</strong>) backed by an
-append-only demo registry of <strong>53 demos</strong> (19 non-AR + 34 AR):</p>
+append-only demo registry of <strong>50 demos</strong> (18 non-AR + 32 AR), grouped into nine
+catalogue sections:</p>
 <ul>
-<li><strong>Showcase tab</strong> (home): a hero card, category filter chips (3D Basics, Lighting &amp;
-  Environment, Content, Interaction, Advanced, Augmented Reality) and a grid of media
-  cards with a generated preview image per demo. The closing "Browse online models"
-  card opens the online gallery — multi-source model streaming (Sketchfab / Icosa
-  Gallery / Poly Haven)</li>
+<li><strong>Showcase tab</strong> (home): a hero card, category filter chips and a grid of media
+  cards with a generated preview image per demo, split by a full-span section header
+  into <strong>Viewer · Geometry &amp; Materials · Rendering · Interaction · AR Placement ·
+  AR Tracking · AR Understanding · AR Anchors · Platform</strong>. The section order is
+  <code>DEMO_CATEGORIES</code> in <code>DemoRegistry.kt</code> and the chips filter down to one section.
+  The closing "Browse online models" card opens the online gallery — multi-source
+  model streaming (Sketchfab / Icosa Gallery / Poly Haven)</li>
 <li><strong>AR View tab</strong>: Live <code>ARSceneView</code> camera with plane detection and tap-to-place</li>
 <li><strong>About tab</strong>: Platform info, version, and GitHub links</li>
 </ul>
