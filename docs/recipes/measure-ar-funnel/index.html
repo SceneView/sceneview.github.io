@@ -6,31 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The #1 open-source 3D & AR SDK for Android and iOS. Compose-native scenes powered by Google Filament and ARCore on Android, SwiftUI and RealityKit on iOS. Drop-in SceneView{} and ARSceneView{} composables for model viewing, AR placement, physics, and immersive experiences.">
+        <meta name="description" content="Instrument the AR drop-off — session created, tracking ready, first placement, tracking lost, session failure — from your own app, using SceneView's public ARSceneView callbacks. SceneView itself ships no telemetry.">
       
       
       
-        <link rel="canonical" href="https://sceneview.github.io/desktop-filament/">
+        <link rel="canonical" href="https://sceneview.github.io/recipes/measure-ar-funnel/">
       
       
+        <link rel="prev" href="../demo-settings-sheet/">
+      
+      
+        <link rel="next" href="../../faq/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Filament on Compose Desktop — status & decision - SceneView — 3D & AR SDK</title>
+        <title>Measure your AR funnel - SceneView — 3D & AR SDK</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -69,17 +73,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Filament on Compose Desktop — status &amp; decision - SceneView — 3D & AR SDK" />
-<meta property="og:description" content="The #1 open-source 3D & AR SDK for Android and iOS. Compose-native scenes powered by Google Filament and ARCore on Android, SwiftUI and RealityKit on iOS. Drop-in SceneView{} and ARSceneView{} composables for model viewing, AR placement, physics, and immersive experiences." />
-<meta property="og:image" content="https://sceneview.github.io/assets/images/social/desktop-filament.png" />
+<meta property="og:title" content="Measure your AR funnel - SceneView — 3D & AR SDK" />
+<meta property="og:description" content="Instrument the AR drop-off — session created, tracking ready, first placement, tracking lost, session failure — from your own app, using SceneView's public ARSceneView callbacks. SceneView itself ships no telemetry." />
+<meta property="og:image" content="https://sceneview.github.io/assets/images/social/recipes/measure-ar-funnel.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://sceneview.github.io/desktop-filament/" />
+<meta property="og:url" content="https://sceneview.github.io/recipes/measure-ar-funnel/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Filament on Compose Desktop — status &amp; decision - SceneView — 3D & AR SDK" />
-<meta property="twitter:description" content="The #1 open-source 3D & AR SDK for Android and iOS. Compose-native scenes powered by Google Filament and ARCore on Android, SwiftUI and RealityKit on iOS. Drop-in SceneView{} and ARSceneView{} composables for model viewing, AR placement, physics, and immersive experiences." />
-<meta property="twitter:image" content="https://sceneview.github.io/assets/images/social/desktop-filament.png" />
+<meta property="twitter:title" content="Measure your AR funnel - SceneView — 3D & AR SDK" />
+<meta property="twitter:description" content="Instrument the AR drop-off — session created, tracking ready, first placement, tracking lost, session failure — from your own app, using SceneView's public ARSceneView callbacks. SceneView itself ships no telemetry." />
+<meta property="twitter:image" content="https://sceneview.github.io/assets/images/social/recipes/measure-ar-funnel.png" />
 </head>
   
   
@@ -99,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#filament-on-compose-desktop-status-decision" class="md-skip">
+        <a href="#measure-your-ar-funnel" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +123,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="SceneView — 3D &amp; AR SDK" class="md-header__button md-logo" aria-label="SceneView — 3D & AR SDK" data-md-component="logo">
+    <a href="../.." title="SceneView — 3D &amp; AR SDK" class="md-header__button md-logo" aria-label="SceneView — 3D & AR SDK" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15 6.04 7.5 12 10.85l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg>
@@ -139,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Filament on Compose Desktop — status &amp; decision
+              Measure your AR funnel
             
           </span>
         </div>
@@ -251,7 +255,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -270,7 +274,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../try/" class="md-tabs__link">
+      <a href="../../try/" class="md-tabs__link">
         
   
   
@@ -287,11 +291,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../quickstart/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../quickstart/" class="md-tabs__link">
           
   
   
@@ -311,7 +317,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../platforms/" class="md-tabs__link">
+      <a href="../../platforms/" class="md-tabs__link">
         
   
   
@@ -332,7 +338,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../architecture/" class="md-tabs__link">
+        <a href="../../architecture/" class="md-tabs__link">
           
   
   
@@ -354,7 +360,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../showcase/" class="md-tabs__link">
+        <a href="../../showcase/" class="md-tabs__link">
           
   
   
@@ -376,7 +382,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../codelabs/" class="md-tabs__link">
+        <a href="../../codelabs/" class="md-tabs__link">
           
   
   
@@ -418,7 +424,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../samples/" class="md-tabs__link">
+      <a href="../../samples/" class="md-tabs__link">
         
   
   
@@ -437,7 +443,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../samples-ios/" class="md-tabs__link">
+      <a href="../../samples-ios/" class="md-tabs__link">
         
   
   
@@ -456,7 +462,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../community/" class="md-tabs__link">
+      <a href="../../community/" class="md-tabs__link">
         
   
   
@@ -475,7 +481,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../contributing/" class="md-tabs__link">
+      <a href="../../contributing/" class="md-tabs__link">
         
   
   
@@ -494,7 +500,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../changelog/" class="md-tabs__link">
+      <a href="../../changelog/" class="md-tabs__link">
         
   
   
@@ -513,7 +519,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../migration/" class="md-tabs__link">
+      <a href="../../migration/" class="md-tabs__link">
         
   
   
@@ -554,7 +560,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="SceneView — 3D &amp; AR SDK" class="md-nav__button md-logo" aria-label="SceneView — 3D & AR SDK" data-md-component="logo">
+    <a href="../.." title="SceneView — 3D &amp; AR SDK" class="md-nav__button md-logo" aria-label="SceneView — 3D & AR SDK" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15 6.04 7.5 12 10.85l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg>
@@ -584,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -611,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../try/" class="md-nav__link">
+      <a href="../../try/" class="md-nav__link">
         
   
   
@@ -635,8 +641,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -668,21 +676,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -700,7 +709,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -718,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart/" class="md-nav__link">
+      <a href="../../quickstart/" class="md-nav__link">
         
   
   
@@ -746,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart-ios/" class="md-nav__link">
+      <a href="../../quickstart-ios/" class="md-nav__link">
         
   
   
@@ -774,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart-web/" class="md-nav__link">
+      <a href="../../quickstart-web/" class="md-nav__link">
         
   
   
@@ -802,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart-tv/" class="md-nav__link">
+      <a href="../../quickstart-tv/" class="md-nav__link">
         
   
   
@@ -830,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart-flutter/" class="md-nav__link">
+      <a href="../../quickstart-flutter/" class="md-nav__link">
         
   
   
@@ -858,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart-react-native/" class="md-nav__link">
+      <a href="../../quickstart-react-native/" class="md-nav__link">
         
   
   
@@ -886,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cheatsheet/" class="md-nav__link">
+      <a href="../../cheatsheet/" class="md-nav__link">
         
   
   
@@ -914,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cheatsheet-ios/" class="md-nav__link">
+      <a href="../../cheatsheet-ios/" class="md-nav__link">
         
   
   
@@ -942,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nodes/" class="md-nav__link">
+      <a href="../../nodes/" class="md-nav__link">
         
   
   
@@ -967,8 +976,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -989,20 +1000,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_10" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="">
             
   
   
@@ -1020,7 +1032,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1038,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recipes/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1066,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recipes/blender-pipeline/" class="md-nav__link">
+      <a href="../blender-pipeline/" class="md-nav__link">
         
   
   
@@ -1094,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recipes/ios-visual-polish/" class="md-nav__link">
+      <a href="../ios-visual-polish/" class="md-nav__link">
         
   
   
@@ -1122,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recipes/sketchfab-streaming/" class="md-nav__link">
+      <a href="../sketchfab-streaming/" class="md-nav__link">
         
   
   
@@ -1150,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recipes/demo-settings-sheet/" class="md-nav__link">
+      <a href="../demo-settings-sheet/" class="md-nav__link">
         
   
   
@@ -1175,10 +1187,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../recipes/measure-ar-funnel/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure your AR funnel
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1194,6 +1233,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-five-steps-worth-counting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The five steps worth counting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-sink-you-own" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A sink you own
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wiring-it-to-arsceneview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wiring it to ARSceneView
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the result
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1214,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   
@@ -1242,7 +1345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+      <a href="../../troubleshooting/" class="md-nav__link">
         
   
   
@@ -1277,7 +1380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../platforms/" class="md-nav__link">
+      <a href="../../platforms/" class="md-nav__link">
         
   
   
@@ -1376,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
+      <a href="../../architecture/" class="md-nav__link">
         
   
   
@@ -1404,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../compose-multiplatform/" class="md-nav__link">
+      <a href="../../compose-multiplatform/" class="md-nav__link">
         
   
   
@@ -1432,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-xr/" class="md-nav__link">
+      <a href="../../android-xr/" class="md-nav__link">
         
   
   
@@ -1460,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../visionos-spatial/" class="md-nav__link">
+      <a href="../../visionos-spatial/" class="md-nav__link">
         
   
   
@@ -1488,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integrations/" class="md-nav__link">
+      <a href="../../integrations/" class="md-nav__link">
         
   
   
@@ -1516,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ar-recording/" class="md-nav__link">
+      <a href="../../ar-recording/" class="md-nav__link">
         
   
   
@@ -1544,7 +1647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../performance/" class="md-nav__link">
+      <a href="../../performance/" class="md-nav__link">
         
   
   
@@ -1572,7 +1675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing/" class="md-nav__link">
+      <a href="../../testing/" class="md-nav__link">
         
   
   
@@ -1673,7 +1776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../showcase/" class="md-nav__link">
+      <a href="../../showcase/" class="md-nav__link">
         
   
   
@@ -1701,7 +1804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../use-cases/" class="md-nav__link">
+      <a href="../../use-cases/" class="md-nav__link">
         
   
   
@@ -1729,7 +1832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai-development/" class="md-nav__link">
+      <a href="../../ai-development/" class="md-nav__link">
         
   
   
@@ -1757,7 +1860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../comparison/" class="md-nav__link">
+      <a href="../../comparison/" class="md-nav__link">
         
   
   
@@ -1785,7 +1888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v4-preview/" class="md-nav__link">
+      <a href="../../v4-preview/" class="md-nav__link">
         
   
   
@@ -1861,7 +1964,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../codelabs/" class="md-nav__link ">
+            <a href="../../codelabs/" class="md-nav__link ">
               
   
   
@@ -1905,7 +2008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../codelabs/codelab-3d-compose/" class="md-nav__link">
+      <a href="../../codelabs/codelab-3d-compose/" class="md-nav__link">
         
   
   
@@ -1933,7 +2036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../codelabs/codelab-ar-compose/" class="md-nav__link">
+      <a href="../../codelabs/codelab-ar-compose/" class="md-nav__link">
         
   
   
@@ -1961,7 +2064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../codelabs/codelab-3d-swiftui/" class="md-nav__link">
+      <a href="../../codelabs/codelab-3d-swiftui/" class="md-nav__link">
         
   
   
@@ -1989,7 +2092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../codelabs/codelab-ar-swiftui/" class="md-nav__link">
+      <a href="../../codelabs/codelab-ar-swiftui/" class="md-nav__link">
         
   
   
@@ -2017,7 +2120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../codelabs/guide-dynamic-sky/" class="md-nav__link">
+      <a href="../../codelabs/guide-dynamic-sky/" class="md-nav__link">
         
   
   
@@ -2045,7 +2148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../codelabs/guide-lines-text/" class="md-nav__link">
+      <a href="../../codelabs/guide-lines-text/" class="md-nav__link">
         
   
   
@@ -2073,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../codelabs/guide-physics/" class="md-nav__link">
+      <a href="../../codelabs/guide-physics/" class="md-nav__link">
         
   
   
@@ -2101,7 +2204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../codelabs/guide-reflection-probes/" class="md-nav__link">
+      <a href="../../codelabs/guide-reflection-probes/" class="md-nav__link">
         
   
   
@@ -2289,7 +2392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../samples/" class="md-nav__link">
+      <a href="../../samples/" class="md-nav__link">
         
   
   
@@ -2316,7 +2419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../samples-ios/" class="md-nav__link">
+      <a href="../../samples-ios/" class="md-nav__link">
         
   
   
@@ -2343,7 +2446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../community/" class="md-nav__link">
+      <a href="../../community/" class="md-nav__link">
         
   
   
@@ -2370,7 +2473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contributing/" class="md-nav__link">
+      <a href="../../contributing/" class="md-nav__link">
         
   
   
@@ -2397,7 +2500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
+      <a href="../../changelog/" class="md-nav__link">
         
   
   
@@ -2424,7 +2527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../migration/" class="md-nav__link">
+      <a href="../../migration/" class="md-nav__link">
         
   
   
@@ -2471,10 +2574,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#current-state-sceneviewer-on-desktop" class="md-nav__link">
+  <a href="#the-five-steps-worth-counting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current state: SceneViewer on desktop
+        The five steps worth counting
       
     </span>
   </a>
@@ -2482,10 +2585,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ground-truth-what-filament-provides-on-desktop-verified-2026-07" class="md-nav__link">
+  <a href="#a-sink-you-own" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ground truth: what Filament provides on desktop (verified 2026-07)
+        A sink you own
       
     </span>
   </a>
@@ -2493,10 +2596,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#community-bindings-filament-kmp-the-s1-supply" class="md-nav__link">
+  <a href="#wiring-it-to-arsceneview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Community bindings: filament-kmp (the S1 supply)
+        Wiring it to ARSceneView
       
     </span>
   </a>
@@ -2504,66 +2607,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#decision-2540-2026-07" class="md-nav__link">
+  <a href="#reading-the-result" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Decision (#2540, 2026-07)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Decision (#2540, 2026-07)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#integration-notes-for-whoever-writes-the-pr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration notes for whoever writes the PR
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#re-vendoring-the-binding" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Re-vendoring the binding
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Re-vendoring the binding">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-build-logic-must-be-hardened-before-anything-builds-it" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The build-logic must be hardened before anything builds it
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
+        Reading the result
       
     </span>
   </a>
@@ -2587,7 +2634,7 @@
 
 
   
-    <a href="https://github.com/sceneview/sceneview/edit/main/docs/docs/desktop-filament.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/sceneview/sceneview/edit/main/docs/docs/recipes/measure-ar-funnel.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2595,213 +2642,142 @@
   
 
 
-<h1 id="filament-on-compose-desktop-status-decision">Filament on Compose Desktop — status &amp; decision<a class="headerlink" href="#filament-on-compose-desktop-status-decision" title="Permanent link">&para;</a></h1>
-<p>Decision record for hardware-accelerated 3D rendering on Desktop. <code>samples/desktop-demo</code>
-now consumes <code>SceneViewer</code>.</p>
-<p><strong>Last updated:</strong> 2026-08-19 · <strong>Decision:</strong> superseded — see
-<a href="../compose-multiplatform/">compose-multiplatform.md</a>. The offscreen architecture below
-still stands; the <em>binding supply</em> decision does not.</p>
-<blockquote>
-<p><strong>2026-08-19 update.</strong> The desktop <code>SceneViewer</code> actual is implemented. It depends on
-Maven <code>io.github.erkko68.filament:filament-compose:0.4.0</code> as <code>implementation</code> (never
-<code>api</code>) — filament-kmp already does the offscreen readback → Skia path. Not vendored.
-Requires JDK 22+ and <code>--enable-native-access=ALL-UNNAMED</code> at run. See
-<a href="../compose-multiplatform/">compose-multiplatform.md</a>. Issue
-<a href="https://github.com/sceneview/sceneview/issues/2540">#2540</a>.</p>
-<p><strong>2026-08-03 update.</strong> Desktop rendering is now delivered as the desktop <code>actual</code> of
-the <code>sceneview-compose</code> façade. The binding supply changed: instead of <em>depending on</em>
-<code>io.github.erkko68.filament-ffm</code>, its desktop path is <strong>vendored</strong> under its
-Apache-2.0 licence, with the attribution that licence requires. The offscreen
-architecture and the filament-kmp analysis below are unchanged and still the basis for
-the work. See <a href="../compose-multiplatform/">compose-multiplatform.md</a>. Original decision
-thread: <a href="https://github.com/sceneview/sceneview/issues/2540">issue #2540</a>.</p>
-<p><strong>2026-08-05 amendment — vendor stays the decision, the <em>timing</em> moved.</strong> The copy did
-land on <code>main</code> (commit <code>c01ae5d87</code>) and was removed again in the same week, unused. See
-<a href="#re-vendoring-the-binding">Re-vendoring the binding</a> below for why, and for the one
-command that brings it back.</p>
-<p>Supersedes the 2026-03-25 research version of this page, which incorrectly
-presented Filament's desktop Java build (<code>filament-java.jar</code>, <code>FilamentCanvas</code>,
-<code>FilamentPanel</code>) as something upstream still provides. It does not — see below.</p>
-</blockquote>
-<hr />
-<h2 id="current-state-sceneviewer-on-desktop">Current state: <code>SceneViewer</code> on desktop<a class="headerlink" href="#current-state-sceneviewer-on-desktop" title="Permanent link">&para;</a></h2>
-<p><code>samples/desktop-demo</code> consumes <code>sceneview-compose</code> <code>SceneViewer</code>. Filament is
-filament-kmp on Maven (offscreen readback → Skia). JDK 22+ and
-<code>--enable-native-access=ALL-UNNAMED</code>.</p>
-<hr />
-<h2 id="ground-truth-what-filament-provides-on-desktop-verified-2026-07">Ground truth: what Filament provides on desktop (verified 2026-07)<a class="headerlink" href="#ground-truth-what-filament-provides-on-desktop-verified-2026-07" title="Permanent link">&para;</a></h2>
-<p><strong>Upstream removed Java/desktop support in July 2021</strong>
-(<a href="https://github.com/google/filament/pull/4263">google/filament#4263</a> — <em>"Remove
-support for Java/desktop builds. These builds are never tested nor used on our
-end."</em>). Concretely, today:</p>
+<h1 id="measure-your-ar-funnel">Measure your AR funnel<a class="headerlink" href="#measure-your-ar-funnel" title="Permanent link">&para;</a></h1>
+<p><strong>Intent:</strong> "Half my users never place a model. Where do they drop off?"</p>
+<div class="admonition info">
+<p class="admonition-title">SceneView ships no telemetry</p>
+<p>The SDK sends nothing anywhere. There is no analytics dependency, no opt-out flag, no
+endpoint. Every number below is produced <strong>by your app, in your analytics account</strong>,
+from callbacks that are already part of the public <code>ARSceneView</code> API. If you want no
+measurement at all, pass none of these lambdas and nothing happens.</p>
+</div>
+<h2 id="the-five-steps-worth-counting">The five steps worth counting<a class="headerlink" href="#the-five-steps-worth-counting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Signal</th>
+<th>What a drop here means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ar_session_created</code></td>
+<td><code>onSessionCreated</code></td>
+<td>ARCore is installed and permission was granted.</td>
+</tr>
+<tr>
+<td><code>ar_tracking_ready</code></td>
+<td><code>onTrackingFailureChanged</code> fires with <code>null</code></td>
+<td>The camera found enough of the world to anchor to.</td>
+</tr>
+<tr>
+<td><code>ar_first_placement</code></td>
+<td>your own tap handler creates the first <code>Anchor</code></td>
+<td>The user understood the interaction.</td>
+</tr>
+<tr>
+<td><code>ar_tracking_lost</code></td>
+<td><code>onTrackingFailureChanged</code> fires non-<code>null</code></td>
+<td>Lighting, motion or a featureless surface.</td>
+</tr>
+<tr>
+<td><code>ar_session_failed</code></td>
+<td><code>onSessionFailure</code></td>
+<td>A typed, actionable reason — not a stack trace.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a-sink-you-own">A sink you own<a class="headerlink" href="#a-sink-you-own" title="Permanent link">&para;</a></h2>
+<p>Keep the analytics vendor out of your AR code. One interface, one implementation per
+build flavour, and your screen stays testable:</p>
+<pre class="language-kotlin"><code>interface ArFunnel {
+    fun log(event: String, params: Map&lt;String, String&gt; = emptyMap())
+}</code></pre>
+<p>A Firebase Analytics implementation is one line of body — any sink works (Amplitude,
+PostHog, your own backend, or <code>Log.d</code> in debug builds):</p>
+<pre class="language-kotlin"><code>class FirebaseArFunnel(private val analytics: FirebaseAnalytics) : ArFunnel {
+    override fun log(event: String, params: Map&lt;String, String&gt;) =
+        analytics.logEvent(event) { params.forEach { (k, v) -&gt; param(k, v) } }
+}</code></pre>
+<h2 id="wiring-it-to-arsceneview">Wiring it to <code>ARSceneView</code><a class="headerlink" href="#wiring-it-to-arsceneview" title="Permanent link">&para;</a></h2>
+<p><code>onTrackingFailureChanged</code> is the funnel middle: SceneView calls it <strong>only when the reason
+changes</strong>, so it is already de-duplicated — no per-frame guard needed. The first <code>null</code> is
+"tracking ready"; every non-<code>null</code> is a stall with a named cause.</p>
+<pre class="language-kotlin"><code>@Composable
+fun ArScreen(funnel: ArFunnel) {
+    val engine = rememberEngine()
+    val modelLoader = rememberModelLoader(engine)
+    val modelInstance = rememberModelInstance(modelLoader, "models/damaged_helmet.glb")
+
+    var anchor by remember { mutableStateOf&lt;Anchor?&gt;(null) }
+    var everTracked by remember { mutableStateOf(false) }
+
+    ARSceneView(
+        modifier = Modifier.fillMaxSize(),
+        engine = engine,
+        modelLoader = modelLoader,
+        planeRenderer = true,
+        onSessionCreated = { funnel.log("ar_session_created") },
+        onTrackingFailureChanged = { reason -&gt;
+            if (reason == null) {
+                // First null = the session reached a usable state. Later nulls are
+                // recoveries, worth their own event so you can see how often users
+                // fight their way back instead of quitting.
+                funnel.log(if (everTracked) "ar_tracking_recovered" else "ar_tracking_ready")
+                everTracked = true
+            } else {
+                funnel.log("ar_tracking_lost", mapOf("reason" to reason.name))
+            }
+        },
+        onTouchEvent = { _, hitResult -&gt;
+            // Your own tap handler — SceneView never places anything for you, so this
+            // is the only place that knows a placement happened.
+            if (anchor == null) {
+                hitResult?.createAnchorOrNull()?.let {
+                    anchor = it
+                    funnel.log("ar_first_placement")
+                }
+            }
+            false // let SceneView keep handling the gesture
+        },
+        onSessionFailure = { failure -&gt;
+            // Typed, so the label is stable across ARCore versions and you can route
+            // "install ARCore" separately from "device not supported".
+            funnel.log(
+                "ar_session_failed",
+                mapOf("reason" to failure::class.simpleName.orEmpty())
+            )
+        }
+    ) {
+        anchor?.let { placed -&gt;
+            AnchorNode(anchor = placed) {
+                modelInstance?.let { ModelNode(modelInstance = it, scaleToUnits = 0.3f) }
+            }
+        }
+    }
+}</code></pre>
+<h2 id="reading-the-result">Reading the result<a class="headerlink" href="#reading-the-result" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>FilamentCanvas</code> / <code>FilamentPanel</code> (the old AWT/Swing hosts) are <strong>gone from the tree</strong>;
-  <code>build.sh</code> has no desktop Java path; the JNI library is only built inside the
-  Android Gradle build.</li>
-<li>The GitHub release archives (<code>filament-vX.Y.Z-{mac,linux,arm-linux,windows}.tgz</code>)
-  contain <strong>C++ static libs + host tools only</strong> — no <code>filament-java.jar</code>, no desktop
-  <code>libfilament-jni</code>.</li>
-<li>Maven Central under <code>com.google.android.filament</code> publishes <strong>Android AARs and the
-  <code>matc</code>/<code>cmgen</code> host-tool executables only</strong> — no desktop runtime library of any kind.</li>
-<li><a href="https://github.com/google/filament/issues/7558">google/filament#7558</a> (KMP desktop
-  request) is closed <strong>not planned</strong>.</li>
+<li><code>ar_session_created</code> → <code>ar_tracking_ready</code> measures <strong>the device and the room</strong>. A wide
+  gap means users point at plain floors — add a scan hint.</li>
+<li><code>ar_tracking_ready</code> → <code>ar_first_placement</code> measures <strong>your UI</strong>. This is the step an
+  onboarding overlay actually moves.</li>
+<li><code>ar_session_failed</code> split by <code>reason</code> tells you how much of the loss is not yours to
+  fix: <code>ArCoreNotInstalled</code> and <code>DeviceNotCompatible</code> need a fallback 3D <code>SceneView</code>, not
+  a better AR tutorial. The full taxonomy is in
+  <a href="https://github.com/sceneview/sceneview/blob/main/arsceneview/src/main/java/io/github/sceneview/ar/ARSessionFailure.kt"><code>ARSessionFailure</code></a>.</li>
 </ul>
-<p><strong>Bottom line:</strong> anyone doing Filament-on-JVM-desktop maintains their own native
-distribution — so the real supply question is <em>where the desktop bindings come from</em>.</p>
-<hr />
-<h2 id="community-bindings-filament-kmp-the-s1-supply">Community bindings: filament-kmp (the S1 supply)<a class="headerlink" href="#community-bindings-filament-kmp-the-s1-supply" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/Erkko68/filament-kmp">Erkko68/filament-kmp</a> — unofficial,
-Apache-2.0, actively maintained KMP wrapper around Filament, published on Maven
-Central (re-verified against <code>repo1.maven.org</code>, latest <code>0.3.0</code>, 2026-08-03):</p>
-<ul>
-<li><strong>Desktop/JVM via Project Panama (FFM, JDK 22+)</strong> over a single combined C wrapper,
-  natives bundled per platform: <code>io.github.erkko68.filament-ffm:filament-ffm</code> +
-  <code>filament-ffm-runtime-{macos-arm64, linux-x64, linux-arm64, windows-x64}</code>.
-  <strong>No macos-x64 (Intel Mac) natives</strong> — re-confirmed 2026-08-03 (404 on Maven Central).</li>
-<li>Wraps <strong>Filament 1.74.0</strong> (<code>MATERIAL_VERSION</code> 74); modules mirror upstream
-  (<code>filament</code>, <code>gltfio</code>, <code>filamat</code>, <code>filament-utils</code>). A legacy <code>filament-jni</code> group
-  also exists; FFM is the current track.</li>
-<li>It does <strong>not</strong> build Filament from source: it downloads Google's official C++
-  prebuilts, compiles a shared C wrapper, and generates the FFM bindings with <code>jextract</code>
-  at build time. The web runtime is the exception — that one comes from a personal fork
-  of Filament pending an upstream PR.</li>
-<li>Backends on desktop: Metal on macOS, Vulkan default on Windows/Linux, OpenGL fallback.</li>
-<li>Its Compose Desktop integration is exactly the offscreen architecture adopted in
-  #2540, documented with real numbers in
-  <a href="https://github.com/Erkko68/filament-kmp/blob/main/docs/compose/integration-strategies.md">integration-strategies.md</a>.</li>
-</ul>
-<p>Known risks: pre-1.0 API churn, essentially single-maintainer (bus factor), version
-pin ahead of SceneView Android's Filament ref (see the <code>.filamat</code> note below).</p>
-<hr />
-<h2 id="decision-2540-2026-07">Decision (#2540, 2026-07)<a class="headerlink" href="#decision-2540-2026-07" title="Permanent link">&para;</a></h2>
-<p><strong>Offscreen route, contributor-driven, S1 bindings for the spike:</strong></p>
-<ol>
-<li><strong>Architecture (a) — offscreen render → pipelined <code>readPixels</code> → Skia image in
-   Compose.</strong> The 3D frame lives <em>inside</em> the Skia scene, so clipping, z-order,
-   overlays above <strong>and</strong> below, and stacked viewports all compose correctly. Cost:
-   a GPU→CPU copy (≈4 MB/frame at FHD, ≈33 MB/frame at 4K) and 1–2 frames of latency —
-   fine for a viewer/editor. AWT heavyweight interop was <strong>rejected</strong> (no reliable
-   Compose blending, and the requesting framework doesn't go through AWT); zero-copy
-   GPU interop is a later upgrade behind the same API, blocked on
-   <a href="https://github.com/JetBrains/compose-multiplatform/issues/3810">compose-multiplatform#3810</a>.</li>
-<li>~~<strong>Binding supply S1 — consume <code>io.github.erkko68.filament-ffm</code> as a dependency.</strong>~~
-   <strong>Amended 2026-08-03: vendor instead of depend.</strong> The shape of the binding is
-   unchanged — filament-kmp's desktop path is still the right one, and S2 "build our
-   own from scratch" is still not worth paying. What changed is that the code is
-   <strong>copied into <code>third_party/filament-kmp/</code></strong> under its Apache-2.0 licence rather than
-   resolved from Maven Central, so the desktop track can pin its own Filament version
-   and is not exposed to upstream's pre-1.0 API churn. The costs that come with owning
-   the copy — JDK 22+, the CMake/<code>jextract</code> chain, three-OS CI, recurring upkeep — are
-   listed in <a href="../compose-multiplatform/">compose-multiplatform.md</a>. Attribution is
-   mandatory, not discretionary: upstream <code>LICENSE</code> plus a <code>NOTICE</code> crediting
-   Èric Bitriá Ribes. <strong>Amended again 2026-08-05: the copy is taken when the spike
-   starts, not before</strong> — see <a href="#re-vendoring-the-binding">Re-vendoring the binding</a>.</li>
-<li><strong>Phased, with measured gates and abandon criteria</strong> — P1 spike (engine boot +
-   offscreen + one GLB in <code>samples/desktop-demo</code> behind a flag; FPS/CPU/resize/leak
-   gates) → P2 <code>sceneview-desktop/</code> module mirroring the Android composable surface
-   for an honest subset → P3 demand-driven parity growth. Full gates and criteria in
-   <a href="https://github.com/sceneview/sceneview/issues/2540">#2540</a>.</li>
-<li><strong>Core-team cost is capped at review + CI wiring.</strong> Desktop is not a demand driver;
-   this track is green-lit because a contributor carries the implementation.</li>
-</ol>
-<h3 id="integration-notes-for-whoever-writes-the-pr">Integration notes for whoever writes the PR<a class="headerlink" href="#integration-notes-for-whoever-writes-the-pr" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong><code>.filamat</code> ABI:</strong> SceneView's material blobs target mobile/web profiles compiled
-  with the repo-pinned <code>matc</code>. Custom desktop materials need a desktop profile
-  compiled with the <code>matc</code> <strong>matching the desktop runtime</strong> (1.72.0 under S1), which
-  puts the desktop module on its own Filament-version track — document it in the
-  Version Location Map, don't diverge silently. P1/P2 dodge this via gltfio's
-  built-in ubershaders.</li>
-<li><strong>JDK:</strong> FFM means a <strong>JDK 22+ runtime floor</strong> for the desktop module and demo
-  (jpackage bundles a modern JDK for the demo; library consumers get it documented
-  in the platform matrix).</li>
-<li><strong>Platform honesty:</strong> no Intel-Mac natives under S1 — say so in the docs rather
-  than failing at load time.</li>
-<li><strong>Frame pacing:</strong> drive rendering from <code>withFrameNanos</code>, render on the engine
-  thread (the repo's single-threaded Filament rule applies on desktop too), reuse
-  the two pixel buffers — no per-frame allocation.</li>
-</ul>
-<hr />
-<h2 id="re-vendoring-the-binding">Re-vendoring the binding<a class="headerlink" href="#re-vendoring-the-binding" title="Permanent link">&para;</a></h2>
-<p>The vendored copy landed on <code>main</code> in <code>c01ae5d87</code> and was removed in the same week. It
-was never a mistake of <em>shape</em> — vendoring is still the decision above — it was a
-mistake of <em>timing</em>. Three measurements decided it:</p>
-<ul>
-<li><strong>Nothing compiled it.</strong> No <code>settings.gradle</code> referenced <code>third_party/</code>, so the 31 700
-  lines were dead weight in every checkout, every <code>grep</code>, and every cross-cutting lint.
-  It had already cost one repo-wide guard: <code>check-deprecated-api.sh</code> needed a
-  <code>third_party/*</code> whitelist, because Filament's own <code>Scene</code> class tripped SceneView's
-  deprecated-composable detector and the files could not be edited without falsifying
-  the §4(b) NOTICE.</li>
-<li><strong>Its guard made an unrelated repo a single point of failure.</strong> <code>diff-upstream.sh</code> ran
-  unconditionally in <code>Repo hygiene checks</code> and <code>git clone</code>d
-  <code>github.com/Erkko68/filament-kmp</code> on every CI invocation, exiting non-zero if the clone
-  failed. A rename, a privatisation or an outage on one individual's repository would
-  have reddened every pull request in the monorepo — to protect code nothing built.</li>
-<li><strong>A frozen 0.3.0 ages exactly like the churn it was meant to escape.</strong> The spike is
-  contributor-carried with no date; whoever starts it will want a current tag anyway.</li>
-</ul>
-<p><strong>Restoring it is one command</strong> — the full tree, plus <code>LICENSE</code>, <code>NOTICE</code>,
-<code>MANIFEST.sha256</code> and <code>diff-upstream.sh</code>, verbatim and independent of upstream's
-survival:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>c01ae5d87<span class="w"> </span>--<span class="w"> </span>third_party/filament-kmp
-</span></code></pre></div>
-<p>To take a <em>newer</em> upstream tag instead: clone at that tag, replace the tree, update the
-tag and commit lines in <code>third_party/filament-kmp/NOTICE</code>, then
-<code>bash third_party/filament-kmp/diff-upstream.sh --regenerate</code> and review the manifest
-diff — a file appearing or vanishing there is the point of the exercise.</p>
-<p>Either way, three things must land in the <strong>same</strong> PR as the restored tree, or the
-restore is not real:</p>
-<ol>
-<li>the §4(b) step back in <code>.github/workflows/ci.yml</code> under <code>repo-hygiene</code> (the version in
-   <code>c01ae5d87</code> is copy-pasteable) — a guard no job invokes is prose;</li>
-<li>the Filament KMP attribution block back in the root <code>NOTICE</code> (also in <code>c01ae5d87</code>);</li>
-<li>the <code>settings.gradle</code> include that makes something actually build it. Vendoring code
-   that nothing compiles is what this section exists to prevent repeating.</li>
-<li><strong>the two hardening fixes below, in that same PR — not a follow-up.</strong> Item 3 is what
-   makes them reachable, so shipping them later means shipping a window.</li>
-</ol>
-<h3 id="the-build-logic-must-be-hardened-before-anything-builds-it">The build-logic must be hardened before anything builds it<a class="headerlink" href="#the-build-logic-must-be-hardened-before-anything-builds-it" title="Permanent link">&para;</a></h3>
-<p><code>build-logic/src/main/kotlin/FilamentDownloads.kt</code> in the copy taken from <code>0.3.0</code> has two
-defects. Both are build-time code execution, and both are harmless only for as long as
-nothing compiles the tree — which item 3 ends:</p>
-<ul>
-<li><strong>Downloads are not verified.</strong> <code>downloadToCache()</code> streams a URL into the cache and
-  returns it. The <em>version</em> is pinned; the <em>bytes</em> are not. A GitHub release asset can be
-  deleted and re-uploaded under the same tag, and the <code>download.java.net</code> jextract builds
-  are explicitly transient. Fix: hash the bytes once the stream completes, compare against
-  a checked-in digest per artifact, and <strong>delete the cached file on mismatch</strong> — a
-  poisoned cache entry that survives is worse than a failed download.</li>
-<li><strong><code>extractAll()</code> is symlink-tar-slippable.</strong> It asserts each entry's own path stays
-  under the destination, which stops a <code>../../etc/passwd</code> entry, but it does not validate
-  <code>entry.linkName</code> before <code>Files.createSymbolicLink</code>. A tarball carrying <code>a -&gt; /tmp/evil</code>
-  followed by a regular entry <code>a/x</code> passes that assertion — <code>normalize()</code> does not resolve
-  symlinks — and writes outside the destination, into a tree that is then marked
-  executable and run. Fix: resolve <code>linkName</code> against the entry's parent, assert the
-  result stays under <code>destPath</code>, and reject absolute targets outright.</li>
-</ul>
-<p>This is not left to a reviewer's memory. <code>bash .claude/scripts/check-vendored-download-safety.sh</code>
-runs in <code>repo-hygiene</code> and in <code>pre-push-check.sh</code>: it is silent while the tree is absent
-or unbuilt, and <strong>fails from the moment a <code>settings.gradle</code> include lands</strong> with either
-fix missing. Its own failing path is exercised on synthetic trees by
-<code>test-check-vendored-download-safety.sh</code>, so the gate cannot rot while it is dormant.</p>
-<hr />
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://github.com/sceneview/sceneview/issues/2540">Issue #2540 — decision + full design doc</a></li>
-<li><a href="https://github.com/google/filament/pull/4263">google/filament#4263 — removal of Java/desktop builds (2021)</a></li>
-<li><a href="https://github.com/google/filament/issues/7558">google/filament#7558 — KMP desktop support: not planned</a></li>
-<li><a href="https://github.com/Erkko68/filament-kmp">Erkko68/filament-kmp</a> ·
-  <a href="https://github.com/Erkko68/filament-kmp/blob/main/docs/compose/integration-strategies.md">Compose integration strategies</a></li>
-<li><a href="https://github.com/JetBrains/compose-multiplatform/issues/3810">compose-multiplatform#3810 — external GPU texture interop (open)</a></li>
-<li><a href="https://github.com/JetBrains/compose-multiplatform/tree/master/experimental/lwjgl-integration">JetBrains lwjgl-integration (experimental)</a></li>
-</ul>
+<p>Log no camera frames, depth data or <code>Pose</code> values: the funnel needs counts, not geometry.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -2935,10 +2911,10 @@ fix missing. Its own failing path is exercised on synthetic trees by
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.action.edit", "toc.follow", "announce.dismiss"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.action.edit", "toc.follow", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
